@@ -1,10 +1,16 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { getWritingTestById } from '@/lib/actions/writing.actions';
 import WritingFeedback from '@/components/WritingFeedback';
+
+interface PromptObject {
+  description?: string;
+  image?: string;
+  question?: string;
+}
 
 interface WritingTest {
   id: string;
@@ -14,14 +20,14 @@ interface WritingTest {
     type: string;
     title: string;
     instructions: string;
-    prompt: any;
+    prompt: string | PromptObject;
     wordLimit: number;
   };
   task2?: {
     type: string;
     title: string;
     instructions: string;
-    prompt: any;
+    prompt: string | PromptObject;
     wordLimit: number;
   };
   metadata?: {
@@ -148,7 +154,7 @@ function WritingTestPage() {
   }, [id]);
 
   // Handle submission and AI evaluation
-  const handleSubmit = async () => {
+  const handleSubmit = useCallback(async () => {
     if (!test || (!task1Answer.trim() && !task2Answer.trim())) {
       alert('Please provide at least one task answer before submitting.');
       return;
@@ -193,8 +199,8 @@ function WritingTestPage() {
       setTimeout(() => {
         if (result.success) {
           setEvaluation({
-            task1: result.results.task1,
-            task2: result.results.task2,
+            task1: result.results?.task1,
+            task2: result.results?.task2,
             overallBandScore: result.overallBandScore
           });
           setShowResults(true);
@@ -213,7 +219,7 @@ function WritingTestPage() {
     } finally {
       clearInterval(progressInterval);
     }
-  };
+  }, [test, task1Answer, task2Answer, setTimerActive]);
 
   const getBandScoreColor = (score: number) => {
     if (score >= 7) return 'text-green-600 bg-green-50 border-green-200';
@@ -374,10 +380,10 @@ function WritingTestPage() {
                       <p className="text-gray-700">{test.task1.prompt}</p>
                     ) : (
                       <div className="space-y-3">
-                        {test.task1.prompt.description && (
+                        {test.task1.prompt && typeof test.task1.prompt !== 'string' && test.task1.prompt.description && (
                           <p className="text-gray-700 leading-relaxed">{test.task1.prompt.description}</p>
                         )}
-                        {test.task1.prompt.image && (
+                        {test.task1.prompt && typeof test.task1.prompt !== 'string' && test.task1.prompt.image && (
                           <div className="mt-4 flex justify-center">
                             <div 
                               className="relative group cursor-pointer"
@@ -385,13 +391,15 @@ function WritingTestPage() {
                                 e.preventDefault();
                                 e.stopPropagation();
                                 // Add click to view full size functionality
-                                const imgSrc = test.task1?.prompt?.image;
+                                const imgSrc = test.task1?.prompt && typeof test.task1.prompt !== 'string' ? test.task1.prompt.image : undefined;
+                                if (!imgSrc) return;
+                                
                                 const overlay = document.createElement('div');
                                 overlay.className = 'fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4';
                                 overlay.style.zIndex = '9999';
                                 overlay.innerHTML = `
                                   <div class="relative max-w-full max-h-full flex items-center justify-center">
-                                    <img src="${imgSrc}" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl" />
+                                    <img src="${imgSrc}" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl" alt="Task 1 Image" />
                                     <button class="absolute top-4 right-4 text-white bg-black bg-opacity-70 hover:bg-opacity-90 rounded-full w-10 h-10 flex items-center justify-center transition-all text-xl font-bold">
                                       ×
                                     </button>
@@ -406,13 +414,15 @@ function WritingTestPage() {
                                 // Close on click anywhere
                                 overlay.addEventListener('click', (e) => {
                                   e.preventDefault();
-                                  document.body.removeChild(overlay);
-                                  document.body.style.overflow = 'auto';
+                                  if (document.body.contains(overlay)) {
+                                    document.body.removeChild(overlay);
+                                    document.body.style.overflow = 'auto';
+                                  }
                                 });
                                 
                                 // Close on escape key
                                 const handleEscape = (e: KeyboardEvent) => {
-                                  if (e.key === 'Escape') {
+                                  if (e.key === 'Escape' && document.body.contains(overlay)) {
                                     document.body.removeChild(overlay);
                                     document.body.style.overflow = 'auto';
                                     document.removeEventListener('keydown', handleEscape);
@@ -422,14 +432,15 @@ function WritingTestPage() {
                               }}
                             >
                               <img 
-                                src={test.task1?.prompt?.image}
-                                alt={`Task 1 ${test.task1.type} chart`}
+                                src={test.task1?.prompt && typeof test.task1.prompt !== 'string' ? test.task1.prompt.image : ''}
+                                alt={`Task 1 ${test.task1?.type || 'Writing'} chart`}
                                 className="w-auto h-auto max-w-2xl max-h-96 rounded-lg border border-gray-200 shadow-md group-hover:shadow-lg transition-shadow duration-300"
                                 onError={(e) => {
                                   const target = e.target as HTMLImageElement;
                                   target.style.display = 'none';
                                   const errorDiv = document.createElement('div');
                                   errorDiv.className = 'bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-6 text-center max-w-2xl';
+                                  const imgSrc = test.task1?.prompt && typeof test.task1.prompt !== 'string' ? test.task1.prompt.image : 'Unknown';
                                   errorDiv.innerHTML = `
                                     <div class="text-gray-400 mb-2">
                                       <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 20 20">
@@ -437,7 +448,7 @@ function WritingTestPage() {
                                       </svg>
                                     </div>
                                     <p class="text-sm text-gray-500">
-                                      Chart/Image: ${test.task1?.prompt?.image}\u003cbr\u003e
+                                      Chart/Image: ${imgSrc}<br>
                                       <span class="text-xs">(Image will be available in the actual test)</span>
                                     </p>
                                   `;
@@ -452,7 +463,7 @@ function WritingTestPage() {
                             </div>
                           </div>
                         )}
-                        {test.task1.prompt.question && (
+                        {test.task1.prompt && typeof test.task1.prompt !== 'string' && test.task1.prompt.question && (
                           <div className="mt-3 p-3 bg-blue-50 rounded border-l-4 border-blue-400">
                             <p className="text-gray-700 italic">{test.task1.prompt.question}</p>
                           </div>
@@ -494,15 +505,15 @@ function WritingTestPage() {
                       <p className="text-gray-700">{test.task2.prompt}</p>
                     ) : (
                       <div className="space-y-3">
-                        {test.task2.prompt.description && (
+                        {test.task2.prompt && typeof test.task2.prompt !== 'string' && test.task2.prompt.description && (
                           <p className="text-gray-700 leading-relaxed">{test.task2.prompt.description}</p>
                         )}
-                        {test.task2.prompt.question && (
+                        {test.task2.prompt && typeof test.task2.prompt !== 'string' && test.task2.prompt.question && (
                           <div className="mt-3 p-4 bg-green-50 rounded-lg border-l-4 border-green-400">
                             <p className="text-gray-800 font-medium leading-relaxed">{test.task2.prompt.question}</p>
                           </div>
                         )}
-                        {test.task2.prompt.image && (
+                        {test.task2.prompt && typeof test.task2.prompt !== 'string' && test.task2.prompt.image && (
                           <div className="mt-4 flex justify-center">
                             <div 
                               className="relative group cursor-pointer"
@@ -510,7 +521,8 @@ function WritingTestPage() {
                                 e.preventDefault();
                                 e.stopPropagation();
                                 // Add click to view full size functionality
-                                const imgSrc = test.task2.prompt.image;
+                                const imgSrc = test.task2?.prompt && typeof test.task2.prompt !== 'string' ? test.task2.prompt.image : undefined;
+                                if (!imgSrc) return;
                                 const overlay = document.createElement('div');
                                 overlay.className = 'fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4';
                                 overlay.style.zIndex = '9999';
@@ -547,8 +559,8 @@ function WritingTestPage() {
                               }}
                             >
                               <img 
-                                src={test.task2.prompt.image} 
-                                alt={`Task 2 ${test.task2.type} image`}
+                                src={test.task2?.prompt && typeof test.task2.prompt !== 'string' ? test.task2.prompt.image : ''} 
+                                alt={`Task 2 ${test.task2?.type || 'Writing'} image`}
                                 className="w-auto h-auto max-w-2xl max-h-96 rounded-lg border border-gray-200 shadow-md group-hover:shadow-lg transition-shadow duration-300"
                                 onError={(e) => {
                                   const target = e.target as HTMLImageElement;

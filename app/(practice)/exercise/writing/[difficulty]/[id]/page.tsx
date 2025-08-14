@@ -567,6 +567,7 @@ function WritingTestPage() {
                                   target.style.display = 'none';
                                   const errorDiv = document.createElement('div');
                                   errorDiv.className = 'bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-6 text-center max-w-2xl';
+                                  const imgSrc2 = test.task2?.prompt && typeof test.task2.prompt !== 'string' ? test.task2.prompt.image : 'Unknown';
                                   errorDiv.innerHTML = `
                                     <div class="text-gray-400 mb-2">
                                       <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 20 20">
@@ -574,7 +575,7 @@ function WritingTestPage() {
                                       </svg>
                                     </div>
                                     <p class="text-sm text-gray-500">
-                                      Image: ${test.task2.prompt.image}<br>
+                                      Image: ${imgSrc2}<br>
                                       <span class="text-xs">(Image will be available in the actual test)</span>
                                     </p>
                                   `;

@@ -385,7 +385,7 @@ function WritingTestPage() {
                                 e.preventDefault();
                                 e.stopPropagation();
                                 // Add click to view full size functionality
-                                const imgSrc = test.task1.prompt.image;
+                                const imgSrc = test.task1?.prompt?.image;
                                 const overlay = document.createElement('div');
                                 overlay.className = 'fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4';
                                 overlay.style.zIndex = '9999';
@@ -422,7 +422,7 @@ function WritingTestPage() {
                               }}
                             >
                               <img 
-                                src={test.task1.prompt.image} 
+                                src={test.task1?.prompt?.image}
                                 alt={`Task 1 ${test.task1.type} chart`}
                                 className="w-auto h-auto max-w-2xl max-h-96 rounded-lg border border-gray-200 shadow-md group-hover:shadow-lg transition-shadow duration-300"
                                 onError={(e) => {
@@ -437,7 +437,7 @@ function WritingTestPage() {
                                       </svg>
                                     </div>
                                     <p class="text-sm text-gray-500">
-                                      Chart/Image: ${test.task1.prompt.image}<br>
+                                      Chart/Image: ${test.task1?.prompt?.image}\u003cbr\u003e
                                       <span class="text-xs">(Image will be available in the actual test)</span>
                                     </p>
                                   `;

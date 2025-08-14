@@ -1,0 +1,17 @@
+ {
+        "id": "hard-4",
+        "title": "Climate Science Modeling",
+        "transcript": "Advanced computational models incorporating atmospheric-oceanic coupling mechanisms have revealed disturbing non-linear feedback loops. The albedo effect's acceleration appears more pronounced than previously calculated, with permafrost degradation releasing methane quantities exceeding worst-case scenarios by thirty-seven percent. Temperature anomalies in the Arctic demonstrate unprecedented volatility, suggesting tipping point proximity. The Gulf Stream's thermohaline circulation shows measurable weakening, potentially triggering abrupt regional climate shifts. These findings necessitate immediate recalibration of mitigation strategies and adaptation protocols for vulnerable coastal populations.",
+        "questions": [
+            {"id": 1, "type": "fill-blank", "question": "The computational models include ________ coupling mechanisms.", "correctAnswer": "atmospheric-oceanic"},
+            {"id": 2, "type": "true-false", "question": "The albedo effect is slowing down, according to the script.", "correctAnswer": "false"},
+            {"id": 3, "type": "multiple-choice", "question": "What gas is being released from permafrost?", "options": ["Carbon dioxide", "Nitrogen", "Methane", "Oxygen"], "correctAnswer": 2},
+            {"id": 4, "type": "fill-blank", "question": "Methane emissions exceeded worst-case scenarios by ________ percent.", "correctAnswer": "thirty-seven"},
+            {"id": 5, "type": "true-false", "question": "Temperature anomalies in the Arctic suggest tipping point proximity.", "correctAnswer": "true"},
+            {"id": 6, "type": "fill-blank", "question": "The Gulf Stream's ________ circulation is weakening.", "correctAnswer": "thermohaline"},
+            {"id": 7, "type": "multiple-choice", "question": "Which region is mentioned as vulnerable in the conclusion?", "options": ["Inland communities", "Mountain towns", "Coastal populations", "Island nations"], "correctAnswer": 2},
+            {"id": 8, "type": "true-false", "question": "The models show linear feedback loops.", "correctAnswer": "false"},
+            {"id": 9, "type": "fill-blank", "question": "Mitigation strategies and ________ protocols need recalibration.", "correctAnswer": "adaptation"},
+            {"id": 10, "type": "multiple-choice", "question": "What phenomenon indicates possible abrupt climate shifts?", "options": ["Storm frequency", "Rainfall reduction", "Gulf Stream weakening", "Ozone depletion"], "correctAnswer": 2}
+        ]
+    }

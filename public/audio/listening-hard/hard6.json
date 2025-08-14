@@ -1,0 +1,17 @@
+{
+        "id": "hard-6",
+        "title": "Sociolinguistic Analysis",
+        "transcript": "Comprehensive analysis of multilingual communities reveals intricate code-switching patterns reflecting complex identity negotiations. Heritage language maintenance correlates inversely with socioeconomic mobility, creating intergenerational tension regarding cultural preservation versus assimilation pressures. The study identifies subtle phonological variations indicating incipient language shift processes occurring across successive generations. Remarkably, children demonstrate sophisticated metalinguistic awareness, strategically employing linguistic repertoires for social positioning. These findings challenge monolingual educational paradigms, suggesting plurilingual pedagogies could enhance cognitive flexibility while preserving valuable linguistic diversity within increasingly globalized societies.",
+        "questions": [
+            {"id": 1, "type": "true-false", "question": "The analysis focused on multilingual communities.", "correctAnswer": "true"},
+            {"id": 2, "type": "fill-blank", "question": "The study observed code-switching reflecting ________ negotiations.", "correctAnswer": "identity"},
+            {"id": 3, "type": "multiple-choice", "question": "What does heritage language maintenance correlate with?", "options": ["Increased mobility", "Cultural pride", "Socioeconomic mobility", "Lower mobility"], "correctAnswer": 3},
+            {"id": 4, "type": "fill-blank", "question": "The study identifies subtle ________ variations.", "correctAnswer": "phonological"},
+            {"id": 5, "type": "true-false", "question": "Children showed metalinguistic awareness.", "correctAnswer": "true"},
+            {"id": 6, "type": "multiple-choice", "question": "What concept is challenged by the findings?", "options": ["Pluralism", "Multiculturalism", "Monolingual paradigms", "Sociology"], "correctAnswer": 2},
+            {"id": 7, "type": "fill-blank", "question": "Plurilingual pedagogies may improve ________ flexibility.", "correctAnswer": "cognitive"},
+            {"id": 8, "type": "true-false", "question": "Language diversity is considered unimportant in the study.", "correctAnswer": "false"},
+            {"id": 9, "type": "fill-blank", "question": "Children use linguistic ________ for social positioning.", "correctAnswer": "repertoires"},
+            {"id": 10, "type": "multiple-choice", "question": "Language shift occurs across how many generations?", "options": ["One", "Two", "Successive", "None"], "correctAnswer": 2}
+        ]
+    }

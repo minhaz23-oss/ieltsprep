@@ -1,0 +1,72 @@
+{
+  "id": "hard-3",
+  "title": "Neuroscience Research Breakthrough",
+  "difficulty": "hard",
+  "transcript": "Groundbreaking neuroplasticity research has elucidated previously unknown synaptic adaptation mechanisms. The hippocampal-cortical dialogue demonstrates remarkable temporal specificity during memory consolidation phases. Dr. Martinez's longitudinal study reveals that neurogenesis rates fluctuate significantly in response to environmental enrichment protocols. Most intriguingly, the research identifies novel biomarkers associated with cognitive decline prevention. These findings challenge conventional wisdom regarding age-related neural deterioration, suggesting targeted interventions could potentially ameliorate degenerative processes. The therapeutic implications extend beyond Alzheimer's research, encompassing broader neurological rehabilitation paradigms.",
+  "questions": [
+    {
+      "id": 1,
+      "type": "fill-blank",
+      "question": "Groundbreaking ______ research has elucidated previously unknown synaptic adaptation mechanisms.",
+      "correctAnswer": "neuroplasticity"
+    },
+    {
+      "id": 2,
+      "type": "multiple-choice",
+      "question": "What demonstrates remarkable temporal specificity?",
+      "options": ["Synaptic adaptation", "Hippocampal-cortical dialogue", "Neurogenesis rates", "Biomarkers"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 3,
+      "type": "true-false",
+      "question": "The temporal specificity occurs during memory consolidation phases.",
+      "correctAnswer": "true"
+    },
+    {
+      "id": 4,
+      "type": "fill-blank",
+      "question": "Dr. ______ longitudinal study reveals fluctuating neurogenesis rates.",
+      "correctAnswer": "Martinez's"
+    },
+    {
+      "id": 5,
+      "type": "multiple-choice",
+      "question": "Neurogenesis rates fluctuate in response to what?",
+      "options": ["Age factors", "Environmental enrichment protocols", "Genetic mutations", "Medication treatments"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 6,
+      "type": "true-false",
+      "question": "The research identifies novel biomarkers associated with cognitive decline prevention.",
+      "correctAnswer": "true"
+    },
+    {
+      "id": 7,
+      "type": "fill-blank",
+      "question": "The findings challenge conventional wisdom regarding age-related neural ______.",
+      "correctAnswer": "deterioration"
+    },
+    {
+      "id": 8,
+      "type": "multiple-choice",
+      "question": "What could targeted interventions potentially do?",
+      "options": ["Prevent aging", "Ameliorate degenerative processes", "Increase intelligence", "Eliminate memory loss"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 9,
+      "type": "true-false",
+      "question": "The therapeutic implications are limited to Alzheimer's research only.",
+      "correctAnswer": "false"
+    },
+    {
+      "id": 10,
+      "type": "multiple-choice",
+      "question": "The therapeutic implications encompass:",
+      "options": ["Only memory research", "Broader neurological rehabilitation paradigms", "Only age-related studies", "Genetic therapy only"],
+      "correctAnswer": 1
+    }
+  ]
+}

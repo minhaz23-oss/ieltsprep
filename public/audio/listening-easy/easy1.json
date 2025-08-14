@@ -1,0 +1,71 @@
+{
+  "id": "easy-1",
+  "title": "Library Information",
+  "difficulty": "easy",
+  "transcript": "Welcome to the City Library. We are open Monday to Friday from 9 AM to 6 PM, and weekends from 10 AM to 4 PM. To borrow books, you need a library card which costs five dollars for adults and is free for students under eighteen. You can borrow up to six books at a time for three weeks. If you return books late, there is a fine of fifty cents per day. We also have computers available for one hour sessions, and free Wi-Fi throughout the building.",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "When is the library open on weekends?",
+      "options": ["9 AM to 6 PM", "10 AM to 4 PM", "8 AM to 5 PM", "11 AM to 3 PM"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 2,
+      "type": "fill-blank",
+      "question": "A library card costs ______ dollars for adults.",
+      "correctAnswer": "five"
+    },
+    {
+      "id": 3,
+      "type": "true-false",
+      "question": "Students under 18 must pay for a library card.",
+      "correctAnswer": "false"
+    },
+    {
+      "id": 4,
+      "type": "fill-blank",
+      "question": "You can borrow books for ______ weeks.",
+      "correctAnswer": "three"
+    },
+    {
+      "id": 5,
+      "type": "multiple-choice",
+      "question": "How many books can be borrowed at a time?",
+      "options": ["Four", "Five", "Six", "Seven"],
+      "correctAnswer": 2
+    },
+    {
+      "id": 6,
+      "type": "true-false",
+      "question": "There is a late fine for returning books.",
+      "correctAnswer": "true"
+    },
+    {
+      "id": 7,
+      "type": "fill-blank",
+      "question": "The fine for late returns is ______ cents per day.",
+      "correctAnswer": "fifty"
+    },
+    {
+      "id": 8,
+      "type": "true-false",
+      "question": "Wi-Fi is available only in the reading room.",
+      "correctAnswer": "false"
+    },
+    {
+      "id": 9,
+      "type": "fill-blank",
+      "question": "Computers are available for ______ hour sessions.",
+      "correctAnswer": "one"
+    },
+    {
+      "id": 10,
+      "type": "multiple-choice",
+      "question": "What is required to borrow books?",
+      "options": ["A phone number", "Library card", "Email ID", "ID card"],
+      "correctAnswer": 1
+    }
+  ]
+}

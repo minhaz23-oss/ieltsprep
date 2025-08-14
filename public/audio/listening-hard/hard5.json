@@ -1,0 +1,17 @@
+{
+        "id": "hard-5",
+        "title": "Quantum Physics Experiment",
+        "transcript": "The double-slit experiment's contemporary iteration utilizing quantum entanglement principles has produced paradoxical results defying conventional interpretation. Photon behavior exhibits non-locality characteristics that transcend Einstein's relativity constraints, suggesting fundamental revisions to space-time conceptualizations. The measurement problem remains unresolved, with decoherence theory failing to adequately explain observed phenomena. Dr. Singh's apparatus demonstrates quantum superposition persistence at macroscopic scales previously thought impossible. These findings potentially revolutionize quantum computing applications while raising profound philosophical questions about the nature of reality and consciousness's role in physical processes.",
+        "questions": [
+            {"id": 1, "type": "multiple-choice", "question": "Which principle is used in the new double-slit experiment?", "options": ["Relativity", "Quantum entanglement", "Wave theory", "Thermodynamics"], "correctAnswer": 1},
+            {"id": 2, "type": "fill-blank", "question": "Photon behavior exhibits ________ characteristics.", "correctAnswer": "non-locality"},
+            {"id": 3, "type": "true-false", "question": "The results align with Einstein's relativity.", "correctAnswer": "false"},
+            {"id": 4, "type": "fill-blank", "question": "The unresolved issue in quantum physics is known as the ________ problem.", "correctAnswer": "measurement"},
+            {"id": 5, "type": "multiple-choice", "question": "Which theory fails to explain the observed results?", "options": ["Quantum gravity", "String theory", "Decoherence theory", "Probability theory"], "correctAnswer": 2},
+            {"id": 6, "type": "true-false", "question": "Dr. Singh’s setup shows quantum superposition at macroscopic levels.", "correctAnswer": "true"},
+            {"id": 7, "type": "fill-blank", "question": "The findings may revolutionize ________ computing applications.", "correctAnswer": "quantum"},
+            {"id": 8, "type": "true-false", "question": "The nature of reality is questioned in the conclusion.", "correctAnswer": "true"},
+            {"id": 9, "type": "multiple-choice", "question": "Whose name is mentioned in relation to the apparatus?", "options": ["Dr. Singh", "Dr. Liu", "Dr. Thompson", "Dr. Adams"], "correctAnswer": 0},
+            {"id": 10, "type": "fill-blank", "question": "The experiment utilizes the ________-slit setup.", "correctAnswer": "double"}
+        ]
+    }

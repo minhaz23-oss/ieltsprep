@@ -1,0 +1,71 @@
+{
+  "id": "easy-2",
+  "title": "Weather Forecast",
+  "difficulty": "easy",
+  "transcript": "Good morning, this is your local weather report. Today will be mostly sunny with temperatures reaching twenty-two degrees Celsius. There will be light winds from the east at fifteen kilometers per hour. Tonight, expect clear skies with temperatures dropping to eight degrees. Tomorrow, clouds will increase during the morning, and we expect light rain to begin around 2 PM. The rain will continue through the evening with temperatures staying around sixteen degrees.",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "What is the weather like today?",
+      "options": ["Rainy", "Cloudy", "Sunny", "Windy"],
+      "correctAnswer": 2
+    },
+    {
+      "id": 2,
+      "type": "fill-blank",
+      "question": "Today's temperature will reach ______ degrees Celsius.",
+      "correctAnswer": "twenty-two"
+    },
+    {
+      "id": 3,
+      "type": "true-false",
+      "question": "The wind is coming from the west.",
+      "correctAnswer": "false"
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "question": "What is the wind speed mentioned?",
+      "options": ["10 km/h", "15 km/h", "20 km/h", "25 km/h"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 5,
+      "type": "fill-blank",
+      "question": "Tonight, the temperature will drop to ______ degrees.",
+      "correctAnswer": "eight"
+    },
+    {
+      "id": 6,
+      "type": "true-false",
+      "question": "Rain is expected in the morning tomorrow.",
+      "correctAnswer": "false"
+    },
+    {
+      "id": 7,
+      "type": "fill-blank",
+      "question": "Rain is expected to begin around ______ PM tomorrow.",
+      "correctAnswer": "2"
+    },
+    {
+      "id": 8,
+      "type": "true-false",
+      "question": "The evening temperature tomorrow will be around sixteen degrees.",
+      "correctAnswer": "true"
+    },
+    {
+      "id": 9,
+      "type": "multiple-choice",
+      "question": "How is the sky expected to be tonight?",
+      "options": ["Cloudy", "Stormy", "Clear", "Snowy"],
+      "correctAnswer": 2
+    },
+    {
+      "id": 10,
+      "type": "fill-blank",
+      "question": "Clouds will increase during the ______.",
+      "correctAnswer": "morning"
+    }
+  ]
+}

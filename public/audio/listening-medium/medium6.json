@@ -1,0 +1,61 @@
+{
+        "id": "medium-6",
+        "title": "Community Garden Project",
+        "difficulty": "medium",
+        "transcript": "The Riverside Community Center is establishing a new organic garden project on the vacant lot adjacent to the main building. The initiative aims to promote sustainable living while providing fresh produce for local food banks. Plot rental costs forty dollars annually, with additional fees of fifteen dollars for water access and ten dollars for composting facilities. The garden will feature twenty-four individual plots, each measuring four meters by three meters, plus shared tool storage and a greenhouse. Orientation sessions are mandatory for all participants and will be held every Saturday morning at 10 AM throughout September. Experienced gardeners will mentor newcomers, and monthly workshops will cover topics like pest management, seasonal planting, and harvest preservation techniques. Applications are available at the community center office or online.",
+        "questions": [
+            {
+                "id": 1, "type": "fill-blank",
+                "question": "Annual plot rental costs ______ dollars.",
+                "correctAnswer": "forty"
+            },
+            {
+                "id": 2, "type": "multiple-choice",
+                "question": "Where is the garden located?",
+                "options": ["On the roof", "Next to the community center", "In the park", "Behind the school"],
+                "correctAnswer": 1
+            },
+            {
+                "id": 3, "type": "true-false",
+                "question": "There are 20 individual plots available.",
+                "correctAnswer": "false"
+            },
+            {
+                "id": 4, "type": "fill-blank",
+                "question": "Orientation is held at 10 AM on ______.",
+                "correctAnswer": "Saturday"
+            },
+            {
+                "id": 5, "type": "multiple-choice",
+                "question": "Which of the following is a workshop topic?",
+                "options": ["Soil chemistry", "Harvest preservation", "Urban planning", "Tool making"],
+                "correctAnswer": 1
+            },
+            {
+                "id": 6, "type": "true-false",
+                "question": "Mentorship is provided by experienced gardeners.",
+                "correctAnswer": "true"
+            },
+            {
+                "id": 7, "type": "fill-blank",
+                "question": "Water access costs ______ dollars.",
+                "correctAnswer": "fifteen"
+            },
+            {
+                "id": 8, "type": "multiple-choice",
+                "question": "What is the size of each plot?",
+                "options": ["3x3", "4x4", "4x3", "5x2"],
+                "correctAnswer": 2
+            },
+            {
+                "id": 9, "type": "true-false",
+                "question": "Applications must be submitted in person only.",
+                "correctAnswer": "false"
+            },
+            {
+                "id": 10, "type": "fill-blank",
+                "question": "Additional composting fee is ______ dollars.",
+                "correctAnswer": "ten"
+            }
+        ]
+    }

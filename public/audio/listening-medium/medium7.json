@@ -1,0 +1,61 @@
+ {
+        "id": "medium-7",
+        "title": "Technology Skills Workshop Series",
+        "difficulty": "medium",
+        "transcript": "The Public Library's Digital Literacy Program offers a comprehensive six-week workshop series designed for adults over fifty. Sessions cover essential computer skills including internet navigation, email management, social media basics, and online banking security. Classes are held every Tuesday and Thursday from 2 to 4 PM in the library's computer lab, which accommodates sixteen participants per session. The program is entirely free, funded by a government grant for senior education initiatives. Participants must attend at least five of the six sessions to receive a completion certificate. Registration opens on the first Monday of each month and typically fills within forty-eight hours due to high demand. Additional support is available through one-on-one tutoring sessions scheduled by appointment.",
+        "questions": [
+            {
+                "id": 1, "type": "fill-blank",
+                "question": "The workshop series is ______ weeks long.",
+                "correctAnswer": "six"
+            },
+            {
+                "id": 2, "type": "multiple-choice",
+                "question": "What age group is the program designed for?",
+                "options": ["Under 30", "30–50", "Over 50", "All ages"],
+                "correctAnswer": 2
+            },
+            {
+                "id": 3, "type": "true-false",
+                "question": "Each session lasts three hours.",
+                "correctAnswer": "false"
+            },
+            {
+                "id": 4, "type": "fill-blank",
+                "question": "Each session can accommodate ______ participants.",
+                "correctAnswer": "sixteen"
+            },
+            {
+                "id": 5, "type": "multiple-choice",
+                "question": "Which topic is NOT covered?",
+                "options": ["Social media", "Online shopping", "Online banking", "Email management"],
+                "correctAnswer": 1
+            },
+            {
+                "id": 6, "type": "true-false",
+                "question": "The program is free of charge.",
+                "correctAnswer": "true"
+            },
+            {
+                "id": 7, "type": "fill-blank",
+                "question": "Participants must attend at least ______ sessions for a certificate.",
+                "correctAnswer": "five"
+            },
+            {
+                "id": 8, "type": "multiple-choice",
+                "question": "When does registration open?",
+                "options": ["First Monday", "First Tuesday", "Last Friday", "Second Thursday"],
+                "correctAnswer": 0
+            },
+            {
+                "id": 9, "type": "true-false",
+                "question": "Demand is low for this program.",
+                "correctAnswer": "false"
+            },
+            {
+                "id": 10, "type": "fill-blank",
+                "question": "Extra support is provided via ______ tutoring.",
+                "correctAnswer": "one-on-one"
+            }
+        ]
+    }

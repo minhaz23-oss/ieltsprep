@@ -1,0 +1,72 @@
+{
+  "id": "hard-2",
+  "title": "Economic Policy Analysis",
+  "difficulty": "hard",
+  "transcript": "The Federal Reserve's unprecedented monetary intervention has precipitated unintended consequences across multiple sectors. Quantitative easing measures, initially designed to stimulate aggregate demand, have paradoxically exacerbated income inequality disparities. Asset price inflation has disproportionately benefited high-net-worth individuals while eroding purchasing power among middle-income demographics. Furthermore, the velocity of money has declined precipitously, undermining the efficacy of traditional transmission mechanisms. Policymakers must reconsider their theoretical frameworks, particularly regarding liquidity trap dynamics and their long-term ramifications for macroeconomic stability.",
+  "questions": [
+    {
+      "id": 1,
+      "type": "fill-blank",
+      "question": "The Federal Reserve's ______ monetary intervention has precipitated unintended consequences.",
+      "correctAnswer": "unprecedented"
+    },
+    {
+      "id": 2,
+      "type": "multiple-choice",
+      "question": "What were quantitative easing measures initially designed to do?",
+      "options": ["Reduce inflation", "Stimulate aggregate demand", "Increase interest rates", "Control money supply"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 3,
+      "type": "true-false",
+      "question": "Quantitative easing has reduced income inequality disparities.",
+      "correctAnswer": "false"
+    },
+    {
+      "id": 4,
+      "type": "fill-blank",
+      "question": "Asset price inflation has disproportionately benefited ______-net-worth individuals.",
+      "correctAnswer": "high"
+    },
+    {
+      "id": 5,
+      "type": "multiple-choice",
+      "question": "What has happened to purchasing power among middle-income demographics?",
+      "options": ["It has increased", "It has remained stable", "It has been eroded", "It has fluctuated wildly"],
+      "correctAnswer": 2
+    },
+    {
+      "id": 6,
+      "type": "true-false",
+      "question": "The velocity of money has increased significantly.",
+      "correctAnswer": "false"
+    },
+    {
+      "id": 7,
+      "type": "fill-blank",
+      "question": "The decline in money velocity has undermined the efficacy of traditional ______ mechanisms.",
+      "correctAnswer": "transmission"
+    },
+    {
+      "id": 8,
+      "type": "multiple-choice",
+      "question": "What must policymakers reconsider according to the text?",
+      "options": ["Tax policies", "Theoretical frameworks", "International trade agreements", "Banking regulations"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 9,
+      "type": "true-false",
+      "question": "The text mentions liquidity trap dynamics and their long-term ramifications.",
+      "correctAnswer": "true"
+    },
+    {
+      "id": 10,
+      "type": "multiple-choice",
+      "question": "The unintended consequences have affected:",
+      "options": ["Only the banking sector", "Multiple sectors", "Only high-income individuals", "International markets only"],
+      "correctAnswer": 1
+    }
+  ]
+}

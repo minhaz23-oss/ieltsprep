@@ -1,0 +1,70 @@
+{
+  "id": "easy-5",
+  "title": "Bus Schedule Announcement",
+  "difficulty": "easy",
+  "transcript": "Attention passengers, due to road construction on Main Street, Bus Route 45 will be delayed by approximately fifteen minutes today. The bus normally arrives at the shopping center at 10:30 AM, but today it will arrive at 10:45 AM. All other stops will also be fifteen minutes late. This delay will continue for the rest of this week. We apologize for any inconvenience. For alternative routes, please check our website or call customer service at 555-0123.",
+  "questions": [
+    {
+      "id": 1,
+      "type": "true-false",
+      "question": "The bus delay is due to road construction.",
+      "correctAnswer": "true"
+    },
+    {
+      "id": 2,
+      "type": "fill-blank",
+      "question": "The affected bus route is Route ______.",
+      "correctAnswer": "45"
+    },
+    {
+      "id": 3,
+      "type": "multiple-choice",
+      "question": "At what time will the bus arrive at the shopping center today?",
+      "options": ["10:15 AM", "10:30 AM", "10:45 AM", "11:00 AM"],
+      "correctAnswer": 2
+    },
+    {
+      "id": 4,
+      "type": "fill-blank",
+      "question": "The bus normally arrives at the shopping center at ______ AM.",
+      "correctAnswer": "10:30"
+    },
+    {
+      "id": 5,
+      "type": "true-false",
+      "question": "Only one stop is affected by the delay.",
+      "correctAnswer": "false"
+    },
+    {
+      "id": 6,
+      "type": "fill-blank",
+      "question": "The delay will last for the rest of this ______.",
+      "correctAnswer": "week"
+    },
+    {
+      "id": 7,
+      "type": "multiple-choice",
+      "question": "What should passengers do for alternative routes?",
+      "options": ["Visit a help desk", "Check website or call", "Ask the driver", "Wait at the station"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 8,
+      "type": "fill-blank",
+      "question": "Customer service phone number is ______.",
+      "correctAnswer": "555-0123"
+    },
+    {
+      "id": 9,
+      "type": "true-false",
+      "question": "The announcement is for air passengers.",
+      "correctAnswer": "false"
+    },
+    {
+      "id": 10,
+      "type": "true-false",
+      "question": "The company apologized for the inconvenience.",
+      "correctAnswer": "true"
+    }
+  ]
+}

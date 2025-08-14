@@ -118,8 +118,8 @@ const ReadingTestPage = () => {
         if (isCorrect) correct++;
       } else if (typeof correctAnswer === 'string' && typeof userAnswer === 'string') {
         if (question.type.includes('multiple') || question.type.includes('mcq')) {
-          // For multiple choice questions
-          if (parseInt(userAnswer) === correctAnswer) correct++;
+          // For multiple choice questions - compare as strings
+          if (userAnswer === correctAnswer) correct++;
         } else {
           // For text-based answers
           if (userAnswer.toLowerCase().trim() === correctAnswer.toLowerCase().trim()) correct++;
@@ -276,7 +276,7 @@ const ReadingTestPage = () => {
         );
       } else if (typeof correctAnswer === 'string' && typeof userAnswer === 'string') {
         if (question.type.includes('multiple') || question.type.includes('mcq')) {
-          return parseInt(userAnswer) === parseInt(correctAnswer);
+          return userAnswer === correctAnswer;
         } else {
           return userAnswer.toLowerCase().trim() === correctAnswer.toLowerCase().trim();
         }

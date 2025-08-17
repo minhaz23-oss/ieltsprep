@@ -25,6 +25,14 @@ body {
   @apply px-6 py-2 border-2 border-primary backdrop-blur-md rounded-md text-primary font-bold cursor-pointer hover:bg-primary  hover:text-white transition-colors duration-300;
 }
 
+.btn-lg {
+  @apply px-8 py-3 text-lg;
+}
+
+.btn-danger {
+  @apply px-6 py-2 bg-red-600 hover:bg-red-700 cursor-pointer font-bold rounded-md text-white;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

@@ -1,89 +1,189 @@
 'use client'
 
-import React, { useState } from 'react';
-import VapiSpeakingSession from '@/components/speaking/VapiSpeakingSession';
-import SpeakingTestSession from '@/components/speaking/SpeakingTestSession';
+import { Button } from '@/components/ui/button'
+import { ArrowLeft, StopCircle, Loader2 } from 'lucide-react'
+import Link from 'next/link'
+import React, { useState, useEffect } from 'react'
+import { vapi } from '@/lib/vapi.sdk'
 
-export default function SpeakingPage() {
-  const [sessionId] = useState(`session_${Date.now()}`);
-  const [useVapi, setUseVapi] = useState(true);
-  const [sessionResults, setSessionResults] = useState<any>(null);
+const SpeakingPage = () => {
+  const [isSessionActive, setIsSessionActive] = useState(false)
+  const [callStatus, setCallStatus] = useState('idle')
+  const [transcript, setTranscript] = useState('')
 
-  const handleSessionEnd = (results: any) => {
-    setSessionResults(results);
-    console.log('Session ended with results:', results);
-  };
+  const startSession = () => {
+    setIsSessionActive(true)
+    setCallStatus('connecting')
+    try {
+      const firstMessage =
+        "Let's begin the IELTS Speaking test. I'll guide you through the parts and ask questions one by one."
+      console.log('Assistant:', firstMessage)
+      vapi.start({ firstMessage })
+    } catch (error) {
+      console.error('Failed to start Vapi session:', error)
+      setCallStatus('idle')
+      setIsSessionActive(false)
+    }
+  }
+
+  const stopSession = () => {
+    vapi.stop()
+  }
+
+  useEffect(() => {
+    const handleCallStart = () => setCallStatus('active')
+    const handleCallEnd = () => {
+      setCallStatus('ended')
+      setIsSessionActive(false)
+      setTranscript('')
+    }
+    const handleMessage = (data: any) => {
+      try {
+        if (data?.type === 'transcript') {
+          if (typeof data.transcript === 'string' && data.transcript.trim()) {
+            console.log('User:', data.transcript)
+          }
+          setTranscript(data.transcript || '')
+          return
+        }
+        const role = data?.message?.role ?? data?.role
+        const text =
+          data?.message?.content ??
+          data?.message?.text ??
+          data?.content ??
+          data?.text
+        if (role === 'assistant' && typeof text === 'string' && text.trim()) {
+          console.log('Assistant:', text)
+        }
+      } catch (e) {
+        // noop
+      }
+    }
+
+    vapi.on('call-start', handleCallStart)
+    vapi.on('call-end', handleCallEnd)
+    vapi.on('message', handleMessage)
+
+    return () => {
+      vapi.off('call-start', handleCallStart)
+      vapi.off('call-end', handleCallEnd)
+      vapi.off('message', handleMessage)
+    }
+  }, [])
 
   return (
-    <div className="min-h-[70vh] px-6 py-10">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-2xl font-bold mb-2">IELTS Speaking Practice</h1>
-        <p className="text-gray-600 mb-6">
-          Choose your preferred speaking test mode. VAPI mode provides real-time AI conversation, while Practice mode offers structured questions.
+    <div className='container mx-auto px-4 py-8'>
+      <Link
+        href='/exercise'
+        className='mb-4 flex items-center text-gray-600 hover:underline dark:text-gray-400'
+      >
+        <ArrowLeft className='mr-2 h-4 w-4' />
+        <span>Back to Exercises</span>
+      </Link>
+
+      <header className='mb-12 text-center'>
+        <h1 className='text-4xl font-bold'>IELTS Speaking Practice</h1>
+        <p className='mt-2 text-lg text-gray-600 dark:text-gray-400'>
+          Hone your speaking skills for success.
         </p>
+      </header>
 
-        {/* Mode Selection */}
-        <div className="mb-6">
-          <div className="flex gap-4 mb-4">
-            <button
-              onClick={() => setUseVapi(true)}
-              className={`px-4 py-2 rounded-lg font-medium ${
-                useVapi 
-                  ? 'bg-blue-600 text-white' 
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-              }`}
+      <main className='mx-auto mb-12 w-full max-w-3xl rounded-2xl bg-white p-8 shadow-lg dark:bg-gray-800'>
+        {!isSessionActive ? (
+          <div className='text-center'>
+            <h2 className='mb-4 text-2xl font-bold'>Ready to Practice?</h2>
+            <p className='mb-8 text-gray-600 dark:text-gray-400'>
+              Start the test and the examiner will ask questions automatically.
+            </p>
+            <Button
+              onClick={startSession}
+              size='lg'
+              disabled={callStatus === 'connecting'}
             >
-              VAPI AI Conversation
-            </button>
-            <button
-              onClick={() => setUseVapi(false)}
-              className={`px-4 py-2 rounded-lg font-medium ${
-                !useVapi 
-                  ? 'bg-blue-600 text-white' 
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-              }`}
-            >
-              Practice Mode
-            </button>
+              {callStatus === 'connecting' ? (
+                <>
+                  <Loader2 className='mr-2 h-6 w-6 animate-spin' />
+                  Connecting...
+                </>
+              ) : (
+                'Start Speaking Test'
+              )}
+            </Button>
           </div>
-          
-          <div className="text-sm text-gray-600">
-            {useVapi ? (
-              <p>Real-time conversation with AI examiner using VAPI. The AI will ask questions and guide you through all three parts of the IELTS speaking test.</p>
-            ) : (
-              <p>Structured practice with predefined questions and timers. Record your responses and get AI-powered feedback.</p>
-            )}
-          </div>
-        </div>
-
-        {/* Session Component */}
-        {useVapi ? (
-          <VapiSpeakingSession
-            sessionId={sessionId}
-            onSessionEnd={handleSessionEnd}
-          />
         ) : (
-          <SpeakingTestSession
-            sessionId={sessionId}
-            onSessionEnd={handleSessionEnd}
-          />
-        )}
-
-        {/* Session Results Summary */}
-        {sessionResults && (
-          <div className="mt-8 p-6 bg-white rounded-xl shadow-lg">
-            <h2 className="text-xl font-bold mb-4 text-center">Session Summary</h2>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">
-                Overall Band: {sessionResults.overallBand?.toFixed(1) || 'N/A'}
-              </div>
-              <p className="text-gray-600">
-                {sessionResults.responses?.length || 0} questions evaluated
+          <div className='text-center'>
+            <div className='my-8 min-h-[100px] rounded-lg border bg-gray-50 p-4 dark:bg-gray-700'>
+              <p className='text-left text-gray-800 dark:text-gray-200'>
+                {transcript}
               </p>
+            </div>
+            <div className='mt-6 flex items-center justify-center space-x-4'>
+              <Button
+                onClick={stopSession}
+                variant='destructive'
+                className='rounded-full p-6'
+              >
+                <StopCircle className='h-10 w-10' />
+              </Button>
             </div>
           </div>
         )}
-      </div>
+      </main>
+
+      <section className='mt-16'>
+        <h2 className='mb-8 text-center text-3xl font-bold'>
+          Tips for the IELTS Speaking Test
+        </h2>
+        <div className='grid gap-8 text-left md:grid-cols-3'>
+          <div className='rounded-lg border border-gray-200 bg-gray-100 p-6 dark:border-gray-700 dark:bg-gray-900/40'>
+            <h3 className='mb-3 text-xl font-bold'>Part 1: Interview</h3>
+            <p className='text-gray-600 dark:text-gray-400'>
+              Answer with 2-3 sentences. Don't give short, one-word answers. Provide
+              reasons and examples to extend your responses.
+            </p>
+          </div>
+          <div className='rounded-lg border border-gray-200 bg-gray-100 p-6 dark:border-gray-700 dark:bg-gray-900/40'>
+            <h3 className='mb-3 text-xl font-bold'>Part 2: Long Turn</h3>
+            <p className='text-gray-600 dark:text-gray-400'>
+              You have 1 minute to prepare. Use the cue card to structure your talk. Aim
+              to speak for the full 2 minutes.
+            </p>
+          </div>
+          <div className='rounded-lg border border-gray-200 bg-gray-100 p-6 dark:border-gray-700 dark:bg-gray-900/40'>
+            <h3 className='mb-3 text-xl font-bold'>Part 3: Discussion</h3>
+            <p className='text-gray-600 dark:text-gray-400'>
+              Give longer, more detailed answers. Discuss the topics in a more abstract
+              and general way. Show your ability to analyze and speculate.
+            </p>
+          </div>
+        </div>
+        <div className='mt-8 rounded-lg border border-blue-200 bg-blue-50 p-8 dark:border-blue-800 dark:bg-blue-900/20'>
+          <h3 className='mb-4 text-2xl font-bold'>General Advice</h3>
+          <ul className='list-disc space-y-2 pl-5 text-gray-700 dark:text-gray-300'>
+            <li>
+              Speak fluently and spontaneously. It's okay to correct yourself, but don't
+              memorize answers.
+            </li>
+            <li>
+              Use a wide range of vocabulary (lexical resource) and grammatical
+              structures.
+            </li>
+            <li>
+              Pay close attention to your pronunciation, intonation, and rhythm. Be clear
+              and easy to understand.
+            </li>
+            <li>
+              Don't be afraid to ask for clarification if you don't understand a
+              question. It's better than giving an irrelevant answer.
+            </li>
+            <li>
+              Practice speaking about a wide variety of topics to build your confidence.
+            </li>
+          </ul>
+        </div>
+      </section>
     </div>
-  );
+  )
 }
+
+export default SpeakingPage

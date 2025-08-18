@@ -1,0 +1,260 @@
+{
+  "part1": {
+    "title": "Introduction and General Questions",
+    "duration": 2,
+    "description": "The examiner will introduce themselves and ask you to introduce yourself. Then they'll ask general questions about familiar topics.",
+    "introduction": {
+      "examiner_intro": "Good morning/afternoon. My name is [Examiner Name]. Can you tell me your full name please?",
+      "follow_up_questions": [
+        "Can I see your identification please?",
+        "Where are you from?",
+        "Do you work or are you a student?"
+      ]
+    },
+    "topics": [
+      {
+        "topic": "Home/Accommodation",
+        "questions": [
+          "Do you live in a house or an apartment?",
+          "Can you describe your home?",
+          "What do you like most about your home?",
+          "What would you like to change about your home?"
+        ]
+      },
+      {
+        "topic": "Work/Studies",
+        "questions": [
+          "What do you do for work?",
+          "Do you enjoy your job? Why?",
+          "What are your responsibilities at work?",
+          "Do you think you'll continue doing this job in the future?"
+        ]
+      },
+      {
+        "topic": "Hometown",
+        "questions": [
+          "Where is your hometown?",
+          "What do you like about your hometown?",
+          "Has your hometown changed much over the years?",
+          "Would you recommend your hometown to tourists?"
+        ]
+      }
+    ]
+  },
+  "part2": {
+    "title": "Cue Card (Individual Long Turn)",
+    "duration": 3,
+    "description": "You will be given a task card with a topic. You have 1 minute to prepare and then speak for 1-2 minutes.",
+    "prep_time": 60,
+    "speaking_time": 120,
+    "topics": [
+      {
+        "id": "person_admire",
+        "title": "Describe a person you admire",
+        "cue_card": "Describe a person you admire.\n\nYou should say:\n• Who this person is\n• How you know them\n• What they have achieved\n• And explain why you admire them",
+        "follow_up_questions": [
+          "Do you think this person is a good role model?",
+          "What qualities make someone admirable?",
+          "Do you think young people today have good role models?",
+          "How important is it to have someone to look up to?",
+          "What can we learn from people we admire?",
+          "Do you think celebrities make good role models?",
+          "How has this person influenced your life?"
+        ]
+      },
+      {
+        "id": "memorable_trip",
+        "title": "Describe a memorable trip you took",
+        "cue_card": "Describe a memorable trip you took.\n\nYou should say:\n• Where you went\n• When you went there\n• Who you went with\n• And explain why this trip was memorable",
+        "follow_up_questions": [
+          "Do you prefer traveling alone or with others?",
+          "What makes a trip memorable?",
+          "How has traveling changed in recent years?",
+          "What are the benefits of traveling?",
+          "Do you think people travel too much nowadays?",
+          "How important is it to experience different cultures?",
+          "What advice would you give to first-time travelers?"
+        ]
+      },
+      {
+        "id": "useful_skill",
+        "title": "Describe a skill you learned recently",
+        "cue_card": "Describe a skill you learned recently.\n\nYou should say:\n• What the skill is\n• How you learned it\n• Why you decided to learn it\n• And explain how this skill has helped you",
+        "follow_up_questions": [
+          "What skills are most important in today's world?",
+          "How do you think people will learn skills in the future?",
+          "Is it better to learn skills online or in person?",
+          "What motivates people to learn new skills?",
+          "Should schools teach more practical skills?",
+          "How important is continuous learning in modern life?",
+          "What challenges do people face when learning new skills?"
+        ]
+      },
+      {
+        "id": "environmental_problem",
+        "title": "Describe an environmental problem in your area",
+        "cue_card": "Describe an environmental problem in your area.\n\nYou should say:\n• What the problem is\n• How long it has existed\n• What causes this problem\n• And explain what could be done to solve it",
+        "follow_up_questions": [
+          "What are the most serious environmental problems today?",
+          "How can individuals help protect the environment?",
+          "Should governments do more about environmental problems?",
+          "Do you think people are becoming more environmentally conscious?",
+          "How might environmental problems affect future generations?",
+          "What role should businesses play in environmental protection?",
+          "Is it possible to balance economic growth with environmental protection?"
+        ]
+      },
+      {
+        "id": "favorite_book",
+        "title": "Describe a book you really enjoyed reading",
+        "cue_card": "Describe a book you really enjoyed reading.\n\nYou should say:\n• What the book was about\n• When you read it\n• Why you decided to read it\n• And explain why you enjoyed it so much",
+        "follow_up_questions": [
+          "Do you think reading books is still important today?",
+          "How has technology changed the way people read?",
+          "What types of books are popular in your country?",
+          "Should children be encouraged to read more?",
+          "Do you prefer physical books or e-books?",
+          "How do books compare to movies as entertainment?",
+          "What makes a book memorable?"
+        ]
+      },
+      {
+        "id": "traditional_festival",
+        "title": "Describe a traditional festival in your country",
+        "cue_card": "Describe a traditional festival in your country.\n\nYou should say:\n• What the festival is\n• When it takes place\n• How people celebrate it\n• And explain why this festival is important",
+        "follow_up_questions": [
+          "How important are traditional festivals in modern society?",
+          "Do you think traditional festivals are changing?",
+          "Should governments support traditional festivals?",
+          "How do festivals bring communities together?",
+          "Are international festivals becoming more popular than traditional ones?",
+          "What can festivals teach us about culture?",
+          "How might festivals evolve in the future?"
+        ]
+      }
+    ]
+  },
+  "part3": {
+    "title": "Discussion (Two-way Discussion)",
+    "duration": 2,
+    "description": "The examiner will ask more abstract questions related to the Part 2 topic, encouraging detailed discussion and opinion sharing.",
+    "discussion_themes": [
+      {
+        "theme": "Role Models and Inspiration",
+        "related_to": "person_admire",
+        "questions": [
+          "What qualities do you think make someone a good leader?",
+          "How has the concept of heroism changed in modern times?",
+          "Do you think social media influences who young people admire?",
+          "Should famous people have a responsibility to be good role models?",
+          "How important is it for children to have heroes to look up to?",
+          "What's the difference between admiring someone and being inspired by them?",
+          "Do you think people today are more individualistic than in the past?"
+        ]
+      },
+      {
+        "theme": "Travel and Cultural Exchange",
+        "related_to": "memorable_trip",
+        "questions": [
+          "How has tourism affected traditional cultures around the world?",
+          "Do you think virtual reality could replace actual travel in the future?",
+          "What are the environmental implications of mass tourism?",
+          "How important is it to preserve local cultures in tourist destinations?",
+          "Do you think traveling makes people more tolerant and understanding?",
+          "What responsibilities do tourists have when visiting other countries?",
+          "How might climate change affect the tourism industry?"
+        ]
+      },
+      {
+        "theme": "Learning and Skill Development",
+        "related_to": "useful_skill",
+        "questions": [
+          "Do you think artificial intelligence will change how we learn?",
+          "How important is practical experience compared to theoretical knowledge?",
+          "Should education systems focus more on creativity or technical skills?",
+          "What role should employers play in training their workers?",
+          "Do you think people are becoming too dependent on technology?",
+          "How might the job market change in the next 20 years?",
+          "Is it realistic to expect people to keep learning throughout their careers?"
+        ]
+      },
+      {
+        "theme": "Environment and Sustainability",
+        "related_to": "environmental_problem",
+        "questions": [
+          "Do you think individual actions can really make a difference to global problems?",
+          "How can we balance economic development with environmental protection?",
+          "What role should international cooperation play in solving environmental issues?",
+          "Do you think future generations will judge us harshly for our environmental impact?",
+          "How effective are government policies in changing people's behavior?",
+          "Should environmental education be mandatory in schools?",
+          "What technological solutions might help solve environmental problems?"
+        ]
+      },
+      {
+        "theme": "Literature and Digital Media",
+        "related_to": "favorite_book",
+        "questions": [
+          "How has digital technology changed the publishing industry?",
+          "Do you think people's attention spans are getting shorter?",
+          "Should schools still require students to read classic literature?",
+          "How important is reading for developing critical thinking skills?",
+          "Do you think audiobooks and e-books are as beneficial as physical books?",
+          "How might storytelling evolve in the digital age?",
+          "What impact does reading have on society as a whole?"
+        ]
+      },
+      {
+        "theme": "Culture and Tradition",
+        "related_to": "traditional_festival",
+        "questions": [
+          "How can societies maintain their traditions while embracing modernization?",
+          "Do you think globalization is making cultures more similar?",
+          "What's the difference between preserving culture and being stuck in the past?",
+          "How important is it for immigrants to maintain their cultural traditions?",
+          "Should governments fund cultural preservation programs?",
+          "How do festivals and celebrations contribute to national identity?",
+          "Do you think traditional cultures are under threat in the modern world?"
+        ]
+      }
+    ]
+  },
+  "scoring_criteria": {
+    "fluency_coherence": {
+      "description": "Fluency and Coherence",
+      "bands": {
+        "9": "Speaks fluently with only very occasional repetition or self-correction",
+        "7": "Speaks at length without noticeable effort with some hesitation",
+        "5": "Usually maintains flow of speech but hesitation may indicate uncertainty",
+        "3": "Speaks with long pauses and limited ability to link ideas"
+      }
+    },
+    "lexical_resource": {
+      "description": "Lexical Resource (Vocabulary)",
+      "bands": {
+        "9": "Uses vocabulary with full flexibility and precise usage",
+        "7": "Uses vocabulary resource flexibly with some inappropriate choices",
+        "5": "Manages to talk about familiar topics but limited flexibility",
+        "3": "Uses simple vocabulary with frequent repetition"
+      }
+    },
+    "grammatical_range": {
+      "description": "Grammatical Range and Accuracy",
+      "bands": {
+        "9": "Uses wide range of structures with full flexibility and accuracy",
+        "7": "Uses range of complex structures with good flexibility",
+        "5": "Shows limited range with frequent errors in complex structures",
+        "3": "Attempts basic sentence forms with frequent errors"
+      }
+    },
+    "pronunciation": {
+      "description": "Pronunciation",
+      "bands": {
+        "9": "Uses wide range of pronunciation features with precision",
+        "7": "Shows all positive features with occasional lapses",
+        "5": "Shows some effective use of features but not sustained",
+        "3": "Shows some effective use of features but limited range"
+      }
+    }
+  }
+}

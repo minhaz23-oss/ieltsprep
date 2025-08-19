@@ -1,85 +1,28 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { ArrowLeft, StopCircle, Loader2, Play, Pause, SkipForward, Clock, Mic } from 'lucide-react'
+import { ArrowLeft, StopCircle, Loader2, Mic, FileText } from 'lucide-react'
 import Link from 'next/link'
-import React, { useState, useEffect, useCallback, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { vapi } from '@/lib/vapi.sdk'
-import { speakingTestManager } from '@/lib/actions/speaking.actions'
-import { SpeakingSession, VapiMessage, SpeakingFeedback } from '@/types/speaking'
+import { VapiMessage, SpeakingSession, ConversationMessage } from '@/types/speaking'
+import { speakingSessionManager, classifyMessageType, evaluateSpeakingSession } from '@/lib/actions/speaking.actions'
 
-type CallStatus = 'idle' | 'connecting' | 'active' | 'ended' | 'error'
-type TestPhase = 'intro' | 'part1' | 'part2-prep' | 'part2-speak' | 'part3' | 'completed' | 'feedback'
+type CallStatus = 'idle' | 'connecting' | 'active' | 'ended' | 'error' | 'evaluating' | 'evaluated'
 
 const SpeakingPage = () => {
   // Core state
-  const [session, setSession] = useState<SpeakingSession | null>(null)
   const [callStatus, setCallStatus] = useState<CallStatus>('idle')
-  const [testPhase, setTestPhase] = useState<TestPhase>('intro')
-  const [currentQuestion, setCurrentQuestion] = useState<string>('')
   const [transcript, setTranscript] = useState<string>('')
-  const [feedback, setFeedback] = useState<SpeakingFeedback | null>(null)
-  
-  // Timer state
-  const [timeRemaining, setTimeRemaining] = useState<number>(0)
-  const [isTimerActive, setIsTimerActive] = useState<boolean>(false)
-  const timerRef = useRef<NodeJS.Timeout | null>(null)
   
   // Error state
   const [error, setError] = useState<string>('')
   const [isLoading, setIsLoading] = useState<boolean>(false)
-
-  // Initialize timer
-  const startTimer = useCallback((seconds: number) => {
-    setTimeRemaining(seconds)
-    setIsTimerActive(true)
-    
-    if (timerRef.current) {
-      clearInterval(timerRef.current)
-    }
-    
-    timerRef.current = setInterval(() => {
-      setTimeRemaining((prev) => {
-        if (prev <= 1) {
-          setIsTimerActive(false)
-          if (testPhase === 'part2-prep') {
-            setTestPhase('part2-speak')
-            startTimer(120) // 2 minutes for speaking
-          } else if (testPhase === 'part2-speak') {
-            moveToNextQuestion()
-          }
-          return 0
-        }
-        return prev - 1
-      })
-    }, 1000)
-  }, [testPhase])
-
-  // Format time display
-  const formatTime = (seconds: number): string => {
-    const mins = Math.floor(seconds / 60)
-    const secs = seconds % 60
-    return `${mins}:${secs.toString().padStart(2, '0')}`
-  }
-
-  // Initialize speaking test
-  const initializeTest = useCallback(() => {
-    try {
-      const newSession = speakingTestManager.initializeSession()
-      setSession(newSession)
-      
-      // Start with introduction
-      const introMessage = speakingTestManager.getIntroductionMessage()
-      setCurrentQuestion(introMessage)
-      setTestPhase('intro')
-      
-      return newSession
-    } catch (err) {
-      setError('Failed to initialize speaking test')
-      console.error('Test initialization error:', err)
-      return null
-    }
-  }, [])
+  
+  // Session and conversation state
+  const [currentSession, setCurrentSession] = useState<SpeakingSession | null>(null)
+  const [conversationHistory, setConversationHistory] = useState<ConversationMessage[]>([])
+  const [isEvaluating, setIsEvaluating] = useState<boolean>(false)
 
   // Start VAPI session
   const startSession = async () => {
@@ -92,14 +35,24 @@ const SpeakingPage = () => {
     setError('')
     
     try {
-      const testSession = initializeTest()
-      if (!testSession) return
-
       setCallStatus('connecting')
       
-      const firstMessage = `Hello! Welcome to the IELTS Speaking test practice. I'm your examiner for today. ${currentQuestion}`
+      // Create new speaking session
+      const session = speakingSessionManager.createSession()
+      setCurrentSession(session)
+      setConversationHistory([])
       
-      await vapi.start({ 
+      // Simple welcome message - questions will be handled by VAPI system prompt
+      const firstMessage = `Hello! Welcome to the IELTS Speaking test practice. I'm your examiner for today. Let's begin with the speaking test.`
+      
+      // Add the first message to conversation history
+      speakingSessionManager.addMessage({
+        role: 'assistant',
+        content: firstMessage,
+        type: 'instruction'
+      })
+      
+      await vapi.start({
         firstMessage,
         transcriber: {
           provider: 'deepgram',
@@ -121,78 +74,67 @@ const SpeakingPage = () => {
   const stopSession = async () => {
     try {
       await vapi.stop()
-      if (timerRef.current) {
-        clearInterval(timerRef.current)
-        timerRef.current = null
-      }
-      setIsTimerActive(false)
+      
+      // End the speaking session
+      speakingSessionManager.endSession()
+      
+      // Trigger evaluation after a short delay
+      setTimeout(() => {
+        handleEvaluation()
+      }, 1000)
+      
     } catch (error) {
       console.error('Failed to stop session:', error)
     }
   }
 
-  // Move to next question
-  const moveToNextQuestion = useCallback(() => {
-    if (!session) return
+  // Handle evaluation of the speaking session
+  const handleEvaluation = async () => {
+    if (!currentSession || currentSession.messages.length < 2) {
+      setError('Session too short for evaluation. Please have a longer conversation.')
+      return
+    }
 
-    const hasNext = speakingTestManager.moveToNextQuestion()
-    const updatedSession = speakingTestManager.getCurrentSession()
-    
-    if (updatedSession) {
-      setSession({ ...updatedSession })
+    setIsEvaluating(true)
+    setCallStatus('evaluating')
+
+    try {
+      const evaluationRequest = speakingSessionManager.getEvaluationRequest()
+      if (!evaluationRequest) {
+        throw new Error('No session data available for evaluation')
+      }
+
+      const result = await evaluateSpeakingSession(evaluationRequest)
       
-      if (!hasNext) {
-        // Test completed
-        setTestPhase('completed')
-        const testFeedback = speakingTestManager.generateFeedback()
-        setFeedback(testFeedback)
-        stopSession()
-        return
-      }
-
-      const nextQuestion = speakingTestManager.getCurrentQuestion()
-      if (nextQuestion) {
-        setCurrentQuestion(nextQuestion)
-        
-        // Handle phase transitions
-        if (updatedSession.currentPart === 2 && testPhase !== 'part2-prep') {
-          setTestPhase('part2-prep')
-          startTimer(60) // 1 minute preparation
-        } else if (updatedSession.currentPart === 3) {
-          setTestPhase('part3')
-        } else if (updatedSession.currentPart === 1) {
-          setTestPhase('part1')
+      if (result.success && result.evaluation) {
+        // Update session with evaluation results
+        if (currentSession) {
+          currentSession.evaluation = result.evaluation
+          currentSession.status = 'evaluated'
+          setCurrentSession({ ...currentSession })
         }
+        setCallStatus('evaluated')
+      } else {
+        throw new Error(result.error || 'Evaluation failed')
       }
+    } catch (error) {
+      console.error('Evaluation error:', error)
+      setError(`Evaluation failed: ${error instanceof Error ? error.message : 'Unknown error'}`)
+      setCallStatus('ended')
+    } finally {
+      setIsEvaluating(false)
     }
-  }, [session, testPhase, startTimer])
-
-  // Skip to next question
-  const skipQuestion = () => {
-    if (transcript.trim()) {
-      speakingTestManager.recordResponse(currentQuestion, transcript)
-    }
-    moveToNextQuestion()
-    setTranscript('')
   }
 
   // Handle VAPI events
   useEffect(() => {
     const handleCallStart = () => {
       setCallStatus('active')
-      if (testPhase === 'intro') {
-        setTestPhase('part1')
-      }
     }
     
     const handleCallEnd = () => {
       setCallStatus('ended')
       setTranscript('')
-      if (timerRef.current) {
-        clearInterval(timerRef.current)
-        timerRef.current = null
-      }
-      setIsTimerActive(false)
     }
     
     const handleMessage = (data: VapiMessage) => {
@@ -201,6 +143,19 @@ const SpeakingPage = () => {
           if (typeof data.transcript === 'string' && data.transcript.trim()) {
             setTranscript(data.transcript)
             console.log('User:', data.transcript)
+            
+            // Add user message to conversation history
+            const messageType = classifyMessageType(data.transcript, 'user')
+            speakingSessionManager.addMessage({
+              role: 'user',
+              content: data.transcript,
+              type: messageType
+            })
+            
+            // Update conversation history state
+            if (currentSession) {
+              setConversationHistory([...speakingSessionManager.currentSession?.messages || []])
+            }
           }
           return
         }
@@ -210,6 +165,19 @@ const SpeakingPage = () => {
         
         if (role === 'assistant' && typeof text === 'string' && text.trim()) {
           console.log('Assistant:', text)
+          
+          // Add assistant message to conversation history
+          const messageType = classifyMessageType(text, 'assistant')
+          speakingSessionManager.addMessage({
+            role: 'assistant',
+            content: text,
+            type: messageType
+          })
+          
+          // Update conversation history state
+          if (currentSession) {
+            setConversationHistory([...speakingSessionManager.currentSession?.messages || []])
+          }
         }
       } catch (e) {
         console.error('Message handling error:', e)
@@ -237,20 +205,32 @@ const SpeakingPage = () => {
         vapi.off('error', handleError)
       }
     }
-  }, [testPhase])
+  }, [currentSession])
 
-  // Cleanup on unmount
+  // Load existing session on component mount
   useEffect(() => {
-    return () => {
-      if (timerRef.current) {
-        clearInterval(timerRef.current)
+    const existingSession = speakingSessionManager.loadSession()
+    if (existingSession && existingSession.status === 'completed') {
+      setCurrentSession(existingSession)
+      setConversationHistory(existingSession.messages)
+      if (existingSession.evaluation) {
+        setCallStatus('evaluated')
+      } else {
+        setCallStatus('ended')
       }
     }
   }, [])
 
-  // Get current part info
-  const currentPartInfo = session ? speakingTestManager.getCurrentPartInfo() : null
-  const testProgress = session ? speakingTestManager.getTestProgress() : { currentPart: 0, totalParts: 3, progress: 0 }
+  // Reset session function
+  const resetSession = () => {
+    speakingSessionManager.clearSession()
+    setCurrentSession(null)
+    setConversationHistory([])
+    setCallStatus('idle')
+    setTranscript('')
+    setError('')
+    setIsEvaluating(false)
+  }
 
   return (
     <div className='container mx-auto px-4 py-8 font-semibold'>
@@ -263,31 +243,10 @@ const SpeakingPage = () => {
       </Link>
 
       <header className='mb-8 text-center'>
-        <h1 className='text-4xl font-bold'>IELTS Speaking Practice</h1>
+        <h1 className='text-4xl font-bold'>IELTS <span className=" p-1 px-2 bg-primary rounded-md text-white -rotate-3 inline-block">Speaking</span> Practice</h1>
         <p className='mt-2 text-lg text-gray-600 dark:text-gray-400'>
-          Complete IELTS Speaking Test Simulation
+          AI-Powered IELTS Speaking Test Simulation
         </p>
-        
-        {session && (
-          <div className='mt-4'>
-            <div className='mx-auto max-w-md rounded-lg bg-blue-50 p-4 dark:bg-blue-900/20'>
-              <div className='flex items-center justify-between'>
-                <span className='text-sm font-medium'>
-                  Part {testProgress.currentPart} of {testProgress.totalParts}
-                </span>
-                <span className='text-sm text-gray-600 dark:text-gray-400'>
-                  {Math.round(testProgress.progress)}% Complete
-                </span>
-              </div>
-              <div className='mt-2 h-2 rounded-full bg-gray-200 dark:bg-gray-700'>
-                <div 
-                  className='h-2 rounded-full bg-blue-500 transition-all duration-300'
-                  style={{ width: `${testProgress.progress}%` }}
-                />
-              </div>
-            </div>
-          </div>
-        )}
       </header>
 
       {error && (
@@ -302,8 +261,8 @@ const SpeakingPage = () => {
           <div className='text-center'>
             <h2 className='mb-4 text-2xl font-bold'>Ready to Start Your Speaking Test?</h2>
             <p className='mb-8 text-gray-600 dark:text-gray-400'>
-              This is a complete IELTS Speaking test simulation with all three parts. 
-              The AI examiner will guide you through each section.
+              Connect with our AI examiner for a complete IELTS Speaking test simulation. 
+              The AI will guide you through all parts of the test and provide questions dynamically.
             </p>
             <Button
               onClick={startSession}
@@ -326,171 +285,282 @@ const SpeakingPage = () => {
           </div>
         ) : callStatus === 'active' ? (
           <div className='space-y-6'>
-            {/* Current Part Info */}
-            {currentPartInfo && (
-              <div className='rounded-lg bg-blue-50 p-4 dark:bg-blue-900/20'>
-                <h3 className='font-bold text-blue-900 dark:text-blue-100'>
-                  {currentPartInfo.title}
-                </h3>
-                <p className='text-sm text-blue-700 dark:text-blue-300'>
-                  {currentPartInfo.description}
-                </p>
-                <p className='text-xs text-blue-600 dark:text-blue-400 mt-1'>
-                  Duration: {currentPartInfo.duration} minutes
-                </p>
-              </div>
-            )}
-
-            {/* Timer for Part 2 */}
-            {(testPhase === 'part2-prep' || testPhase === 'part2-speak') && (
-              <div className='rounded-lg bg-yellow-50 p-4 dark:bg-yellow-900/20'>
-                <div className='flex items-center justify-between'>
-                  <span className='font-medium text-yellow-900 dark:text-yellow-100'>
-                    {testPhase === 'part2-prep' ? 'Preparation Time' : 'Speaking Time'}
-                  </span>
-                  <div className='flex items-center space-x-2'>
-                    <Clock className='h-4 w-4 text-yellow-600' />
-                    <span className='font-mono text-lg font-bold text-yellow-900 dark:text-yellow-100'>
-                      {formatTime(timeRemaining)}
-                    </span>
-                  </div>
-                </div>
-                {testPhase === 'part2-prep' && (
-                  <p className='text-sm text-yellow-700 dark:text-yellow-300 mt-2'>
-                    Use this time to prepare your response. You can make notes.
-                  </p>
-                )}
-              </div>
-            )}
-
-            {/* Current Question */}
-            <div className='rounded-lg border-2 border-gray-200 p-6 dark:border-gray-700'>
-              <h4 className='mb-3 font-semibold text-gray-900 dark:text-gray-100'>
-                Current Question:
-              </h4>
-              <p className='text-gray-800 dark:text-gray-200 whitespace-pre-line'>
-                {currentQuestion}
+            {/* Session Status */}
+            <div className='rounded-lg bg-green-50 p-4 dark:bg-green-900/20'>
+              <h3 className='font-bold text-green-900 dark:text-green-100'>
+                🎤 Speaking Test in Progress
+              </h3>
+              <p className='text-sm text-green-700 dark:text-green-300'>
+                The AI examiner will guide you through the test. Listen carefully and respond naturally.
               </p>
             </div>
 
             {/* Transcript Display */}
-            <div className='min-h-[120px] rounded-lg border bg-gray-50 p-4 dark:bg-gray-700'>
-              <h4 className='mb-2 text-sm font-medium text-gray-700 dark:text-gray-300'>
+            <div className='min-h-[200px] rounded-lg border bg-gray-50 p-6 dark:bg-gray-700'>
+              <h4 className='mb-4 text-lg font-medium text-gray-700 dark:text-gray-300'>
                 Your Response:
               </h4>
-              <p className='text-gray-800 dark:text-gray-200'>
-                {transcript || 'Start speaking...'}
-              </p>
+              <div className='rounded-lg bg-white p-4 dark:bg-gray-800 min-h-[120px]'>
+                <p className='text-gray-800 dark:text-gray-200 text-lg leading-relaxed'>
+                  {transcript || 'Start speaking... Your voice will be transcribed here in real-time.'}
+                </p>
+              </div>
             </div>
 
             {/* Controls */}
-            <div className='flex items-center justify-center space-x-4'>
-              <Button
-                onClick={skipQuestion}
-                variant='outline'
-                disabled={testPhase === 'part2-prep'}
-              >
-                <SkipForward className='mr-2 h-4 w-4' />
-                Next Question
-              </Button>
-              
+            <div className='flex items-center justify-center'>
               <Button
                 onClick={stopSession}
                 variant='destructive'
-                className='rounded-full p-4'
+                size='lg'
+                className='rounded-full px-8 py-4'
               >
-                <StopCircle className='h-6 w-6' />
+                <StopCircle className='mr-2 h-6 w-6' />
+                End Test
               </Button>
             </div>
           </div>
-        ) : testPhase === 'completed' && feedback ? (
+        ) : callStatus === 'evaluating' ? (
+          <div className='text-center space-y-6'>
+            <div className='flex items-center justify-center'>
+              <Loader2 className='h-8 w-8 animate-spin text-blue-600' />
+            </div>
+            <h2 className='text-2xl font-bold text-blue-600'>
+              Evaluating Your Performance
+            </h2>
+            <p className='text-gray-600 dark:text-gray-400'>
+              Our AI examiner is analyzing your responses and calculating your IELTS band score...
+            </p>
+          </div>
+        ) : callStatus === 'evaluated' ? (
           <div className='space-y-6'>
-            <div className='text-center'>
-              <h2 className='mb-4 text-2xl font-bold text-green-600'>
-                Test Completed! 🎉
-              </h2>
-              <p className='text-gray-600 dark:text-gray-400'>
-                Here's your speaking assessment:
-              </p>
-            </div>
+            {/* Evaluation Results */}
+            {currentSession?.evaluation && (
+              <div className='rounded-lg bg-green-50 border border-green-200 p-6 dark:bg-green-900/20 dark:border-green-800'>
+                <h2 className='text-2xl font-bold text-green-800 dark:text-green-200 mb-4'>
+                  🎉 Evaluation Complete!
+                </h2>
+                
+                {/* Overall Band Score */}
+                <div className='text-center mb-6'>
+                  <div className='inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-600 text-white text-2xl font-bold mb-2'>
+                    {currentSession.evaluation.overallBandScore}
+                  </div>
+                  <p className='text-lg font-semibold text-green-800 dark:text-green-200'>
+                    Overall IELTS Band Score
+                  </p>
+                </div>
 
-            {/* Feedback Display */}
-            <div className='grid gap-4 md:grid-cols-2'>
-              <div className='rounded-lg bg-green-50 p-4 dark:bg-green-900/20'>
-                <h3 className='font-bold text-green-900 dark:text-green-100'>
-                  Overall Score
-                </h3>
-                <p className='text-2xl font-bold text-green-600'>
-                  {feedback.overallScore}/9
-                </p>
+                {/* Criteria Breakdown */}
+                <div className='grid grid-cols-2 md:grid-cols-4 gap-4 mb-6'>
+                  <div className='text-center'>
+                    <div className='text-2xl font-bold text-green-600'>
+                      {currentSession.evaluation.criteria.fluencyCoherence}
+                    </div>
+                    <div className='text-sm text-gray-600 dark:text-gray-400'>
+                      Fluency & Coherence
+                    </div>
+                  </div>
+                  <div className='text-center'>
+                    <div className='text-2xl font-bold text-green-600'>
+                      {currentSession.evaluation.criteria.lexicalResource}
+                    </div>
+                    <div className='text-sm text-gray-600 dark:text-gray-400'>
+                      Lexical Resource
+                    </div>
+                  </div>
+                  <div className='text-center'>
+                    <div className='text-2xl font-bold text-green-600'>
+                      {currentSession.evaluation.criteria.grammaticalRange}
+                    </div>
+                    <div className='text-sm text-gray-600 dark:text-gray-400'>
+                      Grammar & Accuracy
+                    </div>
+                  </div>
+                  <div className='text-center'>
+                    <div className='text-2xl font-bold text-green-600'>
+                      {currentSession.evaluation.criteria.pronunciation}
+                    </div>
+                    <div className='text-sm text-gray-600 dark:text-gray-400'>
+                      Pronunciation
+                    </div>
+                  </div>
+                </div>
+
+                {/* Detailed Feedback */}
+                <div className='space-y-4'>
+                  <h3 className='text-lg font-semibold text-green-800 dark:text-green-200'>
+                    Detailed Feedback
+                  </h3>
+                  
+                  {/* Strengths */}
+                  <div>
+                    <h4 className='font-medium text-green-700 dark:text-green-300 mb-2'>
+                      ✅ Strengths
+                    </h4>
+                    <ul className='list-disc list-inside space-y-1 text-sm text-gray-700 dark:text-gray-300'>
+                      {currentSession.evaluation.strengths.map((strength, index) => (
+                        <li key={index}>{strength}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Areas for Improvement */}
+                  <div>
+                    <h4 className='font-medium text-orange-700 dark:text-orange-300 mb-2'>
+                      📈 Areas for Improvement
+                    </h4>
+                    <ul className='list-disc list-inside space-y-1 text-sm text-gray-700 dark:text-gray-300'>
+                      {currentSession.evaluation.improvements.map((improvement, index) => (
+                        <li key={index}>{improvement}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Advice */}
+                  <div>
+                    <h4 className='font-medium text-blue-700 dark:text-blue-300 mb-2'>
+                      💡 Advice
+                    </h4>
+                    <p className='text-sm text-gray-700 dark:text-gray-300'>
+                      {currentSession.evaluation.advice}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className='flex gap-4 mt-6'>
+                  <Button onClick={resetSession} size='lg' className='flex-1'>
+                    Start New Test
+                  </Button>
+                  <Button
+                    variant='outline'
+                    size='lg'
+                    onClick={() => {
+                      // Toggle conversation history view - safe for SSR
+                      if (typeof window !== 'undefined') {
+                        const historyElement = document.getElementById('conversation-history')
+                        if (historyElement) {
+                          historyElement.scrollIntoView({ behavior: 'smooth' })
+                        }
+                      }
+                    }}
+                  >
+                    <FileText className='mr-2 h-4 w-4' />
+                    View Conversation
+                  </Button>
+                </div>
               </div>
-              
-              <div className='space-y-2'>
-                <div className='flex justify-between'>
-                  <span>Fluency & Coherence:</span>
-                  <span className='font-bold'>{feedback.fluencyCoherence}/9</span>
-                </div>
-                <div className='flex justify-between'>
-                  <span>Lexical Resource:</span>
-                  <span className='font-bold'>{feedback.lexicalResource}/9</span>
-                </div>
-                <div className='flex justify-between'>
-                  <span>Grammatical Range:</span>
-                  <span className='font-bold'>{feedback.grammaticalRange}/9</span>
-                </div>
-                <div className='flex justify-between'>
-                  <span>Pronunciation:</span>
-                  <span className='font-bold'>{feedback.pronunciation}/9</span>
-                </div>
-              </div>
-            </div>
-
-            <div className='rounded-lg bg-blue-50 p-4 dark:bg-blue-900/20'>
-              <h3 className='mb-2 font-bold text-blue-900 dark:text-blue-100'>
-                Feedback
-              </h3>
-              <p className='text-blue-800 dark:text-blue-200'>
-                {feedback.feedback}
-              </p>
-            </div>
-
-            <div className='rounded-lg bg-yellow-50 p-4 dark:bg-yellow-900/20'>
-              <h3 className='mb-2 font-bold text-yellow-900 dark:text-yellow-100'>
-                Suggestions for Improvement
-              </h3>
-              <ul className='list-disc list-inside space-y-1 text-yellow-800 dark:text-yellow-200'>
-                {feedback.suggestions.map((suggestion, index) => (
-                  <li key={index}>{suggestion}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className='text-center'>
-              <Button
-                onClick={() => {
-                  setSession(null)
-                  setTestPhase('intro')
-                  setCallStatus('idle')
-                  setFeedback(null)
-                  setCurrentQuestion('')
-                  setTranscript('')
-                  setError('')
-                }}
-                size='lg'
-              >
-                Take Another Test
-              </Button>
-            </div>
+            )}
+          </div>
+        ) : callStatus === 'ended' ? (
+          <div className='text-center space-y-6'>
+            <h2 className='text-2xl font-bold text-green-600'>
+              Test Session Ended
+            </h2>
+            <p className='text-gray-600 dark:text-gray-400'>
+              Your speaking test session has been completed. You can start a new session anytime.
+            </p>
+            <Button onClick={resetSession} size='lg'>
+              Start New Test
+            </Button>
           </div>
         ) : (
           <div className='text-center'>
             <Loader2 className='mx-auto h-8 w-8 animate-spin' />
             <p className='mt-2 text-gray-600 dark:text-gray-400'>
-              {callStatus === 'connecting' ? 'Connecting...' : 'Processing...'}
+              {callStatus === 'connecting' ? 'Connecting to AI examiner...' : 'Processing...'}
             </p>
           </div>
         )}
       </main>
+
+      {/* Conversation History Section */}
+      {conversationHistory.length > 0 && (
+        <section id="conversation-history" className='mt-12'>
+          <div className='mx-auto w-full max-w-4xl rounded-2xl bg-white p-8 shadow-lg dark:bg-gray-800'>
+            <h2 className='mb-6 text-2xl font-bold text-center'>
+              📝 Conversation History
+            </h2>
+            <div className='space-y-4 max-h-96 overflow-y-auto'>
+              {conversationHistory.map((message, index) => (
+                <div
+                  key={message.id}
+                  className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                >
+                  <div
+                    className={`max-w-[80%] rounded-lg p-4 ${
+                      message.role === 'user'
+                        ? 'bg-blue-500 text-white'
+                        : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200'
+                    }`}
+                  >
+                    <div className='flex items-center gap-2 mb-2'>
+                      <span className='text-xs font-medium opacity-75'>
+                        {message.role === 'user' ? 'You' : 'AI Examiner'}
+                      </span>
+                      <span className='text-xs opacity-50'>
+                        {message.timestamp.toLocaleTimeString()}
+                      </span>
+                      <span className={`text-xs px-2 py-1 rounded-full ${
+                        message.type === 'question' ? 'bg-purple-100 text-purple-800' :
+                        message.type === 'answer' ? 'bg-green-100 text-green-800' :
+                        message.type === 'instruction' ? 'bg-blue-100 text-blue-800' :
+                        'bg-gray-100 text-gray-800'
+                      }`}>
+                        {message.type}
+                      </span>
+                    </div>
+                    <p className='text-sm leading-relaxed'>
+                      {message.content}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Session Summary */}
+            {currentSession && (
+              <div className='mt-6 pt-6 border-t border-gray-200 dark:border-gray-600'>
+                <div className='grid grid-cols-2 md:grid-cols-4 gap-4 text-center'>
+                  <div>
+                    <div className='text-2xl font-bold text-blue-600'>
+                      {conversationHistory.length}
+                    </div>
+                    <div className='text-sm text-gray-600 dark:text-gray-400'>
+                      Total Messages
+                    </div>
+                  </div>
+                  <div>
+                    <div className='text-2xl font-bold text-green-600'>
+                      {conversationHistory.filter(m => m.type === 'question').length}
+                    </div>
+                    <div className='text-sm text-gray-600 dark:text-gray-400'>
+                      Questions Asked
+                    </div>
+                  </div>
+                  <div>
+                    <div className='text-2xl font-bold text-purple-600'>
+                      {conversationHistory.filter(m => m.type === 'answer').length}
+                    </div>
+                    <div className='text-sm text-gray-600 dark:text-gray-400'>
+                      Answers Given
+                    </div>
+                  </div>
+                  <div>
+                    <div className='text-2xl font-bold text-orange-600'>
+                      {speakingSessionManager.getSessionDuration()}s
+                    </div>
+                    <div className='text-sm text-gray-600 dark:text-gray-400'>
+                      Session Duration
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
       {/* Tips Section */}
       <section className='mt-16'>

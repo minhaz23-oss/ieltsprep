@@ -185,18 +185,28 @@ export async function evaluateSpeakingSession(
 
 // Utility function to classify message type
 export function classifyMessageType(content: string, role: 'user' | 'assistant'): 'question' | 'answer' | 'instruction' | 'general' {
+  const lowerContent = content.toLowerCase().trim();
+  
   if (role === 'assistant') {
-    // Check if it's a question (ends with ? or contains question words)
-    if (content.includes('?') || /\b(what|how|why|when|where|which|who|do you|can you|would you|have you)\b/i.test(content)) {
+    // Check if it's a question (ends with ? or starts with question words)
+    if (content.includes('?') ||
+        /^(what|how|why|when|where|which|who|do you|can you|would you|have you|could you|are you|is there|will you|did you|have you ever|tell me about)/i.test(lowerContent)) {
       return 'question';
     }
-    // Check if it's an instruction
-    if (/\b(please|now|let's|describe|tell me|talk about)\b/i.test(content)) {
+    // Check if it's an instruction or cue card
+    if (/\b(please|now|let's|describe|tell me|talk about|you should say|you have|prepare|think about|i'd like you to)/i.test(lowerContent)) {
       return 'instruction';
+    }
+    // Check for general conversation starters, feedback, or transitions
+    if (/^(hello|hi|welcome|good|thank you|that's|excellent|interesting|okay|alright|i see|great|wonderful|moving on|let's move)/i.test(lowerContent)) {
+      return 'general';
     }
     return 'general';
   } else {
-    // User messages are typically answers
+    // User messages are answers unless they're asking for clarification
+    if (content.includes('?') || /^(what|how|why|when|where|which|who|do you|can you|could you|sorry|excuse me|pardon|i don't understand)/i.test(lowerContent)) {
+      return 'question';
+    }
     return 'answer';
   }
 }

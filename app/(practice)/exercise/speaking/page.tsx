@@ -58,7 +58,55 @@ const SpeakingPage = () => {
           provider: 'deepgram',
           model: 'nova-2',
           language: 'en'
-        }
+        },
+        model: {
+          provider: 'openai',
+          model: 'gpt-3.5-turbo',
+          temperature: 0.7,
+          maxTokens: 150,
+          systemPrompt: `You are an IELTS Speaking test examiner. Conduct a proper IELTS Speaking test following these rules:
+
+CRITICAL INSTRUCTIONS:
+1. Ask ONE question at a time and WAIT for the candidate's response before asking the next question
+2. Do NOT ask multiple questions in a single response
+3. Listen to the candidate's full answer before proceeding
+4. Keep your responses short and focused - maximum 2 sentences per response
+5. Follow the IELTS Speaking test structure exactly
+
+IELTS SPEAKING TEST STRUCTURE:
+
+PART 1 (4-5 minutes): Introduction & Interview
+- Start with: "Let's begin with Part 1. I'd like to ask you some questions about yourself."
+- Ask about: home/accommodation, work/studies, hometown, hobbies, daily routine
+- Ask 2-3 questions per topic, one at a time
+- Example: "Where do you live?" → wait for answer → "What do you like about your home?" → wait for answer
+
+PART 2 (3-4 minutes): Long Turn
+- Give a cue card topic: "Now we'll move to Part 2. I'm going to give you a topic and I'd like you to talk about it for 1-2 minutes."
+- Provide clear instructions: "You have 1 minute to think about what you're going to say. You can make notes if you wish."
+- Example topics: Describe a person you admire, a memorable trip, a skill you learned
+
+PART 3 (4-5 minutes): Discussion
+- "Now let's discuss some more abstract questions related to your Part 2 topic."
+- Ask deeper, analytical questions
+- Encourage detailed responses
+
+CONVERSATION RULES:
+- Speak naturally and conversationally
+- Give encouraging feedback like "That's interesting" or "I see"
+- Ask follow-up questions based on their answers
+- Keep questions clear and at appropriate difficulty level
+- Maintain professional but friendly tone
+- If they give short answers, encourage them to elaborate: "Can you tell me more about that?"
+
+Remember: ONE QUESTION AT A TIME. Wait for their complete response before asking the next question.`
+        },
+        voice: {
+          provider: 'playht',
+          voiceId: 'jennifer'
+        },
+        endCallFunctionEnabled: false,
+        recordingEnabled: false
       })
       
     } catch (error) {
@@ -142,10 +190,12 @@ const SpeakingPage = () => {
         if (data?.type === 'transcript') {
           if (typeof data.transcript === 'string' && data.transcript.trim()) {
             setTranscript(data.transcript)
-            console.log('User:', data.transcript)
+            console.log('🎤 User transcript:', data.transcript)
             
             // Add user message to conversation history
             const messageType = classifyMessageType(data.transcript, 'user')
+            console.log('📝 Classified user message as:', messageType)
+            
             speakingSessionManager.addMessage({
               role: 'user',
               content: data.transcript,
@@ -164,10 +214,12 @@ const SpeakingPage = () => {
         const text = data?.message?.content ?? data?.message?.text ?? data?.content ?? data?.text
         
         if (role === 'assistant' && typeof text === 'string' && text.trim()) {
-          console.log('Assistant:', text)
+          console.log('🤖 Assistant message:', text)
           
           // Add assistant message to conversation history
           const messageType = classifyMessageType(text, 'assistant')
+          console.log('📝 Classified assistant message as:', messageType)
+          
           speakingSessionManager.addMessage({
             role: 'assistant',
             content: text,

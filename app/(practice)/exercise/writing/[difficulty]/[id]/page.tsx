@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { getWritingTestById } from '@/lib/actions/writing.actions';
 import WritingFeedback from '@/components/WritingFeedback';
+import { useAuth } from '@/lib/hooks/useAuth';
+import AuthNotice from '@/components/AuthNotice';
 
 interface PromptObject {
   description?: string;
@@ -80,6 +82,7 @@ interface EvaluationResult {
 function WritingTestPage() {
   const params = useParams();
   const { difficulty, id } = params;
+  const { isAuthenticated, loading: authLoading } = useAuth();
 
   const [test, setTest] = useState<WritingTest | null>(null);
   const [loading, setLoading] = useState(true);
@@ -308,6 +311,13 @@ function WritingTestPage() {
             More Writing Tests
           </Link>
         </div>
+
+        {/* Authentication Notice for Unauthenticated Users */}
+        {!authLoading && !isAuthenticated && (
+          <div className="mt-8">
+            <AuthNotice testType="writing" hasAI={true} />
+          </div>
+        )}
       </div>
     );
   }

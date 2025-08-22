@@ -4,6 +4,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { getReadingTestById } from '@/lib/actions/reading.actions';
+import { useAuth } from '@/lib/hooks/useAuth';
+import AuthNotice from '@/components/AuthNotice';
 
 interface Question {
   id: number;
@@ -39,6 +41,7 @@ const ReadingTestPage = () => {
   const [isTimerActive, setIsTimerActive] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [score, setScore] = useState<{ correct: number; total: number } | null>(null);
+  const { isAuthenticated, loading: authLoading } = useAuth();
 
   useEffect(() => {
     if (params.id) {
@@ -555,6 +558,13 @@ const ReadingTestPage = () => {
               Retake This Test
             </button>
           </div>
+
+          {/* Authentication Notice for Unauthenticated Users */}
+          {!authLoading && !isAuthenticated && (
+            <div className="mt-8">
+              <AuthNotice testType="reading" hasAI={false} />
+            </div>
+          )}
         </div>
       </div>
     );

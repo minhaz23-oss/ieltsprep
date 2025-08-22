@@ -1,16 +1,23 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { ArrowLeft, StopCircle, Loader2, Mic, FileText } from 'lucide-react'
+import { ArrowLeft, StopCircle, Loader2, Mic, FileText, Ticket, AlertCircle } from 'lucide-react'
 import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { vapi } from '@/lib/vapi.sdk'
 import { VapiMessage, SpeakingSession, ConversationMessage } from '@/types/speaking'
 import { speakingSessionManager, classifyMessageType, evaluateSpeakingSession } from '@/lib/actions/speaking.actions'
+import { useAuth } from '@/lib/hooks/useAuth'
+import { getSpeakingTicketStatus, useSpeakingTicket, TicketStatus } from '@/lib/actions/speaking-tickets.actions'
+import SpeakingTicketModal from '@/components/SpeakingTicketModal'
 
 type CallStatus = 'idle' | 'connecting' | 'active' | 'ended' | 'error' | 'evaluating' | 'evaluated'
 
 const SpeakingPage = () => {
+  const router = useRouter()
+  const { user, loading: authLoading, isAuthenticated } = useAuth()
+  
   // Core state
   const [callStatus, setCallStatus] = useState<CallStatus>('idle')
   const [transcript, setTranscript] = useState<string>('')
@@ -23,9 +30,68 @@ const SpeakingPage = () => {
   const [currentSession, setCurrentSession] = useState<SpeakingSession | null>(null)
   const [conversationHistory, setConversationHistory] = useState<ConversationMessage[]>([])
   const [isEvaluating, setIsEvaluating] = useState<boolean>(false)
+  
+  // Ticket management state
+  const [ticketStatus, setTicketStatus] = useState<TicketStatus | null>(null)
+  const [showTicketModal, setShowTicketModal] = useState<boolean>(false)
+  const [ticketLoading, setTicketLoading] = useState<boolean>(false)
 
-  // Start VAPI session
-  const startSession = async () => {
+  // Handle start session button click
+  const handleStartSession = () => {
+    if (!ticketStatus) {
+      setError('Unable to load ticket status. Please refresh the page.')
+      return
+    }
+
+    if (!ticketStatus.hasTickets) {
+      setError('No tickets remaining for today. Please come back tomorrow.')
+      return
+    }
+
+    // Show confirmation modal
+    setShowTicketModal(true)
+  }
+
+  // Confirm ticket usage and start session
+  const confirmTicketUsage = async () => {
+    setTicketLoading(true)
+    setError('')
+
+    try {
+      // Use the ticket
+      const result = await useSpeakingTicket()
+      
+      if (!result.success) {
+        setError(result.message)
+        setShowTicketModal(false)
+        setTicketLoading(false)
+        return
+      }
+
+      // Update ticket status
+      if (ticketStatus) {
+        setTicketStatus({
+          ...ticketStatus,
+          hasTickets: (result.remainingTickets || 0) > 0,
+          remainingTickets: result.remainingTickets || 0
+        })
+      }
+
+      // Start the actual VAPI session
+      await startVapiSession()
+      
+      setShowTicketModal(false)
+    } catch (error) {
+      console.error('Error using ticket:', error)
+      setError('Failed to use ticket. Please try again.')
+      setShowTicketModal(false)
+    } finally {
+      setTicketLoading(false)
+    }
+  }
+
+  // Start VAPI session (internal function)
+  const startVapiSession = async () => {
     if (!vapi.isReady()) {
       setError('Voice AI is not properly configured. Please check your settings.')
       return
@@ -259,19 +325,44 @@ Remember: ONE QUESTION AT A TIME. Wait for their complete response before asking
     }
   }, [currentSession])
 
-  // Load existing session on component mount
+  // Authentication check - redirect if not authenticated
   useEffect(() => {
-    const existingSession = speakingSessionManager.loadSession()
-    if (existingSession && existingSession.status === 'completed') {
-      setCurrentSession(existingSession)
-      setConversationHistory(existingSession.messages)
-      if (existingSession.evaluation) {
-        setCallStatus('evaluated')
-      } else {
-        setCallStatus('ended')
+    if (!authLoading && !isAuthenticated) {
+      router.push('/sign-in')
+    }
+  }, [authLoading, isAuthenticated, router])
+
+  // Load ticket status when user is authenticated
+  useEffect(() => {
+    const loadTicketStatus = async () => {
+      if (isAuthenticated && user) {
+        try {
+          const status = await getSpeakingTicketStatus()
+          setTicketStatus(status)
+        } catch (error) {
+          console.error('Error loading ticket status:', error)
+        }
       }
     }
-  }, [])
+
+    loadTicketStatus()
+  }, [isAuthenticated, user])
+
+  // Load existing session on component mount
+  useEffect(() => {
+    if (isAuthenticated) {
+      const existingSession = speakingSessionManager.loadSession()
+      if (existingSession && existingSession.status === 'completed') {
+        setCurrentSession(existingSession)
+        setConversationHistory(existingSession.messages)
+        if (existingSession.evaluation) {
+          setCallStatus('evaluated')
+        } else {
+          setCallStatus('ended')
+        }
+      }
+    }
+  }, [isAuthenticated])
 
   // Reset session function
   const resetSession = () => {
@@ -282,6 +373,25 @@ Remember: ONE QUESTION AT A TIME. Wait for their complete response before asking
     setTranscript('')
     setError('')
     setIsEvaluating(false)
+  }
+
+  // Show loading screen while checking authentication
+  if (authLoading) {
+    return (
+      <div className='container mx-auto px-4 py-8 font-semibold'>
+        <div className='flex items-center justify-center min-h-[400px]'>
+          <div className='text-center'>
+            <Loader2 className='mx-auto h-8 w-8 animate-spin mb-4' />
+            <p className='text-gray-600 dark:text-gray-400'>Loading...</p>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  // Don't render anything if not authenticated (will redirect)
+  if (!isAuthenticated) {
+    return null
   }
 
   return (
@@ -299,6 +409,19 @@ Remember: ONE QUESTION AT A TIME. Wait for their complete response before asking
         <p className='mt-2 text-lg text-gray-600 dark:text-gray-400'>
           AI-Powered IELTS Speaking Test Simulation
         </p>
+        
+        {/* Ticket Status Display */}
+        {ticketStatus && (
+          <div className='mt-4 inline-flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg'>
+            <Ticket className='h-4 w-4 text-blue-600' />
+            <span className='text-sm text-blue-800 dark:text-blue-200'>
+              {ticketStatus.hasTickets
+                ? `${ticketStatus.remainingTickets} free test${ticketStatus.remainingTickets !== 1 ? 's' : ''} remaining today`
+                : 'No free tests remaining today'
+              }
+            </span>
+          </div>
+        )}
       </header>
 
       {error && (
@@ -313,27 +436,49 @@ Remember: ONE QUESTION AT A TIME. Wait for their complete response before asking
           <div className='text-center'>
             <h2 className='mb-4 text-2xl font-bold'>Ready to Start Your Speaking Test?</h2>
             <p className='mb-8 text-gray-600 dark:text-gray-400'>
-              Connect with our AI examiner for a complete IELTS Speaking test simulation. 
+              Connect with our AI examiner for a complete IELTS Speaking test simulation.
               The AI will guide you through all parts of the test and provide questions dynamically.
             </p>
-            <Button
-              onClick={startSession}
-              size='lg'
-              disabled={isLoading || callStatus !== 'idle'}
-              className='btn-primary'
-            >
-              {isLoading || callStatus !== 'idle' ? (
-                <>
-                  <Loader2 className='mr-2 h-6 w-6 animate-spin' />
-                  Connecting...
-                </>
-              ) : (
-                <>
-                  <Mic className='mr-2 h-6 w-6' />
-                  Start Speaking Test
-                </>
-              )}
-            </Button>
+            
+            {ticketStatus && !ticketStatus.hasTickets ? (
+              <div className='space-y-4'>
+                <div className='bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-lg p-6'>
+                  <AlertCircle className='mx-auto h-12 w-12 text-orange-500 mb-4' />
+                  <h3 className='text-xl font-semibold text-orange-800 dark:text-orange-200 mb-2'>
+                    No Tickets Remaining
+                  </h3>
+                  <p className='text-orange-700 dark:text-orange-300 mb-4'>
+                    You've used your free speaking test for today. Come back tomorrow for another free AI speaking test!
+                  </p>
+                  <p className='text-sm text-orange-600 dark:text-orange-400'>
+                    Your tickets reset daily at midnight. You get 1 free AI speaking test per day.
+                  </p>
+                </div>
+                <Button disabled size='lg' className='opacity-50 cursor-not-allowed'>
+                  <Ticket className='mr-2 h-6 w-6' />
+                  No Tickets Left
+                </Button>
+              </div>
+            ) : (
+              <Button
+                onClick={handleStartSession}
+                size='lg'
+                disabled={isLoading || callStatus !== 'idle' || !ticketStatus}
+                className='btn-primary'
+              >
+                {isLoading || callStatus !== 'idle' ? (
+                  <>
+                    <Loader2 className='mr-2 h-6 w-6 animate-spin' />
+                    Connecting...
+                  </>
+                ) : (
+                  <>
+                    <Mic className='mr-2 h-6 w-6' />
+                    Start Speaking Test
+                  </>
+                )}
+              </Button>
+            )}
           </div>
         ) : callStatus === 'active' ? (
           <div className='space-y-6'>
@@ -643,6 +788,15 @@ Remember: ONE QUESTION AT A TIME. Wait for their complete response before asking
           </div>
         </div>
       </section>
+
+      {/* Speaking Ticket Modal */}
+      <SpeakingTicketModal
+        isOpen={showTicketModal}
+        onClose={() => setShowTicketModal(false)}
+        onConfirm={confirmTicketUsage}
+        remainingTickets={ticketStatus?.remainingTickets || 0}
+        isLoading={ticketLoading}
+      />
     </div>
   )
 }

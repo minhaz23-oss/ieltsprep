@@ -17,23 +17,24 @@ export const getVapiToken = (): string | null => {
 
 // Generate unique session ID
 const generateSessionId = (): string => {
-  return `speaking_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+  return `speaking_${Date.now()}_${Math.random().toString(36).substring(2, 11)}`;
 };
 
 // Generate unique message ID
 const generateMessageId = (): string => {
-  return `msg_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+  return `msg_${Date.now()}_${Math.random().toString(36).substring(2, 11)}`;
 };
 
 // Speaking Session Manager Class
 export class SpeakingSessionManager {
   public currentSession: SpeakingSession | null = null;
 
-  createSession(): SpeakingSession {
+  createSession(mode: 'ai-voice' | 'text-based' = 'ai-voice'): SpeakingSession {
     const session: SpeakingSession = {
       id: generateSessionId(),
       startTime: new Date(),
       status: 'active',
+      mode: mode,
       messages: [],
       fullTranscript: ''
     };
@@ -57,7 +58,8 @@ export class SpeakingSessionManager {
     const fullMessage: ConversationMessage = {
       ...message,
       id: generateMessageId(),
-      timestamp: new Date()
+      timestamp: new Date(),
+      type: message.type || classifyMessageType(message.content, message.role)
     };
 
     this.currentSession.messages.push(fullMessage);

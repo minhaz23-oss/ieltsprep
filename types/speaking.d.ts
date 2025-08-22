@@ -21,6 +21,9 @@ export interface ConversationMessage {
   type: 'question' | 'answer' | 'instruction' | 'general';
 }
 
+// Speaking test modes
+export type SpeakingTestMode = 'ai-voice' | 'text-based';
+
 // Speaking session data structure
 export interface SpeakingSession {
   id: string;
@@ -28,9 +31,12 @@ export interface SpeakingSession {
   startTime: Date;
   endTime?: Date;
   status: 'active' | 'completed' | 'evaluated';
+  mode: SpeakingTestMode;
   messages: ConversationMessage[];
   fullTranscript: string;
   evaluation?: SpeakingEvaluation;
+  currentQuestionIndex?: number; // For text-based mode
+  currentPart?: 1 | 2 | 3; // For text-based mode
 }
 
 // Question-answer pair structure

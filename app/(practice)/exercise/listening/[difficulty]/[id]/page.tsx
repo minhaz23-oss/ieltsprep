@@ -4,6 +4,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { calculateIELTSListeningBand, getBandColor, getPerformanceLevel, getStudyRecommendations } from '@/lib/utils/ielts-scoring';
+import { useAuth } from '@/lib/hooks/useAuth';
+import AuthNotice from '@/components/AuthNotice';
 
 interface Question {
   id: number;
@@ -26,6 +28,7 @@ const ListeningExamPage = () => {
   const params = useParams();
   const difficulty = params.difficulty as string;
   const id = params.id as string;
+  const { user, loading: authLoading, isAuthenticated } = useAuth();
   
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -375,6 +378,11 @@ const ListeningExamPage = () => {
                 * Scores are calculated based on official IELTS listening band descriptors, scaled to match your test length.
               </p>
             </div>
+
+            {/* Authentication Notice for Unauthenticated Users */}
+            {!authLoading && !isAuthenticated && (
+              <AuthNotice testType="listening" hasAI={false} />
+            )}
           </div>
         </div>
       </div>

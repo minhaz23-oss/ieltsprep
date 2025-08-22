@@ -174,7 +174,7 @@ function WritingFeedback({ task1, task2, overallBandScore }: WritingFeedbackProp
                   ✅ Strengths
                 </h4>
                 <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                  {task1.strengths.map((strength, index) => (
+                  {(task1.strengths || []).map((strength, index) => (
                     <li key={index}>{strength}</li>
                   ))}
                 </ul>
@@ -185,7 +185,7 @@ function WritingFeedback({ task1, task2, overallBandScore }: WritingFeedbackProp
                   📈 Areas for Improvement
                 </h4>
                 <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                  {task1.improvements.map((improvement, index) => (
+                  {(task1.improvements || []).map((improvement, index) => (
                     <li key={index}>{improvement}</li>
                   ))}
                 </ul>
@@ -279,7 +279,7 @@ function WritingFeedback({ task1, task2, overallBandScore }: WritingFeedbackProp
                   ✅ Strengths
                 </h4>
                 <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                  {task2.strengths.map((strength, index) => (
+                  {(task2.strengths || []).map((strength, index) => (
                     <li key={index}>{strength}</li>
                   ))}
                 </ul>
@@ -290,7 +290,7 @@ function WritingFeedback({ task1, task2, overallBandScore }: WritingFeedbackProp
                   📈 Areas for Improvement
                 </h4>
                 <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                  {task2.improvements.map((improvement, index) => (
+                  {(task2.improvements || []).map((improvement, index) => (
                     <li key={index}>{improvement}</li>
                   ))}
                 </ul>

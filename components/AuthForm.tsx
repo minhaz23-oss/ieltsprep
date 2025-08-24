@@ -8,10 +8,11 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import FormField from "./FormField";
-import { createUserWithEmailAndPassword,signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword,signInWithEmailAndPassword,GoogleAuthProvider,signInWithPopup } from 'firebase/auth';
 import { auth } from "@/firebase/client";
 import { useRouter } from "next/navigation"; 
 import { signUp,signIn } from "@/lib/actions/auth.actions";
+import { FcGoogle } from "react-icons/fc";
 
 const authFormSchema = (type: FormType) => z.object({
     // Sign up
@@ -78,6 +79,7 @@ const { email, password } = values;
         const result = await signIn({
           email,
           idToken,
+          uid: userCredentials.user.uid,
         });
         
         if (!result?.success) {
@@ -153,6 +155,53 @@ const { email, password } = values;
           <Button type="submit" className="btn-primary w-full mt-2">
             {isSignIn ? 'Sign In' : 'Sign Up'}
           </Button>
+
+          <div className="relative my-4">
+            <div className="absolute inset-0 flex items-center">
+              <span className="w-full border-t" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase">
+              <span className="bg-white px-2 text-muted-foreground">
+                Or continue with
+              </span>
+            </div>
+          </div>
+
+          
+        </form>
+      </Form>
+      <Button variant="outline" className="w-full border border-gray-500 font-semibold hover:bg-gray-300 cursor-pointer" onClick={async() => {
+             const provider = new GoogleAuthProvider();
+             try {
+               const userCredentials = await signInWithPopup(auth, provider);
+               const idToken = await userCredentials.user.getIdToken();
+       
+               if (!idToken) {
+                 console.log(`Failed to get ID token for user: ${userCredentials.user.uid}`);
+                 return;
+               }
+       
+               const result = await signIn({
+                 email:userCredentials.user.email!,
+                 idToken,
+                 name: userCredentials.user.displayName || undefined,
+                 uid: userCredentials.user.uid,
+               });
+               
+               if (!result?.success) {
+                 console.log(result.message);
+                 return;
+               }
+       
+               console.log("sign in successfully");
+               router.push("/");
+             } catch (error) {
+               window.alert("An error occurred. Please try again later.");
+             }
+          }}>
+            <FcGoogle className="mr-2 h-4 w-4" />
+            Google
+          </Button>
           
           {isSignIn ? (
             <p className="text-center text-sm mt-4">
@@ -169,8 +218,6 @@ const { email, password } = values;
               </Link>
             </p>
           )}
-        </form>
-      </Form>
     </section>
   );
 };

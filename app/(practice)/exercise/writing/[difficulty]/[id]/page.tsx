@@ -7,6 +7,8 @@ import { getWritingTestById } from '@/lib/actions/writing.actions';
 import WritingFeedback from '@/components/WritingFeedback';
 import { useAuth } from '@/lib/hooks/useAuth';
 import AuthNotice from '@/components/AuthNotice';
+import { toast } from 'sonner';
+
 
 interface PromptObject {
   description?: string;
@@ -160,6 +162,11 @@ function WritingTestPage() {
   const handleSubmit = useCallback(async () => {
     if (!test || (!task1Answer.trim() && !task2Answer.trim())) {
       alert('Please provide at least one task answer before submitting.');
+      return;
+    }
+
+    if ((task1Answer.trim() && task1WordCount < 30) || (task2Answer.trim() && task2WordCount < 50)) {
+      toast.warning("minimum 30 words for the first answer and 50 words for the second answer is required to justify result");
       return;
     }
 

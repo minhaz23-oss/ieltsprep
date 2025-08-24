@@ -5,7 +5,7 @@ export const navigationLinks = [
     },
     {
         name: "Mock Tests",
-        href: "/mock-tests",
+        href: "/mock-test",
     },
     {
         name: "Practice Questions",

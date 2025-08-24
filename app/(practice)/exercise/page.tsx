@@ -1,10 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
 import { testModules } from '@/constants'
+import { FaArrowLeft } from "react-icons/fa6";
+
 
 const page = () => {
   return (
     <div className="min-h-screen px-4 py-16 font-semibold">
+      <Link href={'/'} className='btn-primary flex gap-3 items-center absolute top-[20px] left-[30px]'><span className=' text-white'><FaArrowLeft/></span>Back to homepage</Link>
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">

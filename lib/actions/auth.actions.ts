@@ -61,15 +61,17 @@ export async function setSessionCookie(idToken: string) {
 }
 
 export async function signIn(params: SignInParams) {
-  const { email, idToken } = params;
+  const { email, idToken, name, uid } = params;
   try {
-    const useRecord = await auth.getUserByEmail(email);
-    if (!useRecord) {
-      return {
-        success: false,
-        message: "User not found",
-      };
+    const userRecord = await db.collection("users").doc(uid).get();
+
+    if (!userRecord.exists) {
+      await db.collection("users").doc(uid).set({
+        email,
+        name,
+      });
     }
+
     await setSessionCookie(idToken);
     
     return {

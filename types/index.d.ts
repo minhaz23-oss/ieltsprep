@@ -17,4 +17,6 @@ interface SignUpParams {
 interface SignInParams {
   email: string;
   idToken: string;
+  name?: string;
+  uid:string
 }

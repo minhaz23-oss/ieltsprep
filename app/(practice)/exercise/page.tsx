@@ -10,8 +10,8 @@ const page = () => {
       <Link href={'/'} className='btn-primary flex gap-3 items-center absolute top-[20px] left-[30px]'><span className=' text-white'><FaArrowLeft/></span>Back to homepage</Link>
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-black text-black mb-6">
+        <div className="text-center mt-3 mb-12">
+          <h1 className="text-4xl sm:text-5xl font-black text-black mb-6">
             Choose Your <span className="p-1 px-2 bg-primary rounded-md text-white -rotate-3 inline-block">Practice</span> Module
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto font-semibold leading-relaxed">

@@ -2,14 +2,14 @@ import Link from 'next/link';
 
 export default function PracticeMode() {
   return (
-    <section className="w-full py-16 px-4">
+    <section className="w-full py-4 sm:py-16  sm:px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-black text-black mb-4">
             Practice Makes <span className=" p-1 px-2 bg-primary rounded-md text-white -rotate-3 inline-block">Perfect</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-semibold">
+          <p className="text-lg text-gray-600 sm:max-w-2xl mx-auto font-semibold">
             Sharpen your skills with our comprehensive practice exercises and full-length mock tests. 
             Track your progress and identify areas for improvement.
           </p>

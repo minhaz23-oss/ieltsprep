@@ -260,7 +260,7 @@ Remember: ONE QUESTION AT A TIME. Wait for their complete response before asking
             
             // Add user message to conversation history
             const messageType = classifyMessageType(data.transcript, 'user')
-            console.log('📝 Classified user message as:', messageType)
+            console.log('���� Classified user message as:', messageType)
             
             speakingSessionManager.addMessage({
               role: 'user',
@@ -378,11 +378,11 @@ Remember: ONE QUESTION AT A TIME. Wait for their complete response before asking
   // Show loading screen while checking authentication
   if (authLoading) {
     return (
-      <div className='container mx-auto px-4 py-8 font-semibold'>
+      <div className='min-h-screen px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24 py-8 sm:py-12 md:py-16 font-semibold'>
         <div className='flex items-center justify-center min-h-[400px]'>
           <div className='text-center'>
-            <Loader2 className='mx-auto h-8 w-8 animate-spin mb-4' />
-            <p className='text-gray-600 dark:text-gray-400'>Loading...</p>
+            <Loader2 className='mx-auto h-6 w-6 sm:h-8 sm:w-8 animate-spin mb-4' />
+            <p className='text-gray-600 dark:text-gray-400 text-sm sm:text-base'>Loading...</p>
           </div>
         </div>
       </div>
@@ -395,26 +395,28 @@ Remember: ONE QUESTION AT A TIME. Wait for their complete response before asking
   }
 
   return (
-    <div className='container mx-auto px-4 py-8 font-semibold'>
+    <div className='min-h-screen px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24 py-8 sm:py-12 md:py-16 font-semibold'>
       <Link
         href='/exercise'
-        className='mb-4 flex items-center text-gray-600 hover:underline dark:text-gray-400'
+        className='mb-6 sm:mb-8 flex items-center text-gray-600 hover:underline dark:text-gray-400'
       >
         <ArrowLeft className='mr-2 h-4 w-4' />
-        <span>Back to Exercises</span>
+        <span className='text-sm sm:text-base'>Back to Exercises</span>
       </Link>
 
-      <header className='mb-8 text-center'>
-        <h1 className='text-4xl font-bold'>IELTS <span className=" p-1 px-2 bg-primary rounded-md text-white -rotate-3 inline-block">Speaking</span> Practice</h1>
-        <p className='mt-2 text-lg text-gray-600 dark:text-gray-400'>
+      <header className='mb-8 sm:mb-12 text-center'>
+        <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold'>
+          IELTS <span className="p-1 px-2 bg-primary rounded-md text-white -rotate-3 inline-block">Speaking</span> Practice
+        </h1>
+        <p className='mt-3 sm:mt-4 text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-400'>
           AI-Powered IELTS Speaking Test Simulation
         </p>
         
         {/* Ticket Status Display */}
         {ticketStatus && (
-          <div className='mt-4 inline-flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg'>
+          <div className='mt-4 sm:mt-6 inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg'>
             <Ticket className='h-4 w-4 text-blue-600' />
-            <span className='text-sm text-blue-800 dark:text-blue-200'>
+            <span className='text-xs sm:text-sm text-blue-800 dark:text-blue-200'>
               {ticketStatus.hasTickets
                 ? `${ticketStatus.remainingTickets} free test${ticketStatus.remainingTickets !== 1 ? 's' : ''} remaining today`
                 : 'No free tests remaining today'
@@ -425,37 +427,37 @@ Remember: ONE QUESTION AT A TIME. Wait for their complete response before asking
       </header>
 
       {error && (
-        <div className='mb-6 rounded-lg bg-red-50 border border-red-200 p-4 text-red-700 dark:bg-red-900/20 dark:border-red-800 dark:text-red-400'>
-          <p className='font-medium'>Error:</p>
-          <p>{error}</p>
+        <div className='mb-6 rounded-lg bg-red-50 border border-red-200 p-3 sm:p-4 text-red-700 dark:bg-red-900/20 dark:border-red-800 dark:text-red-400'>
+          <p className='font-medium text-sm sm:text-base'>Error:</p>
+          <p className='text-sm sm:text-base'>{error}</p>
         </div>
       )}
 
-      <main className='mx-auto mb-12 w-full max-w-4xl rounded-2xl bg-white p-8 shadow-lg dark:bg-gray-800'>
+      <main className='mx-auto mb-8 sm:mb-12 w-full max-w-4xl rounded-2xl bg-white p-4 sm:p-6 lg:p-8 shadow-lg dark:bg-gray-800'>
         {callStatus === 'idle' ? (
           <div className='text-center'>
-            <h2 className='mb-4 text-2xl font-bold'>Ready to Start Your Speaking Test?</h2>
-            <p className='mb-8 text-gray-600 dark:text-gray-400'>
+            <h2 className='mb-4 text-xl sm:text-2xl font-bold'>Ready to Start Your Speaking Test?</h2>
+            <p className='mb-6 sm:mb-8 text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed'>
               Connect with our AI examiner for a complete IELTS Speaking test simulation.
               The AI will guide you through all parts of the test and provide questions dynamically.
             </p>
             
             {ticketStatus && !ticketStatus.hasTickets ? (
               <div className='space-y-4'>
-                <div className='bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-lg p-6'>
-                  <AlertCircle className='mx-auto h-12 w-12 text-orange-500 mb-4' />
-                  <h3 className='text-xl font-semibold text-orange-800 dark:text-orange-200 mb-2'>
+                <div className='bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-lg p-4 sm:p-6'>
+                  <AlertCircle className='mx-auto h-10 w-10 sm:h-12 sm:w-12 text-orange-500 mb-4' />
+                  <h3 className='text-lg sm:text-xl font-semibold text-orange-800 dark:text-orange-200 mb-2'>
                     No Tickets Remaining
                   </h3>
-                  <p className='text-orange-700 dark:text-orange-300 mb-4'>
+                  <p className='text-sm sm:text-base text-orange-700 dark:text-orange-300 mb-4'>
                     You've used your free speaking test for today. Come back tomorrow for another free AI speaking test!
                   </p>
-                  <p className='text-sm text-orange-600 dark:text-orange-400'>
+                  <p className='text-xs sm:text-sm text-orange-600 dark:text-orange-400'>
                     Your tickets reset daily at midnight. You get 1 free AI speaking test per day.
                   </p>
                 </div>
-                <Button disabled size='lg' className='opacity-50 cursor-not-allowed'>
-                  <Ticket className='mr-2 h-6 w-6' />
+                <Button disabled size='lg' className='opacity-50 cursor-not-allowed text-sm sm:text-base'>
+                  <Ticket className='mr-2 h-5 w-5 sm:h-6 sm:w-6' />
                   No Tickets Left
                 </Button>
               </div>
@@ -464,16 +466,16 @@ Remember: ONE QUESTION AT A TIME. Wait for their complete response before asking
                 onClick={handleStartSession}
                 size='lg'
                 disabled={isLoading || callStatus !== 'idle' || !ticketStatus}
-                className='btn-primary'
+                className='btn-primary text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4'
               >
                 {isLoading || callStatus !== 'idle' ? (
                   <>
-                    <Loader2 className='mr-2 h-6 w-6 animate-spin' />
+                    <Loader2 className='mr-2 h-5 w-5 sm:h-6 sm:w-6 animate-spin' />
                     Connecting...
                   </>
                 ) : (
                   <>
-                    <Mic className='mr-2 h-6 w-6' />
+                    <Mic className='mr-2 h-5 w-5 sm:h-6 sm:w-6' />
                     Start Speaking Test
                   </>
                 )}
@@ -481,24 +483,24 @@ Remember: ONE QUESTION AT A TIME. Wait for their complete response before asking
             )}
           </div>
         ) : callStatus === 'active' ? (
-          <div className='space-y-6'>
+          <div className='space-y-4 sm:space-y-6'>
             {/* Session Status */}
-            <div className='rounded-lg bg-green-50 p-4 dark:bg-green-900/20'>
-              <h3 className='font-bold text-green-900 dark:text-green-100'>
+            <div className='rounded-lg bg-green-50 p-3 sm:p-4 dark:bg-green-900/20'>
+              <h3 className='font-bold text-green-900 dark:text-green-100 text-sm sm:text-base'>
                 🎤 Speaking Test in Progress
               </h3>
-              <p className='text-sm text-green-700 dark:text-green-300'>
+              <p className='text-xs sm:text-sm text-green-700 dark:text-green-300'>
                 The AI examiner will guide you through the test. Listen carefully and respond naturally.
               </p>
             </div>
 
             {/* Transcript Display */}
-            <div className='min-h-[200px] rounded-lg border bg-gray-50 p-6 dark:bg-gray-700'>
-              <h4 className='mb-4 text-lg font-medium text-gray-700 dark:text-gray-300'>
+            <div className='min-h-[200px] rounded-lg border bg-gray-50 p-4 sm:p-6 dark:bg-gray-700'>
+              <h4 className='mb-3 sm:mb-4 text-base sm:text-lg font-medium text-gray-700 dark:text-gray-300'>
                 Your Response:
               </h4>
-              <div className='rounded-lg bg-white p-4 dark:bg-gray-800 min-h-[120px]'>
-                <p className='text-gray-800 dark:text-gray-200 text-lg leading-relaxed'>
+              <div className='rounded-lg bg-white p-3 sm:p-4 dark:bg-gray-800 min-h-[120px]'>
+                <p className='text-gray-800 dark:text-gray-200 text-sm sm:text-base lg:text-lg leading-relaxed'>
                   {transcript || 'Start speaking... Your voice will be transcribed here in real-time.'}
                 </p>
               </div>
@@ -510,92 +512,92 @@ Remember: ONE QUESTION AT A TIME. Wait for their complete response before asking
                 onClick={stopSession}
                 variant='destructive'
                 size='lg'
-                className='rounded-full px-8 py-4'
+                className='rounded-full px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base'
               >
-                <StopCircle className='mr-2 h-6 w-6' />
+                <StopCircle className='mr-2 h-5 w-5 sm:h-6 sm:w-6' />
                 End Test
               </Button>
             </div>
           </div>
         ) : callStatus === 'evaluating' ? (
-          <div className='text-center space-y-6'>
+          <div className='text-center space-y-4 sm:space-y-6'>
             <div className='flex items-center justify-center'>
-              <Loader2 className='h-8 w-8 animate-spin text-blue-600' />
+              <Loader2 className='h-6 w-6 sm:h-8 sm:w-8 animate-spin text-blue-600' />
             </div>
-            <h2 className='text-2xl font-bold text-blue-600'>
+            <h2 className='text-xl sm:text-2xl font-bold text-blue-600'>
               Evaluating Your Performance
             </h2>
-            <p className='text-gray-600 dark:text-gray-400'>
+            <p className='text-sm sm:text-base text-gray-600 dark:text-gray-400'>
               Our AI examiner is analyzing your responses and calculating your IELTS band score...
             </p>
           </div>
         ) : callStatus === 'evaluated' ? (
-          <div className='space-y-6'>
+          <div className='space-y-4 sm:space-y-6'>
             {/* Evaluation Results */}
             {currentSession?.evaluation && (
-              <div className='rounded-lg bg-green-50 border border-green-200 p-6 dark:bg-green-900/20 dark:border-green-800'>
-                <h2 className='text-2xl font-bold text-green-800 dark:text-green-200 mb-4'>
+              <div className='rounded-lg bg-green-50 border border-green-200 p-4 sm:p-6 dark:bg-green-900/20 dark:border-green-800'>
+                <h2 className='text-xl sm:text-2xl font-bold text-green-800 dark:text-green-200 mb-4'>
                   🎉 Evaluation Complete!
                 </h2>
                 
                 {/* Overall Band Score */}
-                <div className='text-center mb-6'>
-                  <div className='inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-600 text-white text-2xl font-bold mb-2'>
+                <div className='text-center mb-4 sm:mb-6'>
+                  <div className='inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-green-600 text-white text-xl sm:text-2xl font-bold mb-2'>
                     {currentSession.evaluation.overallBandScore}
                   </div>
-                  <p className='text-lg font-semibold text-green-800 dark:text-green-200'>
+                  <p className='text-base sm:text-lg font-semibold text-green-800 dark:text-green-200'>
                     Overall IELTS Band Score
                   </p>
                 </div>
 
                 {/* Criteria Breakdown */}
-                <div className='grid grid-cols-2 md:grid-cols-4 gap-4 mb-6'>
+                <div className='grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-4 sm:mb-6'>
                   <div className='text-center'>
-                    <div className='text-2xl font-bold text-green-600'>
+                    <div className='text-xl sm:text-2xl font-bold text-green-600'>
                       {currentSession.evaluation.criteria.fluencyCoherence}
                     </div>
-                    <div className='text-sm text-gray-600 dark:text-gray-400'>
+                    <div className='text-xs sm:text-sm text-gray-600 dark:text-gray-400'>
                       Fluency & Coherence
                     </div>
                   </div>
                   <div className='text-center'>
-                    <div className='text-2xl font-bold text-green-600'>
+                    <div className='text-xl sm:text-2xl font-bold text-green-600'>
                       {currentSession.evaluation.criteria.lexicalResource}
                     </div>
-                    <div className='text-sm text-gray-600 dark:text-gray-400'>
+                    <div className='text-xs sm:text-sm text-gray-600 dark:text-gray-400'>
                       Lexical Resource
                     </div>
                   </div>
                   <div className='text-center'>
-                    <div className='text-2xl font-bold text-green-600'>
+                    <div className='text-xl sm:text-2xl font-bold text-green-600'>
                       {currentSession.evaluation.criteria.grammaticalRange}
                     </div>
-                    <div className='text-sm text-gray-600 dark:text-gray-400'>
+                    <div className='text-xs sm:text-sm text-gray-600 dark:text-gray-400'>
                       Grammar & Accuracy
                     </div>
                   </div>
                   <div className='text-center'>
-                    <div className='text-2xl font-bold text-green-600'>
+                    <div className='text-xl sm:text-2xl font-bold text-green-600'>
                       {currentSession.evaluation.criteria.pronunciation}
                     </div>
-                    <div className='text-sm text-gray-600 dark:text-gray-400'>
+                    <div className='text-xs sm:text-sm text-gray-600 dark:text-gray-400'>
                       Pronunciation
                     </div>
                   </div>
                 </div>
 
                 {/* Detailed Feedback */}
-                <div className='space-y-4'>
-                  <h3 className='text-lg font-semibold text-green-800 dark:text-green-200'>
+                <div className='space-y-3 sm:space-y-4'>
+                  <h3 className='text-base sm:text-lg font-semibold text-green-800 dark:text-green-200'>
                     Detailed Feedback
                   </h3>
                   
                   {/* Strengths */}
                   <div>
-                    <h4 className='font-medium text-green-700 dark:text-green-300 mb-2'>
+                    <h4 className='font-medium text-green-700 dark:text-green-300 mb-2 text-sm sm:text-base'>
                       ✅ Strengths
                     </h4>
-                    <ul className='list-disc list-inside space-y-1 text-sm text-gray-700 dark:text-gray-300'>
+                    <ul className='list-disc list-inside space-y-1 text-xs sm:text-sm text-gray-700 dark:text-gray-300'>
                       {currentSession.evaluation.strengths.map((strength, index) => (
                         <li key={index}>{strength}</li>
                       ))}
@@ -604,10 +606,10 @@ Remember: ONE QUESTION AT A TIME. Wait for their complete response before asking
 
                   {/* Areas for Improvement */}
                   <div>
-                    <h4 className='font-medium text-orange-700 dark:text-orange-300 mb-2'>
+                    <h4 className='font-medium text-orange-700 dark:text-orange-300 mb-2 text-sm sm:text-base'>
                       📈 Areas for Improvement
                     </h4>
-                    <ul className='list-disc list-inside space-y-1 text-sm text-gray-700 dark:text-gray-300'>
+                    <ul className='list-disc list-inside space-y-1 text-xs sm:text-sm text-gray-700 dark:text-gray-300'>
                       {currentSession.evaluation.improvements.map((improvement, index) => (
                         <li key={index}>{improvement}</li>
                       ))}
@@ -616,18 +618,18 @@ Remember: ONE QUESTION AT A TIME. Wait for their complete response before asking
 
                   {/* Advice */}
                   <div>
-                    <h4 className='font-medium text-blue-700 dark:text-blue-300 mb-2'>
+                    <h4 className='font-medium text-blue-700 dark:text-blue-300 mb-2 text-sm sm:text-base'>
                       💡 Advice
                     </h4>
-                    <p className='text-sm text-gray-700 dark:text-gray-300'>
+                    <p className='text-xs sm:text-sm text-gray-700 dark:text-gray-300'>
                       {currentSession.evaluation.advice}
                     </p>
                   </div>
                 </div>
 
                 {/* Action Buttons */}
-                <div className='flex gap-4 mt-6'>
-                  <Button onClick={resetSession} size='lg' className='flex-1'>
+                <div className='flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 sm:mt-6'>
+                  <Button onClick={resetSession} size='lg' className='flex-1 text-sm sm:text-base'>
                     Start New Test
                   </Button>
                   <Button
@@ -642,6 +644,7 @@ Remember: ONE QUESTION AT A TIME. Wait for their complete response before asking
                         }
                       }
                     }}
+                    className='flex-1 text-sm sm:text-base'
                   >
                     <FileText className='mr-2 h-4 w-4' />
                     View Conversation
@@ -651,21 +654,21 @@ Remember: ONE QUESTION AT A TIME. Wait for their complete response before asking
             )}
           </div>
         ) : callStatus === 'ended' ? (
-          <div className='text-center space-y-6'>
-            <h2 className='text-2xl font-bold text-green-600'>
+          <div className='text-center space-y-4 sm:space-y-6'>
+            <h2 className='text-xl sm:text-2xl font-bold text-green-600'>
               Test Session Ended
             </h2>
-            <p className='text-gray-600 dark:text-gray-400'>
+            <p className='text-sm sm:text-base text-gray-600 dark:text-gray-400'>
               Your speaking test session has been completed. You can start a new session anytime.
             </p>
-            <Button onClick={resetSession} size='lg'>
+            <Button onClick={resetSession} size='lg' className='text-sm sm:text-base'>
               Start New Test
             </Button>
           </div>
         ) : (
           <div className='text-center'>
-            <Loader2 className='mx-auto h-8 w-8 animate-spin' />
-            <p className='mt-2 text-gray-600 dark:text-gray-400'>
+            <Loader2 className='mx-auto h-6 w-6 sm:h-8 sm:w-8 animate-spin' />
+            <p className='mt-2 text-sm sm:text-base text-gray-600 dark:text-gray-400'>
               {callStatus === 'connecting' ? 'Connecting to AI examiner...' : 'Processing...'}
             </p>
           </div>
@@ -674,25 +677,25 @@ Remember: ONE QUESTION AT A TIME. Wait for their complete response before asking
 
       {/* Conversation History Section */}
       {conversationHistory.length > 0 && (
-        <section id="conversation-history" className='mt-12'>
-          <div className='mx-auto w-full max-w-4xl rounded-2xl bg-white p-8 shadow-lg dark:bg-gray-800'>
-            <h2 className='mb-6 text-2xl font-bold text-center'>
+        <section id="conversation-history" className='mt-8 sm:mt-12'>
+          <div className='mx-auto w-full max-w-4xl rounded-2xl bg-white p-4 sm:p-6 lg:p-8 shadow-lg dark:bg-gray-800'>
+            <h2 className='mb-4 sm:mb-6 text-xl sm:text-2xl font-bold text-center'>
               📝 Conversation History
             </h2>
-            <div className='space-y-4 max-h-96 overflow-y-auto'>
+            <div className='space-y-3 sm:space-y-4 max-h-96 overflow-y-auto'>
               {conversationHistory.map((message, index) => (
                 <div
                   key={message.id}
                   className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`max-w-[80%] rounded-lg p-4 ${
+                    className={`max-w-[85%] sm:max-w-[80%] rounded-lg p-3 sm:p-4 ${
                       message.role === 'user'
                         ? 'bg-blue-500 text-white'
                         : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200'
                     }`}
                   >
-                    <div className='flex items-center gap-2 mb-2'>
+                    <div className='flex flex-wrap items-center gap-2 mb-2'>
                       <span className='text-xs font-medium opacity-75'>
                         {message.role === 'user' ? 'You' : 'AI Examiner'}
                       </span>
@@ -708,7 +711,7 @@ Remember: ONE QUESTION AT A TIME. Wait for their complete response before asking
                         {message.type}
                       </span>
                     </div>
-                    <p className='text-sm leading-relaxed'>
+                    <p className='text-xs sm:text-sm leading-relaxed'>
                       {message.content}
                     </p>
                   </div>
@@ -718,37 +721,37 @@ Remember: ONE QUESTION AT A TIME. Wait for their complete response before asking
             
             {/* Session Summary */}
             {currentSession && (
-              <div className='mt-6 pt-6 border-t border-gray-200 dark:border-gray-600'>
-                <div className='grid grid-cols-2 md:grid-cols-4 gap-4 text-center'>
+              <div className='mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-200 dark:border-gray-600'>
+                <div className='grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 text-center'>
                   <div>
-                    <div className='text-2xl font-bold text-blue-600'>
+                    <div className='text-xl sm:text-2xl font-bold text-blue-600'>
                       {conversationHistory.length}
                     </div>
-                    <div className='text-sm text-gray-600 dark:text-gray-400'>
+                    <div className='text-xs sm:text-sm text-gray-600 dark:text-gray-400'>
                       Total Messages
                     </div>
                   </div>
                   <div>
-                    <div className='text-2xl font-bold text-green-600'>
+                    <div className='text-xl sm:text-2xl font-bold text-green-600'>
                       {conversationHistory.filter(m => m.type === 'question').length}
                     </div>
-                    <div className='text-sm text-gray-600 dark:text-gray-400'>
+                    <div className='text-xs sm:text-sm text-gray-600 dark:text-gray-400'>
                       Questions Asked
                     </div>
                   </div>
                   <div>
-                    <div className='text-2xl font-bold text-purple-600'>
+                    <div className='text-xl sm:text-2xl font-bold text-purple-600'>
                       {conversationHistory.filter(m => m.type === 'answer').length}
                     </div>
-                    <div className='text-sm text-gray-600 dark:text-gray-400'>
+                    <div className='text-xs sm:text-sm text-gray-600 dark:text-gray-400'>
                       Answers Given
                     </div>
                   </div>
                   <div>
-                    <div className='text-2xl font-bold text-orange-600'>
+                    <div className='text-xl sm:text-2xl font-bold text-orange-600'>
                       {speakingSessionManager.getSessionDuration()}s
                     </div>
-                    <div className='text-sm text-gray-600 dark:text-gray-400'>
+                    <div className='text-xs sm:text-sm text-gray-600 dark:text-gray-400'>
                       Session Duration
                     </div>
                   </div>
@@ -760,28 +763,28 @@ Remember: ONE QUESTION AT A TIME. Wait for their complete response before asking
       )}
 
       {/* Tips Section */}
-      <section className='mt-16'>
-        <h2 className='mb-8 text-center text-3xl font-bold'>
+      <section className='mt-12 sm:mt-16'>
+        <h2 className='mb-6 sm:mb-8 text-center text-2xl sm:text-3xl font-bold'>
           IELTS Speaking Test Guide
         </h2>
-        <div className='grid gap-8 text-left md:grid-cols-3'>
-          <div className='rounded-lg border border-gray-200 bg-gray-100 p-6 dark:border-gray-700 dark:bg-gray-900/40'>
-            <h3 className='mb-3 text-xl font-bold'>Part 1: Interview (4-5 min)</h3>
-            <p className='text-gray-600 dark:text-gray-400'>
+        <div className='grid gap-6 sm:gap-8 text-left md:grid-cols-3'>
+          <div className='rounded-lg border border-gray-200 bg-gray-100 p-4 sm:p-6 dark:border-gray-700 dark:bg-gray-900/40'>
+            <h3 className='mb-3 text-lg sm:text-xl font-bold'>Part 1: Interview (4-5 min)</h3>
+            <p className='text-sm sm:text-base text-gray-600 dark:text-gray-400'>
               Answer with 2-3 sentences. Don't give short, one-word answers. Provide
               reasons and examples to extend your responses.
             </p>
           </div>
-          <div className='rounded-lg border border-gray-200 bg-gray-100 p-6 dark:border-gray-700 dark:bg-gray-900/40'>
-            <h3 className='mb-3 text-xl font-bold'>Part 2: Long Turn (3-4 min)</h3>
-            <p className='text-gray-600 dark:text-gray-400'>
+          <div className='rounded-lg border border-gray-200 bg-gray-100 p-4 sm:p-6 dark:border-gray-700 dark:bg-gray-900/40'>
+            <h3 className='mb-3 text-lg sm:text-xl font-bold'>Part 2: Long Turn (3-4 min)</h3>
+            <p className='text-sm sm:text-base text-gray-600 dark:text-gray-400'>
               You have 1 minute to prepare. Use the cue card to structure your talk. Aim
               to speak for the full 2 minutes.
             </p>
           </div>
-          <div className='rounded-lg border border-gray-200 bg-gray-100 p-6 dark:border-gray-700 dark:bg-gray-900/40'>
-            <h3 className='mb-3 text-xl font-bold'>Part 3: Discussion (4-5 min)</h3>
-            <p className='text-gray-600 dark:text-gray-400'>
+          <div className='rounded-lg border border-gray-200 bg-gray-100 p-4 sm:p-6 dark:border-gray-700 dark:bg-gray-900/40'>
+            <h3 className='mb-3 text-lg sm:text-xl font-bold'>Part 3: Discussion (4-5 min)</h3>
+            <p className='text-sm sm:text-base text-gray-600 dark:text-gray-400'>
               Give longer, more detailed answers. Discuss the topics in a more abstract
               and general way. Show your ability to analyze and speculate.
             </p>

@@ -129,7 +129,7 @@ function ReadingPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen px-[100px] py-16 font-semibold flex items-center justify-center">
+      <div className="min-h-screen px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24 py-8 sm:py-12 md:py-16 font-semibold flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-primary mx-auto mb-4"></div>
           <p className="text-gray-600 font-semibold">Loading reading tests...</p>
@@ -139,7 +139,7 @@ function ReadingPage() {
   }
 
   return (
-    <div className="min-h-screen px-[100px] py-16 font-semibold">
+    <div className="min-h-screen px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24 py-8 sm:py-12 md:py-16 font-semibold">
       {/* Back Button */}
       <div className="mb-8">
         <Link href="/exercise" className="text-primary hover:text-red-700 flex items-center space-x-2">
@@ -152,7 +152,7 @@ function ReadingPage() {
 
       {/* Hero Section - Homepage Style */}
       <div className="text-center mb-12">
-        <h1 className="text-[50px] font-black">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-black">
           Master IELTS{" "}
           <span className="p-1 px-2 bg-primary rounded-md text-white -rotate-3 inline-block">Reading</span>{" "}
           Tests!
@@ -191,7 +191,7 @@ function ReadingPage() {
         <>
           {/* Tabs */}
           <div className="flex justify-center mb-8">
-            <div className="flex bg-white rounded-xl border-2 border-primary/20 p-2">
+            <div className="flex justify-center-safe flex-wrap bg-white rounded-xl border-2 border-primary/20 p-2 gap-1">
               {[
                 { id: 'all', label: 'All Practice', count: totalTests },
                 { id: 'easy', label: 'Easy', count: easyCount },
@@ -201,7 +201,7 @@ function ReadingPage() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as any)}
-                  className={`px-6 py-3 rounded-lg font-bold cursor-pointer transition-all duration-300 ${
+                  className={`px-3 sm:px-6 py-2 sm:py-3 rounded-lg font-bold cursor-pointer transition-all duration-300 text-sm sm:text-base ${
                     activeTab === tab.id
                       ? 'bg-primary text-white shadow-lg'
                       : 'text-gray-600 hover:text-primary hover:bg-primary/5'
@@ -222,14 +222,14 @@ function ReadingPage() {
               </div>
             </div>
           ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
               {filteredTests.map((test) => (
                 <Link
                   key={test.id}
                   href={`/exercise/reading/${test.difficulty}/${test.id}`}
                   className="group"
                 >
-                  <div className="bg-white rounded-xl border-2 border-primary/20 hover:border-primary hover:shadow-xl transition-all duration-300 p-6 h-full">
+                  <div className="bg-white rounded-xl border-2 border-primary/20 hover:border-primary hover:shadow-xl transition-all duration-300 p-4 sm:p-6 h-full">
                     <div className="flex items-start justify-between mb-4">
                       <div className={`px-3 py-1 rounded-full text-xs font-bold border ${getDifficultyColor(test.difficulty || 'unknown')}`}>
                         {(test.difficulty || 'UNKNOWN').toUpperCase()}
@@ -237,15 +237,15 @@ function ReadingPage() {
                       <div className="text-sm text-gray-400">#{String(test.id).slice(-6)}</div>
                     </div>
 
-                    <h3 className="text-xl font-bold text-black mb-3 group-hover:text-primary transition-colors">
+                    <h3 className="text-lg sm:text-xl font-bold text-black mb-3 group-hover:text-primary transition-colors">
                       {test.title || 'Untitled Test'}
                     </h3>
                     
-                    <p className="text-gray-600 mb-6 leading-relaxed">
+                    <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
                       {test.description || 'No description available'}
                     </p>
 
-                    <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                    <div className="flex items-center justify-between text-sm text-gray-500 mb-4 sm:mb-6">
                       <div className="flex items-center space-x-1">
                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
@@ -269,7 +269,7 @@ function ReadingPage() {
                     </div>
 
                     {test.topics && test.topics.length > 0 && (
-                      <div className="flex flex-wrap gap-2 mb-6">
+                      <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
                         {test.topics.slice(0, 3).map((topic, index) => (
                           <span key={index} className="px-3 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
                             {topic}
@@ -283,7 +283,7 @@ function ReadingPage() {
                       </div>
                     )}
 
-                    <button className="btn-primary w-full group-hover:bg-red-700 transition-colors duration-300">
+                    <button className="btn-primary w-full group-hover:bg-red-700 transition-colors duration-300 text-sm sm:text-base">
                       Start Practice
                     </button>
                   </div>
@@ -295,31 +295,31 @@ function ReadingPage() {
       )}
 
       {/* Footer Section with Instructions and Navigation */}
-      <section className="mt-20 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 border-2 border-gray-200">
-        <div className="max-w-6xl mx-auto">
+      <section className="mt-16 sm:mt-20 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-3 sm:p-4 lg:p-6 xl:p-8 border-2 border-gray-200">
+        <div className="max-w-full mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-black text-gray-900 mb-4">
+          <div className="text-center mb-6 sm:mb-8 lg:mb-10">
+            <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-black text-gray-900 mb-2 sm:mb-3 lg:mb-4">
               📚 How to Maximize Your IELTS Reading Practice
             </h2>
-            <p className="text-lg text-gray-600 font-semibold">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-600 font-semibold">
               Follow these essential guidelines to get the most out of your practice sessions
             </p>
           </div>
 
           {/* Instructions Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8 lg:mb-10">
             {/* Time Management */}
-            <div className="bg-white rounded-xl p-6 border-2 border-blue-100 hover:border-blue-300 transition-colors">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+            <div className="bg-white rounded-xl p-3 sm:p-4 lg:p-5 border-2 border-blue-100 hover:border-blue-300 transition-colors">
+              <div className="flex items-center mb-3 sm:mb-4">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-blue-100 rounded-full flex items-center justify-center mr-2 sm:mr-3 lg:mr-4">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900">Time Management</h3>
+                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900">Time Management</h3>
               </div>
-              <ul className="text-gray-600 space-y-2">
+              <ul className="text-gray-600 space-y-1 sm:space-y-2 text-xs sm:text-sm lg:text-base">
                 <li>• Allocate 20 minutes per passage</li>
                 <li>• Spend 2-3 minutes skimming first</li>
                 <li>• Don't spend too long on one question</li>
@@ -328,16 +328,16 @@ function ReadingPage() {
             </div>
 
             {/* Reading Strategies */}
-            <div className="bg-white rounded-xl p-6 border-2 border-green-100 hover:border-green-300 transition-colors">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+            <div className="bg-white rounded-xl p-3 sm:p-4 lg:p-5 border-2 border-green-100 hover:border-green-300 transition-colors">
+              <div className="flex items-center mb-3 sm:mb-4">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-green-100 rounded-full flex items-center justify-center mr-2 sm:mr-3 lg:mr-4">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900">Reading Strategies</h3>
+                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900">Reading Strategies</h3>
               </div>
-              <ul className="text-gray-600 space-y-2">
+              <ul className="text-gray-600 space-y-1 sm:space-y-2 text-xs sm:text-sm lg:text-base">
                 <li>• Skim for main ideas first</li>
                 <li>• Look for keywords in questions</li>
                 <li>• Use context clues for vocabulary</li>
@@ -346,16 +346,16 @@ function ReadingPage() {
             </div>
 
             {/* Scoring Tips */}
-            <div className="bg-white rounded-xl p-6 border-2 border-purple-100 hover:border-purple-300 transition-colors">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+            <div className="bg-white rounded-xl p-3 sm:p-4 lg:p-5 border-2 border-purple-100 hover:border-purple-300 transition-colors">
+              <div className="flex items-center mb-3 sm:mb-4">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-purple-100 rounded-full flex items-center justify-center mr-2 sm:mr-3 lg:mr-4">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900">Scoring Tips</h3>
+                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900">Scoring Tips</h3>
               </div>
-              <ul className="text-gray-600 space-y-2">
+              <ul className="text-gray-600 space-y-1 sm:space-y-2 text-xs sm:text-sm lg:text-base">
                 <li>• Answer all questions (no penalty)</li>
                 <li>• Transfer answers carefully</li>
                 <li>• Check spelling and grammar</li>
@@ -365,14 +365,14 @@ function ReadingPage() {
           </div>
 
           {/* Important Information */}
-          <div className="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-6 mb-8">
+          <div className="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-3 sm:p-4 lg:p-5 mb-4 sm:mb-6 lg:mb-8">
             <div className="flex items-start">
-              <svg className="w-6 h-6 text-yellow-600 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-yellow-600 mr-2 sm:mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
               </svg>
               <div>
-                <h4 className="text-lg font-bold text-yellow-800 mb-2">Important Reminders</h4>
-                <ul className="text-yellow-700 space-y-1">
+                <h4 className="text-sm sm:text-base lg:text-lg font-bold text-yellow-800 mb-2">Important Reminders</h4>
+                <ul className="text-yellow-700 space-y-1 text-xs sm:text-sm lg:text-base">
                   <li>• Total reading test duration: 60 minutes for 3 passages</li>
                   <li>• No extra time for transferring answers - write directly on answer sheet</li>
                   <li>• Questions become progressively harder from Passage 1 to 3</li>
@@ -383,34 +383,34 @@ function ReadingPage() {
           </div>
 
           {/* Score Band Information */}
-          <div className="bg-white rounded-xl border-2 border-gray-200 p-6 mb-8">
-            <h4 className="text-xl font-bold text-gray-900 mb-4 text-center">📊 IELTS Reading Score Bands</h4>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-              <div className="bg-red-50 border border-red-200 rounded-lg p-3">
-                <div className="text-2xl font-black text-red-600">6.0</div>
-                <div className="text-sm text-red-700">23-26 correct</div>
+          <div className="bg-white rounded-xl border-2 border-gray-200 p-3 sm:p-4 lg:p-5 mb-4 sm:mb-6 lg:mb-8">
+            <h4 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-3 sm:mb-4 text-center">📊 IELTS Reading Score Bands</h4>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 lg:gap-4 text-center">
+              <div className="bg-red-50 border border-red-200 rounded-lg p-2 sm:p-3">
+                <div className="text-lg sm:text-xl lg:text-2xl font-black text-red-600">6.0</div>
+                <div className="text-xs sm:text-sm text-red-700">23-26 correct</div>
               </div>
-              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
-                <div className="text-2xl font-black text-yellow-600">7.0</div>
-                <div className="text-sm text-yellow-700">30-32 correct</div>
+              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-2 sm:p-3">
+                <div className="text-lg sm:text-xl lg:text-2xl font-black text-yellow-600">7.0</div>
+                <div className="text-xs sm:text-sm text-yellow-700">30-32 correct</div>
               </div>
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
-                <div className="text-2xl font-black text-blue-600">8.0</div>
-                <div className="text-sm text-blue-700">35-36 correct</div>
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-2 sm:p-3">
+                <div className="text-lg sm:text-xl lg:text-2xl font-black text-blue-600">8.0</div>
+                <div className="text-xs sm:text-sm text-blue-700">35-36 correct</div>
               </div>
-              <div className="bg-green-50 border border-green-200 rounded-lg p-3">
-                <div className="text-2xl font-black text-green-600">9.0</div>
-                <div className="text-sm text-green-700">39-40 correct</div>
+              <div className="bg-green-50 border border-green-200 rounded-lg p-2 sm:p-3">
+                <div className="text-lg sm:text-xl lg:text-2xl font-black text-green-600">9.0</div>
+                <div className="text-xs sm:text-sm text-green-700">39-40 correct</div>
               </div>
             </div>
           </div>
 
           {/* Navigation Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:gap-4 justify-center items-center">
             <Link 
               href="/exercise" 
-              className="btn-secondary flex items-center space-x-2 min-w-[200px] justify-center">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              className="btn-secondary flex items-center space-x-2 min-w-[180px] sm:min-w-[200px] justify-center text-sm sm:text-base">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
               <span>All Exercises</span>
@@ -418,8 +418,8 @@ function ReadingPage() {
             
             <Link 
               href="/exercise/listening" 
-              className="btn-outline flex items-center space-x-2 min-w-[200px] justify-center">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              className="btn-outline flex items-center space-x-2 min-w-[180px] sm:min-w-[200px] justify-center text-sm sm:text-base">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.369 4.369 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z" />
               </svg>
               <span>Practice Listening</span>
@@ -427,8 +427,8 @@ function ReadingPage() {
             
             <Link 
               href="/exercise/writing" 
-              className="btn-outline flex items-center space-x-2 min-w-[200px] justify-center">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              className="btn-outline flex items-center space-x-2 min-w-[180px] sm:min-w-[200px] justify-center text-sm sm:text-base">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
               </svg>
               <span>Practice Writing</span>
@@ -436,8 +436,8 @@ function ReadingPage() {
             
             <Link 
               href="/exercise/speaking" 
-              className="btn-outline flex items-center space-x-2 min-w-[200px] justify-center">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              className="btn-outline flex items-center space-x-2 min-w-[180px] sm:min-w-[200px] justify-center text-sm sm:text-base">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clipRule="evenodd" />
               </svg>
               <span>Practice Speaking</span>
@@ -445,9 +445,9 @@ function ReadingPage() {
           </div>
 
           {/* Additional Resources */}
-          <div className="mt-8 text-center text-gray-600">
-            <p className="mb-2">💡 <span className="font-semibold">Need more help?</span> Check out our comprehensive study guides and video tutorials.</p>
-            <p>🎯 <span className="font-semibold">Track your progress</span> and identify weak areas to focus your practice effectively.</p>
+          <div className="mt-4 sm:mt-6 lg:mt-8 text-center text-gray-600">
+            <p className="mb-1 sm:mb-2 text-xs sm:text-sm lg:text-base">💡 <span className="font-semibold">Need more help?</span> Check out our comprehensive study guides and video tutorials.</p>
+            <p className="text-xs sm:text-sm lg:text-base">🎯 <span className="font-semibold">Track your progress</span> and identify weak areas to focus your practice effectively.</p>
           </div>
         </div>
       </section>

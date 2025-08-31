@@ -249,10 +249,10 @@ function WritingTestPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen px-[100px] py-16 font-semibold flex items-center justify-center">
+      <div className="min-h-screen px-3 sm:px-4 lg:px-6 py-4 sm:py-6 lg:py-8 font-semibold flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-gray-600 font-semibold">Loading writing test...</p>
+          <div className="animate-spin rounded-full h-12 w-12 sm:h-16 sm:w-16 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-gray-600 font-semibold text-sm sm:text-base">Loading writing test...</p>
         </div>
       </div>
     );
@@ -260,11 +260,11 @@ function WritingTestPage() {
 
   if (!test) {
     return (
-      <div className="min-h-screen px-[100px] py-16 font-semibold flex items-center justify-center">
+      <div className="min-h-screen px-3 sm:px-4 lg:px-6 py-4 sm:py-6 lg:py-8 font-semibold flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">Test Not Found</h2>
-          <p className="text-gray-600 mb-6">The writing test you're looking for doesn't exist.</p>
-          <Link href="/exercise/writing" className="btn-primary">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4">Test Not Found</h2>
+          <p className="text-gray-600 mb-6 text-sm sm:text-base">The writing test you're looking for doesn't exist.</p>
+          <Link href="/exercise/writing" className="btn-primary text-sm sm:text-base">
             Back to Writing Tests
           </Link>
         </div>
@@ -274,20 +274,20 @@ function WritingTestPage() {
 
   if (showResults && evaluation) {
     return (
-      <div className="min-h-screen px-[100px] py-16 font-semibold">
+      <div className="min-h-screen px-3 sm:px-4 lg:px-6 py-4 sm:py-6 lg:py-8 font-semibold">
         {/* Back Button */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <Link href="/exercise/writing" className="text-primary hover:text-red-700 flex items-center space-x-2">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            <span>Back to Writing Tests</span>
+            <span className="text-sm sm:text-base">Back to Writing Tests</span>
           </Link>
         </div>
 
         {/* Results Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-[50px] font-black mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[50px] font-black mb-4">
             Your IELTS{" "}
             <span className="p-1 px-2 bg-primary rounded-md text-white -rotate-3 inline-block">Writing</span>{" "}
             Results!
@@ -302,7 +302,7 @@ function WritingTestPage() {
         />
 
         {/* Action Buttons */}
-        <div className="flex justify-center gap-4 mt-12">
+        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-8 sm:mt-12">
           <button
             onClick={() => {
               setShowResults(false);
@@ -310,18 +310,18 @@ function WritingTestPage() {
               setTask1Answer('');
               setTask2Answer('');
             }}
-            className="btn-secondary"
+            className="btn-secondary text-sm sm:text-base w-full sm:w-auto"
           >
             Try Again
           </button>
-          <Link href="/exercise/writing" className="btn-primary">
+          <Link href="/exercise/writing" className="btn-primary text-sm sm:text-base w-full sm:w-auto text-center">
             More Writing Tests
           </Link>
         </div>
 
         {/* Authentication Notice for Unauthenticated Users */}
         {!authLoading && !isAuthenticated && (
-          <div className="mt-8">
+          <div className="mt-6 sm:mt-8">
             <AuthNotice testType="writing" hasAI={true} />
           </div>
         )}
@@ -330,25 +330,25 @@ function WritingTestPage() {
   }
 
   return (
-    <div className="min-h-screen px-[100px] py-16 font-semibold">
+    <div className="min-h-screen px-3 sm:px-4 lg:px-6 py-4 sm:py-6 lg:py-8 font-semibold">
       {/* Back Button */}
-      <div className="mb-8">
+      <div className="mb-6 sm:mb-8">
         <Link href="/exercise/writing" className="text-primary hover:text-red-700 flex items-center space-x-2">
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-          <span>Back to Writing Tests</span>
+          <span className="text-sm sm:text-base">Back to Writing Tests</span>
         </Link>
       </div>
 
       {/* Test Header */}
-      <div className="text-center mb-8">
-        <h1 className="text-[50px] font-black">
+      <div className="text-center mb-6 sm:mb-8">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[50px] font-black">
           IELTS Writing Test{" "}
           <span className="p-1 px-2 bg-primary rounded-md text-white -rotate-3 inline-block">#{test.testId}</span>
         </h1>
-        <div className="flex justify-center items-center gap-6 mt-4">
-          <div className={`px-3 py-1 rounded-full text-sm font-bold border capitalize ${
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-6 mt-4">
+          <div className={`px-3 py-1 rounded-full text-xs sm:text-sm font-bold border capitalize ${
             test.difficulty === 'easy' ? 'bg-green-100 text-green-800 border-green-200' :
             test.difficulty === 'medium' ? 'bg-yellow-100 text-yellow-800 border-yellow-200' :
             'bg-red-100 text-red-800 border-red-200'
@@ -357,7 +357,7 @@ function WritingTestPage() {
           </div>
           
           {timeRemaining !== null && (
-            <div className={`px-4 py-2 rounded-lg font-bold ${
+            <div className={`px-3 sm:px-4 py-2 rounded-lg font-bold text-sm sm:text-base ${
               timeRemaining <= 300 ? 'bg-red-100 text-red-800' : 'bg-blue-100 text-blue-800'
             }`}>
               ⏰ {formatTime(timeRemaining)}
@@ -367,7 +367,7 @@ function WritingTestPage() {
           {!timerActive && timeRemaining === null && (
             <button
               onClick={startTimer}
-              className="px-4 py-2 bg-green-100 text-green-800 rounded-lg font-bold hover:bg-green-200 transition-colors"
+              className="px-3 sm:px-4 py-2 bg-green-100 text-green-800 rounded-lg font-bold hover:bg-green-200 transition-colors text-sm sm:text-base"
             >
               Start Timer ({test.metadata?.estimatedTimeMinutes || 60} min)
             </button>
@@ -376,29 +376,29 @@ function WritingTestPage() {
       </div>
 
       {/* Tasks */}
-      <div className="max-w-7xl mx-auto space-y-12">
+      <div className="max-w-7xl mx-auto space-y-8 sm:space-y-12">
         {/* Task 1 */}
         {test.task1 && (
-          <div className="bg-white rounded-xl border-2 border-blue-200 p-8">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-blue-800">Task 1</h2>
-              <div className="text-sm text-blue-600 font-semibold">
+          <div className="bg-white rounded-xl border-2 border-blue-200 p-4 sm:p-6 lg:p-8">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6 gap-2">
+              <h2 className="text-xl sm:text-2xl font-bold text-blue-800">Task 1</h2>
+              <div className="text-xs sm:text-sm text-blue-600 font-semibold">
                 Target: {test.task1.wordLimit || 150}+ words | Current: {task1WordCount} words
               </div>
             </div>
             
-            <div className="mb-6">
-              <h3 className="text-lg font-bold text-gray-800 mb-2">{test.task1.title}</h3>
-              <div className="bg-blue-50 rounded-lg p-4 mb-4">
-                <p className="text-blue-800 font-semibold">{test.task1.instructions}</p>
+            <div className="mb-4 sm:mb-6">
+              <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-2">{test.task1.title}</h3>
+              <div className="bg-blue-50 rounded-lg p-3 sm:p-4 mb-4">
+                <p className="text-blue-800 font-semibold text-sm sm:text-base">{test.task1.instructions}</p>
                 {test.task1.prompt && (
-                  <div className="mt-4 p-4 bg-white rounded-lg border border-blue-200">
+                  <div className="mt-3 sm:mt-4 p-3 sm:p-4 bg-white rounded-lg border border-blue-200">
                     {typeof test.task1.prompt === 'string' ? (
-                      <p className="text-gray-700">{test.task1.prompt}</p>
+                      <p className="text-gray-700 text-sm sm:text-base">{test.task1.prompt}</p>
                     ) : (
                       <div className="space-y-3">
                         {test.task1.prompt && typeof test.task1.prompt !== 'string' && test.task1.prompt.description && (
-                          <p className="text-gray-700 leading-relaxed">{test.task1.prompt.description}</p>
+                          <p className="text-gray-700 leading-relaxed text-sm sm:text-base">{test.task1.prompt.description}</p>
                         )}
                         {test.task1.prompt && typeof test.task1.prompt !== 'string' && test.task1.prompt.image && (
                           <div className="mt-4 flex justify-center">
@@ -451,20 +451,20 @@ function WritingTestPage() {
                               <img 
                                 src={test.task1?.prompt && typeof test.task1.prompt !== 'string' ? test.task1.prompt.image : ''}
                                 alt={`Task 1 ${test.task1?.type || 'Writing'} chart`}
-                                className="w-auto h-auto max-w-2xl max-h-96 rounded-lg border border-gray-200 shadow-md group-hover:shadow-lg transition-shadow duration-300"
+                                className="w-auto h-auto max-w-full sm:max-w-2xl max-h-64 sm:max-h-96 rounded-lg border border-gray-200 shadow-md group-hover:shadow-lg transition-shadow duration-300"
                                 onError={(e) => {
                                   const target = e.target as HTMLImageElement;
                                   target.style.display = 'none';
                                   const errorDiv = document.createElement('div');
-                                  errorDiv.className = 'bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-6 text-center max-w-2xl';
+                                  errorDiv.className = 'bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-4 sm:p-6 text-center max-w-full sm:max-w-2xl';
                                   const imgSrc = test.task1?.prompt && typeof test.task1.prompt !== 'string' ? test.task1.prompt.image : 'Unknown';
                                   errorDiv.innerHTML = `
                                     <div class="text-gray-400 mb-2">
-                                      <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd" />
+                                      <svg class="w-8 h-8 sm:w-12 sm:h-12 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd" />
                                       </svg>
                                     </div>
-                                    <p class="text-sm text-gray-500">
+                                    <p class="text-xs sm:text-sm text-gray-500">
                                       Chart/Image: ${imgSrc}<br>
                                       <span class="text-xs">(Image will be available in the actual test)</span>
                                     </p>
@@ -473,7 +473,7 @@ function WritingTestPage() {
                                 }}
                               />
                               <div className="absolute inset-0 bg-blue-500 bg-opacity-0 group-hover:bg-opacity-10 rounded-lg transition-opacity duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 pointer-events-none">
-                                <span className="text-white bg-black bg-opacity-70 px-4 py-2 rounded-full text-sm font-medium shadow-lg">
+                                <span className="text-white bg-black bg-opacity-70 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium shadow-lg">
                                   🔍 Click to enlarge
                                 </span>
                               </div>
@@ -482,7 +482,7 @@ function WritingTestPage() {
                         )}
                         {test.task1.prompt && typeof test.task1.prompt !== 'string' && test.task1.prompt.question && (
                           <div className="mt-3 p-3 bg-blue-50 rounded border-l-4 border-blue-400">
-                            <p className="text-gray-700 italic">{test.task1.prompt.question}</p>
+                            <p className="text-gray-700 italic text-sm sm:text-base">{test.task1.prompt.question}</p>
                           </div>
                         )}
                       </div>
@@ -496,7 +496,7 @@ function WritingTestPage() {
               value={task1Answer}
               onChange={(e) => setTask1Answer(e.target.value)}
               placeholder="Write your Task 1 response here..."
-              className="w-full h-64 p-4 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none resize-none"
+              className="w-full h-48 sm:h-64 p-3 sm:p-4 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none resize-none text-sm sm:text-base"
               disabled={isSubmitting}
             />
           </div>
@@ -504,30 +504,30 @@ function WritingTestPage() {
 
         {/* Task 2 */}
         {test.task2 && (
-          <div className="bg-white rounded-xl border-2 border-green-200 p-8">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-green-800">Task 2</h2>
-              <div className="text-sm text-green-600 font-semibold">
+          <div className="bg-white rounded-xl border-2 border-green-200 p-4 sm:p-6 lg:p-8">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6 gap-2">
+              <h2 className="text-xl sm:text-2xl font-bold text-green-800">Task 2</h2>
+              <div className="text-xs sm:text-sm text-green-600 font-semibold">
                 Target: {test.task2.wordLimit || 250}+ words | Current: {task2WordCount} words
               </div>
             </div>
             
-            <div className="mb-6">
-              <h3 className="text-lg font-bold text-gray-800 mb-2">{test.task2.title}</h3>
-              <div className="bg-green-50 rounded-lg p-4 mb-4">
-                <p className="text-green-800 font-semibold">{test.task2.instructions}</p>
+            <div className="mb-4 sm:mb-6">
+              <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-2">{test.task2.title}</h3>
+              <div className="bg-green-50 rounded-lg p-3 sm:p-4 mb-4">
+                <p className="text-green-800 font-semibold text-sm sm:text-base">{test.task2.instructions}</p>
                 {test.task2.prompt && (
-                  <div className="mt-4 p-4 bg-white rounded-lg border border-green-200">
+                  <div className="mt-3 sm:mt-4 p-3 sm:p-4 bg-white rounded-lg border border-green-200">
                     {typeof test.task2.prompt === 'string' ? (
-                      <p className="text-gray-700">{test.task2.prompt}</p>
+                      <p className="text-gray-700 text-sm sm:text-base">{test.task2.prompt}</p>
                     ) : (
                       <div className="space-y-3">
                         {test.task2.prompt && typeof test.task2.prompt !== 'string' && test.task2.prompt.description && (
-                          <p className="text-gray-700 leading-relaxed">{test.task2.prompt.description}</p>
+                          <p className="text-gray-700 leading-relaxed text-sm sm:text-base">{test.task2.prompt.description}</p>
                         )}
                         {test.task2.prompt && typeof test.task2.prompt !== 'string' && test.task2.prompt.question && (
-                          <div className="mt-3 p-4 bg-green-50 rounded-lg border-l-4 border-green-400">
-                            <p className="text-gray-800 font-medium leading-relaxed">{test.task2.prompt.question}</p>
+                          <div className="mt-3 p-3 sm:p-4 bg-green-50 rounded-lg border-l-4 border-green-400">
+                            <p className="text-gray-800 font-medium leading-relaxed text-sm sm:text-base">{test.task2.prompt.question}</p>
                           </div>
                         )}
                         {test.task2.prompt && typeof test.task2.prompt !== 'string' && test.task2.prompt.image && (
@@ -578,20 +578,20 @@ function WritingTestPage() {
                               <img 
                                 src={test.task2?.prompt && typeof test.task2.prompt !== 'string' ? test.task2.prompt.image : ''} 
                                 alt={`Task 2 ${test.task2?.type || 'Writing'} image`}
-                                className="w-auto h-auto max-w-2xl max-h-96 rounded-lg border border-gray-200 shadow-md group-hover:shadow-lg transition-shadow duration-300"
+                                className="w-auto h-auto max-w-full sm:max-w-2xl max-h-64 sm:max-h-96 rounded-lg border border-gray-200 shadow-md group-hover:shadow-lg transition-shadow duration-300"
                                 onError={(e) => {
                                   const target = e.target as HTMLImageElement;
                                   target.style.display = 'none';
                                   const errorDiv = document.createElement('div');
-                                  errorDiv.className = 'bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-6 text-center max-w-2xl';
+                                  errorDiv.className = 'bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-4 sm:p-6 text-center max-w-full sm:max-w-2xl';
                                   const imgSrc2 = test.task2?.prompt && typeof test.task2.prompt !== 'string' ? test.task2.prompt.image : 'Unknown';
                                   errorDiv.innerHTML = `
                                     <div class="text-gray-400 mb-2">
-                                      <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd" />
+                                      <svg class="w-8 h-8 sm:w-12 sm:h-12 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd" />
                                       </svg>
                                     </div>
-                                    <p class="text-sm text-gray-500">
+                                    <p class="text-xs sm:text-sm text-gray-500">
                                       Image: ${imgSrc2}<br>
                                       <span class="text-xs">(Image will be available in the actual test)</span>
                                     </p>
@@ -600,7 +600,7 @@ function WritingTestPage() {
                                 }}
                               />
                               <div className="absolute inset-0 bg-green-500 bg-opacity-0 group-hover:bg-opacity-10 rounded-lg transition-opacity duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 pointer-events-none">
-                                <span className="text-white bg-black bg-opacity-70 px-4 py-2 rounded-full text-sm font-medium shadow-lg">
+                                <span className="text-white bg-black bg-opacity-70 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium shadow-lg">
                                   🔍 Click to enlarge
                                 </span>
                               </div>
@@ -618,7 +618,7 @@ function WritingTestPage() {
               value={task2Answer}
               onChange={(e) => setTask2Answer(e.target.value)}
               placeholder="Write your Task 2 response here..."
-              className="w-full h-80 p-4 border-2 border-gray-300 rounded-lg focus:border-green-500 focus:outline-none resize-none"
+              className="w-full h-64 sm:h-80 p-3 sm:p-4 border-2 border-gray-300 rounded-lg focus:border-green-500 focus:outline-none resize-none text-sm sm:text-base"
               disabled={isSubmitting}
             />
           </div>
@@ -626,11 +626,11 @@ function WritingTestPage() {
       </div>
 
       {/* Submit Button */}
-      <div className="text-center mt-12">
+      <div className="text-center mt-8 sm:mt-12">
         <button
           onClick={handleSubmit}
           disabled={isSubmitting || (!task1Answer.trim() && !task2Answer.trim())}
-          className={`px-8 py-4 rounded-lg font-bold text-white text-lg transition-all ${
+          className={`px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold text-white text-base sm:text-lg transition-all w-full sm:w-auto ${
             isSubmitting || (!task1Answer.trim() && !task2Answer.trim())
               ? 'bg-gray-400 cursor-not-allowed'
               : 'bg-primary hover:bg-red-700 hover:shadow-lg'
@@ -639,11 +639,11 @@ function WritingTestPage() {
           {isSubmitting ? (
             <div className="flex flex-col items-center justify-center space-y-2">
               <div className="flex items-center">
-                <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white mr-3"></div>
-                <span>Evaluating with AI... {Math.round(submissionProgress)}%</span>
+                <div className="animate-spin rounded-full h-5 w-5 sm:h-6 sm:w-6 border-b-2 border-white mr-3"></div>
+                <span className="text-sm sm:text-base">Evaluating with AI... {Math.round(submissionProgress)}%</span>
               </div>
               {/* Progress Bar */}
-              <div className="w-64 bg-white/20 rounded-full h-2">
+              <div className="w-48 sm:w-64 bg-white/20 rounded-full h-2">
                 <div 
                   className="bg-white h-2 rounded-full transition-all duration-300 ease-out"
                   style={{ width: `${submissionProgress}%` }}
@@ -655,21 +655,21 @@ function WritingTestPage() {
           )}
         </button>
         
-        <p className="text-gray-600 mt-4">
+        <p className="text-gray-600 mt-4 text-xs sm:text-sm lg:text-base px-4">
           Your writing will be evaluated by advanced AI using official IELTS criteria
         </p>
       </div>
 
       {/* Warning for time */}
       {timeRemaining !== null && timeRemaining <= 300 && (
-        <div className="fixed top-4 right-4 bg-red-100 border-2 border-red-200 rounded-lg p-4 shadow-lg">
+        <div className="fixed top-4 right-4 bg-red-100 border-2 border-red-200 rounded-lg p-3 sm:p-4 shadow-lg max-w-xs">
           <div className="flex items-center text-red-800">
-            <svg className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <svg className="w-5 h-5 sm:w-6 sm:h-6 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
             </svg>
             <div>
-              <div className="font-bold">Time Running Out!</div>
-              <div className="text-sm">{formatTime(timeRemaining)} remaining</div>
+              <div className="font-bold text-sm sm:text-base">Time Running Out!</div>
+              <div className="text-xs sm:text-sm">{formatTime(timeRemaining)} remaining</div>
             </div>
           </div>
         </div>

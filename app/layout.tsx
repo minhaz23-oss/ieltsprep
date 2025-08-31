@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
 
-      <body className={`${raleway.variable} antialiased`}>
+      <body className={`${raleway.variable} antialiased px-4 sm:px-6 md:px-10 lg:px-16 sm:py-5 py-3`}>
         
         {children}
       </body>

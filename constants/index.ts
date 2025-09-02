@@ -15,7 +15,10 @@ export const navigationLinks = [
         name: "Tips & Resources",
         href: "/tips-resources",
     },
-    
+    {
+        name: "Pricing",
+        href: "/pricing",
+    },
 ]
 
 export const testModules = [

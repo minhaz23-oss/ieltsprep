@@ -4,8 +4,10 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { getReadingTestById } from '@/lib/actions/reading.actions';
+import { saveReadingTestResult } from '@/lib/actions/test-results.actions';
 import { useAuth } from '@/lib/hooks/useAuth';
 import AuthNotice from '@/components/AuthNotice';
+import { toast } from 'sonner';
 
 interface Question {
   id: number;
@@ -41,6 +43,7 @@ const ReadingTestPage = () => {
   const [isTimerActive, setIsTimerActive] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [score, setScore] = useState<{ correct: number; total: number } | null>(null);
+  const [startTime, setStartTime] = useState<number | null>(null);
   const { isAuthenticated, loading: authLoading } = useAuth();
 
   useEffect(() => {
@@ -90,6 +93,7 @@ const ReadingTestPage = () => {
 
   const startTimer = () => {
     setIsTimerActive(true);
+    setStartTime(Date.now());
   };
 
   const formatTime = (seconds: number) => {
@@ -105,7 +109,7 @@ const ReadingTestPage = () => {
     }));
   };
 
-  const submitTest = useCallback(() => {
+  const submitTest = useCallback(async () => {
     if (!test) return;
 
     let correct = 0;
@@ -133,10 +137,87 @@ const ReadingTestPage = () => {
       }
     });
 
-    setScore({ correct, total: test.questions.length });
+    const finalScore = { correct, total: test.questions.length };
+    const percentage = Math.round((correct / test.questions.length) * 100);
+    const getBandScore = (percentage: number) => {
+      if (percentage >= 90) return 9;
+      if (percentage >= 80) return 8;
+      if (percentage >= 70) return 7;
+      if (percentage >= 60) return 6;
+      if (percentage >= 50) return 5;
+      return 4;
+    };
+    const bandScore = getBandScore(percentage);
+
+    // Calculate skill analysis
+    const skillAnalysis: Record<string, { correct: number; total: number }> = {};
+    test.questions.forEach((question) => {
+      const userAnswer = answers[question.id];
+      const skillArea = question.skillArea || 'General Reading';
+      const correctAnswer = question.correctAnswer;
+      
+      if (!skillAnalysis[skillArea]) {
+        skillAnalysis[skillArea] = { correct: 0, total: 0 };
+      }
+      skillAnalysis[skillArea].total++;
+      
+      // Check if answer is correct
+      let isCorrect = false;
+      if (Array.isArray(correctAnswer) && Array.isArray(userAnswer)) {
+        isCorrect = correctAnswer.every((ans, index) => 
+          userAnswer[index]?.toLowerCase().trim() === ans.toLowerCase().trim()
+        );
+      } else if (typeof correctAnswer === 'string' && typeof userAnswer === 'string') {
+        if (question.type.includes('multiple') || question.type.includes('mcq')) {
+          isCorrect = userAnswer === correctAnswer;
+        } else {
+          isCorrect = userAnswer.toLowerCase().trim() === correctAnswer.toLowerCase().trim();
+        }
+      } else if (typeof correctAnswer === 'number' && typeof userAnswer === 'string') {
+        isCorrect = parseInt(userAnswer) === correctAnswer;
+      }
+      
+      if (isCorrect) {
+        skillAnalysis[skillArea].correct++;
+      }
+    });
+
+    // Calculate time spent
+    const timeSpent = startTime ? Math.round((Date.now() - startTime) / 1000) : 0;
+
+    // Save test result to Firebase if user is authenticated
+    if (isAuthenticated) {
+      try {
+        const saveResult = await saveReadingTestResult({
+          testId: test.id,
+          difficulty: test.difficulty,
+          title: test.title,
+          score: {
+            correct: finalScore.correct,
+            total: finalScore.total,
+            percentage
+          },
+          totalQuestions: test.questions.length,
+          timeSpent,
+          answers,
+          skillAnalysis,
+          bandScore
+        });
+
+        if (saveResult.success) {
+          toast.success('Test result saved to your dashboard!');
+        } else {
+          console.error('Failed to save test result:', saveResult.message);
+        }
+      } catch (error) {
+        console.error('Error saving test result:', error);
+      }
+    }
+
+    setScore(finalScore);
     setShowResults(true);
     setIsTimerActive(false);
-  }, [test, answers]);
+  }, [test, answers, startTime, isAuthenticated]);
 
   const renderQuestion = (question: Question) => {
     const userAnswer = answers[question.id];

@@ -4,8 +4,10 @@ import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { calculateIELTSListeningBand, getBandColor, getPerformanceLevel, getStudyRecommendations } from '@/lib/utils/ielts-scoring';
+import { saveListeningTestResult } from '@/lib/actions/test-results.actions';
 import { useAuth } from '@/lib/hooks/useAuth';
 import AuthNotice from '@/components/AuthNotice';
+import { toast } from 'sonner';
 
 interface Question {
   id: number;
@@ -153,7 +155,43 @@ const ListeningExamPage = () => {
     setAnswers(prev => ({ ...prev, [questionId]: answer }));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
+    if (!listeningData) return;
+
+    const score = calculateScore();
+    const ieltsScore = calculateIELTSListeningBand(score.correct, score.total);
+    
+    // Calculate time spent (10 minutes - remaining time)
+    const timeSpent = (10 * 60) - timeRemaining;
+
+    // Save test result to Firebase if user is authenticated
+    if (isAuthenticated) {
+      try {
+        const saveResult = await saveListeningTestResult({
+          testId: listeningData.id,
+          difficulty: listeningData.difficulty,
+          title: listeningData.title,
+          score: {
+            correct: score.correct,
+            total: score.total,
+            percentage: score.percentage
+          },
+          totalQuestions: listeningData.questions.length,
+          timeSpent,
+          answers,
+          bandScore: ieltsScore.band
+        });
+
+        if (saveResult.success) {
+          toast.success('Test result saved to your dashboard!');
+        } else {
+          console.error('Failed to save test result:', saveResult.message);
+        }
+      } catch (error) {
+        console.error('Error saving test result:', error);
+      }
+    }
+
     setShowResults(true);
     if (timerRef.current) clearTimeout(timerRef.current);
   };

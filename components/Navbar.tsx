@@ -9,6 +9,7 @@ import { auth } from "@/firebase/client";
 import { signOut } from "@/lib/actions/auth.actions";
 import { useState } from "react";
 import { CgMenu, CgClose } from "react-icons/cg";
+import { FaUserCircle } from "react-icons/fa";
 
 export default function Navbar() {
   const { user, loading } = useAuth();
@@ -66,9 +67,14 @@ export default function Navbar() {
         {loading ? (
           <Loader />
         ) : user ? (
-          <button onClick={handleLogout} className="btn-primary">
-            Logout
-          </button>
+          <div className="flex items-center gap-2">
+            <Link href="/dashboard" className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white hover:bg-primary/90 transition-colors">
+              <FaUserCircle size={24} />
+            </Link>
+            <button onClick={handleLogout} className="btn-primary">
+              Logout
+            </button>
+          </div>
         ) : (
           <>
             <Link href={"/sign-in"} className="btn-secondary">
@@ -115,9 +121,14 @@ export default function Navbar() {
               {loading ? (
                 <Loader />
               ) : user ? (
-                <button onClick={handleLogout} className="btn-primary w-full">
-                  Logout
-                </button>
+                <div className="flex flex-col items-center gap-4 w-full">
+                  <Link href="/dashboard" className="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white hover:bg-primary/90 transition-colors">
+                    <FaUserCircle size={28} />
+                  </Link>
+                  <button onClick={handleLogout} className="btn-primary w-full">
+                    Logout
+                  </button>
+                </div>
               ) : (
                 <>
                   <Link

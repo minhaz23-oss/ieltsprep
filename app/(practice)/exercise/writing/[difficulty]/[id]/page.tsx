@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { getWritingTestById } from '@/lib/actions/writing.actions';
+import { saveWritingTestResult } from '@/lib/actions/test-results.actions';
 import WritingFeedback from '@/components/WritingFeedback';
 import { useAuth } from '@/lib/hooks/useAuth';
 import AuthNotice from '@/components/AuthNotice';
@@ -96,6 +97,7 @@ function WritingTestPage() {
   const [showResults, setShowResults] = useState(false);
   const [timeRemaining, setTimeRemaining] = useState<number | null>(null);
   const [timerActive, setTimerActive] = useState(false);
+  const [startTime, setStartTime] = useState<number | null>(null);
 
   // Word count helpers
   const getWordCount = (text: string) => {
@@ -134,6 +136,7 @@ function WritingTestPage() {
     if (test?.metadata?.estimatedTimeMinutes) {
       setTimeRemaining(test.metadata.estimatedTimeMinutes * 60);
       setTimerActive(true);
+      setStartTime(Date.now());
     }
   };
 
@@ -206,13 +209,41 @@ function WritingTestPage() {
       setSubmissionProgress(100);
       
       // Small delay to show 100% completion
-      setTimeout(() => {
+      setTimeout(async () => {
         if (result.success) {
-          setEvaluation({
+          const evaluationData = {
             task1: result.results?.task1,
             task2: result.results?.task2,
             overallBandScore: result.overallBandScore
-          });
+          };
+          
+          setEvaluation(evaluationData);
+          
+          // Save test result to Firebase if user is authenticated
+          if (isAuthenticated && test) {
+            try {
+              const timeSpent = startTime ? Math.round((Date.now() - startTime) / 1000) : 0;
+              
+              const saveResult = await saveWritingTestResult({
+                testId: test.id,
+                difficulty: test.difficulty || 'medium',
+                task1Answer: task1Answer.trim() || undefined,
+                task2Answer: task2Answer.trim() || undefined,
+                evaluation: evaluationData,
+                timeSpent,
+                overallBandScore: evaluationData.overallBandScore || 0
+              });
+
+              if (saveResult.success) {
+                toast.success('Test result saved to your dashboard!');
+              } else {
+                console.error('Failed to save test result:', saveResult.message);
+              }
+            } catch (error) {
+              console.error('Error saving test result:', error);
+            }
+          }
+          
           setShowResults(true);
         } else {
           alert('Error evaluating your writing: ' + (result.error || 'Unknown error'));

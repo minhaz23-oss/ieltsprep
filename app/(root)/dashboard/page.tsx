@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { useAuth } from '@/lib/hooks/useAuth';
 import { getUserStats, getUserTestResults } from '@/lib/actions/test-results.actions';
@@ -51,22 +51,36 @@ const DashboardPage = () => {
   const [loading, setLoading] = useState(true);
   const [selectedTestType, setSelectedTestType] = useState<string>('all');
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      loadDashboardData();
-    } else if (!authLoading) {
-      setLoading(false);
-    }
-  }, [isAuthenticated, authLoading]);
-
-  const loadDashboardData = async () => {
+  const loadDashboardData = useCallback(async () => {
     try {
       setLoading(true);
       
-      // Load user statistics
+      // Load user statistics with better error handling
       const statsResponse = await getUserStats();
+      console.log('Stats response:', statsResponse); // Debug log
+      
       if (statsResponse.success && statsResponse.data) {
-        setStats(statsResponse.data);
+        // Type cast and validate the DocumentData to UserStats
+        const rawData = statsResponse.data as any;
+        
+        const validatedStats: UserStats = {
+          totalTests: rawData.totalTests || 0,
+          testsByType: rawData.testsByType || {},
+          averageScores: rawData.averageScores || {},
+          bestScores: rawData.bestScores || {},
+          recentActivity: rawData.recentActivity || []
+        };
+        setStats(validatedStats);
+      } else {
+        console.error('Stats response error:', statsResponse.message || 'No data returned');
+        // Set default empty stats
+        setStats({
+          totalTests: 0,
+          testsByType: {},
+          averageScores: {},
+          bestScores: {},
+          recentActivity: []
+        });
       }
 
       // Load recent test results
@@ -74,21 +88,55 @@ const DashboardPage = () => {
         selectedTestType === 'all' ? undefined : selectedTestType,
         10
       );
+      
+      console.log('Tests response:', testsResponse); // Debug log
+      
       if (testsResponse.success) {
-        setRecentTests(testsResponse.data);
+        // Type cast and validate the test results data
+        const validatedTests: TestResult[] = (testsResponse.data || []).map((test: any) => ({
+          id: test.id,
+          testType: test.testType || 'reading',
+          testId: test.testId || '',
+          difficulty: test.difficulty || 'easy',
+          title: test.title,
+          score: test.score ? {
+            correct: test.score.correct || 0,
+            total: test.score.total || 0,
+            percentage: test.score.percentage || 0
+          } : undefined,
+          bandScore: test.bandScore,
+          overallBandScore: test.overallBandScore,
+          timeSpent: test.timeSpent || 0,
+          completedAt: test.completedAt || new Date().toISOString()
+        }));
+        setRecentTests(validatedTests);
+      } else {
+        console.error('Tests response error:', testsResponse.message || 'Failed to get test results');
+        setRecentTests([]);
       }
     } catch (error) {
       console.error('Error loading dashboard data:', error);
+      // Set fallback empty state
+      setStats({
+        totalTests: 0,
+        testsByType: {},
+        averageScores: {},
+        bestScores: {},
+        recentActivity: []
+      });
+      setRecentTests([]);
     } finally {
       setLoading(false);
     }
-  };
+  }, [selectedTestType]);
 
   useEffect(() => {
     if (isAuthenticated) {
       loadDashboardData();
+    } else if (!authLoading) {
+      setLoading(false);
     }
-  }, [selectedTestType]);
+  }, [isAuthenticated, authLoading, loadDashboardData]);
 
   const formatTime = (seconds: number) => {
     const minutes = Math.floor(seconds / 60);

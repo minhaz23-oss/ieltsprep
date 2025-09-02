@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 
 interface AuthNoticeProps {
-  testType: "listening" | "reading" | "writing";
+  testType: "listening" | "reading" | "writing"| 'dashboard';
   hasAI?: boolean;
 }
 

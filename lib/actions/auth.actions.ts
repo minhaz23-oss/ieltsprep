@@ -19,6 +19,7 @@ export async function signUp(params: SignUpParams) {
     await db.collection("users").doc(uid).set({
       email,
       name,
+      subscriptionTier: 'free',
     });
 
     return {
@@ -69,6 +70,7 @@ export async function signIn(params: SignInParams) {
       await db.collection("users").doc(uid).set({
         email,
         name,
+        subscriptionTier: 'free',
       });
     }
 

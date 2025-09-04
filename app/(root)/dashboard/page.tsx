@@ -45,7 +45,7 @@ interface TestResult {
 }
 
 const DashboardPage = () => {
-  const { isAuthenticated, loading: authLoading, user } = useAuth();
+  const { isAuthenticated, loading: authLoading, user,isPremium } = useAuth();
   const [stats, setStats] = useState<UserStats | null>(null);
   const [recentTests, setRecentTests] = useState<TestResult[]>([]);
   const [loading, setLoading] = useState(true);
@@ -209,47 +209,47 @@ const DashboardPage = () => {
         {/* Header */}
         <div className="text-center mb-6 sm:mb-8">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-black mb-2 sm:mb-4">
-            📊 Your IELTS <span className="p-1 px-2 bg-primary rounded-md text-white -rotate-3 inline-block">Dashboard</span>
+            📊 Your IELTS <span className="p-1 px-2 bg-primary rounded-md text-white -rotate-3 inline-block"> Dashboard</span>
           </h1>
-          <p className="text-sm sm:text-base lg:text-lg text-gray-600">
+          <p className="text-sm font-semibold sm:text-base lg:text-lg text-gray-600">
             Welcome back, {user?.displayName || user?.email}! Track your progress and improve your scores.
           </p>
         </div>
 
         {/* Statistics Overview */}
         {stats && (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8 font-semibold">
             <div className="bg-white rounded-xl border-2 border-blue-200 p-3 sm:p-4 lg:p-6 text-center">
               <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-600 mb-1 sm:mb-2">
                 {stats.totalTests}
               </div>
-              <div className="text-blue-700 font-medium text-xs sm:text-sm lg:text-base">Total Tests</div>
+              <div className="text-blue-700 font-semibold text-xs sm:text-sm lg:text-base">Total Tests</div>
             </div>
             
             <div className="bg-white rounded-xl border-2 border-green-200 p-3 sm:p-4 lg:p-6 text-center">
               <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-green-600 mb-1 sm:mb-2">
                 {stats.testsByType.reading || 0}
               </div>
-              <div className="text-green-700 font-medium text-xs sm:text-sm lg:text-base">Reading Tests</div>
+              <div className="text-green-700 font-semibold text-xs sm:text-sm lg:text-base">Reading Tests</div>
             </div>
             
             <div className="bg-white rounded-xl border-2 border-purple-200 p-3 sm:p-4 lg:p-6 text-center">
               <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-purple-600 mb-1 sm:mb-2">
                 {stats.testsByType.listening || 0}
               </div>
-              <div className="text-purple-700 font-medium text-xs sm:text-sm lg:text-base">Listening Tests</div>
+              <div className="text-purple-700  text-xs sm:text-sm font-semibold lg:text-base">Listening Tests</div>
             </div>
             
             <div className="bg-white rounded-xl border-2 border-orange-200 p-3 sm:p-4 lg:p-6 text-center">
               <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-orange-600 mb-1 sm:mb-2">
                 {(stats.testsByType.writing || 0) + (stats.testsByType.speaking || 0)}
               </div>
-              <div className="text-orange-700 font-medium text-xs sm:text-sm lg:text-base">Writing & Speaking</div>
+              <div className="text-orange-700 font-semibold text-xs sm:text-sm lg:text-base">Writing & Speaking</div>
             </div>
           </div>
         )}
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+        <div className="grid font-semibold grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {/* Best Scores */}
           {stats && Object.keys(stats.bestScores).length > 0 && (
             <div className="bg-white rounded-xl border-2 border-gray-200 p-4 sm:p-6 lg:p-8">
@@ -318,7 +318,7 @@ const DashboardPage = () => {
         </div>
 
         {/* Recent Test Results */}
-        <div className="bg-white rounded-xl border-2 border-gray-200 p-4 sm:p-6 lg:p-8 mt-6 sm:mt-8">
+        <div className="bg-white font-semibold rounded-xl border-2 border-gray-200 p-4 sm:p-6 lg:p-8 mt-6 sm:mt-8">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6 gap-3">
             <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black">
               📝 Recent Test Results
@@ -392,7 +392,7 @@ const DashboardPage = () => {
         </div>
 
         {/* Quick Actions */}
-        <div className="bg-white rounded-xl border-2 border-gray-200 p-4 sm:p-6 lg:p-8 mt-6 sm:mt-8">
+        <div className="bg-white font-semibold rounded-xl border-2 border-gray-200 p-4 sm:p-6 lg:p-8 mt-6 sm:mt-8">
           <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black mb-4 sm:mb-6">
             🚀 Quick Actions
           </h3>

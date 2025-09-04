@@ -460,6 +460,10 @@ Remember: ONE QUESTION AT A TIME. Wait for their complete response before asking
                   <Ticket className='mr-2 h-5 w-5 sm:h-6 sm:w-6' />
                   No Tickets Left
                 </Button>
+                <div className=' w-full bg-blue-100 rounded-md height-[80px]mt-3 p-3 flex justify-center items-center flex-col border border-blue-300 gap-3'>
+                  <h1 className='font-semibold text-gray-600 text-center text-[20px]'>Want unlimited speaking test?</h1>
+                  <Link href={'/pricing'} className='btn-primary'>Upgrade to premium</Link>
+                </div>
               </div>
             ) : (
               <Button

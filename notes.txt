@@ -1,0 +1,76 @@
+ 1. Implement a Subscription/Premium User Model
+
+  First and foremost, you need a way to distinguish between free and premium users.
+
+   * User Schema: Update your user model in the database (e.g., Firestore) to include a field like subscriptionTier (free | premium) or
+     isPremium (boolean).
+   * Auth Hook: Modify the useAuth hook (lib/hooks/useAuth.ts) to expose the user's subscription status. This will make it easy to
+     conditionally render components and restrict access across your app.
+   * Payment Integration: You will need to integrate a payment provider like Stripe or Lemon Squeezy. When a user successfully pays, you'll
+     update their user model to reflect their premium status. The Upgrade to Premium button on the pricing page should trigger this payment
+     flow.
+
+  2. Restrict or Implement Premium Features
+
+  Here is a breakdown of the necessary changes for each premium feature:
+
+  🎤 Full Speaking Practice & AI Evaluation:
+   * Current Status: Free users are explicitly denied speaking practice.
+   * To-Do:
+       * In app/(practice)/exercise/speaking/page.tsx, use your modified useAuth hook to check if the user is premium.
+       * If the user is not premium, block access. You can show a modal or a notice (like your AuthNotice component) prompting them to
+         upgrade. The SpeakingTicketModal component suggests you might already have a system for this. You'll need to ensure free users have
+         zero tickets.
+
+
+ℹ Update successful! The new version will be used on your next run.
+
+  📝 Complete Mock Tests:
+   * Current Status: Free users are not allowed to take full mock tests.
+   * To-Do:
+       * On the app/(practice)/mock-test/page.tsx page, check for premium status.
+       * If the user is free, either redirect them or display a "Premium Only" message, encouraging them to upgrade.
+
+  🤖 Advanced/Unlimited AI Feedback:
+   * Current Status: Free users get limited AI feedback detail.
+   * To-Do:
+       * In your backend API routes (app/api/evaluate-writing/route.ts and app/api/evaluate-speaking/route.ts), you need to implement logic
+         to differentiate feedback detail.
+       * When a request comes in, check the user's subscription status.
+       * For free users, return a basic or truncated version of the AI analysis.
+       * For premium users, return the full, detailed analysis.
+
+  📄 Detailed Performance Reports & Advanced Study Plans:
+   * Current Status: The free plan offers a basic "Progress Dashboard" and "Performance Analytics".
+   * To-Do:
+       * On the app/(root)/dashboard/page.tsx, create two different views.
+       * Free View: The existing dashboard.
+       * Premium View: An enhanced dashboard with more detailed charts, in-depth analytics on strengths/weaknesses, and a new "Advanced
+         Study Plan" section. This will be a new component you need to build.
+
+  💡 Expert Tips & Strategies:
+   * Current Status: A tips-resources page exists.
+   * To-Do:
+       * In app/(root)/tips-resources/page.tsx, you can implement a content restriction.
+       * Allow free users to see a few introductory articles.
+       * Lock the majority of the content (especially "Expert Tips") for premium users only. Display a call-to-action to upgrade to view the
+         rest.
+
+  📚 Offline Practice Materials:
+   * Current Status: This feature does not exist.
+   * To-Do:
+       * You need to create a mechanism for users to download practice content.
+       * On the relevant practice pages (e.g., Reading, Listening), add a "Download for Offline" button that is only visible to premium
+         users.
+       * This button could trigger a download of the associated JSON and audio/image files from your /public directory.
+
+  🏅 Certificate of Completion:
+   * Current Status: This feature does not exist.
+   * To-Do:
+       * Define the criteria for earning a certificate (e.g., completing a certain number of mock tests with a specific average score).
+       * Create a new page or a section in the dashboard where a premium user can view and download their certificate.
+       * You will need to create a certificate template (this could be an HTML/CSS page or a generated PDF) and populate it with the user's
+         name and achievement.
+
+  By implementing these changes, you will have a fully functional premium subscription model that aligns with the features you've
+  advertised. Let me know if you want to start implementing any of these, and I can help with the code.

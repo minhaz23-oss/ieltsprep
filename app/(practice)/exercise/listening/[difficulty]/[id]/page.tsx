@@ -30,7 +30,7 @@ const ListeningExamPage = () => {
   const params = useParams();
   const difficulty = params.difficulty as string;
   const id = params.id as string;
-  const { user, loading: authLoading, isAuthenticated } = useAuth();
+  const { user, loading: authLoading, isAuthenticated, isPremium } = useAuth();
   
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -302,9 +302,27 @@ const ListeningExamPage = () => {
     const performanceLevel = getPerformanceLevel(ieltsScore.band);
     const recommendations = getStudyRecommendations(ieltsScore.band);
 
+    // Calculate wrong answers for premium analysis
+    const wrongAnswers: Array<{
+      question: Question;
+      userAnswer: string | number;
+      questionNumber: number;
+    }> = [];
+
+    questions.forEach((question, index) => {
+      const userAnswer = answers[question.id];
+      if (userAnswer !== question.correctAnswer) {
+        wrongAnswers.push({
+          question,
+          userAnswer,
+          questionNumber: index + 1
+        });
+      }
+    });
+
     return (
       <div className="min-h-screen bg-gray-50 py-4 sm:py-6 lg:py-8">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="space-y-4 sm:space-y-6">
             {/* Main Results Card */}
             <div className="bg-white rounded-xl border-2 border-primary/50 p-6 sm:p-8 text-center">
@@ -358,6 +376,190 @@ const ListeningExamPage = () => {
                 </button>
               </div>
             </div>
+
+            {/* Question-by-Question Analysis - Premium Feature */}
+            {wrongAnswers.length > 0 && (
+              <div className="bg-white rounded-xl border-2 border-gray-200 p-4 sm:p-6">
+                <div className="flex items-center justify-between mb-4 sm:mb-6">
+                  <h3 className="text-lg sm:text-xl font-bold text-black">❌ Mistakes Analysis</h3>
+                  {!isPremium && (
+                    <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                      PREMIUM
+                    </span>
+                  )}
+                </div>
+                
+                {isPremium ? (
+                  <div className="space-y-4">
+                    {wrongAnswers.map(({ question, userAnswer, questionNumber }) => {
+                      const displayCorrectAnswer = question.options && typeof question.correctAnswer === 'number' 
+                        ? question.options[question.correctAnswer]
+                        : question.correctAnswer;
+                      
+                      const displayUserAnswer = question.options && typeof userAnswer === 'number'
+                        ? question.options[userAnswer] || 'Not answered'
+                        : userAnswer || 'Not answered';
+
+                      return (
+                        <div key={question.id} className="border-l-4 border-red-400 bg-red-50 p-4 rounded-r-lg">
+                          <div className="flex justify-between items-start mb-3">
+                            <h4 className="font-bold text-red-800">Question {questionNumber}</h4>
+                            <span className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full">
+                              {question.type.replace('-', ' ').toUpperCase()}
+                            </span>
+                          </div>
+                          
+                          <p className="text-gray-800 mb-4 font-medium">{question.question}</p>
+                          
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="bg-white rounded-lg p-3 border border-red-200">
+                              <span className="text-sm font-semibold text-red-700">Your Answer:</span>
+                              <p className="text-red-800 mt-1">{displayUserAnswer}</p>
+                            </div>
+                            <div className="bg-white rounded-lg p-3 border border-green-200">
+                              <span className="text-sm font-semibold text-green-700">Correct Answer:</span>
+                              <p className="text-green-800 mt-1">{displayCorrectAnswer}</p>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <div className="relative overflow-hidden">
+                    <div className="filter blur-sm pointer-events-none">
+                      <div className="space-y-4">
+                        {wrongAnswers.slice(0, 2).map(({ question, userAnswer, questionNumber }) => (
+                          <div key={question.id} className="border-l-4 border-red-400 bg-red-50 p-4 rounded-r-lg">
+                            <div className="flex justify-between items-start mb-3">
+                              <h4 className="font-bold text-red-800">Question {questionNumber}</h4>
+                              <span className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full">
+                                {question.type.replace('-', ' ').toUpperCase()}
+                              </span>
+                            </div>
+                            <p className="text-gray-800 mb-4 font-medium">{question.question}</p>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                              <div className="bg-white rounded-lg p-3 border border-red-200">
+                                <span className="text-sm font-semibold text-red-700">Your Answer:</span>
+                                <p className="text-red-800 mt-1">Hidden</p>
+                              </div>
+                              <div className="bg-white rounded-lg p-3 border border-green-200">
+                                <span className="text-sm font-semibold text-green-700">Correct Answer:</span>
+                                <p className="text-green-800 mt-1">Hidden</p>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent flex items-center justify-center">
+                      <div className="text-center bg-white/95 backdrop-blur-sm rounded-lg p-6 border-2 border-orange-200 shadow-lg">
+                        <div className="text-orange-600 font-bold mb-2">🔒 Detailed Question Analysis</div>
+                        <p className="text-sm text-gray-600 mb-3">
+                          See explanations for all {wrongAnswers.length} mistakes with expert tips
+                        </p>
+                        <Link href="/pricing" className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-4 py-2 rounded-lg text-sm font-bold hover:shadow-lg transition-all">
+                          Unlock Analysis
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Study Materials - Premium Feature */}
+            {isPremium ? (
+              <div className="bg-white rounded-xl border-2 border-purple-200 p-4 sm:p-6">
+                <div className="flex items-center mb-4 sm:mb-6">
+                  <span className="text-2xl mr-3">📚</span>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-bold text-purple-800">Study Materials</h3>
+                    <p className="text-sm text-purple-600">Premium Resources</p>
+                  </div>
+                </div>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="p-4 bg-purple-50 rounded-lg">
+                    <h4 className="font-bold text-purple-800 mb-3">🎧 Listening Strategies</h4>
+                    <ul className="text-sm text-purple-700 space-y-2">
+                      <li className="flex items-start">
+                        <span className="text-purple-500 mr-2 mt-1">•</span>
+                        <div>
+                          <strong>Prediction:</strong> Read questions before listening
+                        </div>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-500 mr-2 mt-1">•</span>
+                        <div>
+                          <strong>Keywords:</strong> Listen for key information words
+                        </div>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-500 mr-2 mt-1">•</span>
+                        <div>
+                          <strong>Note-taking:</strong> Write down important details
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="p-4 bg-indigo-50 rounded-lg">
+                    <h4 className="font-bold text-indigo-800 mb-3">⚠️ Common Mistakes</h4>
+                    <ul className="text-sm text-indigo-700 space-y-2">
+                      <li className="flex items-start">
+                        <span className="text-indigo-500 mr-2 mt-1">•</span>
+                        <div>
+                          <strong>Spelling:</strong> Check spelling in fill-in-the-blank questions
+                        </div>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-indigo-500 mr-2 mt-1">•</span>
+                        <div>
+                          <strong>Distractors:</strong> Don't fall for incorrect options that sound similar
+                        </div>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-indigo-500 mr-2 mt-1">•</span>
+                        <div>
+                          <strong>Focus:</strong> Stay concentrated throughout the entire audio
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50 rounded-xl border-2 border-purple-200 p-6 sm:p-8">
+                <div className="text-center">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full mb-4">
+                    <span className="text-2xl">📚</span>
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Premium Study Materials</h3>
+                  <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+                    Access comprehensive listening strategies, common mistakes guide, and expert tips to improve your performance.
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-4 mb-6">
+                    <div className="p-4 bg-white/70 rounded-lg border border-purple-200">
+                      <div className="text-2xl mb-2">🎧</div>
+                      <h4 className="font-bold text-gray-800 mb-1">Listening Strategies</h4>
+                      <p className="text-sm text-gray-600">Prediction, keywords, and note-taking techniques</p>
+                    </div>
+                    <div className="p-4 bg-white/70 rounded-lg border border-purple-200">
+                      <div className="text-2xl mb-2">⚠️</div>
+                      <h4 className="font-bold text-gray-800 mb-1">Common Mistakes</h4>
+                      <p className="text-sm text-gray-600">Learn what to avoid in IELTS listening</p>
+                    </div>
+                  </div>
+                  <Link 
+                    href="/pricing" 
+                    className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-bold rounded-lg hover:shadow-lg transition-all transform hover:scale-105"
+                  >
+                    <span className="mr-2">📚</span>
+                    Access Study Materials
+                    <span className="ml-2">→</span>
+                  </Link>
+                </div>
+              </div>
+            )}
 
             {/* Study Recommendations */}
             <div className="bg-white rounded-xl border-2 border-blue-200 p-4 sm:p-6">

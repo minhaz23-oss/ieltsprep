@@ -44,7 +44,8 @@ const ReadingTestPage = () => {
   const [showResults, setShowResults] = useState(false);
   const [score, setScore] = useState<{ correct: number; total: number } | null>(null);
   const [startTime, setStartTime] = useState<number | null>(null);
-  const { isAuthenticated, loading: authLoading } = useAuth();
+  const [questionTimes, setQuestionTimes] = useState<number[]>([]);
+  const { isAuthenticated, loading: authLoading, isPremium } = useAuth();
 
   useEffect(() => {
     if (params.id) {
@@ -487,89 +488,318 @@ const ReadingTestPage = () => {
             </div>
           </div>
 
-          {/* Skill Area Performance */}
+          {/* Skill Area Performance - Premium Feature */}
           {Object.keys(skillAnalysis).length > 0 && (
             <div className="bg-white rounded-xl border-2 border-gray-200 p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8">
-              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black mb-4 sm:mb-6">📈 Skill Area Performance</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                {Object.entries(skillAnalysis).map(([skill, data]) => {
-                  const skillPercentage = Math.round((data.correct / data.total) * 100);
-                  return (
-                    <div key={skill} className="bg-gray-50 rounded-lg p-3 sm:p-4">
-                      <h4 className="font-bold text-gray-900 mb-2 sm:mb-3 text-sm sm:text-base">{skill}</h4>
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-xs sm:text-sm text-gray-600">{data.correct}/{data.total} correct</span>
-                        <span className={`text-xs sm:text-sm font-bold ${
-                          skillPercentage >= 80 ? 'text-green-600' :
-                          skillPercentage >= 60 ? 'text-yellow-600' : 'text-red-600'
-                        }`}>{skillPercentage}%</span>
+              <div className="flex items-center justify-between mb-4 sm:mb-6">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black">📈 Skill Area Performance</h3>
+                {!isPremium && (
+                  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                    PREMIUM
+                  </span>
+                )}
+              </div>
+              
+              {isPremium ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                  {Object.entries(skillAnalysis).map(([skill, data]) => {
+                    const skillPercentage = Math.round((data.correct / data.total) * 100);
+                    return (
+                      <div key={skill} className="bg-gray-50 rounded-lg p-3 sm:p-4">
+                        <h4 className="font-bold text-gray-900 mb-2 sm:mb-3 text-sm sm:text-base">{skill}</h4>
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="text-xs sm:text-sm text-gray-600">{data.correct}/{data.total} correct</span>
+                          <span className={`text-xs sm:text-sm font-bold ${
+                            skillPercentage >= 80 ? 'text-green-600' :
+                            skillPercentage >= 60 ? 'text-yellow-600' : 'text-red-600'
+                          }`}>{skillPercentage}%</span>
+                        </div>
+                        <div className="w-full bg-gray-200 rounded-full h-2 sm:h-3">
+                          <div 
+                            className={`h-2 sm:h-3 rounded-full transition-all duration-500 ${
+                              skillPercentage >= 80 ? 'bg-green-500' :
+                              skillPercentage >= 60 ? 'bg-yellow-500' : 'bg-red-500'
+                            }`}
+                            style={{ width: `${skillPercentage}%` }}
+                          ></div>
+                        </div>
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2 sm:h-3">
-                        <div 
-                          className={`h-2 sm:h-3 rounded-full transition-all duration-500 ${
-                            skillPercentage >= 80 ? 'bg-green-500' :
-                            skillPercentage >= 60 ? 'bg-yellow-500' : 'bg-red-500'
-                          }`}
-                          style={{ width: `${skillPercentage}%` }}
-                        ></div>
-                      </div>
+                    );
+                  })}
+                </div>
+              ) : (
+                <div className="relative overflow-hidden">
+                  <div className="filter blur-sm pointer-events-none">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                      {Object.entries(skillAnalysis).slice(0, 3).map(([skill, data]) => {
+                        const skillPercentage = Math.round((data.correct / data.total) * 100);
+                        return (
+                          <div key={skill} className="bg-gray-50 rounded-lg p-3 sm:p-4">
+                            <h4 className="font-bold text-gray-900 mb-2 sm:mb-3 text-sm sm:text-base">{skill}</h4>
+                            <div className="flex justify-between items-center mb-2">
+                              <span className="text-xs sm:text-sm text-gray-600">{data.correct}/{data.total} correct</span>
+                              <span className="text-xs sm:text-sm font-bold text-gray-600">{skillPercentage}%</span>
+                            </div>
+                            <div className="w-full bg-gray-200 rounded-full h-2 sm:h-3">
+                              <div className="h-2 sm:h-3 rounded-full bg-gray-400" style={{ width: `${skillPercentage}%` }}></div>
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
-                  );
-                })}
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent flex items-center justify-center">
+                    <div className="text-center bg-white/95 backdrop-blur-sm rounded-lg p-4 sm:p-6 border-2 border-orange-200 shadow-lg">
+                      <div className="text-orange-600 font-bold text-sm sm:text-base mb-2">🔒 Premium Analytics</div>
+                      <p className="text-xs sm:text-sm text-gray-600 mb-3">Get detailed skill-by-skill performance breakdown</p>
+                      <Link href="/pricing" className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-4 py-2 rounded-lg text-xs sm:text-sm font-bold hover:shadow-lg transition-all">
+                        Upgrade Now
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Question-by-Question Analysis - Premium Feature */}
+          {wrongAnswers.length > 0 && (
+            <div className="bg-white rounded-xl border-2 border-gray-200 p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8">
+              <div className="flex items-center justify-between mb-4 sm:mb-6">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black">❌ Mistakes Analysis</h3>
+                {!isPremium && (
+                  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                    PREMIUM
+                  </span>
+                )}
+              </div>
+              
+              {isPremium ? (
+                <div className="space-y-4 sm:space-y-6">
+                  {wrongAnswers.map(({ question, userAnswer, questionNumber }) => {
+                    const correctAnswer = question.correctAnswer;
+                    const displayCorrectAnswer = Array.isArray(correctAnswer) 
+                      ? correctAnswer.join(', ') 
+                      : question.options && typeof correctAnswer === 'number' 
+                        ? question.options[correctAnswer]
+                        : correctAnswer;
+                    
+                    const displayUserAnswer = Array.isArray(userAnswer) 
+                      ? userAnswer.join(', ') 
+                      : question.options && typeof userAnswer === 'string' && !isNaN(parseInt(userAnswer))
+                        ? question.options[parseInt(userAnswer)] || userAnswer
+                        : userAnswer || 'Not answered';
+
+                    return (
+                      <div key={question.id} className="border-l-4 border-red-400 bg-red-50 p-3 sm:p-4 rounded-r-lg">
+                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3 gap-2">
+                          <h4 className="font-bold text-red-800 text-sm sm:text-base">Question {questionNumber}</h4>
+                          <span className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full self-start">
+                            {question.skillArea || 'General Reading'}
+                          </span>
+                        </div>
+                        
+                        <p className="text-gray-800 mb-3 sm:mb-4 font-medium text-sm sm:text-base">{question.question}</p>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
+                          <div className="bg-white rounded-lg p-2 sm:p-3 border border-red-200">
+                            <span className="text-xs sm:text-sm font-semibold text-red-700">Your Answer:</span>
+                            <p className="text-red-800 mt-1 text-xs sm:text-sm">{displayUserAnswer}</p>
+                          </div>
+                          <div className="bg-white rounded-lg p-2 sm:p-3 border border-green-200">
+                            <span className="text-xs sm:text-sm font-semibold text-green-700">Correct Answer:</span>
+                            <p className="text-green-800 mt-1 text-xs sm:text-sm">{displayCorrectAnswer}</p>
+                          </div>
+                        </div>
+                        
+                        {question.explanation && (
+                          <div className="bg-blue-50 rounded-lg p-2 sm:p-3 border border-blue-200">
+                            <span className="text-xs sm:text-sm font-semibold text-blue-700">Explanation:</span>
+                            <p className="text-blue-800 mt-1 text-xs sm:text-sm">{question.explanation}</p>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : (
+                <div className="relative overflow-hidden">
+                  <div className="filter blur-sm pointer-events-none">
+                    <div className="space-y-4 sm:space-y-6">
+                      {wrongAnswers.slice(0, 2).map(({ question, userAnswer, questionNumber }) => (
+                        <div key={question.id} className="border-l-4 border-red-400 bg-red-50 p-3 sm:p-4 rounded-r-lg">
+                          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3 gap-2">
+                            <h4 className="font-bold text-red-800 text-sm sm:text-base">Question {questionNumber}</h4>
+                            <span className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full self-start">
+                              {question.skillArea || 'General Reading'}
+                            </span>
+                          </div>
+                          <p className="text-gray-800 mb-3 sm:mb-4 font-medium text-sm sm:text-base">{question.question}</p>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+                            <div className="bg-white rounded-lg p-2 sm:p-3 border border-red-200">
+                              <span className="text-xs sm:text-sm font-semibold text-red-700">Your Answer:</span>
+                              <p className="text-red-800 mt-1 text-xs sm:text-sm">Hidden</p>
+                            </div>
+                            <div className="bg-white rounded-lg p-2 sm:p-3 border border-green-200">
+                              <span className="text-xs sm:text-sm font-semibold text-green-700">Correct Answer:</span>
+                              <p className="text-green-800 mt-1 text-xs sm:text-sm">Hidden</p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent flex items-center justify-center">
+                    <div className="text-center bg-white/95 backdrop-blur-sm rounded-lg p-4 sm:p-6 border-2 border-orange-200 shadow-lg">
+                      <div className="text-orange-600 font-bold text-sm sm:text-base mb-2">🔒 Detailed Question Analysis</div>
+                      <p className="text-xs sm:text-sm text-gray-600 mb-3">
+                        See explanations for all {wrongAnswers.length} mistakes with expert tips
+                      </p>
+                      <Link href="/pricing" className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-4 py-2 rounded-lg text-xs sm:text-sm font-bold hover:shadow-lg transition-all">
+                        Unlock Analysis
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Time Management Analytics - Premium Feature */}
+          {isPremium && startTime && (
+            <div className="bg-white rounded-xl border-2 border-blue-200 p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8">
+              <div className="flex items-center mb-4 sm:mb-6">
+                <span className="text-2xl mr-3">⏱️</span>
+                <div>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-blue-800">Time Management Analysis</h3>
+                  <p className="text-sm text-blue-600">Premium Analytics</p>
+                </div>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="p-4 bg-blue-50 rounded-lg">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="font-semibold text-blue-800">Total Time Used</span>
+                      <span className="text-blue-600 font-bold">{formatTime(Math.round((Date.now() - startTime) / 1000))}</span>
+                    </div>
+                    <div className="text-xs text-blue-700">
+                      Recommended: {test.metadata.estimatedTimeMinutes} minutes
+                    </div>
+                  </div>
+                  <div className="p-4 bg-green-50 rounded-lg">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="font-semibold text-green-800">Average per Question</span>
+                      <span className="text-green-600 font-bold">
+                        {Math.round(((Date.now() - startTime) / 1000) / test.questions.length / 60 * 10) / 10} min
+                      </span>
+                    </div>
+                    <div className="text-xs text-green-700">
+                      Target: {Math.round(test.metadata.estimatedTimeMinutes / test.questions.length * 10) / 10} min per question
+                    </div>
+                  </div>
+                </div>
+                <div className="p-4 bg-purple-50 rounded-lg border-l-4 border-purple-400">
+                  <h4 className="font-bold text-purple-800 text-sm mb-2">⏰ Time Management Tips</h4>
+                  <ul className="text-xs text-purple-700 space-y-1">
+                    <li>• Spend max 20 minutes reading the passage</li>
+                    <li>• Allocate 1-2 minutes per question</li>
+                    <li>• Skip difficult questions and return later</li>
+                    <li>• Practice speed reading techniques</li>
+                  </ul>
+                </div>
               </div>
             </div>
           )}
 
-          {/* Question-by-Question Analysis */}
-          {wrongAnswers.length > 0 && (
-            <div className="bg-white rounded-xl border-2 border-gray-200 p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8">
-              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black mb-4 sm:mb-6">❌ Mistakes Analysis</h3>
-              <div className="space-y-4 sm:space-y-6">
-                {wrongAnswers.map(({ question, userAnswer, questionNumber }) => {
-                  const correctAnswer = question.correctAnswer;
-                  const displayCorrectAnswer = Array.isArray(correctAnswer) 
-                    ? correctAnswer.join(', ') 
-                    : question.options && typeof correctAnswer === 'number' 
-                      ? question.options[correctAnswer]
-                      : correctAnswer;
-                  
-                  const displayUserAnswer = Array.isArray(userAnswer) 
-                    ? userAnswer.join(', ') 
-                    : question.options && typeof userAnswer === 'string' && !isNaN(parseInt(userAnswer))
-                      ? question.options[parseInt(userAnswer)] || userAnswer
-                      : userAnswer || 'Not answered';
-
-                  return (
-                    <div key={question.id} className="border-l-4 border-red-400 bg-red-50 p-3 sm:p-4 rounded-r-lg">
-                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3 gap-2">
-                        <h4 className="font-bold text-red-800 text-sm sm:text-base">Question {questionNumber}</h4>
-                        <span className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full self-start">
-                          {question.skillArea || 'General Reading'}
-                        </span>
+          {/* Study Materials - Premium Feature */}
+          {isPremium ? (
+            <div className="bg-white rounded-xl border-2 border-purple-200 p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8">
+              <div className="flex items-center mb-4 sm:mb-6">
+                <span className="text-2xl mr-3">📚</span>
+                <div>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-purple-800">Study Materials</h3>
+                  <p className="text-sm text-purple-600">Premium Resources</p>
+                </div>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="p-4 bg-purple-50 rounded-lg">
+                  <h4 className="font-bold text-purple-800 mb-3">📖 Reading Strategies</h4>
+                  <ul className="text-sm text-purple-700 space-y-2">
+                    <li className="flex items-start">
+                      <span className="text-purple-500 mr-2 mt-1">•</span>
+                      <div>
+                        <strong>Skimming:</strong> Read quickly to get the main idea
                       </div>
-                      
-                      <p className="text-gray-800 mb-3 sm:mb-4 font-medium text-sm sm:text-base">{question.question}</p>
-                      
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
-                        <div className="bg-white rounded-lg p-2 sm:p-3 border border-red-200">
-                          <span className="text-xs sm:text-sm font-semibold text-red-700">Your Answer:</span>
-                          <p className="text-red-800 mt-1 text-xs sm:text-sm">{displayUserAnswer}</p>
-                        </div>
-                        <div className="bg-white rounded-lg p-2 sm:p-3 border border-green-200">
-                          <span className="text-xs sm:text-sm font-semibold text-green-700">Correct Answer:</span>
-                          <p className="text-green-800 mt-1 text-xs sm:text-sm">{displayCorrectAnswer}</p>
-                        </div>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-purple-500 mr-2 mt-1">•</span>
+                      <div>
+                        <strong>Scanning:</strong> Look for specific information
                       </div>
-                      
-                      {question.explanation && (
-                        <div className="bg-blue-50 rounded-lg p-2 sm:p-3 border border-blue-200">
-                          <span className="text-xs sm:text-sm font-semibold text-blue-700">Explanation:</span>
-                          <p className="text-blue-800 mt-1 text-xs sm:text-sm">{question.explanation}</p>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-purple-500 mr-2 mt-1">•</span>
+                      <div>
+                        <strong>Paragraph Analysis:</strong> Identify topic sentences
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div className="p-4 bg-indigo-50 rounded-lg">
+                  <h4 className="font-bold text-indigo-800 mb-3">⚠️ Common Mistakes</h4>
+                  <ul className="text-sm text-indigo-700 space-y-2">
+                    <li className="flex items-start">
+                      <span className="text-indigo-500 mr-2 mt-1">•</span>
+                      <div>
+                        <strong>Overthinking:</strong> Don't read too much into simple questions
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-indigo-500 mr-2 mt-1">•</span>
+                      <div>
+                        <strong>Time Management:</strong> Don't spend too long on one question
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-indigo-500 mr-2 mt-1">•</span>
+                      <div>
+                        <strong>Keywords:</strong> Always look for keywords in questions
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50 rounded-xl border-2 border-purple-200 p-6 sm:p-8 mb-6 sm:mb-8">
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full mb-4">
+                  <span className="text-2xl">📚</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Premium Study Materials</h3>
+                <p className="text-gray-600 mb-6 max-w-2xl mx-auto text-sm sm:text-base">
+                  Access comprehensive reading strategies, common mistakes guide, and expert tips to improve your performance.
+                </p>
+                <div className="grid md:grid-cols-2 gap-4 mb-6">
+                  <div className="p-4 bg-white/70 rounded-lg border border-purple-200">
+                    <div className="text-2xl mb-2">📖</div>
+                    <h4 className="font-bold text-gray-800 mb-1">Reading Strategies</h4>
+                    <p className="text-sm text-gray-600">Skimming, scanning, and analysis techniques</p>
+                  </div>
+                  <div className="p-4 bg-white/70 rounded-lg border border-purple-200">
+                    <div className="text-2xl mb-2">⚠️</div>
+                    <h4 className="font-bold text-gray-800 mb-1">Common Mistakes</h4>
+                    <p className="text-sm text-gray-600">Learn what to avoid in IELTS reading</p>
+                  </div>
+                </div>
+                <Link 
+                  href="/pricing" 
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-bold rounded-lg hover:shadow-lg transition-all transform hover:scale-105"
+                >
+                  <span className="mr-2">📚</span>
+                  Access Study Materials
+                  <span className="ml-2">→</span>
+                </Link>
               </div>
             </div>
           )}

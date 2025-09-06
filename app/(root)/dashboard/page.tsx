@@ -216,6 +216,47 @@ const DashboardPage = () => {
           </p>
         </div>
 
+        {/* Premium Status Banner */}
+        {isPremium ? (
+          <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl p-4 sm:p-6 mb-6 sm:mb-8 text-white">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <div className="bg-white/20 rounded-full p-2">
+                  <span className="text-2xl">⭐</span>
+                </div>
+                <div>
+                  <h3 className="text-lg sm:text-xl font-bold">Premium Member</h3>
+                  <p className="text-green-100 text-sm">Enjoying unlimited access to all features</p>
+                </div>
+              </div>
+              <div className="text-right">
+                <div className="text-sm text-green-100">Status</div>
+                <div className="font-bold">Active</div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="bg-gradient-to-r from-orange-500 to-red-600 rounded-xl p-4 sm:p-6 mb-6 sm:mb-8 text-white">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div className="flex items-center space-x-3">
+                <div className="bg-white/20 rounded-full p-2">
+                  <span className="text-2xl">🚀</span>
+                </div>
+                <div>
+                  <h3 className="text-lg sm:text-xl font-bold">Free Plan</h3>
+                  <p className="text-orange-100 text-sm">Upgrade to unlock advanced analytics & unlimited tests</p>
+                </div>
+              </div>
+              <Link 
+                href="/pricing" 
+                className="bg-white text-orange-600 px-4 py-2 rounded-lg font-bold hover:bg-orange-50 transition-colors text-sm sm:text-base whitespace-nowrap"
+              >
+                Upgrade to Premium
+              </Link>
+            </div>
+          </div>
+        )}
+
         {/* Statistics Overview */}
         {stats && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8 font-semibold">
@@ -253,11 +294,20 @@ const DashboardPage = () => {
           {/* Best Scores */}
           {stats && Object.keys(stats.bestScores).length > 0 && (
             <div className="bg-white rounded-xl border-2 border-gray-200 p-4 sm:p-6 lg:p-8">
-              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black mb-4 sm:mb-6">
-                🏆 Best Scores
-              </h3>
+              <div className="flex items-center justify-between mb-4 sm:mb-6">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black">
+                  🏆 Best Scores
+                </h3>
+                {!isPremium && (
+                  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                    LIMITED
+                  </span>
+                )}
+              </div>
               <div className="space-y-4">
-                {Object.entries(stats.bestScores).map(([testType, score]) => (
+                {Object.entries(stats.bestScores)
+                  .slice(0, isPremium ? undefined : 2)
+                  .map(([testType, score]) => (
                   <div key={testType} className="flex items-center justify-between p-3 sm:p-4 bg-gray-50 rounded-lg">
                     <div className="flex items-center space-x-3">
                       <span className="text-xl sm:text-2xl">{getTestTypeIcon(testType)}</span>
@@ -278,6 +328,16 @@ const DashboardPage = () => {
                     </div>
                   </div>
                 ))}
+                {!isPremium && Object.keys(stats.bestScores).length > 2 && (
+                  <div className="p-3 sm:p-4 bg-gradient-to-r from-orange-50 to-red-50 border-2 border-orange-200 rounded-lg text-center">
+                    <div className="text-orange-600 font-bold text-sm mb-2">
+                      🔒 {Object.keys(stats.bestScores).length - 2} more scores hidden
+                    </div>
+                    <Link href="/pricing" className="text-xs text-orange-700 hover:text-orange-800 underline">
+                      Upgrade to see all your best scores
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
           )}
@@ -285,11 +345,20 @@ const DashboardPage = () => {
           {/* Average Performance */}
           {stats && Object.keys(stats.averageScores).length > 0 && (
             <div className="bg-white rounded-xl border-2 border-gray-200 p-4 sm:p-6 lg:p-8">
-              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black mb-4 sm:mb-6">
-                📈 Average Performance
-              </h3>
+              <div className="flex items-center justify-between mb-4 sm:mb-6">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black">
+                  📈 Average Performance
+                </h3>
+                {!isPremium && (
+                  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                    LIMITED
+                  </span>
+                )}
+              </div>
               <div className="space-y-4">
-                {Object.entries(stats.averageScores).map(([testType, average]) => (
+                {Object.entries(stats.averageScores)
+                  .slice(0, isPremium ? undefined : 2)
+                  .map(([testType, average]) => (
                   <div key={testType} className="space-y-2">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
@@ -312,17 +381,151 @@ const DashboardPage = () => {
                     </div>
                   </div>
                 ))}
+                {!isPremium && Object.keys(stats.averageScores).length > 2 && (
+                  <div className="p-3 sm:p-4 bg-gradient-to-r from-orange-50 to-red-50 border-2 border-orange-200 rounded-lg text-center">
+                    <div className="text-orange-600 font-bold text-sm mb-2">
+                      🔒 {Object.keys(stats.averageScores).length - 2} more analytics hidden
+                    </div>
+                    <Link href="/pricing" className="text-xs text-orange-700 hover:text-orange-800 underline">
+                      Upgrade for complete performance analytics
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
           )}
         </div>
 
+        {/* Premium Analytics Section */}
+        {isPremium ? (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mt-6 sm:mt-8">
+            {/* Progress Trends */}
+            <div className="bg-white rounded-xl border-2 border-green-200 p-4 sm:p-6 lg:p-8">
+              <div className="flex items-center mb-4 sm:mb-6">
+                <span className="text-2xl mr-3">📊</span>
+                <div>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-green-800">
+                    Progress Trends
+                  </h3>
+                  <p className="text-sm text-green-600">Premium Analytics</p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="p-4 bg-green-50 rounded-lg">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-semibold text-green-800">Overall Improvement</span>
+                    <span className="text-green-600 font-bold">+12%</span>
+                  </div>
+                  <div className="w-full bg-green-200 rounded-full h-2">
+                    <div className="bg-green-500 h-2 rounded-full w-3/4"></div>
+                  </div>
+                  <p className="text-xs text-green-700 mt-2">Consistent improvement over last 30 days</p>
+                </div>
+                <div className="p-4 bg-blue-50 rounded-lg">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-semibold text-blue-800">Strongest Skill</span>
+                    <span className="text-blue-600 font-bold">Reading</span>
+                  </div>
+                  <p className="text-xs text-blue-700">Average Band 7.2 across all difficulty levels</p>
+                </div>
+                <div className="p-4 bg-orange-50 rounded-lg">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-semibold text-orange-800">Focus Area</span>
+                    <span className="text-orange-600 font-bold">Writing</span>
+                  </div>
+                  <p className="text-xs text-orange-700">Recommended for additional practice</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Study Recommendations */}
+            <div className="bg-white rounded-xl border-2 border-purple-200 p-4 sm:p-6 lg:p-8">
+              <div className="flex items-center mb-4 sm:mb-6">
+                <span className="text-2xl mr-3">🎯</span>
+                <div>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-purple-800">
+                    AI Study Plan
+                  </h3>
+                  <p className="text-sm text-purple-600">Personalized Recommendations</p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="p-4 bg-purple-50 rounded-lg border-l-4 border-purple-400">
+                  <h4 className="font-bold text-purple-800 mb-2">This Week's Focus</h4>
+                  <ul className="text-sm text-purple-700 space-y-1">
+                    <li>• Complete 3 Writing Task 2 essays</li>
+                    <li>• Practice complex sentence structures</li>
+                    <li>• Review vocabulary for academic topics</li>
+                  </ul>
+                </div>
+                <div className="p-4 bg-indigo-50 rounded-lg border-l-4 border-indigo-400">
+                  <h4 className="font-bold text-indigo-800 mb-2">Target Band Score</h4>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-indigo-700">Current: Band 6.5</span>
+                    <span className="text-sm text-indigo-700">Goal: Band 7.0</span>
+                  </div>
+                  <div className="w-full bg-indigo-200 rounded-full h-2 mt-2">
+                    <div className="bg-indigo-500 h-2 rounded-full w-4/5"></div>
+                  </div>
+                  <p className="text-xs text-indigo-600 mt-2">80% progress to your goal</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50 rounded-xl border-2 border-orange-200 p-6 sm:p-8 mt-6 sm:mt-8">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full mb-4">
+                <span className="text-2xl">📊</span>
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">
+                Unlock Advanced Analytics
+              </h3>
+              <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+                Get detailed progress trends, AI-powered study recommendations, and personalized insights to accelerate your IELTS preparation.
+              </p>
+              <div className="grid md:grid-cols-3 gap-4 mb-6">
+                <div className="p-4 bg-white/70 rounded-lg border border-orange-200">
+                  <div className="text-2xl mb-2">📈</div>
+                  <h4 className="font-bold text-gray-800 mb-1">Progress Tracking</h4>
+                  <p className="text-sm text-gray-600">Detailed performance trends over time</p>
+                </div>
+                <div className="p-4 bg-white/70 rounded-lg border border-orange-200">
+                  <div className="text-2xl mb-2">🎯</div>
+                  <h4 className="font-bold text-gray-800 mb-1">AI Study Plans</h4>
+                  <p className="text-sm text-gray-600">Personalized recommendations based on your performance</p>
+                </div>
+                <div className="p-4 bg-white/70 rounded-lg border border-orange-200">
+                  <div className="text-2xl mb-2">🏆</div>
+                  <h4 className="font-bold text-gray-800 mb-1">Complete History</h4>
+                  <p className="text-sm text-gray-600">Access all your test results and analytics</p>
+                </div>
+              </div>
+              <Link 
+                href="/pricing" 
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold rounded-lg hover:shadow-lg transition-all transform hover:scale-105"
+              >
+                <span className="mr-2">⭐</span>
+                Upgrade to Premium
+                <span className="ml-2">→</span>
+              </Link>
+            </div>
+          </div>
+        )}
+
         {/* Recent Test Results */}
         <div className="bg-white font-semibold rounded-xl border-2 border-gray-200 p-4 sm:p-6 lg:p-8 mt-6 sm:mt-8">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6 gap-3">
-            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black">
-              📝 Recent Test Results
-            </h3>
+            <div className="flex items-center gap-3">
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black">
+                📝 Recent Test Results
+              </h3>
+              {!isPremium && (
+                <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                  LIMITED
+                </span>
+              )}
+            </div>
             <select
               value={selectedTestType}
               onChange={(e) => setSelectedTestType(e.target.value)}
@@ -338,7 +541,7 @@ const DashboardPage = () => {
 
           {recentTests.length > 0 ? (
             <div className="space-y-3 sm:space-y-4">
-              {recentTests.map((test) => (
+              {recentTests.slice(0, isPremium ? undefined : 5).map((test) => (
                 <div key={test.id} className="border border-gray-200 rounded-lg p-3 sm:p-4 hover:bg-gray-50 transition-colors">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                     <div className="flex items-center space-x-3">
@@ -376,6 +579,20 @@ const DashboardPage = () => {
                   </div>
                 </div>
               ))}
+              {!isPremium && recentTests.length > 5 && (
+                <div className="p-4 bg-gradient-to-r from-orange-50 to-red-50 border-2 border-orange-200 rounded-lg text-center">
+                  <div className="text-orange-600 font-bold text-sm mb-2">
+                    🔒 {recentTests.length - 5} more test results hidden
+                  </div>
+                  <p className="text-xs text-gray-600 mb-3">
+                    Upgrade to Premium to view your complete test history and detailed analytics
+                  </p>
+                  <Link href="/pricing" className="inline-flex items-center text-xs bg-orange-600 text-white px-3 py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                    <span className="mr-1">⭐</span>
+                    View All Results
+                  </Link>
+                </div>
+              )}
             </div>
           ) : (
             <div className="text-center py-8 sm:py-12">

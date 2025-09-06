@@ -85,7 +85,7 @@ interface EvaluationResult {
 function WritingTestPage() {
   const params = useParams();
   const { difficulty, id } = params;
-  const { isAuthenticated, loading: authLoading } = useAuth();
+  const { isAuthenticated, loading: authLoading, isPremium } = useAuth();
 
   const [test, setTest] = useState<WritingTest | null>(null);
   const [loading, setLoading] = useState(true);
@@ -330,6 +330,7 @@ function WritingTestPage() {
           task1={evaluation.task1}
           task2={evaluation.task2}
           overallBandScore={evaluation.overallBandScore}
+          isPremium={isPremium}
         />
 
         {/* Action Buttons */}

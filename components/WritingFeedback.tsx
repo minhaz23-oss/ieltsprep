@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 interface Task1Feedback {
   taskAchievement: number;
@@ -42,12 +43,14 @@ interface WritingFeedbackProps {
   task1?: Task1Feedback;
   task2?: Task2Feedback;
   overallBandScore?: number;
+  isPremium?: boolean;
 }
 
 function WritingFeedback({
   task1,
   task2,
   overallBandScore,
+  isPremium = false,
 }: WritingFeedbackProps) {
   const getBandScoreColor = (score: number) => {
     if (score >= 7) return "text-green-600 bg-green-50 border-green-200";
@@ -227,33 +230,75 @@ function WritingFeedback({
 
             {/* Detailed Feedback */}
             <div className="space-y-4">
+              {/* Strengths - Always visible */}
               <div>
                 <h4 className="font-bold text-green-700 mb-2 flex items-center">
                   ✅ Strengths
                 </h4>
                 <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                  {(task1.strengths || []).map((strength, index) => (
+                  {(task1.strengths || []).slice(0, isPremium ? undefined : 2).map((strength, index) => (
                     <li key={index}>{strength}</li>
                   ))}
+                  {!isPremium && (task1.strengths || []).length > 2 && (
+                    <li className="text-gray-400 italic">+ {(task1.strengths || []).length - 2} more insights available with Premium</li>
+                  )}
                 </ul>
               </div>
 
-              <div>
+              {/* Areas for Improvement - Premium Feature */}
+              <div className={`relative ${!isPremium ? 'overflow-hidden' : ''}`}>
                 <h4 className="font-bold text-orange-700 mb-2 flex items-center">
                   📈 Areas for Improvement
+                  {!isPremium && (
+                    <span className="ml-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                      PREMIUM
+                    </span>
+                  )}
                 </h4>
-                <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                  {(task1.improvements || []).map((improvement, index) => (
-                    <li key={index}>{improvement}</li>
-                  ))}
-                </ul>
+                <div className={!isPremium ? 'filter blur-sm pointer-events-none' : ''}>
+                  <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                    {(task1.improvements || []).map((improvement, index) => (
+                      <li key={index}>{improvement}</li>
+                    ))}
+                  </ul>
+                </div>
+                {!isPremium && (
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent flex items-center justify-center">
+                    <div className="text-center bg-white/95 backdrop-blur-sm rounded-lg p-4 border-2 border-orange-200 shadow-lg">
+                      <div className="text-orange-600 font-bold text-sm mb-2">🔒 Premium Feature</div>
+                      <p className="text-xs text-gray-600 mb-3">Get detailed improvement suggestions</p>
+                      <Link href="/pricing" className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-4 py-2 rounded-lg text-xs font-bold hover:shadow-lg transition-all">
+                        Upgrade Now
+                      </Link>
+                    </div>
+                  </div>
+                )}
               </div>
 
-              <div className="bg-blue-50 rounded-lg p-4">
+              {/* Expert Advice - Premium Feature */}
+              <div className={`relative ${!isPremium ? 'overflow-hidden' : ''}`}>
                 <h4 className="font-bold text-blue-700 mb-2 flex items-center">
                   💡 Expert Advice
+                  {!isPremium && (
+                    <span className="ml-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                      PREMIUM
+                    </span>
+                  )}
                 </h4>
-                <p className="text-sm text-gray-700">{task1.advice}</p>
+                <div className={`bg-blue-50 rounded-lg p-4 ${!isPremium ? 'filter blur-sm pointer-events-none' : ''}`}>
+                  <p className="text-sm text-gray-700">{task1.advice}</p>
+                </div>
+                {!isPremium && (
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent flex items-center justify-center">
+                    <div className="text-center bg-white/95 backdrop-blur-sm rounded-lg p-4 border-2 border-blue-200 shadow-lg">
+                      <div className="text-blue-600 font-bold text-sm mb-2">🔒 Premium Feature</div>
+                      <p className="text-xs text-gray-600 mb-3">Get personalized expert advice</p>
+                      <Link href="/pricing" className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-lg text-xs font-bold hover:shadow-lg transition-all">
+                        Upgrade Now
+                      </Link>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -370,33 +415,75 @@ function WritingFeedback({
 
             {/* Detailed Feedback */}
             <div className="space-y-4">
+              {/* Strengths - Always visible */}
               <div>
                 <h4 className="font-bold text-green-700 mb-2 flex items-center">
                   ✅ Strengths
                 </h4>
                 <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                  {(task2.strengths || []).map((strength, index) => (
+                  {(task2.strengths || []).slice(0, isPremium ? undefined : 2).map((strength, index) => (
                     <li key={index}>{strength}</li>
                   ))}
+                  {!isPremium && (task2.strengths || []).length > 2 && (
+                    <li className="text-gray-400 italic">+ {(task2.strengths || []).length - 2} more insights available with Premium</li>
+                  )}
                 </ul>
               </div>
 
-              <div>
+              {/* Areas for Improvement - Premium Feature */}
+              <div className={`relative ${!isPremium ? 'overflow-hidden' : ''}`}>
                 <h4 className="font-bold text-orange-700 mb-2 flex items-center">
                   📈 Areas for Improvement
+                  {!isPremium && (
+                    <span className="ml-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                      PREMIUM
+                    </span>
+                  )}
                 </h4>
-                <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                  {(task2.improvements || []).map((improvement, index) => (
-                    <li key={index}>{improvement}</li>
-                  ))}
-                </ul>
+                <div className={!isPremium ? 'filter blur-sm pointer-events-none' : ''}>
+                  <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                    {(task2.improvements || []).map((improvement, index) => (
+                      <li key={index}>{improvement}</li>
+                    ))}
+                  </ul>
+                </div>
+                {!isPremium && (
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent flex items-center justify-center">
+                    <div className="text-center bg-white/95 backdrop-blur-sm rounded-lg p-4 border-2 border-orange-200 shadow-lg">
+                      <div className="text-orange-600 font-bold text-sm mb-2">🔒 Premium Feature</div>
+                      <p className="text-xs text-gray-600 mb-3">Get detailed improvement suggestions</p>
+                      <Link href="/pricing" className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-4 py-2 rounded-lg text-xs font-bold hover:shadow-lg transition-all">
+                        Upgrade Now
+                      </Link>
+                    </div>
+                  </div>
+                )}
               </div>
 
-              <div className="bg-green-50 rounded-lg p-4">
+              {/* Expert Advice - Premium Feature */}
+              <div className={`relative ${!isPremium ? 'overflow-hidden' : ''}`}>
                 <h4 className="font-bold text-green-700 mb-2 flex items-center">
                   💡 Expert Advice
+                  {!isPremium && (
+                    <span className="ml-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                      PREMIUM
+                    </span>
+                  )}
                 </h4>
-                <p className="text-sm text-gray-700">{task2.advice}</p>
+                <div className={`bg-green-50 rounded-lg p-4 ${!isPremium ? 'filter blur-sm pointer-events-none' : ''}`}>
+                  <p className="text-sm text-gray-700">{task2.advice}</p>
+                </div>
+                {!isPremium && (
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent flex items-center justify-center">
+                    <div className="text-center bg-white/95 backdrop-blur-sm rounded-lg p-4 border-2 border-green-200 shadow-lg">
+                      <div className="text-green-600 font-bold text-sm mb-2">🔒 Premium Feature</div>
+                      <p className="text-xs text-gray-600 mb-3">Get personalized expert advice</p>
+                      <Link href="/pricing" className="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-lg text-xs font-bold hover:shadow-lg transition-all">
+                        Upgrade Now
+                      </Link>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -492,6 +579,74 @@ function WritingFeedback({
           </div>
         </div>
       </div>
+
+      {/* Premium Upgrade Section for Free Users */}
+      {!isPremium && (
+        <div className="bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50 rounded-2xl p-8 border-2 border-orange-200 shadow-lg">
+          <div className="text-center mb-6">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full mb-4">
+              <span className="text-2xl">🚀</span>
+            </div>
+            <h3 className="text-2xl font-bold text-gray-800 mb-2">
+              Unlock Your Full Potential
+            </h3>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              You're seeing limited feedback. Upgrade to Premium to get comprehensive analysis, 
+              detailed improvement suggestions, and personalized expert advice to achieve your target band score.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div className="text-center p-4 bg-white/70 rounded-lg border border-orange-200">
+              <div className="text-3xl mb-2">📊</div>
+              <h4 className="font-bold text-gray-800 mb-1">Detailed Analysis</h4>
+              <p className="text-sm text-gray-600">Complete breakdown of all IELTS criteria with specific feedback</p>
+            </div>
+            <div className="text-center p-4 bg-white/70 rounded-lg border border-orange-200">
+              <div className="text-3xl mb-2">💡</div>
+              <h4 className="font-bold text-gray-800 mb-1">Expert Advice</h4>
+              <p className="text-sm text-gray-600">Personalized recommendations from IELTS experts</p>
+            </div>
+            <div className="text-center p-4 bg-white/70 rounded-lg border border-orange-200">
+              <div className="text-3xl mb-2">📈</div>
+              <h4 className="font-bold text-gray-800 mb-1">Improvement Plan</h4>
+              <p className="text-sm text-gray-600">Step-by-step guidance to reach your target score</p>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <Link 
+              href="/pricing" 
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold rounded-lg text-lg hover:shadow-xl transition-all transform hover:scale-105"
+            >
+              <span className="mr-2">⭐</span>
+              Upgrade to Premium
+              <span className="ml-2">→</span>
+            </Link>
+            <p className="text-sm text-gray-500 mt-3">
+              Join thousands of successful IELTS candidates who chose Premium
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Premium Success Message */}
+      {isPremium && (
+        <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 border-2 border-green-200">
+          <div className="text-center">
+            <div className="inline-flex items-center justify-center w-12 h-12 bg-green-500 rounded-full mb-3">
+              <span className="text-xl text-white">⭐</span>
+            </div>
+            <h3 className="text-lg font-bold text-green-800 mb-2">
+              Premium Analysis Complete!
+            </h3>
+            <p className="text-green-700 text-sm">
+              You're getting the most comprehensive IELTS writing feedback available. 
+              Keep practicing to achieve your target score!
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

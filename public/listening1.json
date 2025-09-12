@@ -1,0 +1,630 @@
+{
+  "id": "listening1",
+  "title": "IELTS Listening Practice Test 1",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "createdAt": "2024-01-15",
+    "updatedAt": "2024-01-15",
+    "tags": ["crime-report", "apprenticeship", "coastal-cities", "marine-energy"],
+    "description": "Full IELTS Listening Practice Test with 4 sections covering various topics and question types"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Crime Report Form",
+      "description": "A conversation between a police officer and a crime victim",
+      "instructions": "Complete the form below. Write ONE WORD AND/OR A NUMBER for each answer.",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening%20t1%20s1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZyB0MSBzMS5tcDMiLCJpYXQiOjE3NTczNDU1NDQsImV4cCI6MTc2NTk4NTU0NH0.CE8WnbOowAUueRpJgWv7bPPe270mVxpssLBRsP5UOq0",
+      "questions": [
+        {
+          "id": 1,
+          "sectionId": 1,
+          "questionNumber": 1,
+          "type": "form-completion",
+          "question": "Nationality",
+          "correctAnswer": "Canadian",
+          "acceptableAnswers": ["canadian", "Canada"],
+          "caseSensitive": false,
+          "context": {
+            "formTitle": "CRIME REPORT FORM",
+            "fields": [
+              { "label": "Type of crime", "questionId": 0, "type": "text" },
+              { "label": "Name", "questionId": 0, "type": "text" },
+              { "label": "Nationality", "questionId": 1, "type": "text" },
+              { "label": "Date of birth", "questionId": 0, "type": "text" },
+              { "label": "Occupation", "questionId": 0, "type": "text" },
+              { "label": "Reason for visit", "questionId": 2, "type": "text" },
+              { "label": "Length of stay", "questionId": 0, "type": "text" },
+              { "label": "Current address", "questionId": 3, "type": "text" }
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "sectionId": 1,
+          "questionNumber": 2,
+          "type": "fill-blank",
+          "question": "Reason for visit: business (to buy antique ______)",
+          "correctAnswer": "furniture",
+          "acceptableAnswers": ["furniture", "furnishings"],
+          "caseSensitive": false
+        },
+        {
+          "id": 3,
+          "sectionId": 1,
+          "questionNumber": 3,
+          "type": "fill-blank",
+          "question": "Current address: ______ Apartments (No 15)",
+          "correctAnswer": "Riverside",
+          "acceptableAnswers": ["riverside", "River side"],
+          "caseSensitive": false
+        },
+        {
+          "id": 4,
+          "sectionId": 1,
+          "questionNumber": 4,
+          "type": "fill-blank",
+          "question": "Items stolen: a wallet containing approximately £ ______",
+          "correctAnswer": "300",
+          "acceptableAnswers": ["300", "three hundred"],
+          "caseSensitive": false
+        },
+        {
+          "id": 5,
+          "sectionId": 1,
+          "questionNumber": 5,
+          "type": "fill-blank",
+          "question": "Items stolen: a ______",
+          "correctAnswer": "camera",
+          "acceptableAnswers": ["camera", "digital camera"],
+          "caseSensitive": false
+        },
+        {
+          "id": 6,
+          "sectionId": 1,
+          "questionNumber": 6,
+          "type": "fill-blank",
+          "question": "Date of theft: ______",
+          "correctAnswer": "23rd May",
+          "acceptableAnswers": ["23rd May", "May 23rd", "23 May"],
+          "caseSensitive": false
+        },
+        {
+          "id": 7,
+          "sectionId": 1,
+          "questionNumber": 7,
+          "type": "fill-blank",
+          "question": "Location: outside the ______ at about 4 pm",
+          "correctAnswer": "museum",
+          "acceptableAnswers": ["museum", "art museum"],
+          "caseSensitive": false
+        },
+        {
+          "id": 8,
+          "sectionId": 1,
+          "questionNumber": 8,
+          "type": "fill-blank",
+          "question": "Details of suspect: some boys asked for the ______ then ran off",
+          "correctAnswer": "time",
+          "acceptableAnswers": ["time", "what time it was"],
+          "caseSensitive": false
+        },
+        {
+          "id": 9,
+          "sectionId": 1,
+          "questionNumber": 9,
+          "type": "fill-blank",
+          "question": "Suspect description: about 12, slim build with ______ hair",
+          "correctAnswer": "dark",
+          "acceptableAnswers": ["dark", "black", "brown"],
+          "caseSensitive": false
+        },
+        {
+          "id": 10,
+          "sectionId": 1,
+          "questionNumber": 10,
+          "type": "fill-blank",
+          "question": "Crime reference number allocated: ______",
+          "correctAnswer": "CR2024-1156",
+          "acceptableAnswers": ["CR2024-1156", "CR 2024-1156"],
+          "caseSensitive": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Induction Talk for New Apprentices",
+      "description": "A manager giving advice to new apprentices",
+      "instructions": "Choose the correct letters A-E for questions 11-14, and A-C for questions 15-20.",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening%20t1%20s2.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZyB0MSBzMi5tcDMiLCJpYXQiOjE3NTczNDU2MjEsImV4cCI6MTc2NTk4NTYyMX0.Uz2UtpfrH8fFhmp5jK0cT1v7iU-TekfRDbTFtCi56fA",
+      "questions": [
+        {
+          "id": "11-12",
+          "sectionId": 2,
+          "questionNumbers": [11, 12],
+          "type": "multiple-choice-grouped",
+          "question": "Which TWO pieces of advice for the first week of an apprenticeship does the manager give?",
+          "options": [
+            "A get to know colleagues",
+            "B learn from any mistakes",
+            "C ask lots of questions",
+            "D react positively to feedback",
+            "E enjoy new challenges"
+          ],
+          "correctAnswer": ["B", "D"],
+          "instructions": "Choose TWO letters, A-E"
+        },
+        {
+          "id": "13-14",
+          "sectionId": 2,
+          "questionNumbers": [13, 14],
+          "type": "multiple-choice-grouped",
+          "question": "Which TWO things does the manager say mentors can help with?",
+          "options": [
+            "A confidence-building",
+            "B making career plans",
+            "C completing difficult tasks",
+            "D making a weekly timetable",
+            "E reviewing progress"
+          ],
+          "correctAnswer": ["A", "E"],
+          "instructions": "Choose TWO letters, A-E"
+        },
+        {
+          "id": 15,
+          "sectionId": 2,
+          "questionNumber": 15,
+          "type": "matching",
+          "question": "Using the internet",
+          "correctAnswer": "B",
+          "context": {
+            "instructions": "What does the manager say about each aspect of company policy? Write A, B or C.",
+            "leftColumn": ["A - It is encouraged", "B - There are some restrictions", "C - It is against the rules"],
+            "rightColumn": ["Using the internet", "Flexible working", "Booking holidays", "Working overtime", "Wearing trainers", "Bringing food to work"]
+          }
+        },
+        {
+          "id": 16,
+          "sectionId": 2,
+          "questionNumber": 16,
+          "type": "matching",
+          "question": "Flexible working",
+          "correctAnswer": "A",
+          "context": {
+            "instructions": "What does the manager say about each aspect of company policy? Write A, B or C.",
+            "leftColumn": ["A - It is encouraged", "B - There are some restrictions", "C - It is against the rules"],
+            "rightColumn": ["Using the internet", "Flexible working", "Booking holidays", "Working overtime", "Wearing trainers", "Bringing food to work"]
+          }
+        },
+        {
+          "id": 17,
+          "sectionId": 2,
+          "questionNumber": 17,
+          "type": "matching",
+          "question": "Booking holidays",
+          "correctAnswer": "B",
+          "context": {
+            "instructions": "What does the manager say about each aspect of company policy? Write A, B or C.",
+            "leftColumn": ["A - It is encouraged", "B - There are some restrictions", "C - It is against the rules"],
+            "rightColumn": ["Using the internet", "Flexible working", "Booking holidays", "Working overtime", "Wearing trainers", "Bringing food to work"]
+          }
+        },
+        {
+          "id": 18,
+          "sectionId": 2,
+          "questionNumber": 18,
+          "type": "matching",
+          "question": "Working overtime",
+          "correctAnswer": "C",
+          "context": {
+            "instructions": "What does the manager say about each aspect of company policy? Write A, B or C.",
+            "leftColumn": ["A - It is encouraged", "B - There are some restrictions", "C - It is against the rules"],
+            "rightColumn": ["Using the internet", "Flexible working", "Booking holidays", "Working overtime", "Wearing trainers", "Bringing food to work"]
+          }
+        },
+        {
+          "id": 19,
+          "sectionId": 2,
+          "questionNumber": 19,
+          "type": "matching",
+          "question": "Wearing trainers",
+          "correctAnswer": "B",
+          "context": {
+            "instructions": "What does the manager say about each aspect of company policy? Write A, B or C.",
+            "leftColumn": ["A - It is encouraged", "B - There are some restrictions", "C - It is against the rules"],
+            "rightColumn": ["Using the internet", "Flexible working", "Booking holidays", "Working overtime", "Wearing trainers", "Bringing food to work"]
+          }
+        },
+        {
+          "id": 20,
+          "sectionId": 2,
+          "questionNumber": 20,
+          "type": "matching",
+          "question": "Bringing food to work",
+          "correctAnswer": "A",
+          "context": {
+            "instructions": "What does the manager say about each aspect of company policy? Write A, B or C.",
+            "leftColumn": ["A - It is encouraged", "B - There are some restrictions", "C - It is against the rules"],
+            "rightColumn": ["Using the internet", "Flexible working", "Booking holidays", "Working overtime", "Wearing trainers", "Bringing food to work"]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Cities Built by the Sea",
+      "description": "A discussion between students about coastal cities",
+      "instructions": "Choose the correct letter A, B or C for questions 21-25. For questions 26-30, choose from the box A-G.",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening%20t1%20s3.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZyB0MSBzMy5tcDMiLCJpYXQiOjE3NTczNDU2NDEsImV4cCI6MTc2NTk4NTY0MX0.syTr86y2KJBWa80_VySi4dKI8GtrGOOCgB7vm6x2rxE",
+      "questions": [
+        {
+          "id": 21,
+          "sectionId": 3,
+          "questionNumber": 21,
+          "type": "multiple-choice",
+          "question": "Carla and Rob were surprised to learn that coastal cities",
+          "options": [
+            "contain nearly half the world's population",
+            "include most of the world's largest cities", 
+            "are growing twice as fast as other cities"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 22,
+          "sectionId": 3,
+          "questionNumber": 22,
+          "type": "multiple-choice",
+          "question": "According to Rob, building coastal cities near to rivers",
+          "options": [
+            "may bring pollution to the cities",
+            "may reduce the land available for agriculture",
+            "may mean the countryside is spoiled by industry"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 23,
+          "sectionId": 3,
+          "questionNumber": 23,
+          "type": "multiple-choice",
+          "question": "What mistake was made when building water drainage channels in Miami in the 1950s?",
+          "options": [
+            "There were not enough for them",
+            "They were made of unsuitable materials",
+            "They did not allow for the effects of climate change"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 24,
+          "sectionId": 3,
+          "questionNumber": 24,
+          "type": "multiple-choice",
+          "question": "What do Rob and Carla think that the authorities in Miami should do immediately?",
+          "options": [
+            "take measures to restore ecosystems",
+            "pay for a new flood prevention system",
+            "stop disposing of waste materials into the ocean"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 25,
+          "sectionId": 3,
+          "questionNumber": 25,
+          "type": "multiple-choice",
+          "question": "What do they agree should be the priority for international action?",
+          "options": [
+            "greater coordination of activities",
+            "more sharing of information",
+            "agreement on shared policies"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "id": 26,
+          "sectionId": 3,
+          "questionNumber": 26,
+          "type": "matching",
+          "question": "Historical background",
+          "correctAnswer": "B",
+          "context": {
+            "instructions": "What decision do the students make about each part of their presentation? Choose from A-G.",
+            "leftColumn": [
+              "A - use visuals",
+              "B - keep it short", 
+              "C - involve other students",
+              "D - check the information is accurate",
+              "E - provide a handout",
+              "F - focus on one example",
+              "G - do online research"
+            ],
+            "rightColumn": [
+              "Historical background",
+              "Geographical factors", 
+              "Past mistakes",
+              "Future risks",
+              "International implications"
+            ]
+          }
+        },
+        {
+          "id": 27,
+          "sectionId": 3,
+          "questionNumber": 27,
+          "type": "matching",
+          "question": "Geographical factors",
+          "correctAnswer": "A",
+          "context": {
+            "instructions": "What decision do the students make about each part of their presentation? Choose from A-G.",
+            "leftColumn": [
+              "A - use visuals",
+              "B - keep it short", 
+              "C - involve other students",
+              "D - check the information is accurate",
+              "E - provide a handout",
+              "F - focus on one example",
+              "G - do online research"
+            ],
+            "rightColumn": [
+              "Historical background",
+              "Geographical factors", 
+              "Past mistakes",
+              "Future risks",
+              "International implications"
+            ]
+          }
+        },
+        {
+          "id": 28,
+          "sectionId": 3,
+          "questionNumber": 28,
+          "type": "matching",
+          "question": "Past mistakes",
+          "correctAnswer": "F",
+          "context": {
+            "instructions": "What decision do the students make about each part of their presentation? Choose from A-G.",
+            "leftColumn": [
+              "A - use visuals",
+              "B - keep it short", 
+              "C - involve other students",
+              "D - check the information is accurate",
+              "E - provide a handout",
+              "F - focus on one example",
+              "G - do online research"
+            ],
+            "rightColumn": [
+              "Historical background",
+              "Geographical factors", 
+              "Past mistakes",
+              "Future risks",
+              "International implications"
+            ]
+          }
+        },
+        {
+          "id": 29,
+          "sectionId": 3,
+          "questionNumber": 29,
+          "type": "matching",
+          "question": "Future risks",
+          "correctAnswer": "G",
+          "context": {
+            "instructions": "What decision do the students make about each part of their presentation? Choose from A-G.",
+            "leftColumn": [
+              "A - use visuals",
+              "B - keep it short", 
+              "C - involve other students",
+              "D - check the information is accurate",
+              "E - provide a handout",
+              "F - focus on one example",
+              "G - do online research"
+            ],
+            "rightColumn": [
+              "Historical background",
+              "Geographical factors", 
+              "Past mistakes",
+              "Future risks",
+              "International implications"
+            ]
+          }
+        },
+        {
+          "id": 30,
+          "sectionId": 3,
+          "questionNumber": 30,
+          "type": "matching",
+          "question": "International implications",
+          "correctAnswer": "E",
+          "context": {
+            "instructions": "What decision do the students make about each part of their presentation? Choose from A-G.",
+            "leftColumn": [
+              "A - use visuals",
+              "B - keep it short", 
+              "C - involve other students",
+              "D - check the information is accurate",
+              "E - provide a handout",
+              "F - focus on one example",
+              "G - do online research"
+            ],
+            "rightColumn": [
+              "Historical background",
+              "Geographical factors", 
+              "Past mistakes",
+              "Future risks",
+              "International implications"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Marine Renewable Energy",
+      "description": "A lecture about ocean energy sources",
+      "instructions": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening%20t1%20s4.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZyB0MSBzNC5tcDMiLCJpYXQiOjE3NTczNDU2NTUsImV4cCI6MTc2NTk4NTY1NX0.lQjMI8YqPuWPb7RjAwIua9zgVM926DMOUlMRoEerCkg",
+      "questions": [
+        {
+          "id": 31,
+          "sectionId": 4,
+          "questionNumber": 31,
+          "type": "note-completion",
+          "question": "More energy required because of growth in population and ______",
+          "correctAnswer": "industry",
+          "acceptableAnswers": ["industry", "industrialization"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 32,
+          "sectionId": 4,
+          "questionNumber": 32,
+          "type": "note-completion",
+          "question": "Advantage: waves provide a ______ source of renewable energy",
+          "correctAnswer": "constant",
+          "acceptableAnswers": ["constant", "continuous", "steady"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 33,
+          "sectionId": 4,
+          "questionNumber": 33,
+          "type": "note-completion",
+          "question": "Problems: waves can move in any ______",
+          "correctAnswer": "direction",
+          "acceptableAnswers": ["direction", "way"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 34,
+          "sectionId": 4,
+          "questionNumber": 34,
+          "type": "note-completion",
+          "question": "movement of sand, etc. on the ______ of the ocean may be affected",
+          "correctAnswer": "floor",
+          "acceptableAnswers": ["floor", "bottom", "bed"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 35,
+          "sectionId": 4,
+          "questionNumber": 35,
+          "type": "note-completion",
+          "question": "Tides are more ______ than waves",
+          "correctAnswer": "predictable",
+          "acceptableAnswers": ["predictable", "reliable"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 36,
+          "sectionId": 4,
+          "questionNumber": 36,
+          "type": "note-completion",
+          "question": "Planned tidal lagoon in Wales: will be created in a ______ at Swansea",
+          "correctAnswer": "bay",
+          "acceptableAnswers": ["bay", "harbor", "harbour"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 37,
+          "sectionId": 4,
+          "questionNumber": 37,
+          "type": "note-completion",
+          "question": "stored water is released through ______, driving the turbines in the reverse direction",
+          "correctAnswer": "turbines",
+          "acceptableAnswers": ["turbines", "generators"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 38,
+          "sectionId": 4,
+          "questionNumber": 38,
+          "type": "note-completion",
+          "question": "Advantages: no ______ is required to make it work",
+          "correctAnswer": "fuel",
+          "acceptableAnswers": ["fuel", "energy", "power"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 39,
+          "sectionId": 4,
+          "questionNumber": 39,
+          "type": "note-completion",
+          "question": "likely to create a number of ______",
+          "correctAnswer": "jobs",
+          "acceptableAnswers": ["jobs", "positions", "employment"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 40,
+          "sectionId": 4,
+          "questionNumber": 40,
+          "type": "note-completion",
+          "question": "Problem: may harm fish and birds, e.g. by affecting ______ and building up silt",
+          "correctAnswer": "migration",
+          "acceptableAnswers": ["migration", "movement"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        }
+      ]
+    }
+  ],
+  "answers": {
+    "1": "Canadian",
+    "2": "furniture",
+    "3": "Park",
+    "4": "250 (sterling)",
+    "5": "phone",
+    "6": "10(th) September",
+    "7": "museum",
+    "8": "time",
+    "9": "blond(e)",
+    "10": "87954 82361",
+  
+    "11": "A",
+    "12": "C",
+    "13": "B",
+    "14": "E",
+    "15": "B",
+    "16": "B",
+    "17": "C",
+    "18": "A",
+    "19": "A",
+    "20": "C",
+  
+    "21": "B",
+    "22": "A",
+    "23": "C",
+    "24": "B",
+    "25": "A",
+    "26": "B",
+    "27": "A",
+    "28": "F",
+    "29": "G",
+    "30": "C",
+  
+    "31": "industry",
+    "32": "constant",
+    "33": "direction",
+    "34": "floor",
+    "35": "predictable",
+    "36": "bay",
+    "37": "gates",
+    "38": "fuel",
+    "39": "jobs",
+    "40": "migration"
+  }
+  
+}

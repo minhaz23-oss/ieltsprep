@@ -1,0 +1,684 @@
+{
+  "id": "listening2",
+  "title": "IELTS Listening Practice Test 2",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "createdAt": "2024-01-15",
+    "updatedAt": "2024-01-15",
+    "tags": ["health-clinic", "castle-visit", "woolly-mammoths", "weather-forecasting"],
+    "description": "Full IELTS Listening Practice Test with 4 sections covering various topics and question types"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Total Health Clinic Patient Registration",
+      "description": "A conversation between a receptionist and a new patient registering at a health clinic",
+      "instructions": "Complete the notes below. Write ONE WORD AND/OR A NUMBER for each answer.",
+      "audioUrl": "",
+      "questions": [
+        {
+          "id": 1,
+          "sectionId": 1,
+          "questionNumber": 1,
+          "type": "form-completion",
+          "question": "Contact phone",
+          "correctAnswer": "",
+          "acceptableAnswers": [],
+          "caseSensitive": false,
+          "context": {
+            "formTitle": "TOTAL HEALTH CLINIC - PATIENT DETAILS",
+            "fields": [
+              { "label": "Name", "questionId": 0, "type": "text", "value": "Julie Anne Garcia" },
+              { "label": "Contact phone", "questionId": 1, "type": "text" },
+              { "label": "Date of birth", "questionId": 2, "type": "text" },
+              { "label": "Occupation", "questionId": 3, "type": "text" },
+              { "label": "Insurance company", "questionId": 4, "type": "text" }
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "sectionId": 1,
+          "questionNumber": 2,
+          "type": "fill-blank",
+          "question": "Date of birth: ______, 1992",
+          "correctAnswer": "",
+          "acceptableAnswers": [],
+          "caseSensitive": false
+        },
+        {
+          "id": 3,
+          "sectionId": 1,
+          "questionNumber": 3,
+          "type": "fill-blank",
+          "question": "Occupation: works as a ______",
+          "correctAnswer": "",
+          "acceptableAnswers": [],
+          "caseSensitive": false
+        },
+        {
+          "id": 4,
+          "sectionId": 1,
+          "questionNumber": 4,
+          "type": "fill-blank",
+          "question": "Insurance company: ______ Life Insurance",
+          "correctAnswer": "",
+          "acceptableAnswers": [],
+          "caseSensitive": false
+        },
+        {
+          "id": 5,
+          "sectionId": 1,
+          "questionNumber": 5,
+          "type": "fill-blank",
+          "question": "Type of problem: pain in her left ______",
+          "correctAnswer": "",
+          "acceptableAnswers": [],
+          "caseSensitive": false
+        },
+        {
+          "id": 6,
+          "sectionId": 1,
+          "questionNumber": 6,
+          "type": "fill-blank",
+          "question": "When it began: ______ ago",
+          "correctAnswer": "",
+          "acceptableAnswers": [],
+          "caseSensitive": false
+        },
+        {
+          "id": 7,
+          "sectionId": 1,
+          "questionNumber": 7,
+          "type": "fill-blank",
+          "question": "Sports played: belongs to a ______ club",
+          "correctAnswer": "",
+          "acceptableAnswers": [],
+          "caseSensitive": false
+        },
+        {
+          "id": 8,
+          "sectionId": 1,
+          "questionNumber": 8,
+          "type": "fill-blank",
+          "question": "Sports played: goes ______ regularly",
+          "correctAnswer": "",
+          "acceptableAnswers": [],
+          "caseSensitive": false
+        },
+        {
+          "id": 9,
+          "sectionId": 1,
+          "questionNumber": 9,
+          "type": "fill-blank",
+          "question": "Medical history: injured her ______ last year",
+          "correctAnswer": "",
+          "acceptableAnswers": [],
+          "caseSensitive": false
+        },
+        {
+          "id": 10,
+          "sectionId": 1,
+          "questionNumber": 10,
+          "type": "fill-blank",
+          "question": "Medical history: no regular medication apart from ______",
+          "correctAnswer": "",
+          "acceptableAnswers": [],
+          "caseSensitive": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Visit to Branley Castle",
+      "description": "A tour guide explaining details about visiting Branley Castle",
+      "instructions": "Choose the correct letters A-C for questions 11-15, and label the plan for questions 16-20.",
+      "audioUrl": "",
+      "questions": [
+        {
+          "id": 11,
+          "sectionId": 2,
+          "questionNumber": 11,
+          "type": "multiple-choice",
+          "question": "Before Queen Elizabeth I visited the castle in 1576,",
+          "options": [
+            "A - repairs were carried out to the guest rooms",
+            "B - a new building was constructed for her",
+            "C - a fire damaged part of the main hall"
+          ],
+          "correctAnswer": 0,
+          "instructions": "Choose the correct letter, A, B or C"
+        },
+        {
+          "id": 12,
+          "sectionId": 2,
+          "questionNumber": 12,
+          "type": "multiple-choice",
+          "question": "In 1982, the castle was sold to",
+          "options": [
+            "A - the government",
+            "B - the Fenys family",
+            "C - an entertainment company"
+          ],
+          "correctAnswer": 2,
+          "instructions": "Choose the correct letter, A, B or C"
+        },
+        {
+          "id": 13,
+          "sectionId": 2,
+          "questionNumber": 13,
+          "type": "multiple-choice",
+          "question": "In some of the rooms, visitors can",
+          "options": [
+            "A - speak to experts on the history of the castle",
+            "B - interact with actors dressed as famous characters",
+            "C - see models of historical figures moving and talking"
+          ],
+          "correctAnswer": 1,
+          "instructions": "Choose the correct letter, A, B or C"
+        },
+        {
+          "id": 14,
+          "sectionId": 2,
+          "questionNumber": 14,
+          "type": "multiple-choice",
+          "question": "In the castle park, visitors can",
+          "options": [
+            "A - see an 800-year-old tree",
+            "B - go to an art exhibition",
+            "C - visit a small zoo"
+          ],
+          "correctAnswer": 0,
+          "instructions": "Choose the correct letter, A, B or C"
+        },
+        {
+          "id": 15,
+          "sectionId": 2,
+          "questionNumber": 15,
+          "type": "multiple-choice",
+          "question": "At the end of the visit, the group will have",
+          "options": [
+            "A - afternoon tea in the conservatory",
+            "B - the chance to meet the castle's owners",
+            "C - a photograph together on the Great Staircase"
+          ],
+          "correctAnswer": 2,
+          "instructions": "Choose the correct letter, A, B or C"
+        },
+        {
+          "id": 16,
+          "sectionId": 2,
+          "questionNumber": 16,
+          "type": "map-labeling",
+          "question": "Starting point for walking the walls",
+          "correctAnswer": "",
+          "hasImage": true,
+          "context": {
+            "instructions": "Label the plan below. Write the correct letter, A-H, next to Questions 16-20",
+            "mapTitle": "Branley Castle",
+            "mapImageUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningImage/listening2Img.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0ltYWdlL2xpc3RlbmluZzJJbWcuanBnIiwiaWF0IjoxNzU3NTUwODM1LCJleHAiOjE3NjYxOTA4MzV9.z9laqXhwRfA0UZBrpT7s1AGI2XnZwVEI4NWmHoIW6l0",
+            "availableLabels": ["A", "B", "C", "D", "E", "F", "G", "H"]
+          }
+        },
+        {
+          "id": 17,
+          "sectionId": 2,
+          "questionNumber": 17,
+          "type": "map-labeling",
+          "question": "Bow and arrow display",
+          "correctAnswer": "",
+          "context": {
+            "instructions": "Label the plan below. Write the correct letter, A-H, next to Questions 16-20",
+            "mapTitle": "Branley Castle",
+            "availableLabels": ["A", "B", "C", "D", "E", "F", "G", "H"]
+          }
+        },
+        {
+          "id": 18,
+          "sectionId": 2,
+          "questionNumber": 18,
+          "type": "map-labeling",
+          "question": "Hunting birds display",
+          "correctAnswer": "",
+          "context": {
+            "instructions": "Label the plan below. Write the correct letter, A-H, next to Questions 16-20",
+            "mapTitle": "Branley Castle",
+            "availableLabels": ["A", "B", "C", "D", "E", "F", "G", "H"]
+          }
+        },
+        {
+          "id": 19,
+          "sectionId": 2,
+          "questionNumber": 19,
+          "type": "map-labeling",
+          "question": "Traditional dancing",
+          "correctAnswer": "",
+          "context": {
+            "instructions": "Label the plan below. Write the correct letter, A-H, next to Questions 16-20",
+            "mapTitle": "Branley Castle",
+            "availableLabels": ["A", "B", "C", "D", "E", "F", "G", "H"]
+          }
+        },
+        {
+          "id": 20,
+          "sectionId": 2,
+          "questionNumber": 20,
+          "type": "map-labeling",
+          "question": "Shop",
+          "correctAnswer": "",
+          
+          "context": {
+            "instructions": "Label the plan below. Write the correct letter, A-H, next to Questions 16-20",
+            "mapTitle": "Branley Castle",
+            
+            "imageDescription": "Floor plan of Branley Castle showing various locations marked with letters A-H",
+            "availableLabels": ["A", "B", "C", "D", "E", "F", "G", "H"]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Woolly Mammoths on St Paul's Island",
+      "description": "A discussion between students preparing a presentation about woolly mammoths",
+      "instructions": "Choose the correct letter A, B or C for questions 21-24. For questions 25-30, choose from the box A-H.",
+      "audioUrl": "",
+      "questions": [
+        {
+          "id": 21,
+          "sectionId": 3,
+          "questionNumber": 21,
+          "type": "multiple-choice",
+          "question": "How will Rosie and Martin introduce their presentation?",
+          "options": [
+            "A - with a drawing of woolly mammoths in their natural habitat",
+            "B - with a timeline showing when woolly mammoths lived",
+            "C - with a video clip about woolly mammoths"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 22,
+          "sectionId": 3,
+          "questionNumber": 22,
+          "type": "multiple-choice",
+          "question": "What was surprising about the mammoth tooth found by Russell Graham?",
+          "options": [
+            "A - It was still embedded in the mammoth's jawbone",
+            "B - It was from an unknown species of mammoth",
+            "C - It was not as old as mammoth remains from elsewhere"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 23,
+          "sectionId": 3,
+          "questionNumber": 23,
+          "type": "multiple-choice",
+          "question": "The students will use an animated diagram to demonstrate how the mammoths",
+          "options": [
+            "A - became isolated on the island",
+            "B - spread from the island to other areas",
+            "C - coexisted with other animals on the island"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "id": 24,
+          "sectionId": 3,
+          "questionNumber": 24,
+          "type": "multiple-choice",
+          "question": "According to Martin, what is unusual about the date of the mammoths' extinction on the island?",
+          "options": [
+            "A - how exact it is",
+            "B - how early it is",
+            "C - how it was established"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "id": 25,
+          "sectionId": 3,
+          "questionNumber": 25,
+          "type": "matching",
+          "question": "Introduction",
+          "correctAnswer": "",
+          "context": {
+            "instructions": "What action will the students take for each of the following sections of their presentation? Choose SIX answers from the box and write the correct letter, A-H.",
+            "leftColumn": [
+              "A - make it more interactive",
+              "B - reduce visual input",
+              "C - add personal opinions",
+              "D - contact one of the researchers",
+              "E - make detailed notes",
+              "F - find information online",
+              "G - check timing",
+              "H - organise the content more clearly"
+            ],
+            "rightColumn": [
+              "Introduction",
+              "Discovery of the mammoth tooth",
+              "Initial questions asked by the researchers",
+              "Further research carried out on the island",
+              "Findings and possible explanations",
+              "Relevance to the present day"
+            ]
+          }
+        },
+        {
+          "id": 26,
+          "sectionId": 3,
+          "questionNumber": 26,
+          "type": "matching",
+          "question": "Discovery of the mammoth tooth",
+          "correctAnswer": "",
+          "context": {
+            "instructions": "What action will the students take for each of the following sections of their presentation? Choose SIX answers from the box and write the correct letter, A-H.",
+            "leftColumn": [
+              "A - make it more interactive",
+              "B - reduce visual input",
+              "C - add personal opinions",
+              "D - contact one of the researchers",
+              "E - make detailed notes",
+              "F - find information online",
+              "G - check timing",
+              "H - organise the content more clearly"
+            ],
+            "rightColumn": [
+              "Introduction",
+              "Discovery of the mammoth tooth",
+              "Initial questions asked by the researchers",
+              "Further research carried out on the island",
+              "Findings and possible explanations",
+              "Relevance to the present day"
+            ]
+          }
+        },
+        {
+          "id": 27,
+          "sectionId": 3,
+          "questionNumber": 27,
+          "type": "matching",
+          "question": "Initial questions asked by the researchers",
+          "correctAnswer": "",
+          "context": {
+            "instructions": "What action will the students take for each of the following sections of their presentation? Choose SIX answers from the box and write the correct letter, A-H.",
+            "leftColumn": [
+              "A - make it more interactive",
+              "B - reduce visual input",
+              "C - add personal opinions",
+              "D - contact one of the researchers",
+              "E - make detailed notes",
+              "F - find information online",
+              "G - check timing",
+              "H - organise the content more clearly"
+            ],
+            "rightColumn": [
+              "Introduction",
+              "Discovery of the mammoth tooth",
+              "Initial questions asked by the researchers",
+              "Further research carried out on the island",
+              "Findings and possible explanations",
+              "Relevance to the present day"
+            ]
+          }
+        },
+        {
+          "id": 28,
+          "sectionId": 3,
+          "questionNumber": 28,
+          "type": "matching",
+          "question": "Further research carried out on the island",
+          "correctAnswer": "",
+          "context": {
+            "instructions": "What action will the students take for each of the following sections of their presentation? Choose SIX answers from the box and write the correct letter, A-H.",
+            "leftColumn": [
+              "A - make it more interactive",
+              "B - reduce visual input",
+              "C - add personal opinions",
+              "D - contact one of the researchers",
+              "E - make detailed notes",
+              "F - find information online",
+              "G - check timing",
+              "H - organise the content more clearly"
+            ],
+            "rightColumn": [
+              "Introduction",
+              "Discovery of the mammoth tooth",
+              "Initial questions asked by the researchers",
+              "Further research carried out on the island",
+              "Findings and possible explanations",
+              "Relevance to the present day"
+            ]
+          }
+        },
+        {
+          "id": 29,
+          "sectionId": 3,
+          "questionNumber": 29,
+          "type": "matching",
+          "question": "Findings and possible explanations",
+          "correctAnswer": "",
+          "context": {
+            "instructions": "What action will the students take for each of the following sections of their presentation? Choose SIX answers from the box and write the correct letter, A-H.",
+            "leftColumn": [
+              "A - make it more interactive",
+              "B - reduce visual input",
+              "C - add personal opinions",
+              "D - contact one of the researchers",
+              "E - make detailed notes",
+              "F - find information online",
+              "G - check timing",
+              "H - organise the content more clearly"
+            ],
+            "rightColumn": [
+              "Introduction",
+              "Discovery of the mammoth tooth",
+              "Initial questions asked by the researchers",
+              "Further research carried out on the island",
+              "Findings and possible explanations",
+              "Relevance to the present day"
+            ]
+          }
+        },
+        {
+          "id": 30,
+          "sectionId": 3,
+          "questionNumber": 30,
+          "type": "matching",
+          "question": "Relevance to the present day",
+          "correctAnswer": "",
+          "context": {
+            "instructions": "What action will the students take for each of the following sections of their presentation? Choose SIX answers from the box and write the correct letter, A-H.",
+            "leftColumn": [
+              "A - make it more interactive",
+              "B - reduce visual input",
+              "C - add personal opinions",
+              "D - contact one of the researchers",
+              "E - make detailed notes",
+              "F - find information online",
+              "G - check timing",
+              "H - organise the content more clearly"
+            ],
+            "rightColumn": [
+              "Introduction",
+              "Discovery of the mammoth tooth",
+              "Initial questions asked by the researchers",
+              "Further research carried out on the island",
+              "Findings and possible explanations",
+              "Relevance to the present day"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "The History of Weather Forecasting",
+      "description": "A lecture about the development of weather forecasting through history",
+      "instructions": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+      "audioUrl": "",
+      "questions": [
+        {
+          "id": 31,
+          "sectionId": 4,
+          "questionNumber": 31,
+          "type": "note-completion",
+          "question": "many cultures invented ______ and other ceremonies to make the weather gods friendly",
+          "correctAnswer": "",
+          "acceptableAnswers": [],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 32,
+          "sectionId": 4,
+          "questionNumber": 32,
+          "type": "note-completion",
+          "question": "people needed to observe and interpret the sky to ensure their ______",
+          "correctAnswer": "",
+          "acceptableAnswers": [],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 33,
+          "sectionId": 4,
+          "questionNumber": 33,
+          "type": "note-completion",
+          "question": "around 650 BC, Babylonians started forecasting, using weather phenomena such as ______",
+          "correctAnswer": "",
+          "acceptableAnswers": [],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 34,
+          "sectionId": 4,
+          "questionNumber": 34,
+          "type": "note-completion",
+          "question": "by 300 BC, the Chinese had a calendar made up of a number of ______ connected with the weather",
+          "correctAnswer": "",
+          "acceptableAnswers": [],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 35,
+          "sectionId": 4,
+          "questionNumber": 35,
+          "type": "note-completion",
+          "question": "Aristotle also described haloes and ______",
+          "correctAnswer": "",
+          "acceptableAnswers": [],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 36,
+          "sectionId": 4,
+          "questionNumber": 36,
+          "type": "note-completion",
+          "question": "many proverbs, e.g. about the significance of the colour of the ______, passed on accurate information",
+          "correctAnswer": "",
+          "acceptableAnswers": [],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 37,
+          "sectionId": 4,
+          "questionNumber": 37,
+          "type": "note-completion",
+          "question": "15th century: scientists recognised value of ______ for the first time",
+          "correctAnswer": "",
+          "acceptableAnswers": [],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 38,
+          "sectionId": 4,
+          "questionNumber": 38,
+          "type": "note-completion",
+          "question": "Galileo invented the ______",
+          "correctAnswer": "",
+          "acceptableAnswers": [],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 39,
+          "sectionId": 4,
+          "questionNumber": 39,
+          "type": "note-completion",
+          "question": "18th century: Franklin identified the movement of ______",
+          "correctAnswer": "",
+          "acceptableAnswers": [],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 40,
+          "sectionId": 4,
+          "questionNumber": 40,
+          "type": "note-completion",
+          "question": "19th century: data from different locations could be sent to the same place by ______",
+          "correctAnswer": "",
+          "acceptableAnswers": [],
+          "caseSensitive": false,
+          "wordLimit": 1
+        }
+      ]
+    }
+  ],
+  "answers" : {
+    "1": "219 442 9785",
+    "2": "10(th) October",
+    "3": "manager",
+    "4": "Cawley",
+    "5": "knee",
+    "6": "3 weeks",
+    "7": "tennis",
+    "8": "running",
+    "9": "shoulder",
+    "10": "vitamins",
+  
+    "11": "B",
+    "12": "C",
+    "13": "C",
+    "14": "B",
+    "15": "A",
+    "16": "H",
+    "17": "D",
+    "18": "F",
+    "19": "A",
+    "20": "E",
+  
+    "21": "B",
+    "22": "C",
+    "23": "A",
+    "24": "A",
+    "25": "E",
+    "26": "D",
+    "27": "A",
+    "28": "H",
+    "29": "G",
+    "30": "C",
+  
+    "31": "dances",
+    "32": "survival",
+    "33": "clouds",
+    "34": "festivals",
+    "35": "comets",
+    "36": "sky",
+    "37": "instruments",
+    "38": "thermometer",
+    "39": "storms",
+    "40": "telegraph"
+  }
+  
+}
+

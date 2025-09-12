@@ -49,7 +49,7 @@ interface SaveListeningTestParams {
   };
   totalQuestions: number;
   timeSpent: number; // in seconds
-  answers: Record<number, string | number>;
+  answers: Record<number, string | number | string[]>;
   bandScore: number;
 }
 

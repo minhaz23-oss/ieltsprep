@@ -1,73 +1,48 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 interface ListeningExercise {
-  id: number;
-  difficulty: 'easy' | 'medium' | 'hard';
+  id: string;
   title: string;
-  description: string;
-  duration: string;
-  questions: number;
+  difficulty: string;
+  totalQuestions: number;
+  timeLimit: number;
+  metadata: {
+    description: string;
+    tags: string[];
+  };
 }
 
-// Static data - loaded once, never changes
-const ALL_EXERCISES: ListeningExercise[] = [
-  // Easy exercises (7 total)
-  { id: 1, difficulty: 'easy', title: 'Library Information', description: 'Basic conversation about library services and rules', duration: '3-4 min', questions: 10 },
-  { id: 2, difficulty: 'easy', title: 'University Orientation', description: 'Introduction to university facilities and services', duration: '3-4 min', questions: 10 },
-  { id: 3, difficulty: 'easy', title: 'Shopping Center', description: 'Conversation about shopping and store locations', duration: '3-4 min', questions: 10 },
-  { id: 4, difficulty: 'easy', title: 'Restaurant Booking', description: 'Making a reservation at a restaurant', duration: '3-4 min', questions: 10 },
-  { id: 5, difficulty: 'easy', title: 'Travel Information', description: 'Getting travel advice and booking tickets', duration: '3-4 min', questions: 10 },
-  { id: 6, difficulty: 'easy', title: 'Housing Search', description: 'Looking for accommodation and rental information', duration: '3-4 min', questions: 10 },
-  { id: 7, difficulty: 'easy', title: 'Course Registration', description: 'Enrolling in courses and academic planning', duration: '3-4 min', questions: 10 },
-  
-  // Medium exercises (7 total)
-  { id: 1, difficulty: 'medium', title: 'Academic Lecture', description: 'University lecture on environmental science', duration: '5-6 min', questions: 10 },
-  { id: 2, difficulty: 'medium', title: 'Research Project', description: 'Discussion about research methodology and findings', duration: '5-6 min', questions: 10 },
-  { id: 3, difficulty: 'medium', title: 'Job Interview', description: 'Professional job interview scenario', duration: '5-6 min', questions: 10 },
-  { id: 4, difficulty: 'medium', title: 'Conference Presentation', description: 'Academic presentation on technology trends', duration: '5-6 min', questions: 10 },
-  { id: 5, difficulty: 'medium', title: 'Business Meeting', description: 'Corporate meeting discussing quarterly results', duration: '5-6 min', questions: 10 },
-  { id: 6, difficulty: 'medium', title: 'Medical Consultation', description: 'Doctor-patient consultation about health issues', duration: '5-6 min', questions: 10 },
-  { id: 7, difficulty: 'medium', title: 'Cultural Discussion', description: 'Conversation about cultural differences and traditions', duration: '5-6 min', questions: 10 },
-  
-  // Hard exercises (6 total)
-  { id: 1, difficulty: 'hard', title: 'Scientific Debate', description: 'Complex academic debate on climate change', duration: '7-8 min', questions: 10 },
-  { id: 2, difficulty: 'hard', title: 'Legal Proceedings', description: 'Court hearing and legal arguments', duration: '7-8 min', questions: 10 },
-  { id: 3, difficulty: 'hard', title: 'Technical Workshop', description: 'Advanced technical training session', duration: '7-8 min', questions: 10 },
-  { id: 4, difficulty: 'hard', title: 'Policy Discussion', description: 'Government policy analysis and debate', duration: '7-8 min', questions: 10 },
-  { id: 5, difficulty: 'hard', title: 'Academic Symposium', description: 'Multi-speaker academic symposium', duration: '7-8 min', questions: 10 },
-  { id: 6, difficulty: 'hard', title: 'International Relations', description: 'Complex discussion on global politics', duration: '7-8 min', questions: 10 },
-];
-
-// Pre-calculate counts once
-const COUNTS = {
-  total: ALL_EXERCISES.length,
-  easy: ALL_EXERCISES.filter(ex => ex.difficulty === 'easy').length,
-  medium: ALL_EXERCISES.filter(ex => ex.difficulty === 'medium').length,
-  hard: ALL_EXERCISES.filter(ex => ex.difficulty === 'hard').length,
-};
-
 const ListeningPage = () => {
-  const [activeTab, setActiveTab] = useState<'all' | 'easy' | 'medium' | 'hard'>('all');
+  const [exercises, setExercises] = useState<ListeningExercise[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  // Simple client-side filtering - instant, no database calls
-  const getFilteredExercises = () => {
-    if (activeTab === 'all') return ALL_EXERCISES;
-    return ALL_EXERCISES.filter(exercise => exercise.difficulty === activeTab);
-  };
+  useEffect(() => {
+    const loadExercises = async () => {
+      try {
+        const exerciseFiles = ['listening1.json', 'listening2.json'];
+        const exercisePromises = exerciseFiles.map(async (file) => {
+          const response = await fetch(`/${file}`);
+          if (response.ok) {
+            return await response.json();
+          }
+          return null;
+        });
 
-  const getDifficultyColor = (difficulty: string) => {
-    switch (difficulty) {
-      case 'easy': return 'bg-green-100 text-green-800 border-green-200';
-      case 'medium': return 'bg-yellow-100 text-yellow-800 border-yellow-200';
-      case 'hard': return 'bg-red-100 text-red-800 border-red-200';
-      default: return 'bg-gray-100 text-gray-800 border-gray-200';
-    }
-  };
+        const exerciseData = await Promise.all(exercisePromises);
+        const validExercises = exerciseData.filter(exercise => exercise !== null);
+        setExercises(validExercises);
+      } catch (error) {
+        console.error('Error loading exercises:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  const filteredExercises = getFilteredExercises();
+    loadExercises();
+  }, []);
 
   return (
     <div className="min-h-screen px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24 py-8 sm:py-12 md:py-16 font-semibold">
@@ -89,56 +64,37 @@ const ListeningPage = () => {
           Tests!
         </h1>
         <p className="mt-3 leading-none text-center max-w-lg sm:text-xl/relaxed text-gray-600 font-semibold mx-auto">
-          Practice with {COUNTS.total} carefully designed listening exercises across all difficulty levels to boost your IELTS score.
+          Practice with {loading ? '...' : exercises.length} carefully designed listening exercise{exercises.length !== 1 ? 's' : ''} to boost your IELTS score.
         </p>
       </div>
 
-      {/* Tabs - Instant filtering, no loading */}
-      <div className="flex justify-center mb-8">
-        <div className="flex justify-center-safe flex-wrap bg-white rounded-xl border-2 border-primary/20 p-2 gap-1">
-          {[
-            { id: 'all', label: 'All Practice', count: COUNTS.total },
-            { id: 'easy', label: 'Easy', count: COUNTS.easy },
-            { id: 'medium', label: 'Medium', count: COUNTS.medium },
-            { id: 'hard', label: 'Hard', count: COUNTS.hard }
-          ].map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id as any)}
-              className={`px-3 sm:px-6 py-2 sm:py-3 rounded-lg font-bold cursor-pointer transition-colors duration-150 text-sm sm:text-base ${
-                activeTab === tab.id
-                  ? 'bg-primary text-white shadow-lg'
-                  : 'text-gray-600 hover:text-primary hover:bg-primary/5'
-              }`}
-            >
-              {tab.label} ({tab.count})
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Exercises Grid - Instant filtering results */}
+      {/* Exercises Grid */}
       <div className="max-w-7xl mx-auto">
-        {filteredExercises.length === 0 ? (
+        {loading ? (
           <div className="text-center py-16">
             <div className="bg-gray-50 border-2 border-gray-200 rounded-xl p-8 max-w-md mx-auto">
-              <h3 className="text-xl font-bold text-gray-800 mb-2">No {activeTab === 'all' ? '' : activeTab} exercises available</h3>
-              <p className="text-gray-600">Try selecting a different difficulty level.</p>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+              <h3 className="text-xl font-bold text-gray-800 mb-2">Loading exercises...</h3>
+              <p className="text-gray-600">Please wait while we load the listening tests.</p>
+            </div>
+          </div>
+        ) : exercises.length === 0 ? (
+          <div className="text-center py-16">
+            <div className="bg-gray-50 border-2 border-gray-200 rounded-xl p-8 max-w-md mx-auto">
+              <h3 className="text-xl font-bold text-gray-800 mb-2">No exercises available</h3>
+              <p className="text-gray-600">Please check back later for new listening tests.</p>
             </div>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {filteredExercises.map((exercise) => (
+            {exercises.map((exercise) => (
               <Link
-                key={`${exercise.difficulty}-${exercise.id}`}
-                href={`/exercise/listening/${exercise.difficulty}/${exercise.id}`}
+                key={exercise.id}
+                href={`/exercise/listening/${exercise.id}`}
                 className="group block"
               >
                 <div className="bg-white rounded-xl border-2 border-primary/20 hover:border-primary hover:shadow-xl transition-all duration-300 p-4 sm:p-6 h-full transform hover:-translate-y-1">
                   <div className="flex items-start justify-between mb-4">
-                    <div className={`px-3 py-1 rounded-full text-xs font-bold border ${getDifficultyColor(exercise.difficulty)}`}>
-                      {exercise.difficulty.toUpperCase()}
-                    </div>
                     <div className="text-sm text-gray-400">#{exercise.id}</div>
                   </div>
 
@@ -147,7 +103,7 @@ const ListeningPage = () => {
                   </h3>
                   
                   <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                    {exercise.description}
+                    {exercise.metadata.description}
                   </p>
 
                   <div className="flex items-center justify-between text-sm text-gray-500 mb-4 sm:mb-6">
@@ -155,14 +111,28 @@ const ListeningPage = () => {
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                       </svg>
-                      <span>{exercise.duration}</span>
+                      <span>{exercise.timeLimit} min</span>
                     </div>
                     <div className="flex items-center space-x-1">
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clipRule="evenodd" />
                       </svg>
-                      <span>{exercise.questions} questions</span>
+                      <span>{exercise.totalQuestions} questions</span>
                     </div>
+                  </div>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-1 mb-4">
+                    {exercise.metadata.tags.slice(0, 3).map((tag, index) => (
+                      <span key={index} className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
+                        {tag}
+                      </span>
+                    ))}
+                    {exercise.metadata.tags.length > 3 && (
+                      <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
+                        +{exercise.metadata.tags.length - 3} more
+                      </span>
+                    )}
                   </div>
 
                   <button className="btn-primary w-full group-hover:bg-red-700 transition-colors duration-300 text-sm sm:text-base">

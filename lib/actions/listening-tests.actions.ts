@@ -4,13 +4,18 @@ import { db } from '@/firebase/admin';
 import { ListeningTest, ListeningTestResult } from '@/types/listening';
 
 // Create a new listening test
-export async function createListeningTest(testData: ListeningTest) {
+export async function createListeningTest(testData: Omit<ListeningTest, 'metadata'> & {
+  metadata: Omit<ListeningTest['metadata'], 'createdAt' | 'updatedAt'>
+}) {
   try {
     const testRef = db.collection('listening-tests').doc(testData.id);
     await testRef.set({
       ...testData,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString()
+      metadata: {
+        ...testData.metadata,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      }
     });
 
     return { success: true, message: 'Test created successfully' };
@@ -23,18 +28,17 @@ export async function createListeningTest(testData: ListeningTest) {
 // Get all listening tests
 export async function getListeningTests(difficulty?: string) {
   try {
-    let query = db.collection('listening-tests');
+    let query: FirebaseFirestore.Query<FirebaseFirestore.DocumentData> = db.collection('listening-tests');
     
     if (difficulty) {
       query = query.where('difficulty', '==', difficulty);
     }
 
-    const snapshot = await query.orderBy('createdAt', 'desc').get();
-    const tests: ListeningTest[] = [];
-
-    snapshot.forEach(doc => {
-      tests.push({ id: doc.id, ...doc.data() } as ListeningTest);
-    });
+    const snapshot = await query.orderBy('metadata.createdAt', 'desc').get();
+    const tests: ListeningTest[] = snapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    } as ListeningTest));
 
     return { success: true, data: tests };
   } catch (error) {
@@ -96,10 +100,9 @@ export async function getUserListeningResults(userId: string, limit: number = 10
       .limit(limit)
       .get();
 
-    const results: ListeningTestResult[] = [];
-    snapshot.forEach(doc => {
-      results.push(doc.data() as ListeningTestResult);
-    });
+    const results: ListeningTestResult[] = snapshot.docs.map(doc =>
+      doc.data() as ListeningTestResult
+    );
 
     return { success: true, data: results };
   } catch (error) {
@@ -128,7 +131,7 @@ async function updateUserListeningStats(
           bestBandScore: testResult.bandScore,
           totalTimeSpent: testResult.timeSpent,
           difficultyStats: {
-            [testResult.testId.split('-')[0]]: {
+            [testResult.testId]: {
               testsCompleted: 1,
               averageScore: testResult.score.percentage
             }
@@ -148,7 +151,7 @@ async function updateUserListeningStats(
       const currentAverage = currentStats.averageBandScore || 0;
       const newAverage = ((currentAverage * (testsCompleted - 1)) + testResult.bandScore) / testsCompleted;
       
-      const difficulty = testResult.testId.split('-')[0];
+      const difficulty = testResult.testId;
       const difficultyStats = currentStats.difficultyStats || {};
       const currentDifficultyStats = difficultyStats[difficulty] || { testsCompleted: 0, averageScore: 0 };
       
@@ -182,21 +185,18 @@ export async function getListeningTestAnalytics(testId: string) {
       .where('testId', '==', testId)
       .get();
 
-    const results: ListeningTestResult[] = [];
-    snapshot.forEach(doc => {
-      results.push(doc.data() as ListeningTestResult);
-    });
+    const results: ListeningTestResult[] = snapshot.docs.map(doc =>
+      doc.data() as ListeningTestResult
+    );
 
     if (results.length === 0) {
-      return { 
-        success: true, 
+      return {
+        success: true,
         data: {
           totalAttempts: 0,
           averageScore: 0,
           averageBandScore: 0,
-          averageTimeSpent: 0,
-          difficultyDistribution: {},
-          commonMistakes: []
+          averageTimeSpent: 0
         }
       };
     }
@@ -206,67 +206,17 @@ export async function getListeningTestAnalytics(testId: string) {
     const averageBandScore = results.reduce((sum, result) => sum + result.bandScore, 0) / totalAttempts;
     const averageTimeSpent = results.reduce((sum, result) => sum + result.timeSpent, 0) / totalAttempts;
 
-    // Analyze common mistakes (questions with low success rates)
-    const questionStats: Record<number, { correct: number, total: number }> = {};
-    
-    results.forEach(result => {
-      Object.entries(result.answers).forEach(([questionId, answer]) => {
-        const qId = parseInt(questionId);
-        if (!questionStats[qId]) {
-          questionStats[qId] = { correct: 0, total: 0 };
-        }
-        questionStats[qId].total++;
-        // This would need to be enhanced to check if the answer is correct
-        // based on the test data
-      });
-    });
-
     return {
       success: true,
       data: {
         totalAttempts,
         averageScore: Math.round(averageScore * 10) / 10,
         averageBandScore: Math.round(averageBandScore * 10) / 10,
-        averageTimeSpent: Math.round(averageTimeSpent),
-        questionStats
+        averageTimeSpent: Math.round(averageTimeSpent)
       }
     };
   } catch (error) {
     console.error('Error fetching listening test analytics:', error);
     return { success: false, message: 'Failed to fetch analytics' };
-  }
-}
-
-// Search listening tests
-export async function searchListeningTests(searchTerm: string, difficulty?: string) {
-  try {
-    let query = db.collection('listening-tests');
-    
-    if (difficulty) {
-      query = query.where('difficulty', '==', difficulty);
-    }
-
-    const snapshot = await query.get();
-    const tests: ListeningTest[] = [];
-
-    snapshot.forEach(doc => {
-      const testData = { id: doc.id, ...doc.data() } as ListeningTest;
-      
-      // Simple text search in title, description, and tags
-      const searchableText = [
-        testData.title,
-        testData.metadata.description,
-        ...testData.metadata.tags
-      ].join(' ').toLowerCase();
-
-      if (searchableText.includes(searchTerm.toLowerCase())) {
-        tests.push(testData);
-      }
-    });
-
-    return { success: true, data: tests };
-  } catch (error) {
-    console.error('Error searching listening tests:', error);
-    return { success: false, message: 'Failed to search tests', data: [] };
   }
 }

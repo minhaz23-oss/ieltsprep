@@ -88,7 +88,7 @@ const StructuredListeningPage = () => {
       try {
         setLoading(true);
         // Try to load the specific test file based on the ID
-        const response = await fetch(`/${id}.json`);
+        const response = await fetch(`/listeningTests/${id}.json`);
         
         if (!response.ok) {
           throw new Error(`Test "${id}" not found. Please check if the JSON file exists.`);

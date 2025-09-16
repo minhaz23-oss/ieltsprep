@@ -1,0 +1,89 @@
+{
+  "id": "listening_test2",
+  "title": "IELTS Listening Practice Test 2",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "tags": ["health-clinic", "branley-castle", "woolly-mammoths", "weather-forecasting"],
+    "description": "Full IELTS Listening Practice Test with 4 sections"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Total Health Clinic",
+      "instructions": "Complete the notes below. Write ONE WORD AND/OR A NUMBER for each answer.",
+      "audioUrl": "",
+      "fullContext": "TOTAL HEALTH CLINIC\nPATIENT DETAILS\nPersonal information\nExample: Name Julie Anne ……Garcia…..\nContact phone 1…………………\nDate of birth 2…………………, 1992\nOccupation works as a 3…………………. \nInsurance company 4…………………. Life Insurance\n\nDetails of the problem\nType of problem pain in her left 5…………………..\nWhen it began 6…………………. ago\nAction already taken has taken painkillers and applied ice\n\nOther information\nSports played belongs to a 7…………………. club\ngoes 8…………………. regularly\nMedical history injured her 9………………… last year\nno allergies\nno regular medication apart from 10………………..",
+      "questions": [
+        { "questionNumber": 1, "type": "form-completion", "correctAnswer": "219 442 9785" },
+        { "questionNumber": 2, "type": "form-completion", "correctAnswer": "10 October" },
+        { "questionNumber": 3, "type": "form-completion", "correctAnswer": "manager" },
+        { "questionNumber": 4, "type": "form-completion", "correctAnswer": "Cawley" },
+        { "questionNumber": 5, "type": "form-completion", "correctAnswer": "knee" },
+        { "questionNumber": 6, "type": "form-completion", "correctAnswer": "3 weeks" },
+        { "questionNumber": 7, "type": "form-completion", "correctAnswer": "tennis" },
+        { "questionNumber": 8, "type": "form-completion", "correctAnswer": "running" },
+        { "questionNumber": 9, "type": "form-completion", "correctAnswer": "shoulder" },
+        { "questionNumber": 10, "type": "form-completion", "correctAnswer": "vitamins" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Visit to Branley Castle",
+      "instructions": "Questions 11–20",
+      "audioUrl": "",
+      "fullContext": "Questions 11–15\nChoose the correct letter, A, B or C.\n11 Before Queen Elizabeth I visited the castle in 1576…\nA repairs were carried out to the quest rooms.\nB a new building was constructed for her.\nC a fire damaged part of the main hall.\n12 In 1982, the castle was sold to…\nA the government\nB the Fenys family.\nC an entertainment company.\n13 In some of the rooms, visitors can…\nA speak to experts on the history of the castle.\nB interact with actors dressed as famous characters.\nC see models of historical figures moving and talking.\n14 In the castle park, visitors can…\nA see an 800-year-old tree.\nB go to an art exhibition.\nC visit a small zoo.\n15 At the end of the visit, the group will have…\nA afternoon tea in the conservatory.\nB the chance to meet the castle’s owners.\nC a photograph together on the Great Staircase.\n\nQuestions 16–20\nLabel the plan below. Write the correct letter, A–H, next to Questions 16–20.\n16 Starting point for walking the walls …………\n17 Bow and arrow display …………\n18 Hunting birds display …………\n19 Traditional dancing …………\n20 Shop …………",
+      "questions": [
+        { "questionNumber": 11, "type": "multiple-choice", "correctAnswer": "B" },
+        { "questionNumber": 12, "type": "multiple-choice", "correctAnswer": "C" },
+        { "questionNumber": 13, "type": "multiple-choice", "correctAnswer": "C" },
+        { "questionNumber": 14, "type": "multiple-choice", "correctAnswer": "B" },
+        { "questionNumber": 15, "type": "multiple-choice", "correctAnswer": "A" },
+        { "questionNumber": 16, "type": "map-labeling", "correctAnswer": "H" },
+        { "questionNumber": 17, "type": "map-labeling", "correctAnswer": "D" },
+        { "questionNumber": 18, "type": "map-labeling", "correctAnswer": "F" },
+        { "questionNumber": 19, "type": "map-labeling", "correctAnswer": "A" },
+        { "questionNumber": 20, "type": "map-labeling", "correctAnswer": "E" }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Woolly Mammoths on St Paul’s Island",
+      "instructions": "Questions 21–30",
+      "audioUrl": "",
+      "fullContext": "Questions 21–24\nChoose the correct letter, A, B or C.\n21 How will Rosie and Martin introduce their presentation?\nA with a drawing of woolly mammoths in their natural habit\nB with a timeline showing when woolly mammoths lived\nC with a video clip about woolly mammoths\n22 What was surprising about the mammoth tooth found by Russell Graham?\nA It was still embedded in the mammoth’s jawbone.\nB It was from an unknown species of mammoth.\nC It was not as old as mammoth remains from elsewhere.\n23 The students will use an animated diagram to demonstrate how the mammoths…\nA became isolated on the island.\nB spread from the island to other areas.\nC coexisted with other animals on the island.\n24 According to Martin, what is unusual about the date of the mammoths’ extinction on the island?\nA how exact it is\nB how early it is\nC how it was established\n\nQuestions 25–30\nWhat action will the students take for each of the following sections of their presentation?\nChoose SIX answers from the box and write the correct letter, A–H, next to Questions 25–30.\nActions:\nA make it more interactive\nB reduce visual input\nC add personal opinions\nD contact one of the researchers\nE make detailed notes\nF find information online\nG check timing\nH organise the content more clearly\nSections:\n25 Introduction …………\n26 Discovery of the mammoth tooth …………\n27 Initial questions asked by the researchers …………\n28 Further research carried out on the island …………\n29 Findings and possible explanations …………\n30 Relevance to the present day …………",
+      "questions": [
+        { "questionNumber": 21, "type": "multiple-choice", "correctAnswer": "B" },
+        { "questionNumber": 22, "type": "multiple-choice", "correctAnswer": "C" },
+        { "questionNumber": 23, "type": "multiple-choice", "correctAnswer": "A" },
+        { "questionNumber": 24, "type": "multiple-choice", "correctAnswer": "A" },
+        { "questionNumber": 25, "type": "matching", "correctAnswer": "E" },
+        { "questionNumber": 26, "type": "matching", "correctAnswer": "D" },
+        { "questionNumber": 27, "type": "matching", "correctAnswer": "A" },
+        { "questionNumber": 28, "type": "matching", "correctAnswer": "H" },
+        { "questionNumber": 29, "type": "matching", "correctAnswer": "G" },
+        { "questionNumber": 30, "type": "matching", "correctAnswer": "C" }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "The History of Weather Forecasting",
+      "instructions": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+      "audioUrl": "",
+      "fullContext": "Ancient cultures\nmany cultures believed that floods and other disasters were involved in the creation of the world\nmany cultures invented 31………………… and other ceremonies to make the weather gods friendly\npeople needed to observe and interpret the sky to ensure their 32………………….\naround 650 BC, Babylonians started forecasting, using weather phenomena such as 33………………….\nby 300 BC, the Chinese had a calendar made up of a number of 34…………………. connected with the weather\n\nAncient Greeks\na more scientific approach\nAristotle tried to explain the formation of various weather phenomena\nAristotle also described haloes and 35…………………..\n\nMiddle Ages\nAristotle’s work considered accurate\nmany proverbs, e.g. about the significance of the colour of the 36…………………., passed on accurate information.\n\n15th–19th centuries\n15th century: scientists recognised value of 37…………………. for the first time\nGalileo invented the 38………………….\nPascal showed relationship between atmospheric pressure and altitude\nfrom the 17th century, scientists could measure atmospheric pressure and temperature\n18th century: Franklin identified the movement of 39…………………..\n19th century: data from different locations could be sent to the same place by 40…………………",
+      "questions": [
+        { "questionNumber": 31, "type": "note-completion", "correctAnswer": "dances" },
+        { "questionNumber": 32, "type": "note-completion", "correctAnswer": "survival" },
+        { "questionNumber": 33, "type": "note-completion", "correctAnswer": "clouds" },
+        { "questionNumber": 34, "type": "note-completion", "correctAnswer": "festivals" },
+        { "questionNumber": 35, "type": "note-completion", "correctAnswer": "comets" },
+        { "questionNumber": 36, "type": "note-completion", "correctAnswer": "sky" },
+        { "questionNumber": 37, "type": "note-completion", "correctAnswer": "instruments" },
+        { "questionNumber": 38, "type": "note-completion", "correctAnswer": "thermometer" },
+        { "questionNumber": 39, "type": "note-completion", "correctAnswer": "storms" },
+        { "questionNumber": 40, "type": "note-completion", "correctAnswer": "telegraph" }
+      ]
+    }
+  ]
+}

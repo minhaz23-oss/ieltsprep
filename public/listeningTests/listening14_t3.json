@@ -1,0 +1,679 @@
+{
+  "id": "listening14_t3",
+  "title": "IELTS Listening Practice 14 Test 3",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "createdAt": "2024-01-15",
+    "updatedAt": "2024-01-15",
+    "tags": ["conference-hotel", "volunteering", "marching-band", "arts-festival"],
+    "description": "Full IELTS Listening Practice Test with 4 sections covering various topics and question types"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Flanders Conference Hotel",
+      "description": "A conversation about hotel conference facilities and services",
+      "instructions": "Complete the notes below. Write ONE WORD AND/OR A NUMBER for each answer.",
+      "audioUrl": "",
+      "questions": [
+        {
+          "id": 1,
+          "sectionId": 1,
+          "questionNumber": 1,
+          "type": "note-completion",
+          "question": "the ______ room for talks",
+          "correctAnswer": "Tesla",
+          "acceptableAnswers": ["Tesla", "tesla"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 2,
+          "sectionId": 1,
+          "questionNumber": 2,
+          "type": "note-completion",
+          "question": "(projector and ______ available)",
+          "correctAnswer": "microphone",
+          "acceptableAnswers": ["microphone", "microphones"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 3,
+          "sectionId": 1,
+          "questionNumber": 3,
+          "type": "note-completion",
+          "question": "area for coffee and an ______",
+          "correctAnswer": "exhibition",
+          "acceptableAnswers": ["exhibition"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 4,
+          "sectionId": 1,
+          "questionNumber": 4,
+          "type": "note-completion",
+          "question": "free ______ throughout",
+          "correctAnswer": "wifi",
+          "acceptableAnswers": ["wifi", "wi-fi", "WiFi", "Wi-Fi"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 5,
+          "sectionId": 1,
+          "questionNumber": 5,
+          "type": "note-completion",
+          "question": "a standard buffet lunch costs $ ______ per head",
+          "correctAnswer": "45",
+          "acceptableAnswers": ["45", "$45", "45 dollars"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 6,
+          "sectionId": 1,
+          "questionNumber": 6,
+          "type": "note-completion",
+          "question": "Rooms will cost $ ______ including breakfast",
+          "correctAnswer": "135",
+          "acceptableAnswers": ["135", "$135", "135 dollars"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 7,
+          "sectionId": 1,
+          "questionNumber": 7,
+          "type": "note-completion",
+          "question": "The hotel also has a spa and rooftop ______",
+          "correctAnswer": "pool",
+          "acceptableAnswers": ["pool", "swimming pool"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 8,
+          "sectionId": 1,
+          "questionNumber": 8,
+          "type": "note-completion",
+          "question": "There's a free shuttle service to the ______",
+          "correctAnswer": "airport",
+          "acceptableAnswers": ["airport"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 9,
+          "sectionId": 1,
+          "questionNumber": 9,
+          "type": "note-completion",
+          "question": "Wilby Street (quite near the ______)",
+          "correctAnswer": "sea",
+          "acceptableAnswers": ["sea", "ocean"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 10,
+          "sectionId": 1,
+          "questionNumber": 10,
+          "type": "note-completion",
+          "question": "near to restaurants and many ______",
+          "correctAnswer": "clubs",
+          "acceptableAnswers": ["clubs"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Volunteering Activities",
+      "description": "Information about volunteer work and benefits",
+      "instructions": "Choose the correct letters for questions 11-14, and match answers for questions 15-20.",
+      "audioUrl": "",
+      "questions": [
+        {
+          "id": "11-12",
+          "sectionId": 2,
+          "questionNumbers": [11, 12],
+          "type": "multiple-choice-grouped",
+          "question": "Which TWO activities that volunteers do are mentioned?",
+          "options": [
+            "A decorating",
+            "B cleaning",
+            "C delivering meals",
+            "D shopping",
+            "E childcare"
+          ],
+          "correctAnswer": ["A", "E"],
+          "instructions": "Choose TWO letters, A-E"
+        },
+        {
+          "id": "13-14",
+          "sectionId": 2,
+          "questionNumbers": [13, 14],
+          "type": "multiple-choice-grouped",
+          "question": "Which TWO ways that volunteers can benefit from volunteering are mentioned?",
+          "options": [
+            "A learning how to be part of a team",
+            "B having a sense of purpose",
+            "C realising how lucky they are",
+            "D improved ability at time management",
+            "E boosting their employment prospects"
+          ],
+          "correctAnswer": ["B", "E"],
+          "instructions": "Choose TWO letters, A-E"
+        },
+        {
+          "id": 15,
+          "sectionId": 2,
+          "questionNumber": 15,
+          "type": "matching",
+          "question": "Habib",
+          "correctAnswer": "F",
+          "context": {
+            "instructions": "What has each of the following volunteers helped someone to do? Choose SIX answers from the box and write the correct letter, A-G.",
+            "leftColumn": [
+              "A overcome physical difficulties",
+              "B rediscover skills not used for a long time",
+              "C improve their communication skills",
+              "D solve problems independently",
+              "E escape isolation",
+              "F remember past times",
+              "G start a new hobby"
+            ],
+            "rightColumn": [
+              "Habib",
+              "Consuela",
+              "Minh",
+              "Tanya",
+              "Alexei",
+              "Juba"
+            ]
+          }
+        },
+        {
+          "id": 16,
+          "sectionId": 2,
+          "questionNumber": 16,
+          "type": "matching",
+          "question": "Consuela",
+          "correctAnswer": "A",
+          "context": {
+            "instructions": "What has each of the following volunteers helped someone to do? Choose SIX answers from the box and write the correct letter, A-G.",
+            "leftColumn": [
+              "A overcome physical difficulties",
+              "B rediscover skills not used for a long time",
+              "C improve their communication skills",
+              "D solve problems independently",
+              "E escape isolation",
+              "F remember past times",
+              "G start a new hobby"
+            ],
+            "rightColumn": [
+              "Habib",
+              "Consuela",
+              "Minh",
+              "Tanya",
+              "Alexei",
+              "Juba"
+            ]
+          }
+        },
+        {
+          "id": 17,
+          "sectionId": 2,
+          "questionNumber": 17,
+          "type": "matching",
+          "question": "Minh",
+          "correctAnswer": "E",
+          "context": {
+            "instructions": "What has each of the following volunteers helped someone to do? Choose SIX answers from the box and write the correct letter, A-G.",
+            "leftColumn": [
+              "A overcome physical difficulties",
+              "B rediscover skills not used for a long time",
+              "C improve their communication skills",
+              "D solve problems independently",
+              "E escape isolation",
+              "F remember past times",
+              "G start a new hobby"
+            ],
+            "rightColumn": [
+              "Habib",
+              "Consuela",
+              "Minh",
+              "Tanya",
+              "Alexei",
+              "Juba"
+            ]
+          }
+        },
+        {
+          "id": 18,
+          "sectionId": 2,
+          "questionNumber": 18,
+          "type": "matching",
+          "question": "Tanya",
+          "correctAnswer": "G",
+          "context": {
+            "instructions": "What has each of the following volunteers helped someone to do? Choose SIX answers from the box and write the correct letter, A-G.",
+            "leftColumn": [
+              "A overcome physical difficulties",
+              "B rediscover skills not used for a long time",
+              "C improve their communication skills",
+              "D solve problems independently",
+              "E escape isolation",
+              "F remember past times",
+              "G start a new hobby"
+            ],
+            "rightColumn": [
+              "Habib",
+              "Consuela",
+              "Minh",
+              "Tanya",
+              "Alexei",
+              "Juba"
+            ]
+          }
+        },
+        {
+          "id": 19,
+          "sectionId": 2,
+          "questionNumber": 19,
+          "type": "matching",
+          "question": "Alexei",
+          "correctAnswer": "D",
+          "context": {
+            "instructions": "What has each of the following volunteers helped someone to do? Choose SIX answers from the box and write the correct letter, A-G.",
+            "leftColumn": [
+              "A overcome physical difficulties",
+              "B rediscover skills not used for a long time",
+              "C improve their communication skills",
+              "D solve problems independently",
+              "E escape isolation",
+              "F remember past times",
+              "G start a new hobby"
+            ],
+            "rightColumn": [
+              "Habib",
+              "Consuela",
+              "Minh",
+              "Tanya",
+              "Alexei",
+              "Juba"
+            ]
+          }
+        },
+        {
+          "id": 20,
+          "sectionId": 2,
+          "questionNumber": 20,
+          "type": "matching",
+          "question": "Juba",
+          "correctAnswer": "C",
+          "context": {
+            "instructions": "What has each of the following volunteers helped someone to do? Choose SIX answers from the box and write the correct letter, A-G.",
+            "leftColumn": [
+              "A overcome physical difficulties",
+              "B rediscover skills not used for a long time",
+              "C improve their communication skills",
+              "D solve problems independently",
+              "E escape isolation",
+              "F remember past times",
+              "G start a new hobby"
+            ],
+            "rightColumn": [
+              "Habib",
+              "Consuela",
+              "Minh",
+              "Tanya",
+              "Alexei",
+              "Juba"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "School Marching Band",
+      "description": "Discussion about a school marching band and its members",
+      "instructions": "Complete the notes for questions 21-26. Match problems to band members for questions 27-30.",
+      "audioUrl": "",
+      "questions": [
+        {
+          "id": 21,
+          "sectionId": 3,
+          "questionNumber": 21,
+          "type": "note-completion",
+          "question": "It consists of around ______ students",
+          "correctAnswer": "50",
+          "acceptableAnswers": ["50", "fifty"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 22,
+          "sectionId": 3,
+          "questionNumber": 22,
+          "type": "note-completion",
+          "question": "It is due to play in a ______ band competition",
+          "correctAnswer": "regional",
+          "acceptableAnswers": ["regional"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 23,
+          "sectionId": 3,
+          "questionNumber": 23,
+          "type": "note-completion",
+          "question": "It has been invited to play in the town's ______",
+          "correctAnswer": "carnival",
+          "acceptableAnswers": ["carnival"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 24,
+          "sectionId": 3,
+          "questionNumber": 24,
+          "type": "note-completion",
+          "question": "They have listened to a talk by a ______",
+          "correctAnswer": "drummer",
+          "acceptableAnswers": ["drummer"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 25,
+          "sectionId": 3,
+          "questionNumber": 25,
+          "type": "note-completion",
+          "question": "Joe will discuss a ______ with the band",
+          "correctAnswer": "film",
+          "acceptableAnswers": ["film", "movie"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 26,
+          "sectionId": 3,
+          "questionNumber": 26,
+          "type": "note-completion",
+          "question": "Joe hopes the band will attend a ______ next month",
+          "correctAnswer": "parade",
+          "acceptableAnswers": ["parade"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 27,
+          "sectionId": 3,
+          "questionNumber": 27,
+          "type": "matching",
+          "question": "flautist",
+          "correctAnswer": "D",
+          "context": {
+            "instructions": "What problem does Joe mention in connection with each of the following band members? Choose FOUR answers from the box and write the correct letter, A-F.",
+            "leftColumn": [
+              "A makes a lot of mistakes in rehearsals",
+              "B keeps making unhelpful suggestions",
+              "C has difficulty with rhythm",
+              "D misses too many rehearsals",
+              "E has a health problem",
+              "F doesn't mix with other students"
+            ],
+            "rightColumn": [
+              "flautist",
+              "trumpeter",
+              "trombonist",
+              "percussionist"
+            ]
+          }
+        },
+        {
+          "id": 28,
+          "sectionId": 3,
+          "questionNumber": 28,
+          "type": "matching",
+          "question": "trumpeter",
+          "correctAnswer": "B",
+          "context": {
+            "instructions": "What problem does Joe mention in connection with each of the following band members? Choose FOUR answers from the box and write the correct letter, A-F.",
+            "leftColumn": [
+              "A makes a lot of mistakes in rehearsals",
+              "B keeps making unhelpful suggestions",
+              "C has difficulty with rhythm",
+              "D misses too many rehearsals",
+              "E has a health problem",
+              "F doesn't mix with other students"
+            ],
+            "rightColumn": [
+              "flautist",
+              "trumpeter",
+              "trombonist",
+              "percussionist"
+            ]
+          }
+        },
+        {
+          "id": 29,
+          "sectionId": 3,
+          "questionNumber": 29,
+          "type": "matching",
+          "question": "trombonist",
+          "correctAnswer": "E",
+          "context": {
+            "instructions": "What problem does Joe mention in connection with each of the following band members? Choose FOUR answers from the box and write the correct letter, A-F.",
+            "leftColumn": [
+              "A makes a lot of mistakes in rehearsals",
+              "B keeps making unhelpful suggestions",
+              "C has difficulty with rhythm",
+              "D misses too many rehearsals",
+              "E has a health problem",
+              "F doesn't mix with other students"
+            ],
+            "rightColumn": [
+              "flautist",
+              "trumpeter",
+              "trombonist",
+              "percussionist"
+            ]
+          }
+        },
+        {
+          "id": 30,
+          "sectionId": 3,
+          "questionNumber": 30,
+          "type": "matching",
+          "question": "percussionist",
+          "correctAnswer": "F",
+          "context": {
+            "instructions": "What problem does Joe mention in connection with each of the following band members? Choose FOUR answers from the box and write the correct letter, A-F.",
+            "leftColumn": [
+              "A makes a lot of mistakes in rehearsals",
+              "B keeps making unhelpful suggestions",
+              "C has difficulty with rhythm",
+              "D misses too many rehearsals",
+              "E has a health problem",
+              "F doesn't mix with other students"
+            ],
+            "rightColumn": [
+              "flautist",
+              "trumpeter",
+              "trombonist",
+              "percussionist"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "University Arts Festival Concerts",
+      "description": "A lecture about concerts featuring Australian and British composers",
+      "instructions": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+      "audioUrl": "",
+      "questions": [
+        {
+          "id": 31,
+          "sectionId": 4,
+          "questionNumber": 31,
+          "type": "note-completion",
+          "question": "studied piano and ______ before turning to composition",
+          "correctAnswer": "violin",
+          "acceptableAnswers": ["violin"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 32,
+          "sectionId": 4,
+          "questionNumber": 32,
+          "type": "note-completion",
+          "question": "compositions show a great deal of ______ and are drawn from various cultural sources",
+          "correctAnswer": "energy",
+          "acceptableAnswers": ["energy"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 33,
+          "sectionId": 4,
+          "questionNumber": 33,
+          "type": "note-completion",
+          "question": "her music is very expressive and also ______",
+          "correctAnswer": "complex",
+          "acceptableAnswers": ["complex"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 34,
+          "sectionId": 4,
+          "questionNumber": 34,
+          "type": "note-completion",
+          "question": "festival will include her ______ called The Oresteia",
+          "correctAnswer": "opera",
+          "acceptableAnswers": ["opera"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 35,
+          "sectionId": 4,
+          "questionNumber": 35,
+          "type": "note-completion",
+          "question": "Lim described the sounds in The Oresteia as ______",
+          "correctAnswer": "disturbing",
+          "acceptableAnswers": ["disturbing"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 36,
+          "sectionId": 4,
+          "questionNumber": 36,
+          "type": "note-completion",
+          "question": "The Tower of Remoteness is performed by piano and ______",
+          "correctAnswer": "clarinet",
+          "acceptableAnswers": ["clarinet"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 37,
+          "sectionId": 4,
+          "questionNumber": 37,
+          "type": "note-completion",
+          "question": "celebrates Australia's cultural ______",
+          "correctAnswer": "diversity",
+          "acceptableAnswers": ["diversity"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 38,
+          "sectionId": 4,
+          "questionNumber": 38,
+          "type": "note-completion",
+          "question": "studied ______ before studying music",
+          "correctAnswer": "physics",
+          "acceptableAnswers": ["physics"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 39,
+          "sectionId": 4,
+          "questionNumber": 39,
+          "type": "note-completion",
+          "question": "became well known as composer of music for ______",
+          "correctAnswer": "dance",
+          "acceptableAnswers": ["dance", "dancing"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 40,
+          "sectionId": 4,
+          "questionNumber": 40,
+          "type": "note-completion",
+          "question": "festival will include his music for the 1996 ______",
+          "correctAnswer": "Olympics",
+          "acceptableAnswers": ["Olympics", "Olympic Games"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        }
+      ]
+    }
+  ],
+  "answers": {
+    "1": "Tesla",
+    "2": "microphone",
+    "3": "exhibition",
+    "4": "wifi",
+    "5": "45",
+    "6": "135",
+    "7": "pool",
+    "8": "airport",
+    "9": "sea",
+    "10": "clubs",
+    "11": "A",
+    "12": "E",
+    "13": "B",
+    "14": "E",
+    "15": "F",
+    "16": "A",
+    "17": "E",
+    "18": "G",
+    "19": "D",
+    "20": "C",
+    "21": "50",
+    "22": "regional",
+    "23": "carnival",
+    "24": "drummer",
+    "25": "film",
+    "26": "parade",
+    "27": "D",
+    "28": "B",
+    "29": "E",
+    "30": "F",
+    "31": "violin",
+    "32": "energy",
+    "33": "complex",
+    "34": "opera",
+    "35": "disturbing",
+    "36": "clarinet",
+    "37": "diversity",
+    "38": "physics",
+    "39": "dance",
+    "40": "Olympics"
+  }
+}

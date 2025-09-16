@@ -1,0 +1,749 @@
+{
+  "id": "listening14_t4",
+  "title": "IELTS Listening Practice 14 Test 4",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "createdAt": "2024-01-15",
+    "updatedAt": "2024-01-15",
+    "tags": ["hotel-booking", "excursions", "childrens-literature", "underwater-archaeology"],
+    "description": "Full IELTS Listening Practice Test with 4 sections covering various topics and question types"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Hotel Room Booking for Event",
+      "description": "An enquiry about booking hotel rooms and facilities for an event",
+      "instructions": "Complete the notes for questions 1-7. Choose from the box for questions 8-10.",
+      "audioUrl": "",
+      "questions": [
+        {
+          "id": 1,
+          "sectionId": 1,
+          "questionNumber": 1,
+          "type": "note-completion",
+          "question": "number of people who can sit down to eat: ______",
+          "correctAnswer": "85",
+          "acceptableAnswers": ["85", "eighty-five"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 2,
+          "sectionId": 1,
+          "questionNumber": 2,
+          "type": "note-completion",
+          "question": "can go out and see the ______ in pots on the terrace",
+          "correctAnswer": "roses",
+          "acceptableAnswers": ["roses"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 3,
+          "sectionId": 1,
+          "questionNumber": 3,
+          "type": "note-completion",
+          "question": "terrace has a view of a group of ______",
+          "correctAnswer": "trees",
+          "acceptableAnswers": ["trees"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 4,
+          "sectionId": 1,
+          "questionNumber": 4,
+          "type": "note-completion",
+          "question": "has a ______",
+          "correctAnswer": "stage",
+          "acceptableAnswers": ["stage"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 5,
+          "sectionId": 1,
+          "questionNumber": 5,
+          "type": "note-completion",
+          "question": "can give a ______ while people are eating",
+          "correctAnswer": "speech",
+          "acceptableAnswers": ["speech", "talk"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 6,
+          "sectionId": 1,
+          "questionNumber": 6,
+          "type": "note-completion",
+          "question": "will provide ______ if there are any problems",
+          "correctAnswer": "support",
+          "acceptableAnswers": ["support", "help", "assistance"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 7,
+          "sectionId": 1,
+          "questionNumber": 7,
+          "type": "note-completion",
+          "question": "in the hotel rooms or ______",
+          "correctAnswer": "cabins",
+          "acceptableAnswers": ["cabins"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 8,
+          "sectionId": 1,
+          "questionNumber": 8,
+          "type": "matching",
+          "question": "outdoor swimming pool",
+          "correctAnswer": "C",
+          "context": {
+            "instructions": "What is said about using each of the following hotel facilities? Choose THREE answers from the box and write the correct letter, A, B or C.",
+            "leftColumn": [
+              "A included in cost of hiring room",
+              "B available at extra charge",
+              "C not available"
+            ],
+            "rightColumn": [
+              "outdoor swimming pool",
+              "gym",
+              "tennis courts"
+            ]
+          }
+        },
+        {
+          "id": 9,
+          "sectionId": 1,
+          "questionNumber": 9,
+          "type": "matching",
+          "question": "gym",
+          "correctAnswer": "A",
+          "context": {
+            "instructions": "What is said about using each of the following hotel facilities? Choose THREE answers from the box and write the correct letter, A, B or C.",
+            "leftColumn": [
+              "A included in cost of hiring room",
+              "B available at extra charge",
+              "C not available"
+            ],
+            "rightColumn": [
+              "outdoor swimming pool",
+              "gym",
+              "tennis courts"
+            ]
+          }
+        },
+        {
+          "id": 10,
+          "sectionId": 1,
+          "questionNumber": 10,
+          "type": "matching",
+          "question": "tennis courts",
+          "correctAnswer": "B",
+          "context": {
+            "instructions": "What is said about using each of the following hotel facilities? Choose THREE answers from the box and write the correct letter, A, B or C.",
+            "leftColumn": [
+              "A included in cost of hiring room",
+              "B available at extra charge",
+              "C not available"
+            ],
+            "rightColumn": [
+              "outdoor swimming pool",
+              "gym",
+              "tennis courts"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Tourist Excursions and Attractions",
+      "description": "Information about various excursions and attractions available to tourists",
+      "instructions": "Match information to excursions for questions 11-16. Choose TWO letters for questions 17-18 and 19-20.",
+      "audioUrl": "",
+      "questions": [
+        {
+          "id": 11,
+          "sectionId": 2,
+          "questionNumber": 11,
+          "type": "matching",
+          "question": "dolphin watching",
+          "correctAnswer": "G",
+          "context": {
+            "instructions": "What information does the speaker give about each of the following excursions? Choose SIX answers from the box and write the correct letter, A-H.",
+            "leftColumn": [
+              "A all downhill",
+              "B suitable for beginners",
+              "C only in good weather",
+              "D food included",
+              "E no charge",
+              "F swimming possible",
+              "G fully booked today",
+              "H transport not included"
+            ],
+            "rightColumn": [
+              "dolphin watching",
+              "forest walk",
+              "cycle trip",
+              "local craft tour",
+              "observatory trip",
+              "horse riding"
+            ]
+          }
+        },
+        {
+          "id": 12,
+          "sectionId": 2,
+          "questionNumber": 12,
+          "type": "matching",
+          "question": "forest walk",
+          "correctAnswer": "D",
+          "context": {
+            "instructions": "What information does the speaker give about each of the following excursions? Choose SIX answers from the box and write the correct letter, A-H.",
+            "leftColumn": [
+              "A all downhill",
+              "B suitable for beginners",
+              "C only in good weather",
+              "D food included",
+              "E no charge",
+              "F swimming possible",
+              "G fully booked today",
+              "H transport not included"
+            ],
+            "rightColumn": [
+              "dolphin watching",
+              "forest walk",
+              "cycle trip",
+              "local craft tour",
+              "observatory trip",
+              "horse riding"
+            ]
+          }
+        },
+        {
+          "id": 13,
+          "sectionId": 2,
+          "questionNumber": 13,
+          "type": "matching",
+          "question": "cycle trip",
+          "correctAnswer": "A",
+          "context": {
+            "instructions": "What information does the speaker give about each of the following excursions? Choose SIX answers from the box and write the correct letter, A-H.",
+            "leftColumn": [
+              "A all downhill",
+              "B suitable for beginners",
+              "C only in good weather",
+              "D food included",
+              "E no charge",
+              "F swimming possible",
+              "G fully booked today",
+              "H transport not included"
+            ],
+            "rightColumn": [
+              "dolphin watching",
+              "forest walk",
+              "cycle trip",
+              "local craft tour",
+              "observatory trip",
+              "horse riding"
+            ]
+          }
+        },
+        {
+          "id": 14,
+          "sectionId": 2,
+          "questionNumber": 14,
+          "type": "matching",
+          "question": "local craft tour",
+          "correctAnswer": "E",
+          "context": {
+            "instructions": "What information does the speaker give about each of the following excursions? Choose SIX answers from the box and write the correct letter, A-H.",
+            "leftColumn": [
+              "A all downhill",
+              "B suitable for beginners",
+              "C only in good weather",
+              "D food included",
+              "E no charge",
+              "F swimming possible",
+              "G fully booked today",
+              "H transport not included"
+            ],
+            "rightColumn": [
+              "dolphin watching",
+              "forest walk",
+              "cycle trip",
+              "local craft tour",
+              "observatory trip",
+              "horse riding"
+            ]
+          }
+        },
+        {
+          "id": 15,
+          "sectionId": 2,
+          "questionNumber": 15,
+          "type": "matching",
+          "question": "observatory trip",
+          "correctAnswer": "F",
+          "context": {
+            "instructions": "What information does the speaker give about each of the following excursions? Choose SIX answers from the box and write the correct letter, A-H.",
+            "leftColumn": [
+              "A all downhill",
+              "B suitable for beginners",
+              "C only in good weather",
+              "D food included",
+              "E no charge",
+              "F swimming possible",
+              "G fully booked today",
+              "H transport not included"
+            ],
+            "rightColumn": [
+              "dolphin watching",
+              "forest walk",
+              "cycle trip",
+              "local craft tour",
+              "observatory trip",
+              "horse riding"
+            ]
+          }
+        },
+        {
+          "id": 16,
+          "sectionId": 2,
+          "questionNumber": 16,
+          "type": "matching",
+          "question": "horse riding",
+          "correctAnswer": "B",
+          "context": {
+            "instructions": "What information does the speaker give about each of the following excursions? Choose SIX answers from the box and write the correct letter, A-H.",
+            "leftColumn": [
+              "A all downhill",
+              "B suitable for beginners",
+              "C only in good weather",
+              "D food included",
+              "E no charge",
+              "F swimming possible",
+              "G fully booked today",
+              "H transport not included"
+            ],
+            "rightColumn": [
+              "dolphin watching",
+              "forest walk",
+              "cycle trip",
+              "local craft tour",
+              "observatory trip",
+              "horse riding"
+            ]
+          }
+        },
+        {
+          "id": "17-18",
+          "sectionId": 2,
+          "questionNumbers": [17, 18],
+          "type": "multiple-choice-grouped",
+          "question": "Which TWO things does the speaker say about the attraction called Musical Favourites?",
+          "options": [
+            "A You pay extra for drinks",
+            "B You must book it in advance",
+            "C You get a reduction if you buy two tickets",
+            "D You can meet the performers",
+            "E You can take part in the show"
+          ],
+          "correctAnswer": ["B", "D"],
+          "instructions": "Choose TWO letters, A-E"
+        },
+        {
+          "id": "19-20",
+          "sectionId": 2,
+          "questionNumbers": [19, 20],
+          "type": "multiple-choice-grouped",
+          "question": "Which TWO things does the speaker say about the Castle Feast?",
+          "options": [
+            "A Visitors can dance after the meal",
+            "B There is a choice of food",
+            "C Visitors wear historical costume",
+            "D Knives and forks are not used",
+            "E The entertainment includes horse races"
+          ],
+          "correctAnswer": ["A", "D"],
+          "instructions": "Choose TWO letters, A-E"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Children's Literature Module",
+      "description": "A discussion between students about a children's literature course",
+      "instructions": "Choose the correct letter A, B or C for questions 21-25. Match comments to stories for questions 26-30.",
+      "audioUrl": "",
+      "questions": [
+        {
+          "id": 21,
+          "sectionId": 3,
+          "questionNumber": 21,
+          "type": "multiple-choice",
+          "question": "What does Trevor find interesting about the purpose of children's literature?",
+          "options": [
+            "the fact that authors may not realise what values they're teaching",
+            "the fact that literature can be entertaining and educational at the same time",
+            "the fact that adults expect children to imitate characters in literature"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "id": 22,
+          "sectionId": 3,
+          "questionNumber": 22,
+          "type": "multiple-choice",
+          "question": "Trevor says the module about the purpose of children's literature made him",
+          "options": [
+            "analyse some of the stories that his niece reads",
+            "wonder how far popularity reflects good quality",
+            "decide to start writing some children's stories"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 23,
+          "sectionId": 3,
+          "questionNumber": 23,
+          "type": "multiple-choice",
+          "question": "Stephanie is interested in the Pictures module because",
+          "options": [
+            "she intends to become an illustrator",
+            "she can remember beautiful illustrations from her childhood",
+            "she believes illustrations are more important than words"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "id": 24,
+          "sectionId": 3,
+          "questionNumber": 24,
+          "type": "multiple-choice",
+          "question": "Trevor and Stephanie agree that comics",
+          "options": [
+            "are inferior to books",
+            "have the potential for being useful",
+            "discourage children from using their imagination"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 25,
+          "sectionId": 3,
+          "questionNumber": 25,
+          "type": "multiple-choice",
+          "question": "With regard to books aimed at only boys or only girls, Trevor was surprised",
+          "options": [
+            "how long the distinction had gone unquestioned",
+            "how few books were aimed at both girls and boys",
+            "how many children enjoyed books intended for the opposite sex"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 26,
+          "sectionId": 3,
+          "questionNumber": 26,
+          "type": "matching",
+          "question": "Perrault's fairy tales",
+          "correctAnswer": "F",
+          "context": {
+            "instructions": "What comment is made about each of these stories? Choose FIVE answers from the box and write the correct letter, A-G.",
+            "leftColumn": [
+              "A translated into many other languages",
+              "B hard to read",
+              "C inspired a work in a different area of art",
+              "D more popular than the author's other works",
+              "E original title refers to another book",
+              "F started a new genre",
+              "G unlikely topic"
+            ],
+            "rightColumn": [
+              "Perrault's fairy tales",
+              "The Swiss Family Robinson",
+              "The Nutcracker and the Mouse King",
+              "The Lord of the Rings",
+              "War Horse"
+            ]
+          }
+        },
+        {
+          "id": 27,
+          "sectionId": 3,
+          "questionNumber": 27,
+          "type": "matching",
+          "question": "The Swiss Family Robinson",
+          "correctAnswer": "E",
+          "context": {
+            "instructions": "What comment is made about each of these stories? Choose FIVE answers from the box and write the correct letter, A-G.",
+            "leftColumn": [
+              "A translated into many other languages",
+              "B hard to read",
+              "C inspired a work in a different area of art",
+              "D more popular than the author's other works",
+              "E original title refers to another book",
+              "F started a new genre",
+              "G unlikely topic"
+            ],
+            "rightColumn": [
+              "Perrault's fairy tales",
+              "The Swiss Family Robinson",
+              "The Nutcracker and the Mouse King",
+              "The Lord of the Rings",
+              "War Horse"
+            ]
+          }
+        },
+        {
+          "id": 28,
+          "sectionId": 3,
+          "questionNumber": 28,
+          "type": "matching",
+          "question": "The Nutcracker and the Mouse King",
+          "correctAnswer": "C",
+          "context": {
+            "instructions": "What comment is made about each of these stories? Choose FIVE answers from the box and write the correct letter, A-G.",
+            "leftColumn": [
+              "A translated into many other languages",
+              "B hard to read",
+              "C inspired a work in a different area of art",
+              "D more popular than the author's other works",
+              "E original title refers to another book",
+              "F started a new genre",
+              "G unlikely topic"
+            ],
+            "rightColumn": [
+              "Perrault's fairy tales",
+              "The Swiss Family Robinson",
+              "The Nutcracker and the Mouse King",
+              "The Lord of the Rings",
+              "War Horse"
+            ]
+          }
+        },
+        {
+          "id": 29,
+          "sectionId": 3,
+          "questionNumber": 29,
+          "type": "matching",
+          "question": "The Lord of the Rings",
+          "correctAnswer": "B",
+          "context": {
+            "instructions": "What comment is made about each of these stories? Choose FIVE answers from the box and write the correct letter, A-G.",
+            "leftColumn": [
+              "A translated into many other languages",
+              "B hard to read",
+              "C inspired a work in a different area of art",
+              "D more popular than the author's other works",
+              "E original title refers to another book",
+              "F started a new genre",
+              "G unlikely topic"
+            ],
+            "rightColumn": [
+              "Perrault's fairy tales",
+              "The Swiss Family Robinson",
+              "The Nutcracker and the Mouse King",
+              "The Lord of the Rings",
+              "War Horse"
+            ]
+          }
+        },
+        {
+          "id": 30,
+          "sectionId": 3,
+          "questionNumber": 30,
+          "type": "matching",
+          "question": "War Horse",
+          "correctAnswer": "G",
+          "context": {
+            "instructions": "What comment is made about each of these stories? Choose FIVE answers from the box and write the correct letter, A-G.",
+            "leftColumn": [
+              "A translated into many other languages",
+              "B hard to read",
+              "C inspired a work in a different area of art",
+              "D more popular than the author's other works",
+              "E original title refers to another book",
+              "F started a new genre",
+              "G unlikely topic"
+            ],
+            "rightColumn": [
+              "Perrault's fairy tales",
+              "The Swiss Family Robinson",
+              "The Nutcracker and the Mouse King",
+              "The Lord of the Rings",
+              "War Horse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Underwater Archaeology",
+      "description": "A lecture about the hunt for sunken settlements and ancient shipwrecks",
+      "instructions": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+      "audioUrl": "",
+      "questions": [
+        {
+          "id": 31,
+          "sectionId": 4,
+          "questionNumber": 31,
+          "type": "note-completion",
+          "question": "had a semicircle of large stones round a ______",
+          "correctAnswer": "spring",
+          "acceptableAnswers": ["spring"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 32,
+          "sectionId": 4,
+          "questionNumber": 32,
+          "type": "note-completion",
+          "question": "research carried out into structures, ______ and human remains",
+          "correctAnswer": "tools",
+          "acceptableAnswers": ["tools"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 33,
+          "sectionId": 4,
+          "questionNumber": 33,
+          "type": "note-completion",
+          "question": "used in the oil industry, e.g. to make ______",
+          "correctAnswer": "maps",
+          "acceptableAnswers": ["maps"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 34,
+          "sectionId": 4,
+          "questionNumber": 34,
+          "type": "note-completion",
+          "question": "problems: they were expensive and ______",
+          "correctAnswer": "heavy",
+          "acceptableAnswers": ["heavy"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 35,
+          "sectionId": 4,
+          "questionNumber": 35,
+          "type": "note-completion",
+          "question": "found ancient Roman ships carrying architectural elements made of ______",
+          "correctAnswer": "marble",
+          "acceptableAnswers": ["marble"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 36,
+          "sectionId": 4,
+          "questionNumber": 36,
+          "type": "note-completion",
+          "question": "______ is used for short distance communication, acoustic waves for long distance",
+          "correctAnswer": "light",
+          "acceptableAnswers": ["light"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 37,
+          "sectionId": 4,
+          "questionNumber": 37,
+          "type": "note-completion",
+          "question": "AUV can send data to another AUV that has better ______, for example",
+          "correctAnswer": "camera",
+          "acceptableAnswers": ["camera", "cameras"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 38,
+          "sectionId": 4,
+          "questionNumber": 38,
+          "type": "note-completion",
+          "question": "one carrying ______ supplies",
+          "correctAnswer": "medical",
+          "acceptableAnswers": ["medical"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 39,
+          "sectionId": 4,
+          "questionNumber": 39,
+          "type": "note-completion",
+          "question": "tables may have been used for cleaning the ______",
+          "correctAnswer": "eyes",
+          "acceptableAnswers": ["eyes"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        },
+        {
+          "id": 40,
+          "sectionId": 4,
+          "questionNumber": 40,
+          "type": "note-completion",
+          "question": "others carrying containers of olive oil or ______",
+          "correctAnswer": "wine",
+          "acceptableAnswers": ["wine"],
+          "caseSensitive": false,
+          "wordLimit": 1
+        }
+      ]
+    }
+  ],
+  "answers": {
+    "1": "85",
+    "2": "roses",
+    "3": "trees",
+    "4": "stage",
+    "5": "speech",
+    "6": "support",
+    "7": "cabins",
+    "8": "C",
+    "9": "A",
+    "10": "B",
+    "11": "G",
+    "12": "D",
+    "13": "A",
+    "14": "E",
+    "15": "F",
+    "16": "B",
+    "17": "B",
+    "18": "D",
+    "19": "A",
+    "20": "D",
+    "21": "A",
+    "22": "C",
+    "23": "A",
+    "24": "B",
+    "25": "B",
+    "26": "F",
+    "27": "E",
+    "28": "C",
+    "29": "B",
+    "30": "G",
+    "31": "spring",
+    "32": "tools",
+    "33": "maps",
+    "34": "heavy",
+    "35": "marble",
+    "36": "light",
+    "37": "camera",
+    "38": "medical",
+    "39": "eyes",
+    "40": "wine"
+  }
+}

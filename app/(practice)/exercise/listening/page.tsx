@@ -22,9 +22,9 @@ const ListeningPage = () => {
   useEffect(() => {
     const loadExercises = async () => {
       try {
-        const exerciseFiles = ['listening1.json', 'listening2.json'];
+        const exerciseFiles = ['listening14_t1.json', 'listening14_t2.json','listening14_t3.json','listening14_t4.json','listening15_t1.json'];
         const exercisePromises = exerciseFiles.map(async (file) => {
-          const response = await fetch(`/${file}`);
+          const response = await fetch(`/listeningTests/${file}`);
           if (response.ok) {
             return await response.json();
           }

@@ -1,1094 +1,989 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { calculateIELTSListeningBand, getBandColor, getPerformanceLevel, getStudyRecommendations } from '@/lib/utils/ielts-scoring';
-import { saveListeningTestResult } from '@/lib/actions/test-results.actions';
-import { useAuth } from '@/lib/hooks/useAuth';
-import AuthNotice from '@/components/AuthNotice';
-import { toast } from 'sonner';
+import PremiumResultsAnalysis from '@/components/listening/PremiumResultsAnalysis';
+import { getPremiumStatus } from '@/lib/utils/premium';
 
+// ==================== INTERFACES ====================
 interface Question {
-  id: number | string;
-  sectionId: number;
+  questionNumber: number;
+  inputType: 'text' | 'select' | 'multiselect';
+  correctAnswer: string | string[];
+  inputPlaceholder?: string;
+}
+
+interface FormField {
+  label?: string;
+  value?: string;
+  prefix?: string;
+  suffix?: string;
   questionNumber?: number;
-  questionNumbers?: number[];
-  type: string;
-  question: string;
-  options?: string[];
-  correctAnswer: string | number | string[] | number[];
-  acceptableAnswers?: string[];
-  caseSensitive?: boolean;
-  hasImage?: boolean;
-  instructions?: string;
-  context?: {
-    instructions?: string;
-    leftColumn?: string[];
-    rightColumn?: string[];
-    formTitle?: string;
-    fields?: any[];
-    mapTitle?: string;
-    mapImageUrl?: string;
-    availableLabels?: string[];
-    imageDescription?: string;
-  };
+  inputType?: 'text' | 'select' | 'multiselect';
+  correctAnswer?: string | string[];
+  inputPlaceholder?: string;
+  isStatic?: boolean;
+  isExample?: boolean;
+  isSection?: boolean;
+  sectionTitle?: string;
+  isList?: boolean;
+  listItems?: FormField[];
+}
+
+interface QuestionGroupContent {
+  type: 'form' | 'multiple-choice' | 'multiple-choice-individual' | 'matching' | 'note-completion';
+  title?: string;
+  questionText?: string;
+  options?: Array<{ letter: string; text: string }>;
+  questions?: Array<{
+    questionNumber: number;
+    questionText?: string;
+    text?: string;
+    correctAnswer: string | string[];
+    options?: Array<{ letter: string; text: string }>;
+  }>;
+  matchingOptions?: Array<{ letter: string; text: string }>;
+  sectionTitle?: string;
+  items?: Array<{
+    questionNumber: number;
+    text: string;
+    correctAnswer: string;
+  }>;
+  fields?: FormField[];
+  sections?: Array<{
+    sectionTitle: string;
+    content: Array<{
+      text?: string;
+      questionNumber?: number;
+      inputType?: string;
+      correctAnswer?: string;
+      prefix?: string;
+      suffix?: string;
+      isStatic?: boolean;
+      isBullet?: boolean;
+    }>;
+  }>;
+}
+
+interface QuestionGroup {
+  groupId: string;
+  instructions: string;
+  displayType: 'form' | 'multiple-answer' | 'single-choice' | 'matching' | 'notes';
+  imageUrl?: string;
+  content: QuestionGroupContent;
 }
 
 interface Section {
   id: number;
   title: string;
-  description: string;
-  instructions: string;
   audioUrl: string;
-  questions: Question[];
+  imageUrl?: string;
+  questionGroups: QuestionGroup[];
 }
 
-interface ListeningData {
+interface TestData {
   id: string;
   title: string;
   difficulty: string;
   totalQuestions: number;
   timeLimit: number;
+  metadata: {
+    tags: string[];
+    description: string;
+  };
   sections: Section[];
-  answers?: Record<string, string>;
 }
 
-const StructuredListeningPage = () => {
+// ==================== MAIN COMPONENT ====================
+const IELTSListeningTest = () => {
   const params = useParams();
-  const id = params.id as string;
-  const { user, loading: authLoading, isAuthenticated, isPremium } = useAuth();
+  const testId = params.id as string;
   
-  // Audio states for each section
-  const [sectionAudioStates, setSectionAudioStates] = useState<{
-    [key: number]: {
-      isPlaying: boolean;
-      currentTime: number;
-      duration: number;
-      hasPlayed: boolean;
-      hasFinished: boolean;
-    }
-  }>({});
-  
-  const [volume, setVolume] = useState(1);
-  const [answers, setAnswers] = useState<Record<string | number, string | string[]>>({});
+  // States
+  const [testData, setTestData] = useState<TestData | null>(null);
+  const [answers, setAnswers] = useState<Record<number, string | string[]>>({});
   const [showResults, setShowResults] = useState(false);
-  const [timeRemaining, setTimeRemaining] = useState(40 * 60); // 40 minutes
-  const [listeningData, setListeningData] = useState<ListeningData | null>(null);
+  const [timeRemaining, setTimeRemaining] = useState(40 * 60);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [showAudioWarning, setShowAudioWarning] = useState<number | null>(null);
+  const [audioStates, setAudioStates] = useState<Record<number, 'loading' | 'ready' | 'error'>>({});
+  const [isPremium, setIsPremium] = useState(false);
+  const [premiumLoading, setPremiumLoading] = useState(true);
   
-  const audioRefs = useRef<{ [key: number]: HTMLAudioElement | null }>({});
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Load listening data
+  // ==================== DATA LOADING ====================
   useEffect(() => {
-    const loadListeningData = async () => {
+    const loadTestData = async () => {
       try {
         setLoading(true);
-        // Try to load the specific test file based on the ID
-        const response = await fetch(`/listeningTests/${id}.json`);
+        const response = await fetch(`/listeningTests/${testId}.json`);
         
         if (!response.ok) {
-          throw new Error(`Test "${id}" not found. Please check if the JSON file exists.`);
+          throw new Error(`Failed to load test: ${testId}`);
         }
         
-        const data: ListeningData = await response.json();
-        setListeningData(data);
+        const data: TestData = await response.json();
+        setTestData(data);
+        setTimeRemaining((data.timeLimit || 40) * 60);
         
-        // Set timer based on test data (default to 40 minutes if not specified)
-        const testTimeLimit = data.timeLimit || 40;
-        setTimeRemaining(testTimeLimit * 60);
-        
-        // Initialize audio states for each section
-        const initialStates: typeof sectionAudioStates = {};
+        // Initialize audio states
+        const initialAudioStates: Record<number, 'loading' | 'ready' | 'error'> = {};
         data.sections.forEach(section => {
-          initialStates[section.id] = {
-            isPlaying: false,
-            currentTime: 0,
-            duration: 0,
-            hasPlayed: false,
-            hasFinished: false
-          };
+          initialAudioStates[section.id] = 'loading';
         });
-        setSectionAudioStates(initialStates);
+        setAudioStates(initialAudioStates);
         
       } catch (err) {
-        console.error('Error loading listening test:', err);
-        setError(err instanceof Error ? err.message : 'Failed to load test data');
+        setError(err instanceof Error ? err.message : 'Failed to load test');
       } finally {
         setLoading(false);
       }
     };
 
-    if (id) {
-      loadListeningData();
-    }
-  }, [id]);
-
-  // Timer effect
-  useEffect(() => {
-    if (timeRemaining > 0 && !loading && !error) {
-      timerRef.current = setTimeout(() => {
-        setTimeRemaining(prev => prev - 1);
-      }, 1000);
-    } else if (timeRemaining === 0) {
-      handleSubmit();
-    }
-    return () => {
-      if (timerRef.current) clearTimeout(timerRef.current);
+    const loadPremiumStatus = async () => {
+      try {
+        setPremiumLoading(true);
+        const { isPremium: premiumStatus } = await getPremiumStatus();
+        setIsPremium(premiumStatus);
+      } catch (err) {
+        console.error('Error loading premium status:', err);
+        setIsPremium(false);
+      } finally {
+        setPremiumLoading(false);
+      }
     };
-  }, [timeRemaining, loading, error]);
 
+    if (testId) {
+      loadTestData();
+      loadPremiumStatus();
+    }
+  }, [testId]);
+
+  // ==================== HELPER FUNCTIONS ====================
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
 
-  const startSectionAudio = (sectionId: number, audioUrl: string) => {
-    if (sectionAudioStates[sectionId]?.hasPlayed) return;
-    
-    setShowAudioWarning(sectionId);
-    setTimeout(() => {
-      setShowAudioWarning(null);
-      const audio = audioRefs.current[sectionId];
-      if (audio) {
-        audio.src = audioUrl;
-        audio.load();
-        audio.play();
-        setSectionAudioStates(prev => ({
-          ...prev,
-          [sectionId]: { ...prev[sectionId], isPlaying: true, hasPlayed: true }
-        }));
-      }
-    }, 2000);
+  const handleAnswerChange = (questionNumber: number, answer: string | string[]) => {
+    setAnswers(prev => ({ ...prev, [questionNumber]: answer }));
   };
 
-  const handleAudioTimeUpdate = (sectionId: number) => {
-    const audio = audioRefs.current[sectionId];
-    if (audio) {
-      setSectionAudioStates(prev => ({
-        ...prev,
-        [sectionId]: { ...prev[sectionId], currentTime: audio.currentTime }
-      }));
-    }
-  };
-
-  const handleAudioLoadedMetadata = (sectionId: number) => {
-    const audio = audioRefs.current[sectionId];
-    if (audio) {
-      setSectionAudioStates(prev => ({
-        ...prev,
-        [sectionId]: { ...prev[sectionId], duration: audio.duration }
-      }));
-    }
-  };
-
-  const handleAudioEnd = (sectionId: number) => {
-    setSectionAudioStates(prev => ({
-      ...prev,
-      [sectionId]: { ...prev[sectionId], isPlaying: false, hasFinished: true }
-    }));
-  };
-
-  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const vol = parseFloat(e.target.value);
-    setVolume(vol);
-    Object.values(audioRefs.current).forEach(audio => {
-      if (audio) audio.volume = vol;
-    });
-  };
-
-  const handleAnswerChange = (questionId: string | number, answer: string | string[]) => {
-    setAnswers(prev => ({ ...prev, [questionId]: answer }));
-  };
-
-  const handleSubmit = async () => {
-    if (!listeningData) return;
-
-    const score = calculateScore();
-    const ieltsScore = calculateIELTSListeningBand(score.correct, score.total);
-    
-    const timeSpent = (40 * 60) - timeRemaining;
-
-    if (isAuthenticated) {
-      try {
-        const saveResult = await saveListeningTestResult({
-          testId: listeningData.id,
-          difficulty: listeningData.difficulty,
-          title: listeningData.title,
-          score: {
-            correct: score.correct,
-            total: score.total,
-            percentage: score.percentage
-          },
-          totalQuestions: listeningData.totalQuestions,
-          timeSpent,
-          answers,
-          bandScore: ieltsScore.band
-        });
-
-        if (saveResult.success) {
-          toast.success('Test result saved to your dashboard!');
-        }
-      } catch (error) {
-        console.error('Error saving test result:', error);
-      }
-    }
-
+  const handleSubmit = useCallback(() => {
     setShowResults(true);
     if (timerRef.current) clearTimeout(timerRef.current);
-  };
+  }, []);
+
+  // ==================== TIMER ====================
+  useEffect(() => {
+    if (timeRemaining > 0 && !loading && !error && !showResults) {
+      timerRef.current = setTimeout(() => {
+        setTimeRemaining(prev => prev - 1);
+      }, 1000);
+    } else if (timeRemaining === 0 && !showResults) {
+      handleSubmit();
+    }
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, [timeRemaining, loading, error, showResults, handleSubmit]);
 
   const calculateScore = () => {
-    if (!listeningData || !listeningData.answers) return { correct: 0, total: 0, percentage: 0 };
+    if (!testData) return { correct: 0, total: 0, percentage: 0 };
     
-    const allQuestions = listeningData.sections.flatMap(section => section.questions);
-    const correctAnswers = listeningData.answers;
     let correct = 0;
+    let total = 0;
     
-    allQuestions.forEach(q => {
-      const userAnswer = answers[q.id];
-      const questionNumber = q.questionNumber;
-      
-      // Handle grouped questions (multiple-choice-grouped)
-      if (q.type === 'multiple-choice-grouped') {
-        const questionNumbers = q.questionNumbers || [questionNumber || 0];
+    testData.sections.forEach(section => {
+      section.questionGroups.forEach(group => {
+        if (group.content.questions) {
+          group.content.questions.forEach(q => {
+            total++;
+            const userAnswer = answers[q.questionNumber];
+            const correctAnswer = q.correctAnswer;
+            
+            if (Array.isArray(correctAnswer) && Array.isArray(userAnswer)) {
+              const userSet = new Set(userAnswer.map(a => a.toUpperCase()));
+              const correctSet = new Set(correctAnswer.map(a => a.toUpperCase()));
+              if (userSet.size === correctSet.size && [...correctSet].every(a => userSet.has(a))) {
+                correct++;
+              }
+            } else if (typeof userAnswer === 'string' && typeof correctAnswer === 'string') {
+              if (userAnswer.toLowerCase().trim() === correctAnswer.toLowerCase().trim()) {
+                correct++;
+              }
+            }
+          });
+        }
         
-        // For grouped questions, check each question number individually
-        questionNumbers.forEach(qNum => {
-          const correctAnswer = correctAnswers[qNum.toString()];
-          if (correctAnswer && Array.isArray(userAnswer)) {
-            // Check if user's answer array contains the correct answer for this question
-            if (userAnswer.includes(correctAnswer.toUpperCase())) {
+        if (group.content.items) {
+          group.content.items.forEach(item => {
+            total++;
+            const userAnswer = answers[item.questionNumber];
+            if (typeof userAnswer === 'string' && userAnswer.toUpperCase().trim() === item.correctAnswer.toUpperCase().trim()) {
               correct++;
             }
-          }
-        });
-      }
-      // Handle regular questions using question number
-      else if (questionNumber && correctAnswers[questionNumber.toString()]) {
-        const correctAnswer = correctAnswers[questionNumber.toString()];
+          });
+        }
         
-        if (typeof userAnswer === 'string') {
-          // Handle multiple choice questions (A, B, C format)
-          if (q.type === 'multiple-choice' || q.type === 'matching') {
-            if (userAnswer.toUpperCase() === correctAnswer.toUpperCase()) {
-              correct++;
-            }
-          }
-          // Handle text-based answers (fill-blank, form-completion, note-completion)
-          else {
-            const caseSensitive = q.caseSensitive !== false;
-            let isCorrect = false;
-            
-            // Check main answer
-            if (caseSensitive) {
-              isCorrect = userAnswer.trim() === correctAnswer.trim();
-            } else {
-              isCorrect = userAnswer.toLowerCase().trim() === correctAnswer.toLowerCase().trim();
-            }
-            
-            // Check acceptable answers if available and main answer doesn't match
-            if (!isCorrect && q.acceptableAnswers) {
-              isCorrect = q.acceptableAnswers.some(acceptable =>
-                caseSensitive
-                  ? userAnswer.trim() === acceptable.trim()
-                  : userAnswer.toLowerCase().trim() === acceptable.toLowerCase().trim()
-              );
-            }
-            
-            if (isCorrect) correct++;
-          }
+        if (group.content.fields) {
+          const countQuestions = (fields: FormField[]) => {
+            fields.forEach(field => {
+              if (field.questionNumber) {
+                total++;
+                const userAnswer = answers[field.questionNumber];
+                if (typeof userAnswer === 'string' && typeof field.correctAnswer === 'string' &&
+                    userAnswer.toLowerCase().trim() === field.correctAnswer.toLowerCase().trim()) {
+                  correct++;
+                }
+              }
+              if (field.listItems) {
+                countQuestions(field.listItems);
+              }
+            });
+          };
+          countQuestions(group.content.fields);
         }
-        // Handle array answers for multiple selection questions
-        else if (Array.isArray(userAnswer)) {
-          // For multiple selection, check if user's answers match the expected format
-          const expectedAnswers = correctAnswer.split(',').map(a => a.trim().toUpperCase());
-          const userAnswers = userAnswer.map(a => a.toUpperCase());
-          
-          if (expectedAnswers.length === userAnswers.length &&
-              expectedAnswers.every(answer => userAnswers.includes(answer))) {
-            correct++;
-          }
+        
+        if (group.content.sections) {
+          group.content.sections.forEach(section => {
+            section.content.forEach(item => {
+              if (item.questionNumber && item.correctAnswer) {
+                total++;
+                const userAnswer = answers[item.questionNumber];
+                if (typeof userAnswer === 'string' && 
+                    userAnswer.toLowerCase().trim() === item.correctAnswer.toLowerCase().trim()) {
+                  correct++;
+                }
+              }
+            });
+          });
         }
-      }
+      });
     });
     
     return {
       correct,
-      total: allQuestions.length,
-      percentage: (allQuestions.length > 0 ? (correct / allQuestions.length) * 100 : 0)
+      total,
+      percentage: total > 0 ? (correct / total) * 100 : 0
     };
   };
 
-  // Helper function to get instructions for different question types
-  const getQuestionTypeInstructions = (type: string, question?: Question) => {
-    switch (type) {
-      case 'form-completion':
-        return "Complete the form below. Write ONE WORD AND/OR A NUMBER for each answer.";
-      case 'fill-blank':
-        return "Complete the sentences below. Write ONE WORD AND/OR A NUMBER for each answer.";
-      case 'note-completion':
-        return "Complete the notes below. Write ONE WORD ONLY for each answer.";
-      case 'multiple-choice':
-        if (question?.options && Array.isArray(question.correctAnswer)) {
-          return "Choose TWO letters from the options below.";
-        } else if (question?.question?.includes('TWO')) {
-          return "Choose TWO letters from the options below.";
-        }
-        return "Choose the correct letter, A, B or C.";
-      case 'matching':
-        if (question?.context?.instructions) {
-          return question.context.instructions;
-        }
-        return "Match each item with the correct letter.";
-      case 'map-labeling':
-        return "Label the plan below. Write the correct letter next to each question.";
-      default:
-        return "Follow the instructions for each question.";
+  // ==================== RENDERING FUNCTIONS ====================
+  const renderInput = (
+    questionNumber: number,
+    inputType: string = 'text',
+    placeholder?: string,
+    options?: Array<{ letter: string; text: string }>
+  ) => {
+    if (inputType === 'select') {
+      return (
+        <select
+          className="inline-block border-2 border-primary bg-yellow-50 px-3 py-1 mx-1 min-w-[80px] rounded font-sans text-base"
+          value={answers[questionNumber] as string || ''}
+          onChange={(e) => handleAnswerChange(questionNumber, e.target.value)}
+        >
+          <option value="">{questionNumber}</option>
+          {['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'].slice(0, options?.length || 3).map(letter => (
+            <option key={letter} value={letter}>{letter}</option>
+          ))}
+        </select>
+      );
+    } else if (inputType === 'multiselect') {
+      return (
+        <input
+          type="text"
+          className="inline-block border-2 border-primary bg-yellow-50 px-3 py-1 mx-1 min-w-[120px] rounded font-sans text-base"
+          value={Array.isArray(answers[questionNumber]) ? (answers[questionNumber] as string[]).join(',') : answers[questionNumber] || ''}
+          onChange={(e) => {
+            const value = e.target.value.toUpperCase();
+            const letters = value.split(',').map(s => s.trim()).filter(s => /^[A-H]$/.test(s));
+            handleAnswerChange(questionNumber, letters);
+          }}
+          placeholder={placeholder || `${questionNumber} (e.g., A,C)`}
+        />
+      );
+    } else {
+      return (
+        <input
+          type="text"
+          className="inline-block border-2 border-primary bg-yellow-50 px-3 py-1 mx-1 min-w-[150px] rounded font-sans text-base"
+          value={answers[questionNumber] as string || ''}
+          onChange={(e) => handleAnswerChange(questionNumber, e.target.value)}
+          placeholder={placeholder || `${questionNumber}`}
+        />
+      );
     }
   };
 
-  // Helper function to render question type instructions
-  const renderQuestionTypeInstructions = (questions: Question[], startIndex: number = 0) => {
-    const questionGroups: { [key: string]: Question[] } = {};
+  const renderFormField = (field: FormField): React.JSX.Element => {
+    if (field.isSection) {
+      return <div className="mt-6 mb-3 font-bold text-lg">{field.sectionTitle}</div>;
+    }
     
-    // Group questions by type
-    questions.forEach(q => {
-      if (!questionGroups[q.type]) {
-        questionGroups[q.type] = [];
-      }
-      questionGroups[q.type].push(q);
-    });
-
-    return Object.entries(questionGroups).map(([type, typeQuestions]) => {
-      const firstQuestion = typeQuestions[0];
-      const lastQuestion = typeQuestions[typeQuestions.length - 1];
-      
-      // Handle grouped questions that use questionNumbers array
-      let questionRange;
-      if (type === 'multiple-choice-grouped' && firstQuestion.questionNumbers) {
-        const allNumbers = firstQuestion.questionNumbers;
-        if (allNumbers.length > 1) {
-          questionRange = `Questions ${allNumbers[0]} and ${allNumbers[1]}`;
-        } else {
-          questionRange = `Question ${allNumbers[0]}`;
-        }
-      } else {
-        // Handle regular questions with questionNumber property
-        const firstNum = firstQuestion.questionNumber;
-        const lastNum = lastQuestion.questionNumber;
-        questionRange = typeQuestions.length > 1
-          ? `Questions ${firstNum}-${lastNum}`
-          : `Question ${firstNum}`;
-      }
-
+    if (field.isExample) {
       return (
-        <div key={type} className="mb-6 p-4 bg-indigo-50 rounded-lg border-2 border-indigo-200">
-          <div className="flex items-start space-x-3">
-            <div className="w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center flex-shrink-0">
-              <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
-              </svg>
-            </div>
-            <div className="flex-1">
-              <h4 className="font-bold text-indigo-800 mb-1">{questionRange}</h4>
-              <p className="text-indigo-700 text-sm font-medium">
-                {getQuestionTypeInstructions(type, firstQuestion)}
-              </p>
-            </div>
-          </div>
+        <div className="bg-gray-50 p-2 rounded mb-2">
+          <span className="text-gray-600 italic">Example: </span>
+          {field.label && <span className="font-semibold">{field.label}: </span>}
+          {field.value} {field.suffix}
         </div>
       );
-    });
+    }
+    
+    if (field.isList && field.listItems) {
+      return (
+        <div className="ml-4 space-y-2">
+          {field.label && <div className="font-semibold">{field.label}:</div>}
+          {field.listItems.map((item, idx) => (
+            <div key={idx} className="flex items-center">
+              {item.prefix}
+              {item.questionNumber && renderInput(item.questionNumber, item.inputType, item.inputPlaceholder)}
+              {item.suffix}
+              {item.value && !item.questionNumber && <span>{item.value}</span>}
+            </div>
+          ))}
+        </div>
+      );
+    }
+    
+    return (
+      <div className="flex items-center space-x-2 mb-3">
+        {field.label && (
+          <span className="font-semibold min-w-[150px]">{field.label}:</span>
+        )}
+        {field.value}
+        {field.prefix}
+        {field.questionNumber && renderInput(field.questionNumber, field.inputType, field.inputPlaceholder)}
+        {field.suffix}
+      </div>
+    );
   };
 
-  // Dynamic question renderer based on question type from listening1.json
-  const renderQuestion = (question: Question) => {
-    const { id, type, question: questionText, options, questionNumber } = question;
-
-    switch (type) {
-      case 'form-completion':
-        // Handle form completion questions with context
-        return (
-          <div key={id} className="mb-4">
-            <div className="flex items-center space-x-2">
-              <span className="font-semibold text-primary">{questionNumber}</span>
-              <span className="flex-1">{questionText}:</span>
-              <input
-                type="text"
-                className="border-b-2 border-gray-400 bg-transparent w-32 px-2 py-1"
-                value={answers[id] || ''}
-                onChange={(e) => handleAnswerChange(id, e.target.value)}
-                placeholder="..............."
-              />
-            </div>
-          </div>
-        );
-
-      case 'fill-blank':
-        // Handle fill-in-the-blank questions
-        const parts = questionText.split('______');
-        return (
-          <div key={id} className="mb-4">
-            <div className="flex items-center space-x-2 flex-wrap">
-              <span className="font-semibold text-primary">{questionNumber}</span>
-              <span>{parts[0]}</span>
-              <input
-                type="text"
-                className="border-b-2 border-gray-400 bg-transparent w-32 px-2 py-1"
-                value={answers[id] || ''}
-                onChange={(e) => handleAnswerChange(id, e.target.value)}
-                placeholder="..............."
-              />
-              {parts[1] && <span>{parts[1]}</span>}
-            </div>
-          </div>
-        );
-
-      case 'note-completion':
-        // Handle note completion questions (similar to fill-blank but with word limits)
-        const noteParts = questionText.split('______');
-        return (
-          <div key={id} className="mb-4">
-            <div className="flex items-center space-x-2 flex-wrap">
-              <span className="font-semibold text-primary">{questionNumber}</span>
-              <span>{noteParts[0]}</span>
-              <input
-                type="text"
-                className="border-b-2 border-gray-400 bg-transparent w-32 px-2 py-1"
-                value={answers[id] || ''}
-                onChange={(e) => handleAnswerChange(id, e.target.value)}
-                placeholder="..............."
-              />
-              {noteParts[1] && <span>{noteParts[1]}</span>}
-            </div>
-          </div>
-        );
-
-      case 'multiple-choice-grouped':
-        // Handle grouped questions like Questions 11 and 12
-        const questionNumbers = (question as any).questionNumbers || [questionNumber];
-        const questionRange = questionNumbers.length > 1
-          ? `Questions ${questionNumbers[0]} and ${questionNumbers[1]}`
-          : `Question ${questionNumbers[0]}`;
+  const renderQuestionGroup = (group: QuestionGroup, section: Section) => {
+    const { content, instructions, displayType } = group;
+    
+    return (
+      <div className="mb-8 bg-white rounded-lg p-6 border-2 border-gray-200">
+        <div className="mb-4 text-primary font-semibold">{instructions}</div>
         
-        return (
-          <div key={id} className="mb-8 border-2 border-indigo-200 rounded-lg p-6 bg-indigo-50">
-            <div className="mb-4">
-              <h4 className="font-bold text-lg text-indigo-800 mb-2">{questionRange}</h4>
-              <p className="text-indigo-600 text-sm font-medium mb-3">{question.instructions}</p>
-              <p className="text-gray-800 font-medium">{questionText}</p>
-            </div>
-            <div className="space-y-3">
-              {options?.map((option, index) => (
-                <label key={index} className="flex items-center space-x-3 cursor-pointer p-2 rounded hover:bg-indigo-100 transition-colors">
-                  <input
-                    type="checkbox"
-                    className="w-4 h-4 text-indigo-600"
-                    checked={Array.isArray(answers[id]) && answers[id].includes(String.fromCharCode(65 + index))}
-                    onChange={(e) => {
-                      const letter = String.fromCharCode(65 + index);
-                      const currentAnswers = Array.isArray(answers[id]) ? answers[id] : [];
-                      if (e.target.checked) {
-                        if (currentAnswers.length < 2) {
-                          handleAnswerChange(id, [...currentAnswers, letter]);
-                        }
-                      } else {
-                        handleAnswerChange(id, currentAnswers.filter(a => a !== letter));
-                      }
-                    }}
-                  />
-                  <span className="font-medium">
-                    <strong className="text-indigo-700">{String.fromCharCode(65 + index)}</strong>
-                    <span className="ml-2">{option}</span>
-                  </span>
-                </label>
-              ))}
-            </div>
-            {Array.isArray(answers[id]) && answers[id].length > 0 && (
-              <div className="mt-4 p-3 bg-white rounded border border-indigo-300">
-                <p className="text-sm text-indigo-700">
-                  <strong>Selected:</strong> {(answers[id] as string[]).join(', ')}
-                  <span className="ml-2 text-indigo-500">({(answers[id] as string[]).length}/2)</span>
-                </p>
+        {displayType === 'form' && content.fields && (
+          <div className="bg-gray-50 p-6 rounded">
+            {content.title && <h3 className="text-xl font-bold mb-4 text-center">{content.title}</h3>}
+            {content.fields.map((field, idx) => (
+              <div key={idx}>{renderFormField(field)}</div>
+            ))}
+          </div>
+        )}
+        
+        {displayType === 'multiple-answer' && content.questions && (
+          <div>
+            {content.questionText && <div className="mb-4 font-semibold">{content.questionText}</div>}
+            {content.options && (
+              <div className="bg-gray-50 p-4 rounded mb-4">
+                {content.options.map((opt) => (
+                  <div key={opt.letter} className="mb-2">
+                    <span className="font-bold mr-2">{opt.letter}</span>
+                    {opt.text}
+                  </div>
+                ))}
               </div>
             )}
+            <div className="flex gap-4">
+              {content.questions.map(q => (
+                <div key={q.questionNumber} className="flex items-center">
+                  <span className="mr-2 font-semibold">{q.questionNumber}:</span>
+                  {renderInput(q.questionNumber, 'select', undefined, content.options)}
+                </div>
+              ))}
+            </div>
           </div>
-        );
-
-      case 'multiple-choice':
-        // Check if it's a multiple selection question
-        const isMultipleSelect = Array.isArray(question.correctAnswer) ||
-                                questionText.includes('TWO') ||
-                                questionText.includes('Choose TWO');
+        )}
         
-        if (isMultipleSelect) {
-          const maxSelections = questionText.includes('TWO') ? 2 :
-                              questionText.includes('THREE') ? 3 :
-                              questionText.includes('FOUR') ? 4 : 5;
-          
-          return (
-            <div key={id} className="mb-6">
-              <div className="mb-4">
-                <h4 className="font-semibold mb-2">Question {questionNumber}</h4>
-                <p className="mb-4">{questionText}</p>
-              </div>
-              <div className="space-y-2">
-                {options?.map((option, index) => (
-                  <label key={index} className="flex items-center space-x-3 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      className="w-4 h-4"
-                      checked={Array.isArray(answers[id]) && answers[id].includes(String.fromCharCode(65 + index))}
-                      onChange={(e) => {
-                        const letter = String.fromCharCode(65 + index);
-                        const currentAnswers = Array.isArray(answers[id]) ? answers[id] : [];
-                        if (e.target.checked) {
-                          if (currentAnswers.length < maxSelections) {
-                            handleAnswerChange(id, [...currentAnswers, letter]);
-                          }
-                        } else {
-                          handleAnswerChange(id, currentAnswers.filter(a => a !== letter));
-                        }
-                      }}
-                    />
-                    <span>{option}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-          );
-        } else {
-          // Single choice multiple choice
-          return (
-            <div key={id} className="mb-6 border-l-4 border-blue-400 pl-4">
-              <div className="flex items-start space-x-4 mb-3">
-                <span className="font-bold text-lg text-primary">{questionNumber}</span>
-                <p className="flex-1">{questionText}</p>
-              </div>
-              <div className="ml-8 space-y-2">
-                {options?.map((option, index) => (
-                  <label key={index} className="flex items-start space-x-3 cursor-pointer">
-                    <input
-                      type="radio"
-                      name={`question-${id}`}
-                      className="w-4 h-4 mt-1"
-                      checked={answers[id] === String.fromCharCode(65 + index)}
-                      onChange={() => handleAnswerChange(id, String.fromCharCode(65 + index))}
-                    />
-                    <span><strong>{String.fromCharCode(65 + index)}</strong>   {option}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-          );
-        }
-
-      case 'matching':
-        // Check if this is a complex matching question with context
-        if (question.context && question.context.leftColumn && question.context.rightColumn) {
-          return (
-            <div key={id} className="mb-4">
-              <div className="flex items-center space-x-4">
-                <span className="w-4 text-center font-semibold text-primary">{questionNumber}</span>
-                <span className="flex-1">{questionText}</span>
-                <input
-                  type="text"
-                  className="border-b-2 border-gray-400 bg-transparent w-16 px-2 py-1 text-center"
-                  value={answers[id] || ''}
-                  onChange={(e) => handleAnswerChange(id, e.target.value.toUpperCase())}
-                  placeholder="..........."
-                  maxLength={1}
-                />
-              </div>
-            </div>
-          );
-        } else {
-          // Simple matching question
-          return (
-            <div key={id} className="mb-4">
-              <div className="flex items-center space-x-4">
-                <span className="w-4 text-center font-semibold text-primary">{questionNumber}</span>
-                <span className="flex-1">{questionText}</span>
-                <input
-                  type="text"
-                  className="border-b-2 border-gray-400 bg-transparent w-16 px-2 py-1 text-center"
-                  value={answers[id] || ''}
-                  onChange={(e) => handleAnswerChange(id, e.target.value.toUpperCase())}
-                  placeholder="..........."
-                  maxLength={1}
-                />
-              </div>
-            </div>
-          );
-        }
-
-      default:
-        return (
-          <div key={id} className="mb-4">
-            <div className="flex items-center space-x-2">
-              <span className="font-semibold text-primary">{questionNumber}</span>
-              <span className="flex-1">{questionText}</span>
-              <input
-                type="text"
-                className="border-b-2 border-gray-400 bg-transparent w-32 px-2 py-1"
-                value={answers[id] || ''}
-                onChange={(e) => handleAnswerChange(id, e.target.value)}
-                placeholder="..............."
-              />
-            </div>
-          </div>
-        );
-    }
-  };
-
-  const renderSectionQuestions = (section: Section) => {
-    // Check if this section has matching questions with context (like section 3 in listening2)
-    const hasMatchingWithContext = section.questions.some(q => 
-      q.type === 'matching' && q.context && q.context.leftColumn && q.context.rightColumn
-    );
-
-    // Check if this section has map-labeling questions with images
-    const hasMapWithImage = section.questions.some(q => 
-      q.type === 'map-labeling' && q.hasImage === true && q.context?.mapImageUrl
-    );
-
-    
-    if (hasMatchingWithContext) {
-      // Find the first matching question to get the context
-      const matchingQuestion = section.questions.find(q => 
-        q.type === 'matching' && q.context && q.context.leftColumn && q.context.rightColumn
-      );
-      
-      if (matchingQuestion && matchingQuestion.context) {
-        return (
+        {displayType === 'single-choice' && content.questions && (
           <div className="space-y-6">
-            <div className="bg-gray-50 p-6 rounded-lg">
-              {section.description && (
-                <div className="mb-6">
-                  <h3 className="text-lg font-bold mb-2">{section.description}</h3>
+            {content.questions.map(q => (
+              <div key={q.questionNumber} className="border-l-4 border-primary pl-4">
+                <div className="mb-3">
+                  <span className="font-bold text-primary mr-2">{q.questionNumber}.</span>
+                  <span className="font-semibold">{q.questionText}</span>
                 </div>
-              )}
-              
-              {/* Question Type Instructions */}
-              {renderQuestionTypeInstructions(section.questions)}
-              
-              {/* Render non-matching questions first */}
-              {section.questions.filter(q => q.type !== 'matching').map(question => renderQuestion(question))}
-              
-              {/* Special rendering for matching questions with context */}
-              {matchingQuestion.context.instructions && (
-                <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-                  <h4 className="font-bold text-blue-800 mb-2">Instructions:</h4>
-                  <p className="text-blue-700 text-sm">{matchingQuestion.context.instructions}</p>
-                </div>
-              )}
-              
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-6">
-                {/* Left Column - Answer Options */}
-                <div className="bg-white p-4 rounded-lg border-2 border-primary/20">
-                  <h4 className="font-bold text-primary mb-4">Answer Options:</h4>
-                  <div className="space-y-2">
-                    {matchingQuestion.context.leftColumn?.map((option, index) => (
-                      <div key={index} className="text-sm">
-                        <span className="font-semibold text-primary">{option}</span>
+                {q.options && (
+                  <div className="ml-8 space-y-2">
+                    {q.options.map((opt) => (
+                      <div key={opt.letter} className="flex items-start">
+                        <span className="font-bold mr-2 text-gray-600">{opt.letter}</span>
+                        <span>{opt.text}</span>
                       </div>
                     ))}
                   </div>
-                </div>
-                
-                {/* Right Column - Items to Match */}
-                <div className="bg-white p-4 rounded-lg border-2 border-gray-200">
-                  <h4 className="font-bold text-gray-800 mb-4">Match with:</h4>
-                  <div className="space-y-4">
-                    {section.questions.filter(q => q.type === 'matching').map(question => (
-                      <div key={question.id} className="flex items-center space-x-4">
-                        <span className="w-6 text-center font-semibold text-primary">{question.questionNumber}</span>
-                        <span className="flex-1">{question.question}</span>
-                        <input
-                          type="text"
-                          className="border-2 border-gray-300 rounded px-3 py-1 w-16 text-center font-semibold"
-                          value={answers[question.id] || ''}
-                          onChange={(e) => handleAnswerChange(question.id, e.target.value.toUpperCase())}
-                          placeholder="?"
-                          maxLength={1}
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        );
-      }
-    }
-
-    if (hasMapWithImage) {
-      // Find the first map question with image
-      const mapQuestion = section.questions.find(q => 
-        q.type === 'map-labeling' && q.hasImage === true && q.context?.mapImageUrl
-      );
-      
-      if (mapQuestion && mapQuestion.context) {
-        return (
-          <div className="space-y-6">
-            <div className="bg-gray-50 p-6 rounded-lg">
-              {section.description && (
-                <div className="mb-6">
-                  <h3 className="text-lg font-bold mb-2">{section.description}</h3>
-                </div>
-              )}
-              
-              {/* Question Type Instructions */}
-              {renderQuestionTypeInstructions(section.questions)}
-              
-              {/* Render non-map questions first */}
-              {section.questions.filter(q => q.type !== 'map-labeling').map(question => renderQuestion(question))}
-              
-              {/* Map Instructions */}
-              {mapQuestion.context.instructions && (
-                <div className="mb-6 p-4 bg-green-50 rounded-lg border border-green-200">
-                  <h4 className="font-bold text-green-800 mb-2">Map Instructions:</h4>
-                  <p className="text-green-700 text-sm">{mapQuestion.context.instructions}</p>
-                </div>
-              )}
-              
-              {/* Map Image */}
-              <div className="mb-6 bg-white p-4 rounded-lg border-2 border-gray-200">
-                <h4 className="font-bold text-gray-800 mb-4 text-center">
-                  {mapQuestion.context.mapTitle || 'Map/Plan'}
-                </h4>
-                <div className="flex justify-center">
-                  <img 
-                    src={mapQuestion.context.mapImageUrl} 
-                    alt={mapQuestion.context.imageDescription || `${mapQuestion.context.mapTitle} plan`}
-                    className="max-w-full h-auto rounded-lg border border-gray-300 shadow-lg"
-                    style={{ maxHeight: '500px' }}
-                  />
-                </div>
-                {mapQuestion.context.imageDescription && (
-                  <p className="text-sm text-gray-600 text-center mt-2 italic">
-                    {mapQuestion.context.imageDescription}
-                  </p>
                 )}
-              </div>
-              
-              {/* Map Questions */}
-              <div className="bg-white p-4 rounded-lg border-2 border-gray-200">
-                <h4 className="font-bold text-gray-800 mb-4">Questions:</h4>
-                <div className="space-y-4">
-                  {section.questions.filter(q => q.type === 'map-labeling').map(question => (
-                    <div key={question.id} className="flex items-center space-x-4">
-                      <span className="w-6 text-center font-semibold text-primary">{question.questionNumber}</span>
-                      <span className="flex-1">{question.question}</span>
-                      <input
-                        type="text"
-                        className="border-2 border-gray-300 rounded px-3 py-1 w-16 text-center font-semibold"
-                        value={answers[question.id] || ''}
-                        onChange={(e) => handleAnswerChange(question.id, e.target.value.toUpperCase())}
-                        placeholder="?"
-                        maxLength={1}
-                      />
-                    </div>
-                  ))}
+                <div className="mt-3 ml-8">
+                  Answer: {renderInput(q.questionNumber, 'select', undefined, q.options)}
                 </div>
               </div>
+            ))}
+          </div>
+        )}
+        
+        {displayType === 'matching' && content.items && (
+          <div>
+            {content.matchingOptions && (
+              <div className="bg-primary/10 p-4 rounded mb-4 border border-primary/20">
+                <div className="font-bold mb-2">{content.title || 'Options'}</div>
+                {content.matchingOptions.map((opt) => (
+                  <div key={opt.letter} className="mb-1">
+                    <span className="font-bold mr-2">{opt.letter}</span>
+                    {opt.text}
+                  </div>
+                ))}
+              </div>
+            )}
+            {content.sectionTitle && <div className="font-bold mb-3">{content.sectionTitle}</div>}
+            <div className="space-y-3">
+              {content.items.map(item => (
+                <div key={item.questionNumber} className="flex items-center">
+                  <span className="font-semibold mr-3 min-w-[30px]">{item.questionNumber}</span>
+                  <span className="flex-1">{item.text}</span>
+                  {renderInput(item.questionNumber, 'select', undefined, content.matchingOptions)}
+                </div>
+              ))}
             </div>
           </div>
-        );
-      }
-    }
-
-    // Default rendering for sections without complex matching or maps
-    return (
-      <div className="space-y-6">
-        <div className="bg-gray-50 p-6 rounded-lg">
-          {section.description && (
-            <div className="mb-6">
-              <h3 className="text-lg font-bold mb-2">{section.description}</h3>
-            </div>
-          )}
-          
-          {/* Question Type Instructions */}
-          {renderQuestionTypeInstructions(section.questions)}
-          
-          {/* Group questions by type for better rendering */}
-          {section.questions.map(question => renderQuestion(question))}
-        </div>
+        )}
+        
+        {displayType === 'notes' && content.sections && (
+          <div className="bg-gray-50 p-6 rounded">
+            {content.title && <h3 className="text-xl font-bold mb-4 text-center">{content.title}</h3>}
+            {content.sections.map((section, idx) => (
+              <div key={idx} className="mb-6">
+                {section.sectionTitle && (
+                  <h4 className="font-bold text-lg mb-3 text-primary">{section.sectionTitle}</h4>
+                )}
+                {section.content.map((item, itemIdx) => (
+                  <div key={itemIdx} className={`${item.isBullet ? 'ml-4' : ''} mb-2`}>
+                    {item.isBullet && <span className="mr-2">•</span>}
+                    {item.text}
+                    {item.questionNumber && renderInput(item.questionNumber, item.inputType || 'text')}
+                    {item.suffix}
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        )}
+        
+        {(group.imageUrl || (section.imageUrl && group.groupId.includes('16'))) && (
+          <div className="my-6 p-4 bg-gray-50 rounded">
+            <img
+              src={group.imageUrl || (section.imageUrl as string)}
+              alt={`Diagram for ${section.title} - Group ${group.groupId}`}
+              className="max-w-full h-auto mx-auto"
+              style={{ maxHeight: '500px' }}
+            />
+          </div>
+        )}
       </div>
     );
   };
 
   const renderAudioPlayer = (section: Section) => {
-    const audioState = sectionAudioStates[section.id];
-    if (!audioState) return null;
-
+    const audioState = audioStates[section.id] || 'loading';
+    
     return (
-      <div className="bg-white rounded-xl border-2 border-primary/50 p-6 mb-8">
-        <h3 className="text-xl font-bold mb-4 flex items-center">
-          <svg className="w-6 h-6 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+      <div className="bg-primary/10 rounded-lg p-4 mb-6 border-2 border-primary/20">
+        <h3 className="text-lg font-bold mb-3 flex items-center">
+          <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.816L4.65 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.65l3.733-3.816a1 1 0 011.617.816z" clipRule="evenodd" />
           </svg>
-          Section {section.id} Audio: {section.title}
+          Audio for Section {section.id}
         </h3>
         
-        <audio
-          ref={(el) => { audioRefs.current[section.id] = el; }}
-          onTimeUpdate={() => handleAudioTimeUpdate(section.id)}
-          onLoadedMetadata={() => handleAudioLoadedMetadata(section.id)}
-          onEnded={() => handleAudioEnd(section.id)}
-          className="hidden"
+        {audioState === 'loading' && (
+          <div className="text-center py-3">
+            <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600 mx-auto"></div>
+            <p className="text-sm text-gray-600 mt-2">Loading audio...</p>
+          </div>
+        )}
+        
+        {audioState === 'error' && (
+          <div className="bg-red-50 p-3 rounded text-red-700 text-sm">
+            Audio unavailable. Please continue with the test.
+          </div>
+        )}
+        
+        <audio 
+          controls 
+          className="w-full"
+          preload="metadata"
+          onLoadedData={() => setAudioStates(prev => ({ ...prev, [section.id]: 'ready' }))}
+          onError={() => setAudioStates(prev => ({ ...prev, [section.id]: 'error' }))}
         >
+          <source src={section.audioUrl} type="audio/mpeg" />
           Your browser does not support the audio element.
         </audio>
-
-        {/* Warning Message */}
-        {showAudioWarning === section.id && (
-          <div className="mb-4 p-4 bg-amber-100 border-2 border-amber-300 rounded-lg text-center">
-            <div className="flex items-center justify-center mb-2">
-              <svg className="w-6 h-6 text-amber-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92z" clipRule="evenodd" />
-              </svg>
-              <span className="text-lg font-bold text-amber-800">Section {section.id} Audio</span>
-            </div>
-            <p className="text-amber-800 font-medium">This audio will be played only once. Listen carefully!</p>
-          </div>
-        )}
-
-        {/* Instructions */}
-        <div className="mb-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
-          <h4 className="font-bold text-blue-800 mb-2">Instructions:</h4>
-          <p className="text-blue-700 text-sm">{section.instructions}</p>
-        </div>
-
-        {/* Play Controls */}
-        <div className="flex items-center justify-center space-x-4 mb-6">
-          <button
-            onClick={() => startSectionAudio(section.id, section.audioUrl)}
-            disabled={audioState.hasPlayed}
-            className={`w-16 h-16 rounded-full flex items-center justify-center text-white transition-colors ${
-              audioState.hasPlayed 
-                ? 'bg-gray-400 cursor-not-allowed' 
-                : 'bg-primary hover:bg-red-700'
-            }`}
-          >
-            {audioState.hasPlayed ? (
-              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.816L4.65 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.65l3.733-3.816a1 1 0 011.617.816z" clipRule="evenodd" />
-              </svg>
-            ) : (
-              <svg className="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-              </svg>
-            )}
-          </button>
-        </div>
-
-        {/* Audio Status */}
-        {audioState.hasPlayed && !audioState.isPlaying && (
-          <div className="text-center mb-4">
-            <p className="text-sm text-gray-600">Section {section.id} audio has finished</p>
-          </div>
-        )}
-
-        {/* Progress Bar */}
-        <div className="mb-4">
-          <div className="w-full h-2 bg-gray-200 rounded-lg relative">
-            <div 
-              className="h-2 bg-primary rounded-lg transition-all duration-300"
-              style={{ width: `${audioState.duration ? (audioState.currentTime / audioState.duration) * 100 : 0}%` }}
-            ></div>
-          </div>
-          <div className="flex justify-between text-sm text-gray-500 mt-1">
-            <span>{formatTime(Math.floor(audioState.currentTime))}</span>
-            <span>{formatTime(Math.floor(audioState.duration))}</span>
-          </div>
-        </div>
-
-        {/* Volume Control */}
-        <div className="mb-4">
-          <div className="flex items-center space-x-3">
-            <svg className="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.816L4.65 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.65l3.733-3.816a1 1 0 011.617.816z" clipRule="evenodd" />
-            </svg>
-            <input
-              type="range"
-              min="0"
-              max="1"
-              step="0.1"
-              value={volume}
-              onChange={handleVolumeChange}
-              className="flex-1 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
-            />
-            <span className="text-sm text-gray-600 w-10">{Math.round(volume * 100)}%</span>
-          </div>
-        </div>
+        
+        <p className="text-sm text-gray-600 mt-2">
+          You can play the audio as many times as needed during the test.
+        </p>
       </div>
     );
   };
 
+  // ==================== LOADING & ERROR STATES ====================
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
           <p className="text-lg text-gray-600">Loading IELTS Listening Test...</p>
         </div>
       </div>
     );
   }
 
-  if (error) {
+  if (error || !testData) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
-        <div className="bg-white rounded-xl border-2 border-red-300 p-8 max-w-md mx-auto text-center">
-          <svg className="w-16 h-16 text-red-500 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
-          </svg>
-          <h2 className="text-2xl font-bold text-black mb-2">Error</h2>
-          <p className="text-gray-600 mb-6">{error}</p>
-          <Link href="/exercise/listening" className="btn-primary">
-            Return to Exercises
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="bg-white rounded-lg p-8 max-w-md text-center border-2 border-red-300">
+          <h2 className="text-2xl font-bold text-red-600 mb-4">Error</h2>
+          <p className="text-gray-600 mb-6">{error || 'Failed to load test data'}</p>
+          <Link href="/exercise/listening" className="bg-primary text-white px-6 py-2 rounded hover:bg-primary">
+            Back to Tests
           </Link>
         </div>
       </div>
     );
   }
 
+  // ==================== RESULTS VIEW ====================
   if (showResults) {
     const score = calculateScore();
-    const ieltsScore = calculateIELTSListeningBand(score.correct, score.total);
-    const bandColorClass = getBandColor(ieltsScore.band);
-    const performanceLevel = getPerformanceLevel(ieltsScore.band);
-
+    const band = Math.min(9, Math.max(0, Math.round((score.correct / score.total) * 9 * 10) / 10));
+    
     return (
       <div className="min-h-screen bg-gray-50 py-8">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="bg-white rounded-xl border-2 border-primary/50 p-8 text-center">
-            <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="bg-white rounded-lg p-8 text-center border-2 border-green-300 mb-8">
+            <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
               <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
             </div>
-            <h2 className="text-3xl font-black text-black mb-6">IELTS Listening Test Completed!</h2>
             
-            <div className="mb-8">
-              <div className="text-7xl font-black text-primary mb-2">{ieltsScore.band}</div>
-              <div className={`inline-block px-4 py-2 rounded-full border-2 font-bold text-lg mb-2 ${bandColorClass}`}>
-                Band {ieltsScore.band} - {ieltsScore.description}
-              </div>
-              <div className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ml-2 ${bandColorClass}`}>
-                {performanceLevel}
-              </div>
-            </div>
+            <h2 className="text-3xl font-bold mb-6">Test Completed!</h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-6">
-              <div className="bg-gray-50 rounded-lg p-4">
-                <div className="text-2xl font-bold text-black">{score.correct}/{score.total}</div>
+            <div className="text-6xl font-bold text-primary mb-2">Band {band}</div>
+            
+            <div className="grid grid-cols-3 gap-4 mb-8 mt-6">
+              <div className="bg-gray-50 rounded p-4">
+                <div className="text-2xl font-bold">{score.correct}/{score.total}</div>
                 <div className="text-sm text-gray-600">Correct Answers</div>
               </div>
-              <div className="bg-gray-50 rounded-lg p-4">
-                <div className="text-2xl font-bold text-black">{score.percentage.toFixed(0)}%</div>
+              <div className="bg-gray-50 rounded p-4">
+                <div className="text-2xl font-bold">{score.percentage.toFixed(0)}%</div>
                 <div className="text-sm text-gray-600">Accuracy</div>
               </div>
-              <div className="bg-gray-50 rounded-lg p-4">
-                <div className="text-2xl font-bold text-black">{Math.round((score.correct / score.total) * 40)}/40</div>
-                <div className="text-sm text-gray-600">IELTS Scale</div>
-              </div>
-              <div className="bg-gray-50 rounded-lg p-4">
-                <div className="text-2xl font-bold text-black">{formatTime((40 * 60) - timeRemaining)}</div>
+              <div className="bg-gray-50 rounded p-4">
+                <div className="text-2xl font-bold">{formatTime((testData.timeLimit * 60) - timeRemaining)}</div>
                 <div className="text-sm text-gray-600">Time Taken</div>
               </div>
             </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/exercise/listening" className="btn-secondary">
-                Back to Exercises
+            
+            <div className="flex gap-4 justify-center">
+              <Link href="/exercise/listening" className="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600">
+                Back to Tests
               </Link>
-              <button 
-                onClick={() => window.location.reload()} 
-                className="btn-primary"
+              <button
+                onClick={() => window.location.reload()}
+                className="bg-primary text-white px-6 py-2 rounded hover:bg-primary"
               >
                 Try Again
               </button>
             </div>
           </div>
+
+          {/* Premium Results Analysis */}
+          {!premiumLoading && testData && (
+            <PremiumResultsAnalysis
+              testData={testData}
+              answers={answers}
+              isPremium={isPremium}
+            />
+          )}
+          
+          {premiumLoading && (
+            <div className="bg-white rounded-lg p-8 text-center">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+              <p className="text-gray-600">Loading analysis...</p>
+            </div>
+          )}
         </div>
       </div>
     );
   }
 
-  if (!listeningData) return null;
-
+  // ==================== MAIN TEST VIEW ====================
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-white border-b-2 border-primary/20 sticky top-0 z-40">
+      <div className="bg-white border-b sticky top-0 z-40 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <Link href="/exercise/listening" className="text-primary hover:text-red-700">
+              <Link href="/exercise/listening" className="text-primary hover:text-primary">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </Link>
               <div>
-                <h1 className="text-2xl font-black text-black">{listeningData.title}</h1>
-                <p className="text-sm text-gray-600">{listeningData.difficulty.charAt(0).toUpperCase() + listeningData.difficulty.slice(1)} Level • {listeningData.totalQuestions} Questions</p>
+                <h1 className="text-2xl font-bold">{testData.title}</h1>
+                <p className="text-sm text-gray-600">
+                  {testData.difficulty} • {testData.totalQuestions} Questions
+                </p>
               </div>
             </div>
-            <div className="flex items-center space-x-6">
-              <div className="text-lg font-bold text-primary">
-                Time: {formatTime(timeRemaining)}
-              </div>
+            <div className="text-lg font-bold text-primary">
+              Time: {formatTime(timeRemaining)}
             </div>
           </div>
         </div>
       </div>
 
+      {/* Test Content */}
       <div className="max-w-6xl mx-auto px-4 py-8">
-        {/* Dynamic Section Rendering */}
-        {listeningData.sections.map((section, index) => {
-          const questionRange = section.questions.length > 0
-            ? `Questions ${Math.min(...section.questions.map(q => q.questionNumber || 0))}-${Math.max(...section.questions.map(q => q.questionNumber || 0))}`
-            : `Questions ${(index * 10) + 1}-${(index + 1) * 10}`;
-          
-          return (
-            <div key={section.id} className="mb-12">
-              <div className="mb-6">
-                <h2 className="text-2xl font-bold text-black mb-2">SECTION {section.id}</h2>
-                <p className="text-gray-600">{questionRange}</p>
-              </div>
-              {renderAudioPlayer(section)}
-              {renderSectionQuestions(section)}
+        {testData.sections.map((section) => (
+          <div key={section.id} className="mb-12">
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold mb-2">SECTION {section.id}</h2>
+              <p className="text-gray-600">{section.title}</p>
             </div>
-          );
-        })}
+            
+            {renderAudioPlayer(section)}
+            
+            {section.questionGroups.map((group, idx) => (
+              <div key={idx}>
+                {renderQuestionGroup(group, section)}
+              </div>
+            ))}
+          </div>
+        ))}
 
         {/* Submit Button */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 mb-8">
           <button
             onClick={handleSubmit}
-            className="btn-primary text-lg px-8 py-3"
+            className="bg-green-600 text-white text-lg px-8 py-3 rounded hover:bg-green-700 font-semibold"
           >
             Submit Test
           </button>
         </div>
 
-        {/* Authentication Notice */}
-        {!authLoading && !isAuthenticated && (
-          <div className="mt-8">
-            <AuthNotice testType="listening" hasAI={false} />
+        {/* IELTS Listening Instructions, Tips & Scoring Guide */}
+        <div className="mt-16 space-y-8">
+          {/* Instructions Section */}
+          <div className="bg-white rounded-lg p-8 border-2 border-blue-200">
+            <h2 className="text-2xl font-bold text-blue-800 mb-6 flex items-center">
+              <svg className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+              </svg>
+              IELTS Listening Test Instructions
+            </h2>
+            <div className="space-y-4 text-gray-700">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="font-semibold text-lg mb-3 text-blue-700">Test Format</h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span><strong>4 sections</strong> with 10 questions each (40 total)</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span><strong>30 minutes</strong> listening time + 10 minutes transfer time</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span>Audio is played <strong>only once</strong></span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span>Variety of accents: British, American, Canadian, Australian</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-3 text-blue-700">Section Types</h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span><strong>Section 1:</strong> Social conversation (2 people)</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span><strong>Section 2:</strong> Monologue in social context</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span><strong>Section 3:</strong> Academic conversation (up to 4 people)</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span><strong>Section 4:</strong> Academic lecture/monologue</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
-        )}
+
+          {/* Pro Tips Section */}
+          <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-8 border-2 border-green-200">
+            <h2 className="text-2xl font-bold text-green-800 mb-6 flex items-center">
+              <svg className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              Pro Tips for Higher Scores
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="font-semibold text-lg mb-4 text-green-700">Before Listening</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Read questions carefully and predict possible answers</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Underline key words in questions</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Check word limits (e.g., "NO MORE THAN TWO WORDS")</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Look at any diagrams, maps, or forms provided</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg mb-4 text-green-700">While Listening</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Listen for signpost words (first, next, however, finally)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Write exactly what you hear (don't change words)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Don't panic if you miss an answer - move on</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Be aware of distractors (wrong information mentioned first)</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div className="mt-8 p-4 bg-yellow-100 rounded-lg border border-yellow-300">
+              <h4 className="font-semibold text-yellow-800 mb-2">⚡ Quick Success Strategies</h4>
+              <div className="grid md:grid-cols-3 gap-4 text-sm">
+                <div>
+                  <strong>Spelling:</strong> Practice common IELTS vocabulary spelling
+                </div>
+                <div>
+                  <strong>Numbers:</strong> Know how to write dates, times, phone numbers
+                </div>
+                <div>
+                  <strong>Synonyms:</strong> Listen for paraphrasing of question words
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Scoring Guide Section */}
+          <div className="bg-white rounded-lg p-8 border-2 border-purple-200">
+            <h2 className="text-2xl font-bold text-purple-800 mb-6 flex items-center">
+              <svg className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
+              </svg>
+              IELTS Listening Band Score Guide
+            </h2>
+            
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse border border-gray-300 text-sm">
+                <thead>
+                  <tr className="bg-purple-100">
+                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Band Score</th>
+                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Raw Score (out of 40)</th>
+                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-green-50">
+                    <td className="border border-gray-300 px-4 py-3 font-bold text-green-700">9.0</td>
+                    <td className="border border-gray-300 px-4 py-3">39-40</td>
+                    <td className="border border-gray-300 px-4 py-3">Expert user - fully operational command</td>
+                  </tr>
+                  <tr className="bg-green-50">
+                    <td className="border border-gray-300 px-4 py-3 font-bold text-green-700">8.5</td>
+                    <td className="border border-gray-300 px-4 py-3">37-38</td>
+                    <td className="border border-gray-300 px-4 py-3">Very good user - very occasional inaccuracies</td>
+                  </tr>
+                  <tr className="bg-blue-50">
+                    <td className="border border-gray-300 px-4 py-3 font-bold text-blue-700">8.0</td>
+                    <td className="border border-gray-300 px-4 py-3">35-36</td>
+                    <td className="border border-gray-300 px-4 py-3">Very good user - occasional inaccuracies</td>
+                  </tr>
+                  <tr className="bg-blue-50">
+                    <td className="border border-gray-300 px-4 py-3 font-bold text-blue-700">7.5</td>
+                    <td className="border border-gray-300 px-4 py-3">32-34</td>
+                    <td className="border border-gray-300 px-4 py-3">Good user - occasional inaccuracies</td>
+                  </tr>
+                  <tr className="bg-blue-50">
+                    <td className="border border-gray-300 px-4 py-3 font-bold text-blue-700">7.0</td>
+                    <td className="border border-gray-300 px-4 py-3">30-31</td>
+                    <td className="border border-gray-300 px-4 py-3">Good user - some inaccuracies</td>
+                  </tr>
+                  <tr className="bg-yellow-50">
+                    <td className="border border-gray-300 px-4 py-3 font-bold text-yellow-700">6.5</td>
+                    <td className="border border-gray-300 px-4 py-3">26-29</td>
+                    <td className="border border-gray-300 px-4 py-3">Competent user - some inaccuracies</td>
+                  </tr>
+                  <tr className="bg-yellow-50">
+                    <td className="border border-gray-300 px-4 py-3 font-bold text-yellow-700">6.0</td>
+                    <td className="border border-gray-300 px-4 py-3">23-25</td>
+                    <td className="border border-gray-300 px-4 py-3">Competent user - generally effective</td>
+                  </tr>
+                  <tr className="bg-orange-50">
+                    <td className="border border-gray-300 px-4 py-3 font-bold text-orange-700">5.5</td>
+                    <td className="border border-gray-300 px-4 py-3">18-22</td>
+                    <td className="border border-gray-300 px-4 py-3">Modest user - partial command</td>
+                  </tr>
+                  <tr className="bg-orange-50">
+                    <td className="border border-gray-300 px-4 py-3 font-bold text-orange-700">5.0</td>
+                    <td className="border border-gray-300 px-4 py-3">16-17</td>
+                    <td className="border border-gray-300 px-4 py-3">Modest user - limited command</td>
+                  </tr>
+                  <tr className="bg-red-50">
+                    <td className="border border-gray-300 px-4 py-3 font-bold text-red-700">4.5</td>
+                    <td className="border border-gray-300 px-4 py-3">13-15</td>
+                    <td className="border border-gray-300 px-4 py-3">Limited user - basic competence</td>
+                  </tr>
+                  <tr className="bg-red-50">
+                    <td className="border border-gray-300 px-4 py-3 font-bold text-red-700">4.0</td>
+                    <td className="border border-gray-300 px-4 py-3">10-12</td>
+                    <td className="border border-gray-300 px-4 py-3">Limited user - basic competence in familiar situations</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="mt-6 grid md:grid-cols-2 gap-6">
+              <div className="p-4 bg-blue-50 rounded-lg">
+                <h4 className="font-semibold text-blue-800 mb-3">🎯 Target Band 7+ Tips</h4>
+                <ul className="space-y-2 text-sm">
+                  <li>• Aim for 30+ correct answers</li>
+                  <li>• Focus on accuracy in spelling and grammar</li>
+                  <li>• Practice with various English accents</li>
+                  <li>• Develop note-taking skills</li>
+                  <li>• Master different question types</li>
+                </ul>
+              </div>
+              <div className="p-4 bg-green-50 rounded-lg">
+                <h4 className="font-semibold text-green-800 mb-3">📈 Improvement Strategies</h4>
+                <ul className="space-y-2 text-sm">
+                  <li>• Listen to English podcasts daily</li>
+                  <li>• Watch English news and documentaries</li>
+                  <li>• Practice with IELTS listening materials</li>
+                  <li>• Focus on weak question types</li>
+                  <li>• Time yourself during practice</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Common Mistakes Section */}
+          <div className="bg-red-50 rounded-lg p-8 border-2 border-red-200">
+            <h2 className="text-2xl font-bold text-red-800 mb-6 flex items-center">
+              <svg className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+              </svg>
+              Common Mistakes to Avoid
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="font-semibold text-lg mb-3 text-red-700">Writing Errors</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">✗</span>
+                    <span>Exceeding word limits</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">✗</span>
+                    <span>Spelling mistakes</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">✗</span>
+                    <span>Using abbreviations (write "and" not "&")</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">✗</span>
+                    <span>Incorrect capitalization</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg mb-3 text-red-700">Listening Errors</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">✗</span>
+                    <span>Not reading questions beforehand</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">✗</span>
+                    <span>Getting stuck on one question</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">✗</span>
+                    <span>Ignoring grammar in answers</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">✗</span>
+                    <span>Not checking answers at the end</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default StructuredListeningPage;
+export default IELTSListeningTest;

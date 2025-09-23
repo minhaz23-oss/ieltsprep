@@ -1,0 +1,504 @@
+{
+  "id": "listening15_t2",
+  "title": "IELTS Listening Practice 15 Test 2",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "tags": ["festival", "park", "display", "agriculture"],
+    "description": "Full IELTS Listening Practice Test with 4 sections"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Festival Information",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening15%20t2%20s1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE1IHQyIHMxLm1wMyIsImlhdCI6MTc1ODUxNzQxMCwiZXhwIjo0OTEyMTE3NDEwfQ.PUl7UcU5SvYEiXZ7b1pXsSfwo7kf0O6OowmOEFJ6WDc",
+      "questionGroups": [
+        {
+          "groupId": "1-4",
+          "instructions": "Complete the table below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "form",
+          "content": {
+            "type": "form",
+            "title": "Festival information",
+            "fields": [
+              {
+                "label": "Date",
+                "value": "17th",
+                "isStatic": true,
+                "additionalInfo": "Type of event: a concert, Details: performers from Canada"
+              },
+              {
+                "label": "Date",
+                "value": "18th",
+                "isStatic": true,
+                "additionalInfo": "Type of event: a ballet, Details: company called"
+              },
+              {
+                "questionNumber": 1,
+                "inputType": "text",
+                "correctAnswer": "Eustatis",
+                "inputPlaceholder": "........................"
+              },
+              {
+                "label": "Date",
+                "value": "19th-20th (afternoon)",
+                "isStatic": true,
+                "additionalInfo": "Type of event: a play, Details: type of play: a comedy called Jemima has had a good"
+              },
+              {
+                "questionNumber": 2,
+                "inputType": "text",
+                "correctAnswer": "review",
+                "inputPlaceholder": "........................"
+              },
+              {
+                "label": "Date",
+                "value": "20th (evening)",
+                "isStatic": true,
+                "additionalInfo": "Type of event: a"
+              },
+              {
+                "questionNumber": 3,
+                "inputType": "text",
+                "correctAnswer": "dance",
+                "suffix": " show",
+                "inputPlaceholder": "........................"
+              },
+              {
+                "label": "Details",
+                "value": "show is called ",
+                "questionNumber": 4,
+                "inputType": "text",
+                "correctAnswer": "Chat",
+                "inputPlaceholder": "........................"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "5-10",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Festival Activities",
+            "sections": [
+              {
+                "sectionTitle": "Workshops",
+                "content": [
+                  {
+                    "text": "• Making ",
+                    "questionNumber": 5,
+                    "inputType": "text",
+                    "correctAnswer": "healthy",
+                    "suffix": " food",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• (children only) Making ",
+                    "questionNumber": 6,
+                    "inputType": "text",
+                    "correctAnswer": "posters",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• (adults only) Making toys from ",
+                    "questionNumber": 7,
+                    "inputType": "text",
+                    "correctAnswer": "wood",
+                    "suffix": " using various tools",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Outdoor activities",
+                "content": [
+                  {
+                    "text": "• Swimming in the ",
+                    "questionNumber": 8,
+                    "inputType": "text",
+                    "correctAnswer": "lake",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Walking in the woods, led by an expert on ",
+                    "questionNumber": 9,
+                    "inputType": "text",
+                    "correctAnswer": "insects",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "See the festival organiser's ",
+                    "questionNumber": 10,
+                    "inputType": "text",
+                    "correctAnswer": "blog",
+                    "suffix": " for more information"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Minster Park",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening15%20t2%20s2.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE1IHQyIHMyLm1wMyIsImlhdCI6MTc1ODUxNzQzMSwiZXhwIjo0OTEyMTE3NDMxfQ.oF3WZ4550Vk-DReHFJJNZVhWR19Cuknf3jUKa13i2oM",
+      "questionGroups": [
+        {
+          "groupId": "11-14",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 11,
+                "questionText": "The park was originally established",
+                "options": [
+                  { "letter": "A", "text": "as an amenity provided by the city council." },
+                  { "letter": "B", "text": "as land belonging to a private house." },
+                  { "letter": "C", "text": "as a shared area set up by the local community." }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 12,
+                "questionText": "Why is there a statue of Diane Gosforth in the park?",
+                "options": [
+                  { "letter": "A", "text": "She was a resident who helped to lead a campaign." },
+                  { "letter": "B", "text": "She was a council member responsible for giving the public access." },
+                  { "letter": "C", "text": "She was a senior worker at the park for many years." }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 13,
+                "questionText": "During the First World War, the park was mainly used for",
+                "options": [
+                  { "letter": "A", "text": "exercises by troops." },
+                  { "letter": "B", "text": "growing vegetables." },
+                  { "letter": "C", "text": "public meetings." }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 14,
+                "questionText": "When did the physical transformation of the park begin?",
+                "options": [
+                  { "letter": "A", "text": "2013" },
+                  { "letter": "B", "text": "2015" },
+                  { "letter": "C", "text": "2016" }
+                ],
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "15-20",
+          "instructions": "Label the map below.\nWrite the correct letter, A-I, next to Questions 15-20.",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Map Labels",
+            "mapImage": "{there is an image here}",
+            "matchingOptions": [
+              { "letter": "A", "text": "Option A" },
+              { "letter": "B", "text": "Option B" },
+              { "letter": "C", "text": "Option C" },
+              { "letter": "D", "text": "Option D" },
+              { "letter": "E", "text": "Option E" },
+              { "letter": "F", "text": "Option F" },
+              { "letter": "G", "text": "Option G" },
+              { "letter": "H", "text": "Option H" },
+              { "letter": "I", "text": "Option I" }
+            ],
+            "items": [
+              {
+                "questionNumber": 15,
+                "text": "statue of Diane Gosforth",
+                "correctAnswer": "E"
+              },
+              {
+                "questionNumber": 16,
+                "text": "wooden sculptures",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 17,
+                "text": "playground",
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 18,
+                "text": "maze",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 19,
+                "text": "tennis courts",
+                "correctAnswer": "G"
+              },
+              {
+                "questionNumber": 20,
+                "text": "fitness area",
+                "correctAnswer": "D"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "University Display",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening15%20t2%20s3.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE1IHQyIHMzLm1wMyIsImlhdCI6MTc1ODUxNzQ1MCwiZXhwIjo0OTEyMTE3NDUwfQ.M3GMSoSjb4T2u_kaA6tT8e3ki__U-C00JIFl1BHxav4",
+      "questionGroups": [
+        {
+          "groupId": "21-22",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO groups of people is the display primarily intended for?",
+            "options": [
+              { "letter": "A", "text": "students from the English department" },
+              { "letter": "B", "text": "residents of the local area" },
+              { "letter": "C", "text": "the university's teaching staff" },
+              { "letter": "D", "text": "potential new students" },
+              { "letter": "E", "text": "students from other departments" }
+            ],
+            "questions": [
+              { "questionNumber": 21, "correctAnswer": "B" },
+              { "questionNumber": 22, "correctAnswer": "D" }
+            ]
+          }
+        },
+        {
+          "groupId": "23-24",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "What are Cathy and Graham's TWO reasons for choosing the novelist Charles Dickens?",
+            "options": [
+              { "letter": "A", "text": "His speeches inspired others to try to improve society." },
+              { "letter": "B", "text": "He used his publications to draw attention to social problems." },
+              { "letter": "C", "text": "His novels are well-known now." },
+              { "letter": "D", "text": "He was consulted on a number of social issues." },
+              { "letter": "E", "text": "His reputation has changed in recent times." }
+            ],
+            "questions": [
+              { "questionNumber": 23, "correctAnswer": "B" },
+              { "questionNumber": 24, "correctAnswer": "C" }
+            ]
+          }
+        },
+        {
+          "groupId": "25-30",
+          "instructions": "What topic do Cathy and Graham choose to illustrate with each novel?\nChoose SIX answers from the box and write the correct letter, A-H, next to Questions 25-30.",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Topics",
+            "matchingOptions": [
+              { "letter": "A", "text": "poverty" },
+              { "letter": "B", "text": "education" },
+              { "letter": "C", "text": "Dickens's travels" },
+              { "letter": "D", "text": "entertainment" },
+              { "letter": "E", "text": "crime and the law" },
+              { "letter": "F", "text": "wealth" },
+              { "letter": "G", "text": "medicine" },
+              { "letter": "H", "text": "a woman's life" }
+            ],
+            "sectionTitle": "Novels by Dickens",
+            "items": [
+              {
+                "questionNumber": 25,
+                "text": "The Pickwick Papers",
+                "correctAnswer": "G"
+              },
+              {
+                "questionNumber": 26,
+                "text": "Oliver Twist",
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 27,
+                "text": "Nicholas Nickleby",
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 28,
+                "text": "Martin Chuzzlewit",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 29,
+                "text": "Bleak House",
+                "correctAnswer": "H"
+              },
+              {
+                "questionNumber": 30,
+                "text": "Little Dorrit",
+                "correctAnswer": "F"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Agricultural Programme in Mozambique",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening15%20t2%20s4.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE1IHQyIHM0Lm1wMyIsImlhdCI6MTc1ODUxNzQ2NCwiZXhwIjo0OTEyMTE3NDY0fQ.emEW2CsL3yMKFlaKNcUJNzohgwVXwv5qjfYA1LXXJcQ",
+      "questionGroups": [
+        {
+          "groupId": "31-40",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Agricultural programme in Mozambique",
+            "sections": [
+              {
+                "sectionTitle": "How the programme was organised",
+                "content": [
+                  {
+                    "text": "• It focused on a dry and arid region in Chicualacuala district, near the Limpopo River.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• People depended on the forest to provide charcoal as a source of income.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• ",
+                    "questionNumber": 31,
+                    "inputType": "text",
+                    "correctAnswer": "Irrigation",
+                    "suffix": " was seen as the main priority to ensure the supply of water.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Most of the work organised by farmers' associations was done by ",
+                    "questionNumber": 32,
+                    "inputType": "text",
+                    "correctAnswer": "women",
+                    "suffix": ".",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Fenced areas created to keep animals away from crops.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• The programme provided",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  – ",
+                    "questionNumber": 33,
+                    "inputType": "text",
+                    "correctAnswer": "wire(s)",
+                    "suffix": " for the fences"
+                  },
+                  {
+                    "text": "  – ",
+                    "questionNumber": 34,
+                    "inputType": "text",
+                    "correctAnswer": "seed(s)",
+                    "suffix": " for suitable crops"
+                  },
+                  {
+                    "text": "  – water pumps.",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "• The farmers provided",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  – labour",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "  – ",
+                    "questionNumber": 35,
+                    "inputType": "text",
+                    "correctAnswer": "posts",
+                    "suffix": " for the fences on their land."
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Further developments",
+                "content": [
+                  {
+                    "text": "• The marketing of produce was sometimes difficult due to lack of ",
+                    "questionNumber": 36,
+                    "inputType": "text",
+                    "correctAnswer": "transport",
+                    "suffix": ".",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Training was therefore provided in methods of food ",
+                    "questionNumber": 37,
+                    "inputType": "text",
+                    "correctAnswer": "preservation",
+                    "suffix": ".",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Farmers made special places where ",
+                    "questionNumber": 38,
+                    "inputType": "text",
+                    "correctAnswer": "fish(es)",
+                    "suffix": " could be kept.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Local people later suggested keeping ",
+                    "questionNumber": 39,
+                    "inputType": "text",
+                    "correctAnswer": "bees",
+                    "suffix": ".",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Evaluation and lessons learned",
+                "content": [
+                  {
+                    "text": "• Agricultural production increased, improving incomes and food security.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Enough time must be allowed, particularly for the ",
+                    "questionNumber": 40,
+                    "inputType": "text",
+                    "correctAnswer": "design",
+                    "suffix": " phase of the programme.",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -5,744 +5,610 @@
   "totalQuestions": 40,
   "timeLimit": 40,
   "metadata": {
-    "createdAt": "2024-01-15",
-    "updatedAt": "2024-01-15",
-    "tags": ["recruitment-agency", "island-holidays", "birth-order", "eucalyptus-trees"],
-    "description": "Full IELTS Listening Practice Test with 4 sections covering various topics and question types"
+    "tags": [
+      "recruitment-agency",
+      "island-holidays",
+      "sibling-psychology",
+      "eucalyptus-trees"
+    ],
+    "description": "Full IELTS Listening Practice Test with 4 parts"
   },
   "sections": [
     {
       "id": 1,
       "title": "Bankside Recruitment Agency",
-      "description": "Information about a recruitment agency and their services",
-      "instructions": "Complete the notes below. Write ONE WORD AND/OR A NUMBER for each answer.",
-      "audioUrl": "",
-      "questions": [
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening15%20t1%20s1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE1IHQxIHMxLm1wMyIsImlhdCI6MTc1ODE3NTczOCwiZXhwIjo0OTExNzc1NzM4fQ.rTajLqm591bQN2N5mqDO0b0GcvAtJsxwtccIuevGtwk",
+      "questionGroups": [
         {
-          "id": 1,
-          "sectionId": 1,
-          "questionNumber": 1,
-          "type": "note-completion",
-          "question": "Name of agent: Becky ______",
-          "correctAnswer": "Jamieson",
-          "acceptableAnswers": ["Jamieson"],
-          "caseSensitive": false,
-          "context": {
-            "formTitle": "Bankside Recruitment Agency",
-            "section": "Contact Information",
-            "fullContext": "Address of agency: 497 Eastside, Docklands\nName of agent: Becky ______\nPhone number: 07866 510333"
-          }
-        },
-        {
-          "id": 2,
-          "sectionId": 1,
-          "questionNumber": 2,
-          "type": "note-completion",
-          "question": "Best to call her in the ______",
-          "correctAnswer": "afternoon",
-          "acceptableAnswers": ["afternoon"],
-          "caseSensitive": false,
-          "context": {
-            "section": "Contact Information",
-            "fullContext": "Phone number: 07866 510333\nBest to call her in the ______"
-          }
-        },
-        {
-          "id": 3,
-          "sectionId": 1,
-          "questionNumber": 3,
-          "type": "note-completion",
-          "question": "Must have good ______ skills",
-          "correctAnswer": "communication",
-          "acceptableAnswers": ["communication"],
-          "caseSensitive": false,
-          "context": {
-            "section": "Typical jobs",
-            "fullContext": "Clerical and admin roles, mainly in the finance industry\nMust have good ______ skills"
-          }
-        },
-        {
-          "id": 4,
-          "sectionId": 1,
-          "questionNumber": 4,
-          "type": "note-completion",
-          "question": "Jobs are usually for at least one ______",
-          "correctAnswer": "week",
-          "acceptableAnswers": ["week"],
-          "caseSensitive": false,
-          "context": {
-            "section": "Typical jobs",
-            "fullContext": "Must have good communication skills\nJobs are usually for at least one ______\nPay is usually £10 per hour"
-          }
-        },
-        {
-          "id": 5,
-          "sectionId": 1,
-          "questionNumber": 5,
-          "type": "note-completion",
-          "question": "Pay is usually £ ______ per hour",
-          "correctAnswer": "10",
-          "acceptableAnswers": ["10", "ten"],
-          "caseSensitive": false,
-          "context": {
-            "section": "Typical jobs",
-            "fullContext": "Jobs are usually for at least one week\nPay is usually £ ______ per hour"
-          }
-        },
-        {
-          "id": 6,
-          "sectionId": 1,
-          "questionNumber": 6,
-          "type": "note-completion",
-          "question": "Wear a ______ to the interview",
-          "correctAnswer": "suit",
-          "acceptableAnswers": ["suit"],
-          "caseSensitive": false,
-          "context": {
-            "section": "Registration process",
-            "fullContext": "Wear a ______ to the interview\nMust bring your passport to the interview"
-          }
-        },
-        {
-          "id": 7,
-          "sectionId": 1,
-          "questionNumber": 7,
-          "type": "note-completion",
-          "question": "Must bring your ______ to the interview",
-          "correctAnswer": "passport",
-          "acceptableAnswers": ["passport"],
-          "caseSensitive": false,
-          "context": {
-            "section": "Registration process",
-            "fullContext": "Wear a suit to the interview\nMust bring your ______ to the interview\nThey will ask questions about each applicant's personality"
-          }
-        },
-        {
-          "id": 8,
-          "sectionId": 1,
-          "questionNumber": 8,
-          "type": "note-completion",
-          "question": "They will ask questions about each applicant's ______",
-          "correctAnswer": "personality",
-          "acceptableAnswers": ["personality"],
-          "caseSensitive": false,
-          "context": {
-            "section": "Registration process",
-            "fullContext": "Must bring your passport to the interview\nThey will ask questions about each applicant's ______"
-          }
-        },
-        {
-          "id": 9,
-          "sectionId": 1,
-          "questionNumber": 9,
-          "type": "note-completion",
-          "question": "The ______ you receive at interview will benefit you",
-          "correctAnswer": "feedback",
-          "acceptableAnswers": ["feedback"],
-          "caseSensitive": false,
-          "context": {
-            "section": "Advantages of using an agency",
-            "fullContext": "The ______ you receive at interview will benefit you\nWill get access to vacancies which are not advertised"
-          }
-        },
-        {
-          "id": 10,
-          "sectionId": 1,
-          "questionNumber": 10,
-          "type": "note-completion",
-          "question": "Less ______ is involved in applying for jobs",
-          "correctAnswer": "time",
-          "acceptableAnswers": ["time"],
-          "caseSensitive": false,
-          "context": {
-            "section": "Advantages of using an agency",
-            "fullContext": "Will get access to vacancies which are not advertised\nLess ______ is involved in applying for jobs"
+          "groupId": "1-10",
+          "instructions": "Complete the notes below.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Bankside Recruitment Agency",
+            "sections": [
+              {
+                "sectionTitle": "",
+                "content": [
+                  {
+                    "text": "Address of agency: 497 Eastside, Docklands",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "Name of agent: Becky ",
+                    "questionNumber": 1,
+                    "inputType": "text",
+                    "correctAnswer": "Jamieson",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "Phone number: 07866 510333",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "Best to call her in the ",
+                    "questionNumber": 2,
+                    "inputType": "text",
+                    "correctAnswer": "afternoon",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Typical jobs",
+                "content": [
+                  {
+                    "text": "Clerical and admin roles, mainly in the finance industry",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "Must have good ",
+                    "questionNumber": 3,
+                    "inputType": "text",
+                    "correctAnswer": "communication",
+                    "suffix": " skills",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "Jobs are usually for at least one ",
+                    "questionNumber": 4,
+                    "inputType": "text",
+                    "correctAnswer": "week",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "Pay is usually ",
+                    "prefix": "£",
+                    "questionNumber": 5,
+                    "inputType": "text",
+                    "correctAnswer": "10",
+                    "suffix": " per hour",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Registration process",
+                "content": [
+                  {
+                    "text": "Wear a ",
+                    "questionNumber": 6,
+                    "inputType": "text",
+                    "correctAnswer": "suit",
+                    "suffix": " to the interview",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "Must bring your ",
+                    "questionNumber": 7,
+                    "inputType": "text",
+                    "correctAnswer": "passport",
+                    "suffix": " to the interview",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "They will ask questions about each applicant's ",
+                    "questionNumber": 8,
+                    "inputType": "text",
+                    "correctAnswer": "personality",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Advantages of using an agency",
+                "content": [
+                  {
+                    "text": "The ",
+                    "questionNumber": 9,
+                    "inputType": "text",
+                    "correctAnswer": "feedback",
+                    "suffix": " you receive at interview will benefit you",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "Will get access to vacancies which are not advertised",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "Less ",
+                    "questionNumber": 10,
+                    "inputType": "text",
+                    "correctAnswer": "time",
+                    "suffix": " is involved in applying for jobs",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
           }
         }
       ]
     },
     {
       "id": 2,
-      "title": "Matthews Island Holidays - Isle of Man",
-      "description": "Information about holiday packages to the Isle of Man",
-      "instructions": "Choose the correct letter A, B or C for questions 11-14. Complete the table for questions 15-20.",
-      "audioUrl": "",
-      "questions": [
+      "title": "Matthews Island Holidays",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening15%20t1%20s2.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE1IHQxIHMyLm1wMyIsImlhdCI6MTc1ODE3NTc1NiwiZXhwIjo0OTExNzc1NzU2fQ.8HfPomcTQ9Em6086fCBDpgh15xRd2FE-WYELiT5rEIs",
+      "questionGroups": [
         {
-          "id": 11,
-          "sectionId": 2,
-          "questionNumber": 11,
-          "type": "multiple-choice",
-          "question": "According to the speaker, the company",
-          "options": [
-            "has been in business for longer than most of its competitors",
-            "arranges holidays to more destinations than its competitors",
-            "has more customers than its competitors"
-          ],
-          "correctAnswer": 0
-        },
-        {
-          "id": 12,
-          "sectionId": 2,
-          "questionNumber": 12,
-          "type": "multiple-choice",
-          "question": "Where can customers meet the tour manager before travelling to the Isle of Man?",
-          "options": [
-            "Liverpool",
-            "Heysham",
-            "Luton"
-          ],
-          "correctAnswer": 1
-        },
-        {
-          "id": 13,
-          "sectionId": 2,
-          "questionNumber": 13,
-          "type": "multiple-choice",
-          "question": "How many lunches are included in the price of the holiday?",
-          "options": [
-            "three",
-            "four",
-            "five"
-          ],
-          "correctAnswer": 0
-        },
-        {
-          "id": 14,
-          "sectionId": 2,
-          "questionNumber": 14,
-          "type": "multiple-choice",
-          "question": "Customers have to pay extra for",
-          "options": [
-            "guaranteeing themselves a larger room",
-            "booking at short notice",
-            "transferring to another date"
-          ],
-          "correctAnswer": 2
-        },
-        {
-          "id": 15,
-          "sectionId": 2,
-          "questionNumber": 15,
-          "type": "table-completion",
-          "question": "Hotel dining room has view of the ______",
-          "correctAnswer": "river",
-          "acceptableAnswers": ["river"],
-          "caseSensitive": false,
-          "context": {
-            "tableTitle": "Timetable for Isle of Man holiday",
-            "day": "Day 1",
-            "activity": "Arrive - Introduction by manager",
-            "fullContext": "Day 1: Arrive - Introduction by manager\nNotes: Hotel dining room has view of the ______"
+          "groupId": "11-14",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 11,
+                "questionText": "According to the speaker, the company",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "has been in business for longer than most of its competitors."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "arranges holidays to more destinations than its competitors."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "has more customers than its competitors."
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 12,
+                "questionText": "Where can customers meet the tour manager before travelling to the Isle of Man?",
+                "options": [
+                  { "letter": "A", "text": "Liverpool" },
+                  { "letter": "B", "text": "Heysham" },
+                  { "letter": "C", "text": "Luton" }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 13,
+                "questionText": "How many lunches are included in the price of the holiday?",
+                "options": [
+                  { "letter": "A", "text": "three" },
+                  { "letter": "B", "text": "four" },
+                  { "letter": "C", "text": "five" }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 14,
+                "questionText": "Customers have to pay extra for",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "guaranteeing themselves a larger room."
+                  },
+                  { "letter": "B", "text": "booking at short notice." },
+                  { "letter": "C", "text": "transferring to another date." }
+                ],
+                "correctAnswer": "C"
+              }
+            ]
           }
         },
         {
-          "id": 16,
-          "sectionId": 2,
-          "questionNumber": 16,
-          "type": "table-completion",
-          "question": "Tynwald may have been founded in ______ not 979",
-          "correctAnswer": "1422",
-          "acceptableAnswers": ["1422"],
-          "caseSensitive": false,
-          "context": {
-            "tableTitle": "Timetable for Isle of Man holiday",
-            "day": "Day 2",
-            "activity": "Tynwald Exhibition and Peel",
-            "fullContext": "Day 2: Tynwald Exhibition and Peel\nNotes: Tynwald may have been founded in ______ not 979"
-          }
-        },
-        {
-          "id": 17,
-          "sectionId": 2,
-          "questionNumber": 17,
-          "type": "table-completion",
-          "question": "Travel along promenade in a tram; train to Laxey; train to the ______ of Snaefell",
-          "correctAnswer": "top",
-          "acceptableAnswers": ["top", "summit"],
-          "caseSensitive": false,
-          "context": {
-            "tableTitle": "Timetable for Isle of Man holiday",
-            "day": "Day 3",
-            "activity": "Trip to Snaefell",
-            "fullContext": "Day 3: Trip to Snaefell\nNotes: Travel along promenade in a tram; train to Laxey; train to the ______ of Snaefell"
-          }
-        },
-        {
-          "id": 18,
-          "sectionId": 2,
-          "questionNumber": 18,
-          "type": "table-completion",
-          "question": "Company provides a ______ for local transport and heritage sites",
-          "correctAnswer": "pass",
-          "acceptableAnswers": ["pass", "ticket"],
-          "caseSensitive": false,
-          "context": {
-            "tableTitle": "Timetable for Isle of Man holiday",
-            "day": "Day 4",
-            "activity": "Free day",
-            "fullContext": "Day 4: Free day\nNotes: Company provides a ______ for local transport and heritage sites"
-          }
-        },
-        {
-          "id": 19,
-          "sectionId": 2,
-          "questionNumber": 19,
-          "type": "table-completion",
-          "question": "Take the ______ railway train from Douglas to Port Erin",
-          "correctAnswer": "steam",
-          "acceptableAnswers": ["steam"],
-          "caseSensitive": false,
-          "context": {
-            "tableTitle": "Timetable for Isle of Man holiday",
-            "day": "Day 5",
-            "activity": "Railway trip and Castletown visit",
-            "fullContext": "Day 5: Take the ______ railway train from Douglas to Port Erin\nFree time, then coach to Castletown"
-          }
-        },
-        {
-          "id": 20,
-          "sectionId": 2,
-          "questionNumber": 20,
-          "type": "table-completion",
-          "question": "Free time, then coach to Castletown – former ______ has old castle",
-          "correctAnswer": "capital",
-          "acceptableAnswers": ["capital"],
-          "caseSensitive": false,
-          "context": {
-            "tableTitle": "Timetable for Isle of Man holiday",
-            "day": "Day 5",
-            "activity": "Railway trip and Castletown visit",
-            "fullContext": "Take the steam railway train from Douglas to Port Erin\nFree time, then coach to Castletown – former ______ has old castle"
+          "groupId": "15-20",
+          "instructions": "Complete the table below.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+          "displayType": "form",
+          "content": {
+            "type": "form",
+            "title": "Timetable for Isle of Man holiday",
+            "fields": [
+              {
+                "sectionTitle": "Day 1",
+                "isSection": true
+              },
+              {
+                "label": "Activity",
+                "value": "Arrive - Introduction by manager",
+                "isStatic": true
+              },
+              {
+                "label": "Notes",
+                "value": "Hotel dining room has view of the ",
+                "questionNumber": 15,
+                "inputType": "text",
+                "correctAnswer": "river"
+              },
+              {
+                "sectionTitle": "Day 2",
+                "isSection": true
+              },
+              {
+                "label": "Activity",
+                "value": "Tynwald Exhibition and Peel",
+                "isStatic": true
+              },
+              {
+                "label": "Notes",
+                "value": "Tynwald may have been founded in ",
+                "questionNumber": 16,
+                "inputType": "text",
+                "correctAnswer": "1422",
+                "suffix": " not 979."
+              },
+              {
+                "sectionTitle": "Day 3",
+                "isSection": true
+              },
+              {
+                "label": "Activity",
+                "value": "Trip to Snaefell",
+                "isStatic": true
+              },
+              {
+                "label": "Notes",
+                "value": "Travel along promenade in a tram; train to Laxey; train to the ",
+                "questionNumber": 17,
+                "inputType": "text",
+                "correctAnswer": "top",
+                "suffix": " of Snaefell"
+              },
+              {
+                "sectionTitle": "Day 4",
+                "isSection": true
+              },
+              {
+                "label": "Activity",
+                "value": "Free day",
+                "isStatic": true
+              },
+              {
+                "label": "Notes",
+                "value": "Company provides a ",
+                "questionNumber": 18,
+                "inputType": "text",
+                "correctAnswer": "pass",
+                "suffix": " for local transport and heritage sites."
+              },
+              {
+                "sectionTitle": "Day 5",
+                "isSection": true
+              },
+              {
+                "label": "Activity",
+                "value": "Take the ",
+                "questionNumber": 19,
+                "inputType": "text",
+                "correctAnswer": "steam",
+                "suffix": " railway train from Douglas to Port Erin"
+              },
+              {
+                "label": "Notes",
+                "value": "Free time, then coach to Castletown – former ",
+                "questionNumber": 20,
+                "inputType": "text",
+                "correctAnswer": "capital",
+                "suffix": " has old castle."
+              },
+              {
+                "sectionTitle": "Day 6",
+                "isSection": true
+              },
+              {
+                "label": "Activity",
+                "value": "Leave",
+                "isStatic": true
+              },
+              {
+                "label": "Notes",
+                "value": "Leave the island by ferry or plane",
+                "isStatic": true
+              }
+            ]
           }
         }
       ]
     },
     {
       "id": 3,
-      "title": "Birth Order and Personality Research",
-      "description": "A discussion about research on how birth order affects personality traits",
-      "instructions": "Match personality traits to birth order positions for questions 21-26. Choose the correct letter for questions 27-28. Choose TWO letters for questions 29-30.",
-      "audioUrl": "",
-      "questions": [
+      "title": "Birth Order and Personality",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening15%20t1%20s3.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE1IHQxIHMzLm1wMyIsImlhdCI6MTc1ODE3NTc3NSwiZXhwIjo0OTExNzc1Nzc1fQ.nBDgYocI6oPQOM-o-RPF8cUy2X3ZHOzrWB7y6FTJtqo",
+      "questionGroups": [
         {
-          "id": 21,
-          "sectionId": 3,
-          "questionNumber": 21,
-          "type": "matching",
-          "question": "the eldest child",
-          "correctAnswer": "G",
-          "context": {
-            "instructions": "What did findings of previous research claim about the personality traits a child is likely to have because of their position in the family? Choose SIX answers from the box and write the correct letter, A-H.",
-            "leftColumn": [
-              "A outgoing",
-              "B selfish",
-              "C independent",
-              "D attention-seeking",
-              "E introverted",
-              "F co-operative",
-              "G caring",
-              "H competitive"
+          "groupId": "21-26",
+          "instructions": "What did findings of previous research claim about the personality traits a child is likely to have because of their position in the family?\nChoose SIX answers from the box and write the correct letter, A-H, next to Questions 21-26.",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Personality Traits",
+            "matchingOptions": [
+              { "letter": "A", "text": "outgoing" },
+              { "letter": "B", "text": "selfish" },
+              { "letter": "C", "text": "independent" },
+              { "letter": "D", "text": "attention-seeking" },
+              { "letter": "E", "text": "introverted" },
+              { "letter": "F", "text": "co-operative" },
+              { "letter": "G", "text": "caring" },
+              { "letter": "H", "text": "competitive" }
             ],
-            "rightColumn": [
-              "the eldest child",
-              "a middle child",
-              "the youngest child",
-              "a twin",
-              "an only child",
-              "a child with much older siblings"
+            "sectionTitle": "Position in family",
+            "items": [
+              {
+                "questionNumber": 21,
+                "text": "the eldest child",
+                "correctAnswer": "G"
+              },
+              {
+                "questionNumber": 22,
+                "text": "a middle child",
+                "correctAnswer": "F"
+              },
+              {
+                "questionNumber": 23,
+                "text": "the youngest child",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 24,
+                "text": "a twin",
+                "correctAnswer": "E"
+              },
+              {
+                "questionNumber": 25,
+                "text": "an only child",
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 26,
+                "text": "a child with much older siblings",
+                "correctAnswer": "C"
+              }
             ]
           }
         },
         {
-          "id": 22,
-          "sectionId": 3,
-          "questionNumber": 22,
-          "type": "matching",
-          "question": "a middle child",
-          "correctAnswer": "F",
-          "context": {
-            "instructions": "What did findings of previous research claim about the personality traits a child is likely to have because of their position in the family? Choose SIX answers from the box and write the correct letter, A-H.",
-            "leftColumn": [
-              "A outgoing",
-              "B selfish",
-              "C independent",
-              "D attention-seeking",
-              "E introverted",
-              "F co-operative",
-              "G caring",
-              "H competitive"
-            ],
-            "rightColumn": [
-              "the eldest child",
-              "a middle child",
-              "the youngest child",
-              "a twin",
-              "an only child",
-              "a child with much older siblings"
+          "groupId": "27-28",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 27,
+                "questionText": "What do the speakers say about the evidence relating to birth order and academic success?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "There is conflicting evidence about whether oldest children perform best in intelligence tests."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "There is little doubt that birth order has less influence on academic achievement than socio-economic status."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "Some studies have neglected to include important factors such as family size."
+                  }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 28,
+                "questionText": "What does Ruth think is surprising about the difference in oldest children's academic performance?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "It is mainly thanks to their roles as teachers for their younger siblings."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "The advantages they have only lead to a slightly higher level of achievement."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "The extra parental attention they receive at a young age makes little difference."
+                  }
+                ],
+                "correctAnswer": "A"
+              }
             ]
           }
         },
         {
-          "id": 23,
-          "sectionId": 3,
-          "questionNumber": 23,
-          "type": "matching",
-          "question": "the youngest child",
-          "correctAnswer": "A",
-          "context": {
-            "instructions": "What did findings of previous research claim about the personality traits a child is likely to have because of their position in the family? Choose SIX answers from the box and write the correct letter, A-H.",
-            "leftColumn": [
-              "A outgoing",
-              "B selfish",
-              "C independent",
-              "D attention-seeking",
-              "E introverted",
-              "F co-operative",
-              "G caring",
-              "H competitive"
+          "groupId": "29-30",
+          "instructions": "Choose TWO letters, A-E.\nWhich TWO experiences of sibling rivalry do the speakers agree has been valuable for them?",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO experiences of sibling rivalry do the speakers agree has been valuable for them?",
+            "options": [
+              { "letter": "A", "text": "learning to share" },
+              { "letter": "B", "text": "learning to stand up for oneself" },
+              { "letter": "C", "text": "learning to be a good loser" },
+              { "letter": "D", "text": "learning to be tolerant" },
+              { "letter": "E", "text": "learning to say sorry" }
             ],
-            "rightColumn": [
-              "the eldest child",
-              "a middle child",
-              "the youngest child",
-              "a twin",
-              "an only child",
-              "a child with much older siblings"
+            "questions": [
+              { "questionNumber": 29, "correctAnswer": "B" },
+              { "questionNumber": 30, "correctAnswer": "D" }
             ]
           }
-        },
-        {
-          "id": 24,
-          "sectionId": 3,
-          "questionNumber": 24,
-          "type": "matching",
-          "question": "a twin",
-          "correctAnswer": "E",
-          "context": {
-            "instructions": "What did findings of previous research claim about the personality traits a child is likely to have because of their position in the family? Choose SIX answers from the box and write the correct letter, A-H.",
-            "leftColumn": [
-              "A outgoing",
-              "B selfish",
-              "C independent",
-              "D attention-seeking",
-              "E introverted",
-              "F co-operative",
-              "G caring",
-              "H competitive"
-            ],
-            "rightColumn": [
-              "the eldest child",
-              "a middle child",
-              "the youngest child",
-              "a twin",
-              "an only child",
-              "a child with much older siblings"
-            ]
-          }
-        },
-        {
-          "id": 25,
-          "sectionId": 3,
-          "questionNumber": 25,
-          "type": "matching",
-          "question": "an only child",
-          "correctAnswer": "B",
-          "context": {
-            "instructions": "What did findings of previous research claim about the personality traits a child is likely to have because of their position in the family? Choose SIX answers from the box and write the correct letter, A-H.",
-            "leftColumn": [
-              "A outgoing",
-              "B selfish",
-              "C independent",
-              "D attention-seeking",
-              "E introverted",
-              "F co-operative",
-              "G caring",
-              "H competitive"
-            ],
-            "rightColumn": [
-              "the eldest child",
-              "a middle child",
-              "the youngest child",
-              "a twin",
-              "an only child",
-              "a child with much older siblings"
-            ]
-          }
-        },
-        {
-          "id": 26,
-          "sectionId": 3,
-          "questionNumber": 26,
-          "type": "matching",
-          "question": "a child with much older siblings",
-          "correctAnswer": "C",
-          "context": {
-            "instructions": "What did findings of previous research claim about the personality traits a child is likely to have because of their position in the family? Choose SIX answers from the box and write the correct letter, A-H.",
-            "leftColumn": [
-              "A outgoing",
-              "B selfish",
-              "C independent",
-              "D attention-seeking",
-              "E introverted",
-              "F co-operative",
-              "G caring",
-              "H competitive"
-            ],
-            "rightColumn": [
-              "the eldest child",
-              "a middle child",
-              "the youngest child",
-              "a twin",
-              "an only child",
-              "a child with much older siblings"
-            ]
-          }
-        },
-        {
-          "id": 27,
-          "sectionId": 3,
-          "questionNumber": 27,
-          "type": "multiple-choice",
-          "question": "What do the speakers say about the evidence relating to birth order and academic success?",
-          "options": [
-            "There is conflicting evidence about whether oldest children perform best in intelligence tests",
-            "There is little doubt that birth order has less influence on academic achievement than socio-economic status",
-            "Some studies have neglected to include important factors such as family size"
-          ],
-          "correctAnswer": 2
-        },
-        {
-          "id": 28,
-          "sectionId": 3,
-          "questionNumber": 28,
-          "type": "multiple-choice",
-          "question": "What does Ruth think is surprising about the difference in oldest children's academic performance?",
-          "options": [
-            "It is mainly thanks to their roles as teachers for their younger siblings",
-            "The advantages they have only lead to a slightly higher level of achievement",
-            "The extra parental attention they receive at a young age makes little difference"
-          ],
-          "correctAnswer": 0
-        },
-        {
-          "id": "29-30",
-          "sectionId": 3,
-          "questionNumbers": [29, 30],
-          "type": "multiple-choice-grouped",
-          "question": "Which TWO experiences of sibling rivalry do the speakers agree has been valuable for them?",
-          "options": [
-            "A learning to share",
-            "B learning to stand up for oneself",
-            "C learning to be a good loser",
-            "D learning to be tolerant",
-            "E learning to say sorry"
-          ],
-          "correctAnswer": ["B", "D"],
-          "instructions": "Choose TWO letters, A-E"
         }
       ]
     },
     {
       "id": 4,
       "title": "The Eucalyptus Tree in Australia",
-      "description": "A lecture about the eucalyptus tree, its importance and reasons for decline",
-      "instructions": "Complete the notes below. Write ONE WORD ONLY for each answer.",
-      "audioUrl": "",
-      "questions": [
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening15%20t1%20s4.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE1IHQxIHM0Lm1wMyIsImlhdCI6MTc1ODE3NTc5NSwiZXhwIjo0OTExNzc1Nzk1fQ.Q5715gzWOuMbcpxsktEzhahdQkdxECXyY7c4NgY0XMM",
+      "questionGroups": [
         {
-          "id": 31,
-          "sectionId": 4,
-          "questionNumber": 31,
-          "type": "note-completion",
-          "question": "it provides ______ and food for a wide range of species",
-          "correctAnswer": "shelter",
-          "acceptableAnswers": ["shelter"],
-          "caseSensitive": false,
-          "wordLimit": 1,
-          "context": {
-            "section": "Importance",
-            "fullContext": "it provides ______ and food for a wide range of species\nits leaves provide oil which is used to make a disinfectant"
-          }
-        },
-        {
-          "id": 32,
-          "sectionId": 4,
-          "questionNumber": 32,
-          "type": "note-completion",
-          "question": "its leaves provide ______ which is used to make a disinfectant",
-          "correctAnswer": "oil",
-          "acceptableAnswers": ["oil"],
-          "caseSensitive": false,
-          "wordLimit": 1,
-          "context": {
-            "section": "Importance",
-            "fullContext": "it provides shelter and food for a wide range of species\nits leaves provide ______ which is used to make a disinfectant"
-          }
-        },
-        {
-          "id": 33,
-          "sectionId": 4,
-          "questionNumber": 33,
-          "type": "note-completion",
-          "question": "lime used for making ______ was absorbed",
-          "correctAnswer": "roads",
-          "acceptableAnswers": ["roads"],
-          "caseSensitive": false,
-          "wordLimit": 1,
-          "context": {
-            "section": "Diseases - Mundulla Yellows",
-            "fullContext": "Cause – lime used for making ______ was absorbed\n– trees were unable to take in necessary iron through their roots"
-          }
-        },
-        {
-          "id": 34,
-          "sectionId": 4,
-          "questionNumber": 34,
-          "type": "note-completion",
-          "question": "______ feed on eucalyptus leaves",
-          "correctAnswer": "insects",
-          "acceptableAnswers": ["insects"],
-          "caseSensitive": false,
-          "wordLimit": 1,
-          "context": {
-            "section": "Diseases - Bell-miner Associated Die-back",
-            "fullContext": "Cause – ______ feed on eucalyptus leaves\n– they secrete a substance containing sugar\n– bell-miner birds are attracted by this and keep away other species"
-          }
-        },
-        {
-          "id": 35,
-          "sectionId": 4,
-          "questionNumber": 35,
-          "type": "note-completion",
-          "question": "high-frequency bushfires have impact on vegetation, resulting in the growth of ______",
-          "correctAnswer": "grass",
-          "acceptableAnswers": ["grass", "grasses"],
-          "caseSensitive": false,
-          "wordLimit": 1,
-          "context": {
-            "section": "Bushfires - William Jackson's theory",
-            "fullContext": "high-frequency bushfires have impact on vegetation, resulting in the growth of ______\nmid-frequency bushfires result in the growth of eucalyptus forests"
-          }
-        },
-        {
-          "id": 36,
-          "sectionId": 4,
-          "questionNumber": 36,
-          "type": "note-completion",
-          "question": "make more ______ available to the trees",
-          "correctAnswer": "water",
-          "acceptableAnswers": ["water"],
-          "caseSensitive": false,
-          "wordLimit": 1,
-          "context": {
-            "section": "Bushfires - mid-frequency effects",
-            "fullContext": "mid-frequency bushfires result in the growth of eucalyptus forests, because they:\n– make more ______ available to the trees\n– maintain the quality of the soil"
-          }
-        },
-        {
-          "id": 37,
-          "sectionId": 4,
-          "questionNumber": 37,
-          "type": "note-completion",
-          "question": "maintain the quality of the ______",
-          "correctAnswer": "soil",
-          "acceptableAnswers": ["soil"],
-          "caseSensitive": false,
-          "wordLimit": 1,
-          "context": {
-            "section": "Bushfires - mid-frequency effects",
-            "fullContext": "– make more water available to the trees\n– maintain the quality of the ______"
-          }
-        },
-        {
-          "id": 38,
-          "sectionId": 4,
-          "questionNumber": 38,
-          "type": "note-completion",
-          "question": "low-frequency bushfires result in the growth of '______ rainforest'",
-          "correctAnswer": "dry",
-          "acceptableAnswers": ["dry"],
-          "caseSensitive": false,
-          "wordLimit": 1,
-          "context": {
-            "section": "Bushfires - low-frequency effects",
-            "fullContext": "low-frequency bushfires result in the growth of '______ rainforest', which is:\n– a simple ecosystem\n– an ideal environment for the nest of the bell-miner"
-          }
-        },
-        {
-          "id": 39,
-          "sectionId": 4,
-          "questionNumber": 39,
-          "type": "note-completion",
-          "question": "a ______ ecosystem",
-          "correctAnswer": "simple",
-          "acceptableAnswers": ["simple"],
-          "caseSensitive": false,
-          "wordLimit": 1,
-          "context": {
-            "section": "Bushfires - dry rainforest characteristics",
-            "fullContext": "low-frequency bushfires result in the growth of 'dry rainforest', which is:\n– a ______ ecosystem\n– an ideal environment for the nest of the bell-miner"
-          }
-        },
-        {
-          "id": 40,
-          "sectionId": 4,
-          "questionNumber": 40,
-          "type": "note-completion",
-          "question": "an ideal environment for the ______ of the bell-miner",
-          "correctAnswer": "nest",
-          "acceptableAnswers": ["nest", "nests"],
-          "caseSensitive": false,
-          "wordLimit": 1,
-          "context": {
-            "section": "Bushfires - dry rainforest characteristics",
-            "fullContext": "– a simple ecosystem\n– an ideal environment for the ______ of the bell-miner"
+          "groupId": "31-40",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "The Eucalyptus Tree in Australia",
+            "sections": [
+              {
+                "sectionTitle": "Importance",
+                "content": [
+                  {
+                    "text": "it provides ",
+                    "questionNumber": 31,
+                    "inputType": "text",
+                    "correctAnswer": "shelter",
+                    "suffix": " and food for a wide range of species",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "its leaves provide ",
+                    "questionNumber": 32,
+                    "inputType": "text",
+                    "correctAnswer": "oil",
+                    "suffix": " which is used to make a disinfectant",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Reasons for present decline in number",
+                "content": [
+                  {
+                    "text": "A) Diseases",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "(i) 'Mundulla Yellows'",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "Cause",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "– lime used for making ",
+                    "questionNumber": 33,
+                    "inputType": "text",
+                    "correctAnswer": "roads",
+                    "suffix": " was absorbed",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "– trees were unable to take in necessary iron through their roots",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "(ii) 'Bell-miner Associated Die-back'",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "Cause",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "– ",
+                    "questionNumber": 34,
+                    "inputType": "text",
+                    "correctAnswer": "insects",
+                    "suffix": " feed on eucalyptus leaves",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "– they secrete a substance containing sugar",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "– bell-miner birds are attracted by this and keep away other species",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "B) Bushfires",
+                    "isStatic": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "William Jackson's theory:",
+                "content": [
+                  {
+                    "text": "high-frequency bushfires have impact on vegetation, resulting in the growth of ",
+                    "questionNumber": 35,
+                    "inputType": "text",
+                    "correctAnswer": "grasses",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "mid-frequency bushfires result in the growth of eucalyptus forests, because they:",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "– make more ",
+                    "questionNumber": 36,
+                    "inputType": "text",
+                    "correctAnswer": "water",
+                    "suffix": " available to the trees"
+                  },
+                  {
+                    "text": "– maintain the quality of the ",
+                    "questionNumber": 37,
+                    "inputType": "text",
+                    "correctAnswer": "soil"
+                  },
+                  {
+                    "text": "low-frequency bushfires result in the growth of '",
+                    "questionNumber": 38,
+                    "inputType": "text",
+                    "correctAnswer": "dry",
+                    "suffix": " rainforest', which is:",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "– a ",
+                    "questionNumber": 39,
+                    "inputType": "text",
+                    "correctAnswer": "simple",
+                    "suffix": " ecosystem"
+                  },
+                  {
+                    "text": "– an ideal environment for the ",
+                    "questionNumber": 40,
+                    "inputType": "text",
+                    "correctAnswer": "nests",
+                    "suffix": " of the bell-miner"
+                  }
+                ]
+              }
+            ]
           }
         }
       ]
     }
-  ],
-  "answers": {
-    "1": "Jamieson",
-    "2": "afternoon",
-    "3": "communication",
-    "4": "week",
-    "5": "10",
-    "6": "suit",
-    "7": "passport",
-    "8": "personality",
-    "9": "feedback",
-    "10": "time",
-    "11": "A",
-    "12": "B",
-    "13": "A",
-    "14": "C",
-    "15": "river",
-    "16": "1422",
-    "17": "top",
-    "18": "pass",
-    "19": "steam",
-    "20": "capital",
-    "21": "G",
-    "22": "F",
-    "23": "A",
-    "24": "E",
-    "25": "B",
-    "26": "C",
-    "27": "C",
-    "28": "A",
-    "29": "B",
-    "30": "D",
-    "31": "shelter",
-    "32": "oil",
-    "33": "roads",
-    "34": "insects",
-    "35": "grass",
-    "36": "water",
-    "37": "soil",
-    "38": "dry",
-    "39": "simple",
-    "40": "nest"
-  }
+  ]
 }

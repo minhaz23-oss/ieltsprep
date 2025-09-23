@@ -1,0 +1,561 @@
+{
+  "id": "listening15_t3",
+  "title": "IELTS Listening 15 Practice Test 3",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "tags": ["employment-agency", "street-play-scheme", "newspaper-analysis", "history-of-cleanliness"],
+    "description": "Full IELTS Listening Practice Test with 4 sections"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Employment Agency: Possible Jobs",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening15%20t3%20s1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE1IHQzIHMxLm1wMyIsImlhdCI6MTc1ODU1ODU3NywiZXhwIjo0OTEyMTU4NTc3fQ.sIY5-d9KHduv026d4GI-44-MFkJrFoXdN4Y_ZfICYDM",
+      "questionGroups": [
+        {
+          "groupId": "1-10",
+          "instructions": "Complete the notes below.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Employment Agency: Possible Jobs",
+            "sections": [
+              {
+                "sectionTitle": "First Job",
+                "content": [
+                  {
+                    "text": "Administrative assistant in a company that produces ",
+                    "questionNumber": 1,
+                    "inputType": "text",
+                    "correctAnswer": "furniture",
+                    "suffix": " (North London)"
+                  },
+                  {
+                    "text": "\nResponsibilities",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "• data entry",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• go to ",
+                    "questionNumber": 2,
+                    "inputType": "text",
+                    "correctAnswer": "meetings",
+                    "suffix": " and take notes",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• general admin",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• management of ",
+                    "questionNumber": 3,
+                    "inputType": "text",
+                    "correctAnswer": "diary",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "\nRequirements",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "• good computer skills including spreadsheets",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• good interpersonal skills",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• attention to ",
+                    "questionNumber": 4,
+                    "inputType": "text",
+                    "correctAnswer": "detail(s)",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "\nExperience",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "• need a minimum of ",
+                    "questionNumber": 5,
+                    "inputType": "text",
+                    "correctAnswer": "1 / one year",
+                    "suffix": " of experience of teleconferencing",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Second Job",
+                "content": [
+                  {
+                    "text": "Warehouse assistant in South London",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "\nResponsibilities",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "• stock management",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• managing ",
+                    "questionNumber": 6,
+                    "inputType": "text",
+                    "correctAnswer": "deliveries",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "\nRequirements",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "• ability to work with numbers",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• good computer skills",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• very organised and ",
+                    "questionNumber": 7,
+                    "inputType": "text",
+                    "correctAnswer": "tidy",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• good communication skills",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• used to working in a ",
+                    "questionNumber": 8,
+                    "inputType": "text",
+                    "correctAnswer": "team",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• able to cope with items that are ",
+                    "questionNumber": 9,
+                    "inputType": "text",
+                    "correctAnswer": "heavy",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "\nNeed experience of",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "• driving in London",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• warehouse work",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• ",
+                    "questionNumber": 10,
+                    "inputType": "text",
+                    "correctAnswer": "customer",
+                    "suffix": " service",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Street Play Scheme",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening15%20t3%20s2.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE1IHQzIHMyLm1wMyIsImlhdCI6MTc1ODU1ODc2OCwiZXhwIjo0OTEyMTU4NzY4fQ.EBxgXwjzwWIslRdYI4xUmjITtsfjsb0M3bDSoAFpI6I",
+      "questionGroups": [
+        {
+          "groupId": "11-16",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 11,
+                "questionText": "When did the Street Play Scheme first take place?",
+                "options": [
+                  { "letter": "A", "text": "two years ago" },
+                  { "letter": "B", "text": "three years ago" },
+                  { "letter": "C", "text": "six years ago" }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 12,
+                "questionText": "How often is Beechwood Road closed to traffic now?",
+                "options": [
+                  { "letter": "A", "text": "once a week" },
+                  { "letter": "B", "text": "on Saturdays and Sundays" },
+                  { "letter": "C", "text": "once a month" }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 13,
+                "questionText": "Who is responsible for closing the road?",
+                "options": [
+                  { "letter": "A", "text": "a council official" },
+                  { "letter": "B", "text": "the police" },
+                  { "letter": "C", "text": "local wardens" }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 14,
+                "questionText": "Residents who want to use their cars",
+                "options": [
+                  { "letter": "A", "text": "have to park in another street." },
+                  { "letter": "B", "text": "must drive very slowly" },
+                  { "letter": "C", "text": "need permission from a warden." }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 15,
+                "questionText": "Alice says that Street Play Schemes are most needed in",
+                "options": [
+                  { "letter": "A", "text": "wealthy areas" },
+                  { "letter": "B", "text": "quiet suburban areas." },
+                  { "letter": "C", "text": "areas with heavy traffic." }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 16,
+                "questionText": "What has been the reaction of residents who are not parents?",
+                "options": [
+                  { "letter": "A", "text": "Many of them were unhappy at first." },
+                  { "letter": "B", "text": "They like seeing children play in the street." },
+                  { "letter": "C", "text": "They are surprised by the lack of noise." }
+                ],
+                "correctAnswer": "B"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "17-18",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO benefits for children does Alice think are the most important?",
+            "options": [
+              { "letter": "A", "text": "increased physical activity" },
+              { "letter": "B", "text": "increased sense of independence" },
+              { "letter": "C", "text": "opportunity to learn new games" },
+              { "letter": "D", "text": "opportunity to be part of a community" },
+              { "letter": "E", "text": "opportunity to make new friends" }
+            ],
+            "questions": [
+              { "questionNumber": 17, "correctAnswer": "B" },
+              { "questionNumber": 18, "correctAnswer": "D" }
+            ]
+          }
+        },
+        {
+          "groupId": "19-20",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO results of the King Street experiment surprised Alice?",
+            "options": [
+              { "letter": "A", "text": "more shoppers" },
+              { "letter": "B", "text": "improved safety" },
+              { "letter": "C", "text": "less air pollution" },
+              { "letter": "D", "text": "more relaxed atmosphere" },
+              { "letter": "E", "text": "less noise pollution" }
+            ],
+            "questions": [
+              { "questionNumber": 19, "correctAnswer": "A" },
+              { "questionNumber": 20, "correctAnswer": "E" }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Newspaper Analysis",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening15%20t3%20s3.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE1IHQzIHMzLm1wMyIsImlhdCI6MTc1ODU1ODc5MiwiZXhwIjo0OTEyMTU4NzkyfQ.OksCDPnZXjf1TknFcDbWwfdspWy-HSODsFmX3JTAWZw",
+      "questionGroups": [
+        {
+          "groupId": "21-26",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "What Hazel should analyse about items in newspapers:",
+            "sections": [
+              {
+                "content": [
+                  {
+                    "text": "• what ",
+                    "questionNumber": 21,
+                    "inputType": "text",
+                    "correctAnswer": "page",
+                    "suffix": " the item is on",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• the ",
+                    "questionNumber": 22,
+                    "inputType": "text",
+                    "correctAnswer": "size",
+                    "suffix": " of the item, including the headline",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• any ",
+                    "questionNumber": 23,
+                    "inputType": "text",
+                    "correctAnswer": "graphic(s)",
+                    "suffix": " accompanying the item",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• the ",
+                    "questionNumber": 24,
+                    "inputType": "text",
+                    "correctAnswer": "structure",
+                    "suffix": " of the item, e.g. what's made prominent",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• the writer's main ",
+                    "questionNumber": 25,
+                    "inputType": "text",
+                    "correctAnswer": "purpose",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• the ",
+                    "questionNumber": 26,
+                    "inputType": "text",
+                    "correctAnswer": "assumption(s)",
+                    "suffix": " the writer may make about the reader",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "27-30",
+          "instructions": "What does Hazel decide to do about each of the following types of articles?\nWrite the correct letter, A, B or C, next to Questions 27-30\n\nA - She will definitely look for a suitable article.\nB - She may look for a suitable article.\nC - She definitely won't look for an article.",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Types of articles",
+            "matchingOptions": [
+              { "letter": "A", "text": "She will definitely look for a suitable article." },
+              { "letter": "B", "text": "She may look for a suitable article." },
+              { "letter": "C", "text": "She definitely won't look for an article." }
+            ],
+            "items": [
+              {
+                "questionNumber": 27,
+                "text": "national news item",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 28,
+                "text": "editorial",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 29,
+                "text": "human interest",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 30,
+                "text": "arts",
+                "correctAnswer": "B"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Early History of Keeping Clean",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening15%20t3%20s4.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE1IHQzIHM0Lm1wMyIsImlhdCI6MTc1ODU1ODgyMSwiZXhwIjo0OTEyMTU4ODIxfQ.iukIa_l8BcQ0G17hlR1Szbgduf3Ma-SIJd9yPH34fQo",
+      "questionGroups": [
+        {
+          "groupId": "31-40",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Early history of keeping clean",
+            "sections": [
+              {
+                "sectionTitle": "Prehistoric times:",
+                "content": [
+                  {
+                    "text": "• water was used to wash off ",
+                    "questionNumber": 31,
+                    "inputType": "text",
+                    "correctAnswer": "mud",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Ancient Babylon",
+                "content": [
+                  {
+                    "text": "• soap-like material found in ",
+                    "questionNumber": 32,
+                    "inputType": "text",
+                    "correctAnswer": "clay",
+                    "suffix": " cylinders",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Ancient Greece:",
+                "content": [
+                  {
+                    "text": "• people cleaned themselves with sand and other substances",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• used a strigil – scraper made of ",
+                    "questionNumber": 33,
+                    "inputType": "text",
+                    "correctAnswer": "metal",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• washed clothes in streams",
+                    "isStatic": true,
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Ancient Germany and Gaul:",
+                "content": [
+                  {
+                    "text": "• used soap to colour their ",
+                    "questionNumber": 34,
+                    "inputType": "text",
+                    "correctAnswer": "hair",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Ancient Rome:",
+                "content": [
+                  {
+                    "text": "• animal fat, ashes and clay mixed through action of rain, used for washing clothes",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• from about 312 BC, water carried to Roman ",
+                    "questionNumber": 35,
+                    "inputType": "text",
+                    "correctAnswer": "bath(s)",
+                    "suffix": " by aqueducts",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Europe in Middle Ages:",
+                "content": [
+                  {
+                    "text": "• decline in bathing contributed to occurrence of ",
+                    "questionNumber": 36,
+                    "inputType": "text",
+                    "correctAnswer": "disease(s)",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• ",
+                    "questionNumber": 37,
+                    "inputType": "text",
+                    "correctAnswer": "perfume",
+                    "suffix": " began to be added to soap",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Europe from 17th century:",
+                "content": [
+                  {
+                    "text": "• 1600s: cleanliness and bathing started becoming usual",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• 1791: Leblanc invented a way of making soda ash from ",
+                    "questionNumber": 38,
+                    "inputType": "text",
+                    "correctAnswer": "salt",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• early 1800s: Chevreul turned soapmaking into a ",
+                    "questionNumber": 39,
+                    "inputType": "text",
+                    "correctAnswer": "science",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• from 1800s, there was no longer a ",
+                    "questionNumber": 40,
+                    "inputType": "text",
+                    "correctAnswer": "tax",
+                    "suffix": " on soap.",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

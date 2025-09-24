@@ -370,6 +370,17 @@ const IELTSListeningTest = () => {
       <div className="mb-8 bg-white rounded-lg p-6 border-2 border-gray-200">
         <div className="mb-4 text-primary font-semibold">{instructions}</div>
         
+        {(group.imageUrl || section.imageUrl) && (
+          <div className="my-6 p-4 bg-gray-50 rounded">
+            <img
+              src={group.imageUrl || (section.imageUrl as string)}
+              alt={`Diagram for ${section.title} - Group ${group.groupId}`}
+              className="max-w-full h-auto mx-auto"
+              style={{ maxHeight: '500px' }}
+            />
+          </div>
+        )}
+        
         {displayType === 'form' && content.fields && (
           <div className="bg-gray-50 p-6 rounded">
             {content.title && <h3 className="text-xl font-bold mb-4 text-center">{content.title}</h3>}
@@ -473,17 +484,6 @@ const IELTSListeningTest = () => {
                 ))}
               </div>
             ))}
-          </div>
-        )}
-        
-        {(group.imageUrl || (section.imageUrl && group.groupId.includes('16'))) && (
-          <div className="my-6 p-4 bg-gray-50 rounded">
-            <img
-              src={group.imageUrl || (section.imageUrl as string)}
-              alt={`Diagram for ${section.title} - Group ${group.groupId}`}
-              className="max-w-full h-auto mx-auto"
-              style={{ maxHeight: '500px' }}
-            />
           </div>
         )}
       </div>

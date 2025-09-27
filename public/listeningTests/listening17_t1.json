@@ -1,0 +1,528 @@
+{
+  "id": "listening17_t1",
+  "title": "IELTS Listening 17 Practice Test 1",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "tags": ["conservation-group", "boat-trip-tasmania", "veterinary-work-experience", "labyrinths"],
+    "description": "Full IELTS Listening Practice Test with 4 sections"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Buckworth Conservation Group",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening17%20t1%20s1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE3IHQxIHMxLm1wMyIsImlhdCI6MTc1ODk4NzY2MSwiZXhwIjo0OTEyNTg3NjYxfQ.GTdFWiTKNQBTTgIcEEEM8NKNP9TRM8w_pCCRCa9_l9E",
+      "questionGroups": [
+        {
+          "groupId": "1-10",
+          "instructions": "Complete the notes below.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Buckworth Conservation Group",
+            "sections": [
+              {
+                "sectionTitle": "Regular activities",
+                "content": [
+                  {
+                    "text": "\nBeach",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "• making sure the beach does not have ",
+                    "questionNumber": 1,
+                    "inputType": "text",
+                    "correctAnswer": "litter",
+                    "suffix": " on it",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• no ",
+                    "questionNumber": 2,
+                    "inputType": "text",
+                    "correctAnswer": "dogs",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "\nNature reserve",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "• maintaining paths",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• nesting boxes for birds installed",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• next task is taking action to attract ",
+                    "questionNumber": 3,
+                    "inputType": "text",
+                    "correctAnswer": "insects",
+                    "suffix": " to the place",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• identifying types of ",
+                    "questionNumber": 4,
+                    "inputType": "text",
+                    "correctAnswer": "butterflies",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• building a new ",
+                    "questionNumber": 5,
+                    "inputType": "text",
+                    "correctAnswer": "wall",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Forthcoming events",
+                "content": [
+                  {
+                    "text": "\nSaturday",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "• meet at Dunsmore Beach car park",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• walk across the sands and reach the ",
+                    "questionNumber": 6,
+                    "inputType": "text",
+                    "correctAnswer": "island",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• take a picnic",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• wear appropriate ",
+                    "questionNumber": 7,
+                    "inputType": "text",
+                    "correctAnswer": "boots",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "\nWoodwork session",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "• suitable for ",
+                    "questionNumber": 8,
+                    "inputType": "text",
+                    "correctAnswer": "beginners",
+                    "suffix": " to participate in",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• making ",
+                    "questionNumber": 9,
+                    "inputType": "text",
+                    "correctAnswer": "spoons",
+                    "suffix": " out of wood",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• 17th, from 10 a.m. to 3 p.m.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• cost of session (no camping): £",
+                    "questionNumber": 10,
+                    "inputType": "text",
+                    "correctAnswer": "35 / thirty five",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Boat Trip Round Tasmania",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening17%20t1%20s2.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE3IHQxIHMyLm1wMyIsImlhdCI6MTc1ODk4NzY4MCwiZXhwIjo0OTEyNTg3NjgwfQ.H_5l50Pthss52VLpOjcUlzd6RMK2eCTXQRahyrxmPmU",
+      "questionGroups": [
+        {
+          "groupId": "11-14",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 11,
+                "questionText": "What is the maximum number of people who can stand on each side of the boat?",
+                "options": [
+                  { "letter": "A", "text": "9" },
+                  { "letter": "B", "text": "15" },
+                  { "letter": "C", "text": "18" }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 12,
+                "questionText": "What colour are the tour boats?",
+                "options": [
+                  { "letter": "A", "text": "dark red" },
+                  { "letter": "B", "text": "jet black" },
+                  { "letter": "C", "text": "light green" }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 13,
+                "questionText": "Which lunchbox is suitable for someone who doesn't eat meat or fish?",
+                "options": [
+                  { "letter": "A", "text": "Lunchbox 1" },
+                  { "letter": "B", "text": "Lunch box 2" },
+                  { "letter": "C", "text": "Lunch box 3" }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 14,
+                "questionText": "What should people do with their litter?",
+                "options": [
+                  { "letter": "A", "text": "take it home" },
+                  { "letter": "B", "text": "hand it to a member of staff" },
+                  { "letter": "C", "text": "put it in the bins provided on the boat" }
+                ],
+                "correctAnswer": "B"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "15-16",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO features of the lighthouse does Lou mention?",
+            "options": [
+              { "letter": "A", "text": "why it was built" },
+              { "letter": "B", "text": "who built it" },
+              { "letter": "C", "text": "how long it took to build" },
+              { "letter": "D", "text": "who staffed it" },
+              { "letter": "E", "text": "what it was built with" }
+            ],
+            "questions": [
+              { "questionNumber": 15, "correctAnswer": "A" },
+              { "questionNumber": 16, "correctAnswer": "D" }
+            ]
+          }
+        },
+        {
+          "groupId": "17-18",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO types of creature might come close to the boat?",
+            "options": [
+              { "letter": "A", "text": "sea eagles" },
+              { "letter": "B", "text": "fur seals" },
+              { "letter": "C", "text": "dolphins" },
+              { "letter": "D", "text": "whales" },
+              { "letter": "E", "text": "penguins" }
+            ],
+            "questions": [
+              { "questionNumber": 17, "correctAnswer": "B" },
+              { "questionNumber": 18, "correctAnswer": "C" }
+            ]
+          }
+        },
+        {
+          "groupId": "19-20",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO points does Lou make about the caves?",
+            "options": [
+              { "letter": "A", "text": "Only large tourist boats can visit them." },
+              { "letter": "B", "text": "The entrances to them are often blocked." },
+              { "letter": "C", "text": "It is too dangerous for individuals to go near them." },
+              { "letter": "D", "text": "Someone will explain what is inside them." },
+              { "letter": "E", "text": "They cannot be reached on foot." }
+            ],
+            "questions": [
+              { "questionNumber": 19, "correctAnswer": "D" },
+              { "questionNumber": 20, "correctAnswer": "E" }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Work Experience for Veterinary Science Students",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening17%20t1%20s3.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE3IHQxIHMzLm1wMyIsImlhdCI6MTc1ODk4NzY5MywiZXhwIjo0OTEyNTg3NjkzfQ.KpFf7mjIh-YnIzch1gnEl6zC-VYaRiarvKAbx8YdGqU",
+      "questionGroups": [
+        {
+          "groupId": "21-26",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 21,
+                "questionText": "What problem did both Diana and Tim have when arranging their work experience?",
+                "options": [
+                  { "letter": "A", "text": "make initial contact with suitable farms" },
+                  { "letter": "B", "text": "organising transport to and from the farm" },
+                  { "letter": "C", "text": "finding a placement for the required length of time" }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 22,
+                "questionText": "Tim was pleased to be able to help",
+                "options": [
+                  { "letter": "A", "text": "a lamb that had a broken leg." },
+                  { "letter": "B", "text": "a sheep that was having difficult giving birth." },
+                  { "letter": "C", "text": "a newly born lamb that was having trouble feeding." }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 23,
+                "questionText": "Diana says the sheep on her farm",
+                "options": [
+                  { "letter": "A", "text": "were of various different varieties." },
+                  { "letter": "B", "text": "were mainly reared for their meat." },
+                  { "letter": "C", "text": "had better quality wool than sheep on the hills." }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 24,
+                "questionText": "What did the students learn about adding supplements to chicken feed?",
+                "options": [
+                  { "letter": "A", "text": "These should only be given if specially needed." },
+                  { "letter": "B", "text": "It is worth paying extra for the most effective ones." },
+                  { "letter": "C", "text": "The amount given at one time should be limited." }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 25,
+                "questionText": "What happened when Diana was working with dairy cows?",
+                "options": [
+                  { "letter": "A", "text": "She identified some cows incorrectly." },
+                  { "letter": "B", "text": "She accidentally threw some milk away." },
+                  { "letter": "C", "text": "She made a mistake when storing milk." }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 26,
+                "questionText": "What did both farmers mention about vets and farming?",
+                "options": [
+                  { "letter": "A", "text": "Vets are failing to cope with some aspects of animal health." },
+                  { "letter": "B", "text": "There needs to be a fundamental change in the training of vets." },
+                  { "letter": "C", "text": "Some jobs could be done by the farmer rather than by a vet." }
+                ],
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "27-30",
+          "instructions": "What opinion do the students give about each of the following modules on their veterinary science course?\nChoose FOUR answers from the box and write the correct letter, A-F, next to questions 27-30.",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Opinions",
+            "matchingOptions": [
+              { "letter": "A", "text": "Tim found this easier than expected." },
+              { "letter": "B", "text": "Tim thought this was not very clearly organised." },
+              { "letter": "C", "text": "Diana may do some further study on this." },
+              { "letter": "D", "text": "They both found the reading required for this was difficult." },
+              { "letter": "E", "text": "Tim was shocked at something he learned on this module." },
+              { "letter": "F", "text": "They were both surprised how little is known about some aspects of this." }
+            ],
+            "sectionTitle": "Modules on Veterinary Science course",
+            "items": [
+              {
+                "questionNumber": 27,
+                "text": "Medical terminology",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 28,
+                "text": "Diet and nutrition",
+                "correctAnswer": "E"
+              },
+              {
+                "questionNumber": 29,
+                "text": "Animal disease",
+                "correctAnswer": "F"
+              },
+              {
+                "questionNumber": 30,
+                "text": "Wildlife medication",
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Labyrinths",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening17%20t1%20s4.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE3IHQxIHM0Lm1wMyIsImlhdCI6MTc1ODk4NzcwOSwiZXhwIjo0OTEyNTg3NzA5fQ.6MEmW17lWKxSC4VIPEE3oItoQezwNsCBqL5glYyrE3Y",
+      "questionGroups": [
+        {
+          "groupId": "31-40",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Labyrinths",
+            "sections": [
+              {
+                "sectionTitle": "Definition",
+                "content": [
+                  {
+                    "text": "• a winding spiral path leading to a central area",
+                    "isStatic": true,
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Labyrinths compared with mazes",
+                "content": [
+                  {
+                    "text": "• Mazes are a type of ",
+                    "questionNumber": 31,
+                    "inputType": "text",
+                    "correctAnswer": "puzzle",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  – ",
+                    "questionNumber": 32,
+                    "inputType": "text",
+                    "correctAnswer": "logic",
+                    "suffix": " is needed to navigate through a maze"
+                  },
+                  {
+                    "text": "  – the word 'maze' is derived from a word meaning a feeling of ",
+                    "questionNumber": 33,
+                    "inputType": "text",
+                    "correctAnswer": "confusion"
+                  },
+                  {
+                    "text": "• Labyrinths represent a journey through life",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  – they have frequently been used in ",
+                    "questionNumber": 34,
+                    "inputType": "text",
+                    "correctAnswer": "meditation",
+                    "suffix": " and prayer"
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Early examples of the labyrinth spiral",
+                "content": [
+                  {
+                    "text": "• Ancient carvings on ",
+                    "questionNumber": 35,
+                    "inputType": "text",
+                    "correctAnswer": "stone",
+                    "suffix": " have been found across many cultures",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• The Pima, a Native American tribe, wove the symbol on baskets",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Ancient Greeks used the symbol on ",
+                    "questionNumber": 36,
+                    "inputType": "text",
+                    "correctAnswer": "coins",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Walking labyrinths",
+                "content": [
+                  {
+                    "text": "• The largest surviving example of a turf labyrinth once had a big ",
+                    "questionNumber": 37,
+                    "inputType": "text",
+                    "correctAnswer": "tree",
+                    "suffix": " at its centre",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Labyrinths nowadays",
+                "content": [
+                  {
+                    "text": "• Believed to have a beneficial impact on mental and physical health, e.g., walking a maze can reduce a person's ",
+                    "questionNumber": 38,
+                    "inputType": "text",
+                    "correctAnswer": "breathing",
+                    "suffix": " rate",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Used in medical and health and fitness settings and also prisons",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Popular with patients, visitors and staff in hospitals",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  – patients who can't walk can use 'finger labyrinths' made from ",
+                    "questionNumber": 39,
+                    "inputType": "text",
+                    "correctAnswer": "paper"
+                  },
+                  {
+                    "text": "  – research has shown that Alzheimer's sufferers experience less ",
+                    "questionNumber": 40,
+                    "inputType": "text",
+                    "correctAnswer": "anxiety"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

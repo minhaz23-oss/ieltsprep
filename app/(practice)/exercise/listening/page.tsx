@@ -18,6 +18,34 @@ interface ListeningExercise {
 const ListeningPage = () => {
   const [exercises, setExercises] = useState<ListeningExercise[]>([]);
   const [loading, setLoading] = useState(true);
+  const [expandedVersion, setExpandedVersion] = useState<string | null>(null);
+
+  // Color palette for version cards (for future use if needed)
+  const colorPalette = [
+    'blue',
+    'emerald',
+    'violet',
+    'rose',
+    'indigo',
+    'teal'
+  ];
+
+  // Function to get color style for each version
+  const getVersionStyle = (version: string, index: number) => {
+    const colorIndex = index % colorPalette.length;
+    const borderColors = [
+      'border-blue-300',
+      'border-green-300',
+      'border-purple-300',
+      'border-pink-300',
+      'border-indigo-300',
+      'border-teal-300'
+    ];
+
+    return {
+      borderColor: borderColors[colorIndex]
+    };
+  };
 
   useEffect(() => {
     const loadExercises = async () => {
@@ -25,7 +53,7 @@ const ListeningPage = () => {
         // Use server action instead of API route
         const { getListeningTests } = await import('@/lib/actions/listening-tests.actions');
         const result = await getListeningTests();
-        
+
         if (result.success) {
           setExercises(result.data);
         } else {
@@ -40,6 +68,23 @@ const ListeningPage = () => {
 
     loadExercises();
   }, []);
+
+  // Group exercises by IELTS version
+  const groupedExercises = exercises.reduce((acc, exercise) => {
+    const versionMatch = exercise.id.match(/listening(\d+)_t/);
+    if (versionMatch) {
+      const version = versionMatch[1];
+      if (!acc[version]) {
+        acc[version] = [];
+      }
+      acc[version].push(exercise);
+    }
+    return acc;
+  }, {} as Record<string, ListeningExercise[]>);
+
+  const toggleVersion = (version: string) => {
+    setExpandedVersion(expandedVersion === version ? null : version);
+  };
 
   return (
     <div className="min-h-screen px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24 py-8 sm:py-12 md:py-16 font-semibold">
@@ -61,7 +106,7 @@ const ListeningPage = () => {
           Tests!
         </h1>
         <p className="mt-3 leading-none text-center max-w-lg sm:text-xl/relaxed text-gray-600 font-semibold mx-auto">
-          Practice with {loading ? '...' : exercises.length} carefully designed listening exercise{exercises.length !== 1 ? 's' : ''} to boost your IELTS score.
+          Practice with {loading ? '...' : exercises.length} total listening tests across {Object.keys(groupedExercises).length} IELTS version{Object.keys(groupedExercises).length !== 1 ? 's' : ''}, each containing 4 complete practice tests to boost your IELTS score.
         </p>
       </div>
 
@@ -83,61 +128,119 @@ const ListeningPage = () => {
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {exercises.map((exercise) => (
-              <Link
-                key={exercise.id}
-                href={`/exercise/listening/${exercise.id}`}
-                className="group block"
-              >
-                <div className="bg-white rounded-xl border-2 border-primary/20 hover:border-primary hover:shadow-xl transition-all duration-300 p-4 sm:p-6 h-full transform hover:-translate-y-1">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="text-sm text-gray-400">#{exercise.id}</div>
-                  </div>
+          <div className="space-y-4 sm:space-y-6">
+            {Object.keys(groupedExercises)
+              .sort((a, b) => parseInt(b) - parseInt(a)) // Sort versions in descending order
+              .map((version, index) => {
+                const versionStyle = getVersionStyle(version, index);
+                return (
+                  <div key={version} className={`bg-white rounded-2xl border-4 ${versionStyle.borderColor} hover:border-gray-400 transition-all duration-300 shadow-lg hover:shadow-xl overflow-hidden`}>
+                    {/* Version Card */}
+                    <button
+                      onClick={() => toggleVersion(version)}
+                      className="w-full p-4 sm:p-6 text-left focus:outline-none focus:ring-2 focus:ring-gray-300 rounded-2xl relative group overflow-hidden"
+                    >
+                      <div className="relative flex items-center justify-between z-10">
+                        <div className="flex items-center space-x-3 sm:space-x-4">
+                          <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-2xl border border-primary flex items-center justify-center shadow-md">
+                            <span className="text-lg sm:text-xl font-bold text-primary">#{version}</span>
+                          </div>
+                          <div>
+                            <h3 className="text-lg sm:text-xl font-bold text-black group-hover:text-primary/80 transition-colors">
+                              IELTS Listening Test {version}
+                            </h3>
+                            <p className="text-sm text-gray-600">
+                              {groupedExercises[version].length} practice tests available
+                            </p>
+                          </div>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <div className="flex items-center space-x-1 text-sm text-gray-500 bg-gray-50 px-3 py-1 rounded-full">
+                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clipRule="evenodd" />
+                            </svg>
+                            <span>4 tests</span>
+                          </div>
+                          <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center shadow-sm">
+                            <svg
+                              className="w-4 h-4 text-gray-600 transform transition-transform duration-200"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </button>
 
-                  <h3 className="text-lg sm:text-xl font-bold text-black mb-3 group-hover:text-primary transition-colors">
-                    {exercise.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                    {exercise.metadata.description}
-                  </p>
+                    {/* Expandable Tests */}
+                    {expandedVersion === version && (
+                      <div className="px-4 sm:px-6 pb-4 sm:pb-6 bg-white border-t-2 border-gray-100">
+                        <div className="pt-4 sm:pt-6">
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                           {groupedExercises[version].map((exercise) => (
+                             <Link
+                               key={exercise.id}
+                               href={`/exercise/listening/${exercise.id}`}
+                               className="group block"
+                             >
+                               <div className="bg-gray-50 rounded-lg border border-gray-200 hover:border-primary hover:shadow-lg transition-all duration-300 p-3 sm:p-4 h-full transform hover:-translate-y-0.5">
+                                 <div className="flex items-start justify-between mb-3">
+                                   <div className="text-xs text-gray-400 font-medium">Test {exercise.id.split('_t')[1]}</div>
+                                 </div>
 
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4 sm:mb-6">
-                    <div className="flex items-center space-x-1">
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                      </svg>
-                      <span>{exercise.timeLimit} min</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clipRule="evenodd" />
-                      </svg>
-                      <span>{exercise.totalQuestions} questions</span>
-                    </div>
-                  </div>
+                                 <h4 className="text-base sm:text-lg font-bold text-black mb-2 group-hover:text-primary transition-colors">
+                                   {exercise.title}
+                                 </h4>
 
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-1 mb-4">
-                    {exercise.metadata.tags.slice(0, 3).map((tag, index) => (
-                      <span key={index} className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
-                        {tag}
-                      </span>
-                    ))}
-                    {exercise.metadata.tags.length > 3 && (
-                      <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
-                        +{exercise.metadata.tags.length - 3} more
-                      </span>
-                    )}
-                  </div>
+                                 <p className="text-gray-600 mb-3 leading-relaxed text-xs sm:text-sm">
+                                   {exercise.metadata.description}
+                                 </p>
 
-                  <button className="btn-primary w-full group-hover:bg-red-700 transition-colors duration-300 text-sm sm:text-base">
-                    Start Practice
-                  </button>
-                </div>
-              </Link>
-            ))}
+                                 <div className="flex items-center justify-between text-xs text-gray-500 mb-3">
+                                   <div className="flex items-center space-x-1">
+                                     <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                                     </svg>
+                                     <span>{exercise.timeLimit} min</span>
+                                   </div>
+                                   <div className="flex items-center space-x-1">
+                                     <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                       <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clipRule="evenodd" />
+                                     </svg>
+                                     <span>{exercise.totalQuestions} questions</span>
+                                   </div>
+                                 </div>
+
+                                 {/* Tags */}
+                                 <div className="flex flex-wrap gap-1 mb-3">
+                                   {exercise.metadata.tags.slice(0, 2).map((tag, index) => (
+                                     <span key={index} className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
+                                       {tag}
+                                     </span>
+                                   ))}
+                                   {exercise.metadata.tags.length > 2 && (
+                                     <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
+                                       +{exercise.metadata.tags.length - 2}
+                                     </span>
+                                   )}
+                                 </div>
+
+                                 <button className="btn-primary w-full text-xs sm:text-sm py-2 group-hover:bg-red-700 transition-colors duration-300">
+                                   Start Practice
+                                 </button>
+                               </div>
+                             </Link>
+                           ))}
+                         </div>
+                       </div>
+                     </div>
+                   )}
+                 </div>
+                  );
+                })}
           </div>
         )}
       </div>

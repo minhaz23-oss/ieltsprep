@@ -10,7 +10,12 @@ export interface QuestionGroup {
     title?: string;
     questionText?: string;
     options?: Array<{ letter: string; text: string }>;
-    questions?: Array<{ questionNumber: number; correctAnswer: string }>;
+    questions?: Array<{
+      questionNumber: number;
+      questionText?: string;
+      options?: Array<{ letter: string; text: string }>;
+      correctAnswer: string;
+    }>;
     matchingOptions?: Array<{ letter: string; text: string }>;
     items?: Array<{ questionNumber: number; text: string; correctAnswer: string }>;
     sectionTitle?: string;

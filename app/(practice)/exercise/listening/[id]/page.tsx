@@ -414,11 +414,11 @@ const IELTSListeningTest = () => {
               <div key={q.questionNumber} className="border-l-4 border-primary pl-4">
                 <div className="mb-3">
                   <span className="font-bold text-primary mr-2">{q.questionNumber}.</span>
-                  <span className="font-semibold">{content.questionText || `Question ${q.questionNumber}`}</span>
+                  <span className="font-semibold">{q.questionText || `Question ${q.questionNumber}`}</span>
                 </div>
-                {content.options && (
+                {q.options && (
                   <div className="ml-8 space-y-2">
-                    {content.options.map((opt) => (
+                    {q.options.map((opt) => (
                       <div key={opt.letter} className="flex items-start">
                         <span className="font-bold mr-2 text-gray-600">{opt.letter}</span>
                         <span>{opt.text}</span>
@@ -427,7 +427,7 @@ const IELTSListeningTest = () => {
                   </div>
                 )}
                 <div className="mt-3 ml-8">
-                  Answer: {renderInput(q.questionNumber, 'select', undefined, content.options)}
+                  Answer: {renderInput(q.questionNumber, 'select', undefined, q.options)}
                 </div>
               </div>
             ))}

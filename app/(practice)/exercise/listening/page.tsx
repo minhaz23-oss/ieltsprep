@@ -22,18 +22,15 @@ const ListeningPage = () => {
   useEffect(() => {
     const loadExercises = async () => {
       try {
-        const exerciseFiles = ['listening14_t1.json', 'listening14_t2.json','listening14_t3.json','listening14_t4.json','listening15_t1.json','listening15_t2.json','listening15_t3.json','listening15_t4.json'];
-        const exercisePromises = exerciseFiles.map(async (file) => {
-          const response = await fetch(`/listeningTests/${file}`);
-          if (response.ok) {
-            return await response.json();
-          }
-          return null;
-        });
-
-        const exerciseData = await Promise.all(exercisePromises);
-        const validExercises = exerciseData.filter(exercise => exercise !== null);
-        setExercises(validExercises);
+        // Use server action instead of API route
+        const { getListeningTests } = await import('@/lib/actions/listening-tests.actions');
+        const result = await getListeningTests();
+        
+        if (result.success) {
+          setExercises(result.data);
+        } else {
+          console.error('Failed to fetch tests:', result.message);
+        }
       } catch (error) {
         console.error('Error loading exercises:', error);
       } finally {

@@ -1,0 +1,496 @@
+{
+  "id": "listening16_t4",
+  "title": "IELTS Listening 16 Practice Test 4",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "tags": ["holiday-rental", "traffic-highways", "bike-sharing-schemes", "dodo-extinction"],
+    "description": "Full IELTS Listening Practice Test with 4 sections"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Holiday Rental",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening16%20t4%20s1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE2IHQ0IHMxLm1wMyIsImlhdCI6MTc1ODk1MTYxMSwiZXhwIjo0OTEyNTUxNjExfQ.HzBzpwiZyGJ_NjsaiDzF7ZWtl9M7LvlpLuslk1okzSw",
+      "questionGroups": [
+        {
+          "groupId": "1-10",
+          "instructions": "Complete the notes below.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Holiday rental",
+            "sections": [
+              {
+                "content": [
+                  {
+                    "text": "Owner's names: Jack Fitzgerald and Shirley Fitzgerald",
+                    "isStatic": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Granary Cottage",
+                "content": [
+                  {
+                    "text": "• available for week beginning ",
+                    "questionNumber": 1,
+                    "inputType": "text",
+                    "correctAnswer": "28th",
+                    "suffix": " May",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• cost for the week: £",
+                    "questionNumber": 2,
+                    "inputType": "text",
+                    "correctAnswer": "550",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Cottage",
+                "content": [
+                  {
+                    "questionNumber": 3,
+                    "inputType": "text",
+                    "correctAnswer": "Chervil",
+                    "suffix": " Cottage"
+                  },
+                  {
+                    "text": "• cost for the week: £480",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• building was originally a ",
+                    "questionNumber": 4,
+                    "inputType": "text",
+                    "correctAnswer": "garage",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• walk through doors from living room into a ",
+                    "questionNumber": 5,
+                    "inputType": "text",
+                    "correctAnswer": "garden",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• several ",
+                    "questionNumber": 6,
+                    "inputType": "text",
+                    "correctAnswer": "parking",
+                    "suffix": " spaces at the front",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• bathroom has a shower",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• central heating and stove that burns ",
+                    "questionNumber": 7,
+                    "inputType": "text",
+                    "correctAnswer": "wood",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• views of old ",
+                    "questionNumber": 8,
+                    "inputType": "text",
+                    "correctAnswer": "bridge",
+                    "suffix": " from living room",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• view of hilltop ",
+                    "questionNumber": 9,
+                    "inputType": "text",
+                    "correctAnswer": "monument",
+                    "suffix": " from the bedroom",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Payment",
+                "content": [
+                  {
+                    "text": "• deposit: £144",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• deadline for final payment: end of ",
+                    "questionNumber": 10,
+                    "inputType": "text",
+                    "correctAnswer": "March",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Local Council Report on Traffic and Highways",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening16%20t4%20s1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE2IHQ0IHMxLm1wMyIsImlhdCI6MTc1ODk1MTYxMSwiZXhwIjo0OTEyNTUxNjExfQ.HzBzpwiZyGJ_NjsaiDzF7ZWtl9M7LvlpLuslk1okzSw",
+      "questionGroups": [
+        {
+          "groupId": "11-14",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 11,
+                "questionText": "A survey found people's main concern about traffic in the area was",
+                "options": [
+                  { "letter": "A", "text": "cuts to public transport." },
+                  { "letter": "B", "text": "poor maintenance of roads." },
+                  { "letter": "C", "text": "changes in the type of traffic." }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 12,
+                "questionText": "Which change will shortly be made to the cycle path next to the river?",
+                "options": [
+                  { "letter": "A", "text": "It will be widened." },
+                  { "letter": "B", "text": "It will be extended." },
+                  { "letter": "C", "text": "It will be resurfaced." }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 13,
+                "questionText": "Plans for a pedestrian crossing have been postponed because",
+                "options": [
+                  { "letter": "A", "text": "the Post Office has moved." },
+                  { "letter": "B", "text": "the proposed location is unsafe." },
+                  { "letter": "C", "text": "funding is not available at present." }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 14,
+                "questionText": "On Station Road, notices have been erected",
+                "options": [
+                  { "letter": "A", "text": "telling cyclists not to leave their bikes outside the station ticket office." },
+                  { "letter": "B", "text": "asking motorists to switch off engines when waiting at the level crossing." },
+                  { "letter": "C", "text": "warning pedestrians to leave enough time when crossing the railway line." }
+                ],
+                "correctAnswer": "B"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "15-20",
+          "instructions": "Label the map below.\nWrite the correct letter, A-I, next to Questions 15-20.",
+          "displayType": "matching",
+          "imageUrl":"https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningImage/Cam-16-Listening-Test-4-1024x682.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0ltYWdlL0NhbS0xNi1MaXN0ZW5pbmctVGVzdC00LTEwMjR4NjgyLmpwZyIsImlhdCI6MTc1ODk1MTcwMCwiZXhwIjo0OTEyNTUxNzAwfQ.lL7MQhUsk0JNkYOeuxdHLm7sT_r6H2ccH1MdTN9SSzI",
+          "content": {
+            "type": "matching",
+            "title": "Map Labels",
+            "matchingOptions": [
+              { "letter": "A", "text": "Location A" },
+              { "letter": "B", "text": "Location B" },
+              { "letter": "C", "text": "Location C" },
+              { "letter": "D", "text": "Location D" },
+              { "letter": "E", "text": "Location E" },
+              { "letter": "F", "text": "Location F" },
+              { "letter": "G", "text": "Location G" },
+              { "letter": "H", "text": "Location H" },
+              { "letter": "I", "text": "Location I" }
+            ],
+            "items": [
+              {
+                "questionNumber": 15,
+                "text": "New car park",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 16,
+                "text": "New cricket pitch",
+                "correctAnswer": "F"
+              },
+              {
+                "questionNumber": 17,
+                "text": "Children's playground",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 18,
+                "text": "Skateboard ramp",
+                "correctAnswer": "I"
+              },
+              {
+                "questionNumber": 19,
+                "text": "Pavilion",
+                "correctAnswer": "E"
+              },
+              {
+                "questionNumber": 20,
+                "text": "Notice board",
+                "correctAnswer": "H"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "City Bike-Sharing Schemes",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening16%20t4%20s3.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE2IHQ0IHMzLm1wMyIsImlhdCI6MTc1ODk1MTY0NSwiZXhwIjo0OTEyNTUxNjQ1fQ.WIcmioYMJ-eVjU8HY7gYG1YVLCsem1suF4V5FQk4UVM",
+      "questionGroups": [
+        {
+          "groupId": "21-22",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO benefits of city bike-sharing schemes do the students agree are the most important?",
+            "options": [
+              { "letter": "A", "text": "reducing noise pollution" },
+              { "letter": "B", "text": "reducing traffic congestion" },
+              { "letter": "C", "text": "improving air quality" },
+              { "letter": "D", "text": "encouraging health and fitness" },
+              { "letter": "E", "text": "making cycling affordable" }
+            ],
+            "questions": [
+              { "questionNumber": 21, "correctAnswer": "B" },
+              { "questionNumber": 22, "correctAnswer": "C" }
+            ]
+          }
+        },
+        {
+          "groupId": "23-24",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO things do the students think are necessary for successful bike-sharing schemes?",
+            "options": [
+              { "letter": "A", "text": "Bikes should have a GPS system." },
+              { "letter": "B", "text": "The app should be easy to use." },
+              { "letter": "C", "text": "Public awareness should be raised." },
+              { "letter": "D", "text": "Only one scheme should be available." },
+              { "letter": "E", "text": "There should be a large network of cycle lanes." }
+            ],
+            "questions": [
+              { "questionNumber": 23, "correctAnswer": "B" },
+              { "questionNumber": 24, "correctAnswer": "C" }
+            ]
+          }
+        },
+        {
+          "groupId": "25-30",
+          "instructions": "What is the speakers' opinion of the bike-sharing schemes in each of the following cities?\nChoose SIX answers from the box and write the correct letter, A-G, next to Questions 25-30.",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Opinion of bike-sharing scheme",
+            "matchingOptions": [
+              { "letter": "A", "text": "They agree it has been disappointing." },
+              { "letter": "B", "text": "They think it should be cheaper." },
+              { "letter": "C", "text": "They are surprised it has been so successful." },
+              { "letter": "D", "text": "They agree that more investment is required." },
+              { "letter": "E", "text": "They think the system has been well designed." },
+              { "letter": "F", "text": "They disagree about the reasons for its success." },
+              { "letter": "G", "text": "They think it has expanded too quickly." }
+            ],
+            "sectionTitle": "Cities",
+            "items": [
+              {
+                "questionNumber": 25,
+                "text": "Amsterdam",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 26,
+                "text": "Dublin",
+                "correctAnswer": "F"
+              },
+              {
+                "questionNumber": 27,
+                "text": "London",
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 28,
+                "text": "Buenos Aires",
+                "correctAnswer": "E"
+              },
+              {
+                "questionNumber": 29,
+                "text": "New York",
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 30,
+                "text": "Sydney",
+                "correctAnswer": "A"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "The Extinction of the Dodo Bird",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening16%20t4%20s4.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE2IHQ0IHM0Lm1wMyIsImlhdCI6MTc1ODk1MTY1OCwiZXhwIjo0OTEyNTUxNjU4fQ.F8OqDiL9jvHnzUi9_jxPheuT9KicT1VTg-U8bZdurps",
+      "questionGroups": [
+        {
+          "groupId": "31-40",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "THE EXTINCTION OF THE DODO BIRD",
+            "sections": [
+              {
+                "content": [
+                  {
+                    "text": "The dodo was a large flightless bird which used to inhabit the island of Mauritius.",
+                    "isStatic": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "History",
+                "content": [
+                  {
+                    "text": "• 1507 – Portuguese ships transporting ",
+                    "questionNumber": 31,
+                    "inputType": "text",
+                    "correctAnswer": "spice(s)",
+                    "suffix": " stopped at the island to collect food and water.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• 1638 – The Dutch established a ",
+                    "questionNumber": 32,
+                    "inputType": "text",
+                    "correctAnswer": "colony / settlement",
+                    "suffix": " on the island.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• They killed the dodo birds for their meat.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• The last one was killed in 1681.",
+                    "isStatic": true,
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Description",
+                "content": [
+                  {
+                    "text": "• The only record we have is written descriptions and pictures (possibly unreliable).",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• A Dutch painting suggests the dodo was very ",
+                    "questionNumber": 33,
+                    "inputType": "text",
+                    "correctAnswer": "fat",
+                    "suffix": ".",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• The only remaining soft tissue is a dried ",
+                    "questionNumber": 34,
+                    "inputType": "text",
+                    "correctAnswer": "head",
+                    "suffix": ".",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Recent studies of a dodo skeleton suggest the birds were capable of rapid ",
+                    "questionNumber": 35,
+                    "inputType": "text",
+                    "correctAnswer": "movement",
+                    "suffix": ".",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• It's thought they were able to use their small wings to maintain ",
+                    "questionNumber": 36,
+                    "inputType": "text",
+                    "correctAnswer": "balance / balancing",
+                    "suffix": ".",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Their ",
+                    "questionNumber": 37,
+                    "inputType": "text",
+                    "correctAnswer": "brain",
+                    "suffix": " was of average size.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Their sense of ",
+                    "questionNumber": 38,
+                    "inputType": "text",
+                    "correctAnswer": "smell",
+                    "suffix": " enabled them to find food.",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Reasons for extinction",
+                "content": [
+                  {
+                    "text": "• Hunting was probably not the main cause.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Sailors brought dogs and monkeys.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• ",
+                    "questionNumber": 39,
+                    "inputType": "text",
+                    "correctAnswer": "rats",
+                    "suffix": " also escaped onto the island and ate the birds' eggs.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• The arrival of farming meant the ",
+                    "questionNumber": 40,
+                    "inputType": "text",
+                    "correctAnswer": "forest",
+                    "suffix": " was destroyed.",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

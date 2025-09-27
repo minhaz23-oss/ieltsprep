@@ -1,0 +1,523 @@
+{
+  "id": "listening16_t2",
+  "title": "IELTS Listening 16 Practice Test 2",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "tags": ["photo-digitization", "school-changes", "sleep-dreams-assignment", "health-benefits-dance"],
+    "description": "Full IELTS Listening Practice Test with 4 sections"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Copying Photos to Digital Format",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening16%20t2%20s1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE2IHQyIHMxLm1wMyIsImlhdCI6MTc1ODk0OTAwMSwiZXhwIjo0OTEyNTQ5MDAxfQ.k6P6PJ9JtBE3Re9D6gha5M90WCC0pwEPiIPqLryhB_w",
+      "questionGroups": [
+        {
+          "groupId": "1-10",
+          "instructions": "Complete the notes below.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Copying photos to digital format",
+            "sections": [
+              {
+                "content": [
+                  {
+                    "text": "Name of company: Picturerep",
+                    "isStatic": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Requirements",
+                "content": [
+                  {
+                    "text": "• Maximum size of photos is 30 cm, minimum size 4 cm.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Photos must not be in a ",
+                    "questionNumber": 1,
+                    "inputType": "text",
+                    "correctAnswer": "frame",
+                    "suffix": " or an album.",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Cost",
+                "content": [
+                  {
+                    "text": "• The cost for 360 photos is £",
+                    "questionNumber": 2,
+                    "inputType": "text",
+                    "correctAnswer": "195",
+                    "suffix": " (including one disk).",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Before the complete order is sent, ",
+                    "questionNumber": 3,
+                    "inputType": "text",
+                    "correctAnswer": "payment",
+                    "suffix": " is required.",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Services included in the price",
+                "content": [
+                  {
+                    "text": "• Photos can be placed in a folder, e.g. with the name ",
+                    "questionNumber": 4,
+                    "inputType": "text",
+                    "correctAnswer": "Grandparents",
+                    "suffix": ".",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• The ",
+                    "questionNumber": 5,
+                    "inputType": "text",
+                    "correctAnswer": "colour / color",
+                    "suffix": " and contrast can be improved if necessary.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Photos which are very fragile will be scanned by ",
+                    "questionNumber": 6,
+                    "inputType": "text",
+                    "correctAnswer": "hand",
+                    "suffix": ".",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Special restore service (costs extra)",
+                "content": [
+                  {
+                    "text": "• It may be possible to remove an object from a photo, or change the ",
+                    "questionNumber": 7,
+                    "inputType": "text",
+                    "correctAnswer": "background",
+                    "suffix": ".",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• A photo which is not correctly in ",
+                    "questionNumber": 8,
+                    "inputType": "text",
+                    "correctAnswer": "focus",
+                    "suffix": " cannot be fixed.",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Other information",
+                "content": [
+                  {
+                    "text": "• Orders are completed within ",
+                    "questionNumber": 9,
+                    "inputType": "text",
+                    "correctAnswer": "ten / 10 days",
+                    "suffix": ".",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Send the photos in a box (not ",
+                    "questionNumber": 10,
+                    "inputType": "text",
+                    "correctAnswer": "plastic",
+                    "suffix": ").",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "School Changes at Minster Park",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening16%20t2%20s2.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE2IHQyIHMyLm1wMyIsImlhdCI6MTc1ODk0OTAxNSwiZXhwIjo0OTEyNTQ5MDE1fQ.-wZSEtG94lWV4Up3bE7nIFFDLC9f_E0OaZC6vSH5jWs",
+      "questionGroups": [
+        {
+          "groupId": "11-15",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 11,
+                "questionText": "Dartfield House school used to be",
+                "options": [
+                  { "letter": "A", "text": "a tourist information centre." },
+                  { "letter": "B", "text": "a private home." },
+                  { "letter": "C", "text": "a local council building." }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 12,
+                "questionText": "What is planned with regard to the lower school?",
+                "options": [
+                  { "letter": "A", "text": "All buildings on the main site will be improved." },
+                  { "letter": "B", "text": "The lower school site will be used for new homes." },
+                  { "letter": "C", "text": "Additional school buildings will be constructed on the lower school site." }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 13,
+                "questionText": "The catering has been changed because of",
+                "options": [
+                  { "letter": "A", "text": "long queuing times." },
+                  { "letter": "B", "text": "changes to the school timetable." },
+                  { "letter": "C", "text": "dissatisfaction with the menus." }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 14,
+                "questionText": "Parents are asked to",
+                "options": [
+                  { "letter": "A", "text": "help their children to decide in advance which serving point to use." },
+                  { "letter": "B", "text": "make sure their children have enough money for food." },
+                  { "letter": "C", "text": "advise their children on healthy food to eat." }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 15,
+                "questionText": "What does the speaker say about the existing canteen?",
+                "options": [
+                  { "letter": "A", "text": "Food will still be served there." },
+                  { "letter": "B", "text": "Only staff will have access to it." },
+                  { "letter": "C", "text": "Pupils can take their food into it." }
+                ],
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "16-18",
+          "instructions": "What comment does the speaker make about each of the following serving points in the Food Hall?\nChoose THREE answers from the box and write the correct letter, A-D, next to Questions 16-18.\n\nComments\nA - pupils help to plan menus\nB - only vegetarian food\nC - different food every week\nD - daily change in menu",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Comments",
+            "matchingOptions": [
+              { "letter": "A", "text": "pupils help to plan menus" },
+              { "letter": "B", "text": "only vegetarian food" },
+              { "letter": "C", "text": "different food every week" },
+              { "letter": "D", "text": "daily change in menu" }
+            ],
+            "sectionTitle": "Food available at serving points in Food Hall",
+            "items": [
+              {
+                "questionNumber": 16,
+                "text": "World Adventures",
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 17,
+                "text": "Street Life",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 18,
+                "text": "Speedy Italian",
+                "correctAnswer": "B"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "19-20",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO optional after-school lessons are new?",
+            "options": [
+              { "letter": "A", "text": "swimming" },
+              { "letter": "B", "text": "piano" },
+              { "letter": "C", "text": "acting" },
+              { "letter": "D", "text": "cycling" },
+              { "letter": "E", "text": "theatre sound and lighting" }
+            ],
+            "questions": [
+              { "questionNumber": 19, "correctAnswer": "B" },
+              { "questionNumber": 20, "correctAnswer": "C" }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Assignment on Sleep and Dreams",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening16%20t2%20s3.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE2IHQyIHMzLm1wMyIsImlhdCI6MTc1ODk0OTAyNywiZXhwIjo0OTEyNTQ5MDI3fQ.K_L9RMMZXQRF4TEuzZkKefW4tTebRYnFWJ_-UeSwEbg",
+      "questionGroups": [
+        {
+          "groupId": "21-24",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 21,
+                "questionText": "Luke read that one reason why we often forget dreams is that",
+                "options": [
+                  { "letter": "A", "text": "our memories cannot cope with too much information." },
+                  { "letter": "B", "text": "we might otherwise be confused about what is real." },
+                  { "letter": "C", "text": "we do not think they are important." }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 22,
+                "questionText": "What do Luke and Susie agree about dreams predicting the future?",
+                "options": [
+                  { "letter": "A", "text": "It may just be due to chance." },
+                  { "letter": "B", "text": "It only happens with certain types of event." },
+                  { "letter": "C", "text": "It happens more often than some people think." }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 23,
+                "questionText": "Susie says that a study on pre-school children having a short nap in the day",
+                "options": [
+                  { "letter": "A", "text": "had controversial results." },
+                  { "letter": "B", "text": "used faulty research methodology." },
+                  { "letter": "C", "text": "failed to reach any clear conclusions." }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 24,
+                "questionText": "In their last assignment, both students had problems with",
+                "options": [
+                  { "letter": "A", "text": "statistical analysis." },
+                  { "letter": "B", "text": "making an action plan." },
+                  { "letter": "C", "text": "self-assessment." }
+                ],
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "25-30",
+          "instructions": "Complete the flow chart below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Assignment plan",
+            "sections": [
+              {
+                "content": [
+                  {
+                    "text": "Decide on research question:\nIs there a relationship between hours of sleep and number of dreams?",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "\n↓\n\nDecide on sample:\nTwelve students from the ",
+                    "questionNumber": 25,
+                    "inputType": "text",
+                    "correctAnswer": "history",
+                    "suffix": " department"
+                  },
+                  {
+                    "text": "\n↓\n\nDecide on methodology:\nSelf-reporting",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "\n↓\n\nDecide on procedure:\nAnswers on ",
+                    "questionNumber": 26,
+                    "inputType": "text",
+                    "correctAnswer": "paper"
+                  },
+                  {
+                    "text": "\n↓\n\nCheck ethical guidelines for working with ",
+                    "questionNumber": 27,
+                    "inputType": "text",
+                    "correctAnswer": "humans / people"
+                  },
+                  {
+                    "text": "Ensure that risk is assessed and ",
+                    "questionNumber": 28,
+                    "inputType": "text",
+                    "correctAnswer": "stress",
+                    "suffix": " is kept to a minimum"
+                  },
+                  {
+                    "text": "\n↓\n\nAnalyse the results\nCalculate the correlation and make a ",
+                    "questionNumber": 29,
+                    "inputType": "text",
+                    "correctAnswer": "graph"
+                  },
+                  {
+                    "text": "\n↓\n\n",
+                    "questionNumber": 30,
+                    "inputType": "text",
+                    "correctAnswer": "evaluate",
+                    "suffix": " the research"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Health Benefits of Dance",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening16%20t2%20s4.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE2IHQyIHM0Lm1wMyIsImlhdCI6MTc1ODk0OTA0MywiZXhwIjo0OTEyNTQ5MDQzfQ.bej6VvpbH8VCTDnfGyTRpoexluaU6IvtxAZjsVU_Vx8",
+      "questionGroups": [
+        {
+          "groupId": "31-40",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Health benefits of dance",
+            "sections": [
+              {
+                "sectionTitle": "Recent findings:",
+                "content": [
+                  {
+                    "text": "• All forms of dance produce various hormones associated with feelings of happiness.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Dancing with others has a more positive impact than dancing alone.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• An experiment on university students suggested that dance increases ",
+                    "questionNumber": 31,
+                    "inputType": "text",
+                    "correctAnswer": "creativity",
+                    "suffix": ".",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• For those with mental illness, dance could be used as a form of ",
+                    "questionNumber": 32,
+                    "inputType": "text",
+                    "correctAnswer": "therapy",
+                    "suffix": ".",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Benefits of dance for older people:",
+                "content": [
+                  {
+                    "text": "• accessible for people with low levels of ",
+                    "questionNumber": 33,
+                    "inputType": "text",
+                    "correctAnswer": "fitness",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• reduces the risk of heart disease",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• better ",
+                    "questionNumber": 34,
+                    "inputType": "text",
+                    "correctAnswer": "balance",
+                    "suffix": " reduces the risk of accidents",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• improves ",
+                    "questionNumber": 35,
+                    "inputType": "text",
+                    "correctAnswer": "brain",
+                    "suffix": " function by making it work faster",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• improves participants' general well-being",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• gives people more ",
+                    "questionNumber": 36,
+                    "inputType": "text",
+                    "correctAnswer": "motivation",
+                    "suffix": " to take exercise",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• can lessen the feeling of ",
+                    "questionNumber": 37,
+                    "inputType": "text",
+                    "correctAnswer": "isolation",
+                    "suffix": ", very common in older people",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Benefits of Zumba:",
+                "content": [
+                  {
+                    "text": "• A study at The University of Wisconsin showed that doing Zumba for 40 minutes uses up as many ",
+                    "questionNumber": 38,
+                    "inputType": "text",
+                    "correctAnswer": "calories",
+                    "suffix": " as other quite intense forms of exercise.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• The American Journal of Health Behavior study showed that:",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  – women suffering from ",
+                    "questionNumber": 39,
+                    "inputType": "text",
+                    "correctAnswer": "obesity",
+                    "suffix": " benefited from doing Zumba."
+                  },
+                  {
+                    "text": "  – Zumba became a ",
+                    "questionNumber": 40,
+                    "inputType": "text",
+                    "correctAnswer": "habit",
+                    "suffix": " for the participants."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

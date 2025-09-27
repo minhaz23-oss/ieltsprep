@@ -4,24 +4,76 @@ import { db } from '@/firebase/admin';
 import { ListeningTest, ListeningTestResult } from '@/types/listening';
 
 // Create a new listening test
-export async function createListeningTest(testData: Omit<ListeningTest, 'metadata'> & {
-  metadata: Omit<ListeningTest['metadata'], 'createdAt' | 'updatedAt'>
-}) {
+export async function createListeningTest(testData: ListeningTest) {
   try {
     const testRef = db.collection('listening-tests').doc(testData.id);
-    await testRef.set({
+    
+    // Check if test already exists
+    const existingTest = await testRef.get();
+    if (existingTest.exists) {
+      return { success: false, message: 'Test with this ID already exists' };
+    }
+
+    const testWithMetadata: ListeningTest = {
       ...testData,
       metadata: {
         ...testData.metadata,
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString()
       }
-    });
+    };
 
-    return { success: true, message: 'Test created successfully' };
+    await testRef.set(testWithMetadata);
+    return { success: true, message: 'Test created successfully', data: testWithMetadata };
   } catch (error) {
     console.error('Error creating listening test:', error);
     return { success: false, message: 'Failed to create test' };
+  }
+}
+
+// Update a listening test
+export async function updateListeningTest(testId: string, testData: Partial<ListeningTest>) {
+  try {
+    const testRef = db.collection('listening-tests').doc(testId);
+    
+    // Check if test exists
+    const existingTest = await testRef.get();
+    if (!existingTest.exists) {
+      return { success: false, message: 'Test not found' };
+    }
+
+    const updatedData = {
+      ...testData,
+      metadata: {
+        ...testData.metadata,
+        updatedAt: new Date().toISOString(),
+      }
+    };
+
+    await testRef.update(updatedData);
+    return { success: true, message: 'Test updated successfully' };
+  } catch (error) {
+    console.error('Error updating listening test:', error);
+    return { success: false, message: 'Failed to update test' };
+  }
+}
+
+// Delete a listening test
+export async function deleteListeningTest(testId: string) {
+  try {
+    const testRef = db.collection('listening-tests').doc(testId);
+    
+    // Check if test exists
+    const existingTest = await testRef.get();
+    if (!existingTest.exists) {
+      return { success: false, message: 'Test not found' };
+    }
+
+    await testRef.delete();
+    return { success: true, message: 'Test deleted successfully' };
+  } catch (error) {
+    console.error('Error deleting listening test:', error);
+    return { success: false, message: 'Failed to delete test' };
   }
 }
 

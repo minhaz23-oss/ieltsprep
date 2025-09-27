@@ -1,0 +1,643 @@
+{
+  "id": "listening16_t1",
+  "title": "IELTS Listening 16 Practice Test 1",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "tags": [
+      "children-engineering",
+      "company-visit",
+      "art-projects",
+      "stoicism"
+    ],
+    "description": "Full IELTS Listening Practice Test with 4 sections",
+    "createdAt": "2025-09-24T16:36:55.293Z",
+    "updatedAt": "2025-09-27T04:35:30.851Z"
+  },
+  "stats": {
+    "totalAttempts": 0,
+    "averageScore": 0,
+    "averageBandScore": 0
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Children's Engineering Workshops",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening16%20t1%20s1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE2IHQxIHMxLm1wMyIsImlhdCI6MTc1ODczMTcwNSwiZXhwIjo0OTEyMzMxNzA1fQ.8J3tO3bDGI3IQLq75UtYeEXvrfsItIMOnK5ORlCfWNg",
+      "questionGroups": [
+        {
+          "groupId": "1-10",
+          "instructions": "Complete the notes below.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Children's Engineering Workshops",
+            "sections": [
+              {
+                "sectionTitle": "Tiny Engineers (ages 4-5)",
+                "content": [
+                  {
+                    "text": "\nActivities",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "• Create a cover for an ",
+                    "questionNumber": 1,
+                    "inputType": "text",
+                    "correctAnswer": "egg",
+                    "suffix": " so they can drop it from a height without breaking it.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Take part in a competition to build the tallest ",
+                    "questionNumber": 2,
+                    "inputType": "text",
+                    "correctAnswer": "tower",
+                    "suffix": ".",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Make a ",
+                    "questionNumber": 3,
+                    "inputType": "text",
+                    "correctAnswer": "car",
+                    "suffix": " powered by a balloon.",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Junior Engineers (ages 6-8)",
+                "content": [
+                  {
+                    "text": "\nActivities:",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "• Build model cars, trucks and ",
+                    "questionNumber": 4,
+                    "inputType": "text",
+                    "correctAnswer": "animals",
+                    "suffix": " and learn how to program them so they can move.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Take part in a competition to build the longest ",
+                    "questionNumber": 5,
+                    "inputType": "text",
+                    "correctAnswer": "bridge",
+                    "suffix": " using card and wood.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Create a short ",
+                    "questionNumber": 6,
+                    "inputType": "text",
+                    "correctAnswer": "movie / film",
+                    "suffix": " with special software.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Build, ",
+                    "questionNumber": 7,
+                    "inputType": "text",
+                    "correctAnswer": "decorate",
+                    "suffix": " and program a humanoid robot.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "\nCost for a five-week block: £50",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "Held on ",
+                    "questionNumber": 8,
+                    "inputType": "text",
+                    "correctAnswer": "Wednesdays",
+                    "suffix": " from 10 am to 11 am"
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Location",
+                "content": [
+                  {
+                    "text": "Building 10A, ",
+                    "questionNumber": 9,
+                    "inputType": "text",
+                    "correctAnswer": "Fradstone",
+                    "suffix": " Industrial Estate, Grasford"
+                  },
+                  {
+                    "text": "Plenty of ",
+                    "questionNumber": 10,
+                    "inputType": "text",
+                    "correctAnswer": "parking",
+                    "suffix": " is available."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Stevenson's Company Visit",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening16%20t1%20s2.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE2IHQxIHMyLm1wMyIsImlhdCI6MTc1ODczMTcyMCwiZXhwIjo0OTEyMzMxNzIwfQ.S9QM679UceXo8Kwp09poyvEM2sq1b4GV-FJrl2GfIJU",
+      "questionGroups": [
+        {
+          "groupId": "11-14",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 11,
+                "questionText": "Stevenson's was founded in",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "1923."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "1924."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "1926."
+                  }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 12,
+                "questionText": "Originally, Stevenson's manufactured goods for",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "the healthcare industry."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "the automotive industry."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "the machine tools industry."
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 13,
+                "questionText": "What does the speaker say about the company premises?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "The company has recently moved."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "The company has no plans to move."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "The company is going to move shortly."
+                  }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 14,
+                "questionText": "The programme for the work experience group includes",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "time to do research."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "meetings with a teacher."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "talks by staff."
+                  }
+                ],
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "15-20",
+          "instructions": "Label the map below.\nWrite the correct letter, A-J, next to Questions 15-20.",
+          "displayType": "matching",
+          "imageUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningImage/Cam-16-Listening-Test-1-961x1024.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0ltYWdlL0NhbS0xNi1MaXN0ZW5pbmctVGVzdC0xLTk2MXgxMDI0LmpwZyIsImlhdCI6MTc1ODk1MTc2OCwiZXhwIjo0OTEyNTUxNzY4fQ.LFdP8XS5L4l7oGs3gC4Aw_hybmakEP9ox8n7IJVPZMY",
+          "content": {
+            "type": "matching",
+            "title": "Plan of Stevenson's site",
+            "matchingOptions": [
+              {
+                "letter": "A",
+                "text": "Location A"
+              },
+              {
+                "letter": "B",
+                "text": "Location B"
+              },
+              {
+                "letter": "C",
+                "text": "Location C"
+              },
+              {
+                "letter": "D",
+                "text": "Location D"
+              },
+              {
+                "letter": "E",
+                "text": "Location E"
+              },
+              {
+                "letter": "F",
+                "text": "Location F"
+              },
+              {
+                "letter": "G",
+                "text": "Location G"
+              },
+              {
+                "letter": "H",
+                "text": "Location H"
+              },
+              {
+                "letter": "I",
+                "text": "Location I"
+              },
+              {
+                "letter": "J",
+                "text": "Location J"
+              }
+            ],
+            "items": [
+              {
+                "questionNumber": 15,
+                "text": "coffee room",
+                "correctAnswer": "H"
+              },
+              {
+                "questionNumber": 16,
+                "text": "warehouse",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 17,
+                "text": "staff canteen",
+                "correctAnswer": "G"
+              },
+              {
+                "questionNumber": 18,
+                "text": "meeting room",
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 19,
+                "text": "human resources",
+                "correctAnswer": "I"
+              },
+              {
+                "questionNumber": 20,
+                "text": "boardroom",
+                "correctAnswer": "A"
+              }
+            ]
+          }
+          
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Art Projects Discussion",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening16%20t1%20s3.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE2IHQxIHMzLm1wMyIsImlhdCI6MTc1ODczMTczMywiZXhwIjo0OTEyMzMxNzMzfQ.qpshtzCG4J3zshjZLnATTPrXnDx-_q7PqS6cV8aq4Zk",
+      "questionGroups": [
+        {
+          "groupId": "21-22",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO parts of the introductory stage to their art projects do Jess and Tom agree were useful?",
+            "options": [
+              {
+                "letter": "A",
+                "text": "the Bird Park visit"
+              },
+              {
+                "letter": "B",
+                "text": "the workshop sessions"
+              },
+              {
+                "letter": "C",
+                "text": "the Natural History Museum visit"
+              },
+              {
+                "letter": "D",
+                "text": "the projects done in previous years"
+              },
+              {
+                "letter": "E",
+                "text": "the handouts with research sources"
+              }
+            ],
+            "questions": [
+              {
+                "questionNumber": 21,
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 22,
+                "correctAnswer": "E"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "23-24",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "In which TWO ways do both Jess and Tom decide to change their proposals?",
+            "options": [
+              {
+                "letter": "A",
+                "text": "by giving a rationale for their action plans"
+              },
+              {
+                "letter": "B",
+                "text": "by being less specific about the outcome"
+              },
+              {
+                "letter": "C",
+                "text": "by adding a video diary presentation"
+              },
+              {
+                "letter": "D",
+                "text": "by providing a timeline and a mind map"
+              },
+              {
+                "letter": "E",
+                "text": "by making their notes more evaluative"
+              }
+            ],
+            "questions": [
+              {
+                "questionNumber": 23,
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 24,
+                "correctAnswer": "E"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "25-30",
+          "instructions": "Which personal meaning do the students decide to give to each of the following pictures?\nChoose SIX answers from the box and write the correct letter, A-H, next to Questions 25-30.",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Personal meanings",
+            "matchingOptions": [
+              {
+                "letter": "A",
+                "text": "a childhood memory"
+              },
+              {
+                "letter": "B",
+                "text": "hope for the future"
+              },
+              {
+                "letter": "C",
+                "text": "fast movement"
+              },
+              {
+                "letter": "D",
+                "text": "a potential threat"
+              },
+              {
+                "letter": "E",
+                "text": "the power of colour"
+              },
+              {
+                "letter": "F",
+                "text": "the continuity of life"
+              },
+              {
+                "letter": "G",
+                "text": "protection of nature"
+              },
+              {
+                "letter": "H",
+                "text": "a confused attitude to nature"
+              }
+            ],
+            "sectionTitle": "Pictures",
+            "items": [
+              {
+                "questionNumber": 25,
+                "text": "Falcon (Landseer)",
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 26,
+                "text": "Fish hawk (Audubon)",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 27,
+                "text": "Kingfisher (van Gogh)",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 28,
+                "text": "Portrait of William Wells",
+                "correctAnswer": "H"
+              },
+              {
+                "questionNumber": 29,
+                "text": "Vairumati (Gauguin)",
+                "correctAnswer": "F"
+              },
+              {
+                "questionNumber": 30,
+                "text": "Portrait of Giovanni de Medici",
+                "correctAnswer": "G"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Stoicism",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening16%20t1%20s4.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE2IHQxIHM0Lm1wMyIsImlhdCI6MTc1ODczMTc0NiwiZXhwIjo0OTEyMzMxNzQ2fQ.86oR60wpJn6nqhQL_7ZbL9mS-ec6SFtwJvIE2I6M0eY",
+      "questionGroups": [
+        {
+          "groupId": "31-40",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Stoicism",
+            "sections": [
+              {
+                "content": [
+                  {
+                    "text": "Stoicism is still relevant today because of its ",
+                    "questionNumber": 31,
+                    "inputType": "text",
+                    "correctAnswer": "practical",
+                    "suffix": " appeal."
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Ancient Stoics",
+                "content": [
+                  {
+                    "text": "• Stoicism was founded over 2,000 years ago in Greece.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• The Stoics' ideas are surprisingly well known, despite not being intended for ",
+                    "questionNumber": 32,
+                    "inputType": "text",
+                    "correctAnswer": "publication",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Stoic principles",
+                "content": [
+                  {
+                    "text": "• Happiness could be achieved by leading a virtuous life.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Controlling emotions was essential.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Epictetus said that external events cannot be controlled but the ",
+                    "questionNumber": 33,
+                    "inputType": "text",
+                    "correctAnswer": "choices",
+                    "suffix": " people make in response can be controlled.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• A Stoic is someone who has a different view on experiences which others would consider as ",
+                    "questionNumber": 34,
+                    "inputType": "text",
+                    "correctAnswer": "negative",
+                    "suffix": ".",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "The influence of Stoicism",
+                "content": [
+                  {
+                    "text": "• George Washington organised a ",
+                    "questionNumber": 35,
+                    "inputType": "text",
+                    "correctAnswer": "play",
+                    "suffix": " about Cato to motivate his men.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• The French artist Delacroix was a Stoic.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Adam Smith's ideas on ",
+                    "questionNumber": 36,
+                    "inputType": "text",
+                    "correctAnswer": "capitalism",
+                    "suffix": " were influenced by Stoicism.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Some of today's political leaders are inspired by the Stoics.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Cognitive Behaviour Therapy (CBT)",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  – the treatment for ",
+                    "questionNumber": 37,
+                    "inputType": "text",
+                    "correctAnswer": "depression",
+                    "suffix": " is based on ideas from Stoicism"
+                  },
+                  {
+                    "text": "  – people learn to base their thinking on ",
+                    "questionNumber": 38,
+                    "inputType": "text",
+                    "correctAnswer": "logic",
+                    "suffix": "."
+                  },
+                  {
+                    "text": "• In business, people benefit from Stoicism by identifying obstacles as ",
+                    "questionNumber": 39,
+                    "inputType": "text",
+                    "correctAnswer": "opportunity",
+                    "suffix": ".",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Relevance of Stoicism",
+                "content": [
+                  {
+                    "text": "• It requires a lot of ",
+                    "questionNumber": 40,
+                    "inputType": "text",
+                    "correctAnswer": "practice / practise",
+                    "suffix": " but Stoicism can help people to lead a good life.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• It teaches people that having a strong character is more important than anything else.",
+                    "isStatic": true,
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

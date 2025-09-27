@@ -1,0 +1,521 @@
+{
+  "id": "listening16_t3",
+  "title": "IELTS Listening 16 Practice Test 3",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "tags": ["junior-cycle-camp", "agriculture-horticulture", "food-nutrition-research", "hand-knitting"],
+    "description": "Full IELTS Listening Practice Test with 4 sections"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Junior Cycle Camp",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening16%20t3%20s1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE2IHQzIHMxLm1wMyIsImlhdCI6MTc1ODk1MDQxOSwiZXhwIjo0OTEyNTUwNDE5fQ.LyfkzrZMrv1sIO5tKr9arhtyXCXiGpXrNlU_5L946bY",
+      "questionGroups": [
+        {
+          "groupId": "1-10",
+          "instructions": "Complete the notes below.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "JUNIOR CYCLE CAMP",
+            "sections": [
+              {
+                "content": [
+                  {
+                    "text": "The course focuses on skills and safety",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "• Charlie would be placed in Level 5.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• First of all, children at this level are taken to practise in a ",
+                    "questionNumber": 1,
+                    "inputType": "text",
+                    "correctAnswer": "park",
+                    "suffix": ".",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Instructors",
+                "content": [
+                  {
+                    "text": "• Instructors wear ",
+                    "questionNumber": 2,
+                    "inputType": "text",
+                    "correctAnswer": "blue",
+                    "suffix": " shirts.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• A ",
+                    "questionNumber": 3,
+                    "inputType": "text",
+                    "correctAnswer": "reference",
+                    "suffix": " is required and training is given.",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Classes",
+                "content": [
+                  {
+                    "text": "• The size of the classes is limited.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• There are quiet times during the morning for a ",
+                    "questionNumber": 4,
+                    "inputType": "text",
+                    "correctAnswer": "story",
+                    "suffix": " or a game.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Classes are held even if there is ",
+                    "questionNumber": 5,
+                    "inputType": "text",
+                    "correctAnswer": "rain",
+                    "suffix": ".",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "What to bring",
+                "content": [
+                  {
+                    "text": "• a change of clothing",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• a ",
+                    "questionNumber": 6,
+                    "inputType": "text",
+                    "correctAnswer": "snack",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• shoes (not sandals)",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Charlie's ",
+                    "questionNumber": 7,
+                    "inputType": "text",
+                    "correctAnswer": "medication",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Day 1",
+                "content": [
+                  {
+                    "text": "• Charlie should arrive at 9.20 am on the first day.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Before the class, his ",
+                    "questionNumber": 8,
+                    "inputType": "text",
+                    "correctAnswer": "helmet",
+                    "suffix": " will be checked.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• He should then go to the ",
+                    "questionNumber": 9,
+                    "inputType": "text",
+                    "correctAnswer": "tent",
+                    "suffix": " to meet his class instructor.",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Cost",
+                "content": [
+                  {
+                    "text": "• The course costs $",
+                    "questionNumber": 10,
+                    "inputType": "text",
+                    "correctAnswer": "199",
+                    "suffix": " per week.",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Agriculture and Horticulture Careers",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening16%20t3%20s2.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE2IHQzIHMyLm1wMyIsImlhdCI6MTc1ODk1MDQzMSwiZXhwIjo0OTEyNTUwNDMxfQ.elLDpPiZyUIrlIkGSHuTivu0V8hwoY9bBIChmY80uwc",
+      "questionGroups": [
+        {
+          "groupId": "11-12",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "According to Megan, what are the TWO main advantages of working in the agriculture and horticulture sectors?",
+            "options": [
+              { "letter": "A", "text": "the active lifestyle" },
+              { "letter": "B", "text": "the above-average salaries" },
+              { "letter": "C", "text": "the flexible working opportunities" },
+              { "letter": "D", "text": "the opportunities for overseas travel" },
+              { "letter": "E", "text": "the chance to be in a natural environment" }
+            ],
+            "questions": [
+              { "questionNumber": 11, "correctAnswer": "A" },
+              { "questionNumber": 12, "correctAnswer": "C" }
+            ]
+          }
+        },
+        {
+          "groupId": "13-14",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO of the following are likely to be disadvantages for people working outdoors?",
+            "options": [
+              { "letter": "A", "text": "the increasing risk of accidents" },
+              { "letter": "B", "text": "being in a very quiet location" },
+              { "letter": "C", "text": "difficult weather conditions at times" },
+              { "letter": "D", "text": "the cost of housing" },
+              { "letter": "E", "text": "the level of physical fitness required" }
+            ],
+            "questions": [
+              { "questionNumber": 13, "correctAnswer": "B" },
+              { "questionNumber": 14, "correctAnswer": "C" }
+            ]
+          }
+        },
+        {
+          "groupId": "15-20",
+          "instructions": "What information does Megan give about each of the following job opportunities?\nChoose SIX answers from the box and write the correct letter, A-H, next to Questions 15-20.",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Information",
+            "matchingOptions": [
+              { "letter": "A", "text": "not a permanent job" },
+              { "letter": "B", "text": "involves leading a team" },
+              { "letter": "C", "text": "experience not essential" },
+              { "letter": "D", "text": "intensive work but also fun" },
+              { "letter": "E", "text": "chance to earn more through overtime" },
+              { "letter": "F", "text": "chance for rapid promotion" },
+              { "letter": "G", "text": "accommodation available" },
+              { "letter": "H", "text": "local travel involved" }
+            ],
+            "sectionTitle": "Job opportunities",
+            "items": [
+              {
+                "questionNumber": 15,
+                "text": "Fresh food commercial manager",
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 16,
+                "text": "Agronomist",
+                "correctAnswer": "F"
+              },
+              {
+                "questionNumber": 17,
+                "text": "Fresh produce buyer",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 18,
+                "text": "Garden centre sales manager",
+                "correctAnswer": "H"
+              },
+              {
+                "questionNumber": 19,
+                "text": "Tree technician",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 20,
+                "text": "Farm worker",
+                "correctAnswer": "G"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Food and Nutrition Research Discussion",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening16%20t3%20s3.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE2IHQzIHMzLm1wMyIsImlhdCI6MTc1ODk1MDQ0NiwiZXhwIjo0OTEyNTUwNDQ2fQ.tcIzPE00Ebttgvt1ACSDlTnXqJCY5UujQmgoHrtQ7Mk",
+      "questionGroups": [
+        {
+          "groupId": "21-22",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO points does Adam make about his experiment on artificial sweeteners?",
+            "options": [
+              { "letter": "A", "text": "The results were what he had predicted." },
+              { "letter": "B", "text": "The experiment was simple to set up" },
+              { "letter": "C", "text": "A large sample of people was tested." },
+              { "letter": "D", "text": "The subjects were unaware of what they were drinking." },
+              { "letter": "E", "text": "The test was repeated several times for each person." }
+            ],
+            "questions": [
+              { "questionNumber": 21, "correctAnswer": "C" },
+              { "questionNumber": 22, "correctAnswer": "D" }
+            ]
+          }
+        },
+        {
+          "groupId": "23-24",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO problems did Rosie have when measuring the fat content of nuts?",
+            "options": [
+              { "letter": "A", "text": "She used the wrong sort of nuts." },
+              { "letter": "B", "text": "She used an unsuitable chemical." },
+              { "letter": "C", "text": "She did not grind the nuts finely enough." },
+              { "letter": "D", "text": "The information on the nut package was incorrect." },
+              { "letter": "E", "text": "The weighing scales may have been unsuitable." }
+            ],
+            "questions": [
+              { "questionNumber": 23, "correctAnswer": "C" },
+              { "questionNumber": 24, "correctAnswer": "E" }
+            ]
+          }
+        },
+        {
+          "groupId": "25-30",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 25,
+                "questionText": "Adam suggests that restaurants could reduce obesity if their menus",
+                "options": [
+                  { "letter": "A", "text": "offered fewer options." },
+                  { "letter": "B", "text": "had more low-calorie foods." },
+                  { "letter": "C", "text": "were organised in a particular way." }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 26,
+                "questionText": "The students agree that food manufacturers deliberately",
+                "options": [
+                  { "letter": "A", "text": "make calorie counts hard to understand." },
+                  { "letter": "B", "text": "fail to provide accurate calorie counts." },
+                  { "letter": "C", "text": "use ineffective methods to reduce calories." }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 27,
+                "questionText": "What does Rosie say about levels of exercise in England?",
+                "options": [
+                  { "letter": "A", "text": "The amount recommended is much too low." },
+                  { "letter": "B", "text": "Most people overestimate how much they do." },
+                  { "letter": "C", "text": "Women now exercise more than they used to." }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 28,
+                "questionText": "Adam refers to the location and width of stairs in a train station to illustrate",
+                "options": [
+                  { "letter": "A", "text": "practical changes that can influence people's behaviour." },
+                  { "letter": "B", "text": "methods of helping people who have mobility problems." },
+                  { "letter": "C", "text": "ways of preventing accidents by controlling crowd movement." }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 29,
+                "questionText": "What do the students agree about including reference to exercise in their presentation?",
+                "options": [
+                  { "letter": "A", "text": "They should probably leave it out." },
+                  { "letter": "B", "text": "They need to do more research on it." },
+                  { "letter": "C", "text": "They should discuss this with their tutor." }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 30,
+                "questionText": "What are the students going to do next for their presentation?",
+                "options": [
+                  { "letter": "A", "text": "prepare some slides for it" },
+                  { "letter": "B", "text": "find out how long they have for it" },
+                  { "letter": "C", "text": "decide on its content and organisation" }
+                ],
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Hand Knitting",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening16%20t3%20s4.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE2IHQzIHM0Lm1wMyIsImlhdCI6MTc1ODk1MDQ2MSwiZXhwIjo0OTEyNTUwNDYxfQ.kr3V9qnqi_ZG-fcXz_5bUplNMgO7UCa2V897qha26i4",
+      "questionGroups": [
+        {
+          "groupId": "31-40",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Hand knitting",
+            "sections": [
+              {
+                "sectionTitle": "Interest in knitting",
+                "content": [
+                  {
+                    "text": "• Knitting has a long history around the world.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• We imagine someone like a ",
+                    "questionNumber": 31,
+                    "inputType": "text",
+                    "correctAnswer": "grandmother",
+                    "suffix": " knitting.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• A ",
+                    "questionNumber": 32,
+                    "inputType": "text",
+                    "correctAnswer": "decade",
+                    "suffix": " ago, knitting was expected to disappear.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• The number of knitting classes is now increasing.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• People are buying more ",
+                    "questionNumber": 33,
+                    "inputType": "text",
+                    "correctAnswer": "equipment",
+                    "suffix": " for knitting nowadays.",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Benefits of knitting",
+                "content": [
+                  {
+                    "text": "• gives support in times of ",
+                    "questionNumber": 34,
+                    "inputType": "text",
+                    "correctAnswer": "economic",
+                    "suffix": " difficulty",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• requires only ",
+                    "questionNumber": 35,
+                    "inputType": "text",
+                    "correctAnswer": "basic",
+                    "suffix": " skills and little money to start",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• reduces stress in a busy life",
+                    "isStatic": true,
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Early knitting",
+                "content": [
+                  {
+                    "text": "• The origins are not known.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Findings show early knitted items to be ",
+                    "questionNumber": 36,
+                    "inputType": "text",
+                    "correctAnswer": "round",
+                    "suffix": " in shape.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• The first needles were made of natural materials such as wood and ",
+                    "questionNumber": 37,
+                    "inputType": "text",
+                    "correctAnswer": "bone",
+                    "suffix": ".",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Early yarns felt ",
+                    "questionNumber": 38,
+                    "inputType": "text",
+                    "correctAnswer": "rough",
+                    "suffix": " to touch.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Wool became the most popular yarn for spinning.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Geographical areas had their own ",
+                    "questionNumber": 39,
+                    "inputType": "text",
+                    "correctAnswer": "style",
+                    "suffix": " of knitting.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Everyday tasks like looking after ",
+                    "questionNumber": 40,
+                    "inputType": "text",
+                    "correctAnswer": "sheep",
+                    "suffix": " were done while knitting.",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

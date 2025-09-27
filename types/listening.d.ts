@@ -1,33 +1,63 @@
-// Enhanced types for dynamic IELTS listening tests
+// Enhanced types for dynamic IELTS listening tests based on actual JSON structure
+export interface QuestionGroup {
+  groupId: string;
+  instructions: string;
+  displayType: 'form' | 'single-choice' | 'multiple-answer' | 'matching' | 'notes';
+  imageUrl?: string;
+  customFields?: Record<string, string | number | boolean>;
+  content: {
+    type: string;
+    title?: string;
+    questionText?: string;
+    options?: Array<{ letter: string; text: string }>;
+    questions?: Array<{ questionNumber: number; correctAnswer: string }>;
+    matchingOptions?: Array<{ letter: string; text: string }>;
+    items?: Array<{ questionNumber: number; text: string; correctAnswer: string }>;
+    sectionTitle?: string;
+    fields?: Array<{
+      label?: string;
+      value?: string;
+      suffix?: string;
+      isStatic?: boolean;
+      isExample?: boolean;
+      isSection?: boolean;
+      sectionTitle?: string;
+      questionNumber?: number;
+      inputType?: string;
+      correctAnswer?: string;
+      inputPlaceholder?: string;
+      isList?: boolean;
+      listItems?: Array<{
+        prefix?: string;
+        questionNumber?: number;
+        inputType?: string;
+        correctAnswer?: string;
+        suffix?: string;
+        value?: string;
+        isStatic?: boolean;
+      }>;
+    }>;
+    sections?: Array<{
+      sectionTitle?: string;
+      content: Array<{
+        text?: string;
+        questionNumber?: number;
+        inputType?: string;
+        correctAnswer?: string;
+        suffix?: string;
+        isStatic?: boolean;
+        isBullet?: boolean;
+      }>;
+    }>;
+  };
+}
+
 export interface ListeningSection {
   id: number;
   title: string;
-  description?: string;
-  instructions: string;
-  audioUrl: string; // Supabase URL
-  audioStartTime?: number; // For section-specific audio timing
-  audioEndTime?: number;
-  questions: ListeningQuestion[];
-}
-
-export interface ListeningQuestion {
-  id: number;
-  sectionId: number;
-  questionNumber: number; // Global question number (1-40)
-  type: 'multiple-choice' | 'fill-blank' | 'true-false' | 'matching' | 'short-answer' | 'diagram-labeling' | 'form-completion' | 'note-completion' | 'table-completion' | 'sentence-completion' | 'summary-completion';
-  question: string;
-  instructions?: string;
-  options?: string[];
-  correctAnswer: string | number | string[];
-  acceptableAnswers?: string[]; // For fill-blank questions with multiple acceptable answers
-  caseSensitive?: boolean;
-  wordLimit?: number; // For short answer questions
-  context?: {
-    formTitle?: string;
-    tableHeaders?: string[];
-    diagramUrl?: string;
-    noteStructure?: any;
-  };
+  audioUrl: string;
+  questionGroups: QuestionGroup[];
+  customFields?: Record<string, string | number | boolean>;
 }
 
 export interface ListeningTest {
@@ -36,71 +66,43 @@ export interface ListeningTest {
   difficulty: 'easy' | 'medium' | 'hard';
   totalQuestions: number;
   timeLimit: number; // in minutes
-  sections: ListeningSection[];
   metadata: {
-    createdAt: string;
-    updatedAt: string;
     tags: string[];
     description: string;
+    createdAt?: string;
+    updatedAt?: string;
   };
+  sections: ListeningSection[];
 }
 
 export interface ListeningTestResult {
   id: string;
   testId: string;
   userId: string;
-  answers: Record<number, string | number | string[]>;
+  answers: Record<string | number, string | string[]>;
   score: {
     correct: number;
     total: number;
     percentage: number;
-    sectionScores: Array<{
-      sectionId: number;
-      correct: number;
-      total: number;
-    }>;
   };
   bandScore: number;
   timeSpent: number;
   completedAt: string;
-  sectionResults: Array<{
-    sectionId: number;
-    timeSpent: number;
-    completed: boolean;
-  }>;
+  title: string;
+  difficulty: string;
+  totalQuestions: number;
 }
 
-// Question type specific interfaces
-export interface FormCompletionContext {
-  formTitle: string;
-  fields: Array<{
-    label: string;
-    questionId: number;
-    type: 'text' | 'number' | 'date';
-  }>;
+// Admin panel types
+export interface AdminListeningTest extends ListeningTest {
+  stats?: {
+    totalAttempts: number;
+    averageScore: number;
+    averageBandScore: number;
+  };
 }
 
-export interface TableCompletionContext {
-  headers: string[];
-  rows: Array<{
-    cells: Array<{
-      content: string | null; // null means this is a question cell
-      questionId?: number;
-    }>;
-  }>;
-}
-
-export interface DiagramLabelingContext {
-  diagramUrl: string;
-  labels: Array<{
-    questionId: number;
-    x: number; // percentage position
-    y: number; // percentage position
-  }>;
-}
-
-export interface MatchingContext {
-  leftColumn: string[];
-  rightColumn: string[];
-  instructions: string;
+export interface ListeningTestUpload {
+  file: File;
+  testData?: Partial<ListeningTest>;
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import { ListeningTest, ListeningSection, QuestionGroup } from '@/types/listening';
 
 // Types matching the actual data structure from the listening test
 interface FormField {
@@ -9,7 +10,7 @@ interface FormField {
   prefix?: string;
   suffix?: string;
   questionNumber?: number;
-  inputType?: 'text' | 'select' | 'multiselect';
+  inputType?: string;
   correctAnswer?: string | string[];
   inputPlaceholder?: string;
   isStatic?: boolean;
@@ -18,10 +19,12 @@ interface FormField {
   sectionTitle?: string;
   isList?: boolean;
   listItems?: FormField[];
+  isBullet?: boolean;
+  text?: string;
 }
 
 interface QuestionGroupContent {
-  type: 'form' | 'multiple-choice' | 'multiple-choice-individual' | 'matching' | 'note-completion';
+  type: string;
   title?: string;
   questionText?: string;
   options?: Array<{ letter: string; text: string }>;
@@ -55,22 +58,6 @@ interface QuestionGroupContent {
   }>;
 }
 
-interface QuestionGroup {
-  groupId: string;
-  instructions: string;
-  displayType: 'form' | 'multiple-answer' | 'single-choice' | 'matching' | 'notes';
-  imageUrl?: string;
-  content: QuestionGroupContent;
-}
-
-interface Section {
-  id: number;
-  title: string;
-  audioUrl: string;
-  imageUrl?: string;
-  questionGroups: QuestionGroup[];
-}
-
 interface TestData {
   id: string;
   title: string;
@@ -80,8 +67,10 @@ interface TestData {
   metadata: {
     tags: string[];
     description: string;
+    createdAt?: string;
+    updatedAt?: string;
   };
-  sections: Section[];
+  sections: ListeningSection[];
 }
 
 interface AnswerAnalysis {
@@ -192,7 +181,7 @@ const PremiumResultsAnalysis: React.FC<PremiumResultsAnalysisProps> = ({
               userAnswer,
               q.correctAnswer,
               group.displayType,
-              q.questionText || q.text
+              `Question ${q.questionNumber}`
             );
             
             analyses.push({
@@ -200,7 +189,7 @@ const PremiumResultsAnalysis: React.FC<PremiumResultsAnalysisProps> = ({
               userAnswer: userAnswer || '',
               correctAnswer: q.correctAnswer,
               isCorrect,
-              questionText: q.questionText || q.text,
+              questionText: `Question ${q.questionNumber}`,
               questionType: group.displayType,
               explanation,
               grammarPoint

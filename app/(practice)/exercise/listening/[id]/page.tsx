@@ -5,22 +5,22 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import PremiumResultsAnalysis from '@/components/listening/PremiumResultsAnalysis';
 import { getPremiumStatus } from '@/lib/utils/premium';
+import { ListeningTest, ListeningSection, QuestionGroup } from '@/types/listening';
 
 // ==================== INTERFACES ====================
-interface Question {
-  questionNumber: number;
-  inputType: 'text' | 'select' | 'multiselect';
-  correctAnswer: string | string[];
-  inputPlaceholder?: string;
-}
 
+// Use the proper types from types/listening.d.ts
+type TestData = ListeningTest;
+type Section = ListeningSection;
+
+// Local interfaces for form fields (matching the actual data structure)
 interface FormField {
   label?: string;
   value?: string;
   prefix?: string;
   suffix?: string;
   questionNumber?: number;
-  inputType?: 'text' | 'select' | 'multiselect';
+  inputType?: string;
   correctAnswer?: string | string[];
   inputPlaceholder?: string;
   isStatic?: boolean;
@@ -29,70 +29,8 @@ interface FormField {
   sectionTitle?: string;
   isList?: boolean;
   listItems?: FormField[];
-}
-
-interface QuestionGroupContent {
-  type: 'form' | 'multiple-choice' | 'multiple-choice-individual' | 'matching' | 'note-completion';
-  title?: string;
-  questionText?: string;
-  options?: Array<{ letter: string; text: string }>;
-  questions?: Array<{
-    questionNumber: number;
-    questionText?: string;
-    text?: string;
-    correctAnswer: string | string[];
-    options?: Array<{ letter: string; text: string }>;
-  }>;
-  matchingOptions?: Array<{ letter: string; text: string }>;
-  sectionTitle?: string;
-  items?: Array<{
-    questionNumber: number;
-    text: string;
-    correctAnswer: string;
-  }>;
-  fields?: FormField[];
-  sections?: Array<{
-    sectionTitle: string;
-    content: Array<{
-      text?: string;
-      questionNumber?: number;
-      inputType?: string;
-      correctAnswer?: string;
-      prefix?: string;
-      suffix?: string;
-      isStatic?: boolean;
-      isBullet?: boolean;
-    }>;
-  }>;
-}
-
-interface QuestionGroup {
-  groupId: string;
-  instructions: string;
-  displayType: 'form' | 'multiple-answer' | 'single-choice' | 'matching' | 'notes';
-  imageUrl?: string;
-  content: QuestionGroupContent;
-}
-
-interface Section {
-  id: number;
-  title: string;
-  audioUrl: string;
-  imageUrl?: string;
-  questionGroups: QuestionGroup[];
-}
-
-interface TestData {
-  id: string;
-  title: string;
-  difficulty: string;
-  totalQuestions: number;
-  timeLimit: number;
-  metadata: {
-    tags: string[];
-    description: string;
-  };
-  sections: Section[];
+  isBullet?: boolean;
+  text?: string;
 }
 
 // ==================== MAIN COMPONENT ====================
@@ -118,25 +56,43 @@ const IELTSListeningTest = () => {
     const loadTestData = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`/listeningTests/${testId}.json`);
-        
-        if (!response.ok) {
-          throw new Error(`Failed to load test: ${testId}`);
+        setError(null);
+
+        // Use server action instead of API route
+        const { getListeningTest } = await import('@/lib/actions/listening-tests.actions');
+        const result = await getListeningTest(testId);
+
+        if (!result.success) {
+          throw new Error(result.message || 'Failed to load test data');
         }
-        
-        const data: TestData = await response.json();
+
+        if (!result.data) {
+          throw new Error('No test data received');
+        }
+
+        const data: TestData = result.data as TestData;
+
+        // Validate test data structure
+        if (!data.sections || !Array.isArray(data.sections) || data.sections.length === 0) {
+          throw new Error('Invalid test data: missing or empty sections');
+        }
+
         setTestData(data);
         setTimeRemaining((data.timeLimit || 40) * 60);
-        
+
         // Initialize audio states
         const initialAudioStates: Record<number, 'loading' | 'ready' | 'error'> = {};
         data.sections.forEach(section => {
-          initialAudioStates[section.id] = 'loading';
+          if (section.id && section.audioUrl) {
+            initialAudioStates[section.id] = 'loading';
+          }
         });
         setAudioStates(initialAudioStates);
-        
+
       } catch (err) {
+        console.error('Error loading test data:', err);
         setError(err instanceof Error ? err.message : 'Failed to load test');
+        setTestData(null);
       } finally {
         setLoading(false);
       }
@@ -193,78 +149,109 @@ const IELTSListeningTest = () => {
 
   const calculateScore = () => {
     if (!testData) return { correct: 0, total: 0, percentage: 0 };
-    
+
     let correct = 0;
     let total = 0;
-    
-    testData.sections.forEach(section => {
-      section.questionGroups.forEach(group => {
-        if (group.content.questions) {
-          group.content.questions.forEach(q => {
-            total++;
-            const userAnswer = answers[q.questionNumber];
-            const correctAnswer = q.correctAnswer;
-            
-            if (Array.isArray(correctAnswer) && Array.isArray(userAnswer)) {
-              const userSet = new Set(userAnswer.map(a => a.toUpperCase()));
-              const correctSet = new Set(correctAnswer.map(a => a.toUpperCase()));
-              if (userSet.size === correctSet.size && [...correctSet].every(a => userSet.has(a))) {
-                correct++;
-              }
-            } else if (typeof userAnswer === 'string' && typeof correctAnswer === 'string') {
-              if (userAnswer.toLowerCase().trim() === correctAnswer.toLowerCase().trim()) {
-                correct++;
-              }
-            }
-          });
+
+    try {
+      testData.sections.forEach(section => {
+        if (!section.questionGroups || !Array.isArray(section.questionGroups)) {
+          console.warn('Invalid section structure:', section);
+          return;
         }
-        
-        if (group.content.items) {
-          group.content.items.forEach(item => {
-            total++;
-            const userAnswer = answers[item.questionNumber];
-            if (typeof userAnswer === 'string' && userAnswer.toUpperCase().trim() === item.correctAnswer.toUpperCase().trim()) {
-              correct++;
-            }
-          });
-        }
-        
-        if (group.content.fields) {
-          const countQuestions = (fields: FormField[]) => {
-            fields.forEach(field => {
-              if (field.questionNumber) {
-                total++;
-                const userAnswer = answers[field.questionNumber];
-                if (typeof userAnswer === 'string' && typeof field.correctAnswer === 'string' &&
-                    userAnswer.toLowerCase().trim() === field.correctAnswer.toLowerCase().trim()) {
+
+        section.questionGroups.forEach(group => {
+          if (!group.content) {
+            console.warn('Invalid group structure:', group);
+            return;
+          }
+
+          // Handle questions array
+          if (group.content.questions && Array.isArray(group.content.questions)) {
+            group.content.questions.forEach(q => {
+              if (!q.questionNumber || !q.correctAnswer) {
+                console.warn('Invalid question structure:', q);
+                return;
+              }
+
+              total++;
+              const userAnswer = answers[q.questionNumber];
+              const correctAnswer = q.correctAnswer;
+
+              if (Array.isArray(correctAnswer) && Array.isArray(userAnswer)) {
+                const userSet = new Set(userAnswer.map(a => a.toUpperCase()));
+                const correctSet = new Set(correctAnswer.map(a => a.toUpperCase()));
+                if (userSet.size === correctSet.size && [...correctSet].every(a => userSet.has(a))) {
                   correct++;
                 }
-              }
-              if (field.listItems) {
-                countQuestions(field.listItems);
-              }
-            });
-          };
-          countQuestions(group.content.fields);
-        }
-        
-        if (group.content.sections) {
-          group.content.sections.forEach(section => {
-            section.content.forEach(item => {
-              if (item.questionNumber && item.correctAnswer) {
-                total++;
-                const userAnswer = answers[item.questionNumber];
-                if (typeof userAnswer === 'string' && 
-                    userAnswer.toLowerCase().trim() === item.correctAnswer.toLowerCase().trim()) {
+              } else if (typeof userAnswer === 'string' && typeof correctAnswer === 'string') {
+                if (userAnswer.toLowerCase().trim() === correctAnswer.toLowerCase().trim()) {
                   correct++;
                 }
               }
             });
-          });
-        }
+          }
+
+          // Handle items array (for matching questions)
+          if (group.content.items && Array.isArray(group.content.items)) {
+            group.content.items.forEach(item => {
+              if (!item.questionNumber || !item.correctAnswer) {
+                console.warn('Invalid item structure:', item);
+                return;
+              }
+
+              total++;
+              const userAnswer = answers[item.questionNumber];
+              if (typeof userAnswer === 'string' && userAnswer.toUpperCase().trim() === item.correctAnswer.toUpperCase().trim()) {
+                correct++;
+              }
+            });
+          }
+
+          // Handle form fields
+          if (group.content.fields && Array.isArray(group.content.fields)) {
+            const countQuestions = (fields: FormField[]) => {
+              fields.forEach(field => {
+                if (field.questionNumber && field.correctAnswer) {
+                  total++;
+                  const userAnswer = answers[field.questionNumber];
+                  if (typeof userAnswer === 'string' && typeof field.correctAnswer === 'string' &&
+                      userAnswer.toLowerCase().trim() === field.correctAnswer.toLowerCase().trim()) {
+                    correct++;
+                  }
+                }
+                if (field.listItems && Array.isArray(field.listItems)) {
+                  countQuestions(field.listItems);
+                }
+              });
+            };
+            countQuestions(group.content.fields);
+          }
+
+          // Handle sections with content (for notes completion)
+          if (group.content.sections && Array.isArray(group.content.sections)) {
+            group.content.sections.forEach(section => {
+              if (section.content && Array.isArray(section.content)) {
+                section.content.forEach(item => {
+                  if (item.questionNumber && item.correctAnswer) {
+                    total++;
+                    const userAnswer = answers[item.questionNumber];
+                    if (typeof userAnswer === 'string' &&
+                        userAnswer.toLowerCase().trim() === item.correctAnswer.toLowerCase().trim()) {
+                      correct++;
+                    }
+                  }
+                });
+              }
+            });
+          }
+        });
       });
-    });
-    
+    } catch (error) {
+      console.error('Error calculating score:', error);
+      return { correct: 0, total: 0, percentage: 0 };
+    }
+
     return {
       correct,
       total,
@@ -287,7 +274,9 @@ const IELTSListeningTest = () => {
           onChange={(e) => handleAnswerChange(questionNumber, e.target.value)}
         >
           <option value="">{questionNumber}</option>
-          {['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'].slice(0, options?.length || 3).map(letter => (
+          {options?.map(option => (
+            <option key={option.letter} value={option.letter}>{option.letter}</option>
+          )) || ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'].slice(0, 10).map(letter => (
             <option key={letter} value={letter}>{letter}</option>
           ))}
         </select>
@@ -364,23 +353,28 @@ const IELTSListeningTest = () => {
   };
 
   const renderQuestionGroup = (group: QuestionGroup, section: Section) => {
-    const { content, instructions, displayType } = group;
-    
+    const { content, instructions, displayType, imageUrl } = group;
+
     return (
       <div className="mb-8 bg-white rounded-lg p-6 border-2 border-gray-200">
         <div className="mb-4 text-primary font-semibold">{instructions}</div>
-        
-        {(group.imageUrl || section.imageUrl) && (
-          <div className="my-6 p-4 bg-gray-50 rounded">
+
+        {/* Render image if imageUrl is provided */}
+        {imageUrl && (
+          <div className="mb-6 text-center">
             <img
-              src={group.imageUrl || (section.imageUrl as string)}
-              alt={`Diagram for ${section.title} - Group ${group.groupId}`}
-              className="max-w-full h-auto mx-auto"
-              style={{ maxHeight: '500px' }}
+              src={imageUrl}
+              alt="Question visual aid"
+              className="max-w-full h-auto mx-auto rounded-lg border-2 border-gray-300 shadow-md"
+              style={{ maxHeight: '400px' }}
+              onError={(e) => {
+                console.error('Failed to load image:', imageUrl);
+                e.currentTarget.style.display = 'none';
+              }}
             />
           </div>
         )}
-        
+
         {displayType === 'form' && content.fields && (
           <div className="bg-gray-50 p-6 rounded">
             {content.title && <h3 className="text-xl font-bold mb-4 text-center">{content.title}</h3>}
@@ -389,7 +383,7 @@ const IELTSListeningTest = () => {
             ))}
           </div>
         )}
-        
+
         {displayType === 'multiple-answer' && content.questions && (
           <div>
             {content.questionText && <div className="mb-4 font-semibold">{content.questionText}</div>}
@@ -407,24 +401,24 @@ const IELTSListeningTest = () => {
               {content.questions.map(q => (
                 <div key={q.questionNumber} className="flex items-center">
                   <span className="mr-2 font-semibold">{q.questionNumber}:</span>
-                  {renderInput(q.questionNumber, 'select', undefined, content.options)}
+                  {renderInput(q.questionNumber, 'multiselect', undefined, content.options)}
                 </div>
               ))}
             </div>
           </div>
         )}
-        
+
         {displayType === 'single-choice' && content.questions && (
           <div className="space-y-6">
             {content.questions.map(q => (
               <div key={q.questionNumber} className="border-l-4 border-primary pl-4">
                 <div className="mb-3">
                   <span className="font-bold text-primary mr-2">{q.questionNumber}.</span>
-                  <span className="font-semibold">{q.questionText}</span>
+                  <span className="font-semibold">{content.questionText || `Question ${q.questionNumber}`}</span>
                 </div>
-                {q.options && (
+                {content.options && (
                   <div className="ml-8 space-y-2">
-                    {q.options.map((opt) => (
+                    {content.options.map((opt) => (
                       <div key={opt.letter} className="flex items-start">
                         <span className="font-bold mr-2 text-gray-600">{opt.letter}</span>
                         <span>{opt.text}</span>
@@ -433,13 +427,13 @@ const IELTSListeningTest = () => {
                   </div>
                 )}
                 <div className="mt-3 ml-8">
-                  Answer: {renderInput(q.questionNumber, 'select', undefined, q.options)}
+                  Answer: {renderInput(q.questionNumber, 'select', undefined, content.options)}
                 </div>
               </div>
             ))}
           </div>
         )}
-        
+
         {displayType === 'matching' && content.items && (
           <div>
             {content.matchingOptions && (
@@ -465,7 +459,7 @@ const IELTSListeningTest = () => {
             </div>
           </div>
         )}
-        
+
         {displayType === 'notes' && content.sections && (
           <div className="bg-gray-50 p-6 rounded">
             {content.title && <h3 className="text-xl font-bold mb-4 text-center">{content.title}</h3>}

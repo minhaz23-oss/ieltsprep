@@ -1,0 +1,507 @@
+{
+  "id": "listening18_t1",
+  "title": "IELTS Listening 18 Practice Test 1",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "tags": ["transport-survey", "volunteer-ace", "fashion-design-jobs", "elephant-translocation"],
+    "description": "Full IELTS Listening Practice Test with 4 sections"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Transport Survey",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening18%20t1%20s1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE4IHQxIHMxLm1wMyIsImlhdCI6MTc1OTA3NDk5OSwiZXhwIjo0OTEyNjc0OTk5fQ.NDeLz14zK9HYhKZ23nrSd_ywkR4hswxEvV_hJwwSEc4",
+      "questionGroups": [
+        {
+          "groupId": "1-10",
+          "instructions": "Complete the notes below.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+          "displayType": "form",
+          "content": {
+            "type": "form",
+            "title": "Transport survey",
+            "fields": [
+              {
+                "label": "Name:",
+                "value": "Sadie Jones",
+                "isStatic": true
+              },
+              {
+                "label": "Year of birth:",
+                "value": "1991",
+                "isStatic": true
+              },
+              {
+                "label": "Postcode:",
+                "questionNumber": 1,
+                "inputType": "text",
+                "correctAnswer": "DW30 7YZ",
+                "inputPlaceholder": "........................"
+              },
+              {
+                "sectionTitle": "Travelling by bus",
+                "isSection": true
+              },
+              {
+                "label": "Date of bus journey:",
+                "questionNumber": 2,
+                "inputType": "text",
+                "correctAnswer": "24(th) April",
+                "inputPlaceholder": "........................"
+              },
+              {
+                "label": "Reason for trip:",
+                "value": "shopping and visit to the ",
+                "questionNumber": 3,
+                "inputType": "text",
+                "correctAnswer": "dentist",
+                "inputPlaceholder": "........................"
+              },
+              {
+                "label": "Travelled by bus because cost of",
+                "questionNumber": 4,
+                "inputType": "text",
+                "correctAnswer": "parking",
+                "suffix": " too high",
+                "inputPlaceholder": "........................"
+              },
+              {
+                "label": "Got on bus at",
+                "questionNumber": 5,
+                "inputType": "text",
+                "correctAnswer": "Claxby",
+                "suffix": " Street",
+                "inputPlaceholder": "........................"
+              },
+              {
+                "label": "Complaints about bus service:",
+                "isList": true,
+                "listItems": [
+                  {
+                    "prefix": "– bus today was ",
+                    "questionNumber": 6,
+                    "inputType": "text",
+                    "correctAnswer": "late"
+                  },
+                  {
+                    "prefix": "– frequency of buses in the ",
+                    "questionNumber": 7,
+                    "inputType": "text",
+                    "correctAnswer": "evening"
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Travelling by car",
+                "isSection": true
+              },
+              {
+                "label": "Goes to the",
+                "questionNumber": 8,
+                "inputType": "text",
+                "correctAnswer": "supermarket",
+                "suffix": " by car",
+                "inputPlaceholder": "........................"
+              },
+              {
+                "sectionTitle": "Travelling by bicycle",
+                "isSection": true
+              },
+              {
+                "label": "Dislikes travelling by bike in the city centre because of the",
+                "questionNumber": 9,
+                "inputType": "text",
+                "correctAnswer": "pollution",
+                "inputPlaceholder": "........................"
+              },
+              {
+                "label": "Doesn't own a bike because of a lack of",
+                "questionNumber": 10,
+                "inputType": "text",
+                "correctAnswer": "storage",
+                "inputPlaceholder": "........................"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Becoming a Volunteer for ACE",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening18%20t1%20s2.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE4IHQxIHMyLm1wMyIsImlhdCI6MTc1OTA3NTAxNCwiZXhwIjo0OTEyNjc1MDE0fQ.sfj13uUaVQz46fkx8gMqLxkHMw8Uqo7Chb0eltsg948",
+      "questionGroups": [
+        {
+          "groupId": "11-13",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 11,
+                "questionText": "Why does the speaker apologise about the seats?",
+                "options": [
+                  { "letter": "A", "text": "They are too small." },
+                  { "letter": "B", "text": "There are not enough of them." },
+                  { "letter": "C", "text": "Some of them are very close together." }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 12,
+                "questionText": "What does the speaker say about the age of volunteers?",
+                "options": [
+                  { "letter": "A", "text": "The age of volunteers is less important than other factors." },
+                  { "letter": "B", "text": "Young volunteers are less reliable than older ones." },
+                  { "letter": "C", "text": "Most volunteers are about 60 years old." }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 13,
+                "questionText": "What does the speaker say about training?",
+                "options": [
+                  { "letter": "A", "text": "It is continuous." },
+                  { "letter": "B", "text": "It is conducted by a manager." },
+                  { "letter": "C", "text": "It takes place online." }
+                ],
+                "correctAnswer": "A"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "14-15",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO issues does the speaker ask the audience to consider before they apply to be volunteers?",
+            "options": [
+              { "letter": "A", "text": "their financial situation" },
+              { "letter": "B", "text": "their level of commitment" },
+              { "letter": "C", "text": "their work experience" },
+              { "letter": "D", "text": "their ambition" },
+              { "letter": "E", "text": "their availability" }
+            ],
+            "questions": [
+              { "questionNumber": 14, "correctAnswer": "B" },
+              { "questionNumber": 15, "correctAnswer": "E" }
+            ]
+          }
+        },
+        {
+          "groupId": "16-20",
+          "instructions": "What does the speaker suggest would be helpful for each of the following areas of voluntary work?\nChoose FIVE answers from the box and write the correct letter, A-G, next to Questions 16-20.",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Helpful things volunteers might offer",
+            "matchingOptions": [
+              { "letter": "A", "text": "experience on stage" },
+              { "letter": "B", "text": "original, new ideas" },
+              { "letter": "C", "text": "parenting skills" },
+              { "letter": "D", "text": "an understanding of food and diet" },
+              { "letter": "E", "text": "retail experience" },
+              { "letter": "F", "text": "a good memory" },
+              { "letter": "G", "text": "a good level of fitness" }
+            ],
+            "sectionTitle": "Area of voluntary work",
+            "items": [
+              {
+                "questionNumber": 16,
+                "text": "Fundraising",
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 17,
+                "text": "Litter collection",
+                "correctAnswer": "G"
+              },
+              {
+                "questionNumber": 18,
+                "text": "'Playmates'",
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 19,
+                "text": "Story club",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 20,
+                "text": "First aid",
+                "correctAnswer": "F"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Talk on Jobs in Fashion Design",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening18%20t1%20s3.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE4IHQxIHMzLm1wMyIsImlhdCI6MTc1OTA3NTAyOCwiZXhwIjo0OTEyNjc1MDI4fQ.BfB01UDwmIekQUCvgJ4Bwv9sUVwZqpvKFD-1bfmm-A8",
+      "questionGroups": [
+        {
+          "groupId": "21-26",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 21,
+                "questionText": "What problem did Chantal have at the start of the talk?",
+                "options": [
+                  { "letter": "A", "text": "Her view of the speaker was blocked." },
+                  { "letter": "B", "text": "She was unable to find an empty seat." },
+                  { "letter": "C", "text": "The students next to her were talking." }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 22,
+                "questionText": "What were Hugo and Chantal surprised to hear about the job market?",
+                "options": [
+                  { "letter": "A", "text": "It has become more competitive than it used to be." },
+                  { "letter": "B", "text": "There is more variety in it than they had realised." },
+                  { "letter": "C", "text": "Some areas of it are more exciting than others." }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 23,
+                "questionText": "Hugo and Chantal agree that the speaker's message was",
+                "options": [
+                  { "letter": "A", "text": "unfair to them at times." },
+                  { "letter": "B", "text": "hard for them to follow." },
+                  { "letter": "C", "text": "critical of the industry." }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 24,
+                "questionText": "What do Hugo and Chantal criticise about their school careers advice?",
+                "options": [
+                  { "letter": "A", "text": "when they received the advice" },
+                  { "letter": "B", "text": "how much advice was given" },
+                  { "letter": "C", "text": "who gave the advice" }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 25,
+                "questionText": "When discussing their future, Hugo and Chantal disagree on",
+                "options": [
+                  { "letter": "A", "text": "which is the best career in fashion." },
+                  { "letter": "B", "text": "when to choose a career in fashion." },
+                  { "letter": "C", "text": "why they would like a career in fashion." }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 26,
+                "questionText": "How does Hugo feel about being an unpaid assistant?",
+                "options": [
+                  { "letter": "A", "text": "He is realistic about the practice." },
+                  { "letter": "B", "text": "He feels the practice is dishonest." },
+                  { "letter": "C", "text": "He thinks others want to change the practice." }
+                ],
+                "correctAnswer": "A"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "27-28",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO mistakes did the speaker admit she made in her first job?",
+            "options": [
+              { "letter": "A", "text": "being dishonest to her employer" },
+              { "letter": "B", "text": "paying too much attention to how she looked" },
+              { "letter": "C", "text": "expecting to become well known" },
+              { "letter": "D", "text": "trying to earn a lot of money" },
+              { "letter": "E", "text": "openly disliking her client" }
+            ],
+            "questions": [
+              { "questionNumber": 27, "correctAnswer": "B" },
+              { "questionNumber": 28, "correctAnswer": "E" }
+            ]
+          }
+        },
+        {
+          "groupId": "29-30",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO pieces of retail information do Hugo and Chantal agree would be useful?",
+            "options": [
+              { "letter": "A", "text": "the reasons people return fashion items" },
+              { "letter": "B", "text": "how much time people have to shop for clothes" },
+              { "letter": "C", "text": "fashion designs people want but can't find" },
+              { "letter": "D", "text": "the best time of year for fashion buying" },
+              { "letter": "E", "text": "the most popular fashion sizes" }
+            ],
+            "questions": [
+              { "questionNumber": 29, "correctAnswer": "A" },
+              { "questionNumber": 30, "correctAnswer": "C" }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Elephant Translocation",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening18%20t1%20s4.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE4IHQxIHM0Lm1wMyIsImlhdCI6MTc1OTA3NTA0MywiZXhwIjo0OTEyNjc1MDQzfQ.iRbW9Vf3Fs3giwyAR6B859NIPqQ0ZuBGVKxBIKH_1HU",
+      "questionGroups": [
+        {
+          "groupId": "31-40",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Elephant translocation",
+            "sections": [
+              {
+                "sectionTitle": "Reasons for overpopulation at Majete National Park",
+                "content": [
+                  {
+                    "text": "• strict enforcement of anti-poaching laws",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• successful breeding",
+                    "isStatic": true,
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Problems caused by elephant overpopulation",
+                "content": [
+                  {
+                    "text": "• greater competition, causing hunger for elephants",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• damage to ",
+                    "questionNumber": 31,
+                    "inputType": "text",
+                    "correctAnswer": "fences",
+                    "suffix": " in the park",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "The translocation process",
+                "content": [
+                  {
+                    "text": "• a suitable group of elephants from the same ",
+                    "questionNumber": 32,
+                    "inputType": "text",
+                    "correctAnswer": "family",
+                    "suffix": " was selected",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• vets and park staff made use of ",
+                    "questionNumber": 33,
+                    "inputType": "text",
+                    "correctAnswer": "helicopters",
+                    "suffix": " to help guide the elephants into an open plain",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• elephants were immobilised with tranquilisers",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  – this process had to be completed quickly to reduce ",
+                    "questionNumber": 34,
+                    "inputType": "text",
+                    "correctAnswer": "stress"
+                  },
+                  {
+                    "text": "  – elephants had to be turned on their ",
+                    "questionNumber": 35,
+                    "inputType": "text",
+                    "correctAnswer": "sides",
+                    "suffix": " to avoid damage to their lungs"
+                  },
+                  {
+                    "text": "  – elephants' ",
+                    "questionNumber": 36,
+                    "inputType": "text",
+                    "correctAnswer": "breathing",
+                    "suffix": " had to be monitored constantly"
+                  },
+                  {
+                    "text": "  – tracking devices were fitted to the matriarchs",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "  – data including the size of their tusks and ",
+                    "questionNumber": 37,
+                    "inputType": "text",
+                    "correctAnswer": "feet",
+                    "suffix": " was taken"
+                  },
+                  {
+                    "text": "• elephants were taken by truck to their new reserve",
+                    "isStatic": true,
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Advantages of translocation at Nkhotakota Wildlife Park",
+                "content": [
+                  {
+                    "text": "• ",
+                    "questionNumber": 38,
+                    "inputType": "text",
+                    "correctAnswer": "employment",
+                    "suffix": " opportunities",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• a reduction in the number of poachers and ",
+                    "questionNumber": 39,
+                    "inputType": "text",
+                    "correctAnswer": "weapons",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• an example of conservation that other parks can follow",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• an increase in ",
+                    "questionNumber": 40,
+                    "inputType": "text",
+                    "correctAnswer": "tourism",
+                    "suffix": " as a contributor to GDP",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

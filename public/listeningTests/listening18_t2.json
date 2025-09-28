@@ -1,0 +1,493 @@
+{
+  "id": "listening18_t2",
+  "title": "IELTS Listening 18 Practice Test 2",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "tags": ["milo-restaurants", "housing-development", "laki-eruption", "pockets-history"],
+    "description": "Full IELTS Listening Practice Test with 4 sections"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Working at Milo's Restaurants",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening18%20t2%20s1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE4IHQyIHMxLm1wMyIsImlhdCI6MTc1OTA3NjM0NywiZXhwIjo0OTEyNjc2MzQ3fQ.dvxVgyKhxriiD2O9f3o9_6P_avVfRbKnnU9RyMNzbUA",
+      "questionGroups": [
+        {
+          "groupId": "1-5",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Working at Milo's Restaurants",
+            "sections": [
+              {
+                "sectionTitle": "Benefits",
+                "content": [
+                  {
+                    "text": "• ",
+                    "questionNumber": 1,
+                    "inputType": "text",
+                    "correctAnswer": "training",
+                    "suffix": " provided for all staff",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• ",
+                    "questionNumber": 2,
+                    "inputType": "text",
+                    "correctAnswer": "discount",
+                    "suffix": " during weekdays at all Milo's Restaurants",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• ",
+                    "questionNumber": 3,
+                    "inputType": "text",
+                    "correctAnswer": "taxi",
+                    "suffix": " provided after midnight",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Person specification",
+                "content": [
+                  {
+                    "text": "• must be prepared to work well in a team",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• must care about maintaining a high standard of ",
+                    "questionNumber": 4,
+                    "inputType": "text",
+                    "correctAnswer": "service",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• must have a qualification in ",
+                    "questionNumber": 5,
+                    "inputType": "text",
+                    "correctAnswer": "English",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "6-10",
+          "instructions": "Complete the table below.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+          "displayType": "table",
+          "content": {
+            "type": "table",
+            "title": "",
+            "headers": ["Location", "Job title", "Responsibilities include", "Pay and conditions"],
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "questionNumber": 6,
+                    "inputType": "text",
+                    "correctAnswer": "Wivenhoe",
+                    "suffix": " Street"
+                  },
+                  {
+                    "text": "Breakfast supervisor",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "Checking portions, etc. are correct\n\nMaking sure ",
+                    "questionNumber": 7,
+                    "inputType": "text",
+                    "correctAnswer": "equipment",
+                    "suffix": " is clean"
+                  },
+                  {
+                    "text": "Starting salary £",
+                    "questionNumber": 8,
+                    "inputType": "text",
+                    "correctAnswer": "9.75",
+                    "suffix": " per hour\n\nStart work at 5.30 a.m."
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "City Road",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "Junior chef",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "Supporting senior chefs\n\nMaintaining stock and organising ",
+                    "questionNumber": 9,
+                    "inputType": "text",
+                    "correctAnswer": "deliveries"
+                  },
+                  {
+                    "text": "Annual salary £23,000\n\nNo work on a ",
+                    "questionNumber": 10,
+                    "inputType": "text",
+                    "correctAnswer": "Sunday",
+                    "suffix": " once a month"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Housing Development Site",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening18%20t2%20s2.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE4IHQyIHMyLm1wMyIsImlhdCI6MTc1OTA3NjM2MCwiZXhwIjo0OTEyNjc2MzYwfQ.QnF4kV7b8ygFndI2Jd7oXj7vauARyoqqCigoBPzKXQs",
+      "questionGroups": [
+        {
+          "groupId": "11-12",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "What are the TWO main reasons why this site has been chosen for the housing development?",
+            "options": [
+              { "letter": "A", "text": "It has suitable geographical features." },
+              { "letter": "B", "text": "There is easy access to local facilities." },
+              { "letter": "C", "text": "It has good connections with the airport." },
+              { "letter": "D", "text": "The land is of little agricultural value." },
+              { "letter": "E", "text": "It will be convenient for workers." }
+            ],
+            "questions": [
+              { "questionNumber": 11, "correctAnswer": "B" },
+              { "questionNumber": 12, "correctAnswer": "E" }
+            ]
+          }
+        },
+        {
+          "groupId": "13-14",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO aspects of the planned housing development have people given positive feedback about?",
+            "options": [
+              { "letter": "A", "text": "the facilities for cyclists" },
+              { "letter": "B", "text": "the impact on the environment" },
+              { "letter": "C", "text": "the encouragement of good relations between residents" },
+              { "letter": "D", "text": "the low cost of all the accommodation" },
+              { "letter": "E", "text": "the rural location" }
+            ],
+            "questions": [
+              { "questionNumber": 13, "correctAnswer": "B" },
+              { "questionNumber": 14, "correctAnswer": "C" }
+            ]
+          }
+        },
+        {
+          "groupId": "15-20",
+          "instructions": "Label the map below.\nWrite the correct letter, A-I, next to Questions 15-20.",
+          "displayType": "matching",
+          "imageUrl":"https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningImage/ielts18%20t2%20img.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0ltYWdlL2llbHRzMTggdDIgaW1nLmpwZyIsImlhdCI6MTc1OTA3NjA2MiwiZXhwIjo0OTEyNjc2MDYyfQ.vEGTLkHcBTn5l7NLzabl7f48zfxtHil9yDJtQTO5T-A",
+          "content": {
+            "type": "matching",
+            "title": "Map locations",
+            "matchingOptions": [
+              { "letter": "A", "text": "" },
+              { "letter": "B", "text": "" },
+              { "letter": "C", "text": "" },
+              { "letter": "D", "text": "" },
+              { "letter": "E", "text": "" },
+              { "letter": "F", "text": "" },
+              { "letter": "G", "text": "" },
+              { "letter": "H", "text": "" },
+              { "letter": "I", "text": "" }
+            ],
+            "sectionTitle": "Facilities",
+            "items": [
+              {
+                "questionNumber": 15,
+                "text": "School",
+                "correctAnswer": "G"
+              },
+              {
+                "questionNumber": 16,
+                "text": "Sports centre",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 17,
+                "text": "Clinic",
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 18,
+                "text": "Community centre",
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 19,
+                "text": "Supermarket",
+                "correctAnswer": "H"
+              },
+              {
+                "questionNumber": 20,
+                "text": "Playground",
+                "correctAnswer": "A"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Laki Eruption of 1783",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening18%20t2%20s3.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE4IHQyIHMzLm1wMyIsImlhdCI6MTc1OTA3NjM3NSwiZXhwIjo0OTEyNjc2Mzc1fQ.zQdQdP14kcR12vGI5MLBKmIfNcrRD5Z8rza5KBNyh78",
+      "questionGroups": [
+        {
+          "groupId": "21-24",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 21,
+                "questionText": "Why do the students think the Laki eruption of 1783 is so important?",
+                "options": [
+                  { "letter": "A", "text": "It was the most severe eruption in modern times." },
+                  { "letter": "B", "text": "It led to the formal study of volcanoes." },
+                  { "letter": "C", "text": "It had a profound effect on society." }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 22,
+                "questionText": "What surprised Adam about observations made at the time?",
+                "options": [
+                  { "letter": "A", "text": "the number of places producing them" },
+                  { "letter": "B", "text": "the contradictions in them" },
+                  { "letter": "C", "text": "the lack of scientific data to support them" }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 23,
+                "questionText": "According to Michelle, what did the contemporary sources say about the Laki haze?",
+                "options": [
+                  { "letter": "A", "text": "People thought it was similar to ordinary fog." },
+                  { "letter": "B", "text": "It was associated with health issues." },
+                  { "letter": "C", "text": "It completely blocked out the sun for weeks." }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 24,
+                "questionText": "Adam corrects Michelle when she claims that Benjamin Franklin",
+                "options": [
+                  { "letter": "A", "text": "came to the wrong conclusion about the cause of the haze." },
+                  { "letter": "B", "text": "was the first to identify the reason for the haze." },
+                  { "letter": "C", "text": "supported the opinions of other observers about the haze." }
+                ],
+                "correctAnswer": "B"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "25-26",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO issues following the Laki eruption surprised the students?",
+            "options": [
+              { "letter": "A", "text": "how widespread the effects were" },
+              { "letter": "B", "text": "how long-lasting the effects were" },
+              { "letter": "C", "text": "the number of deaths it caused" },
+              { "letter": "D", "text": "the speed at which the volcanic ash cloud spread" },
+              { "letter": "E", "text": "how people ignored the warning signs" }
+            ],
+            "questions": [
+              { "questionNumber": 25, "correctAnswer": "A" },
+              { "questionNumber": 26, "correctAnswer": "B" }
+            ]
+          }
+        },
+        {
+          "groupId": "27-30",
+          "instructions": "What comment do the students make about the impact of the Laki eruption on the following countries?\nChoose FOUR answers from the box and write the correct letter, A-F, next to Questions 27-30.",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Comments",
+            "matchingOptions": [
+              { "letter": "A", "text": "This country suffered the most severe loss of life." },
+              { "letter": "B", "text": "The impact on agriculture was predictable." },
+              { "letter": "C", "text": "There was a significant increase in deaths of young people." },
+              { "letter": "D", "text": "Animals suffered from a sickness." },
+              { "letter": "E", "text": "This country saw the highest rise in food prices in the world." },
+              { "letter": "F", "text": "It caused a particularly harsh winter." }
+            ],
+            "sectionTitle": "Countries",
+            "items": [
+              {
+                "questionNumber": 27,
+                "text": "Iceland",
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 28,
+                "text": "Egypt",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 29,
+                "text": "UK",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 30,
+                "text": "USA",
+                "correctAnswer": "F"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Pockets",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening18%20t2%20s4.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE4IHQyIHM0Lm1wMyIsImlhdCI6MTc1OTA3NjM4OCwiZXhwIjo0OTEyNjc2Mzg4fQ.PN-XuN4_2HV5Ac0-PUocYQvG-I9PqOGNtoIWPzvHP70",
+      "questionGroups": [
+        {
+          "groupId": "31-40",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Pockets",
+            "sections": [
+              {
+                "sectionTitle": "Reason for choice of subject",
+                "content": [
+                  {
+                    "text": "• They are ",
+                    "questionNumber": 31,
+                    "inputType": "text",
+                    "correctAnswer": "convenient",
+                    "suffix": " but can be overlooked by consumers and designers.",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Pockets in men's clothes",
+                "content": [
+                  {
+                    "text": "• Men started to wear ",
+                    "questionNumber": 32,
+                    "inputType": "text",
+                    "correctAnswer": "suits",
+                    "suffix": " in the 18th century.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• A ",
+                    "questionNumber": 33,
+                    "inputType": "text",
+                    "correctAnswer": "tailor",
+                    "suffix": " sewed pockets into the lining of the garments.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• The wearer could use the pockets for small items.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Bigger pockets might be made for men who belonged to a certain type of ",
+                    "questionNumber": 34,
+                    "inputType": "text",
+                    "correctAnswer": "profession",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Pockets in women's clothes",
+                "content": [
+                  {
+                    "text": "• Women's pockets were less ",
+                    "questionNumber": 35,
+                    "inputType": "text",
+                    "correctAnswer": "visible",
+                    "suffix": " than men's.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Women were very concerned about pickpockets.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Pockets were produced in pairs using ",
+                    "questionNumber": 36,
+                    "inputType": "text",
+                    "correctAnswer": "string(s)",
+                    "suffix": " to link them together.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Pockets hung from the women's ",
+                    "questionNumber": 37,
+                    "inputType": "text",
+                    "correctAnswer": "waist(s)",
+                    "suffix": " under skirts and petticoats.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Items such as ",
+                    "questionNumber": 38,
+                    "inputType": "text",
+                    "correctAnswer": "perfume",
+                    "suffix": " could be reached through a gap in the material.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Pockets, of various sizes, stayed inside clothing for many decades.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• When dresses changed shape, hidden pockets had a negative effect on the ",
+                    "questionNumber": 39,
+                    "inputType": "text",
+                    "correctAnswer": "image",
+                    "suffix": " of women.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Bags called 'pouches' became popular, before women carried a ",
+                    "questionNumber": 40,
+                    "inputType": "text",
+                    "correctAnswer": "handbag",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

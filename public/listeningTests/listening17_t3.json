@@ -1,0 +1,494 @@
+{
+  "id": "listening17_t3",
+  "title": "IELTS Listening 17 Practice Test 3",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "tags": ["surfing-holidays", "childcare-service", "work-placement-tutorial", "bird-migration-theory"],
+    "description": "Full IELTS Listening Practice Test with 4 sections"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Advice on Surfing Holidays",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening17%20t3%20s1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE3IHQzIHMxLm1wMyIsImlhdCI6MTc1OTA3MzQ0MCwiZXhwIjo0OTEyNjczNDQwfQ.wRIzQF3U6S2i-BT9f5moiMA6Uq_4-mGpEzC8S3rq5PM",
+      "questionGroups": [
+        {
+          "groupId": "1-10",
+          "instructions": "Complete the notes below.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Advice on surfing holidays",
+            "sections": [
+              {
+                "sectionTitle": "Jack's advice",
+                "content": [
+                  {
+                    "text": "• Recommends surfing for ",
+                    "questionNumber": 1,
+                    "inputType": "text",
+                    "correctAnswer": "family",
+                    "suffix": " holidays in the summer",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Need to be quite ",
+                    "questionNumber": 2,
+                    "inputType": "text",
+                    "correctAnswer": "fit",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Irish surfing locations",
+                "content": [
+                  {
+                    "text": "• County Clare",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  – Lahinch has some good quality ",
+                    "questionNumber": 3,
+                    "inputType": "text",
+                    "correctAnswer": "hotels",
+                    "suffix": " and surf schools"
+                  },
+                  {
+                    "text": "  – There are famous cliffs nearby",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "• County Mayo",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  – Good surf school at ",
+                    "questionNumber": 4,
+                    "inputType": "text",
+                    "correctAnswer": "Carrowniskey",
+                    "suffix": " beach"
+                  },
+                  {
+                    "text": "  – Surf camp lasts for one ",
+                    "questionNumber": 5,
+                    "inputType": "text",
+                    "correctAnswer": "week"
+                  },
+                  {
+                    "text": "  – Can also explore the local ",
+                    "questionNumber": 6,
+                    "inputType": "text",
+                    "correctAnswer": "bay",
+                    "suffix": " by kayak"
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Weather",
+                "content": [
+                  {
+                    "text": "• Best month to go: ",
+                    "questionNumber": 7,
+                    "inputType": "text",
+                    "correctAnswer": "September",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Average temperature in summer: approx. ",
+                    "questionNumber": 8,
+                    "inputType": "text",
+                    "correctAnswer": "19 / nineteen",
+                    "suffix": " degrees",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Costs",
+                "content": [
+                  {
+                    "text": "• Equipment",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  – Wetsuit and surfboard: ",
+                    "questionNumber": 9,
+                    "inputType": "text",
+                    "correctAnswer": "30 / thirty",
+                    "suffix": " euros per day"
+                  },
+                  {
+                    "text": "  – Also advisable to hire ",
+                    "questionNumber": 10,
+                    "inputType": "text",
+                    "correctAnswer": "boots",
+                    "suffix": " for warmth"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "School's Extended Hours Childcare Service",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening17%20t3%20s2.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE3IHQzIHMyLm1wMyIsImlhdCI6MTc1OTA3MzQ1NiwiZXhwIjo0OTEyNjczNDU2fQ.CcswB5UJ8uB-WY99Gt7SsBjoz0HQzNjV3LiMAnA744U",
+      "questionGroups": [
+        {
+          "groupId": "11-12",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO facts are given about the school's extended hours childcare service?",
+            "options": [
+              { "letter": "A", "text": "It started recently." },
+              { "letter": "B", "text": "More children attend after school than before school." },
+              { "letter": "C", "text": "An average of 50 children attend in the mornings." },
+              { "letter": "D", "text": "A child cannot attend both the before and after school sessions." },
+              { "letter": "E", "text": "The maximum number of children who can attend is 70." }
+            ],
+            "questions": [
+              { "questionNumber": 11, "correctAnswer": "B" },
+              { "questionNumber": 12, "correctAnswer": "E" }
+            ]
+          }
+        },
+        {
+          "groupId": "13-15",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 13,
+                "questionText": "How much does childcare cost for a complete afternoon session per child?",
+                "options": [
+                  { "letter": "A", "text": "£3.50" },
+                  { "letter": "B", "text": "£5.70" },
+                  { "letter": "C", "text": "£7.20" }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 14,
+                "questionText": "What does the manager say about food?",
+                "options": [
+                  { "letter": "A", "text": "Children with allergies should bring their own food." },
+                  { "letter": "B", "text": "Children may bring healthy snacks with them." },
+                  { "letter": "C", "text": "Children are given a proper meal at 5 p.m." }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 15,
+                "questionText": "What is different about arrangements in the school holidays?",
+                "options": [
+                  { "letter": "A", "text": "Children from other schools can attend." },
+                  { "letter": "B", "text": "Older children can attend." },
+                  { "letter": "C", "text": "A greater number of children can attend." }
+                ],
+                "correctAnswer": "A"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "16-20",
+          "instructions": "What information is given about each of the following activities on offer?\nChoose FIVE answers from the box and write the correct letter, A-G, next to Questions 16-20.",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Information",
+            "matchingOptions": [
+              { "letter": "A", "text": "has limited availability" },
+              { "letter": "B", "text": "is no longer available" },
+              { "letter": "C", "text": "is for over 8s only" },
+              { "letter": "D", "text": "requires help from parents" },
+              { "letter": "E", "text": "involves an additional fee" },
+              { "letter": "F", "text": "is a new activity" },
+              { "letter": "G", "text": "was requested by children" }
+            ],
+            "sectionTitle": "Activities",
+            "items": [
+              {
+                "questionNumber": 16,
+                "text": "Spanish",
+                "correctAnswer": "E"
+              },
+              {
+                "questionNumber": 17,
+                "text": "Music",
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 18,
+                "text": "Painting",
+                "correctAnswer": "G"
+              },
+              {
+                "questionNumber": 19,
+                "text": "Yoga",
+                "correctAnswer": "F"
+              },
+              {
+                "questionNumber": 20,
+                "text": "Cooking",
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Holly's Work Placement Tutorial",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening17%20t3%20s3.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE3IHQzIHMzLm1wMyIsImlhdCI6MTc1OTA3MzQ3MywiZXhwIjo0OTEyNjczNDczfQ.Ix4DbW5rSXBUnwa974xCvq_RI6ejJmMvVgOBYBjxp7Q",
+      "questionGroups": [
+        {
+          "groupId": "21-24",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 21,
+                "questionText": "Holly has chosen the Orion Stadium placement because",
+                "options": [
+                  { "letter": "A", "text": "it involves children." },
+                  { "letter": "B", "text": "it is outdoors." },
+                  { "letter": "C", "text": "it sounds like fun." }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 22,
+                "questionText": "Which aspect of safety does Dr Green emphasise most?",
+                "options": [
+                  { "letter": "A", "text": "ensuring children stay in the stadium" },
+                  { "letter": "B", "text": "checking the equipment children will use" },
+                  { "letter": "C", "text": "removing obstacles in changing rooms" }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 23,
+                "questionText": "What does Dr Green say about the spectators?",
+                "options": [
+                  { "letter": "A", "text": "They can be hard to manage." },
+                  { "letter": "B", "text": "They make useful volunteers." },
+                  { "letter": "C", "text": "They shouldn't take photographs." }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 24,
+                "questionText": "What has affected the schedule in the past?",
+                "options": [
+                  { "letter": "A", "text": "bad weather" },
+                  { "letter": "B", "text": "an injury" },
+                  { "letter": "C", "text": "extra time" }
+                ],
+                "correctAnswer": "B"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "25-30",
+          "instructions": "What do Holly and her tutor agree is an important aspect of each of the following events management skills?\nChoose SIX answers from the box and write the correct letter, A-H, next to Questions 25-30.",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Important aspects",
+            "matchingOptions": [
+              { "letter": "A", "text": "being flexible" },
+              { "letter": "B", "text": "focusing on details" },
+              { "letter": "C", "text": "having a smart appearance" },
+              { "letter": "D", "text": "hiding your emotions" },
+              { "letter": "E", "text": "relying on experts" },
+              { "letter": "F", "text": "trusting your own views" },
+              { "letter": "G", "text": "doing one thing at a time" },
+              { "letter": "H", "text": "thinking of the future" }
+            ],
+            "sectionTitle": "Events management skills",
+            "items": [
+              {
+                "questionNumber": 25,
+                "text": "Communication",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 26,
+                "text": "Organisation",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 27,
+                "text": "Time management",
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 28,
+                "text": "Creativity",
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 29,
+                "text": "Leadership",
+                "correctAnswer": "F"
+              },
+              {
+                "questionNumber": 30,
+                "text": "Networking",
+                "correctAnswer": "H"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Bird Migration Theory",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening17%20t3%20s4.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE3IHQzIHM0Lm1wMyIsImlhdCI6MTc1OTA3MzQ4NywiZXhwIjo0OTEyNjczNDg3fQ.BcFLVlw8ba1ZPNSNwBvctdzIcIVg4KBdA5tTpu1SL84",
+      "questionGroups": [
+        {
+          "groupId": "31-40",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Bird Migration Theory",
+            "sections": [
+              {
+                "content": [
+                  {
+                    "text": "Most birds are believed to migrate seasonally.",
+                    "isStatic": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Hibernation theory",
+                "content": [
+                  {
+                    "text": "• It was believed that birds hibernated underwater or buried themselves in ",
+                    "questionNumber": 31,
+                    "inputType": "text",
+                    "correctAnswer": "mud",
+                    "suffix": ".",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• This theory was later disproved by experiments on caged birds.",
+                    "isStatic": true,
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Transmutation theory",
+                "content": [
+                  {
+                    "text": "• Aristotle believed birds changed from one species into another in summer and winter.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  – In autumn he observed that redstarts experience the loss of ",
+                    "questionNumber": 32,
+                    "inputType": "text",
+                    "correctAnswer": "feathers",
+                    "suffix": " and thought they then turned into robins."
+                  },
+                  {
+                    "text": "  – Aristotle's assumptions were logical because the two species of birds had a similar ",
+                    "questionNumber": 33,
+                    "inputType": "text",
+                    "correctAnswer": "shape",
+                    "suffix": "."
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "17th century",
+                "content": [
+                  {
+                    "text": "• Charles Morton popularised the idea that birds fly to the ",
+                    "questionNumber": 34,
+                    "inputType": "text",
+                    "correctAnswer": "moon",
+                    "suffix": " in winter.",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Scientific developments",
+                "content": [
+                  {
+                    "text": "• In 1822, a stork was killed in Germany which had an African spear in its ",
+                    "questionNumber": 35,
+                    "inputType": "text",
+                    "correctAnswer": "neck",
+                    "suffix": ".",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  – previously there had been no ",
+                    "questionNumber": 36,
+                    "inputType": "text",
+                    "correctAnswer": "evidence",
+                    "suffix": " that storks migrate to Africa"
+                  },
+                  {
+                    "text": "• Little was known about the ",
+                    "questionNumber": 37,
+                    "inputType": "text",
+                    "correctAnswer": "destinations",
+                    "suffix": " and journeys of migrating birds until the practice of ringing was established.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  – It was thought large birds carried small birds on some journeys because they were considered incapable of travelling across huge ",
+                    "questionNumber": 38,
+                    "inputType": "text",
+                    "correctAnswer": "oceans",
+                    "suffix": "."
+                  },
+                  {
+                    "text": "  – Ringing depended on what is called the '",
+                    "questionNumber": 39,
+                    "inputType": "text",
+                    "correctAnswer": "recovery",
+                    "suffix": "' of dead birds."
+                  },
+                  {
+                    "text": "• In 1931, the first ",
+                    "questionNumber": 40,
+                    "inputType": "text",
+                    "correctAnswer": "atlas",
+                    "suffix": " to show the migration of European birds was printed.",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

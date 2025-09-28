@@ -1,0 +1,536 @@
+{
+  "id": "listening17_t4",
+  "title": "IELTS Listening 17 Practice Test 4",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "tags": ["cleaning-services", "hotel-staff-turnover", "sporting-activities", "maple-syrup"],
+    "description": "Full IELTS Listening Practice Test with 4 sections"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Easy Life Cleaning Services",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening17%20t4%20s1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE3IHQ0IHMxLm1wMyIsImlhdCI6MTc1OTA3Mzk3NywiZXhwIjo0OTEyNjczOTc3fQ.kWb4ncjGgEbYRjP4ghvtmljRabCWH6nyONk4LdeE4KY",
+      "questionGroups": [
+        {
+          "groupId": "1-10",
+          "instructions": "Complete the notes below.\nWrite ONE WORD for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Easy Life Cleaning Services",
+            "sections": [
+              {
+                "sectionTitle": "Basic cleaning package offered",
+                "content": [
+                  {
+                    "text": "• Cleaning all surfaces",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Cleaning the ",
+                    "questionNumber": 1,
+                    "inputType": "text",
+                    "correctAnswer": "floor(s)",
+                    "suffix": " throughout the apartment",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Cleaning shower, sinks, toilet etc.",
+                    "isStatic": true,
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Additional services agreed",
+                "content": [
+                  {
+                    "text": "• Every week",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  – Cleaning the ",
+                    "questionNumber": 2,
+                    "inputType": "text",
+                    "correctAnswer": "fridge"
+                  },
+                  {
+                    "text": "  – Ironing clothes – ",
+                    "questionNumber": 3,
+                    "inputType": "text",
+                    "correctAnswer": "shirts",
+                    "suffix": " only"
+                  },
+                  {
+                    "text": "• Every month",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  – Cleaning all the ",
+                    "questionNumber": 4,
+                    "inputType": "text",
+                    "correctAnswer": "windows",
+                    "suffix": " from the inside"
+                  },
+                  {
+                    "text": "  – Washing down the ",
+                    "questionNumber": 5,
+                    "inputType": "text",
+                    "correctAnswer": "balcony"
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Other possibilities",
+                "content": [
+                  {
+                    "text": "• They can organise a plumber or an ",
+                    "questionNumber": 6,
+                    "inputType": "text",
+                    "correctAnswer": "electrician",
+                    "suffix": " if necessary.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• A special cleaning service is available for customers who are allergic to ",
+                    "questionNumber": 7,
+                    "inputType": "text",
+                    "correctAnswer": "dust",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Information on the cleaners",
+                "content": [
+                  {
+                    "text": "• Before being hired, all cleaners have a background check carried out by the ",
+                    "questionNumber": 8,
+                    "inputType": "text",
+                    "correctAnswer": "police",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• References are required.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• All cleaners are given ",
+                    "questionNumber": 9,
+                    "inputType": "text",
+                    "correctAnswer": "training",
+                    "suffix": " for two weeks.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Customers send a ",
+                    "questionNumber": 10,
+                    "inputType": "text",
+                    "correctAnswer": "review",
+                    "suffix": " after each visit.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Usually, each customer has one regular cleaner.",
+                    "isStatic": true,
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Hotel Staff Turnover",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening17%20t4%20s2.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE3IHQ0IHMyLm1wMyIsImlhdCI6MTc1OTA3Mzk5MCwiZXhwIjo0OTEyNjczOTkwfQ.YSbFHtN2uFnxdIQIADXtsDFm5M3Xmx3oETw-rbucNtA",
+      "questionGroups": [
+        {
+          "groupId": "11-14",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 11,
+                "questionText": "Many hotel managers are unaware that their staff often leave because of",
+                "options": [
+                  { "letter": "A", "text": "a lack of training." },
+                  { "letter": "B", "text": "long hours." },
+                  { "letter": "C", "text": "low pay." }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 12,
+                "questionText": "What is the impact of high staff turnover on managers?",
+                "options": [
+                  { "letter": "A", "text": "an increased workload" },
+                  { "letter": "B", "text": "low morale" },
+                  { "letter": "C", "text": "an inability to meet targets" }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 13,
+                "questionText": "What mistake should managers always avoid?",
+                "options": [
+                  { "letter": "A", "text": "failing to treat staff equally" },
+                  { "letter": "B", "text": "reorganising shifts without warning" },
+                  { "letter": "C", "text": "neglecting to have enough staff during busy periods" }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 14,
+                "questionText": "What unexpected benefit did Dunwich Hotel notice after improving staff retention rates?",
+                "options": [
+                  { "letter": "A", "text": "a fall in customer complaints" },
+                  { "letter": "B", "text": "an increase in loyalty club membership" },
+                  { "letter": "C", "text": "a rise in spending per customer" }
+                ],
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "15-20",
+          "instructions": "Which way of reducing staff turnover was used in each of the following hotels?\nWrite the correct letter, A, B or C, next to Questions 15-20.\n\nWays of reducing staff turnover\nA - improving relationships and teamwork\nB - offering incentives and financial benefits\nC - providing career opportunities",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Ways of reducing staff turnover",
+            "matchingOptions": [
+              { "letter": "A", "text": "improving relationships and teamwork" },
+              { "letter": "B", "text": "offering incentives and financial benefits" },
+              { "letter": "C", "text": "providing career opportunities" }
+            ],
+            "sectionTitle": "Hotels",
+            "items": [
+              {
+                "questionNumber": 15,
+                "text": "The Sun Club",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 16,
+                "text": "The Portland",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 17,
+                "text": "Bluewater Hotels",
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 18,
+                "text": "Pentlow Hotels",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 19,
+                "text": "Green Planet",
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 20,
+                "text": "The Amesbury",
+                "correctAnswer": "A"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Thomas's Sporting Activities Discussion",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening17%20t4%20s3.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE3IHQ0IHMzLm1wMyIsImlhdCI6MTc1OTA3NDAwNywiZXhwIjo0OTEyNjc0MDA3fQ.4t6B1ISU-yRwUgyX8_wtKYZ2Y-W1ChzYA2PXqhOXdmQ",
+      "questionGroups": [
+        {
+          "groupId": "21-22",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO points do Thomas and Jeanne make about Thomas's sporting activities at school?",
+            "options": [
+              { "letter": "A", "text": "He should have felt more positive about them." },
+              { "letter": "B", "text": "The training was too challenging for him." },
+              { "letter": "C", "text": "He could have worked harder at them." },
+              { "letter": "D", "text": "His parents were disappointed in him." },
+              { "letter": "E", "text": "His fellow students admired him." }
+            ],
+            "questions": [
+              { "questionNumber": 21, "correctAnswer": "C" },
+              { "questionNumber": 22, "correctAnswer": "E" }
+            ]
+          }
+        },
+        {
+          "groupId": "23-24",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO feelings did Thomas experience when he was in Kenya?",
+            "options": [
+              { "letter": "A", "text": "disbelief" },
+              { "letter": "B", "text": "relief" },
+              { "letter": "C", "text": "stress" },
+              { "letter": "D", "text": "gratitude" },
+              { "letter": "E", "text": "homesickness" }
+            ],
+            "questions": [
+              { "questionNumber": 23, "correctAnswer": "A" },
+              { "questionNumber": 24, "correctAnswer": "D" }
+            ]
+          }
+        },
+        {
+          "groupId": "25-30",
+          "instructions": "What comment do the students make about the development of each of the following items of sporting equipment?\nChoose SIX answers from the box and write the correct letter, A-H, next to Questions 25-30.",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Comments about the development of the equipment",
+            "matchingOptions": [
+              { "letter": "A", "text": "It could cause excessive sweating." },
+              { "letter": "B", "text": "The material was being mass produced for another purpose." },
+              { "letter": "C", "text": "People often needed to make their own." },
+              { "letter": "D", "text": "It often had to be replaced." },
+              { "letter": "E", "text": "The material was expensive." },
+              { "letter": "F", "text": "It was unpopular among spectators." },
+              { "letter": "G", "text": "It caused injuries." },
+              { "letter": "H", "text": "No one ring it liked it at first." }
+            ],
+            "sectionTitle": "Items of sporting equipment",
+            "items": [
+              {
+                "questionNumber": 25,
+                "text": "the table tennis bat",
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 26,
+                "text": "the cricket helmet",
+                "correctAnswer": "F"
+              },
+              {
+                "questionNumber": 27,
+                "text": "the cycle helmet",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 28,
+                "text": "the golf club",
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 29,
+                "text": "the hockey stick",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 30,
+                "text": "the football",
+                "correctAnswer": "G"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Maple Syrup",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening17%20t4%20s4.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE3IHQ0IHM0Lm1wMyIsImlhdCI6MTc1OTA3NDA4NSwiZXhwIjo0OTEyNjc0MDg1fQ.kRQKJV9ckPpkkKbcMwQpbxqGwzJDfTMBZutRL3YrjSk",
+      "questionGroups": [
+        {
+          "groupId": "31-40",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Maple syrup",
+            "sections": [
+              {
+                "sectionTitle": "What is maple syrup?",
+                "content": [
+                  {
+                    "text": "• made from the sap of the maple tree",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• added to food or used in cooking",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• colour described as ",
+                    "questionNumber": 31,
+                    "inputType": "text",
+                    "correctAnswer": "golden",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• very ",
+                    "questionNumber": 32,
+                    "inputType": "text",
+                    "correctAnswer": "healthy",
+                    "suffix": " compared to refined sugar",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "The maple tree",
+                "content": [
+                  {
+                    "text": "• has many species",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• needs sunny days and cool nights",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• maple leaf has been on the Canadian flag since 1964",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• needs moist soil but does not need fertiliser as well",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• best growing conditions and ",
+                    "questionNumber": 33,
+                    "inputType": "text",
+                    "correctAnswer": "climate",
+                    "suffix": " are in Canada and North America",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Early maple sugar producers",
+                "content": [
+                  {
+                    "text": "• made holes in the tree trunks",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• used hot ",
+                    "questionNumber": 34,
+                    "inputType": "text",
+                    "correctAnswer": "rock(s)",
+                    "suffix": " to heat the sap",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• used tree bark to make containers for collection",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• sweetened food and drink with sugar",
+                    "isStatic": true,
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Today's maple syrup",
+                "content": [
+                  {
+                    "text": "\nThe trees",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "• Tree trunks may not have the correct ",
+                    "questionNumber": 35,
+                    "inputType": "text",
+                    "correctAnswer": "diameter",
+                    "suffix": " until they have been growing for 40 years.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• The changing temperature and movement of water within the tree produces the sap.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "\nThe production",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "• A tap drilled into the trunk and a ",
+                    "questionNumber": 36,
+                    "inputType": "text",
+                    "correctAnswer": "tube",
+                    "suffix": " carries the sap into a bucket.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Large pans of sap called evaporators are heated by means of a ",
+                    "questionNumber": 37,
+                    "inputType": "text",
+                    "correctAnswer": "fire",
+                    "suffix": ".",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• A lot of ",
+                    "questionNumber": 38,
+                    "inputType": "text",
+                    "correctAnswer": "steam",
+                    "suffix": " is produced during the evaporation process.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• 'Sugar sand' is removed because it makes the syrup look ",
+                    "questionNumber": 39,
+                    "inputType": "text",
+                    "correctAnswer": "cloudy",
+                    "suffix": " and affects the taste.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• The syrup is ready for use.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• A huge quantity of sap is needed to make a ",
+                    "questionNumber": 40,
+                    "inputType": "text",
+                    "correctAnswer": "litre / liter",
+                    "suffix": " of maple syrup.",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

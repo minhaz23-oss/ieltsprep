@@ -1,0 +1,585 @@
+{
+  "id": "listening13_t1",
+  "title": "IELTS Listening 13 Practice Test 1",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "tags": [
+      "cookery-classes",
+      "traffic-changes",
+      "seed-germination",
+      "urban-animals"
+    ],
+    "description": "Full IELTS Listening Practice Test with 4 sections"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Cookery Classes",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening13_t1_s1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzEzX3QxX3MxLm1wMyIsImlhdCI6MTc1OTMzNDM0NiwiZXhwIjo0OTEyOTM0MzQ2fQ.p61tV-IYzv9PLnD6oy4QsV-xj0ODx55hpFAXSpO5Xgc",
+      "questionGroups": [
+        {
+          "groupId": "1-10",
+          "instructions": "Complete the table below.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+          "displayType": "form",
+          "content": {
+            "type": "form",
+            "title": "COOKERY CLASSES",
+            "fields": [
+              {
+                "label": "Example",
+                "isExample": true
+              },
+              {
+                "label": "Cookery Class: The Food",
+                "value": "Studio",
+                "isExample": true
+              },
+              {
+                "label": "Focus: how to",
+                "questionNumber": 1,
+                "inputType": "text",
+                "correctAnswer": "choose",
+                "suffix": " and cook with seasonal products",
+                "inputPlaceholder": "........................"
+              },
+              {
+                "label": "Other Information:",
+                "isList": true,
+                "listItems": [
+                  {
+                    "value": "• small classes",
+                    "isStatic": true
+                  },
+                  {
+                    "prefix": "• also offers ",
+                    "questionNumber": 2,
+                    "inputType": "text",
+                    "correctAnswer": "private",
+                    "suffix": " classes"
+                  },
+                  {
+                    "prefix": "• clients who return get a ",
+                    "questionNumber": 3,
+                    "inputType": "text",
+                    "correctAnswer": "20 / twenty percent",
+                    "suffix": " discount"
+                  }
+                ]
+              },
+              {
+                "label": "Cookery Class: Bond's Cookery School",
+                "isStatic": true
+              },
+              {
+                "label": "Focus: food that is",
+                "questionNumber": 4,
+                "inputType": "text",
+                "correctAnswer": "healthy",
+                "inputPlaceholder": "........................"
+              },
+              {
+                "label": "Other Information:",
+                "isList": true,
+                "listItems": [
+                  {
+                    "prefix": "• includes recipes to strengthen your ",
+                    "questionNumber": 5,
+                    "inputType": "text",
+                    "correctAnswer": "bones"
+                  },
+                  {
+                    "prefix": "• they have a free ",
+                    "questionNumber": 6,
+                    "inputType": "text",
+                    "correctAnswer": "lecture",
+                    "suffix": " every Thursday"
+                  }
+                ]
+              },
+              {
+                "label": "Cookery Class: The",
+                "questionNumber": 7,
+                "inputType": "text",
+                "correctAnswer": "Arretsa",
+                "suffix": " Centre",
+                "inputPlaceholder": "........................"
+              },
+              {
+                "label": "Focus: mainly",
+                "questionNumber": 8,
+                "inputType": "text",
+                "correctAnswer": "vegetarian",
+                "suffix": " food",
+                "inputPlaceholder": "........................"
+              },
+              {
+                "label": "Other Information:",
+                "isList": true,
+                "listItems": [
+                  {
+                    "prefix": "• located near the ",
+                    "questionNumber": 9,
+                    "inputType": "text",
+                    "correctAnswer": "market"
+                  },
+                  {
+                    "prefix": "• a special course in skills with a ",
+                    "questionNumber": 10,
+                    "inputType": "text",
+                    "correctAnswer": "knife",
+                    "suffix": " is sometimes available"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Traffic Changes in Granford",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening13_t1_s2.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzEzX3QxX3MyLm1wMyIsImlhdCI6MTc1OTMzNDM0OSwiZXhwIjo0OTEyOTM0MzQ5fQ.g-pYi-AxqY3GQ1mTNcvW0TIwE3xqg4H0XeZag5YL968",
+      "questionGroups": [
+        {
+          "groupId": "11-13",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 11,
+                "questionText": "Why are changes needed to traffic systems in Granford?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "The number of traffic accidents has risen."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "The amount of traffic on the roads has increased."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "The types of vehicles on the roads have changed."
+                  }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 12,
+                "questionText": "In a survey, local residents particularly complained about",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "dangerous driving by parents."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "pollution from trucks and lorries."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "inconvenience from parked cars."
+                  }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 13,
+                "questionText": "According to the speaker, one problem with the new regulations will be",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "raising money to pay for them."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "finding a way to make people follow them."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "getting the support of the police."
+                  }
+                ],
+                "correctAnswer": "B"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "14-20",
+          "instructions": "Label the map below.\nWrite the correct letter, A-I, next to Questions 14-20",
+          "displayType": "matching",
+          "imageUrl":"https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningImage/Cam-13-Test-1-Q14-20.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0ltYWdlL0NhbS0xMy1UZXN0LTEtUTE0LTIwLmpwZyIsImlhdCI6MTc1OTMzNDY3MiwiZXhwIjo0OTEyOTM0NjcyfQ.UGu9Zx3Zu3xQdoxn6DxxJqTWYEqoDf5N4JPNqWIsq4s",
+          "content": {
+            "type": "matching",
+            "title": "Proposed traffic changes in Granford",
+            "matchingOptions": [
+              {
+                "letter": "A",
+                "text": "Location A"
+              },
+              {
+                "letter": "B",
+                "text": "Location B"
+              },
+              {
+                "letter": "C",
+                "text": "Location C"
+              },
+              {
+                "letter": "D",
+                "text": "Location D"
+              },
+              {
+                "letter": "E",
+                "text": "Location E"
+              },
+              {
+                "letter": "F",
+                "text": "Location F"
+              },
+              {
+                "letter": "G",
+                "text": "Location G"
+              },
+              {
+                "letter": "H",
+                "text": "Location H"
+              },
+              {
+                "letter": "I",
+                "text": "Location I"
+              }
+            ],
+            "items": [
+              {
+                "questionNumber": 14,
+                "text": "New traffic lights",
+                "correctAnswer": "E"
+              },
+              {
+                "questionNumber": 15,
+                "text": "Pedestrian crossing",
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 16,
+                "text": "Parking allowed",
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 17,
+                "text": "New 'No Parking' sign",
+                "correctAnswer": "G"
+              },
+              {
+                "questionNumber": 18,
+                "text": "New disabled parking spaces",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 19,
+                "text": "Widened pavement",
+                "correctAnswer": "H"
+              },
+              {
+                "questionNumber": 20,
+                "text": "Lorry loading/unloading restrictions",
+                "correctAnswer": "I"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Seed Germination Research",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening13_t1_s3.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzEzX3QxX3MzLm1wMyIsImlhdCI6MTc1OTMzNDM1MiwiZXhwIjo0OTEyOTM0MzUyfQ.eBtHMBhXe1uIimc4z3Q96KSFZL_gX2FFhkB36d5Shf4",
+      "questionGroups": [
+        {
+          "groupId": "21-25",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 21,
+                "questionText": "Why is Jack interested in investigating seed germination?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "He may do a module on a related topic later on."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "He wants to have a career in plant science."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "He is thinking of choosing this topic for his dissertation."
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 22,
+                "questionText": "Jack and Emma agree the main advantage of their present experiment is that it can be",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "described very easily."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "carried out inside the laboratory."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "completed in the time available."
+                  }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 23,
+                "questionText": "What do they decide to check with their tutor?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "whether their aim is appropriate"
+                  },
+                  {
+                    "letter": "B",
+                    "text": "whether anyone else has chosen this topic"
+                  },
+                  {
+                    "letter": "C",
+                    "text": "whether the assignment contributes to their final grade"
+                  }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 24,
+                "questionText": "They agree that Graves' book on seed germination is disappointing because",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "it fails to cover recent advances in seed science."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "the content is irrelevant for them."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "its focus is very theoretical."
+                  }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 25,
+                "questionText": "What does Jack say about the article on seed germination by Lee Hall?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "The diagrams of plant development are useful."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "The analysis of seed germination statistics is thorough."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "The findings on seed germination after fires are surprising."
+                  }
+                ],
+                "correctAnswer": "B"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "26-30",
+          "instructions": "Complete the flow-chart below.\nChoose FIVE answers from the box and write the correct letter, A-H, next to Questions 26-30\n\nA - container\nB - soil\nC - weight\nD - condition\nE - height\nF - colour\nG - types\nH - depths",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Stage in the experiment",
+            "sections": [
+              {
+                "content": [
+                  {
+                    "text": "Select seeds of different ",
+                    "questionNumber": 26,
+                    "inputType": "text",
+                    "correctAnswer": "G",
+                    "suffix": " and sizes."
+                  },
+                  {
+                    "text": "\n↓\n\nMeasure and record the ",
+                    "questionNumber": 27,
+                    "inputType": "text",
+                    "correctAnswer": "C",
+                    "suffix": " and size of each one."
+                  },
+                  {
+                    "text": "\n↓\n\nDecide on the ",
+                    "questionNumber": 28,
+                    "inputType": "text",
+                    "correctAnswer": "H",
+                    "suffix": " to be used."
+                  },
+                  {
+                    "text": "\n↓\n\nUse a different ",
+                    "questionNumber": 29,
+                    "inputType": "text",
+                    "correctAnswer": "A",
+                    "suffix": " for each seed and label it."
+                  },
+                  {
+                    "text": "\n↓\n\nAfter about 3 weeks, record the plant's ",
+                    "questionNumber": 30,
+                    "inputType": "text",
+                    "correctAnswer": "E",
+                    "suffix": "."
+                  },
+                  {
+                    "text": "\n↓\n\nInvestigate the findings.",
+                    "isStatic": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Effects of Urban Environments on Animals",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening13_t1_s4.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzEzX3QxX3M0Lm1wMyIsImlhdCI6MTc1OTMzNDM1NSwiZXhwIjo0OTEyOTM0MzU1fQ.L3jpbgINIXsDbmXIPcHKmw4hvmzezw6jL0HpbpIx2-w",
+      "questionGroups": [
+        {
+          "groupId": "31-40",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Effects of urban environments on animals",
+            "sections": [
+              {
+                "sectionTitle": "Introduction",
+                "content": [
+                  {
+                    "text": "Recent urban developments represent massive environmental changes. It was previously thought that only a few animals were suitable for city life, e.g.",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "• the ",
+                    "questionNumber": 31,
+                    "inputType": "text",
+                    "correctAnswer": "crow",
+                    "suffix": " – because of its general adaptability",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• the pigeon – because walls of city buildings are similar to ",
+                    "questionNumber": 32,
+                    "inputType": "text",
+                    "correctAnswer": "cliffs",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "In fact, many urban animals are adapting with unusual ",
+                    "questionNumber": 33,
+                    "inputType": "text",
+                    "correctAnswer": "speed"
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Recent research",
+                "content": [
+                  {
+                    "text": "• Emilie Snell-Rood studied small urbanised mammal specimens from museums in Minnesota.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  – She found the size of their ",
+                    "questionNumber": 34,
+                    "inputType": "text",
+                    "correctAnswer": "brain(s)",
+                    "suffix": " had increased."
+                  },
+                  {
+                    "text": "  – She suggests this may be due to the need to locate new sources of ",
+                    "questionNumber": 35,
+                    "inputType": "text",
+                    "correctAnswer": "food",
+                    "suffix": " and to deal with new dangers."
+                  },
+                  {
+                    "text": "• Catarina Miranda focused on the ",
+                    "questionNumber": 36,
+                    "inputType": "text",
+                    "correctAnswer": "behaviour(s) / behavior(s)",
+                    "suffix": " of urban and rural blackbirds.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  – She found urban birds were often braver, but were afraid of situations that were ",
+                    "questionNumber": 37,
+                    "inputType": "text",
+                    "correctAnswer": "new"
+                  },
+                  {
+                    "text": "• Jonathan Atwell studies how animals respond to urban environments.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  – He found that some animals respond to ",
+                    "questionNumber": 38,
+                    "inputType": "text",
+                    "correctAnswer": "stress",
+                    "suffix": " by producing lower levels of hormones."
+                  },
+                  {
+                    "text": "• Sarah Partan's team found urban squirrels use their ",
+                    "questionNumber": 39,
+                    "inputType": "text",
+                    "correctAnswer": "tail(s)",
+                    "suffix": " to help them communicate.",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Long-term possibilities",
+                "content": [
+                  {
+                    "text": "Species of animals may develop which are unique to cities. However, some changes may not be ",
+                    "questionNumber": 40,
+                    "inputType": "text",
+                    "correctAnswer": "permanent",
+                    "suffix": "."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 export interface QuestionGroup {
   groupId: string;
   instructions: string;
-  displayType: 'form' | 'single-choice' | 'multiple-answer' | 'matching' | 'notes';
+  displayType: 'form' | 'single-choice' | 'multiple-answer' | 'matching' | 'notes' | 'table';
   imageUrl?: string;
   customFields?: Record<string, string | number | boolean>;
   content: {
@@ -52,6 +52,18 @@ export interface QuestionGroup {
         suffix?: string;
         isStatic?: boolean;
         isBullet?: boolean;
+      }>;
+    }>;
+    // Table-specific properties
+    headers?: string[];
+    rows?: Array<{
+      cells: Array<{
+        text?: string;
+        questionNumber?: number;
+        inputType?: string;
+        correctAnswer?: string;
+        suffix?: string;
+        isStatic?: boolean;
       }>;
     }>;
   };

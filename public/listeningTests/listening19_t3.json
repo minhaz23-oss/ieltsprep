@@ -1,0 +1,674 @@
+{
+  "id": "listening19_t3",
+  "title": "IELTS Listening 19 Practice Test 3",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "tags": [
+      "local-food-shops",
+      "festival-workshops",
+      "science-experiment",
+      "microplastics"
+    ],
+    "description": "Full IELTS Listening Practice Test with 4 sections"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Local Food Shops",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening19_t3_s1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE5X3QzX3MxLm1wMyIsImlhdCI6MTc1OTI0Nzc1OSwiZXhwIjo0OTEyODQ3NzU5fQ.oy-HLyK4TDsidOJNew5whPGoo6llLtk64ZppbNw20aQ",
+      "questionGroups": [
+        {
+          "groupId": "1-6",
+          "instructions": "Complete the notes below.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Local food shops",
+            "sections": [
+              {
+                "sectionTitle": "Where to go",
+                "content": [
+                  {
+                    "text": "• Kite Place – near the ",
+                    "questionNumber": 1,
+                    "inputType": "text",
+                    "correctAnswer": "harbour / harbor",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Fish market",
+                "content": [
+                  {
+                    "text": "• cross the ",
+                    "questionNumber": 2,
+                    "inputType": "text",
+                    "correctAnswer": "bridge",
+                    "suffix": " and turn right",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• best to go before ",
+                    "questionNumber": 3,
+                    "inputType": "text",
+                    "correctAnswer": "3.30 / three thirty / ½ / half 3 / three",
+                    "suffix": " pm, earlier than closing time",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Organic shop",
+                "content": [
+                  {
+                    "text": "• called '",
+                    "questionNumber": 4,
+                    "inputType": "text",
+                    "correctAnswer": "Rose / rose",
+                    "suffix": "'",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• below a restaurant in the large, grey building",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• look for the large ",
+                    "questionNumber": 5,
+                    "inputType": "text",
+                    "correctAnswer": "sign",
+                    "suffix": " outside",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Supermarket",
+                "content": [
+                  {
+                    "text": "• take a ",
+                    "questionNumber": 6,
+                    "inputType": "text",
+                    "correctAnswer": "purple",
+                    "suffix": " minibus, number 289",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "7-10",
+          "instructions": "Complete the table below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "table",
+          "content": {
+            "type": "table",
+            "title": "Shopping",
+            "headers": [
+              "",
+              "To buy",
+              "Other ideas"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Fish market",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "a dozen prawns",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "a handful of ",
+                    "questionNumber": 7,
+                    "inputType": "text",
+                    "correctAnswer": "samphire",
+                    "suffix": " (type of seaweed)"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Organic shop",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "beans and a ",
+                    "questionNumber": 8,
+                    "inputType": "text",
+                    "correctAnswer": "melon",
+                    "suffix": " for dessert"
+                  },
+                  {
+                    "text": "spices and ",
+                    "questionNumber": 9,
+                    "inputType": "text",
+                    "correctAnswer": "coconut"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Bakery",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "a brown loaf",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "a ",
+                    "questionNumber": 10,
+                    "inputType": "text",
+                    "correctAnswer": "strawberry",
+                    "suffix": " tart"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Festival Workshops",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening19_t3_s2.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE5X3QzX3MyLm1wMyIsImlhdCI6MTc1OTI0Nzc2MiwiZXhwIjo0OTEyODQ3NzYyfQ.hnm0vcFv8gp9paaTj4VYZKaNvOrffzTrnDv9WMG240c",
+      "questionGroups": [
+        {
+          "groupId": "11-16",
+          "instructions": "What information is given about each of the following festival workshops?\nChoose SIX answers from the box and write the correct letter, A-H, next to Questions 11-16.",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Information",
+            "matchingOptions": [
+              {
+                "letter": "A",
+                "text": "involves painting and drawing"
+              },
+              {
+                "letter": "B",
+                "text": "will be led by a prize-winning author"
+              },
+              {
+                "letter": "C",
+                "text": "is aimed at children with a disability"
+              },
+              {
+                "letter": "D",
+                "text": "involves a drama activity"
+              },
+              {
+                "letter": "E",
+                "text": "focuses on new relationships"
+              },
+              {
+                "letter": "F",
+                "text": "is aimed at a specific age group"
+              },
+              {
+                "letter": "G",
+                "text": "explores an unhappy feeling"
+              },
+              {
+                "letter": "H",
+                "text": "raises awareness of a particular culture"
+              }
+            ],
+            "sectionTitle": "Festival workshops",
+            "items": [
+              {
+                "questionNumber": 11,
+                "text": "Superheroes",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 12,
+                "text": "Just do it",
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 13,
+                "text": "Count on me",
+                "correctAnswer": "F"
+              },
+              {
+                "questionNumber": 14,
+                "text": "Speak up",
+                "correctAnswer": "G"
+              },
+              {
+                "questionNumber": 15,
+                "text": "Jump for joy",
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 16,
+                "text": "Sticks and stones",
+                "correctAnswer": "H"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "17-18",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO reasons does the speaker give for recommending Alive and Kicking?",
+            "options": [
+              {
+                "letter": "A",
+                "text": "It will appeal to both boys and girls."
+              },
+              {
+                "letter": "B",
+                "text": "The author is well known."
+              },
+              {
+                "letter": "C",
+                "text": "It has colourful illustrations."
+              },
+              {
+                "letter": "D",
+                "text": "It is funny."
+              },
+              {
+                "letter": "E",
+                "text": "It deals with an important topic."
+              }
+            ],
+            "questions": [
+              {
+                "questionNumber": 17,
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 18,
+                "correctAnswer": "E"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "19-20",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO pieces of advice does the speaker give to parents about reading?",
+            "options": [
+              {
+                "letter": "A",
+                "text": "Encourage children to write down new vocabulary."
+              },
+              {
+                "letter": "B",
+                "text": "Allow children to listen to audio books."
+              },
+              {
+                "letter": "C",
+                "text": "Get recommendations from librarians."
+              },
+              {
+                "letter": "D",
+                "text": "Give children a choice about what they read."
+              },
+              {
+                "letter": "E",
+                "text": "Only read aloud to children until they can read independently."
+              }
+            ],
+            "questions": [
+              {
+                "questionNumber": 19,
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 20,
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Science Experiment for Year 12 Students",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening19_t3_s3.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE5X3QzX3MzLm1wMyIsImlhdCI6MTc1OTI0Nzc2NywiZXhwIjo0OTEyODQ3NzY3fQ.WNk_MSyaF2X8lUfcXOXG4ux-G3hpNA98dhZjYXWNnNo",
+      "questionGroups": [
+        {
+          "groupId": "21-25",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 21,
+                "questionText": "How does Clare feel about the students in her Year 12 science class?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "worried that they are not making progress"
+                  },
+                  {
+                    "letter": "B",
+                    "text": "challenged by their poor behaviour in class"
+                  },
+                  {
+                    "letter": "C",
+                    "text": "frustrated at their lack of interest in the subject"
+                  }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 22,
+                "questionText": "How does Jake react to Clare's suggestion about an experiment based on children's diet?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "He is concerned that the results might not be meaningful."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "He feels some of the data might be difficult to obtain."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "He suspects that the conclusions might be upsetting."
+                  }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 23,
+                "questionText": "What problem do they agree may be involved in an experiment involving animals?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "Any results may not apply to humans."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "It may be complicated to get permission."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "Students may not be happy about animal experiments."
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 24,
+                "questionText": "What question do they decide the experiment should address?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "Are mice capable of controlling their food intake?"
+                  },
+                  {
+                    "letter": "B",
+                    "text": "Does an increase in sugar lead to health problems?"
+                  },
+                  {
+                    "letter": "C",
+                    "text": "How much do supplements of different kinds affect health?"
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 25,
+                "questionText": "Clare might also consider doing another experiment involving",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "other types of food supplement."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "different genetic strains of mice."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "varying amounts of exercise."
+                  }
+                ],
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "26-30",
+          "instructions": "Complete the flowchart below.\nChoose FIVE answers from the box and write the correct letter, A-H, next to Questions 26-30.",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Flowchart options",
+            "matchingOptions": [
+              {
+                "letter": "A",
+                "text": "size"
+              },
+              {
+                "letter": "B",
+                "text": "escape"
+              },
+              {
+                "letter": "C",
+                "text": "age"
+              },
+              {
+                "letter": "D",
+                "text": "water"
+              },
+              {
+                "letter": "E",
+                "text": "cereal"
+              },
+              {
+                "letter": "F",
+                "text": "calculations"
+              },
+              {
+                "letter": "G",
+                "text": "changes"
+              },
+              {
+                "letter": "H",
+                "text": "colour"
+              }
+            ],
+            "sectionTitle": "Experiment steps",
+            "items": [
+              {
+                "questionNumber": 26,
+                "text": "Choose mice which are all the same",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 27,
+                "text": "Divide the mice into two groups, each with a different",
+                "correctAnswer": "H"
+              },
+              {
+                "questionNumber": 28,
+                "text": "Feed group B the same, but also sugar contained in",
+                "correctAnswer": "E"
+              },
+              {
+                "questionNumber": 29,
+                "text": "Place them in a weighing chamber to prevent",
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 30,
+                "text": "Do all necessary",
+                "correctAnswer": "F"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Microplastics",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening19_t3_s4.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE5X3QzX3M0Lm1wMyIsImlhdCI6MTc1OTI0Nzc3MiwiZXhwIjo0OTEyODQ3NzcyfQ.Yor9vjVYVLdvcgIPRYjUKU1aILD-N8OIQREX0Ujk5j4",
+      "questionGroups": [
+        {
+          "groupId": "31-40",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Microplastics",
+            "sections": [
+              {
+                "sectionTitle": "Where microplastics come from",
+                "content": [
+                  {
+                    "text": "• fibres from some ",
+                    "questionNumber": 31,
+                    "inputType": "text",
+                    "correctAnswer": "clothing",
+                    "suffix": " during washing",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• the breakdown of large pieces of plastic",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• waste from industry",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• the action of vehicle tyres on roads",
+                    "isStatic": true,
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Effects of microplastics",
+                "content": [
+                  {
+                    "text": "• They cause injuries to the ",
+                    "questionNumber": 32,
+                    "inputType": "text",
+                    "correctAnswer": "mouths",
+                    "suffix": " of wildlife and affect their digestive systems.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• They enter the food chain, e.g., in bottled and tap water, ",
+                    "questionNumber": 33,
+                    "inputType": "text",
+                    "correctAnswer": "salt",
+                    "suffix": " and seafood.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• They may not affect human health, but they are already banned in skin cleaning products and ",
+                    "questionNumber": 34,
+                    "inputType": "text",
+                    "correctAnswer": "toothpaste",
+                    "suffix": " in some countries.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Microplastics enter the soil through the air, rain and ",
+                    "questionNumber": 35,
+                    "inputType": "text",
+                    "correctAnswer": "fertilisers / fertilizers",
+                    "suffix": ".",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Microplastics in the soil – a study by Anglia Ruskin University",
+                "content": [
+                  {
+                    "text": "• Earthworms are important because they add ",
+                    "questionNumber": 36,
+                    "inputType": "text",
+                    "correctAnswer": "nutrients",
+                    "suffix": " to the soil.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• The study aimed to find whether microplastics in earthworms affect the ",
+                    "questionNumber": 37,
+                    "inputType": "text",
+                    "correctAnswer": "growth",
+                    "suffix": " of plants.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• The study found that microplastics caused:",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "       – ",
+                    "questionNumber": 38,
+                    "inputType": "text",
+                    "correctAnswer": "weight",
+                    "suffix": " loss in earthworms"
+                  },
+                  {
+                    "text": "       – fewer seeds to germinate",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "       – a rise in the level of ",
+                    "questionNumber": 39,
+                    "inputType": "text",
+                    "correctAnswer": "acid",
+                    "suffix": " in the soil."
+                  },
+                  {
+                    "text": "The study concluded:",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "       – soil should be seen as an important natural process.",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "       – changes to soil damage both ecosystems and ",
+                    "questionNumber": 40,
+                    "inputType": "text",
+                    "correctAnswer": "society",
+                    "suffix": "."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

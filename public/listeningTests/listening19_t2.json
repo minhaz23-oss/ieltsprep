@@ -1,0 +1,755 @@
+{
+  "id": "listening19_t2",
+  "title": "IELTS Listening 19 Practice Test 2",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "tags": [
+      "guitar-group",
+      "lifeboat-volunteer",
+      "recycling-footwear",
+      "tardigrades"
+    ],
+    "description": "Full IELTS Listening Practice Test with 4 sections"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Guitar Group",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening19_t2_s1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE5X3QyX3MxLm1wMyIsImlhdCI6MTc1OTI0NzAyNCwiZXhwIjo0OTEyODQ3MDI0fQ.mf23iWFaOuhA2sHNq7GxIN9dNol4CtVKs32H8IaddL8",
+      "questionGroups": [
+        {
+          "groupId": "1-6",
+          "instructions": "Complete the form below.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+          "displayType": "form",
+          "content": {
+            "type": "form",
+            "title": "Guitar Group",
+            "fields": [
+              {
+                "label": "Coordinator:",
+                "value": "Gary ",
+                "questionNumber": 1,
+                "inputType": "text",
+                "correctAnswer": "Mathieson"
+              },
+              {
+                "label": "Level:",
+                "questionNumber": 2,
+                "inputType": "text",
+                "correctAnswer": "beginners"
+              },
+              {
+                "label": "Place:",
+                "value": "the ",
+                "questionNumber": 3,
+                "inputType": "text",
+                "correctAnswer": "college"
+              },
+              {
+                "label": "",
+                "questionNumber": 4,
+                "inputType": "text",
+                "correctAnswer": "New",
+                "suffix": " Street"
+              },
+              {
+                "label": "",
+                "value": "First floor, Room T347",
+                "isStatic": true
+              },
+              {
+                "label": "Time:",
+                "value": "Thursday morning at ",
+                "questionNumber": 5,
+                "inputType": "text",
+                "correctAnswer": "11 / eleven (am)"
+              },
+              {
+                "label": "Recommended website:",
+                "value": "'The perfect ",
+                "questionNumber": 6,
+                "inputType": "text",
+                "correctAnswer": "instrument",
+                "suffix": "'"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "7-10",
+          "instructions": "Complete the table below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "table",
+          "content": {
+            "type": "table",
+            "title": "A typical 45-minute guitar lesson",
+            "headers": [
+              "Time",
+              "Activity",
+              "Notes"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "5 minutes",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "tuning guitars",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "using an app or by ",
+                    "questionNumber": 7,
+                    "inputType": "text",
+                    "correctAnswer": "ear"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "10 minutes",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "strumming chords using our thumbs",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "keeping time while the teacher is ",
+                    "questionNumber": 8,
+                    "inputType": "text",
+                    "correctAnswer": "clapping"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "15 minutes",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "playing songs",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "often listening to a ",
+                    "questionNumber": 9,
+                    "inputType": "text",
+                    "correctAnswer": "recording",
+                    "suffix": " of a song"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "10 minutes",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "playing single notes and simple tunes",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "playing together, then ",
+                    "questionNumber": 10,
+                    "inputType": "text",
+                    "correctAnswer": "alone"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "5 minutes",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "noting things to practise at home",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "",
+                    "isStatic": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Working as a Lifeboat Volunteer",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening19_t2_s2.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE5X3QyX3MyLm1wMyIsImlhdCI6MTc1OTI0NzAyOCwiZXhwIjo0OTEyODQ3MDI4fQ.TYLTI8E2zCjvBxS3az9BIGTMed-Sons5dN8UchZe8tI",
+      "questionGroups": [
+        {
+          "groupId": "11-16",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 11,
+                "questionText": "What made David leave London and move to Northsea?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "He was eager to develop a hobby."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "He wanted to work shorter hours."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "He found his job in website design unsatisfying."
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 12,
+                "questionText": "The Lifeboat Institution in Northsea was built with money provided by",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "a local organisation."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "a local resident."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "the local council."
+                  }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 13,
+                "questionText": "In his health assessment, the doctor was concerned about the fact that David",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "might be colour blind."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "was rather short-sighted."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "had undergone eye surgery."
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 14,
+                "questionText": "After arriving at the lifeboat station, they aim to launch the boat within",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "five minutes."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "six to eight minutes."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "eight and a half minutes."
+                  }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 15,
+                "questionText": "As a 'helmsman', David has the responsibility of deciding",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "who will be the members of his crew."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "what equipment it will be necessary to take."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "if the lifeboat should be launched."
+                  }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 16,
+                "questionText": "As well as going out on the lifeboat, David",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "gives talks on safety at sea."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "helps with fundraising."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "recruits new volunteers."
+                  }
+                ],
+                "correctAnswer": "A"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "17-18",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO things does David say about the lifeboat volunteer training?",
+            "options": [
+              {
+                "letter": "A",
+                "text": "The residential course developed his leadership skills."
+              },
+              {
+                "letter": "B",
+                "text": "The training in use of ropes and knots was quite brief."
+              },
+              {
+                "letter": "C",
+                "text": "The training exercises have built up his mental strength."
+              },
+              {
+                "letter": "D",
+                "text": "The casualty care activities were particularly challenging for him."
+              },
+              {
+                "letter": "E",
+                "text": "The wave tank activities provided practice in survival techniques."
+              }
+            ],
+            "questions": [
+              {
+                "questionNumber": 17,
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 18,
+                "correctAnswer": "E"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "19-20",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO things does David find most motivating about the work he does?",
+            "options": [
+              {
+                "letter": "A",
+                "text": "working as part of a team"
+              },
+              {
+                "letter": "B",
+                "text": "experiences when working in winter"
+              },
+              {
+                "letter": "C",
+                "text": "being thanked by those he has helped"
+              },
+              {
+                "letter": "D",
+                "text": "the fact that it keeps him fit"
+              },
+              {
+                "letter": "E",
+                "text": "the chance to develop new equipment"
+              }
+            ],
+            "questions": [
+              {
+                "questionNumber": 19,
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 20,
+                "correctAnswer": "B"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Recycling Footwear",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening19_t2_s3.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE5X3QyX3MzLm1wMyIsImlhdCI6MTc1OTI0NzAzMiwiZXhwIjo0OTEyODQ3MDMyfQ.C2O-wO56wLTTcP3puPooCgTMEHyRORVK53qgRmUKEuE",
+      "questionGroups": [
+        {
+          "groupId": "21-24",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 21,
+                "questionText": "At first, Don thought the topic of recycling footwear might be too",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "limited in scope."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "hard to research."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "boring for listeners."
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 22,
+                "questionText": "When discussing trainers, Bella and Don disagree about",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "how popular they are among young people."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "how suitable they are for school."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "how quickly they wear out."
+                  }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 23,
+                "questionText": "Bella says that she sometimes recycles shoes because",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "they no longer fit."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "she no longer likes them."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "they are no longer in fashion."
+                  }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 24,
+                "questionText": "What did the article say that confused Don?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "Public consumption of footwear has risen."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "Less footwear is recycled now than in the past."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "People dispose of more footwear than they used to."
+                  }
+                ],
+                "correctAnswer": "B"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "25-28",
+          "instructions": "What reasons did the recycling manager give for rejecting footwear, according to the students?\nChoose FOUR answers from the box and write the correct letter, A-F, next to Questions 25-28.",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Reasons",
+            "matchingOptions": [
+              {
+                "letter": "A",
+                "text": "one shoe was missing"
+              },
+              {
+                "letter": "B",
+                "text": "the colour of one shoe had faded"
+              },
+              {
+                "letter": "C",
+                "text": "one shoe had a hole in it"
+              },
+              {
+                "letter": "D",
+                "text": "the shoes were brand new"
+              },
+              {
+                "letter": "E",
+                "text": "the shoes were too dirty"
+              },
+              {
+                "letter": "F",
+                "text": "the stitching on the shoes was broken"
+              }
+            ],
+            "sectionTitle": "Footwear",
+            "items": [
+              {
+                "questionNumber": 25,
+                "text": "the high-heeled shoes",
+                "correctAnswer": "E"
+              },
+              {
+                "questionNumber": 26,
+                "text": "the ankle boots",
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 27,
+                "text": "the baby shoes",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 28,
+                "text": "the trainers",
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "29-30",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 29,
+                "questionText": "Why did the project to make 'new' shoes out of old shoes fail?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "People believed the 'new' pairs of shoes were unhygienic."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "There were not enough good parts to use in the old shoes."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "The shoes in the 'new' pairs were not completely alike."
+                  }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 30,
+                "questionText": "Bella and Don agree that they can present their topic",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "from a new angle."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "with relevant images."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "in a straightforward way."
+                  }
+                ],
+                "correctAnswer": "A"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Tardigrades",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening19_t2_s4.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE5X3QyX3M0Lm1wMyIsImlhdCI6MTc1OTI0NzAzNiwiZXhwIjo0OTEyODQ3MDM2fQ.pIw6PNp9KcMVXuAl5RU6VHklWVYF3Ne26v_BthxTV7Q",
+      "questionGroups": [
+        {
+          "groupId": "31-40",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Tardigrades",
+            "sections": [
+              {
+                "content": [
+                  {
+                    "text": "• more than 1,000 species, 0.05–1.2 millimetres long",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• also known as water 'bears' (due to how they ",
+                    "questionNumber": 31,
+                    "inputType": "text",
+                    "correctAnswer": "move",
+                    "suffix": ") and 'moss piglets'",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Physical appearance",
+                "content": [
+                  {
+                    "text": "• a ",
+                    "questionNumber": 32,
+                    "inputType": "text",
+                    "correctAnswer": "short",
+                    "suffix": " round body and four pairs of legs",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• claws or ",
+                    "questionNumber": 33,
+                    "inputType": "text",
+                    "correctAnswer": "discs",
+                    "suffix": " for gripping",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• absence of respiratory organs",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• body filled with a liquid that carries both ",
+                    "questionNumber": 34,
+                    "inputType": "text",
+                    "correctAnswer": "oxygen",
+                    "suffix": " and blood",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• mouth shaped like a ",
+                    "questionNumber": 35,
+                    "inputType": "text",
+                    "correctAnswer": "tube",
+                    "suffix": " with teeth called stylets",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Habitat",
+                "content": [
+                  {
+                    "text": "• often found at the bottom of a lake or on plants",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• very resilient and can exist in very low or high ",
+                    "questionNumber": 36,
+                    "inputType": "text",
+                    "correctAnswer": "temperatures",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Cryptobiosis",
+                "content": [
+                  {
+                    "text": "• In dry conditions, they roll into a ball called a 'tun'.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• They stay alive with a much lower metabolism than usual.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• A type of ",
+                    "questionNumber": 37,
+                    "inputType": "text",
+                    "correctAnswer": "protein",
+                    "suffix": " ensures their DNA is not damaged.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Research is underway to find out how many days they can stay alive in ",
+                    "questionNumber": 38,
+                    "inputType": "text",
+                    "correctAnswer": "space",
+                    "suffix": ".",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Feeding",
+                "content": [
+                  {
+                    "text": "• consume liquids, e.g., those found in moss or ",
+                    "questionNumber": 39,
+                    "inputType": "text",
+                    "correctAnswer": "seaweed",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• may eat other tardigrades",
+                    "isStatic": true,
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Conservation status",
+                "content": [
+                  {
+                    "text": "• They are not considered to be ",
+                    "questionNumber": 40,
+                    "inputType": "text",
+                    "correctAnswer": "endangered",
+                    "suffix": ".",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

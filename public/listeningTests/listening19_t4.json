@@ -1,0 +1,683 @@
+{
+  "id": "listening19_t4",
+  "title": "IELTS Listening 19 Practice Test 4",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "tags": [
+      "first-day-work",
+      "running-club",
+      "bookshop",
+      "reforestation"
+    ],
+    "description": "Full IELTS Listening Practice Test with 4 sections"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "First Day at Work",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening19_t4_s1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE5X3Q0X3MxLm1wMyIsImlhdCI6MTc1OTI1MDI3MiwiZXhwIjo0OTEyODUwMjcyfQ.4jNzQ-JnK6Ti48TLugBbsWj82BD2tbflWYskQQZIabw",
+      "questionGroups": [
+        {
+          "groupId": "1-6",
+          "instructions": "Complete the notes below.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "First day at work",
+            "sections": [
+              {
+                "sectionTitle": "Name of supervisor",
+                "content": [
+                  {
+                    "text": "● Name of supervisor:",
+                    "questionNumber": 1,
+                    "inputType": "text",
+                    "correctAnswer": "Kaeden",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Where to leave coat and bag",
+                "content": [
+                  {
+                    "text": "use",
+                    "questionNumber": 2,
+                    "inputType": "text",
+                    "correctAnswer": "locker(s)",
+                    "suffix": " in staffroom",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "See Tiffany in HR",
+                "content": [
+                  {
+                    "text": "to give",
+                    "questionNumber": 3,
+                    "inputType": "text",
+                    "correctAnswer": "passport",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "to collect",
+                    "questionNumber": 4,
+                    "inputType": "text",
+                    "correctAnswer": "uniform",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Location of HR office",
+                "content": [
+                  {
+                    "text": "on",
+                    "questionNumber": 5,
+                    "inputType": "text",
+                    "correctAnswer": "third / 3rd",
+                    "suffix": " floor",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Supervisor’s mobile number",
+                "content": [
+                  {
+                    "text": "",
+                    "questionNumber": 6,
+                    "inputType": "text",
+                    "correctAnswer": "0412 665 903",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "7-10",
+          "instructions": "Complete the table below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "table",
+          "content": {
+            "type": "table",
+            "title": "Responsibilities",
+            "headers": [
+              "",
+              "Task 1",
+              "Task 2",
+              "Notes"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Bakery section",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "Check sell-by dates",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "Change price labels",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "Use",
+                    "questionNumber": 7,
+                    "inputType": "text",
+                    "correctAnswer": "yellow",
+                    "suffix": " labels"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Sushi takeaway counter",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "Re-stock with",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "boxes if needed",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "",
+                    "questionNumber": 8,
+                    "inputType": "text",
+                    "correctAnswer": "plastic"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Meat and fish counters",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "Clean the serving area, including the weighing scales",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "Collect",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "",
+                    "questionNumber": 9,
+                    "inputType": "text",
+                    "correctAnswer": "ice",
+                    "suffix": " for the fish from the cold-room"
+                  },
+                  {
+                    "text": "Must wear special",
+                    "questionNumber": 10,
+                    "inputType": "text",
+                    "correctAnswer": "gloves",
+                    "isBullet": false
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Running Club",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening19_t4_s2.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE5X3Q0X3MyLm1wMyIsImlhdCI6MTc1OTI1MDI3NSwiZXhwIjo0OTEyODUwMjc1fQ.3LROMC-maKkDEwVUHv8KVK9qtmrlWgEUrCH7BCahynw",
+      "questionGroups": [
+        {
+          "groupId": "11-14",
+          "instructions": "Choose TWO letters, A–E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questions": [
+              {
+                "questionNumber": 11,
+                "questionText": "Which TWO problems with some training programmes for new runners does Liz mention?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "There is a risk of serious injury."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "They are unsuitable for certain age groups."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "They are unsuitable for people with health issues."
+                  },
+                  {
+                    "letter": "D",
+                    "text": "It is difficult to stay motivated."
+                  },
+                  {
+                    "letter": "E",
+                    "text": "There is a lack of individual support."
+                  }
+                ],
+                "correctAnswer": [
+                  "C",
+                  "E"
+                ]
+              },
+              {
+                "questionNumber": 13,
+                "questionText": "Which TWO tips does Liz recommend for new runners?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "doing two runs a week"
+                  },
+                  {
+                    "letter": "B",
+                    "text": "running in the evening"
+                  },
+                  {
+                    "letter": "C",
+                    "text": "going on runs with a friend"
+                  },
+                  {
+                    "letter": "D",
+                    "text": "listening to music during runs"
+                  },
+                  {
+                    "letter": "E",
+                    "text": "running very slowly"
+                  }
+                ],
+                "correctAnswer": [
+                  "A",
+                  "D"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "15-18",
+          "instructions": "Write the correct answer, A, B, or C next to Questions 15–18.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 15,
+                "questionText": "Ceri",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "a lack of confidence"
+                  },
+                  {
+                    "letter": "B",
+                    "text": "a dislike of running"
+                  },
+                  {
+                    "letter": "C",
+                    "text": "a lack of time"
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 16,
+                "questionText": "James",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "a lack of confidence"
+                  },
+                  {
+                    "letter": "B",
+                    "text": "a dislike of running"
+                  },
+                  {
+                    "letter": "C",
+                    "text": "a lack of time"
+                  }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 17,
+                "questionText": "Leo",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "a lack of confidence"
+                  },
+                  {
+                    "letter": "B",
+                    "text": "a dislike of running"
+                  },
+                  {
+                    "letter": "C",
+                    "text": "a lack of time"
+                  }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 18,
+                "questionText": "Mark",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "a lack of confidence"
+                  },
+                  {
+                    "letter": "B",
+                    "text": "a dislike of running"
+                  },
+                  {
+                    "letter": "C",
+                    "text": "a lack of time"
+                  }
+                ],
+                "correctAnswer": "A"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "19-20",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 19,
+                "questionText": "What does Liz say about running her first marathon?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "It had always been her ambition."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "Her husband persuaded her to do it."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "She nearly gave up before the end."
+                  }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 20,
+                "questionText": "Liz says new runners should sign up for a race",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "every six months."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "within a few weeks of taking up running."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "after completing several practice runs."
+                  }
+                ],
+                "correctAnswer": "B"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Bookshop",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening19_t4_s3.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE5X3Q0X3MzLm1wMyIsImlhdCI6MTc1OTI1MDI3OSwiZXhwIjo0OTEyODUwMjc5fQ.y_uLiWgdgUvHoLrsDH34SRth5W7OraxJg2cXjMUQ-Zw",
+      "questionGroups": [
+        {
+          "groupId": "21-25",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 21,
+                "questionText": "Kieran thinks the packing advice given by Jane’s grandfather is",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "common sense"
+                  },
+                  {
+                    "letter": "B",
+                    "text": "hard to follow"
+                  },
+                  {
+                    "letter": "C",
+                    "text": "over-protective"
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 22,
+                "questionText": "How does Jane feel about the books her grandfather has given her?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "They are not worth keeping."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "They should go to a collector."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "They have sentimental value for her."
+                  }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 23,
+                "questionText": "Jane and Kieran agree that hardback books should be",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "put out on display."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "given as gifts to visitors."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "more attractively designed."
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 24,
+                "questionText": "While talking about taking a book from a shelf, Jane",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "describes the mistakes other people make doing it."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "reflects on a significant childhood experience."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "explains why some books are easier to remove than others."
+                  }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 25,
+                "questionText": "What do Jane and Kieran suggest about new books?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "Their parents liked buying them as presents."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "They would like to buy more of them"
+                  },
+                  {
+                    "letter": "C",
+                    "text": "Not everyone can afford them."
+                  }
+                ],
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "26-30",
+          "instructions": "Where does Jane’s grandfather keep each of the following types of books in his shop? Choose FIVE answers from the box and write the correct letter, A–G, next to Questions 26–30.",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Location of books",
+            "matchingOptions": [
+              {
+                "letter": "A",
+                "text": "near the entranceBookshelves"
+              },
+              {
+                "letter": "B",
+                "text": "in the attic"
+              },
+              {
+                "letter": "C",
+                "text": "at the back of the shop"
+              },
+              {
+                "letter": "D",
+                "text": "on a high shelf"
+              },
+              {
+                "letter": "E",
+                "text": "near the stairs"
+              },
+              {
+                "letter": "F",
+                "text": "in a specially designed space"
+              },
+              {
+                "letter": "G",
+                "text": "within the café"
+              }
+            ],
+            "sectionTitle": "Types of books",
+            "items": [
+              {
+                "questionNumber": 26,
+                "text": "rare books",
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 27,
+                "text": "children’s books",
+                "correctAnswer": "F"
+              },
+              {
+                "questionNumber": 28,
+                "text": "unwanted books",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 29,
+                "text": "requested books",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 30,
+                "text": "coursebooks",
+                "correctAnswer": "G"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Reforestation",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening19_t4_s4.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzE5X3Q0X3M0Lm1wMyIsImlhdCI6MTc1OTI1MDI4NCwiZXhwIjo0OTEyODUwMjg0fQ.RDSX1qHrq5vJVe6JqxbZhVmzvzY2opx76aRKSKe1M28",
+      "questionGroups": [
+        {
+          "groupId": "31-40",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Tree planting",
+            "sections": [
+              {
+                "sectionTitle": "General advice",
+                "content": [
+                  {
+                    "text": "…",
+                    "questionNumber": 31,
+                    "inputType": "text",
+                    "correctAnswer": "competition",
+                    "suffix": " with native species.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "…",
+                    "questionNumber": 32,
+                    "inputType": "text",
+                    "correctAnswer": "food",
+                    "suffix": " for local people",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "…",
+                    "questionNumber": 33,
+                    "inputType": "text",
+                    "correctAnswer": "disease",
+                    "suffix": " and climate change",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "…",
+                    "questionNumber": 34,
+                    "inputType": "text",
+                    "correctAnswer": "agriculture",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "…",
+                    "questionNumber": 35,
+                    "inputType": "text",
+                    "correctAnswer": "maps",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "…",
+                    "questionNumber": 36,
+                    "inputType": "text",
+                    "correctAnswer": "cattle",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "…",
+                    "questionNumber": 37,
+                    "inputType": "text",
+                    "correctAnswer": "speed",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "…",
+                    "questionNumber": 38,
+                    "inputType": "text",
+                    "correctAnswer": "monkeys",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "…",
+                    "questionNumber": 39,
+                    "inputType": "text",
+                    "correctAnswer": "fishing",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "…",
+                    "questionNumber": 40,
+                    "inputType": "text",
+                    "correctAnswer": "flooding",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

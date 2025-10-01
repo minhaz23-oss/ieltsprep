@@ -480,6 +480,46 @@ const IELTSListeningTest = () => {
             ))}
           </div>
         )}
+
+        {displayType === 'table' && content.rows && (
+          <div className="bg-gray-50 p-6 rounded">
+            {content.title && <h3 className="text-xl font-bold mb-4 text-center">{content.title}</h3>}
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse border border-gray-300">
+                {content.headers && content.headers.length > 0 && (
+                  <thead>
+                    <tr className="bg-primary/10">
+                      {content.headers.map((header, idx) => (
+                        <th key={idx} className="border border-gray-300 px-4 py-3 text-left font-semibold text-primary">
+                          {header}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                )}
+                <tbody>
+                  {content.rows.map((row, rowIdx) => (
+                    <tr key={rowIdx} className={rowIdx % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                      {row.cells.map((cell, cellIdx) => (
+                        <td key={cellIdx} className="border border-gray-300 px-4 py-3 align-top">
+                          <div className="flex flex-col space-y-2">
+                            {cell.text && <span>{cell.text}</span>}
+                            {cell.questionNumber && (
+                              <div className="flex items-center">
+                                {renderInput(cell.questionNumber, cell.inputType || 'text')}
+                                {cell.suffix && <span className="ml-1">{cell.suffix}</span>}
+                              </div>
+                            )}
+                          </div>
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
       </div>
     );
   };

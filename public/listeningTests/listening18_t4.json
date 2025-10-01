@@ -1,0 +1,639 @@
+{
+  "id": "listening18_t4",
+  "title": "IELTS Listening 18 Practice Test 4",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "tags": [
+      "employment-agency",
+      "museum-tour",
+      "origami-education",
+      "victor-hugo"
+    ],
+    "description": "Full IELTS Listening Practice Test with 4 sections"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Job Details from Employment Agency",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/section1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL3NlY3Rpb24xLm1wMyIsImlhdCI6MTc1OTE2MTQxNywiZXhwIjo0OTEyNzYxNDE3fQ.v2sI2tbQ1vASSkTztQGUWIVhiMmGCWtVt1X_bM0AlKs",
+      "questionGroups": [
+        {
+          "groupId": "1-10",
+          "instructions": "Complete the notes below.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Job details from employment agency",
+            "sections": [
+              {
+                "content": [
+                  {
+                    "text": "Role     ",
+                    "questionNumber": 1,
+                    "inputType": "text",
+                    "correctAnswer": "receptionist"
+                  },
+                  {
+                    "text": "Location     Fordham ",
+                    "questionNumber": 2,
+                    "inputType": "text",
+                    "correctAnswer": "Medical",
+                    "suffix": " Centre"
+                  },
+                  {
+                    "text": "                     ",
+                    "questionNumber": 3,
+                    "inputType": "text",
+                    "correctAnswer": "Chastons",
+                    "suffix": " Road, Fordham"
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Work involves",
+                "content": [
+                  {
+                    "text": "• dealing with enquiries",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• making ",
+                    "questionNumber": 4,
+                    "inputType": "text",
+                    "correctAnswer": "appointments",
+                    "suffix": " and reorganising them",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• maintaining the internal ",
+                    "questionNumber": 5,
+                    "inputType": "text",
+                    "correctAnswer": "database",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• general administration",
+                    "isStatic": true,
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Requirements",
+                "content": [
+                  {
+                    "text": "• ",
+                    "questionNumber": 6,
+                    "inputType": "text",
+                    "correctAnswer": "experience",
+                    "suffix": " (essential)",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• a calm and ",
+                    "questionNumber": 7,
+                    "inputType": "text",
+                    "correctAnswer": "confident",
+                    "suffix": " manner",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• good IT skills",
+                    "isStatic": true,
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Other information",
+                "content": [
+                  {
+                    "text": "• a ",
+                    "questionNumber": 8,
+                    "inputType": "text",
+                    "correctAnswer": "temporary",
+                    "suffix": " job – further opportunities may be available",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• hours: 7.45 a.m. to ",
+                    "questionNumber": 9,
+                    "inputType": "text",
+                    "correctAnswer": "1.15",
+                    "suffix": " p.m. Monday to Friday",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• ",
+                    "questionNumber": 10,
+                    "inputType": "text",
+                    "correctAnswer": "parking",
+                    "suffix": " is available onsite",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Museum Tour",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/section2.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL3NlY3Rpb24yLm1wMyIsImlhdCI6MTc1OTE2MTQyNiwiZXhwIjo0OTEyNzYxNDI2fQ.Bj524rkXWpQdP-0MPVNouIZLKPH83QMppX2lzdTsqSs",
+      "questionGroups": [
+        {
+          "groupId": "11-14",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 11,
+                "questionText": "The museum building was originally",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "a factory."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "a private home."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "a hall of residence."
+                  }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 12,
+                "questionText": "The university uses part of the museum building as",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "teaching rooms."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "a research library."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "administration offices."
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 13,
+                "questionText": "What does the guide say about the entrance fee?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "Visitors decide whether or not they wish to pay."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "Only children and students receive a discount."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "The museum charges extra for special exhibitions."
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 14,
+                "questionText": "What are visitors advised to leave in the cloakroom?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "cameras"
+                  },
+                  {
+                    "letter": "B",
+                    "text": "coats"
+                  },
+                  {
+                    "letter": "C",
+                    "text": "bags"
+                  }
+                ],
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "15-20",
+          "instructions": "What information does the speaker give about each of the following areas of the museum?\nChoose SIX answers from the box and write the correct letter, A-H, next to Questions 15-20.",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Information",
+            "matchingOptions": [
+              {
+                "letter": "A",
+                "text": "Parents must supervise their children."
+              },
+              {
+                "letter": "B",
+                "text": "There are new things to see."
+              },
+              {
+                "letter": "C",
+                "text": "It is closed today."
+              },
+              {
+                "letter": "D",
+                "text": "This is only for school groups."
+              },
+              {
+                "letter": "E",
+                "text": "There is a quiz for visitors."
+              },
+              {
+                "letter": "F",
+                "text": "It features something created by students."
+              },
+              {
+                "letter": "G",
+                "text": "An expert is here today."
+              },
+              {
+                "letter": "H",
+                "text": "There is a one-way system."
+              }
+            ],
+            "sectionTitle": "Areas of museum",
+            "items": [
+              {
+                "questionNumber": 15,
+                "text": "Four Seasons",
+                "correctAnswer": "F"
+              },
+              {
+                "questionNumber": 16,
+                "text": "Farmhouse Kitchen",
+                "correctAnswer": "G"
+              },
+              {
+                "questionNumber": 17,
+                "text": "A Year on the Farm",
+                "correctAnswer": "E"
+              },
+              {
+                "questionNumber": 18,
+                "text": "Wagon Walk",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 19,
+                "text": "Bees are Magic",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 20,
+                "text": "The Pond",
+                "correctAnswer": "B"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Children Doing Origami",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/section3.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL3NlY3Rpb24zLm1wMyIsImlhdCI6MTc1OTE2MTQzNCwiZXhwIjo0OTEyNzYxNDM0fQ.a2LyEvDAUziRHDdG4Jw8uP3PFOkdHqEkb6ChVHmXVok",
+      "questionGroups": [
+        {
+          "groupId": "21-22",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO educational skills were shown in the video of children doing origami?",
+            "options": [
+              {
+                "letter": "A",
+                "text": "solving problems"
+              },
+              {
+                "letter": "B",
+                "text": "following instructions"
+              },
+              {
+                "letter": "C",
+                "text": "working cooperatively"
+              },
+              {
+                "letter": "D",
+                "text": "learning through play"
+              },
+              {
+                "letter": "E",
+                "text": "developing hand-eye coordination"
+              }
+            ],
+            "questions": [
+              {
+                "questionNumber": 21,
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 22,
+                "correctAnswer": "D"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "23-27",
+          "instructions": "Which comment do the students make about each of the following children in the video?\nChoose FIVE answers from the box and write the correct letter, A-G, next to Questions 23-27.",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Comments",
+            "matchingOptions": [
+              {
+                "letter": "A",
+                "text": "demonstrated independence"
+              },
+              {
+                "letter": "B",
+                "text": "asked for teacher support"
+              },
+              {
+                "letter": "C",
+                "text": "developed a competitive attitude"
+              },
+              {
+                "letter": "D",
+                "text": "seemed to find the activity calming"
+              },
+              {
+                "letter": "E",
+                "text": "seemed pleased with the results"
+              },
+              {
+                "letter": "F",
+                "text": "seemed confused"
+              },
+              {
+                "letter": "G",
+                "text": "seemed to find the activity easy"
+              }
+            ],
+            "sectionTitle": "Children",
+            "items": [
+              {
+                "questionNumber": 23,
+                "text": "Sid",
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 24,
+                "text": "Jack",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 25,
+                "text": "Naomi",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 26,
+                "text": "Anya",
+                "correctAnswer": "G"
+              },
+              {
+                "questionNumber": 27,
+                "text": "Zara",
+                "correctAnswer": "F"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "28-30",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 28,
+                "questionText": "Before starting an origami activity in class, the students think it is important for the teacher to",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "make models that demonstrate the different stages."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "check children understand the terminology involved."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "tell children not to worry if they find the activity difficult."
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 29,
+                "questionText": "The students agree that some teachers might be unwilling to use origami in class because",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "they may not think that crafts are important."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "they may not have the necessary skills."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "they may worry that it will take up too much time."
+                  }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 30,
+                "questionText": "Why do the students decide to use origami in their maths teaching practice?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "to correct a particular misunderstanding"
+                  },
+                  {
+                    "letter": "B",
+                    "text": "to set a challenge"
+                  },
+                  {
+                    "letter": "C",
+                    "text": "to introduce a new concept"
+                  }
+                ],
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Victor Hugo",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/section4.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL3NlY3Rpb240Lm1wMyIsImlhdCI6MTc1OTE2MTQ0MSwiZXhwIjo0OTEyNzYxNDQxfQ.XcTFNOLuxtg9T0h0Pg_yHzr6CIhx_ND2QGRKqrCATbk",
+      "questionGroups": [
+        {
+          "groupId": "31-40",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Victor Hugo",
+            "sections": [
+              {
+                "sectionTitle": "His novel, Les Misérables",
+                "content": [
+                  {
+                    "text": "• It has been adapted for theatre and cinema.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• We know more about its overall ",
+                    "questionNumber": 31,
+                    "inputType": "text",
+                    "correctAnswer": "plot",
+                    "suffix": " than about its author.",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "His early career",
+                "content": [
+                  {
+                    "text": "• In Paris, his career was successful and he led the Romantic movement.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• He spoke publicly about social issues, such as ",
+                    "questionNumber": 32,
+                    "inputType": "text",
+                    "correctAnswer": "poverty",
+                    "suffix": " and education.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Napoleon III disliked his views and exiled him.",
+                    "isStatic": true,
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "His exile from France",
+                "content": [
+                  {
+                    "text": "• Victor Hugo had to live elsewhere in ",
+                    "questionNumber": 33,
+                    "inputType": "text",
+                    "correctAnswer": "Europe",
+                    "suffix": ".",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• He used his income from the sale of some ",
+                    "questionNumber": 34,
+                    "inputType": "text",
+                    "correctAnswer": "poetry",
+                    "suffix": " he had written to buy a house on Guernsey.",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "His house on Guernsey",
+                "content": [
+                  {
+                    "text": "• Victor Hugo lived in this house until the end of the Empire in France.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• The ground floor contains portraits, ",
+                    "questionNumber": 35,
+                    "inputType": "text",
+                    "correctAnswer": "drawings",
+                    "suffix": " and tapestries that he valued.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• He bought cheap ",
+                    "questionNumber": 36,
+                    "inputType": "text",
+                    "correctAnswer": "furniture",
+                    "suffix": " made of wood and turned this into beautiful wall carvings.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• The first floor consists of furnished areas with wallpaper and ",
+                    "questionNumber": 37,
+                    "inputType": "text",
+                    "correctAnswer": "lamps",
+                    "suffix": " that have a Chinese design.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• The library still contains many of his favourite books.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• He wrote in a room at the top of the house that had a view of the ",
+                    "questionNumber": 38,
+                    "inputType": "text",
+                    "correctAnswer": "harbour / harbor",
+                    "suffix": ".",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• He entertained other writers as well as poor ",
+                    "questionNumber": 39,
+                    "inputType": "text",
+                    "correctAnswer": "children",
+                    "suffix": " in his house.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Victor Hugo's ",
+                    "questionNumber": 40,
+                    "inputType": "text",
+                    "correctAnswer": "relatives",
+                    "suffix": " gave ownership of the house to the city of Paris in 1927.",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

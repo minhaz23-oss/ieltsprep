@@ -1,0 +1,657 @@
+{
+  "id": "listening18_t3",
+  "title": "IELTS Listening 18 Practice Test 3",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "tags": [
+      "camera-club",
+      "mushroom-picking",
+      "future-of-work",
+      "space-traffic-management"
+    ],
+    "description": "Full IELTS Listening Practice Test with 4 sections"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Wayside Camera Club",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/section1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL3NlY3Rpb24xLm1wMyIsImlhdCI6MTc1OTE2MDg0OCwiZXhwIjo0OTEyNzYwODQ4fQ.Q3WQbNLXoW2ygNVclPa3x-rEW_XhDuzvA007_np11JM",
+      "questionGroups": [
+        {
+          "groupId": "1-4",
+          "instructions": "Complete the form below.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+          "displayType": "form",
+          "content": {
+            "type": "form",
+            "title": "Wayside Camera Club membership form",
+            "fields": [
+              {
+                "label": "Name:",
+                "value": "Dan Green",
+                "isStatic": true
+              },
+              {
+                "label": "Email address:",
+                "value": "dan1068@market.com",
+                "isStatic": true
+              },
+              {
+                "label": "Home address:",
+                "value": "52 ",
+                "questionNumber": 1,
+                "inputType": "text",
+                "correctAnswer": "Marrowfield",
+                "suffix": " Street, Peacetown"
+              },
+              {
+                "label": "Heard about us:",
+                "value": "from a ",
+                "questionNumber": 2,
+                "inputType": "text",
+                "correctAnswer": "relative"
+              },
+              {
+                "label": "Reasons for joining:",
+                "value": "to enter competitions to ",
+                "questionNumber": 3,
+                "inputType": "text",
+                "correctAnswer": "socialise / socialize"
+              },
+              {
+                "label": "Type of membership:",
+                "questionNumber": 4,
+                "inputType": "text",
+                "correctAnswer": "full",
+                "suffix": " membership (£30)"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "5-10",
+          "instructions": "Complete the table below.\nWrite NO MORE THAN TWO WORDS for each answer.",
+          "displayType": "table",
+          "content": {
+            "type": "table",
+            "title": "Photography competitions",
+            "headers": [
+              "Title of competition",
+              "Instructions",
+              "Feedback to Dan"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "'",
+                    "questionNumber": 5,
+                    "inputType": "text",
+                    "correctAnswer": "Domestic Life",
+                    "suffix": "'"
+                  },
+                  {
+                    "text": "A scene in the home",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "The picture's composition was not good.",
+                    "isStatic": true
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "'Beautiful Sunsets'",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "Scene must show some ",
+                    "questionNumber": 6,
+                    "inputType": "text",
+                    "correctAnswer": "clouds"
+                  },
+                  {
+                    "text": "The ",
+                    "questionNumber": 7,
+                    "inputType": "text",
+                    "correctAnswer": "timing",
+                    "suffix": " was wrong."
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "'",
+                    "questionNumber": 8,
+                    "inputType": "text",
+                    "correctAnswer": "Animal Magic",
+                    "suffix": "'"
+                  },
+                  {
+                    "text": "Scene must show ",
+                    "questionNumber": 9,
+                    "inputType": "text",
+                    "correctAnswer": "(animal) movement"
+                  },
+                  {
+                    "text": "The photograph was too ",
+                    "questionNumber": 10,
+                    "inputType": "text",
+                    "correctAnswer": "dark",
+                    "suffix": "."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Picking Wild Mushrooms",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/section2.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL3NlY3Rpb24yLm1wMyIsImlhdCI6MTc1OTE2MDg1MywiZXhwIjo0OTEyNzYwODUzfQ.mMRvf4ulZrxhhUF8rrXBatt2jfgAm85ea9oROSqfHJM",
+      "questionGroups": [
+        {
+          "groupId": "11-12",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO warnings does Dan give about picking mushrooms?",
+            "options": [
+              {
+                "letter": "A",
+                "text": "Don't pick more than one variety of mushroom at a time."
+              },
+              {
+                "letter": "B",
+                "text": "Don't pick mushrooms near busy roads."
+              },
+              {
+                "letter": "C",
+                "text": "Don't eat mushrooms given to you."
+              },
+              {
+                "letter": "D",
+                "text": "Don't eat mushrooms while picking them."
+              },
+              {
+                "letter": "E",
+                "text": "Don't pick old mushrooms."
+              }
+            ],
+            "questions": [
+              {
+                "questionNumber": 11,
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 12,
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "13-14",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO ideas about wild mushrooms does Dan say are correct?",
+            "options": [
+              {
+                "letter": "A",
+                "text": "Mushrooms should always be peeled before eating."
+              },
+              {
+                "letter": "B",
+                "text": "Mushrooms eaten by animals may be unsafe."
+              },
+              {
+                "letter": "C",
+                "text": "Cooking destroys toxins in mushrooms."
+              },
+              {
+                "letter": "D",
+                "text": "Brightly coloured mushrooms can be edible."
+              },
+              {
+                "letter": "E",
+                "text": "All poisonous mushrooms have a bad smell."
+              }
+            ],
+            "questions": [
+              {
+                "questionNumber": 13,
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 14,
+                "correctAnswer": "D"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "15-20",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 15,
+                "questionText": "What advice does Dan give about picking mushrooms in parks?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "Choose wooded areas."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "Don't disturb wildlife."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "Get there early."
+                  }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 16,
+                "questionText": "Dan says it is a good idea for beginners to",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "use a mushroom app."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "join a group."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "take a reference book."
+                  }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 17,
+                "questionText": "What does Dan say is important for conservation?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "selecting only fully grown mushrooms"
+                  },
+                  {
+                    "letter": "B",
+                    "text": "picking a limited amount of mushrooms"
+                  },
+                  {
+                    "letter": "C",
+                    "text": "avoiding areas where rare mushroom species grow"
+                  }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 18,
+                "questionText": "According to Dan, some varieties of wild mushrooms are in decline because there is",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "a huge demand for them from restaurants."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "a lack of rain in this part of the country."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "a rise in building developments locally."
+                  }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 19,
+                "questionText": "Dan says that when storing mushrooms, people should",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "keep them in the fridge for no more than two days."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "keep them in a brown bag in a dark room."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "leave them for a period after washing them."
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 20,
+                "questionText": "What does Dan say about trying new varieties of mushrooms?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "Experiment with different recipes."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "Expect some to have a strong taste."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "Cook them for a long time."
+                  }
+                ],
+                "correctAnswer": "A"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "The Future of Work",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/section3.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL3NlY3Rpb24zLm1wMyIsImlhdCI6MTc1OTE2MDg1NiwiZXhwIjo0OTEyNzYwODU2fQ.E8NerdzqCW1XSjOE6ip85wx7HVP1zRmOgyBaZmxW0CA",
+      "questionGroups": [
+        {
+          "groupId": "21-22",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO opinions about the Luddites do the students express?",
+            "options": [
+              {
+                "letter": "A",
+                "text": "Their actions were ineffective."
+              },
+              {
+                "letter": "B",
+                "text": "They are still influential today."
+              },
+              {
+                "letter": "C",
+                "text": "They have received unfair criticism."
+              },
+              {
+                "letter": "D",
+                "text": "They were proved right."
+              },
+              {
+                "letter": "E",
+                "text": "Their attitude is understandable."
+              }
+            ],
+            "questions": [
+              {
+                "questionNumber": 21,
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 22,
+                "correctAnswer": "E"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "23-24",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO predictions about the future of work are the students doubtful about?",
+            "options": [
+              {
+                "letter": "A",
+                "text": "Work will be more rewarding."
+              },
+              {
+                "letter": "B",
+                "text": "Unemployment will fall."
+              },
+              {
+                "letter": "C",
+                "text": "People will want to delay retiring."
+              },
+              {
+                "letter": "D",
+                "text": "Working hours will be shorter."
+              },
+              {
+                "letter": "E",
+                "text": "People will change jobs more frequently."
+              }
+            ],
+            "questions": [
+              {
+                "questionNumber": 23,
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 24,
+                "correctAnswer": "D"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "25-30",
+          "instructions": "What comment do the students make about each of the following jobs?\nChoose SIX answers from the box and write the correct letter, A-G, next to Questions 25-30.",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Comments",
+            "matchingOptions": [
+              {
+                "letter": "A",
+                "text": "These jobs are likely to be at risk."
+              },
+              {
+                "letter": "B",
+                "text": "Their role has become more interesting in recent years."
+              },
+              {
+                "letter": "C",
+                "text": "The number of people working in this sector has fallen dramatically."
+              },
+              {
+                "letter": "D",
+                "text": "This job will require more qualifications."
+              },
+              {
+                "letter": "E",
+                "text": "Higher disposable income has led to a huge increase in jobs."
+              },
+              {
+                "letter": "F",
+                "text": "There is likely to be a significant rise in demand for this service."
+              },
+              {
+                "letter": "G",
+                "text": "Both employment and productivity have risen."
+              }
+            ],
+            "sectionTitle": "Jobs",
+            "items": [
+              {
+                "questionNumber": 25,
+                "text": "Accountants",
+                "correctAnswer": "G"
+              },
+              {
+                "questionNumber": 26,
+                "text": "Hairdressers",
+                "correctAnswer": "E"
+              },
+              {
+                "questionNumber": 27,
+                "text": "Administrative staff",
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 28,
+                "text": "Agricultural workers",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 29,
+                "text": "Care workers",
+                "correctAnswer": "F"
+              },
+              {
+                "questionNumber": 30,
+                "text": "Bank clerks",
+                "correctAnswer": "A"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Space Traffic Management",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/section4.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL3NlY3Rpb240Lm1wMyIsImlhdCI6MTc1OTE2MDg2MSwiZXhwIjo0OTEyNzYwODYxfQ.b9XD-E1nSp7UppHUMEZkUp4ZGhkyYz7RBuwRpqW8cv4",
+      "questionGroups": [
+        {
+          "groupId": "31-40",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Space Traffic Management",
+            "sections": [
+              {
+                "sectionTitle": "A Space Traffic Management system",
+                "content": [
+                  {
+                    "text": "• is a concept similar to Air Traffic Control, but for satellites rather than planes.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• would aim to set up legal and ",
+                    "questionNumber": 31,
+                    "inputType": "text",
+                    "correctAnswer": "technical",
+                    "suffix": " ways of improving safety.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• does not actually exist at present.",
+                    "isStatic": true,
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Problems in developing effective Space Traffic Management",
+                "content": [
+                  {
+                    "text": "• Satellites are now quite ",
+                    "questionNumber": 32,
+                    "inputType": "text",
+                    "correctAnswer": "cheap",
+                    "suffix": " and therefore more widespread (e.g. there are constellations made up of ",
+                    "isBullet": true,
+                    "questionNumber2": 33,
+                    "correctAnswer2": "thousands",
+                    "suffix2": " of satellites)."
+                  },
+                  {
+                    "text": "• At present, satellites are not required to transmit information to help with their ",
+                    "questionNumber": 34,
+                    "inputType": "text",
+                    "correctAnswer": "identification",
+                    "suffix": ".",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• There are few systems for ",
+                    "questionNumber": 35,
+                    "inputType": "text",
+                    "correctAnswer": "tracking",
+                    "suffix": " satellites.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Small pieces of debris may be difficult to identify.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Operators may be unwilling to share details of satellites used for ",
+                    "questionNumber": 36,
+                    "inputType": "text",
+                    "correctAnswer": "military",
+                    "suffix": " or commercial reasons.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• It may be hard to collect details of the object's ",
+                    "questionNumber": 37,
+                    "inputType": "text",
+                    "correctAnswer": "location",
+                    "suffix": " at a given time.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Scientists can only make a ",
+                    "questionNumber": 38,
+                    "inputType": "text",
+                    "correctAnswer": "prediction",
+                    "suffix": " about where the satellite will go.",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Solutions",
+                "content": [
+                  {
+                    "text": "• Common standards should be agreed on for the presentation of information.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• The information should be combined in one ",
+                    "questionNumber": 39,
+                    "inputType": "text",
+                    "correctAnswer": "database",
+                    "suffix": ".",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• A coordinated system must be designed to create ",
+                    "questionNumber": 40,
+                    "inputType": "text",
+                    "correctAnswer": "trust",
+                    "suffix": " in its users.",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,721 @@
+{
+  "id": "listening20_t1",
+  "title": "IELTS Listening 20 Practice Test 1",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "tags": [
+      "restaurant-recommendations",
+      "pottery-class",
+      "loneliness-research",
+      "urban-rivers"
+    ],
+    "description": "Full IELTS Listening Practice Test with 4 sections"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Restaurant Recommendations",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening20_t1_s1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzIwX3QxX3MxLm1wMyIsImlhdCI6MTc1OTQxNzkyOSwiZXhwIjo0OTEzMDE3OTI5fQ.k77RMPd90fdr9NdqaNap-OoxXDxMVsJ2xI5ObDTTgpA",
+      "questionGroups": [
+        {
+          "groupId": "1-10",
+          "instructions": "Complete the notes below.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+          "displayType": "form",
+          "content": {
+            "type": "form",
+            "title": "Restaurant Recommendations",
+            "fields": [
+              {
+                "label": "Name of restaurant: The Junction",
+                "isStatic": true
+              },
+              {
+                "label": "Location: Greyson Street, near the station",
+                "isStatic": true
+              },
+              {
+                "label": "Reason for recommendation: Good for people who are especially keen on",
+                "questionNumber": 1,
+                "inputType": "text",
+                "correctAnswer": "fish",
+                "inputPlaceholder": "........................"
+              },
+              {
+                "label": "Other comments:",
+                "isList": true,
+                "listItems": [
+                  {
+                    "value": "Quite expensive",
+                    "isStatic": true
+                  },
+                  {
+                    "prefix": "The ",
+                    "questionNumber": 2,
+                    "inputType": "text",
+                    "correctAnswer": "roof",
+                    "suffix": " is a good place for a drink"
+                  }
+                ]
+              },
+              {
+                "label": "Name of restaurant: Paloma",
+                "isStatic": true
+              },
+              {
+                "label": "Location: In Bow Street next to the cinema",
+                "isStatic": true
+              },
+              {
+                "label": "Reason for recommendation:",
+                "questionNumber": 3,
+                "inputType": "text",
+                "correctAnswer": "Spanish",
+                "suffix": " food, good for sharing",
+                "inputPlaceholder": "........................"
+              },
+              {
+                "label": "Other comments:",
+                "isList": true,
+                "listItems": [
+                  {
+                    "value": "Staff are very friendly",
+                    "isStatic": true
+                  },
+                  {
+                    "value": "Need to pay £50 deposit",
+                    "isStatic": true
+                  },
+                  {
+                    "prefix": "A limited selection of ",
+                    "questionNumber": 4,
+                    "inputType": "text",
+                    "correctAnswer": "vegetarian",
+                    "suffix": " food on the menu"
+                  }
+                ]
+              },
+              {
+                "label": "Name of restaurant: The",
+                "questionNumber": 5,
+                "inputType": "text",
+                "correctAnswer": "Audley",
+                "inputPlaceholder": "........................"
+              },
+              {
+                "label": "Location: At the top of a",
+                "questionNumber": 6,
+                "inputType": "text",
+                "correctAnswer": "hotel",
+                "inputPlaceholder": "........................"
+              },
+              {
+                "label": "Reason for recommendation: A famous chef",
+                "isStatic": true
+              },
+              {
+                "label": "Other comments:",
+                "isList": true,
+                "listItems": [
+                  {
+                    "prefix": "All the ",
+                    "questionNumber": 7,
+                    "inputType": "text",
+                    "correctAnswer": "reviews",
+                    "suffix": " are very good"
+                  },
+                  {
+                    "prefix": "Only uses ",
+                    "questionNumber": 8,
+                    "inputType": "text",
+                    "correctAnswer": "local",
+                    "suffix": " ingredients"
+                  },
+                  {
+                    "prefix": "Set lunch costs £",
+                    "questionNumber": 9,
+                    "inputType": "text",
+                    "correctAnswer": "30/thirty",
+                    "suffix": " per person"
+                  },
+                  {
+                    "prefix": "Portions probably of ",
+                    "questionNumber": 10,
+                    "inputType": "text",
+                    "correctAnswer": "average",
+                    "suffix": " size"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Pottery Class Information",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening20_t1_s2.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzIwX3QxX3MyLm1wMyIsImlhdCI6MTc1OTQxNzkzMiwiZXhwIjo0OTEzMDE3OTMyfQ.p7rRLtRc_L-4hsn4Ji5mMUfnKqnVt-eOvdQV7CH1Ro8",
+      "questionGroups": [
+        {
+          "groupId": "11-16",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 11,
+                "questionText": "Heather says pottery differs from other art forms because",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "it lasts longer in the ground."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "it is practised by more people."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "it can be repaired more easily."
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 12,
+                "questionText": "Archaeologists sometimes identify the use of ancient pottery from",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "the clay it was made with."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "the marks that are on it."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "the basic shape of it."
+                  }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 13,
+                "questionText": "Some people join Heather's pottery class because they want to",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "create an item that looks very old."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "find something that they are good at."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "make something that will outlive them."
+                  }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 14,
+                "questionText": "What does Heather value most about being a potter?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "its calming effect"
+                  },
+                  {
+                    "letter": "B",
+                    "text": "its messy nature"
+                  },
+                  {
+                    "letter": "C",
+                    "text": "its physical benefits"
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 15,
+                "questionText": "Most of the visitors to Edelman Pottery",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "bring friends to join courses."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "have never made a pot before."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "try to learn techniques too quickly."
+                  }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 16,
+                "questionText": "Heather reminds her visitors that they should",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "put on their aprons."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "change their clothes."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "take off their jewellery"
+                  }
+                ],
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "17-18",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO things does Heather explain about kilns?",
+            "options": [
+              {
+                "letter": "A",
+                "text": "what their function is"
+              },
+              {
+                "letter": "B",
+                "text": "when they were invented"
+              },
+              {
+                "letter": "C",
+                "text": "ways of keeping them safe"
+              },
+              {
+                "letter": "D",
+                "text": "where to put one in your home"
+              },
+              {
+                "letter": "E",
+                "text": "what some people use instead of one"
+              }
+            ],
+            "questions": [
+              {
+                "questionNumber": 17,
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 18,
+                "correctAnswer": "E"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "19-20",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO points does Heather make about a potter's tools?",
+            "options": [
+              {
+                "letter": "A",
+                "text": "Some are hard to hold."
+              },
+              {
+                "letter": "B",
+                "text": "Some are worth buying."
+              },
+              {
+                "letter": "C",
+                "text": "Some are essential items."
+              },
+              {
+                "letter": "D",
+                "text": "Some have memorable names."
+              },
+              {
+                "letter": "E",
+                "text": "Some are available for use by participants."
+              }
+            ],
+            "questions": [
+              {
+                "questionNumber": 19,
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 20,
+                "correctAnswer": "E"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Loneliness Research Discussion",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening20_t1_s3.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzIwX3QxX3MzLm1wMyIsImlhdCI6MTc1OTQxNzkzNCwiZXhwIjo0OTEzMDE3OTM0fQ.oycW46XFZs1LCZpnwxX1Uujkf9aatTXSxjD8atUq9Dc",
+      "questionGroups": [
+        {
+          "groupId": "21-22",
+          "instructions": "Choose TWO letters, A–E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO things do the students both believe are responsible for the increase in loneliness?",
+            "options": [
+              {
+                "letter": "A",
+                "text": "social media"
+              },
+              {
+                "letter": "B",
+                "text": "smaller nuclear families"
+              },
+              {
+                "letter": "C",
+                "text": "urban design"
+              },
+              {
+                "letter": "D",
+                "text": "longer lifespans"
+              },
+              {
+                "letter": "E",
+                "text": "a mobile workforce"
+              }
+            ],
+            "questions": [
+              {
+                "questionNumber": 21,
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 22,
+                "correctAnswer": "E"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "23-24",
+          "instructions": "Choose TWO letters, A–E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO health risks associated with loneliness do the students agree are based on solid evidence?",
+            "options": [
+              {
+                "letter": "A",
+                "text": "a weakened immune system"
+              },
+              {
+                "letter": "B",
+                "text": "dementia"
+              },
+              {
+                "letter": "C",
+                "text": "cancer"
+              },
+              {
+                "letter": "D",
+                "text": "obesity"
+              },
+              {
+                "letter": "E",
+                "text": "cardiovascular disease"
+              }
+            ],
+            "questions": [
+              {
+                "questionNumber": 23,
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 24,
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "25-26",
+          "instructions": "Choose TWO letters, A–E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO opinions do both the students express about the evolutionary theory of loneliness?",
+            "options": [
+              {
+                "letter": "A",
+                "text": "lt has little practical relevance."
+              },
+              {
+                "letter": "B",
+                "text": "It needs further investigation."
+              },
+              {
+                "letter": "C",
+                "text": "It is misleading."
+              },
+              {
+                "letter": "D",
+                "text": "It should be more widely accepted."
+              },
+              {
+                "letter": "E",
+                "text": "lt is difficult to understand."
+              }
+            ],
+            "questions": [
+              {
+                "questionNumber": 25,
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 26,
+                "correctAnswer": "B"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "27-30",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 27,
+                "questionText": "When comparing loneliness to depression, the students",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "doubt that there will ever be a medical cure for loneliness."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "claim that the link between loneliness and mental health is overstated."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "express frustration that loneliness is not taken more seriously."
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 28,
+                "questionText": "Why do the students decide to start their presentation with an example from their own experience?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "to explain how difficult loneliness can be"
+                  },
+                  {
+                    "letter": "B",
+                    "text": "to highlight a situation that most students will recognise"
+                  },
+                  {
+                    "letter": "C",
+                    "text": "to emphasise that feeling lonely is more common for men than women"
+                  }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 29,
+                "questionText": "The students agree that talking to strangers is a good strategy for dealing with loneliness because",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "it creates a sense of belonging."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "it builds self-confidence."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "it makes people feel more positive."
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 30,
+                "questionText": "The students find it difficult to understand why solitude is considered to be",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "similar to loneliness."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "necessary for mental health."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "an enjoyable experience."
+                  }
+                ],
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Reclaiming Urban Rivers",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening20_t1_s4.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzIwX3QxX3M0Lm1wMyIsImlhdCI6MTc1OTQxNzkzNiwiZXhwIjo0OTEzMDE3OTM2fQ.Z9uYu0l2QS9_CjO1jrC__lLsMZzqPE7cHQ3fo44x0w0",
+      "questionGroups": [
+        {
+          "groupId": "31-40",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Reclaiming urban rivers",
+            "sections": [
+              {
+                "sectionTitle": "Historical background",
+                "content": [
+                  {
+                    "text": "• Nearly all major cities were built on a river.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Rivers were traditionally used by city dwellers for transport, fishing and recreation.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Industrial development and rising populations later led to:",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  ○ more sewage from houses being discharged into the river",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "  ○ pollution from ",
+                    "questionNumber": 31,
+                    "inputType": "text",
+                    "correctAnswer": "factories",
+                    "suffix": " on the river bank."
+                  },
+                  {
+                    "text": "• In 1957, the River Thames in London was declared biologically ",
+                    "questionNumber": 32,
+                    "inputType": "text",
+                    "correctAnswer": "dead",
+                    "suffix": ".",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Recent improvements",
+                "content": [
+                  {
+                    "text": "• Seals and even a ",
+                    "questionNumber": 33,
+                    "inputType": "text",
+                    "correctAnswer": "whale",
+                    "suffix": " have been seen in the River Thames.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Riverside warehouses are converted to restaurants and ",
+                    "questionNumber": 34,
+                    "inputType": "text",
+                    "correctAnswer": "apartments",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• In Los Angeles, there are plans to:",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  ○ build a riverside ",
+                    "questionNumber": 35,
+                    "inputType": "text",
+                    "correctAnswer": "park"
+                  },
+                  {
+                    "text": "  ○ display ",
+                    "questionNumber": 36,
+                    "inputType": "text",
+                    "correctAnswer": "art",
+                    "suffix": " projects."
+                  },
+                  {
+                    "text": "• In Paris, ",
+                    "questionNumber": 37,
+                    "inputType": "text",
+                    "correctAnswer": "beaches",
+                    "suffix": " are created on the sides of the river every summer.",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Transport possibilities",
+                "content": [
+                  {
+                    "text": "• Over 2 billion passengers already travel by ",
+                    "questionNumber": 38,
+                    "inputType": "text",
+                    "correctAnswer": "ferry",
+                    "suffix": " in cities round the world.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Changes in shopping habits mean the number of deliveries that are made is increasing.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Instead of road transport, goods could be transported by large freight barges and electric ",
+                    "questionNumber": 39,
+                    "inputType": "text",
+                    "correctAnswer": "bikes",
+                    "suffix": " or, in future, by ",
+                    "isBullet": true
+                  },
+                  {
+                    "questionNumber": 40,
+                    "inputType": "text",
+                    "correctAnswer": "drone",
+                    "suffix": "."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

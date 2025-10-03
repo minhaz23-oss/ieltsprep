@@ -302,7 +302,7 @@ const IELTSListeningTest = () => {
           className="inline-block border-2 border-primary bg-yellow-50 px-3 py-1 mx-1 min-w-[150px] rounded font-sans text-base"
           value={answers[questionNumber] as string || ''}
           onChange={(e) => handleAnswerChange(questionNumber, e.target.value)}
-          placeholder={placeholder || `${questionNumber}`}
+          placeholder={placeholder || ""}
         />
       );
     }
@@ -328,11 +328,16 @@ const IELTSListeningTest = () => {
         <div className="ml-4 space-y-2">
           {field.label && <div className="font-semibold">{field.label}:</div>}
           {field.listItems.map((item, idx) => (
-            <div key={idx} className="flex items-center">
-              {item.prefix}
-              {item.questionNumber && renderInput(item.questionNumber, item.inputType, item.inputPlaceholder)}
-              {item.suffix}
+            <div key={idx} className="flex items-center gap-1">
               {item.value && !item.questionNumber && <span>{item.value}</span>}
+              {item.prefix && <span>{item.prefix}</span>}
+              {item.questionNumber && (
+                <>
+                  <span className="font-bold text-primary">{item.questionNumber}.</span>
+                  {renderInput(item.questionNumber, item.inputType, item.inputPlaceholder)}
+                </>
+              )}
+              {item.suffix && <span>{item.suffix}</span>}
             </div>
           ))}
         </div>
@@ -340,14 +345,19 @@ const IELTSListeningTest = () => {
     }
     
     return (
-      <div className="flex items-center space-x-2 mb-3">
+      <div className="flex items-center gap-2 mb-3">
         {field.label && (
-          <span className="font-semibold min-w-[150px]">{field.label}:</span>
+          <span className="font-semibold">{field.label}</span>
         )}
-        {field.value}
-        {field.prefix}
-        {field.questionNumber && renderInput(field.questionNumber, field.inputType, field.inputPlaceholder)}
-        {field.suffix}
+        {field.value && <span>{field.value}</span>}
+        {field.prefix && <span>{field.prefix}</span>}
+        {field.questionNumber && (
+          <>
+            <span className="font-bold text-primary">{field.questionNumber}.</span>
+            {renderInput(field.questionNumber, field.inputType, field.inputPlaceholder)}
+          </>
+        )}
+        {field.suffix && <span>{field.suffix}</span>}
       </div>
     );
   };
@@ -399,9 +409,9 @@ const IELTSListeningTest = () => {
             )}
             <div className="flex gap-4">
               {content.questions.map(q => (
-                <div key={q.questionNumber} className="flex items-center">
-                  <span className="mr-2 font-semibold">{q.questionNumber}:</span>
-                  {renderInput(q.questionNumber, 'multiselect', undefined, content.options)}
+                <div key={q.questionNumber} className="flex items-center gap-2">
+                  <span className="font-bold text-primary">{q.questionNumber}.</span>
+                  {renderInput(q.questionNumber, 'select', undefined, content.options)}
                 </div>
               ))}
             </div>
@@ -472,7 +482,12 @@ const IELTSListeningTest = () => {
                   <div key={itemIdx} className={`${item.isBullet ? 'ml-4' : ''} mb-2`}>
                     {item.isBullet && <span className="mr-2">•</span>}
                     {item.text}
-                    {item.questionNumber && renderInput(item.questionNumber, item.inputType || 'text')}
+                    {item.questionNumber && (
+                      <>
+                        <span className="font-semibold text-primary mr-2">[{item.questionNumber}]</span>
+                        {renderInput(item.questionNumber, item.inputType || 'text')}
+                      </>
+                    )}
                     {item.suffix}
                   </div>
                 ))}
@@ -505,7 +520,8 @@ const IELTSListeningTest = () => {
                           <div className="flex flex-col space-y-2">
                             {cell.text && <span>{cell.text}</span>}
                             {cell.questionNumber && (
-                              <div className="flex items-center">
+                              <div className="flex items-center gap-2">
+                                <span className="font-bold text-primary">{cell.questionNumber}.</span>
                                 {renderInput(cell.questionNumber, cell.inputType || 'text')}
                                 {cell.suffix && <span className="ml-1">{cell.suffix}</span>}
                               </div>

@@ -1,0 +1,609 @@
+{
+  "id": "listening13_t3",
+  "title": "IELTS Listening 13 Practice Test 3",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "tags": [
+      "moving-banford",
+      "physical-activities",
+      "natural-dyes",
+      "sleepy-lizard"
+    ],
+    "description": "Full IELTS Listening Practice Test with 4 sections"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Moving to Banford City",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening13_t3_s1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzEzX3QzX3MxLm1wMyIsImlhdCI6MTc1OTM4NTI2NSwiZXhwIjo0OTEyOTg1MjY1fQ.-TwkAGwmYuCk5yDrC2ZcFXm2RfnHMh92SPoO5tfQYsA",
+      "questionGroups": [
+        {
+          "groupId": "1-10",
+          "instructions": "Complete the notes below.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Moving to Banford City",
+            "sections": [
+              {
+                "sectionTitle": "Example",
+                "content": [
+                  {
+                    "text": "Linda recommends living in suburb of: Dalton",
+                    "isStatic": true,
+                    "isExample": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Accommodation",
+                "content": [
+                  {
+                    "text": "• Average rent: £",
+                    "questionNumber": 1,
+                    "inputType": "text",
+                    "correctAnswer": "850",
+                    "suffix": " a month",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Transport",
+                "content": [
+                  {
+                    "text": "• Linda travels to work by ",
+                    "questionNumber": 2,
+                    "inputType": "text",
+                    "correctAnswer": "bike / bicycle",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Limited ",
+                    "questionNumber": 3,
+                    "inputType": "text",
+                    "correctAnswer": "parking",
+                    "suffix": " in city centre",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Trains to London every ",
+                    "questionNumber": 4,
+                    "inputType": "text",
+                    "correctAnswer": "30 / thirty",
+                    "suffix": " minutes",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Poor train service at ",
+                    "questionNumber": 5,
+                    "inputType": "text",
+                    "correctAnswer": "weekend(s)",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Advantages of living in Banford",
+                "content": [
+                  {
+                    "text": "• New ",
+                    "questionNumber": 6,
+                    "inputType": "text",
+                    "correctAnswer": "cinema",
+                    "suffix": " opened recently",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• ",
+                    "questionNumber": 7,
+                    "inputType": "text",
+                    "correctAnswer": "hospital",
+                    "suffix": " has excellent reputation",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Good ",
+                    "questionNumber": 8,
+                    "inputType": "text",
+                    "correctAnswer": "dentist",
+                    "suffix": " on Bridge Street",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Meet Linda",
+                "content": [
+                  {
+                    "text": "• Meet Linda on ",
+                    "questionNumber": 9,
+                    "inputType": "text",
+                    "correctAnswer": "Thursday",
+                    "suffix": " after 5.30 pm",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• In the ",
+                    "questionNumber": 10,
+                    "inputType": "text",
+                    "correctAnswer": "café",
+                    "suffix": " opposite the station",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Physical Activities",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening13_t3_s2.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzEzX3QzX3MyLm1wMyIsImlhdCI6MTc1OTM4NTI2OCwiZXhwIjo0OTEyOTg1MjY4fQ.nOrrdFx56mVYQpqYefVpxRVPCqBxms-205BQzMzR270",
+      "questionGroups": [
+        {
+          "groupId": "11-16",
+          "instructions": "What advantage does the speaker mention for each of the following physical activities?\nChoose SIX answers from the box and write the correct letter, A-G, next to Questions 11-16",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Advantages",
+            "matchingOptions": [
+              {
+                "letter": "A",
+                "text": "not dependent on season"
+              },
+              {
+                "letter": "B",
+                "text": "enjoyable"
+              },
+              {
+                "letter": "C",
+                "text": "low risk of injury"
+              },
+              {
+                "letter": "D",
+                "text": "fitness level unimportant"
+              },
+              {
+                "letter": "E",
+                "text": "sociable"
+              },
+              {
+                "letter": "F",
+                "text": "fast results"
+              },
+              {
+                "letter": "G",
+                "text": "motivating"
+              }
+            ],
+            "sectionTitle": "Physical activities",
+            "items": [
+              {
+                "questionNumber": 11,
+                "text": "using a gym",
+                "correctAnswer": "F"
+              },
+              {
+                "questionNumber": 12,
+                "text": "running",
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 13,
+                "text": "swimming",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 14,
+                "text": "cycling",
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 15,
+                "text": "doing yoga",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 16,
+                "text": "training with a personal trainer",
+                "correctAnswer": "G"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "17-18",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "For which TWO reasons does the speaker say people give up going to the gym?",
+            "options": [
+              {
+                "letter": "A",
+                "text": "lack of time"
+              },
+              {
+                "letter": "B",
+                "text": "loss of confidence"
+              },
+              {
+                "letter": "C",
+                "text": "too much effort required"
+              },
+              {
+                "letter": "D",
+                "text": "high costs"
+              },
+              {
+                "letter": "E",
+                "text": "feeling less successful than others"
+              }
+            ],
+            "questions": [
+              {
+                "questionNumber": 17,
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 18,
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "19-20",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO pieces of advice does the speaker give for setting goals?",
+            "options": [
+              {
+                "letter": "A",
+                "text": "write goals down"
+              },
+              {
+                "letter": "B",
+                "text": "have achievable aims"
+              },
+              {
+                "letter": "C",
+                "text": "set a time limit"
+              },
+              {
+                "letter": "D",
+                "text": "give yourself rewards"
+              },
+              {
+                "letter": "E",
+                "text": "challenge yourself"
+              }
+            ],
+            "questions": [
+              {
+                "questionNumber": 19,
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 20,
+                "correctAnswer": "D"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Project on Using Natural Dyes to Colour Fabrics",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening13_t3_s3.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzEzX3QzX3MzLm1wMyIsImlhdCI6MTc1OTM4NTI3MSwiZXhwIjo0OTEyOTg1MjcxfQ.KZXBY9ggU45vJjmNxpMLSO3aFtgP3_OMxhX5kkj8UH4",
+      "questionGroups": [
+        {
+          "groupId": "21-24",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 21,
+                "questionText": "What first inspired Jim to choose this project?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "textiles displayed in an exhibition"
+                  },
+                  {
+                    "letter": "B",
+                    "text": "a book about a botanic garden"
+                  },
+                  {
+                    "letter": "C",
+                    "text": "carpets he saw on holiday"
+                  }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 22,
+                "questionText": "Jim eventually decided to do a practical investigation which involved",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "using a range of dyes with different fibres."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "applying different dyes to one type of fibre."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "testing one dye and a range of fibres."
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 23,
+                "questionText": "When doing his experiments, Jim was surprised by",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "how much natural material was needed to make the dye."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "the fact that dyes were widely available on the internet."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "the time that he had to leave the fabric in the dye."
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 24,
+                "questionText": "What problem did Jim have with using tartrazine as a fabric dye?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "It caused a slight allergic reaction."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "It was not a permanent dye on cotton."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "It was ineffective when used on nylon."
+                  }
+                ],
+                "correctAnswer": "B"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "25-30",
+          "instructions": "What problem is identified with each of the following natural dyes?\nChoose SIX answers from the box and write the correct letter, A-H, next to Questions 25-30",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Problems",
+            "matchingOptions": [
+              {
+                "letter": "A",
+                "text": "It is expensive."
+              },
+              {
+                "letter": "B",
+                "text": "The colour is too strong."
+              },
+              {
+                "letter": "C",
+                "text": "The colour is not long-lasting."
+              },
+              {
+                "letter": "D",
+                "text": "It is very poisonous."
+              },
+              {
+                "letter": "E",
+                "text": "It can damage the fabric."
+              },
+              {
+                "letter": "F",
+                "text": "The colour may be unexpected."
+              },
+              {
+                "letter": "G",
+                "text": "It is unsuitable for some fabrics."
+              },
+              {
+                "letter": "H",
+                "text": "It is not generally available"
+              }
+            ],
+            "sectionTitle": "Natural dyes",
+            "items": [
+              {
+                "questionNumber": 25,
+                "text": "turmeric",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 26,
+                "text": "beetroot",
+                "correctAnswer": "F"
+              },
+              {
+                "questionNumber": 27,
+                "text": "Tyrian purple",
+                "correctAnswer": "H"
+              },
+              {
+                "questionNumber": 28,
+                "text": "logwood",
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 29,
+                "text": "cochineal",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 30,
+                "text": "metal oxide",
+                "correctAnswer": "E"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "The Sleepy Lizard (Tiliqua Rugosa)",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening13_t3_s4.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzEzX3QzX3M0Lm1wMyIsImlhdCI6MTc1OTM4NTI3NCwiZXhwIjo0OTEyOTg1Mjc0fQ.ZiwJI6KtKrb2OIorfyY2hJF0dbaOCzTWEn9ux-vGrVk",
+      "questionGroups": [
+        {
+          "groupId": "31-40",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "The sleepy lizard (tiliqua rugosa)",
+            "sections": [
+              {
+                "sectionTitle": "Description",
+                "content": [
+                  {
+                    "text": "• They are common in Western and South Australia",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• They are brown, but recognisable by their blue ",
+                    "questionNumber": 31,
+                    "inputType": "text",
+                    "correctAnswer": "tongue(s)",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• They are relatively large",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Their diet consists mainly of ",
+                    "questionNumber": 32,
+                    "inputType": "text",
+                    "correctAnswer": "plants",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Their main predators are large birds and ",
+                    "questionNumber": 33,
+                    "inputType": "text",
+                    "correctAnswer": "snakes",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Navigation study",
+                "content": [
+                  {
+                    "text": "• One study found that lizards can use the ",
+                    "questionNumber": 34,
+                    "inputType": "text",
+                    "correctAnswer": "sky",
+                    "suffix": " to help them navigate",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Observations in the wild",
+                "content": [
+                  {
+                    "text": "• Observations show that these lizards keep the same ",
+                    "questionNumber": 35,
+                    "inputType": "text",
+                    "correctAnswer": "partner(s)",
+                    "suffix": " for several years",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "What people want",
+                "content": [
+                  {
+                    "text": "• Possible reasons:",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  – to improve the survival of their young"
+                  },
+                  {
+                    "text": "    (but little ",
+                    "questionNumber": 36,
+                    "inputType": "text",
+                    "correctAnswer": "contact",
+                    "suffix": " has been noted between parents and children)"
+                  },
+                  {
+                    "text": "  – to provide ",
+                    "questionNumber": 37,
+                    "inputType": "text",
+                    "correctAnswer": "protection",
+                    "suffix": " for female lizards"
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Tracking study",
+                "content": [
+                  {
+                    "text": "  – A study was carried out using GPS systems attached to the ",
+                    "questionNumber": 38,
+                    "inputType": "text",
+                    "correctAnswer": "tail(s)",
+                    "suffix": " of the lizards"
+                  },
+                  {
+                    "text": "  – This provided information on the lizards' location and even the number of ",
+                    "questionNumber": 39,
+                    "inputType": "text",
+                    "correctAnswer": "steps",
+                    "suffix": " taken"
+                  },
+                  {
+                    "text": "  – It appeared that the lizards were trying to avoid one another"
+                  },
+                  {
+                    "text": "  – This may be in order to reduce chances of ",
+                    "questionNumber": 40,
+                    "inputType": "text",
+                    "correctAnswer": "injury / injuries"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

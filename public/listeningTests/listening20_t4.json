@@ -1,0 +1,661 @@
+{
+  "id": "listening20_t4",
+  "title": "IELTS Listening 20 Practice Test 4",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "tags": [
+      "family-visit-advice",
+      "football-stadium",
+      "handwriting-dyslexia",
+      "bird-sanctuary"
+    ],
+    "description": "Full IELTS Listening Practice Test with 4 sections"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Advice on Family Visit",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening20_t4_s1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzIwX3Q0X3MxLm1wMyIsImlhdCI6MTc1OTQ3MjkxOSwiZXhwIjo0OTEzMDcyOTE5fQ.Ynrs_6MWhQ2XOSDzyOQUycAiBVr7ODyFPpPp_Zlyuyw",
+      "questionGroups": [
+        {
+          "groupId": "1-10",
+          "instructions": "Complete the notes below.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Advice on family visit",
+            "sections": [
+              {
+                "sectionTitle": "Accommodation",
+                "content": [
+                  {
+                    "text": "• ",
+                    "questionNumber": 1,
+                    "inputType": "text",
+                    "correctAnswer": "Kings/ King's",
+                    "suffix": " Hotel on George Street",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• cost of family room per night: £",
+                    "questionNumber": 2,
+                    "inputType": "text",
+                    "correctAnswer": "125/ one hundred and twenty-five/ one hundred twenty-five",
+                    "suffix": " (approx.)",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Recommended trips",
+                "content": [
+                  {
+                    "text": "• a ",
+                    "questionNumber": 3,
+                    "inputType": "text",
+                    "correctAnswer": "walking",
+                    "suffix": " tour of the city centre (starts in Carlton Square)",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• a trip by ",
+                    "questionNumber": 4,
+                    "inputType": "text",
+                    "correctAnswer": "boat",
+                    "suffix": " to the old fort",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Science Museum",
+                "content": [
+                  {
+                    "text": "• best day to visit: ",
+                    "questionNumber": 5,
+                    "inputType": "text",
+                    "correctAnswer": "Tuesday",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• see the exhibition about ",
+                    "questionNumber": 6,
+                    "inputType": "text",
+                    "correctAnswer": "space",
+                    "suffix": " which opens soon",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Food",
+                "content": [
+                  {
+                    "text": "• Clacton Market:",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  ○ good for ",
+                    "questionNumber": 7,
+                    "inputType": "text",
+                    "correctAnswer": "vegerarian",
+                    "suffix": " food"
+                  },
+                  {
+                    "text": "  ○ need to have lunch before ",
+                    "questionNumber": 8,
+                    "inputType": "text",
+                    "correctAnswer": "2.30/ two thirty",
+                    "suffix": " p.m."
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Theatre tickets",
+                "content": [
+                  {
+                    "text": "• save up to ",
+                    "questionNumber": 9,
+                    "inputType": "text",
+                    "correctAnswer": "75/ seventy-five",
+                    "suffix": " % on ticket prices at bargaintickets.com",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Free activities",
+                "content": [
+                  {
+                    "text": "• Blakewell Gardens:",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Roots Music Festival",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• climb Telegraph Hill to see a view of the ",
+                    "questionNumber": 10,
+                    "inputType": "text",
+                    "correctAnswer": "port",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Football Stadium Tour",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening20_t4_s2.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzIwX3Q0X3MyLm1wMyIsImlhdCI6MTc1OTQ3MjkyMSwiZXhwIjo0OTEzMDcyOTIxfQ.sAzBSVKDzJUZSPnoa0AhCodjQJlPGQN-kQmRF-iysX4",
+      "questionGroups": [
+        {
+          "groupId": "11-12",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO things does the speaker say about visiting the football stadium with children?",
+            "options": [
+              {
+                "letter": "A",
+                "text": "Children can get their photo taken with a football player."
+              },
+              {
+                "letter": "B",
+                "text": "There is a competition for children today."
+              },
+              {
+                "letter": "C",
+                "text": "Parents must stay with their children at all times."
+              },
+              {
+                "letter": "D",
+                "text": "Children will need sunhats and drinks."
+              },
+              {
+                "letter": "E",
+                "text": "The café has a special offer on meals for children."
+              }
+            ],
+            "questions": [
+              {
+                "questionNumber": 11,
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 12,
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "13-14",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO features of the stadium tour are new this year?",
+            "options": [
+              {
+                "letter": "A",
+                "text": "VIP tour"
+              },
+              {
+                "letter": "B",
+                "text": "360 cinema experience"
+              },
+              {
+                "letter": "C",
+                "text": "audio guide"
+              },
+              {
+                "letter": "D",
+                "text": "dressing room tour"
+              },
+              {
+                "letter": "E",
+                "text": "tours in other languages"
+              }
+            ],
+            "questions": [
+              {
+                "questionNumber": 13,
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 14,
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "15-20",
+          "instructions": "Which event in the history of football in the UK took place in each of the following years?\nChoose SIX answers from the box and write the correct letter, A-H, next to Questions 15-20.",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Events in the history of football",
+            "matchingOptions": [
+              {
+                "letter": "A",
+                "text": "the introduction of pay for the players"
+              },
+              {
+                "letter": "B",
+                "text": "a change to the design of the goal"
+              },
+              {
+                "letter": "C",
+                "text": "the first use of lights for matches"
+              },
+              {
+                "letter": "D",
+                "text": "the introduction of goalkeepers"
+              },
+              {
+                "letter": "E",
+                "text": "the first international match"
+              },
+              {
+                "letter": "F",
+                "text": "two changes to the rules of the game"
+              },
+              {
+                "letter": "G",
+                "text": "the introduction of fee for spectators"
+              },
+              {
+                "letter": "H",
+                "text": "an agreement on the length of a game"
+              }
+            ],
+            "sectionTitle": "Years",
+            "items": [
+              {
+                "questionNumber": 15,
+                "text": "1870",
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 16,
+                "text": "1874",
+                "correctAnswer": "F"
+              },
+              {
+                "questionNumber": 17,
+                "text": "1875",
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 18,
+                "text": "1877",
+                "correctAnswer": "H"
+              },
+              {
+                "questionNumber": 19,
+                "text": "1878",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 20,
+                "text": "1880",
+                "correctAnswer": "G"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Teaching Handwriting to Children with Dyslexia",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening20_t4_s3.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzIwX3Q0X3MzLm1wMyIsImlhdCI6MTc1OTQ3MjkyMywiZXhwIjo0OTEzMDcyOTIzfQ.05HPRGruMRIelmFLbfTC_Gef88l6XtfTenu0nFPv1GY",
+      "questionGroups": [
+        {
+          "groupId": "21-22",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "Which TWO benefits of handwriting do the students mention?",
+            "options": [
+              {
+                "letter": "A",
+                "text": "improved fine motor skills"
+              },
+              {
+                "letter": "B",
+                "text": "improved memory"
+              },
+              {
+                "letter": "C",
+                "text": "improved concentration"
+              },
+              {
+                "letter": "D",
+                "text": "improved imagination"
+              },
+              {
+                "letter": "E",
+                "text": "improved spatial awareness"
+              }
+            ],
+            "questions": [
+              {
+                "questionNumber": 21,
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 22,
+                "correctAnswer": "E"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "23-24",
+          "instructions": "Choose TWO letters, A-E.",
+          "displayType": "multiple-answer",
+          "content": {
+            "type": "multiple-choice",
+            "questionText": "For children with dyspraxia, which TWO problems with handwriting do the students think are easiest to correct?",
+            "options": [
+              {
+                "letter": "A",
+                "text": "not spacing letters correctly"
+              },
+              {
+                "letter": "B",
+                "text": "not writing in a straight line"
+              },
+              {
+                "letter": "C",
+                "text": "applying too much pressure when writing"
+              },
+              {
+                "letter": "D",
+                "text": "confusing letter shapes"
+              },
+              {
+                "letter": "E",
+                "text": "writing very slowly"
+              }
+            ],
+            "questions": [
+              {
+                "questionNumber": 23,
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 24,
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "25-30",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 25,
+                "questionText": "What does the woman say about using laptops to teach writing to children with dyslexia?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "Children often lack motivation to learn that way."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "Children become fluent relatively quickly."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "Children react more positively if they make a mistake."
+                  }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 26,
+                "questionText": "When discussing whether to teach cursive or print writing, the woman thinks that",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "cursive writing disadvantages a certain group of children."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "print writing is associated with lower academic performance."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "most teachers in the UK prefer a traditional approach to handwriting."
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 27,
+                "questionText": "According to the students, what impact does poor handwriting have on exam performance?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "There is evidence to suggest grades are affected by poor handwriting."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "Neat handwriting is less important now than it used to be."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "Candidates write more slowly and produce shorter answers."
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 28,
+                "questionText": "What prediction does the man make about the future of handwriting?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "Touch typing will be taught before writing by hand."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "Children will continue to learn to write by hand."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "People will dislike handwriting on digital devices."
+                  }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 29,
+                "questionText": "The woman is concerned that relying on digital devices has made it difficult for her to",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "take detailed notes."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "spell and punctuate."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "read old documents."
+                  }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 30,
+                "questionText": "How do the students feel about their own handwriting?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "concerned they are unable to write quickly"
+                  },
+                  {
+                    "letter": "B",
+                    "text": "embarrassed by comments made about it"
+                  },
+                  {
+                    "letter": "C",
+                    "text": "regretful that they have lost the habit"
+                  }
+                ],
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Research in the Chembe Bird Sanctuary",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening20_t4_s4.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzIwX3Q0X3M0Lm1wMyIsImlhdCI6MTc1OTQ3MjkyNSwiZXhwIjo0OTEzMDcyOTI1fQ.4ymo8MZUahx41A-9xSh9YiVzzXdD0ZmDcm8gWB1AX10",
+      "questionGroups": [
+        {
+          "groupId": "31-40",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Research in the area around the Chembe Bird Sanctuary",
+            "sections": [
+              {
+                "sectionTitle": "The importance of birds of prey to the local communities",
+                "content": [
+                  {
+                    "text": "• They destroy ",
+                    "questionNumber": 31,
+                    "inputType": "text",
+                    "correctAnswer": "rats",
+                    "suffix": " and other rodents.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• They help to prevent farmers from being bitten by ",
+                    "questionNumber": 32,
+                    "inputType": "text",
+                    "correctAnswer": "snakes",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• They have been an important part of the local culture for many years.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• They now support the economy by encouraging ",
+                    "questionNumber": 33,
+                    "inputType": "text",
+                    "correctAnswer": "tourism",
+                    "suffix": " in the area.",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Falling numbers of birds of prey",
+                "content": [
+                  {
+                    "text": "• The birds may be accidentally killed",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  ○ by ",
+                    "questionNumber": 34,
+                    "inputType": "text",
+                    "correctAnswer": "traffic",
+                    "suffix": " when they are hunting or sleeping"
+                  },
+                  {
+                    "text": "  ○ by electrocution from contact with power lines, especially at times when there is a lot of ",
+                    "questionNumber": 35,
+                    "inputType": "text",
+                    "correctAnswer": "rain"
+                  },
+                  {
+                    "text": "• Local farmers may illegally shoot them or ",
+                    "questionNumber": 36,
+                    "inputType": "text",
+                    "correctAnswer": "poison",
+                    "suffix": " them.",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Ways of protecting chickens from birds of prey",
+                "content": [
+                  {
+                    "text": "• clearing away vegetation from the area (unhelpful)",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• providing a ",
+                    "questionNumber": 37,
+                    "inputType": "text",
+                    "correctAnswer": "building",
+                    "suffix": " for chickens (expensive)",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• frightening birds of prey by",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  ○ keeping a ",
+                    "questionNumber": 38,
+                    "inputType": "text",
+                    "correctAnswer": "dog"
+                  },
+                  {
+                    "text": "  ○ making a ",
+                    "questionNumber": 39,
+                    "inputType": "text",
+                    "correctAnswer": "noise",
+                    "suffix": " – e.g. with metal objects"
+                  },
+                  {
+                    "text": "• A ",
+                    "questionNumber": 40,
+                    "inputType": "text",
+                    "correctAnswer": "combination",
+                    "suffix": " of methods is usually most effective.",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

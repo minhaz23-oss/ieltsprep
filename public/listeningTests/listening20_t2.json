@@ -1,0 +1,644 @@
+{
+  "id": "listening20_t2",
+  "title": "IELTS Listening 20 Practice Test 2",
+  "difficulty": "medium",
+  "totalQuestions": 40,
+  "timeLimit": 40,
+  "metadata": {
+    "tags": [
+      "elderly-care-support",
+      "volunteering",
+      "human-geography",
+      "food-trends"
+    ],
+    "description": "Full IELTS Listening Practice Test with 4 sections"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Support for Carers",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening20_t2_s1o.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzIwX3QyX3Mxby5tcDMiLCJpYXQiOjE3NTk1MDYwNjgsImV4cCI6NDkxMzEwNjA2OH0.yGVq5GakTHwOgfR7foqiVCqjTysBfE-RMtUTVyNoz_0",
+      "questionGroups": [
+        {
+          "groupId": "1-10",
+          "instructions": "Complete the table below.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Local councils can arrange practical support to help those caring for elderly people at home",
+            "sections": [
+              {
+                "sectionTitle": "This can give the carer:",
+                "content": [
+                  {
+                    "text": "• time for other responsibilities",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• a ",
+                    "questionNumber": 1,
+                    "inputType": "text",
+                    "correctAnswer": "break",
+                    "isBullet": true
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Assessment of mother's needs",
+                "content": [
+                  {
+                    "text": "This may include discussion of:",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "• how much ",
+                    "questionNumber": 2,
+                    "inputType": "text",
+                    "correctAnswer": "time",
+                    "suffix": " the caring involves",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• what types of tasks are involved, e.g.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  ○ help with dressing",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "  ○ helping her have a ",
+                    "questionNumber": 3,
+                    "inputType": "text",
+                    "correctAnswer": "shower"
+                  },
+                  {
+                    "text": "  ○ shopping",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "  ○ helping with meals",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "  ○ dealing with ",
+                    "questionNumber": 4,
+                    "inputType": "text",
+                    "correctAnswer": "money"
+                  },
+                  {
+                    "text": "• any aspects of caring that are especially difficult, e.g.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  ○ loss of ",
+                    "questionNumber": 5,
+                    "inputType": "text",
+                    "correctAnswer": "memory"
+                  },
+                  {
+                    "text": "  ○ ",
+                    "questionNumber": 6,
+                    "inputType": "text",
+                    "correctAnswer": "lifting",
+                    "suffix": " her"
+                  },
+                  {
+                    "text": "  ○ preventing a ",
+                    "questionNumber": 7,
+                    "inputType": "text",
+                    "correctAnswer": "fall"
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Types of support that may be offered to carers",
+                "content": [
+                  {
+                    "text": "• transport costs, e.g. cost of a ",
+                    "questionNumber": 8,
+                    "inputType": "text",
+                    "correctAnswer": "taxi",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• car-related costs, e.g. fuel and ",
+                    "questionNumber": 9,
+                    "inputType": "text",
+                    "correctAnswer": "insurance",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• help with housework",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• help to reduce ",
+                    "questionNumber": 10,
+                    "inputType": "text",
+                    "correctAnswer": "stress",
+                    "isBullet": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Volunteering Activities",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening20_t2_s2o.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzIwX3QyX3Myby5tcDMiLCJpYXQiOjE3NTk1MDYwODgsImV4cCI6NDkxMzEwNjA4OH0.0xNurE_W34BFQZuWoNRojbXJ2EoYylxVIjR78alWG_w",
+      "questionGroups": [
+        {
+          "groupId": "11-16",
+          "instructions": "What is the role of the volunteers in each of the following activities?\nChoose SIX answers from the box and write the correct letter, A-I, next to 11-16.",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Volunteer roles",
+            "matchingOptions": [
+              {
+                "letter": "A",
+                "text": "providing entertainment"
+              },
+              {
+                "letter": "B",
+                "text": "providing publicity about a council service"
+              },
+              {
+                "letter": "C",
+                "text": "contacting local businesses"
+              },
+              {
+                "letter": "D",
+                "text": "giving advice to visitors"
+              },
+              {
+                "letter": "E",
+                "text": "collecting feedback on events"
+              },
+              {
+                "letter": "F",
+                "text": "selling tickets"
+              },
+              {
+                "letter": "G",
+                "text": "introducing guest speakers at an event"
+              },
+              {
+                "letter": "H",
+                "text": "encouraging cooperation between local organisations"
+              },
+              {
+                "letter": "I",
+                "text": "helping people find their seats"
+              }
+            ],
+            "items": [
+              {
+                "questionNumber": 11,
+                "text": "walking around the town centre",
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 12,
+                "text": "helping at concerts",
+                "correctAnswer": "I"
+              },
+              {
+                "questionNumber": 13,
+                "text": "getting involved with community groups",
+                "correctAnswer": "H"
+              },
+              {
+                "questionNumber": 14,
+                "text": "helping with a magazine",
+                "correctAnswer": "E"
+              },
+              {
+                "questionNumber": 15,
+                "text": "participating at lunches for retired people",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 16,
+                "text": "helping with the website",
+                "correctAnswer": "B"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "17-20",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 17,
+                "questionText": "Which event requires the largest number of volunteers?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "the music festival"
+                  },
+                  {
+                    "letter": "B",
+                    "text": "the science festival"
+                  },
+                  {
+                    "letter": "C",
+                    "text": "the book festival"
+                  }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 18,
+                "questionText": "What is the most important requirement for volunteers at the festivals?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "interpersonal skills"
+                  },
+                  {
+                    "letter": "B",
+                    "text": "personal interest in the event"
+                  },
+                  {
+                    "letter": "C",
+                    "text": "flexibility"
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 19,
+                "questionText": "New volunteers will start working in the week beginning",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "2 September."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "9 September."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "23 September."
+                  }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 20,
+                "questionText": "What is the next annual event for volunteers?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "a boat trip"
+                  },
+                  {
+                    "letter": "B",
+                    "text": "a barbecue"
+                  },
+                  {
+                    "letter": "C",
+                    "text": "a party"
+                  }
+                ],
+                "correctAnswer": "A"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Human Geography Discussion",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening20_t2_s3o.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzIwX3QyX3Mzby5tcDMiLCJpYXQiOjE3NTk1MDYxODgsImV4cCI6NDkxMzEwNjE4OH0.Y0cfu_114jkDOn69Q0tifL2D4H8K9vt4lG87l0dNjsM",
+      "questionGroups": [
+        {
+          "groupId": "21-25",
+          "instructions": "What is Rosie and Colin's opinion about each of the following aspects of human geography?\nChoose FIVE answers from the box and write the correct letter, A-G, next to Questions 21-25.",
+          "displayType": "matching",
+          "content": {
+            "type": "matching",
+            "title": "Aspects of human geography",
+            "matchingOptions": [
+              {
+                "letter": "A",
+                "text": "The information given about this was too vague."
+              },
+              {
+                "letter": "B",
+                "text": "This may not be relevant to their course."
+              },
+              {
+                "letter": "C",
+                "text": "This will involve only a small number of statistics."
+              },
+              {
+                "letter": "D",
+                "text": "It will be easy to find facts about this."
+              },
+              {
+                "letter": "E",
+                "text": "The facts about this may not be reliable."
+              },
+              {
+                "letter": "F",
+                "text": "No useful research has been done on this."
+              },
+              {
+                "letter": "G",
+                "text": "The information provided about this was interesting."
+              }
+            ],
+            "items": [
+              {
+                "questionNumber": 21,
+                "text": "Population",
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 22,
+                "text": "Health",
+                "correctAnswer": "G"
+              },
+              {
+                "questionNumber": 23,
+                "text": "Economies",
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 24,
+                "text": "Culture",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 25,
+                "text": "Poverty",
+                "correctAnswer": "E"
+              }
+            ]
+          }
+        },
+        {
+          "groupId": "26-30",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "displayType": "single-choice",
+          "content": {
+            "type": "multiple-choice-individual",
+            "questions": [
+              {
+                "questionNumber": 26,
+                "questionText": "Rosie says that in her own city the main problem is",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "crime."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "housing."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "unemployment."
+                  }
+                ],
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 27,
+                "questionText": "What recent additions to the outskirts of their cities are both students happy about?",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "conference centres"
+                  },
+                  {
+                    "letter": "B",
+                    "text": "sports centres"
+                  },
+                  {
+                    "letter": "C",
+                    "text": "retail centres"
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 28,
+                "questionText": "The students agree that developing disused industrial sites may",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "have unexpected costs."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "damage the urban environment."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "destroy valuable historical buildings."
+                  }
+                ],
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 29,
+                "questionText": "The students will mention Masdar City as an example of an attempt to achieve",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "daily collections for waste recycling."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "sustainable energy use."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "free transport for everyone."
+                  }
+                ],
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 30,
+                "questionText": "When discussing the ecotown of Greenhill Abbots, Colin is uncertain about",
+                "options": [
+                  {
+                    "letter": "A",
+                    "text": "what its objectives were."
+                  },
+                  {
+                    "letter": "B",
+                    "text": "why there was opposition to it."
+                  },
+                  {
+                    "letter": "C",
+                    "text": "how much of it has actually been built."
+                  }
+                ],
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Developing Food Trends",
+      "audioUrl": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningAudio/listening20_t2_s4o.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0F1ZGlvL2xpc3RlbmluZzIwX3QyX3M0by5tcDMiLCJpYXQiOjE3NTk1MDYyMDYsImV4cCI6NDkxMzEwNjIwNn0.iuzktHec95F1I73UpiIaS1QONh0Co44wWGCTRZwIbWQ",
+      "questionGroups": [
+        {
+          "groupId": "31-40",
+          "instructions": "Complete the notes below.\nWrite ONE WORD ONLY for each answer.",
+          "displayType": "notes",
+          "content": {
+            "type": "note-completion",
+            "title": "Developing food trends",
+            "sections": [
+              {
+                "sectionTitle": "",
+                "content": [
+                  {
+                    "text": "• The growth in interest in food fashions started with ",
+                    "questionNumber": 31,
+                    "inputType": "text",
+                    "correctAnswer": "photos/photographs/pictures",
+                    "suffix": " of food being shared on social media.",
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• The UK food industry is constantly developing products which are new or different.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "• Influencers on social media become 'ambassadors' for a brand.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  ○ Sales of ",
+                    "questionNumber": 32,
+                    "inputType": "text",
+                    "correctAnswer": "vegan",
+                    "suffix": " food brands have grown rapidly this way."
+                  },
+                  {
+                    "text": "• Supermarkets track demand for ingredients on social media.",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  ○ Famous ",
+                    "questionNumber": 33,
+                    "inputType": "text",
+                    "correctAnswer": "chefs/cooks",
+                    "suffix": " are influential."
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Marketing campaigns",
+                "content": [
+                  {
+                    "text": "• The avocado:",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  ○ ",
+                    "questionNumber": 34,
+                    "inputType": "text",
+                    "correctAnswer": "journalists/reporters",
+                    "suffix": " were invited to visit growers in South Africa."
+                  },
+                  {
+                    "text": "  ○ Advertising focused on its ",
+                    "questionNumber": 35,
+                    "inputType": "text",
+                    "correctAnswer": "health",
+                    "suffix": " benefits."
+                  },
+                  {
+                    "text": "• Oat milk:",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  ○ A Swedish brand's media campaign received publicity by upsetting competitors.",
+                    "isStatic": true
+                  },
+                  {
+                    "text": "  ○ Promotion in the USA through ",
+                    "questionNumber": 36,
+                    "inputType": "text",
+                    "correctAnswer": "coffee",
+                    "suffix": " shops reduced the need for advertising."
+                  },
+                  {
+                    "text": "  ○ It appealed to consumers who are concerned about the ",
+                    "questionNumber": 37,
+                    "inputType": "text",
+                    "correctAnswer": "environment"
+                  },
+                  {
+                    "text": "• Norwegian skrei:",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  ○ has helped strengthen the ",
+                    "questionNumber": 38,
+                    "inputType": "text",
+                    "correctAnswer": "reputation",
+                    "suffix": " of Norwegian seafood."
+                  }
+                ]
+              },
+              {
+                "sectionTitle": "Ethical concerns",
+                "content": [
+                  {
+                    "text": "• Quinoa:",
+                    "isStatic": true,
+                    "isBullet": true
+                  },
+                  {
+                    "text": "  ○ Its success led to an increase in its ",
+                    "questionNumber": 39,
+                    "inputType": "text",
+                    "correctAnswer": "price/cost"
+                  },
+                  {
+                    "text": "  ○ Overuse of resources resulted in poor quality ",
+                    "questionNumber": 40,
+                    "inputType": "text",
+                    "correctAnswer": "soil"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

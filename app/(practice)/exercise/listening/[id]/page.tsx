@@ -124,6 +124,17 @@ const IELTSListeningTest = () => {
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
 
+  // Helper function to check if user answer matches any acceptable answer
+  const isAnswerCorrect = (userAnswer: string, correctAnswer: string): boolean => {
+    const userAnswerClean = userAnswer.toLowerCase().trim();
+    
+    // Split correct answer by '/' to get all acceptable variations
+    const acceptableAnswers = correctAnswer.toLowerCase().split('/').map(a => a.trim());
+    
+    // Check if user answer matches any of the acceptable answers
+    return acceptableAnswers.some(acceptable => userAnswerClean === acceptable);
+  };
+
   const handleAnswerChange = (questionNumber: number, answer: string | string[]) => {
     setAnswers(prev => ({ ...prev, [questionNumber]: answer }));
   };
@@ -185,7 +196,7 @@ const IELTSListeningTest = () => {
                   correct++;
                 }
               } else if (typeof userAnswer === 'string' && typeof correctAnswer === 'string') {
-                if (userAnswer.toLowerCase().trim() === correctAnswer.toLowerCase().trim()) {
+                if (isAnswerCorrect(userAnswer, correctAnswer)) {
                   correct++;
                 }
               }
@@ -202,8 +213,18 @@ const IELTSListeningTest = () => {
 
               total++;
               const userAnswer = answers[item.questionNumber];
-              if (typeof userAnswer === 'string' && userAnswer.toUpperCase().trim() === item.correctAnswer.toUpperCase().trim()) {
-                correct++;
+              if (typeof userAnswer === 'string' && typeof item.correctAnswer === 'string') {
+                // For matching questions with letter answers, use exact match
+                if (item.correctAnswer.length === 1 && /^[A-Z]$/i.test(item.correctAnswer)) {
+                  if (userAnswer.toUpperCase().trim() === item.correctAnswer.toUpperCase().trim()) {
+                    correct++;
+                  }
+                } else {
+                  // For text answers, check against multiple acceptable answers
+                  if (isAnswerCorrect(userAnswer, item.correctAnswer)) {
+                    correct++;
+                  }
+                }
               }
             });
           }
@@ -215,9 +236,10 @@ const IELTSListeningTest = () => {
                 if (field.questionNumber && field.correctAnswer) {
                   total++;
                   const userAnswer = answers[field.questionNumber];
-                  if (typeof userAnswer === 'string' && typeof field.correctAnswer === 'string' &&
-                      userAnswer.toLowerCase().trim() === field.correctAnswer.toLowerCase().trim()) {
-                    correct++;
+                  if (typeof userAnswer === 'string' && typeof field.correctAnswer === 'string') {
+                    if (isAnswerCorrect(userAnswer, field.correctAnswer)) {
+                      correct++;
+                    }
                   }
                 }
                 if (field.listItems && Array.isArray(field.listItems)) {
@@ -236,9 +258,10 @@ const IELTSListeningTest = () => {
                   if (item.questionNumber && item.correctAnswer) {
                     total++;
                     const userAnswer = answers[item.questionNumber];
-                    if (typeof userAnswer === 'string' &&
-                        userAnswer.toLowerCase().trim() === item.correctAnswer.toLowerCase().trim()) {
-                      correct++;
+                    if (typeof userAnswer === 'string' && typeof item.correctAnswer === 'string') {
+                      if (isAnswerCorrect(userAnswer, item.correctAnswer)) {
+                        correct++;
+                      }
                     }
                   }
                 });

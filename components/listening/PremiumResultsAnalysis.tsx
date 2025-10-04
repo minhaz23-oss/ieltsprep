@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ListeningTest, ListeningSection, QuestionGroup } from '@/types/listening';
 
 // Types matching the actual data structure from the listening test
@@ -80,8 +80,11 @@ interface AnswerAnalysis {
   isCorrect: boolean;
   questionText?: string;
   questionType: string;
-  explanation: string;
+  sectionNumber: number;
+  explanation?: string;
   grammarPoint?: string;
+  commonMistake?: string;
+  tip?: string;
 }
 
 interface PremiumResultsAnalysisProps {
@@ -95,74 +98,24 @@ const PremiumResultsAnalysis: React.FC<PremiumResultsAnalysisProps> = ({
   answers,
   isPremium
 }) => {
-  // Generate grammatical explanations for different question types
-  const generateExplanation = (
-    questionNumber: number,
-    userAnswer: string | string[],
-    correctAnswer: string | string[],
-    questionType: string,
-    questionText?: string
-  ): { explanation: string; grammarPoint?: string } => {
-    const userStr = Array.isArray(userAnswer) ? userAnswer.join(', ') : (userAnswer || '');
-    const correctStr = Array.isArray(correctAnswer) ? correctAnswer.join(', ') : correctAnswer;
-    
-    // Common grammatical explanations based on question types
-    switch (questionType) {
-      case 'fill-blank':
-      case 'note-completion':
-        if (userStr.toLowerCase() !== correctStr.toLowerCase()) {
-          return {
-            explanation: `The correct answer is "${correctStr}". This type of question requires exact word matching from the audio. Listen for specific vocabulary and ensure proper spelling.`,
-            grammarPoint: 'Word Form & Spelling: In IELTS listening, answers must match exactly what is heard. Pay attention to singular/plural forms, verb tenses, and exact spelling.'
-          };
-        }
-        break;
-        
-      case 'multiple-choice':
-        return {
-          explanation: `The correct answer is "${correctStr}". Multiple choice questions test your ability to identify specific information and distinguish between similar options.`,
-          grammarPoint: 'Comprehension: Listen for key phrases and synonyms. The correct answer may be paraphrased differently from what you hear.'
-        };
-        
-      case 'matching':
-        return {
-          explanation: `The correct match is "${correctStr}". Matching questions require you to connect related information from different parts of the audio.`,
-          grammarPoint: 'Information Linking: Pay attention to connecting words, pronouns, and references that link different pieces of information together.'
-        };
-        
-      case 'form-completion':
-        if (userStr.toLowerCase() !== correctStr.toLowerCase()) {
-          // Analyze common form completion errors
-          if (userStr.length === 0) {
-            return {
-              explanation: `You left this blank. The correct answer is "${correctStr}". Form completion requires listening for specific details like names, dates, numbers, or descriptive words.`,
-              grammarPoint: 'Detail Recognition: Focus on factual information such as proper nouns, numbers, and specific descriptive terms.'
-            };
-          } else if (userStr.toLowerCase().includes(correctStr.toLowerCase()) || correctStr.toLowerCase().includes(userStr.toLowerCase())) {
-            return {
-              explanation: `Close, but not exact. You wrote "${userStr}" but the correct answer is "${correctStr}". Word limits and exact forms matter in IELTS.`,
-              grammarPoint: 'Precision: IELTS requires exact answers. Check word limits (e.g., "ONE WORD ONLY") and ensure you use the exact form heard.'
-            };
-          } else {
-            return {
-              explanation: `The correct answer is "${correctStr}". You may have misheard or confused this with similar-sounding information.`,
-              grammarPoint: 'Active Listening: Practice distinguishing between similar sounds and words. Context clues can help verify your answer.'
-            };
-          }
-        }
-        break;
-        
-      default:
-        return {
-          explanation: `The correct answer is "${correctStr}". Review the audio section and practice identifying key information for this question type.`,
-          grammarPoint: 'General Strategy: Always read questions before listening, underline key words, and listen for synonyms and paraphrasing.'
-        };
+  const [aiAnalyses, setAiAnalyses] = useState<Record<number, {
+    explanation: string;
+    grammarPoint: string;
+    commonMistake: string;
+    tip: string;
+  }>>({});
+  const [isLoadingAI, setIsLoadingAI] = useState(false);
+  // Helper to format acceptable answers
+  const formatAcceptableAnswers = (answer: string | string[]): string => {
+    if (Array.isArray(answer)) {
+      return answer.join(', ');
     }
-    
-    return {
-      explanation: `Correct! You answered "${userStr}" which matches the expected answer.`,
-      grammarPoint: 'Well done! Continue practicing to maintain this level of accuracy.'
-    };
+    // If answer contains '/' separator, show all options with 'or'
+    if (answer.includes('/')) {
+      const options = answer.split('/').map(opt => `"${opt.trim()}"`);
+      return options.join(' or ');
+    }
+    return `"${answer}"`;
   };
 
   // Analyze all answers
@@ -176,13 +129,6 @@ const PremiumResultsAnalysis: React.FC<PremiumResultsAnalysisProps> = ({
           group.content.questions.forEach(q => {
             const userAnswer = answers[q.questionNumber];
             const isCorrect = checkAnswer(userAnswer, q.correctAnswer);
-            const { explanation, grammarPoint } = generateExplanation(
-              q.questionNumber,
-              userAnswer,
-              q.correctAnswer,
-              group.displayType,
-              `Question ${q.questionNumber}`
-            );
             
             analyses.push({
               questionNumber: q.questionNumber,
@@ -191,8 +137,7 @@ const PremiumResultsAnalysis: React.FC<PremiumResultsAnalysisProps> = ({
               isCorrect,
               questionText: `Question ${q.questionNumber}`,
               questionType: group.displayType,
-              explanation,
-              grammarPoint
+              sectionNumber: section.id
             });
           });
         }
@@ -201,13 +146,6 @@ const PremiumResultsAnalysis: React.FC<PremiumResultsAnalysisProps> = ({
           group.content.items.forEach(item => {
             const userAnswer = answers[item.questionNumber];
             const isCorrect = checkAnswer(userAnswer, item.correctAnswer);
-            const { explanation, grammarPoint } = generateExplanation(
-              item.questionNumber,
-              userAnswer,
-              item.correctAnswer,
-              group.displayType,
-              item.text
-            );
             
             analyses.push({
               questionNumber: item.questionNumber,
@@ -216,8 +154,7 @@ const PremiumResultsAnalysis: React.FC<PremiumResultsAnalysisProps> = ({
               isCorrect,
               questionText: item.text,
               questionType: group.displayType,
-              explanation,
-              grammarPoint
+              sectionNumber: section.id
             });
           });
         }
@@ -228,13 +165,6 @@ const PremiumResultsAnalysis: React.FC<PremiumResultsAnalysisProps> = ({
               if (field.questionNumber && field.correctAnswer) {
                 const userAnswer = answers[field.questionNumber];
                 const isCorrect = checkAnswer(userAnswer, field.correctAnswer);
-                const { explanation, grammarPoint } = generateExplanation(
-                  field.questionNumber,
-                  userAnswer,
-                  field.correctAnswer,
-                  group.displayType,
-                  field.label
-                );
                 
                 analyses.push({
                   questionNumber: field.questionNumber,
@@ -243,8 +173,7 @@ const PremiumResultsAnalysis: React.FC<PremiumResultsAnalysisProps> = ({
                   isCorrect,
                   questionText: field.label,
                   questionType: group.displayType,
-                  explanation,
-                  grammarPoint
+                  sectionNumber: section.id
                 });
               }
               if (field.listItems) {
@@ -256,18 +185,11 @@ const PremiumResultsAnalysis: React.FC<PremiumResultsAnalysisProps> = ({
         }
         
         if (group.content.sections) {
-          group.content.sections.forEach(section => {
-            section.content.forEach(item => {
+          group.content.sections.forEach(sec => {
+            sec.content.forEach(item => {
               if (item.questionNumber && item.correctAnswer) {
                 const userAnswer = answers[item.questionNumber];
                 const isCorrect = checkAnswer(userAnswer, item.correctAnswer);
-                const { explanation, grammarPoint } = generateExplanation(
-                  item.questionNumber,
-                  userAnswer,
-                  item.correctAnswer,
-                  group.displayType,
-                  item.text
-                );
                 
                 analyses.push({
                   questionNumber: item.questionNumber,
@@ -276,8 +198,7 @@ const PremiumResultsAnalysis: React.FC<PremiumResultsAnalysisProps> = ({
                   isCorrect,
                   questionText: item.text,
                   questionType: group.displayType,
-                  explanation,
-                  grammarPoint
+                  sectionNumber: section.id
                 });
               }
             });
@@ -289,6 +210,17 @@ const PremiumResultsAnalysis: React.FC<PremiumResultsAnalysisProps> = ({
     return analyses.sort((a, b) => a.questionNumber - b.questionNumber);
   };
 
+  // Helper function to check if user answer matches any acceptable answer
+  const isAnswerCorrect = (userAnswer: string, correctAnswer: string): boolean => {
+    const userAnswerClean = userAnswer.toLowerCase().trim();
+    
+    // Split correct answer by '/' to get all acceptable variations
+    const acceptableAnswers = correctAnswer.toLowerCase().split('/').map(a => a.trim());
+    
+    // Check if user answer matches any of the acceptable answers
+    return acceptableAnswers.some(acceptable => userAnswerClean === acceptable);
+  };
+
   // Check if answer is correct
   const checkAnswer = (userAnswer: string | string[] | undefined, correctAnswer: string | string[]): boolean => {
     if (!userAnswer) return false;
@@ -298,13 +230,68 @@ const PremiumResultsAnalysis: React.FC<PremiumResultsAnalysisProps> = ({
       const correctSet = new Set(correctAnswer.map(a => a.toUpperCase()));
       return userSet.size === correctSet.size && [...correctSet].every(a => userSet.has(a));
     } else if (typeof userAnswer === 'string' && typeof correctAnswer === 'string') {
-      return userAnswer.toLowerCase().trim() === correctAnswer.toLowerCase().trim();
+      // Check for single letter answers (A, B, C, etc.) - use exact match
+      if (correctAnswer.length === 1 && /^[A-Z]$/i.test(correctAnswer)) {
+        return userAnswer.toUpperCase().trim() === correctAnswer.toUpperCase().trim();
+      }
+      // For text answers, check against multiple acceptable answers separated by '/'
+      return isAnswerCorrect(userAnswer, correctAnswer);
     }
     return false;
   };
 
   const analyses = analyzeAnswers();
   const incorrectAnswers = analyses.filter(a => !a.isCorrect);
+
+  // Fetch AI analysis for incorrect answers when user is premium
+  useEffect(() => {
+    const fetchAIAnalysis = async () => {
+      if (!isPremium || incorrectAnswers.length === 0 || isLoadingAI) return;
+
+      setIsLoadingAI(true);
+
+      try {
+        const response = await fetch('/api/analyze-listening-answers', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            incorrectAnswers: incorrectAnswers.map(ans => ({
+              questionNumber: ans.questionNumber,
+              userAnswer: typeof ans.userAnswer === 'string' ? ans.userAnswer : ans.userAnswer.join(', '),
+              correctAnswer: typeof ans.correctAnswer === 'string' ? ans.correctAnswer : ans.correctAnswer.join(', '),
+              questionText: ans.questionText,
+              questionType: ans.questionType,
+              sectionNumber: ans.sectionNumber
+            })),
+            testTitle: testData.title
+          })
+        });
+
+        const data = await response.json();
+
+        if (data.success && data.analyses) {
+          const analysesMap: Record<number, any> = {};
+          data.analyses.forEach((analysis: any) => {
+            analysesMap[analysis.questionNumber] = {
+              explanation: analysis.explanation,
+              grammarPoint: analysis.grammarPoint,
+              commonMistake: analysis.commonMistake,
+              tip: analysis.tip
+            };
+          });
+          setAiAnalyses(analysesMap);
+        }
+      } catch (error) {
+        console.error('Error fetching AI analysis:', error);
+      } finally {
+        setIsLoadingAI(false);
+      }
+    };
+
+    fetchAIAnalysis();
+  }, [isPremium, incorrectAnswers.length, testData.title]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!isPremium) {
     return (
@@ -368,61 +355,86 @@ const PremiumResultsAnalysis: React.FC<PremiumResultsAnalysisProps> = ({
             <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
             </svg>
-            Detailed Analysis of Incorrect Answers
+            AI-Powered Analysis of Incorrect Answers
+            {isLoadingAI && (
+              <span className="ml-3 text-sm font-normal text-gray-600">
+                <span className="animate-pulse">🤖 Analyzing...</span>
+              </span>
+            )}
           </h4>
           
-          <div className="space-y-4">
-            {incorrectAnswers.map((analysis, index) => (
-              <div key={analysis.questionNumber} className="border-l-4 border-red-400 pl-4 py-3 bg-red-50 rounded-r-lg">
-                <div className="flex items-start justify-between mb-2">
-                  <h5 className="font-semibold text-red-800">
-                    Question {analysis.questionNumber}
-                    {analysis.questionText && (
-                      <span className="text-sm text-gray-600 font-normal ml-2">
-                        ({analysis.questionText})
+          {isLoadingAI ? (
+            <div className="text-center py-12">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-red-600 mx-auto mb-4"></div>
+              <p className="text-gray-600">AI is analyzing your answers to provide personalized feedback...</p>
+            </div>
+          ) : (
+            <div className="space-y-4">
+              {incorrectAnswers.map((analysis) => {
+                const aiAnalysis = aiAnalyses[analysis.questionNumber];
+                
+                return (
+                  <div key={analysis.questionNumber} className="border-l-4 border-red-400 pl-4 py-3 bg-red-50 rounded-r-lg">
+                    <div className="flex items-start justify-between mb-2">
+                      <h5 className="font-semibold text-red-800">
+                        Question {analysis.questionNumber}
+                        {analysis.questionText && (
+                          <span className="text-sm text-gray-600 font-normal ml-2">
+                            ({analysis.questionText})
+                          </span>
+                        )}
+                      </h5>
+                      <span className="text-xs bg-red-200 text-red-700 px-2 py-1 rounded">
+                        Section {analysis.sectionNumber}
                       </span>
+                    </div>
+                    
+                    <div className="grid md:grid-cols-2 gap-4 mb-3">
+                      <div>
+                        <span className="text-sm font-medium text-gray-700">Your Answer:</span>
+                        <div className="bg-red-100 p-2 rounded text-red-800 font-mono">
+                          {Array.isArray(analysis.userAnswer) 
+                            ? analysis.userAnswer.join(', ') || '(blank)'
+                            : analysis.userAnswer || '(blank)'
+                          }
+                        </div>
+                      </div>
+                      <div>
+                        <span className="text-sm font-medium text-gray-700">Correct Answer:</span>
+                        <div className="bg-green-100 p-2 rounded text-green-800 font-mono">
+                          {formatAcceptableAnswers(analysis.correctAnswer)}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {aiAnalysis && (
+                      <>
+                        <div className="mb-3">
+                          <span className="text-sm font-medium text-gray-700">📝 Explanation:</span>
+                          <p className="text-gray-800 mt-1">{aiAnalysis.explanation}</p>
+                        </div>
+                        
+                        <div className="bg-blue-50 p-3 rounded border-l-4 border-blue-400 mb-3">
+                          <span className="text-sm font-medium text-blue-700">📚 Grammar/Language Point:</span>
+                          <p className="text-blue-800 mt-1 text-sm">{aiAnalysis.grammarPoint}</p>
+                        </div>
+
+                        <div className="bg-orange-50 p-3 rounded border-l-4 border-orange-400 mb-3">
+                          <span className="text-sm font-medium text-orange-700">⚠️ Common Mistake:</span>
+                          <p className="text-orange-800 mt-1 text-sm">{aiAnalysis.commonMistake}</p>
+                        </div>
+
+                        <div className="bg-green-50 p-3 rounded border-l-4 border-green-400">
+                          <span className="text-sm font-medium text-green-700">💡 Pro Tip:</span>
+                          <p className="text-green-800 mt-1 text-sm">{aiAnalysis.tip}</p>
+                        </div>
+                      </>
                     )}
-                  </h5>
-                  <span className="text-xs bg-red-200 text-red-700 px-2 py-1 rounded">
-                    {analysis.questionType}
-                  </span>
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <span className="text-sm font-medium text-gray-700">Your Answer:</span>
-                    <div className="bg-red-100 p-2 rounded text-red-800 font-mono">
-                      {Array.isArray(analysis.userAnswer) 
-                        ? analysis.userAnswer.join(', ') || '(blank)'
-                        : analysis.userAnswer || '(blank)'
-                      }
-                    </div>
                   </div>
-                  <div>
-                    <span className="text-sm font-medium text-gray-700">Correct Answer:</span>
-                    <div className="bg-green-100 p-2 rounded text-green-800 font-mono">
-                      {Array.isArray(analysis.correctAnswer) 
-                        ? analysis.correctAnswer.join(', ')
-                        : analysis.correctAnswer
-                      }
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="mb-3">
-                  <span className="text-sm font-medium text-gray-700">Explanation:</span>
-                  <p className="text-gray-800 mt-1">{analysis.explanation}</p>
-                </div>
-                
-                {analysis.grammarPoint && (
-                  <div className="bg-blue-50 p-3 rounded border-l-4 border-blue-400">
-                    <span className="text-sm font-medium text-blue-700">Grammar Point:</span>
-                    <p className="text-blue-800 mt-1 text-sm">{analysis.grammarPoint}</p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+                );
+              })}
+            </div>
+          )}
         </div>
       )}
 

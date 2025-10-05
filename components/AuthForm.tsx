@@ -10,7 +10,7 @@ import { z } from 'zod';
 import FormField from "./FormField";
 import { createUserWithEmailAndPassword,signInWithEmailAndPassword,GoogleAuthProvider,signInWithPopup } from 'firebase/auth';
 import { auth } from "@/firebase/client";
-import { useRouter } from "next/navigation"; 
+import { useRouter, useSearchParams } from "next/navigation"; 
 import { signUp,signIn } from "@/lib/actions/auth.actions";
 import { FcGoogle } from "react-icons/fc";
 
@@ -27,6 +27,8 @@ const authFormSchema = (type: FormType) => z.object({
 const AuthForm = ({ type }: { type: FormType }) => {
   const isSignIn = type === "sign-in";
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirectTo = searchParams.get('redirect') || '/dashboard';
   const formSchema = authFormSchema(type);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -88,7 +90,7 @@ const { email, password } = values;
         }
 
         console.log("sign in successfully");
-        router.push("/");
+        router.push(redirectTo);
       }
     } catch (error) {
       window.alert("An error occurred. Please try again later.");
@@ -194,7 +196,7 @@ const { email, password } = values;
                }
        
                console.log("sign in successfully");
-               router.push("/");
+               router.push(redirectTo);
              } catch (error) {
                window.alert("An error occurred. Please try again later.");
              }

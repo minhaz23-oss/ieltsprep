@@ -5,10 +5,11 @@ import { ListeningTest } from '@/types/listening';
 // GET - Fetch a specific listening test
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const testDoc = await db.collection('listening-tests').doc(params.id).get();
+    const { id } = await params;
+    const testDoc = await db.collection('listening-tests').doc(id).get();
     
     if (!testDoc.exists) {
       return NextResponse.json(
@@ -31,13 +32,14 @@ export async function GET(
 // PUT - Update a listening test
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const testData: Partial<ListeningTest> = await request.json();
 
     // Check if test exists
-    const testDoc = await db.collection('listening-tests').doc(params.id).get();
+    const testDoc = await db.collection('listening-tests').doc(id).get();
     if (!testDoc.exists) {
       return NextResponse.json(
         { success: false, message: 'Test not found' },
@@ -54,7 +56,7 @@ export async function PUT(
       }
     };
 
-    await db.collection('listening-tests').doc(params.id).update(updatedData);
+    await db.collection('listening-tests').doc(id).update(updatedData);
 
     return NextResponse.json({ 
       success: true, 
@@ -72,11 +74,12 @@ export async function PUT(
 // DELETE - Delete a listening test
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     // Check if test exists
-    const testDoc = await db.collection('listening-tests').doc(params.id).get();
+    const testDoc = await db.collection('listening-tests').doc(id).get();
     if (!testDoc.exists) {
       return NextResponse.json(
         { success: false, message: 'Test not found' },
@@ -85,7 +88,7 @@ export async function DELETE(
     }
 
     // Delete the test
-    await db.collection('listening-tests').doc(params.id).delete();
+    await db.collection('listening-tests').doc(id).delete();
 
     // Optionally, you might want to also delete related test results
     // const resultsSnapshot = await db

@@ -1,0 +1,503 @@
+{
+  "test": {
+    "title": "IELTS Academic Reading Test 15 test 1",
+    "type": "IELTS_READING",
+    "totalTime": 60,
+    "totalQuestions": 40,
+    "passages": [
+      {
+        "id": "passage_1",
+        "title": "Nutmeg – a valuable spice",
+        "passageNumber": 1,
+        "recommendedTime": 20,
+        "contentUrl": "The nutmeg tree, Myristica fragrans, is a large evergreen tree native to Southeast Asia. Until the late 18th century, it only grew in one place in the world: a small group of islands in the Banda Sea, part of the Moluccas – or Spice Islands – in northeastern Indonesia. The tree is thickly branched with dense foliage of tough, dark green oval leaves, and produces small, yellow, bell-shaped flowers and pale yellow pear-shaped fruits. The fruit is encased in a flesh husk. When the fruit is ripe, this husk splits into two halves along a ridge running the length of the fruit. Inside is a purple-brown shiny seed, 2-3 cm long by about 2 cm across, surrounded by a lacy red or crimson covering called an ‘aril’. These are the sources of the two spices nutmeg and mace, the former being produced from the dried seed and the latter from the aril.\r\n\r\nNutmeg was a highly prized and costly ingredient in European cuisine in the Middle Ages, and was used as a flavouring, medicinal, and preservative agent. Throughout this period, the Arabs were the exclusive importers of the spice to Europe. They sold nutmeg for high prices to merchants based in Venice, but they never revealed the exact location of the source of this extremely valuable commodity. The Arab-Venetian dominance of the trade finally ended in 1512, when the Portuguese reached the Banda Islands and began exploiting its precious resources.\r\n\r\nAlways in danger of competition from neighbouring Spain, the Portuguese began subcontracting their spice distribution to Dutch traders. Profits began to flow into the Netherlands, and the Dutch commercial fleet swiftly grew into one of the largest in the world. The Dutch quietly gained control of most of the shipping and trading of spices in Northern Europe. Then, in 1580, Portugal fell under Spanish rule, and by the end of the 16th century the Dutch found themselves locked out of the market. As prices for pepper, nutmeg, and other spices soared across Europe, they decided to fight back.\r\n\r\nIn 1602, Dutch merchants founded the VOC, a trading corporation better known as the Dutch East India Company. By 1617, the VOC was the richest commercial operation in the world. The company had 50,000 employees worldwide, with a private army of 30,000 men and a fleet of 200 ships. At the same time, thousands of people across Europe were dying of the plague, a highly contagious and deadly disease. Doctors were desperate for a way to stop the spread of this disease, and they decided nutmeg held the cure. Everybody wanted nutmeg, and many were willing to spare no expense to have it. Nutmeg bought for a few pennies in Indonesia could be sold for 68,000 times its original cost on the streets of London. The only problem was the short supply. And that’s where the Dutch found their opportunity.\r\n\r\nThe Banda Islands were ruled by local sultans who insisted on maintaining a neutral trading policy towards foreign powers. This allowed them to avoid the presence of Portuguese or Spanish troops on their soil, but it also left them unprotected from other invaders. In 1621, the Dutch arrived and took over. Once securely in control of the Bandas, the Dutch went to work protecting their new investment. They concentrated all nutmeg production into a few easily guarded areas, uprooting and destroying any trees outside the plantation zones. Anyone caught growing a nutmeg seedling or carrying seeds without the proper authority was severely punished. In addition, all exported nutmeg was covered with lime to make sure there was no chance a fertile seed which could be grown elsewhere would leave the islands. There was only one obstacle to Dutch domination. One of the Banda Islands, a sliver of land called Run, only 3 km long by less than 1 km wide, was under the control of the British. After decades of fighting for control of this tiny island, the Dutch and British arrived at a compromise settlement, the Treaty of Breda, in 1667. Intent on securing their hold over every nutmeg-producing island, the Dutch offered a trade: if the British would give them the island of Run, they would in turn give Britain a distant and much less valuable island in North America. The British agreed. That other island was Manhattan, which is how New Amsterdam became New York. The Dutch now had a monopoly over the nutmeg trade which would last for another century.\r\n\r\nThen, in 1770, a Frenchman named Pierre Poivre successfully smuggled nutmeg plants to safety in Mauritius, an island off the coast of Africa. Some of these were later exported to the Caribbean where they thrived, especially on the island of Grenada. Next, in 1778, a volcanic eruption in the Banda region caused a tsunami that wiped out half the nutmeg groves. Finally, in 1809, the British returned to Indonesia and seized the Banda Islands by force. They returned the islands to the Dutch in 1817, but not before transplanting hundreds of nutmeg seedlings to plantations in several locations across southern Asia. The Dutch nutmeg monopoly was over.\r\n\r\nToday, nutmeg is grown in Indonesia, the Caribbean, India, Malaysia, Papua New Guinea and Sri Lanka, and world nutmeg production is estimated to average between 10,000 and 12,000 tonnes per year.",
+        "questionSections": [
+          {
+            "sectionId": "section_1_1",
+            "instructions": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 1-4 on your answer sheet.",
+            "questionType": "NOTE_COMPLETION",
+            "notesTitle": "The nutmeg tree and fruit",
+            "notesStructure": [
+              {
+                "section": "Features",
+                "points": [
+                  "the leaves of the tree are 1_____ in shape",
+                  "the 2_____ surrounds the fruit and breaks open when the fruit is ripe",
+                  "the 3_____ is used to produce the spice nutmeg",
+                  "the covering known as the aril is used to produce 4_____",
+                  "the tree has yellow flowers and fruit"
+                ]
+              }
+            ],
+            "questions": [
+              {
+                "questionNumber": 1,
+                "questionId": "q1",
+                "context": "the leaves of the tree are _____ in shape",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "oval"
+              },
+              {
+                "questionNumber": 2,
+                "questionId": "q2",
+                "context": "the _____ surrounds the fruit and breaks open when the fruit is ripe",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "husk"
+              },
+              {
+                "questionNumber": 3,
+                "questionId": "q3",
+                "context": "the _____ is used to produce the spice nutmeg",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "seed"
+              },
+              {
+                "questionNumber": 4,
+                "questionId": "q4",
+                "context": "the covering known as the aril is used to produce _____",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "mace"
+              }
+            ]
+          },
+          {
+            "sectionId": "section_1_2",
+            "instructions": "Do the following statements agree with the information given in Reading Passage 1? In boxes 5-7 on your answer sheet, write TRUE if the statement agrees with the information, FALSE if the statement contradicts the information, NOT GIVEN if there is no information on this",
+            "questionType": "TRUE_FALSE_NOT_GIVEN",
+            "questions": [
+              {
+                "questionNumber": 5,
+                "questionId": "q5",
+                "statement": "In the Middle Ages, most Europeans knew where nutmeg was grown.",
+                "questionType": "TRUE_FALSE_NOT_GIVEN",
+                "correctAnswer": "FALSE"
+              },
+              {
+                "questionNumber": 6,
+                "questionId": "q6",
+                "statement": "The VOC was the world's first major trading company.",
+                "questionType": "TRUE_FALSE_NOT_GIVEN",
+                "correctAnswer": "NOT GIVEN"
+              },
+              {
+                "questionNumber": 7,
+                "questionId": "q7",
+                "statement": "Following the Treaty of Breda, the Dutch had control of all the islands where nutmeg grew.",
+                "questionType": "TRUE_FALSE_NOT_GIVEN",
+                "correctAnswer": "TRUE"
+              }
+            ]
+          },
+          {
+            "sectionId": "section_1_3",
+            "instructions": "Complete the table below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 8-13 on your answer sheet.",
+            "questionType": "TABLE_COMPLETION",
+            "tableStructure": {
+              "title": "History of Nutmeg Trade",
+              "headers": [
+                "Period",
+                "Events"
+              ],
+              "rows": [
+                {
+                  "period": "Middle Ages",
+                  "events": [
+                    "Nutmeg was brought to Europe by the 8_____"
+                  ]
+                },
+                {
+                  "period": "16th century",
+                  "events": [
+                    "European nations took control of the nutmeg trade"
+                  ]
+                },
+                {
+                  "period": "17th century",
+                  "events": [
+                    "Demand for nutmeg grew, as it was believed to be effective against the disease known as the 9_____",
+                    "The Dutch:",
+                    "- took control of the Banda Islands",
+                    "- restricted nutmeg production to a few areas",
+                    "- put 10_____ on nutmeg to avoid it being cultivated outside the islands",
+                    "- finally obtained the island of 11_____ from the British"
+                  ]
+                },
+                {
+                  "period": "Late 18th century",
+                  "events": [
+                    "1770 – nutmeg plants were secretly taken to 12_____",
+                    "1778 – half the Banda Islands' nutmeg plantations were destroyed by a 13_____"
+                  ]
+                }
+              ]
+            },
+            "questions": [
+              {
+                "questionNumber": 8,
+                "questionId": "q8",
+                "context": "Nutmeg was brought to Europe by the _____",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "Arabs"
+              },
+              {
+                "questionNumber": 9,
+                "questionId": "q9",
+                "context": "Demand for nutmeg grew, as it was believed to be effective against the disease known as the _____",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "plague"
+              },
+              {
+                "questionNumber": 10,
+                "questionId": "q10",
+                "context": "put _____ on nutmeg to avoid it being cultivated outside the islands",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "lime"
+              },
+              {
+                "questionNumber": 11,
+                "questionId": "q11",
+                "context": "finally obtained the island of _____ from the British",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "Run"
+              },
+              {
+                "questionNumber": 12,
+                "questionId": "q12",
+                "context": "1770 – nutmeg plants were secretly taken to _____",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "Mauritius"
+              },
+              {
+                "questionNumber": 13,
+                "questionId": "q13",
+                "context": "1778 – half the Banda Islands' nutmeg plantations were destroyed by a _____",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "tsunami"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "passage_2",
+        "title": "Driverless cars",
+        "passageNumber": 2,
+        "recommendedTime": 20,
+        "contentUrl": "A\r\n\r\nThe automotive sector is well used to adapting to automation in manufacturing. The implementation of robotic car manufacture from the 1970s onwards led to significant cost savings and improvements in the reliability and flexibility of vehicle mass production. A new challenge to vehicle production is now on the horizon and, again, it comes from automation. However, this time it is not to do with the manufacturing process, but with the vehicles themselves.\r\n\r\nResearch projects on vehicle automation are not new. Vehicles with limited self-driving capabilities have been around for more than 50 years, resulting in significant contributions towards driver assistance systems. But since Google announced in 2010 that it had been trialling self-driving cars on the streets of California, progress in this field has quickly gathered pace.\r\n\r\nB\r\n\r\nThere are many reasons why technology is advancing so fast. One frequently cited motive is safety; indeed, research at the UK’s Transport Research Laboratory has demonstrated that more than 90 percent of road collisions involve human error as a contributory factor, and it is the primary cause in the vast majority. Automation may help to reduce the incidence of this.\r\n\r\nAnother aim is to free the time people spend driving for other purposes. If the vehicle can do some or all of the driving, it may be possible to be productive, to socialise or simply to relax while automation systems have responsibility for safe control of the vehicle. If the vehicle can do the driving, those who are challenged by existing mobility models – such as older or disabled travellers – may be able to enjoy significantly greater travel autonomy.\r\n\r\nC\r\n\r\nBeyond these direct benefits, we can consider the wider implications for transport and society, and how manufacturing processes might need to respond as a result. At present, the average car spends more than 90 percent of its life parked. Automation means that initiatives for car-sharing become much more viable, particularly in urban areas with significant travel demand. If a significant proportion of the population choose to use shared automated vehicles, mobility demand can be met by far fewer vehicles.\r\n\r\nD\r\n\r\nThe Massachusetts Institute of Technology investigated automated mobility in Singapore, finding that fewer than 30 percent of the vehicles currently used would be required if fully automated car sharing could be implemented. If this is the case, it might mean that we need to manufacture far fewer vehicles to meet demand. However, the number of trips being taken would probably increase, partly because empty vehicles would have to be moved from one customer to the next.\r\n\r\nModelling work by the University of Michigan Transportation Research Institute suggests automated vehicles might reduce vehicle ownership by 43 percent, but that vehicles’ average annual mileage double as a result. As a consequence, each vehicle would be used more intensively, and might need replacing sooner. This faster rate of turnover may mean that vehicle production will not necessarily decrease\r\n\r\nE\r\n\r\nAutomation may prompt other changes in vehicle manufacture. If we move to a model where consumers are tending not to own a single vehicle but to purchase access to a range of vehicle through a mobility provider, drivers will have the freedom to select one that best suits their needs for a particular journey, rather than making a compromise across all their requirements.\r\n\r\nSince, for most of the time, most of the seats in most cars are unoccupied, this may boost production of a smaller, more efficient range of vehicles that suit the needs of individuals. Specialised vehicles may then be available for exceptional journeys, such as going on a family camping trip or helping a son or daughter move to university.\r\n\r\nF\r\n\r\nThere are a number of hurdles to overcome in delivering automated vehicles to our roads. These include the technical difficulties in ensuring that the vehicle works reliably in the infinite range of traffic, weather and road situations it might encounter; the regulatory challenges in understanding how liability and enforcement might change when drivers are no longer essential for vehicle operation; and the societal changes that may be required for communities to trust and accept automated vehicles as being a valuable part of the mobility landscape.\r\n\r\nG\r\n\r\nIt’s clear that there are many challenges that need to be addressed but, through robust and targeted research, these can most probably be conquered within the next 10 years. Mobility will change in such potentially significant ways and in association with so many other technological developments, such as telepresence and virtual reality, that it is hard to make concrete predictions about the future. However, one thing is certain: change is coming, and the need to be flexible in response to this will be vital for those involved in manufacturing the vehicles that will deliver future mobility.",
+        "questionSections": [
+          {
+            "sectionId": "section_2_1",
+            "instructions": "Reading Passage 2 has seven paragraphs, A-G. Which section contains the following information? Write the correct letter, A-G, in boxes 14-18 on your answer sheet.",
+            "questionType": "PARAGRAPH_MATCHING",
+            "questions": [
+              {
+                "questionNumber": 14,
+                "questionId": "q14",
+                "information": "reference to the amount of time when a car is not in use",
+                "questionType": "PARAGRAPH_MATCHING",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 15,
+                "questionId": "q15",
+                "information": "mention of several advantages of driverless vehicles for individual road-users",
+                "questionType": "PARAGRAPH_MATCHING",
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 16,
+                "questionId": "q16",
+                "information": "reference to the opportunity of choosing the most appropriate vehicle for each trip",
+                "questionType": "PARAGRAPH_MATCHING",
+                "correctAnswer": "E"
+              },
+              {
+                "questionNumber": 17,
+                "questionId": "q17",
+                "information": "an estimate of how long it will take to overcome a number of problems",
+                "questionType": "PARAGRAPH_MATCHING",
+                "correctAnswer": "G"
+              },
+              {
+                "questionNumber": 18,
+                "questionId": "q18",
+                "information": "a suggestion that the use of driverless cars may have no effect on the number of vehicles manufactured",
+                "questionType": "PARAGRAPH_MATCHING",
+                "correctAnswer": "D"
+              }
+            ]
+          },
+          {
+            "sectionId": "section_2_2",
+            "instructions": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer. Write your answers in boxes 19-22 on your answer sheet.",
+            "questionType": "SUMMARY_COMPLETION",
+            "summaryTitle": "The impact of driverless cars",
+            "questions": [
+              {
+                "questionNumber": 19,
+                "questionId": "q19",
+                "context": "Figures from the Transport Research Laboratory indicate that most motor accidents are partly due to _____, so the introduction of driverless vehicles will result in greater safety.",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "human error"
+              },
+              {
+                "questionNumber": 20,
+                "questionId": "q20",
+                "context": "In addition to the direct benefits of automation, it may bring other advantages. For example, schemes for _____ will be more workable, especially in towns and cities, resulting in fewer cars on the road.",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "car-sharing"
+              },
+              {
+                "questionNumber": 21,
+                "questionId": "q21",
+                "context": "According to the University of Michigan Transportation Research Institute, there could be a 43 percent drop in _____ of cars.",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "ownership"
+              },
+              {
+                "questionNumber": 22,
+                "questionId": "q22",
+                "context": "However, this would mean that the yearly _____ of each car would, on average, be twice as high as it currently is. This would lead to a higher turnover of vehicles, and therefore no reduction in automotive manufacturing.",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "mileage"
+              }
+            ]
+          },
+          {
+            "sectionId": "section_2_3",
+            "instructions": "Choose TWO letters, A-E. Write the correct letters in boxes 23 and 24 on your answer sheet. Which TWO benefits of automated vehicles does the writer mention?",
+            "questionType": "MULTIPLE_CHOICE_MULTIPLE_ANSWERS",
+            "numberOfAnswers": 2,
+            "options": [
+              "A - Car travellers could enjoy considerable cost savings.",
+              "B - It would be easier to find parking spaces in urban areas.",
+              "C - Travellers could spend journeys doing something other than driving.",
+              "D - People who find driving physically difficult could travel independently.",
+              "E - A reduction in the number of cars would mean a reduction in pollution."
+            ],
+            "questions": [
+              {
+                "questionNumber": 23,
+                "questionId": "q23",
+                "questionType": "MULTIPLE_CHOICE_MULTIPLE_ANSWERS",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 24,
+                "questionId": "q24",
+                "questionType": "MULTIPLE_CHOICE_MULTIPLE_ANSWERS",
+                "correctAnswer": "D"
+              }
+            ]
+          },
+          {
+            "sectionId": "section_2_4",
+            "instructions": "Choose TWO letters, A-E. Write the correct letters in boxes 25 and 26 on your answer sheet. Which TWO challenges to automated vehicle development does the writer mention?",
+            "questionType": "MULTIPLE_CHOICE_MULTIPLE_ANSWERS",
+            "numberOfAnswers": 2,
+            "options": [
+              "A - making sure the general public has confidence in automated vehicles",
+              "B - managing the pace of transition from conventional to automated vehicles",
+              "C - deciding how to compensate professional drivers who become redundant",
+              "D - setting up the infrastructure to make roads suitable for automated vehicles",
+              "E - getting automated vehicles to adapt to various different driving conditions"
+            ],
+            "questions": [
+              {
+                "questionNumber": 25,
+                "questionId": "q25",
+                "questionType": "MULTIPLE_CHOICE_MULTIPLE_ANSWERS",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 26,
+                "questionId": "q26",
+                "questionType": "MULTIPLE_CHOICE_MULTIPLE_ANSWERS",
+                "correctAnswer": "E"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "passage_3",
+        "title": "What is exploration?",
+        "passageNumber": 3,
+        "recommendedTime": 20,
+        "contentUrl": "We are all explores. Our desire to discover, and then share that new-found knowledge, is part of what makes us human – indeed, this has played an important part in our success as a species. Long before the first caveman slumped down beside the fire and grunted news that there were plenty of wildebeest over yonder, our ancestors had learnt the value of sending out scouts to investigate the unknown. This questing nature of ours undoubtedly helped our species spread around the globe, just as it nowadays no doubt helps the last nomadic Penan maintain their existence in the depleted forests of Borneo, and a visitor negotiate the subways of New York.\r\n\r\nOver the years, we’ve come to think of explorers as a peculiar breed – different from the rest of us, different from those of us who are merely ‘well travelled’, even; and perhaps there is a type of person more suited to seeking out the new, a type of caveman more inclined to risk venturing out. That, however, doesn’t take away from the fact that we all have this enquiring instinct, even today; and that in all sorts of professions – whether artist, marine biologist or astronomer – borders of the unknown are being tested each day.\r\n\r\nThomas Hardy set some of his novels in Egdon Heath, a fictional area of uncultivated land, and used the landscape to suggest the desires and fears of his characters. He is delving into matters we all recognise because they are common to humanity. This is surely an act of exploration, and into a world as remote as the author chooses. Explorer and travel writer Peter Fleming talks of the moment when the explorer returns to the existence he has left behind with his loved ones. The traveller ‘who has for weeks or months seen himself only as a puny and irrelevant alien crawling laboriously over a country in which he has no roots and no background, suddenly encounters his other self, a relatively solid figure, with a place in the minds of certain people’.\r\n\r\nIn this book about the exploration of the earth’s surface, I have confined myself to those whose travels were real and who also aimed at more than personal discovery. But that still left me with another problem: the word ‘explorer’ has become associated with a past era. We think back to a golden age, as if exploration peaked somehow in the 19th century – as if the process of discovery is now on the decline, though the truth is that we have named only one and a half million of this planet’s species, and there may be more than 10 million – and that’s not including bacteria. We have studied only 5 per cent of the species we know. We have scarcely mapped the ocean floors, and know even less about ourselves; we fully understand the workings of only 10 per cent of our brains.\r\n\r\nHere is how some of today’s ‘explorers’ define the word. Ran Fiennes, dubbed the ‘greatest living explorer’, said, ‘An explorer is someone who has done something that no human has done before – and also done something scientifically useful.’ Chris Bonington, a leading mountaineer, felt exploration was to be found in the act of physically touching the unknown: ‘You have to have gone somewhere new.’ Then Robin Hanbury-Tenison, a campaigner on behalf of remote so-called ‘tribal’ peoples, said, ‘A traveller simply records information about some far-off world, and reports back; but an explorer changes the world.’ Wilfred Thesiger, who crossed Arabia’s Empty Quarter in 1946, and belongs to an era of unmechanised travel now lost to the rest of us, told me, ‘If I’d gone across by camel when I could have gone by car, it would have been a stunt.’ To him, exploration meant bringing back information from a remote place regardless of any great self-discovery.\r\n\r\nEach definition is slightly different – and tends to reflect the field of endeavour of each pioneer. It was the same whoever I asked: the prominent historian would say exploration was a thing of the past, the cutting-edge scientist would say it was of the present. And so on. They each set their own particular criteria; the common factor in their approach being that they all had, unlike many of us who simply enjoy travel or discovering new things, both a very definite objective from the outset and also a desire to record their findings.\r\n\r\nI’d best declare my own bias. As a writer, I’m interested in the exploration of ideas. I’ve done a great many expeditions and each one was unique. I’ve lived for months alone with isolated groups of people all around the world, even two ‘uncontacted tribes’. But none of these things is of the slightest interest to anyone unless, through my books, I’ve found a new slant, explored a new idea. Why? Because the world has moved on. The time has long passed for the great continental voyages – another walk to the poles, another crossing of the Empty Quarter. We know how the land surface of our planet lies; exploration of it is now down to the details – the habits of microbes, say, or the grazing behaviour of buffalo. Aside from the deep sea and deep underground, it’s the era of specialists. However, this is to disregard the role the human mind has in conveying remote places; and this is what interests me: how a fresh interpretation, even of a well-travelled route, can give its readers new insights.",
+        "questionSections": [
+          {
+            "sectionId": "section_3_1",
+            "instructions": "Choose the correct letter, A, B, C or D. Write the correct letter in boxes 27-32 on your answer sheet.",
+            "questionType": "MULTIPLE_CHOICE",
+            "questions": [
+              {
+                "questionNumber": 27,
+                "questionId": "q27",
+                "question": "The writer refers to visitors to New York to illustrate the point that",
+                "options": [
+                  "A - exploration is an intrinsic element of being human.",
+                  "B - most people are enthusiastic about exploring.",
+                  "C - exploration can lead to surprising results.",
+                  "D - most people find exploration daunting."
+                ],
+                "questionType": "MULTIPLE_CHOICE",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 28,
+                "questionId": "q28",
+                "question": "According to the second paragraph, what is the writer's view of explorers?",
+                "options": [
+                  "A - Their discoveries have brought both benefits and disadvantages.",
+                  "B - Their main value is in teaching others.",
+                  "C - They act on an urge that is common to everyone.",
+                  "D - They tend to be more attracted to certain professions than to others."
+                ],
+                "questionType": "MULTIPLE_CHOICE",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 29,
+                "questionId": "q29",
+                "question": "The writer refers to a description of Egdon Heath to suggest that",
+                "options": [
+                  "A - Hardy was writing about his own experience of exploration.",
+                  "B - Hardy was mistaken about the nature of exploration.",
+                  "C - Hardy's aim was to investigate people's emotional states.",
+                  "D - Hardy's aim was to show the attraction of isolation."
+                ],
+                "questionType": "MULTIPLE_CHOICE",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 30,
+                "questionId": "q30",
+                "question": "In the fourth paragraph, the writer refers to 'a golden age' to suggest that",
+                "options": [
+                  "A - the amount of useful information produced by exploration has decreased.",
+                  "B - fewer people are interested in exploring than in the 19th century.",
+                  "C - recent developments have made exploration less exciting.",
+                  "D - we are wrong to think that exploration is no longer necessary."
+                ],
+                "questionType": "MULTIPLE_CHOICE",
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 31,
+                "questionId": "q31",
+                "question": "In the sixth paragraph, when discussing the definition of exploration, the writer argues that",
+                "options": [
+                  "A - people tend to relate exploration to their own professional interests.",
+                  "B - certain people are likely to misunderstand the nature of exploration.",
+                  "C - the generally accepted definition has changed over time.",
+                  "D - historians and scientists have more valid definitions than the general public."
+                ],
+                "questionType": "MULTIPLE_CHOICE",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 32,
+                "questionId": "q32",
+                "question": "In the last paragraph, the writer explains that he is interested in",
+                "options": [
+                  "A - how someone's personality is reflected in their choice of places to visit.",
+                  "B - the human ability to cast new light on places that may be familiar.",
+                  "C - how travel writing has evolved to meet changing demands.",
+                  "D - the feelings that writers develop about the places that they explore."
+                ],
+                "questionType": "MULTIPLE_CHOICE",
+                "correctAnswer": "B"
+              }
+            ]
+          },
+          {
+            "sectionId": "section_3_2",
+            "instructions": "Look at the following statements (Questions 33-37) and the list of explorers below. Match each statement with the correct explorer, A-E. Write the correct letter, A-E, in boxes 33-37 on your answer sheet. NB You may use any letter more than once.",
+            "questionType": "FEATURE_MATCHING",
+            "explorersList": [
+              "A - Peter Fleming",
+              "B - Ran Fiennes",
+              "C - Chris Bonington",
+              "D - Robin Hanbury-Tenison",
+              "E - Wilfred Thesiger"
+            ],
+            "questions": [
+              {
+                "questionNumber": 33,
+                "questionId": "q33",
+                "statement": "He referred to the relevance of the form of transport used.",
+                "questionType": "FEATURE_MATCHING",
+                "correctAnswer": "E"
+              },
+              {
+                "questionNumber": 34,
+                "questionId": "q34",
+                "statement": "He described feelings on coming back home after a long journey.",
+                "questionType": "FEATURE_MATCHING",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 35,
+                "questionId": "q35",
+                "statement": "He worked for the benefit of specific groups of people.",
+                "questionType": "FEATURE_MATCHING",
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 36,
+                "questionId": "q36",
+                "statement": "He did not consider learning about oneself an essential part of exploration.",
+                "questionType": "FEATURE_MATCHING",
+                "correctAnswer": "E"
+              },
+              {
+                "questionNumber": 37,
+                "questionId": "q37",
+                "statement": "He defined exploration as being both unique and of value to others.",
+                "questionType": "FEATURE_MATCHING",
+                "correctAnswer": "B"
+              }
+            ]
+          },
+          {
+            "sectionId": "section_3_3",
+            "instructions": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer. Write your answers in boxes 38-40 on your answer sheet.",
+            "questionType": "SUMMARY_COMPLETION",
+            "summaryTitle": "The writer's own bias",
+            "questions": [
+              {
+                "questionNumber": 38,
+                "questionId": "q38",
+                "context": "The writer has experience of a large number of _____, and was the first stranger that certain previously",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "expeditions"
+              },
+              {
+                "questionNumber": 39,
+                "questionId": "q39",
+                "context": "_____ people had encountered. He believes there is no need for further exploration of Earth's",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "uncontacted"
+              },
+              {
+                "questionNumber": 40,
+                "questionId": "q40",
+                "context": "_____, except to answer specific questions such as how buffalo eat.",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "surface"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "testType": "IELTS_ACADEMIC_READING",
+      "difficulty": "INTERMEDIATE_TO_ADVANCED",
+      "version": "1.0",
+      "createdDate": "2025-01-04",
+      "lastModified": "2025-01-04"
+    }
+  }
+}

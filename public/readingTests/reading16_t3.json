@@ -1,0 +1,401 @@
+{
+  "test": {
+    "title": "Cambridge IELTS 16 Reading Test 3",
+    "type": "IELTS_READING",
+    "totalTime": 60,
+    "totalQuestions": 40,
+    "passages": [
+      {
+        "id": "passage_1",
+        "title": "Roman shipbuilding and navigation",
+        "passageNumber": 1,
+        "recommendedTime": 20,
+        "contentUrl": "Shipbuilding today is based on science and ships are built using computers and sophisticated tools. Shipbuilding in ancient Rome, however, was more of an art relying on estimation, inherited techniques and personal experience. The Romans were not traditionally sailors but mostly land-based people, who learned to build ships from the people that they conquered, namely the Greeks and the Egyptians.\r\n\r\nThere are a few surviving written documents that give descriptions and representations of ancient Roman ships, including the sails and rigging. Excavated vessels also provide some clues about ancient shipbuilding techniques. Studies of these have taught us that ancient Roman shipbuilders built the outer hull first, then proceeded with the frame and the rest of the ship. Planks used to build the outer hull were initially sewn together. Starting from the 6th century BCE, they were fixed using a method called mortise and tenon, whereby one plank locked into another without the need for stitching. Then in the first centuries of the current era, Mediterranean shipbuilders shifted to another shipbuilding method, still in use today, which consisted of building the frame first and then proceeding with the hull and the other components of the ship. This method was more systematic and dramatically shortened ship construction times. The ancient Romans built large merchant ships and warships whose size and technology were unequalled until the 16th century CE.\r\n\r\nWarships were built to be lightweight and very speedy. They had to be able to sail near the coast which is why they had no ballast or excess load and were built with a long, narrow hull. They did not sink when damaged and often would lie crippled on the sea’s surface following naval battles. They had a bronze battering ram, which was used to pierce the timber hulls or break the oars of enemy vessels. Warships used both wind (sails) and human power (oarsmen) and were therefore very fast. Eventually, Rome’s navy became the largest and most powerful in the Mediterranean, and the Romans had control over what they therefore called Mare Nostrum meaning ‘our sea’.\r\n\r\nThere were many kinds of warship. The ‘trireme’ was the dominant warship from the 7th to 4th century BCE. It had rowers in the top, middle and lower levels, and approximately 50 rowers in each bank. The rowers at the bottom had the most uncomfortable position as they were under the other rowers and were exposed to the water entering through the oar-holes. It is worth noting that contrary to popular perception, rowers were not slaves but mostly Roman citizens enrolled in the military. The trireme was superseded by larger ships with even more rowers.\r\n\r\nMerchant ships were built to transport lots of cargo over long distances and at a reasonable cost. They had a wider hull, double planking and a solid interior for added stability. Unlike warships, their V-shaped hull was deep underwater, meaning that they could not sail too close to the coast. They usually had two huge side rudders located off the stern and controlled by a small tiller bar connected to a system of cables. They had from one to three masts with large square sails and a small triangular sail at the bow. Just like warships, merchant ships used oarsmen, but coordinating the hundreds of rowers in both types of ship was not an easy task. In order to assist them, music would be played on an instrument, and oars would then keep time with this.\r\n\r\nThe cargo on merchant ships included raw materials (e.g. iron bars, copper, marble and granite), and agricultural products (e.g. grain from Egypt’s Nile valley). During the Empire, Rome was a huge city by ancient standards of about one million inhabitants. Goods from all over the world would come to the city through the port of Pozzuoli situated west of the bay of Naples in Italy and through the gigantic port of Ostia situated at the mouth of the Tiber River. Large merchant ships would approach the destination port and, just like today, be intercepted by a number of towboats that would drag them to the quay.\r\n\r\nThe time of travel along the many sailing routes could vary widely. Navigation in ancient Rome did not rely on sophisticated instruments such as compasses but on experience, local knowledge and observation of natural phenomena. In conditions of good visibility, seamen in the Mediterranean often had the mainland or islands in sight, which greatly facilitated navigation. They sailed by noting their position relative to a succession of recognisable landmarks. When weather conditions were not good or where land was no longer visible, Roman mariners estimated directions from the pole star or, with less accuracy, from the Sun at noon. They also estimated directions relative to the wind and swell. Overall, shipping in ancient Roman times resembled shipping today with large vessels regularly crossing the seas and bringing supplies from their Empire.",
+        "questionSections": [
+          {
+            "sectionId": "section_1_1",
+            "instructions": "Do the following statements agree with the information given in Reading Passage 1? In boxes 1-5 on your answer sheet, write TRUE if the statement agrees with the information, FALSE if the statement contradicts the information, NOT GIVEN if there is no information on this",
+            "questionType": "TRUE_FALSE_NOT_GIVEN",
+            "questions": [
+              {
+                "questionNumber": 1,
+                "questionId": "q1",
+                "statement": "The Romans' shipbuilding skills were passed on to the Greeks and the Egyptians.",
+                "questionType": "TRUE_FALSE_NOT_GIVEN",
+                "correctAnswer": "FALSE"
+              },
+              {
+                "questionNumber": 2,
+                "questionId": "q2",
+                "statement": "Skilled craftsmen were needed for the mortise and tenon method of fixing planks.",
+                "questionType": "TRUE_FALSE_NOT_GIVEN",
+                "correctAnswer": "NOT GIVEN"
+              },
+              {
+                "questionNumber": 3,
+                "questionId": "q3",
+                "statement": "The later practice used by Mediterranean shipbuilders involved building the hull before the frame.",
+                "questionType": "TRUE_FALSE_NOT_GIVEN",
+                "correctAnswer": "FALSE"
+              },
+              {
+                "questionNumber": 4,
+                "questionId": "q4",
+                "statement": "The Romans called the Mediterranean Sea Mare Nostrum because they dominated its use.",
+                "questionType": "TRUE_FALSE_NOT_GIVEN",
+                "correctAnswer": "TRUE"
+              },
+              {
+                "questionNumber": 5,
+                "questionId": "q5",
+                "statement": "Most rowers on ships were people from the Roman army.",
+                "questionType": "TRUE_FALSE_NOT_GIVEN",
+                "correctAnswer": "TRUE"
+              }
+            ]
+          },
+          {
+            "sectionId": "section_1_2",
+            "instructions": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 6-13 on your answer sheet.",
+            "questionType": "SUMMARY_COMPLETION",
+            "summaryTitle": "Warships and merchant ships",
+            "questions": [
+              {
+                "questionNumber": 6,
+                "questionId": "q6",
+                "context": "Warships were designed so that they were _____ and moved quickly.",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "lightweight"
+              },
+              {
+                "questionNumber": 7,
+                "questionId": "q7",
+                "context": "A battering ram made of _____ was included in the design for attacking and damaging the timber and oars of enemy ships.",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "bronze"
+              },
+              {
+                "questionNumber": 8,
+                "questionId": "q8",
+                "context": "Warships, such as the 'trireme', had rowers on three different _____.",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "levels"
+              },
+              {
+                "questionNumber": 9,
+                "questionId": "q9",
+                "context": "Unlike warships, merchant ships had a broad _____ that lay far below the surface of the sea.",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "hull"
+              },
+              {
+                "questionNumber": 10,
+                "questionId": "q10",
+                "context": "They had both square and _____ sails.",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "triangular"
+              },
+              {
+                "questionNumber": 11,
+                "questionId": "q11",
+                "context": "On merchant ships and warships, _____ was used to ensure rowers moved their oars in and out of the water at the same time.",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "music"
+              },
+              {
+                "questionNumber": 12,
+                "questionId": "q12",
+                "context": "Quantities of agricultural goods such as _____ were transported by merchant ships to two main ports in Italy.",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "grain"
+              },
+              {
+                "questionNumber": 13,
+                "questionId": "q13",
+                "context": "The ships were pulled to the shore by _____.",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "towboats"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "passage_2",
+        "title": "Climate change reveals ancient artefacts in Norway's glaciers",
+        "passageNumber": 2,
+        "recommendedTime": 20,
+        "contentUrl": "A\r\n\r\nWell above the treeline in Norway’s highest mountains, ancient fields of ice are shrinking as Earth’s climate warms. As the ice has vanished, it has been giving up the treasures it has preserved in cold storage for the last 6,000 years – items such as ancient arrows and skis from Viking Age* traders. And those artefacts have provided archaeologists with some surprising insights into how ancient Norwegians made their livings.\r\n\r\n———–\r\n\r\n*Viking Age: a period of European history from around 700 CE to around 1050 CE when Scandinavian Vikings migrated throughout Europe by means of trade and warfare\r\n\r\nB\r\n\r\nOrganic materials like textiles and hides are relatively rare finds at archaeological sites. This is because unless they’re protected from the microorganisms that cause decay, they tend no to last long. Extreme cold is one reliable way to keep artefacts relatively fresh for a few thousand years, but once thawed out, these materials experience degradation relatively swiftly.\r\n\r\nWith climate change shrinking ice cover around the world, glacial archaeologists need to race the clock to find newly revealed artefacts, preserve them, and study them. If something fragile dries and is windblown it might very soon be lost to science, or an arrow might be exposed and then covered again by the next snow and remain well-preserved. The unpredictability means that glacial archaeologists have to be systematic in their approach to fieldwork.\r\n\r\nC\r\n\r\nOver a nine-year period, a team of archaeologists, which included Lars Pilø of Oppland County Council, Norway, and James Barrett of the McDonald Institute for Archaeological Research, surveyed patches of ice in Oppland, an area of south-central Norway that is home to some of the country’s highest mountains. Reindeer once congregated on these ice patches in the later summer months to escape biting insects, and from the late Stone Age**, hunters followed. In addition, trade routes threaded through the mountain passes of Oppland, linking settlements in Norway to the rest of Europe.\r\n\r\nThe slow but steady movement of glaciers tends to destroy anything at their bases, so the team focused on stationary patches of ice, mostly above 1,400 metres. That ice is found amid fields of frost-weathered boulders, fallen rocks, and exposed bedrock that for nine months of the year is buried beneath snow.\r\n\r\n‘Fieldwork is hard work – hiking with all our equipment, often camping on permafrost – but very rewarding. You’re rescuing the archaeology, bringing the melting ice to wider attention, discovering a unique environmental history and really connecting with the natural environment,’ says Barrett.\r\n\r\n—————\r\n\r\n**The Stone Age: a period in early history that began about 3.4 million years ago\r\n\r\nD\r\n\r\nAt the edges of the contracting ice patches, archaeologists found more than 2,000 artefacts, which formed a material record that ran from 4,000 BCE to the beginnings of the Renaissance in the 14th century. Many of the artefacts are associated with hunting. Hunters would have easily misplaced arrows and they often discarded broken bows rather than take them all the way home. Other items could have been used by hunters traversing the high mountain passes of Oppland: all-purpose items like tools, skis, and horse tack.\r\n\r\nE\r\n\r\nBarrett’s team radiocarbon-dated 153 of the artefacts and compared those dates to the timing of major environmental changes in the region – such as periods of cooling or warming – and major social and economic shifts – such as the growth of farming settlements and the spread of international trade networks leading up to the Viking Age. They found that some periods had produced lots of artefacts, which indicates that people had been pretty active in the mountains during those times. But there were few or no signs of activity during other periods.\r\n\r\nF\r\n\r\nWhat was surprising, according to Barrett, was the timing of these periods. Oppland’s mountains present daunting terrain and in periods of extreme cold, glaciers could block the higher mountain passes and make travel in the upper reaches of the mountains extremely difficult. Archaeologists assumed people would stick to lower elevations during a time like the Late Antique Little Ice Age, a short period of deeper-than-usual cold from about 536-600 CE. But it turned out that hunters kept regularly venturing into the mountains even when the climate turned cold, based on the amount of stuff they had apparently dropped there.\r\n\r\n‘Remarkably, though, the finds from the ice may have continued through this period, perhaps suggesting that the importance of mountain hunting increased to supplement failing agricultural harvests in times of low temperatures,’ says Barrett. A colder turn in the Scandinavian climate would likely have meant widespread crop failures, so more people would have depended on hunting to make up for those losses.\r\n\r\nG\r\n\r\nMany of the artefacts Barrett’s team recovered date from the beginning of the Viking Age, the 700s through to the 900s CE. Trade networks connecting Scandinavia with Europe and the Middle East were expanding around this time. Although we usually think of ships when we think of Scandinavian expansion, these recent discoveries show that plenty of goods travelled on overland routes, like the mountain passes of Oppland. And growing Norwegian towns, along with export markets, would have created a booming demand for hides to fight off the cold, as well as antlers to make useful things like combs. Business must have been good for hunters.\r\n\r\nH\r\n\r\nNorway’s mountains are probably still hiding a lot of history – and prehistory – in remote ice patches. When Barrett’s team looked at the dates for their sample of 153 artefacts, they noticed a gap with almost no artefacts from about 3,800 to 2,200 BCE. In fact, archaeological finds from that period are rare all over Norway. The researchers say that could be because many of those artefacts have already disintegrated or are still frozen in the ice. That means archaeologists could be extracting some of those artefacts from retreating ice in years to come.",
+        "questionSections": [
+          {
+            "sectionId": "section_2_1",
+            "instructions": "Reading Passage 2 has eight sections, A-H. Which section contains the following information? Write the correct letter, A-H, in boxes 14-19 on your answer sheet.",
+            "questionType": "PARAGRAPH_MATCHING",
+            "questions": [
+              {
+                "questionNumber": 14,
+                "questionId": "q14",
+                "information": "an explanation for weapons being left behind in the mountains",
+                "questionType": "PARAGRAPH_MATCHING",
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 15,
+                "questionId": "q15",
+                "information": "a reference to the physical difficulties involved in an archaeological expedition",
+                "questionType": "PARAGRAPH_MATCHING",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 16,
+                "questionId": "q16",
+                "information": "an explanation of why less food may have been available",
+                "questionType": "PARAGRAPH_MATCHING",
+                "correctAnswer": "F"
+              },
+              {
+                "questionNumber": 17,
+                "questionId": "q17",
+                "information": "a reference to the possibility of future archaeological discoveries",
+                "questionType": "PARAGRAPH_MATCHING",
+                "correctAnswer": "H"
+              },
+              {
+                "questionNumber": 18,
+                "questionId": "q18",
+                "information": "examples of items that would have been traded",
+                "questionType": "PARAGRAPH_MATCHING",
+                "correctAnswer": "G"
+              },
+              {
+                "questionNumber": 19,
+                "questionId": "q19",
+                "information": "a reference to the pressure archaeologists are under to work quickly",
+                "questionType": "PARAGRAPH_MATCHING",
+                "correctAnswer": "B"
+              }
+            ]
+          },
+          {
+            "sectionId": "section_2_2",
+            "instructions": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 20-22 on your answer sheet.",
+            "questionType": "SUMMARY_COMPLETION",
+            "summaryTitle": "Interesting finds at an archaeological site",
+            "questions": [
+              {
+                "questionNumber": 20,
+                "questionId": "q20",
+                "context": "Organic materials such as animal skins and textiles are not discovered very often at archaeological sites. They have little protection against _____, which means that they decay relatively quickly.",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "microorganisms"
+              },
+              {
+                "questionNumber": 21,
+                "questionId": "q21",
+                "context": "In the past, there were trade routes through these mountains and _____ gathered there in the summer months to avoid being attacked by",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "reindeer"
+              },
+              {
+                "questionNumber": 22,
+                "questionId": "q22",
+                "context": "_____ on lower ground.",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "insects"
+              }
+            ]
+          },
+          {
+            "sectionId": "section_2_3",
+            "instructions": "Choose TWO letters, A-E. Write the correct letters in boxes 23 and 24 on your answer sheet. Which TWO of the following statements does the writer make about the discoveries of Barrett's team?",
+            "questionType": "MULTIPLE_CHOICE_MULTIPLE_ANSWERS",
+            "numberOfAnswers": 2,
+            "options": [
+              "A - Artefacts found in the higher mountain passes were limited to skiing equipment.",
+              "B - Hunters went into the mountains even during periods of extreme cold.",
+              "C - The number of artefacts from certain time periods was relatively low.",
+              "D - Radiocarbon dating of artefacts produced some unreliable results.",
+              "E - More artefacts were found in Oppland than at any other mountain site."
+            ],
+            "questions": [
+              {
+                "questionNumber": 23,
+                "questionId": "q23",
+                "questionType": "MULTIPLE_CHOICE_MULTIPLE_ANSWERS",
+                "correctAnswer": "B"
+              },
+              {
+                "questionNumber": 24,
+                "questionId": "q24",
+                "questionType": "MULTIPLE_CHOICE_MULTIPLE_ANSWERS",
+                "correctAnswer": "C"
+              }
+            ]
+          },
+          {
+            "sectionId": "section_2_4",
+            "instructions": "Choose TWO letters, A-E. Write the correct letters in boxes 25 and 26 on your answer sheet. Which TWO of the following statements does the writer make about the Viking Age?",
+            "questionType": "MULTIPLE_CHOICE_MULTIPLE_ANSWERS",
+            "numberOfAnswers": 2,
+            "options": [
+              "A - Hunters at this time benefited from an increased demand for goods.",
+              "B - The beginning of the period saw the greatest growth in the wealth of Vikings.",
+              "C - Vikings did not rely on ships alone to transport goods.",
+              "D - Norwegian towns at this time attracted traders from around the world.",
+              "E - Vikings were primarily interested in their trading links with the Middle East."
+            ],
+            "questions": [
+              {
+                "questionNumber": 25,
+                "questionId": "q25",
+                "questionType": "MULTIPLE_CHOICE_MULTIPLE_ANSWERS",
+                "correctAnswer": "A"
+              },
+              {
+                "questionNumber": 26,
+                "questionId": "q26",
+                "questionType": "MULTIPLE_CHOICE_MULTIPLE_ANSWERS",
+                "correctAnswer": "C"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "passage_3",
+        "title": "Plant 'thermometer' triggers springtime growth by measuring night-time heat",
+        "passageNumber": 3,
+        "recommendedTime": 20,
+        "contentUrl": "A photoreceptor molecule in plant cells has been found to have a second job as a thermometer after dark – allowing plants to read seasonal temperature changes. Scientists say the discovery could help breed crops that are more resilient to the temperatures expected to result from climate change\r\n\r\nA\r\n\r\nAn international team of scientists led by the University of Cambridge has discovered that the ‘thermometer’ molecule in plants enables them to develop according to seasonal temperature changes. Researchers have revealed that molecules called phytochromes – used by plants to detect light during the day – actually change their function in darkness to become cellular temperature gauges that measure the heat of the night.\r\n\r\nThe new findings, published in the journal Science, show that phytochromes control genetic switches in response to temperature as well as light to dictate plant development.\r\n\r\nB\r\n\r\nAt night, these molecules change states, and the pace at which they change is ‘directly proportional to temperature’, say scientists, who compare phytochromes to mercury in a thermometer. The warmer it is, the faster the molecular change – stimulating plant growth.\r\n\r\nC\r\n\r\nFarmers and gardeners have known for hundreds of years how responsive plants are to temperature: warm winters cause many trees and flowers to bud early, something humans have long used to predict weather and harvest times for the coming year. The latest research pinpoints for the first time a molecular mechanism in plants that reacts to temperature – often triggering the buds of spring we long to see at the end of winter.\r\n\r\nD\r\n\r\nWith weather and temperatures set to become ever more unpredictable due to climate change, researchers say the discovery that this light-sensing molecule also functions as the internal thermometer in plant cells could help us breed tougher crops. ‘It is estimated that agricultural yields will need to double by 2050, but climate change is a major threat to achieving this. Key crops such as wheat and rice are sensitive to high temperatures. Thermal stress reduces crop yields by around 10% for every one degree increase in temperature,’ says lead researcher Dr Philip Wigge from Cambridge’s Sainsbury Laboratory. ‘Discovering the molecules that allow plants to sense temperature has the potential to accelerate the breeding of crops resilient to thermal stress and climate change.’\r\n\r\nE\r\n\r\nIn their active state, phytochrome molecules bind themselves to DNA to restrict plant growth. During the day, sunlight activates the molecules, slowing down growth. If a plant finds itself in shade, phytochromes are quickly inactivated – enabling it to grow faster to find sunlight again. This is how plants compete to escape each other’s shade. ‘Light-driven changes to phytochrome activity occur very fast, in less than a second,’ says Wigge.\r\n\r\nAt night, however, it’s a different story. Instead of a rapid deactivation following sundown, the molecules gradually change from their active to inactive state. This is called ‘dark reversion’. ‘Just as mercury rises in a thermometer, the rate at which phytochromes revert to their inactive state during the night is a direct measure of temperature,’ says Wigge.\r\n\r\nF\r\n\r\n‘The lower the temperature, the slower the rate at which phytochromes revert to inactivity, so the molecules spend more time in their active, growth-suppressing state. This is why plants are slower to grow in winter. Warm temperatures accelerate dark reversion, so that phytochromes rapidly reach an inactive state and detach themselves from the plant’s DNA – allowing genes to be expressed and plant growth to resume.’ Wigge believes phytochrome thermo-sensing evolved at a later stage, and co-opted the biological network already used for light-based growth during the downtime of night.\r\n\r\nG\r\n\r\nSome plants mainly use day length as an indicator of the reason. Other species, such as daffodils, have considerable temperature sensitivity, and can flower months in advance during a warm winter. In fact, the discovery of the dual role of phytochromes provides the science behind a well-known rhyme long used to predict the coming season: oak before ash we’ll have a plash, ash before oak we’re in for a soak.\r\n\r\nWigge explains: ‘Oak trees rely much more on temperature, likely using phytochromes as thermometers to dictate development, whereas ash trees rely on measuring day length to determine their seasonal timing. A warmer spring, and consequently a higher likeliness of a hot summer, will result in oak leafing before ash. A cold spring will see the opposite. As the British know only too well, a colder summer is likely to be a rain-soaked one.’\r\n\r\nH\r\n\r\nThe new findings are the culmination of twelve years of research involving scientists from Germany, Argentina and the US, as well as the Cambridge team. The work was done in a model system, using a mustard plant called Arabidopsis, but Wigge says the phytochrome genes necessary for temperature sensing are found in crop plants as well. ‘Recent advances in plant genetics now mean that scientists are able to rapidly identify the genes controlling these processes in crop plants, and even alter their activity using precise molecular “scalpels”,’ adds Wigge. ‘Cambridge is uniquely well-positioned to do this kind of research as we have outstanding collaborators nearby who work on more applied aspects of plant biology, and can help us transfer this new knowledge into the field.’",
+        "questionSections": [
+          {
+            "sectionId": "section_3_1",
+            "instructions": "Do the following statements agree with the information given in Reading Passage 3? In boxes 27-32 on your answer sheet, write TRUE if the statement agrees with the information, FALSE if the statement contradicts the information, NOT GIVEN if there is no information on this",
+            "questionType": "TRUE_FALSE_NOT_GIVEN",
+            "questions": [
+              {
+                "questionNumber": 27,
+                "questionId": "q27",
+                "statement": "The Cambridge scientists' discovery of the 'thermometer molecule' caused surprise among other scientists.",
+                "questionType": "TRUE_FALSE_NOT_GIVEN",
+                "correctAnswer": "NOT GIVEN"
+              },
+              {
+                "questionNumber": 28,
+                "questionId": "q28",
+                "statement": "The target for agricultural production by 2050 could be missed.",
+                "questionType": "TRUE_FALSE_NOT_GIVEN",
+                "correctAnswer": "TRUE"
+              },
+              {
+                "questionNumber": 29,
+                "questionId": "q29",
+                "statement": "Wheat and rice suffer from a rise in temperatures.",
+                "questionType": "TRUE_FALSE_NOT_GIVEN",
+                "correctAnswer": "TRUE"
+              },
+              {
+                "questionNumber": 30,
+                "questionId": "q30",
+                "statement": "It may be possible to develop crops that require less water.",
+                "questionType": "TRUE_FALSE_NOT_GIVEN",
+                "correctAnswer": "NOT GIVEN"
+              },
+              {
+                "questionNumber": 31,
+                "questionId": "q31",
+                "statement": "Plants grow faster in sunlight than in shade.",
+                "questionType": "TRUE_FALSE_NOT_GIVEN",
+                "correctAnswer": "FALSE"
+              },
+              {
+                "questionNumber": 32,
+                "questionId": "q32",
+                "statement": "Phytochromes change their state at the same speed day and night.",
+                "questionType": "TRUE_FALSE_NOT_GIVEN",
+                "correctAnswer": "FALSE"
+              }
+            ]
+          },
+          {
+            "sectionId": "section_3_2",
+            "instructions": "Reading Passage 3 has eight sections, A-H. Which section contains the following information? Write the correct letter, A-H, in boxes 33-37 on your answer sheet.",
+            "questionType": "PARAGRAPH_MATCHING",
+            "questions": [
+              {
+                "questionNumber": 33,
+                "questionId": "q33",
+                "information": "mention of specialists who can make use of the research findings",
+                "questionType": "PARAGRAPH_MATCHING",
+                "correctAnswer": "H"
+              },
+              {
+                "questionNumber": 34,
+                "questionId": "q34",
+                "information": "a reference to a potential benefit of the research findings",
+                "questionType": "PARAGRAPH_MATCHING",
+                "correctAnswer": "D"
+              },
+              {
+                "questionNumber": 35,
+                "questionId": "q35",
+                "information": "scientific support for a traditional saying",
+                "questionType": "PARAGRAPH_MATCHING",
+                "correctAnswer": "G"
+              },
+              {
+                "questionNumber": 36,
+                "questionId": "q36",
+                "information": "a reference to people traditionally making plans based on plant behaviour",
+                "questionType": "PARAGRAPH_MATCHING",
+                "correctAnswer": "C"
+              },
+              {
+                "questionNumber": 37,
+                "questionId": "q37",
+                "information": "a reference to where the research has been reported",
+                "questionType": "PARAGRAPH_MATCHING",
+                "correctAnswer": "A"
+              }
+            ]
+          },
+          {
+            "sectionId": "section_3_3",
+            "instructions": "Complete the sentences below. Choose NO MORE THAN TWO WORDS from the passage for each answer. Write your answers in boxes 38-40 on your answer sheet.",
+            "questionType": "SENTENCE_COMPLETION",
+            "questions": [
+              {
+                "questionNumber": 38,
+                "questionId": "q38",
+                "context": "Daffodils are likely to flower early in response to _____ weather.",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "warm (winter)"
+              },
+              {
+                "questionNumber": 39,
+                "questionId": "q39",
+                "context": "If ash trees come into leaf before oak trees, the weather in _____ will probably be wet.",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "summer"
+              },
+              {
+                "questionNumber": 40,
+                "questionId": "q40",
+                "context": "The research was carried out using a particular species of _____.",
+                "questionType": "FILL_IN_BLANK",
+                "correctAnswer": "mustard plant"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "testType": "IELTS_ACADEMIC_READING",
+      "difficulty": "INTERMEDIATE_TO_ADVANCED",
+      "version": "1.0",
+      "createdDate": "2025-01-04",
+      "lastModified": "2025-01-04"
+    }
+  }
+}

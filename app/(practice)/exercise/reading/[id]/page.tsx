@@ -51,6 +51,12 @@ interface QuestionSection {
   tableStructure?: TableStructure;
   notesTitle?: string;
   notesStructure?: NotePeriod[];
+  numberOfAnswers?: number;
+  options?: string[];
+  images?: {
+    imageUrl1?: string;
+    imageUrl2?: string;
+  };
 }
 
 interface Passage {
@@ -278,6 +284,30 @@ const IELTSReadingTest = () => {
     return (
       <div className="mb-8 bg-white rounded-lg p-6 border-2 border-gray-200">
         <div className="mb-4 text-primary font-semibold">{section.instructions}</div>
+
+        {/* Images - Display before questions */}
+        {section.images && (
+          <div className="mb-6 space-y-4">
+            {section.images.imageUrl1 && (
+              <div className="flex justify-center">
+                <img 
+                  src={section.images.imageUrl1} 
+                  alt="Diagram 1" 
+                  className="max-w-full h-auto rounded border-2 border-gray-300"
+                />
+              </div>
+            )}
+            {section.images.imageUrl2 && (
+              <div className="flex justify-center">
+                <img 
+                  src={section.images.imageUrl2} 
+                  alt="Diagram 2" 
+                  className="max-w-full h-auto rounded border-2 border-gray-300"
+                />
+              </div>
+            )}
+          </div>
+        )}
 
         {/* TABLE_COMPLETION */}
         {section.questionType === 'TABLE_COMPLETION' && section.tableStructure && (
@@ -581,6 +611,68 @@ const IELTSReadingTest = () => {
                 </div>
               ))}
             </div>
+          </div>
+        )}
+
+        {/* MULTIPLE_CHOICE_MULTIPLE_ANSWERS */}
+        {section.questionType === 'MULTIPLE_CHOICE_MULTIPLE_ANSWERS' && section.options && (
+          <div>
+            {section.options && (
+              <div className="bg-gray-50 p-4 rounded mb-4">
+                {section.options.map((opt, idx) => {
+                  // Extract letter from format "A - text"
+                  const parts = opt.split(' - ');
+                  const letter = parts[0].trim();
+                  const text = parts.slice(1).join(' - ').trim();
+                  return (
+                    <div key={idx} className="mb-2">
+                      <span className="font-bold mr-2">{letter}</span>
+                      {text}
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+            <div className="flex gap-4 flex-wrap">
+              {section.questions.map(q => (
+                <div key={q.questionNumber} className="flex items-center gap-2">
+                  <span className="font-bold text-primary">{q.questionNumber}.</span>
+                  {renderInput(q.questionNumber, 'select', undefined, section.options)}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* DIAGRAM_LABELING */}
+        {section.questionType === 'DIAGRAM_LABELING' && (
+          <div className="space-y-4">
+            {section.questions.map(q => (
+              <div key={q.questionNumber} className="flex items-center gap-3 bg-gray-50 p-3 rounded">
+                <span className="font-bold text-primary min-w-[40px]">{q.questionNumber}.</span>
+                <div className="flex-1">
+                  <span className="text-gray-700">{q.context}</span>
+                </div>
+                {renderInput(q.questionNumber, 'FILL_IN_BLANK')}
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* SHORT_ANSWER - for questions that need short text answers */}
+        {section.questionType === 'SHORT_ANSWER' && (
+          <div className="space-y-4">
+            {section.questions.map(q => (
+              <div key={q.questionNumber} className="bg-gray-50 p-4 rounded">
+                <div className="flex items-start gap-3">
+                  <span className="font-bold text-primary">{q.questionNumber}.</span>
+                  <div className="flex-1">
+                    <p className="mb-2">{q.question}</p>
+                    {renderInput(q.questionNumber, 'FILL_IN_BLANK')}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         )}
       </div>

@@ -374,7 +374,7 @@
             "sectionId": "section_3_3",
             "instructions": "Look at the following statements (Questions 35-40) and the list of people below. Match each statement with the correct person, A, B or C. Write the correct letter, A, B or C, in boxes 35-40 on your answer sheet. NB You may use any letter more than once.",
             "questionType": "FEATURE_MATCHING",
-            "peopleList": [
+            "optionsList": [
               "A - Stella Pachidi",
               "B - Hamish Low",
               "C - Ewan McGaughey"

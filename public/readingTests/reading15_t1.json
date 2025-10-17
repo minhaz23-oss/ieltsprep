@@ -415,7 +415,7 @@
             "sectionId": "section_3_2",
             "instructions": "Look at the following statements (Questions 33-37) and the list of explorers below. Match each statement with the correct explorer, A-E. Write the correct letter, A-E, in boxes 33-37 on your answer sheet. NB You may use any letter more than once.",
             "questionType": "FEATURE_MATCHING",
-            "explorersList": [
+            "optionsList": [
               "A - Peter Fleming",
               "B - Ran Fiennes",
               "C - Chris Bonington",

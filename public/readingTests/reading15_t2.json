@@ -209,7 +209,7 @@
             "sectionId": "section_2_3",
             "instructions": "Look at the following statements (Questions 23-26) and the list of people below. Match each statement with the correct person, A, B or C. Write the correct letter, A, B or C, in boxes 23-26 on your answer sheet. NB You may use any letter more than once.",
             "questionType": "FEATURE_MATCHING",
-            "peopleList": [
+            "optionsList": [
               "A - Ben Novak",
               "B - Michael Archer",
               "C - Beth Shapiro"

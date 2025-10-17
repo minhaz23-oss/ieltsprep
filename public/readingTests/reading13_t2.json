@@ -202,7 +202,7 @@
             "sectionId": "section_2_2",
             "instructions": "Look at the following research findings (Questions 18-20) and the list of researchers below. Match each research finding with the correct researcher, A-F. Write the correct letter, A-F, in boxes 18-20 on your answer sheet.",
             "questionType": "FEATURE_MATCHING",
-            "researchersList": [
+            "optionsList": [
               "A - Markus Heinrichs",
               "B - Simone Shamay-Tsoory",
               "C - Jennifer Bartz",
@@ -369,7 +369,7 @@
             "sectionId": "section_3_2",
             "instructions": "Look at the following statements (Questions 32-37) and the list of companies below. Match each statement with the correct company, A, B, C or D. Write the correct letter, A, B, C or D, in boxes 32-37 on your answer sheet. NB You may use any letter more than once.",
             "questionType": "FEATURE_MATCHING",
-            "companiesList": [
+            "optionsList": [
               "A - Coach",
               "B - Tesco",
               "C - Nike",

@@ -298,7 +298,7 @@
             "sectionId": "section_3_1",
             "instructions": "Look at the following statements (Questions 27-31) and the list of researchers below. Match each statement with the correct researcher, A-F. Write the correct letter, A-F, in boxes 27-31 on your answer sheet. NB You may use any letter more than once.",
             "questionType": "FEATURE_MATCHING",
-            "researchersList": [
+            "optionsList": [
               "A - Pfeffer",
               "B - Lucas",
               "C - Maroudas et al.",

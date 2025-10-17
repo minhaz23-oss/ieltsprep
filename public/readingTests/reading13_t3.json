@@ -176,7 +176,7 @@
             "sectionId": "section_2_1",
             "instructions": "Look at the following ideas (Questions 14-17) and the list of researchers below. Match each idea with the correct researcher, A, B or C. Write the correct letter, A, B or C, in boxes 14-17 on your answer sheet. NB You may use any letter more than once.",
             "questionType": "FEATURE_MATCHING",
-            "researchersList": [
+            "optionsList": [
               "A - Mark VanDam",
               "B - Nairán Ramirez-Esparza",
               "C - Patricia Kuhl"
@@ -388,7 +388,7 @@
             "sectionId": "section_3_3",
             "instructions": "Look at the following statements (Questions 37-40) and the list of researchers below. Match each statement with the correct researcher, A, B, C or D. Write the correct letter, A, B, C or D, in boxes 37-40 on your answer sheet. NB You may use any letter more than once.",
             "questionType": "FEATURE_MATCHING",
-            "researchersList": [
+            "optionsList": [
               "A - Cameron Petrie",
               "B - Ravindanath Singh",
               "C - Yama Dixit",

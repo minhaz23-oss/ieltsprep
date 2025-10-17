@@ -502,15 +502,16 @@ const IELTSReadingTest = () => {
         {/* FEATURE_MATCHING */}
         {section.questionType === 'FEATURE_MATCHING' && (
           <div>
-            {/* Display the list (ideas, researchers, or companies) */}
-            {(section.ideaList || section.researchersList || section.companiesList) && (
+            {/* Display the options list */}
+            {(section.optionsList || section.ideaList || section.researchersList || section.companiesList) && (
               <div className="bg-primary/10 p-4 rounded mb-4 border border-primary/20">
                 <div className="font-bold mb-2">
+                  {section.optionsList && 'List of Options'}
                   {section.ideaList && 'List of Ideas'}
                   {section.researchersList && 'List of Researchers'}
                   {section.companiesList && 'List of Companies'}
                 </div>
-                {(section.ideaList || section.researchersList || section.companiesList)?.map((item, idx) => (
+                {(section.optionsList || section.ideaList || section.researchersList || section.companiesList)?.map((item, idx) => (
                   <div key={idx} className="mb-1">
                     {item}
                   </div>
@@ -520,7 +521,7 @@ const IELTSReadingTest = () => {
             <div className="space-y-3">
               {section.questions.map(q => {
                 const displayText = q.person || q.finding || q.statement || '';
-                const optionsList = section.ideaList || section.researchersList || section.companiesList || [];
+                const optionsList = section.optionsList || section.ideaList || section.researchersList || section.companiesList || [];
                 
                 return (
                   <div key={q.questionNumber} className="flex items-start gap-2 bg-gray-50 p-3 rounded">

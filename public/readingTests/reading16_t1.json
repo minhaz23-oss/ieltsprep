@@ -73,47 +73,61 @@
             "instructions": "Complete the table below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 8-13 on your answer sheet.",
             "questionType": "TABLE_COMPLETION",
             "tableTitle": "Reasons why polar bears should be protected",
+            "tableStructure": {
+              "headers": ["Aspect", "Evidence"],
+              "rows": [
+                {
+                  "section": "Perceptions",
+                  "comments": [
+                    "People think of bears as unintelligent and 8_____."
+                  ]
+                },
+                {
+                  "section": "Problem-solving abilities",
+                  "comments": [
+                    "In Tennoji Zoo, a bear has been seen using a branch as a 9_____.",
+                    "This allowed him to knock down some 10_____.",
+                    "A wild polar bear worked out a method of reaching a platform where a 11_____ was located."
+                  ]
+                },
+                {
+                  "section": "Complex behaviors",
+                  "comments": [
+                    "Polar bears have displayed behaviour such as conscious manipulation of objects and activity similar to a 12_____.",
+                    "They may make movements suggesting 13_____ if disappointed when hunting."
+                  ]
+                }
+              ]
+            },
             "questions": [
               {
                 "questionNumber": 8,
                 "questionId": "q8",
-                "context": "People think of bears as unintelligent and _____.",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "violent"
               },
               {
                 "questionNumber": 9,
                 "questionId": "q9",
-                "context": "In Tennoji Zoo, a bear has been seen using a branch as a _____.",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "tool"
               },
               {
                 "questionNumber": 10,
                 "questionId": "q10",
-                "context": "This allowed him to knock down some _____.",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "meat"
               },
               {
                 "questionNumber": 11,
                 "questionId": "q11",
-                "context": "A wild polar bear worked out a method of reaching a platform where a _____ was located.",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "photographer"
               },
               {
                 "questionNumber": 12,
                 "questionId": "q12",
-                "context": "Polar bears have displayed behaviour such as conscious manipulation of objects and activity similar to a _____.",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "game"
               },
               {
                 "questionNumber": 13,
                 "questionId": "q13",
-                "context": "They may make movements suggesting _____ if disappointed when hunting.",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "frustration"
               }
             ]
@@ -131,7 +145,7 @@
             "sectionId": "section_2_1",
             "instructions": "Reading Passage 2 has seven paragraphs, A-G. Choose the correct heading for each paragraph from the list of headings below. Write the correct number, i-ix, in boxes 14-20 on your answer sheet.",
             "questionType": "HEADING_MATCHING",
-            "headingsList": [
+            "optionsList": [
               "i - The areas and artefacts within the pyramid itself",
               "ii - A difficult task for those involved",
               "iii - A king who saved his people",
@@ -199,33 +213,41 @@
             "instructions": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 21-24 on your answer sheet.",
             "questionType": "NOTE_COMPLETION",
             "notesTitle": "The Step Pyramid of Djoser",
+            "notesStructure": [
+              {
+                "period": "Size and Layout",
+                "points": [
+                  "The complex that includes the Step Pyramid and its surroundings is considered to be as big as an Egyptian 21_____ of the past.",
+                  "The area outside the pyramid included accommodation that was occupied by 22_____, along with many other buildings and features."
+                ]
+              },
+              {
+                "period": "Security Features",
+                "points": [
+                  "A wall ran around the outside of the complex and a number of false entrances were built into this. In addition, a long 23_____ encircled the wall.",
+                  "As a result, any visitors who had not been invited were cleverly prevented from entering the pyramid grounds unless they knew the 24_____ of the real entrance."
+                ]
+              }
+            ],
             "questions": [
               {
                 "questionNumber": 21,
                 "questionId": "q21",
-                "context": "The complex that includes the Step Pyramid and its surroundings is considered to be as big as an Egyptian _____ of the past.",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "city"
               },
               {
                 "questionNumber": 22,
                 "questionId": "q22",
-                "context": "The area outside the pyramid included accommodation that was occupied by _____, along with many other buildings and features.",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "priests"
               },
               {
                 "questionNumber": 23,
                 "questionId": "q23",
-                "context": "A wall ran around the outside of the complex and a number of false entrances were built into this. In addition, a long _____ encircled the wall.",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "trench"
               },
               {
                 "questionNumber": 24,
                 "questionId": "q24",
-                "context": "As a result, any visitors who had not been invited were cleverly prevented from entering the pyramid grounds unless they knew the _____ of the real entrance.",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "location"
               }
             ]

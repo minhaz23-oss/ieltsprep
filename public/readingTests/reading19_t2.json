@@ -17,54 +17,69 @@
             "instructions": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 1–7 on your answer sheet.",
             "questionType": "NOTE_COMPLETION",
             "notesTitle": "Britain's Industrial Revolution",
+            "notesStructure": [
+              {
+                "period": "Steam Power and Energy",
+                "points": [
+                  "In Watt and Boulton's steam engine, the movement of the 1_____ was linked to a gear system.",
+                  "A greater supply of 2_____ was required to power steam engines."
+                ]
+              },
+              {
+                "period": "Textile Industry Changes",
+                "points": [
+                  "Before the Industrial Revolution, spinners and weavers worked at home and in 3_____.",
+                  "Not as much 4_____ was needed to produce cloth once the spinning jenny and power loom were invented."
+                ]
+              },
+              {
+                "period": "Iron Industry and Transportation",
+                "points": [
+                  "Smelting of iron ore with coke resulted in material that was better 5_____.",
+                  "Demand for iron increased with the growth of the 6_____."
+                ]
+              },
+              {
+                "period": "Social Impact",
+                "points": [
+                  "The new cities were dirty, crowded and lacked sufficient 7_____."
+                ]
+              }
+            ],
             "questions": [
               {
                 "questionNumber": 1,
                 "questionId": "q1",
-                "context": "In Watt and Boulton's steam engine, the movement of the _____ was linked to a gear system.",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "piston"
               },
               {
                 "questionNumber": 2,
                 "questionId": "q2",
-                "context": "A greater supply of _____ was required to power steam engines.",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "coal"
               },
               {
                 "questionNumber": 3,
                 "questionId": "q3",
-                "context": "Before the Industrial Revolution, spinners and weavers worked at home and in _____.",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "workshops"
               },
               {
                 "questionNumber": 4,
                 "questionId": "q4",
-                "context": "Not as much _____ was needed to produce cloth once the spinning jenny and power loom were invented.",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "labour"
               },
               {
                 "questionNumber": 5,
                 "questionId": "q5",
-                "context": "Smelting of iron ore with coke resulted in material that was better _____.",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "quality"
               },
               {
                 "questionNumber": 6,
                 "questionId": "q6",
-                "context": "Demand for iron increased with the growth of the _____.",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "railway(s)"
               },
               {
                 "questionNumber": 7,
                 "questionId": "q7",
-                "context": "The new cities were dirty, crowded and lacked sufficient _____.",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "sanitation"
               }
             ]

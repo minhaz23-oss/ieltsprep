@@ -66,54 +66,72 @@
             "instructions": "Complete the table below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 7-13 on your answer sheet.",
             "questionType": "TABLE_COMPLETION",
             "tableTitle": "The study carried out by Rocha's team",
+            "tableStructure": {
+              "headers": ["Research Method", "Findings about Bats"],
+              "rows": [
+                {
+                  "section": "Scientific Analysis",
+                  "comments": [
+                    "DNA analysis of bat 7_____"
+                  ]
+                },
+                {
+                  "section": "Diet and Pest Control",
+                  "comments": [
+                    "ate pests of rice, 8_____, sugarcane, nuts and fruit",
+                    "prevent the spread of disease by eating 9_____ and blackflies"
+                  ]
+                },
+                {
+                  "section": "Human-Bat Relationships",
+                  "comments": [
+                    "they provide food rich in 10_____",
+                    "the buildings where they roost become 11_____",
+                    "they play an important role in local 12_____"
+                  ]
+                },
+                {
+                  "section": "Conservation Recommendations",
+                  "comments": [
+                    "farmers should provide special 13_____ to support the bat population"
+                  ]
+                }
+              ]
+            },
             "questions": [
               {
                 "questionNumber": 7,
                 "questionId": "q7",
-                "context": "DNA analysis of bat _____",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "droppings"
               },
               {
                 "questionNumber": 8,
                 "questionId": "q8",
-                "context": "ate pests of rice, _____, sugarcane, nuts and fruit",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "coffee"
               },
               {
                 "questionNumber": 9,
                 "questionId": "q9",
-                "context": "prevent the spread of disease by eating _____ and blackflies",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "mosquitoes"
               },
               {
                 "questionNumber": 10,
                 "questionId": "q10",
-                "context": "they provide food rich in _____",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "protein"
               },
               {
                 "questionNumber": 11,
                 "questionId": "q11",
-                "context": "the buildings where they roost become _____",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "unclean"
               },
               {
                 "questionNumber": 12,
                 "questionId": "q12",
-                "context": "they play an important role in local _____",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "culture"
               },
               {
                 "questionNumber": 13,
                 "questionId": "q13",
-                "context": "farmers should provide special _____ to support the bat population",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "houses"
               }
             ]

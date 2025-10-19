@@ -74,6 +74,21 @@
                 "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "calendar"
               }
+            ],
+            "notesStructure": [
+              {
+                "period": "",
+                "points": [
+                  "the ditch and henge were dug, possibly using tools made from 1_____",
+                  "2_____ may have been arranged in deep pits inside the circle",
+                  "builders used 3_____ to make sledges and rollers",
+                  "4_____ pulled them on giant baskets",
+                  "they were brought from Wales by 5_____",
+                  "a theory arose in the 17th century that its builders were Celtic 6_____",
+                  "many experts agree it has been used as a 7_____ site",
+                  "in the 1960s, it was suggested that it worked as a kind of 8_____"
+                ]
+              }
             ]
           },
           {

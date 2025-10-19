@@ -156,18 +156,6 @@
             "sectionId": "section_2_1",
             "instructions": "Reading Passage 2 has seven paragraphs, A-G. Choose the correct heading for each section from the list of headings below. Write the correct number, i-x, in boxes 14-20 on your answer sheet.",
             "questionType": "HEADING_MATCHING",
-            "headingsList": [
-              "i - Getting the finance for production",
-              "ii - An unexpected benefit",
-              "iii - From initial inspiration to new product",
-              "iv - The range of potential customers for the device",
-              "v - What makes the device different from alternatives",
-              "vi - Cleaning water from a range of sources",
-              "vii - Overcoming production difficulties",
-              "viii - Profit not the primary goal",
-              "ix - A warm welcome for the device",
-              "x - The number of people affected by water shortages"
-            ],
             "questions": [
               {
                 "questionNumber": 14,
@@ -218,6 +206,18 @@
                 "questionType": "HEADING_MATCHING",
                 "correctAnswer": "i"
               }
+            ],
+            "optionsList": [
+              "i - Getting the finance for production",
+              "ii - An unexpected benefit",
+              "iii - From initial inspiration to new product",
+              "iv - The range of potential customers for the device",
+              "v - What makes the device different from alternatives",
+              "vi - Cleaning water from a range of sources",
+              "vii - Overcoming production difficulties",
+              "viii - Profit not the primary goal",
+              "ix - A warm welcome for the device",
+              "x - The number of people affected by water shortages"
             ]
           },
           {

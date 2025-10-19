@@ -16,10 +16,10 @@
             "sectionId": "section_1_1",
             "instructions": "Label the diagrams below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 1-6 on your answer sheet.",
             "questionType": "DIAGRAM_LABELING",
-            "images": {
-              "imageUrl1": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningImage/reading16_t4_img_1.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0ltYWdlL3JlYWRpbmcxNl90NF9pbWdfMS5qcGciLCJpYXQiOjE3NjA0MjEyOTYsImV4cCI6NDkxNDAyMTI5Nn0.-TQIoFhVfNaRhmhJDalITOeN8Q7CuBrC2_hXjD_Kmfw",
-              "imageUrl2": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningImage/reading16_t4_img_2.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0ltYWdlL3JlYWRpbmcxNl90NF9pbWdfMi5qcGciLCJpYXQiOjE3NjA0MjEzMTIsImV4cCI6NDkxNDAyMTMxMn0.uzD5znhu5xjZoQ8hG_o6yayILDbCtlmHnAYGMxeG_rI"
-            },
+            "diagramImages": [
+              "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningImage/reading16_t4_img_1.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0ltYWdlL3JlYWRpbmcxNl90NF9pbWdfMS5qcGciLCJpYXQiOjE3NjA0MjEyOTYsImV4cCI6NDkxNDAyMTI5Nn0.-TQIoFhVfNaRhmhJDalITOeN8Q7CuBrC2_hXjD_Kmfw",
+              "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/listeningImage/reading16_t4_img_2.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL2xpc3RlbmluZ0ltYWdlL3JlYWRpbmcxNl90NF9pbWdfMi5qcGciLCJpYXQiOjE3NjA0MjEzMTIsImV4cCI6NDkxNDAyMTMxMn0.uzD5znhu5xjZoQ8hG_o6yayILDbCtlmHnAYGMxeG_rI"
+            ],
             "questions": [
               {
                 "questionNumber": 1,
@@ -297,16 +297,6 @@
             "sectionId": "section_3_1",
             "instructions": "Reading Passage 3 has six sections, A-F. Choose the correct heading for each section from the list of headings below. Write the correct number, i-viii, in boxes 27-32 on your answer sheet.",
             "questionType": "HEADING_MATCHING",
-            "headingsList": [
-              "i - An increasing divergence of attitudes towards AI",
-              "ii - Reasons why we have more faith in human judgement than in AI",
-              "iii - The superiority of AI projections over those made by humans",
-              "iv - The process by which AI can help us make good decisions",
-              "v - The advantages of involving users in AI processes",
-              "vi - Widespread distrust of an AI innovation",
-              "vii - Encouraging openness about how AI functions",
-              "viii - A surprisingly successful AI application"
-            ],
             "questions": [
               {
                 "questionNumber": 27,
@@ -350,6 +340,16 @@
                 "questionType": "HEADING_MATCHING",
                 "correctAnswer": "v"
               }
+            ],
+            "optionsList": [
+              "i - An increasing divergence of attitudes towards AI",
+              "ii - Reasons why we have more faith in human judgement than in AI",
+              "iii - The superiority of AI projections over those made by humans",
+              "iv - The process by which AI can help us make good decisions",
+              "v - The advantages of involving users in AI processes",
+              "vi - Widespread distrust of an AI innovation",
+              "vii - Encouraging openness about how AI functions",
+              "viii - A surprisingly successful AI application"
             ]
           },
           {

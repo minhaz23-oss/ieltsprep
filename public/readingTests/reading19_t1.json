@@ -116,6 +116,19 @@
                 "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "grips"
               }
+            ],
+            "notesStructure": [
+              {
+                "period": "",
+                "points": [
+                  "Mike and Bob Bryan made changes to the types of 8_____ used on their racket frames.",
+                  "Players were not allowed to use the spaghetti-strung racket because of the amount of 9_____ it created.",
+                  "Changes to rackets can be regarded as being as important as players' diets or the 10_____ they do.",
+                  "All rackets used to have natural strings made from the 11_____ of animals.",
+                  "Pete Sampras had metal 12_____ put into the frames of his rackets.",
+                  "Gonçalo Oliveira changed the 13_____ on his racket handles."
+                ]
+              }
             ]
           }
         ]

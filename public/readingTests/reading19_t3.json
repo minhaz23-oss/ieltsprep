@@ -116,6 +116,19 @@
                 "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "spices"
               }
+            ],
+            "notesStructure": [
+              {
+                "period": "",
+                "points": [
+                  "Excavations of rock shelters inside 8_____ near the village of Kelo revealed:",
+                  "axes made out of 9_____, dating from around 11,700 years ago",
+                  "10_____ of an animal: evidence of what ancient islanders ate",
+                  "11_____ which resembled ones found on other islands.",
+                  "had 12_____ as well as items made out of metal",
+                  "probably took part in the production and sale of 13_____."
+                ]
+              }
             ]
           }
         ]

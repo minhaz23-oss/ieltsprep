@@ -67,6 +67,20 @@
                 "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "refrigerator"
               }
+            ],
+            "notesStructure": [
+              {
+                "period": "",
+                "points": [
+                  "People conserved the nutritional value of 1_____, using a method of freezing then drying.",
+                  "2_____ was kept cool by ice during transportation in specially adapted trains.",
+                  "Two kinds of 3_____ were the first frozen food shipped to England.",
+                  "quick-freezing methods, so that 4_____ did not spoil the food.",
+                  "packaging products with 5_____ so the product was visible.",
+                  "Frozen food became popular because of a shortage of 6_____",
+                  "A large number of homes now had a 7_____"
+                ]
+              }
             ]
           },
           {
@@ -131,15 +145,6 @@
             "sectionId": "section_2_1",
             "instructions": "Reading Passage 2 has six sections, A–F. Choose the correct heading for each section from the list of headings below. Write the correct number, i-vii, in boxes 14-19 on your answer sheet.",
             "questionType": "HEADING_MATCHING",
-            "headingsList": [
-              "i - Tried and tested solutions",
-              "ii - Cooperation beneath the waves",
-              "iii - Working to lessen the problems",
-              "iv - Disagreement about the accuracy of a certain phrase",
-              "v - Two clear educational goals",
-              "vi - Promoting hope",
-              "vii - A warning of further trouble ahead"
-            ],
             "questions": [
               {
                 "questionNumber": 14,
@@ -183,6 +188,15 @@
                 "questionType": "HEADING_MATCHING",
                 "correctAnswer": "vi"
               }
+            ],
+            "optionsList": [
+              "i - Tried and tested solutions",
+              "ii - Cooperation beneath the waves",
+              "iii - Working to lessen the problems",
+              "iv - Disagreement about the accuracy of a certain phrase",
+              "v - Two clear educational goals",
+              "vi - Promoting hope",
+              "vii - A warning of further trouble ahead"
             ]
           },
           {

@@ -67,6 +67,20 @@
                 "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "rivers"
               }
+            ],
+            "notesStructure": [
+              {
+                "period": "",
+                "points": [
+                  "studied art, then worked as a 1_____ in various places in the USA",
+                  "created drawings using 2_____ which were exhibited in New York City",
+                  "moved to New York and became famous for her paintings of the city's 3_____",
+                  "produced a series of innovative close-up paintings of 4_____",
+                  "went to New Mexico and was initially inspired to paint the many 5_____ that could be found there",
+                  "continued to paint various features that together formed the dramatic 6_____ of New Mexico for over forty years",
+                  "travelled widely by plane in later years, and painted pictures of clouds and 7_____ seen from above"
+                ]
+              }
             ]
           },
           {

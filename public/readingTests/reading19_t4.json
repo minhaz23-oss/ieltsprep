@@ -116,6 +116,20 @@
                 "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "diet"
               }
+            ],
+            "notesStructure": [
+              {
+                "period": "",
+                "points": [
+                  "The Small Blue - lives in large 7_____",
+                  "first appears at the start of 8_____",
+                  "The High Brown Fritillary - is considered to be more 9_____ than other species",
+                  "its caterpillars occupy a limited range of 10_____",
+                  "The Silver-studded Blue - is already able to reproduce twice a year in warm areas of 11_____",
+                  "The White Admiral - is found in 12_____ areas of England",
+                  "both climate change and the 13_____ of the caterpillar are possible reasons for decline"
+                ]
+              }
             ]
           }
         ]

@@ -45,6 +45,25 @@
             "instructions": "Complete the table below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 4-7 on your answer sheet.",
             "questionType": "TABLE_COMPLETION",
             "tableTitle": "Intensive farming versus aeroponic urban farming",
+            "tableStructure": {
+              "headers": ["Intensive Farming", "Aeroponic Urban Farming"],
+              "rows": [
+                {
+                  "section": "Intensive Farming",
+                  "comments": [
+                    "wide range of 4_____ used",
+                    "varieties of fruit and vegetables chosen that can survive long 5_____",
+                    "6_____ receive very little of overall income"
+                  ]
+                },
+                {
+                  "section": "Aeroponic Urban Farming",
+                  "comments": [
+                    "produce chosen because of its 7_____"
+                  ]
+                }
+              ]
+            },
             "questions": [
               {
                 "questionNumber": 4,

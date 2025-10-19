@@ -46,13 +46,17 @@ interface QuestionSection {
   ideaList?: string[];
   researchersList?: string[];
   companiesList?: string[];
+  optionsList?: string[];
   endingsList?: string[];
   summaryTitle?: string;
+  wordsList?: string[]; // Word bank for SUMMARY_COMPLETION
   tableStructure?: TableStructure;
   notesTitle?: string;
   notesStructure?: NotePeriod[];
   numberOfAnswers?: number;
   options?: string[];
+  diagramImages?: string[]; // Array of image URLs for DIAGRAM_LABELING
+  // Deprecated: use diagramImages instead
   images?: {
     imageUrl1?: string;
     imageUrl2?: string;
@@ -315,7 +319,7 @@ const IELTSReadingTest = () => {
             <table className="w-full border-collapse border-2 border-gray-300">
               <thead>
                 <tr className="bg-primary/10">
-                  {section.tableStructure.headers.map((header, idx) => (
+                  {section.tableStructure.headers?.map((header, idx) => (
                     <th key={idx} className="border-2 border-gray-300 px-4 py-3 text-left font-bold">
                       {header}
                     </th>
@@ -323,48 +327,58 @@ const IELTSReadingTest = () => {
                 </tr>
               </thead>
               <tbody>
-                {section.tableStructure.rows.map((row, rowIdx) => (
-                  <tr key={rowIdx} className="border-2 border-gray-300">
-                    <td className="border-2 border-gray-300 px-4 py-3 align-top font-medium">
-                      {row.section}
-                    </td>
-                    <td className="border-2 border-gray-300 px-4 py-3">
-                      <ul className="space-y-2">
-                        {row.comments.map((comment, commentIdx) => {
-                          const parts: string[] = [];
-                          const questionNums: number[] = [];
-                          let lastIndex = 0;
-                          const regex = /(\d+)_____/g;
-                          let match;
-                          
-                          while ((match = regex.exec(comment)) !== null) {
-                            parts.push(comment.substring(lastIndex, match.index));
-                            questionNums.push(parseInt(match[1]));
-                            lastIndex = regex.lastIndex;
-                          }
-                          parts.push(comment.substring(lastIndex));
-                          
-                          return (
-                            <li key={commentIdx} className="flex items-start gap-1 flex-wrap">
-                              <span className="mr-1">•</span>
-                              {parts.map((part, partIdx) => (
-                                <span key={partIdx}>
-                                  {part}
-                                  {questionNums[partIdx] && (
-                                    <span className="inline-flex items-center gap-1 ml-1">
-                                      <span className="font-bold text-primary">{questionNums[partIdx]}</span>
-                                      {renderInput(questionNums[partIdx], 'FILL_IN_BLANK')}
+                {section.tableStructure.rows?.map((row: any, rowIdx) => {
+                  // Handle different row formats
+                  const cells = row.section && row.comments 
+                    ? [row.section, ...row.comments]
+                    : Object.values(row);
+                  
+                  return (
+                    <tr key={rowIdx} className="border-2 border-gray-300">
+                      {cells.map((cell: any, cellIdx) => {
+                        // If cell is an array (like uses field), process each item
+                        const cellContent = Array.isArray(cell) ? cell : [cell];
+                        
+                        return (
+                          <td key={cellIdx} className="border-2 border-gray-300 px-4 py-3 align-top">
+                            {cellContent.map((content: string, contentIdx) => {
+                              if (!content) return null;
+                              
+                              const parts: string[] = [];
+                              const questionNums: number[] = [];
+                              let lastIndex = 0;
+                              const regex = /(\d+)_____/g;
+                              let match;
+                              
+                              while ((match = regex.exec(content)) !== null) {
+                                parts.push(content.substring(lastIndex, match.index));
+                                questionNums.push(parseInt(match[1]));
+                                lastIndex = regex.lastIndex;
+                              }
+                              parts.push(content.substring(lastIndex));
+                              
+                              return (
+                                <div key={contentIdx} className="mb-1">
+                                  {parts.map((part, partIdx) => (
+                                    <span key={partIdx}>
+                                      {part}
+                                      {questionNums[partIdx] && (
+                                        <span className="inline-flex items-center gap-1 ml-1">
+                                          <span className="font-bold text-primary">{questionNums[partIdx]}</span>
+                                          {renderInput(questionNums[partIdx], 'FILL_IN_BLANK')}
+                                        </span>
+                                      )}
                                     </span>
-                                  )}
-                                </span>
-                              ))}
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </td>
-                  </tr>
-                ))}
+                                  ))}
+                                </div>
+                              );
+                            })}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
@@ -478,11 +492,11 @@ const IELTSReadingTest = () => {
         )}
 
         {/* HEADING_MATCHING */}
-        {section.questionType === 'HEADING_MATCHING' && section.headingsList && (
+        {section.questionType === 'HEADING_MATCHING' && (section.optionsList || section.headingsList) && (
           <div>
             <div className="bg-primary/10 p-4 rounded mb-4 border border-primary/20">
               <div className="font-bold mb-2">List of Headings</div>
-              {section.headingsList.map((heading, idx) => (
+              {(section.optionsList || section.headingsList)?.map((heading, idx) => (
                 <div key={idx} className="mb-1">
                   {heading}
                 </div>
@@ -492,7 +506,7 @@ const IELTSReadingTest = () => {
               {section.questions.map(q => (
                 <div key={q.questionNumber} className="flex items-center gap-2 bg-gray-50 p-3 rounded">
                   <span className="font-semibold min-w-[100px]">{q.questionNumber}. {q.paragraph}</span>
-                  {renderInput(q.questionNumber, 'HEADING_MATCHING', undefined, section.headingsList)}
+                  {renderInput(q.questionNumber, 'HEADING_MATCHING', undefined, section.optionsList || section.headingsList)}
                 </div>
               ))}
             </div>
@@ -503,26 +517,29 @@ const IELTSReadingTest = () => {
         {section.questionType === 'FEATURE_MATCHING' && (
           <div>
             {/* Display the options list */}
-            {(section.optionsList || section.ideaList || section.researchersList || section.companiesList) && (
-              <div className="bg-primary/10 p-4 rounded mb-4 border border-primary/20">
-                <div className="font-bold mb-2">
-                  {section.optionsList && 'List of Options'}
-                  {section.ideaList && 'List of Ideas'}
-                  {section.researchersList && 'List of Researchers'}
-                  {section.companiesList && 'List of Companies'}
+            {(() => {
+              const listToShow = section.optionsList || section.ideaList || section.researchersList || section.companiesList;
+              const listTitle = section.optionsList ? 'List of Options' :
+                               section.ideaList ? 'List of Ideas' :
+                               section.researchersList ? 'List of Researchers' :
+                               section.companiesList ? 'List of Companies' : '';
+
+              return listToShow && Array.isArray(listToShow) && (
+                <div className="bg-primary/10 p-4 rounded mb-4 border border-primary/20">
+                  <div className="font-bold mb-2">{listTitle}</div>
+                  {listToShow.map((item: string, idx: number) => (
+                    <div key={idx} className="mb-1">
+                      {item}
+                    </div>
+                  ))}
                 </div>
-                {(section.optionsList || section.ideaList || section.researchersList || section.companiesList)?.map((item, idx) => (
-                  <div key={idx} className="mb-1">
-                    {item}
-                  </div>
-                ))}
-              </div>
-            )}
+              );
+            })()}
             <div className="space-y-3">
               {section.questions.map(q => {
                 const displayText = q.person || q.finding || q.statement || '';
                 const optionsList = section.optionsList || section.ideaList || section.researchersList || section.companiesList || [];
-                
+
                 return (
                   <div key={q.questionNumber} className="flex items-start gap-2 bg-gray-50 p-3 rounded">
                     <span className="font-semibold min-w-[40px]">{q.questionNumber}.</span>
@@ -541,6 +558,21 @@ const IELTSReadingTest = () => {
         {section.questionType === 'SUMMARY_COMPLETION' && (
           <div className="bg-gray-50 p-6 rounded">
             {section.summaryTitle && <h3 className="text-xl font-bold mb-4 text-center">{section.summaryTitle}</h3>}
+            
+            {/* Show word bank if available */}
+            {section.wordsList && section.wordsList.length > 0 && (
+              <div className="bg-primary/10 p-4 rounded mb-4 border border-primary/20">
+                <div className="font-bold mb-2">Choose words from the list:</div>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                  {section.wordsList.map((word: string, idx: number) => (
+                    <div key={idx} className="text-sm">
+                      {word}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            
             <div className="space-y-3 text-gray-800 leading-relaxed">
               {section.questions.map(q => {
                 // Split context to get text before and after the blank
@@ -590,7 +622,7 @@ const IELTSReadingTest = () => {
           </div>
         )}
 
-        {/* SENTENCE_COMPLETION */}
+        {/* SENTENCE_COMPLETION - with endings list */}
         {section.questionType === 'SENTENCE_COMPLETION' && section.endingsList && (
           <div>
             <div className="bg-primary/10 p-4 rounded mb-4 border border-primary/20">
@@ -612,6 +644,27 @@ const IELTSReadingTest = () => {
                 </div>
               ))}
             </div>
+          </div>
+        )}
+
+        {/* SENTENCE_COMPLETION - fill in the blank style */}
+        {section.questionType === 'SENTENCE_COMPLETION' && !section.endingsList && (
+          <div className="space-y-3">
+            {section.questions.map(q => {
+              // Split context to get text before and after the blank
+              const parts = q.context?.split('_____') || [q.context || ''];
+              const beforeText = parts[0];
+              const afterText = parts[1];
+              
+              return (
+                <div key={q.questionNumber} className="flex items-baseline flex-wrap gap-1 bg-gray-50 p-3 rounded">
+                  <span className="font-semibold min-w-[40px]">{q.questionNumber}.</span>
+                  <span>{beforeText}</span>
+                  {renderInput(q.questionNumber, 'FILL_IN_BLANK')}
+                  {afterText && <span>{afterText}</span>}
+                </div>
+              );
+            })}
           </div>
         )}
 
@@ -648,15 +701,34 @@ const IELTSReadingTest = () => {
         {/* DIAGRAM_LABELING */}
         {section.questionType === 'DIAGRAM_LABELING' && (
           <div className="space-y-4">
-            {section.questions.map(q => (
-              <div key={q.questionNumber} className="flex items-center gap-3 bg-gray-50 p-3 rounded">
-                <span className="font-bold text-primary min-w-[40px]">{q.questionNumber}.</span>
-                <div className="flex-1">
-                  <span className="text-gray-700">{q.context}</span>
-                </div>
-                {renderInput(q.questionNumber, 'FILL_IN_BLANK')}
+            {/* Display diagram images if available */}
+            {section.diagramImages && section.diagramImages.length > 0 && (
+              <div className="space-y-4 mb-6">
+                {section.diagramImages.map((imageUrl, idx) => (
+                  <div key={idx} className="bg-white p-4 rounded-lg border border-gray-200">
+                    <img 
+                      src={imageUrl} 
+                      alt={`Diagram ${idx + 1}`}
+                      className="max-w-full h-auto mx-auto rounded"
+                      style={{ maxHeight: '500px' }}
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
+            )}
+            
+            {/* Question inputs */}
+            <div className="space-y-3">
+              {section.questions.map(q => (
+                <div key={q.questionNumber} className="flex items-center gap-3 bg-gray-50 p-3 rounded">
+                  <span className="font-bold text-primary min-w-[40px]">{q.questionNumber}.</span>
+                  <div className="flex-1">
+                    <span className="text-gray-700">{q.context}</span>
+                  </div>
+                  {renderInput(q.questionNumber, 'FILL_IN_BLANK')}
+                </div>
+              ))}
+            </div>
           </div>
         )}
 

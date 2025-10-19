@@ -66,57 +66,41 @@
               {
                 "questionNumber": 1,
                 "questionId": "q1",
-                "context": "timber for houses and the making of _____",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "furniture"
               },
               {
                 "questionNumber": 2,
                 "questionId": "q2",
-                "context": "stems provide sap, used as a drink or a source of _____",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "sugar"
               },
               {
                 "questionNumber": 3,
                 "questionId": "q3",
-                "context": "used for _____",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "ropes"
               },
               {
                 "questionNumber": 4,
                 "questionId": "q4",
-                "context": "a source of _____",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "charcoal"
               },
               {
                 "questionNumber": 5,
                 "questionId": "q5",
-                "context": "(when halved) for _____",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "bowls"
               },
               {
                 "questionNumber": 6,
                 "questionId": "q6",
-                "context": "a source of _____ for other plants",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "hormones"
               },
               {
                 "questionNumber": 7,
                 "questionId": "q7",
-                "context": "oil and milk for cooking and _____",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "cosmetics"
               },
               {
                 "questionNumber": 8,
                 "questionId": "q8",
-                "context": "glycerine (an ingredient in _____)",
-                "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "dynamite"
               }
             ]
@@ -185,28 +169,28 @@
               {
                 "questionNumber": 14,
                 "questionId": "q14",
-                "idea": "the importance of adults giving babies individual attention when talking to them",
+                "statement": "the importance of adults giving babies individual attention when talking to them",
                 "questionType": "FEATURE_MATCHING",
                 "correctAnswer": "B"
               },
               {
                 "questionNumber": 15,
                 "questionId": "q15",
-                "idea": "the connection between what babies hear and their own efforts to create speech",
+                "statement": "the connection between what babies hear and their own efforts to create speech",
                 "questionType": "FEATURE_MATCHING",
                 "correctAnswer": "C"
               },
               {
                 "questionNumber": 16,
                 "questionId": "q16",
-                "idea": "the advantage for the baby of having two parents each speaking in a different way",
+                "statement": "the advantage for the baby of having two parents each speaking in a different way",
                 "questionType": "FEATURE_MATCHING",
                 "correctAnswer": "A"
               },
               {
                 "questionNumber": 17,
                 "questionId": "q17",
-                "idea": "the connection between the amount of baby talk babies hear and how much vocalising they do themselves",
+                "statement": "the connection between the amount of baby talk babies hear and how much vocalising they do themselves",
                 "questionType": "FEATURE_MATCHING",
                 "correctAnswer": "B"
               }

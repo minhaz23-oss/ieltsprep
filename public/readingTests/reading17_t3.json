@@ -53,6 +53,18 @@
                 "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "habitat"
               }
+            ],
+            "notesStructure": [
+              {
+                "period": "",
+                "points": [
+                  "ate an entirely 1_____ diet",
+                  "probably depended mainly on 2_____ when hunting",
+                  "young spent first months of life inside its mother's 3_____",
+                  "last evidence in mainland Australia is a 3,100-year-old 4_____",
+                  "reduction in 5_____ and available sources of food were partly responsible for decline in Tasmania"
+                ]
+              }
             ]
           },
           {

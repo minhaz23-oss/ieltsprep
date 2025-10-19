@@ -17,7 +17,10 @@
             "instructions": "Complete the table below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 1-7 on your answer sheet.",
             "questionType": "TABLE_COMPLETION",
             "tableStructure": {
-              "headers": ["Section of website", "Comments"],
+              "headers": [
+                "Section of website",
+                "Comments"
+              ],
               "rows": [
                 {
                   "section": "Database of tourism services",
@@ -35,7 +38,9 @@
                 },
                 {
                   "section": "Information on driving routes",
-                  "comments": ["varied depending on the 5_____"]
+                  "comments": [
+                    "varied depending on the 5_____"
+                  ]
                 },
                 {
                   "section": "Travel Planner",
@@ -45,7 +50,9 @@
                 },
                 {
                   "section": "'Your Words'",
-                  "comments": ["travelers could send a link to their 7_____"]
+                  "comments": [
+                    "travelers could send a link to their 7_____"
+                  ]
                 }
               ]
             },
@@ -170,16 +177,6 @@
             "sectionId": "section_2_1",
             "instructions": "Reading Passage 2 has six paragraphs, A-F. Choose the correct heading for each paragraph from the list of headings below. Write the correct number, i-viii, in boxes 14-19 on your answer sheet.",
             "questionType": "HEADING_MATCHING",
-            "headingsList": [
-              "i - The productive outcomes that may result from boredom",
-              "ii - What teachers can do to prevent boredom",
-              "iii - A new explanation and a new cure for boredom",
-              "iv - Problems with a scientific approach to boredom",
-              "v - A potential danger arising from boredom",
-              "vi - Creating a system of classification for feelings of boredom",
-              "vii - Age groups most affected by boredom",
-              "viii - Identifying those most affected by boredom"
-            ],
             "questions": [
               {
                 "questionNumber": 14,
@@ -223,6 +220,16 @@
                 "questionType": "HEADING_MATCHING",
                 "correctAnswer": "iii"
               }
+            ],
+            "optionsList": [
+              "i - The productive outcomes that may result from boredom",
+              "ii - What teachers can do to prevent boredom",
+              "iii - A new explanation and a new cure for boredom",
+              "iv - Problems with a scientific approach to boredom",
+              "v - A potential danger arising from boredom",
+              "vi - Creating a system of classification for feelings of boredom",
+              "vii - Age groups most affected by boredom",
+              "viii - Identifying those most affected by boredom"
             ]
           },
           {

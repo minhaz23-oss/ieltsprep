@@ -247,30 +247,30 @@
               {
                 "questionNumber": 20,
                 "questionId": "q20",
-                "person": "Peter Toohey",
                 "questionType": "FEATURE_MATCHING",
-                "correctAnswer": "E"
+                "correctAnswer": "E",
+                "statement": "Peter Toohey"
               },
               {
                 "questionNumber": 21,
                 "questionId": "q21",
-                "person": "Thomas Goetz",
                 "questionType": "FEATURE_MATCHING",
-                "correctAnswer": "B"
+                "correctAnswer": "B",
+                "statement": "Thomas Goetz"
               },
               {
                 "questionNumber": 22,
                 "questionId": "q22",
-                "person": "John Eastwood",
                 "questionType": "FEATURE_MATCHING",
-                "correctAnswer": "D"
+                "correctAnswer": "D",
+                "statement": "John Eastwood"
               },
               {
                 "questionNumber": 23,
                 "questionId": "q23",
-                "person": "Francoise Wemelsfelder",
                 "questionType": "FEATURE_MATCHING",
-                "correctAnswer": "A"
+                "correctAnswer": "A",
+                "statement": "Francoise Wemelsfelder"
               }
             ]
           },

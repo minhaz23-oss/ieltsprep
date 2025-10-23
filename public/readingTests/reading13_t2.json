@@ -48,7 +48,6 @@
               {
                 "questionNumber": 1,
                 "questionId": "q1",
-                "period": "Biblical times",
                 "context": "added to _____",
                 "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "oils"
@@ -56,7 +55,6 @@
               {
                 "questionNumber": 2,
                 "questionId": "q2",
-                "period": "Biblical times",
                 "context": "used to show _____ between people",
                 "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "friendship"
@@ -64,7 +62,6 @@
               {
                 "questionNumber": 3,
                 "questionId": "q3",
-                "period": "Ancient Rome",
                 "context": "used for its sweet smell at _____",
                 "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "funerals"
@@ -72,7 +69,6 @@
               {
                 "questionNumber": 4,
                 "questionId": "q4",
-                "period": "Middle Ages",
                 "context": "was an indication of a person's _____",
                 "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "wealth"
@@ -80,7 +76,6 @@
               {
                 "questionNumber": 5,
                 "questionId": "q5",
-                "period": "Middle Ages",
                 "context": "known as a treatment for _____ and other health problems",
                 "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "indigestion"
@@ -88,7 +83,6 @@
               {
                 "questionNumber": 6,
                 "questionId": "q6",
-                "period": "Middle Ages",
                 "context": "grown in _____",
                 "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "India"
@@ -96,7 +90,6 @@
               {
                 "questionNumber": 7,
                 "questionId": "q7",
-                "period": "Middle Ages",
                 "context": "merchants used _____ to bring it to the Mediterranean",
                 "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "camels"
@@ -104,7 +97,6 @@
               {
                 "questionNumber": 8,
                 "questionId": "q8",
-                "period": "Middle Ages",
                 "context": "arrived in the Mediterranean at _____",
                 "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "Alexandria"
@@ -112,7 +104,6 @@
               {
                 "questionNumber": 9,
                 "questionId": "q9",
-                "period": "Middle Ages",
                 "context": "traders took it to _____ and sold it to destinations around Europe",
                 "questionType": "FILL_IN_BLANK",
                 "correctAnswer": "Venice"
@@ -214,23 +205,23 @@
               {
                 "questionNumber": 18,
                 "questionId": "q18",
-                "finding": "People are more trusting when affected by oxytocin.",
                 "questionType": "FEATURE_MATCHING",
-                "correctAnswer": "A"
+                "correctAnswer": "A",
+                "statement": "People are more trusting when affected by oxytocin."
               },
               {
                 "questionNumber": 19,
                 "questionId": "q19",
-                "finding": "Oxytocin increases people's feelings of jealousy.",
                 "questionType": "FEATURE_MATCHING",
-                "correctAnswer": "B"
+                "correctAnswer": "B",
+                "statement": "Oxytocin increases people's feelings of jealousy."
               },
               {
                 "questionNumber": 20,
                 "questionId": "q20",
-                "finding": "The effect of oxytocin varies from one type of person to another.",
                 "questionType": "FEATURE_MATCHING",
-                "correctAnswer": "C"
+                "correctAnswer": "C",
+                "statement": "The effect of oxytocin varies from one type of person to another."
               }
             ]
           },

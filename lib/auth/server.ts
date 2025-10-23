@@ -124,9 +124,10 @@ export async function isAdmin(): Promise<boolean> {
       return false;
     }
 
-    // Check admin status in Firestore
-    const adminDoc = await db.collection('admins').doc(user.uid).get();
-    return adminDoc.exists;
+    // Check admin status in users collection
+    const userDoc = await db.collection('users').doc(user.uid).get();
+    const userData = userDoc.data();
+    return userData?.isAdmin === true;
   } catch (error) {
     console.error('Error checking admin status:', error);
     return false;

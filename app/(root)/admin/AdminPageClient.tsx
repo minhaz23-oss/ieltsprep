@@ -145,6 +145,25 @@ const AdminPageClient: React.FC<AdminPageClientProps> = ({ user, initialMigratio
               </button>
             </div>
 
+            {/* Reading Tests Card */}
+            <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
+              <div className="flex items-center mb-4">
+                <svg className="w-8 h-8 text-purple-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
+                </svg>
+                <h3 className="text-xl font-bold text-gray-900">Reading Tests</h3>
+              </div>
+              <p className="text-gray-600 mb-4">
+                Manage IELTS reading tests, upload new tests, and migrate existing JSON files to Firestore.
+              </p>
+              <button
+                onClick={() => router.push('/admin/reading')}
+                className="w-full bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors"
+              >
+                Manage Reading Tests
+              </button>
+            </div>
+
             {/* System Stats Card */}
             <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
               <div className="flex items-center mb-4">

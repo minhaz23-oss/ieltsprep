@@ -104,8 +104,8 @@ const IELTSReadingTest = () => {
         setLoading(true);
         setError(null);
 
-        // Load from local JSON file
-        const response = await fetch(`/readingTests/${testId}.json`);
+        // Load from Firestore via API
+        const response = await fetch(`/api/reading-tests/${testId}`);
         
         if (!response.ok) {
           throw new Error('Failed to load test data');
@@ -434,26 +434,41 @@ const IELTSReadingTest = () => {
         {/* PARAGRAPH_MATCHING */}
         {section.questionType === 'PARAGRAPH_MATCHING' && (
           <div className="space-y-4">
-            {section.questions.map(q => (
-              <div key={q.questionNumber} className="bg-gray-50 p-4 rounded">
-                <div className="flex items-start gap-3">
-                  <span className="font-bold text-primary">{q.questionNumber}.</span>
-                  <div className="flex-1">
-                    <p className="mb-2">{q.information}</p>
-                    <select
-                      className="border-2 border-primary bg-yellow-50 px-3 py-2 rounded font-sans text-base"
-                      value={answers[q.questionNumber] as string || ''}
-                      onChange={(e) => handleAnswerChange(q.questionNumber, e.target.value)}
-                    >
-                      <option value="">Select</option>
-                      {['A', 'B', 'C', 'D', 'E', 'F'].map(letter => (
-                        <option key={letter} value={letter}>{letter}</option>
-                      ))}
-                    </select>
+            {section.questions.map(q => {
+              // Extract paragraph range from instructions (e.g., "A-E" from "Write the correct letter, A-E")
+              const match = section.instructions.match(/\b([A-Z])-([A-Z])\b/);
+              let paragraphOptions = ['A', 'B', 'C', 'D', 'E', 'F'];
+              
+              if (match) {
+                const startChar = match[1].charCodeAt(0);
+                const endChar = match[2].charCodeAt(0);
+                paragraphOptions = [];
+                for (let i = startChar; i <= endChar; i++) {
+                  paragraphOptions.push(String.fromCharCode(i));
+                }
+              }
+              
+              return (
+                <div key={q.questionNumber} className="bg-gray-50 p-4 rounded">
+                  <div className="flex items-start gap-3">
+                    <span className="font-bold text-primary">{q.questionNumber}.</span>
+                    <div className="flex-1">
+                      <p className="mb-2">{q.information}</p>
+                      <select
+                        className="border-2 border-primary bg-yellow-50 px-3 py-2 rounded font-sans text-base"
+                        value={answers[q.questionNumber] as string || ''}
+                        onChange={(e) => handleAnswerChange(q.questionNumber, e.target.value)}
+                      >
+                        <option value="">Select</option>
+                        {paragraphOptions.map(letter => (
+                          <option key={letter} value={letter}>{letter}</option>
+                        ))}
+                      </select>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         )}
 
@@ -537,14 +552,20 @@ const IELTSReadingTest = () => {
             })()}
             <div className="space-y-3">
               {section.questions.map(q => {
-                const displayText = q.person || q.finding || q.statement || '';
+                // Updated with better fallback - now includes all possible field names
+                const displayText = q.statement || q.person || q.finding || q.context || '';
                 const optionsList = section.optionsList || section.ideaList || section.researchersList || section.companiesList || [];
+
+                // Log warning if no text found
+                if (!displayText && typeof window !== 'undefined') {
+                  console.warn(`FEATURE_MATCHING: Missing text for question ${q.questionNumber}`);
+                }
 
                 return (
                   <div key={q.questionNumber} className="flex items-start gap-2 bg-gray-50 p-3 rounded">
                     <span className="font-semibold min-w-[40px]">{q.questionNumber}.</span>
                     <div className="flex-1">
-                      <span>{displayText}</span>
+                      <span>{displayText || `[Question ${q.questionNumber} text missing]`}</span>
                     </div>
                     {renderInput(q.questionNumber, 'FEATURE_MATCHING', undefined, optionsList)}
                   </div>
@@ -634,15 +655,23 @@ const IELTSReadingTest = () => {
               ))}
             </div>
             <div className="space-y-3">
-              {section.questions.map(q => (
-                <div key={q.questionNumber} className="flex items-start gap-2 bg-gray-50 p-3 rounded">
-                  <span className="font-semibold">{q.questionNumber}.</span>
-                  <div className="flex-1">
-                    <span>{q.sentenceStart}</span>
-                    {renderInput(q.questionNumber, 'SENTENCE_COMPLETION', undefined, section.endingsList)}
+              {section.questions.map(q => {
+                // Better error handling for sentence start
+                const sentenceText = q.sentenceStart || q.context || '';
+                if (!sentenceText && typeof window !== 'undefined') {
+                  console.warn(`SENTENCE_COMPLETION: Missing sentenceStart for question ${q.questionNumber}`);
+                }
+                
+                return (
+                  <div key={q.questionNumber} className="flex items-start gap-2 bg-gray-50 p-3 rounded">
+                    <span className="font-semibold">{q.questionNumber}.</span>
+                    <div className="flex-1">
+                      <span>{sentenceText || `[Question ${q.questionNumber} text missing]`}</span>
+                      {renderInput(q.questionNumber, 'SENTENCE_COMPLETION', undefined, section.endingsList)}
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         )}
@@ -651,15 +680,22 @@ const IELTSReadingTest = () => {
         {section.questionType === 'SENTENCE_COMPLETION' && !section.endingsList && (
           <div className="space-y-3">
             {section.questions.map(q => {
+              // Better fallback for context
+              const contextText = q.context || q.sentenceStart || '';
+              
+              if (!contextText && typeof window !== 'undefined') {
+                console.warn(`SENTENCE_COMPLETION: Missing context for question ${q.questionNumber}`);
+              }
+              
               // Split context to get text before and after the blank
-              const parts = q.context?.split('_____') || [q.context || ''];
-              const beforeText = parts[0];
-              const afterText = parts[1];
+              const parts = contextText.split('_____');
+              const beforeText = parts[0] || contextText;
+              const afterText = parts[1] || '';
               
               return (
                 <div key={q.questionNumber} className="flex items-baseline flex-wrap gap-1 bg-gray-50 p-3 rounded">
                   <span className="font-semibold min-w-[40px]">{q.questionNumber}.</span>
-                  <span>{beforeText}</span>
+                  <span>{beforeText || `[Question ${q.questionNumber} text missing]`}</span>
                   {renderInput(q.questionNumber, 'FILL_IN_BLANK')}
                   {afterText && <span>{afterText}</span>}
                 </div>

@@ -345,7 +345,7 @@
             "instructions": "Complete the summary using the list of phrases, A-J, below. Write the correct letter, A-J, in boxes 31-36 on your answer sheet.",
             "questionType": "SUMMARY_COMPLETION",
             "summaryTitle": "What happens when people encounter misinformation?",
-            "phrasesList": [
+            "wordsList": [
               "A - constant conflict",
               "B - additional evidence",
               "C - different locations",

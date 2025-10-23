@@ -2,13 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '@/lib/hooks/useAuth';
-import TestManager from '@/components/admin/TestManager';
 import { toast } from 'sonner';
 import { useRouter } from 'next/navigation';
+import TestManager from '@/components/admin/TestManager';
 
-const AdminListeningPage = () => {
+const AdminReadingPage = () => {
   const { user, loading: authLoading } = useAuth();
-  const router = useRouter()
   const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
   const [migrationStatus, setMigrationStatus] = useState<{
@@ -17,6 +16,7 @@ const AdminListeningPage = () => {
     migrationNeeded: boolean;
   } | null>(null);
   const [migrating, setMigrating] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const checkAdminStatus = async () => {
@@ -41,8 +41,8 @@ const AdminListeningPage = () => {
 
           if (data.isAdmin) {
             // Check migration status using server action
-            const { checkMigrationStatus } = await import('@/lib/actions/admin.actions');
-            const migrationResult = await checkMigrationStatus();
+            const { checkReadingMigrationStatus } = await import('@/lib/actions/admin.actions');
+            const migrationResult = await checkReadingMigrationStatus();
             if (migrationResult.success && migrationResult.data) {
               setMigrationStatus(migrationResult.data);
             }
@@ -65,20 +65,20 @@ const AdminListeningPage = () => {
   }, [user, authLoading]);
 
   const handleMigration = async () => {
-    if (!confirm('Are you sure you want to migrate all JSON files to Firestore? This action cannot be undone.')) {
+    if (!confirm('Are you sure you want to migrate all reading test JSON files to Firestore? This action cannot be undone.')) {
       return;
     }
 
     try {
       setMigrating(true);
-      const { migrateListeningTests, checkMigrationStatus } = await import('@/lib/actions/admin.actions');
-      const result = await migrateListeningTests();
+      const { migrateReadingTests, checkReadingMigrationStatus } = await import('@/lib/actions/admin.actions');
+      const result = await migrateReadingTests();
 
       if (result.success && result.summary) {
         toast.success(`Migration completed! ${result.summary.successful} tests migrated successfully.`);
         
         // Refresh migration status
-        const migrationResult = await checkMigrationStatus();
+        const migrationResult = await checkReadingMigrationStatus();
         if (migrationResult.success && migrationResult.data) {
           setMigrationStatus(migrationResult.data);
         }
@@ -131,8 +131,8 @@ const AdminListeningPage = () => {
       <div className="bg-white border-b shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">Admin Panel - Listening Tests</h1>
-            <p className="text-gray-600 mt-1">Manage IELTS listening tests and migrate data</p>
+            <h1 className="text-3xl font-bold text-gray-900">Admin Panel - Reading Tests</h1>
+            <p className="text-gray-600 mt-1">Manage IELTS reading tests and migrate data</p>
           </div>
           <button
             onClick={() => router.push('/admin')}
@@ -162,7 +162,7 @@ const AdminListeningPage = () => {
                   disabled={migrating}
                   className="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {migrating ? 'Migrating...' : 'Migrate Tests to Firestore'}
+                  {migrating ? 'Migrating...' : 'Migrate Reading Tests to Firestore'}
                 </button>
               </div>
             </div>
@@ -179,7 +179,7 @@ const AdminListeningPage = () => {
               <div>
                 <h3 className="text-lg font-semibold text-green-800">Migration Complete</h3>
                 <p className="text-green-700">
-                  All {migrationStatus.firestoreDocuments} tests are successfully stored in Firestore.
+                  All {migrationStatus.firestoreDocuments} reading tests are successfully stored in Firestore.
                 </p>
               </div>
             </div>
@@ -187,10 +187,10 @@ const AdminListeningPage = () => {
         )}
 
         {/* Test Manager */}
-        <TestManager testType="listening" isAdmin={isAdmin} />
+        <TestManager testType="reading" isAdmin={isAdmin} />
       </div>
     </div>
   );
 };
 
-export default AdminListeningPage;
+export default AdminReadingPage;

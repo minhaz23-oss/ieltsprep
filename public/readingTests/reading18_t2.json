@@ -267,7 +267,7 @@
             "instructions": "Complete the summary using the list of phrases, A-F, below. Write the correct letter, A-F, in boxes 24-26 on your answer sheet.",
             "questionType": "SUMMARY_COMPLETION",
             "summaryTitle": "Using AI in the UK health system",
-            "phrasesList": [
+            "wordsList": [
               "A - medical practitioners",
               "B - specialised tasks",
               "C - available resources",

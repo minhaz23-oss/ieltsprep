@@ -354,7 +354,7 @@
             "instructions": "Complete the summary using the list of phrases, A-I, below. Write the correct letter, A-I, in boxes 31-35 on your answer sheet.",
             "questionType": "SUMMARY_COMPLETION",
             "summaryTitle": "Is streaming effective?",
-            "phrasesList": [
+            "wordsList": [
               "A - wrong classes",
               "B - lower expectations",
               "C - average learners",

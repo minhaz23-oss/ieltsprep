@@ -1,7 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
+import { requireAuth } from '@/lib/auth/server';
 
-const MockTestPage = () => {
+const MockTestPage = async () => {
+  // Require authentication to access this page
+  await requireAuth();
   return (
     <div className="min-h-screen px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24 py-8 sm:py-12 md:py-16 font-semibold bg-gradient-to-br from-blue-50 via-white to-purple-50">
       {/* Back Button */}

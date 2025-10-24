@@ -144,6 +144,118 @@ const IELTSListeningTest = () => {
     if (timerRef.current) clearTimeout(timerRef.current);
   }, []);
 
+  // Quick fill for testing - fills 70% correct, 30% wrong
+  const handleQuickFill = useCallback(() => {
+    if (!testData) return;
+    
+    const newAnswers: Record<number, string | string[]> = {};
+    let questionIndex = 0;
+    
+    const processFields = (fields: FormField[]) => {
+      fields.forEach(field => {
+        if (field.questionNumber && field.correctAnswer) {
+          questionIndex++;
+          const shouldBeWrong = questionIndex % 3 === 0 || questionIndex % 7 === 0;
+          
+          if (shouldBeWrong) {
+            if (typeof field.correctAnswer === 'string') {
+              if (field.correctAnswer.length === 1 && /^[A-Z]$/i.test(field.correctAnswer)) {
+                const wrongLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'].filter(l => l !== field.correctAnswer.toUpperCase());
+                newAnswers[field.questionNumber] = wrongLetters[Math.floor(Math.random() * wrongLetters.length)];
+              } else {
+                newAnswers[field.questionNumber] = 'wrong answer';
+              }
+            }
+          } else {
+            if (typeof field.correctAnswer === 'string') {
+              const acceptableAnswers = field.correctAnswer.split('/');
+              newAnswers[field.questionNumber] = acceptableAnswers[0].trim();
+            } else {
+              newAnswers[field.questionNumber] = field.correctAnswer;
+            }
+          }
+        }
+        if (field.listItems) {
+          processFields(field.listItems);
+        }
+      });
+    };
+    
+    testData.sections.forEach(section => {
+      section.questionGroups.forEach(group => {
+        if (group.content.questions && Array.isArray(group.content.questions)) {
+          group.content.questions.forEach(q => {
+            questionIndex++;
+            const shouldBeWrong = questionIndex % 3 === 0 || questionIndex % 7 === 0;
+            
+            if (shouldBeWrong) {
+              if (typeof q.correctAnswer === 'string') {
+                if (q.correctAnswer.length === 1 && /^[A-Z]$/i.test(q.correctAnswer)) {
+                  const wrongLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'].filter(l => l !== q.correctAnswer.toUpperCase());
+                  newAnswers[q.questionNumber] = wrongLetters[Math.floor(Math.random() * wrongLetters.length)];
+                } else {
+                  newAnswers[q.questionNumber] = 'wrong answer';
+                }
+              } else if (Array.isArray(q.correctAnswer)) {
+                newAnswers[q.questionNumber] = ['A', 'B'];
+              }
+            } else {
+              if (Array.isArray(q.correctAnswer)) {
+                newAnswers[q.questionNumber] = q.correctAnswer;
+              } else if (typeof q.correctAnswer === 'string') {
+                const acceptableAnswers = q.correctAnswer.split('/');
+                newAnswers[q.questionNumber] = acceptableAnswers[0].trim();
+              }
+            }
+          });
+        }
+        
+        if (group.content.items && Array.isArray(group.content.items)) {
+          group.content.items.forEach(item => {
+            questionIndex++;
+            const shouldBeWrong = questionIndex % 3 === 0 || questionIndex % 7 === 0;
+            
+            if (shouldBeWrong) {
+              if (item.correctAnswer.length === 1 && /^[A-Z]$/i.test(item.correctAnswer)) {
+                const wrongLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'].filter(l => l !== item.correctAnswer.toUpperCase());
+                newAnswers[item.questionNumber] = wrongLetters[Math.floor(Math.random() * wrongLetters.length)];
+              } else {
+                newAnswers[item.questionNumber] = 'wrong answer';
+              }
+            } else {
+              const acceptableAnswers = item.correctAnswer.split('/');
+              newAnswers[item.questionNumber] = acceptableAnswers[0].trim();
+            }
+          });
+        }
+        
+        if (group.content.fields && Array.isArray(group.content.fields)) {
+          processFields(group.content.fields);
+        }
+        
+        if (group.content.sections && Array.isArray(group.content.sections)) {
+          group.content.sections.forEach(section => {
+            section.content.forEach(item => {
+              if (item.questionNumber && item.correctAnswer) {
+                questionIndex++;
+                const shouldBeWrong = questionIndex % 3 === 0 || questionIndex % 7 === 0;
+                
+                if (shouldBeWrong) {
+                  newAnswers[item.questionNumber] = 'wrong answer';
+                } else {
+                  const acceptableAnswers = item.correctAnswer.split('/');
+                  newAnswers[item.questionNumber] = acceptableAnswers[0].trim();
+                }
+              }
+            });
+          });
+        }
+      });
+    });
+    
+    setAnswers(newAnswers);
+  }, [testData]);
+
   // ==================== TIMER ====================
   useEffect(() => {
     if (timeRemaining > 0 && !loading && !error && !showResults) {
@@ -747,12 +859,21 @@ const IELTSListeningTest = () => {
 
         {/* Submit Button */}
         <div className="text-center mt-12 mb-8">
-          <button
-            onClick={handleSubmit}
-            className="bg-green-600 text-white text-lg px-8 py-3 rounded hover:bg-green-700 font-semibold"
-          >
-            Submit Test
-          </button>
+          <div className="flex gap-4 justify-center items-center">
+            <button
+              onClick={handleQuickFill}
+              className="bg-blue-600 text-white text-lg px-8 py-3 rounded hover:bg-blue-700 font-semibold"
+            >
+              🚀 Quick Fill (Test)
+            </button>
+            <button
+              onClick={handleSubmit}
+              className="bg-green-600 text-white text-lg px-8 py-3 rounded hover:bg-green-700 font-semibold"
+            >
+              Submit Test
+            </button>
+          </div>
+          <p className="text-sm text-gray-500 mt-2">Quick Fill auto-answers questions for testing (70% correct, 30% wrong)</p>
         </div>
 
         {/* IELTS Listening Instructions, Tips & Scoring Guide */}

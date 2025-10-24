@@ -9,9 +9,9 @@ import type { NextRequest } from 'next/server';
 
 // Define route patterns
 const authRoutes = ['/sign-in', '/sign-up'];
-const protectedRoutes = ['/dashboard', '/admin', '/exercise', '/practice', '/mock-test'];
+const protectedRoutes = ['/dashboard', '/admin', '/exercise/speaking', '/mock-test'];
 const adminRoutes = ['/admin'];
-const publicRoutes = ['/', '/pricing', '/tips-resources'];
+const publicRoutes = ['/', '/pricing', '/tips-resources', '/exercise'];
 
 /**
  * Checks if a path matches any of the route patterns

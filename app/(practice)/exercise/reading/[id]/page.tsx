@@ -3,6 +3,8 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
+import PremiumResultsAnalysis from '@/components/reading/PremiumResultsAnalysis';
+import { getPremiumStatus } from '@/lib/utils/premium';
 
 // ==================== INTERFACES ====================
 
@@ -94,6 +96,8 @@ const IELTSReadingTest = () => {
   const [timeRemaining, setTimeRemaining] = useState(60 * 60);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [isPremium, setIsPremium] = useState(false);
+  const [premiumLoading, setPremiumLoading] = useState(true);
   
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -130,8 +134,22 @@ const IELTSReadingTest = () => {
       }
     };
 
+    const loadPremiumStatus = async () => {
+      try {
+        setPremiumLoading(true);
+        const { isPremium: premiumStatus } = await getPremiumStatus();
+        setIsPremium(premiumStatus);
+      } catch (err) {
+        console.error('Error loading premium status:', err);
+        setIsPremium(false);
+      } finally {
+        setPremiumLoading(false);
+      }
+    };
+
     if (testId) {
       loadTestData();
+      loadPremiumStatus();
     }
   }, [testId]);
 
@@ -161,6 +179,55 @@ const IELTSReadingTest = () => {
     setShowResults(true);
     if (timerRef.current) clearTimeout(timerRef.current);
   }, []);
+
+  // Quick fill for testing - fills 70% correct, 30% wrong
+  const handleQuickFill = useCallback(() => {
+    if (!testData) return;
+    
+    const newAnswers: Record<number, string | string[]> = {};
+    let questionIndex = 0;
+    
+    testData.test.passages.forEach(passage => {
+      passage.questionSections.forEach(section => {
+        section.questions.forEach(q => {
+          questionIndex++;
+          // Make every 3rd or 4th answer wrong for testing
+          const shouldBeWrong = questionIndex % 3 === 0 || questionIndex % 7 === 0;
+          
+          if (shouldBeWrong) {
+            // Provide wrong answer
+            if (typeof q.correctAnswer === 'string') {
+              if (q.correctAnswer.length <= 3 && /^[A-Z]+$/i.test(q.correctAnswer)) {
+                // For letter answers, pick a different letter
+                const wrongLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'].filter(l => l !== q.correctAnswer.toUpperCase());
+                newAnswers[q.questionNumber] = wrongLetters[Math.floor(Math.random() * wrongLetters.length)];
+              } else if (['TRUE', 'FALSE', 'NOT GIVEN'].includes(q.correctAnswer.toUpperCase())) {
+                const options = ['TRUE', 'FALSE', 'NOT GIVEN'].filter(o => o !== q.correctAnswer.toUpperCase());
+                newAnswers[q.questionNumber] = options[Math.floor(Math.random() * options.length)];
+              } else if (['YES', 'NO', 'NOT GIVEN'].includes(q.correctAnswer.toUpperCase())) {
+                const options = ['YES', 'NO', 'NOT GIVEN'].filter(o => o !== q.correctAnswer.toUpperCase());
+                newAnswers[q.questionNumber] = options[Math.floor(Math.random() * options.length)];
+              } else {
+                // For text answers, provide a plausible wrong answer
+                newAnswers[q.questionNumber] = 'wrong answer';
+              }
+            }
+          } else {
+            // Provide correct answer
+            if (Array.isArray(q.correctAnswer)) {
+              newAnswers[q.questionNumber] = q.correctAnswer;
+            } else if (typeof q.correctAnswer === 'string') {
+              // Handle multiple acceptable answers separated by '/'
+              const acceptableAnswers = q.correctAnswer.split('/');
+              newAnswers[q.questionNumber] = acceptableAnswers[0].trim();
+            }
+          }
+        });
+      });
+    });
+    
+    setAnswers(newAnswers);
+  }, [testData]);
 
   // ==================== TIMER ====================
   useEffect(() => {
@@ -860,6 +927,22 @@ const IELTSReadingTest = () => {
               </button>
             </div>
           </div>
+
+          {/* Premium Results Analysis */}
+          {!premiumLoading && testData && (
+            <PremiumResultsAnalysis
+              testData={testData}
+              answers={answers}
+              isPremium={isPremium}
+            />
+          )}
+          
+          {premiumLoading && (
+            <div className="bg-white rounded-lg p-8 text-center">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+              <p className="text-gray-600">Loading analysis...</p>
+            </div>
+          )}
         </div>
       </div>
     );
@@ -921,12 +1004,21 @@ const IELTSReadingTest = () => {
 
         {/* Submit Button */}
         <div className="text-center mt-12 mb-8">
-          <button
-            onClick={handleSubmit}
-            className="bg-green-600 text-white text-lg px-8 py-3 rounded hover:bg-green-700 font-semibold"
-          >
-            Submit Test
-          </button>
+          <div className="flex gap-4 justify-center items-center">
+            <button
+              onClick={handleQuickFill}
+              className="bg-blue-600 text-white text-lg px-8 py-3 rounded hover:bg-blue-700 font-semibold"
+            >
+              🚀 Quick Fill (Test)
+            </button>
+            <button
+              onClick={handleSubmit}
+              className="bg-green-600 text-white text-lg px-8 py-3 rounded hover:bg-green-700 font-semibold"
+            >
+              Submit Test
+            </button>
+          </div>
+          <p className="text-sm text-gray-500 mt-2">Quick Fill auto-answers questions for testing (70% correct, 30% wrong)</p>
         </div>
       </div>
     </div>

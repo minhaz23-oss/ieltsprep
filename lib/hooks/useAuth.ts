@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { onAuthStateChanged, User } from 'firebase/auth'
+import { onAuthStateChanged, User, signOut as firebaseSignOut } from 'firebase/auth'
 import { auth, db } from '@/firebase/client'
 import { doc, onSnapshot } from 'firebase/firestore';
 
@@ -18,7 +18,25 @@ export function useAuth() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const unsubscribeAuth = onAuthStateChanged(auth, (user) => {
+    const unsubscribeAuth = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        // Verify server-side session exists when client-side auth exists
+        try {
+          const response = await fetch('/api/validate-session');
+          if (response.status === 401) {
+            // Server session doesn't exist, sign out client-side
+            console.log('Session mismatch detected - signing out client');
+            await firebaseSignOut(auth);
+            setUser(null);
+            setUserProfile(null);
+            setLoading(false);
+            return;
+          }
+        } catch (error) {
+          console.error('Session validation error:', error);
+        }
+      }
+      
       setUser(user)
       if (!user) {
         // If user is null, clear profile and set loading to false

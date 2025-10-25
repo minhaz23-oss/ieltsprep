@@ -1,0 +1,35 @@
+{
+  "testTitle": "Writing Practice Test 1",
+  "testType": "ielts writing mock test",
+  "tasks": [
+    {
+      "taskNumber": 1,
+      "timeAllocation": "20 minutes",
+      "instructions": "You should spend about 20 minutes on this task",
+      "description": "The plans below show a student room for two people and a student room for one person at an Australian university.",
+      "hasImage": true,
+      "images": [
+        {
+          "url": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/writingImages/diagram.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL3dyaXRpbmdJbWFnZXMvZGlhZ3JhbS5wbmciLCJpYXQiOjE3NjEzNzMyNzUsImV4cCI6NDkxNDk3MzI3NX0.GA_Fxjb2SYyXlNjuxDehCFw0CSFKe3WfUoTPfSlu0rU",
+          "altText": "Floor plans showing student room layouts"
+        }
+      ],
+      "minimumWords": 150,
+      "taskRequirements": "Write at least 150 words."
+    },
+    {
+      "taskNumber": 2,
+      "timeAllocation": "40 minutes",
+      "instructions": "You should spend about 40 minutes on this task",
+      "promptIntro": "Write about the following topic:",
+      "topic": "In the modern world, people no longer need to use food or products from animals, such as medicine and clothing. Do you agree or disagree with that statement?",
+      "hasImage": false,
+      "images": [],
+      "requirements": [
+        "Give reasons for your answer and include any relevant examples from your own knowledge or experience."
+      ],
+      "minimumWords": 250,
+      "taskRequirements": "Write at least 250 words."
+    }
+  ]
+}

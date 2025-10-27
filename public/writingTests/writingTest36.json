@@ -1,0 +1,35 @@
+{
+  "testTitle": "Writing Practice Test 36",
+  "testType": "ielts writing mock test",
+  "tasks": [
+    {
+      "taskNumber": 1,
+      "timeAllocation": "20 minutes",
+      "instructions": "You should spend about 20 minutes on this task",
+      "description": "The line graph below shows the oil production and consumption in China between 1982 and 2006.",
+      "hasImage": true,
+      "images": [
+        {
+          "url": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/writingImages/diagram36.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL3dyaXRpbmdJbWFnZXMvZGlhZ3JhbTM2LmpwZyIsImlhdCI6MTc2MTQ5NDg5OCwiZXhwIjo0OTE1MDk0ODk4fQ.jfij2QNLoN5Wo7SZFMG8P02CNmmVJcG7IszzjXfUiqA",
+          "altText": "Line graph showing oil production and consumption in China"
+        }
+      ],
+      "minimumWords": 150,
+      "taskRequirements": "Write at least 150 words."
+    },
+    {
+      "taskNumber": 2,
+      "timeAllocation": "40 minutes",
+      "instructions": "You should spend about 40 minutes on this task",
+      "promptIntro": "Write about the following topic:",
+      "topic": "People often think about creating an ideal society, but most of the times fail in making this happen. What is your opinion about an ideal society How can we create an ideal society?",
+      "hasImage": false,
+      "images": [],
+      "requirements": [
+        "Give reasons for your answer and include any relevant examples from your own knowledge or experience."
+      ],
+      "minimumWords": 250,
+      "taskRequirements": "Write at least 250 words."
+    }
+  ]
+}

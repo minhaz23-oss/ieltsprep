@@ -1,0 +1,35 @@
+{
+  "testTitle": "Writing Practice Test 21",
+  "testType": "ielts writing mock test",
+  "tasks": [
+    {
+      "taskNumber": 1,
+      "timeAllocation": "20 minutes",
+      "instructions": "You should spend about 20 minutes on this task",
+      "description": "The chart below shows the number of jobs in tourism-related industries in one UK city between 1989 and 2009.",
+      "hasImage": true,
+      "images": [
+        {
+          "url": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/writingImages/diagram21.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL3dyaXRpbmdJbWFnZXMvZGlhZ3JhbTIxLmpwZyIsImlhdCI6MTc2MTQ5NDg4OSwiZXhwIjo0OTE1MDk0ODg5fQ.u0U-Stnj5dAvgAT51PGKPpMCYTpfhYwMsaX5gfFI7gw",
+          "altText": "Chart showing number of jobs in tourism-related industries"
+        }
+      ],
+      "minimumWords": 150,
+      "taskRequirements": "Write at least 150 words."
+    },
+    {
+      "taskNumber": 2,
+      "timeAllocation": "40 minutes",
+      "instructions": "You should spend about 40 minutes on this task",
+      "promptIntro": "Write about the following topic:",
+      "topic": "In many nations, people in huge cites either live alone or in small family units, instead of a large, extended family. Is this a positive or negative trend?",
+      "hasImage": false,
+      "images": [],
+      "requirements": [
+        "Give reasons for your answer and include any relevant examples from your own knowledge or experience."
+      ],
+      "minimumWords": 250,
+      "taskRequirements": "Write at least 250 words."
+    }
+  ]
+}

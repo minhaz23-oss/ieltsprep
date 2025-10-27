@@ -1,0 +1,35 @@
+{
+  "testTitle": "Writing Practice Test 7",
+  "testType": "ielts writing mock test",
+  "tasks": [
+    {
+      "taskNumber": 1,
+      "timeAllocation": "20 minutes",
+      "instructions": "You should spend about 20 minutes on this task",
+      "description": "The bar chart shows the average size class in primary schools and lower secondary schools in 6 countries compared to the world average in 2006.",
+      "hasImage": true,
+      "images": [
+        {
+          "url": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/writingImages/diagram7.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL3dyaXRpbmdJbWFnZXMvZGlhZ3JhbTcuanBnIiwiaWF0IjoxNzYxNDkzNDk3LCJleHAiOjQ5MTUwOTM0OTd9.pkV4U-WdQDMbfKvg47JdSFJ0UvZUUOlgrDot8YGwWnQ",
+          "altText": "Bar chart showing average class size in schools"
+        }
+      ],
+      "minimumWords": 150,
+      "taskRequirements": "Write at least 150 words."
+    },
+    {
+      "taskNumber": 2,
+      "timeAllocation": "40 minutes",
+      "instructions": "You should spend about 40 minutes on this task",
+      "promptIntro": "Write about the following topic:",
+      "topic": "More and more people want to buy clothes, cars and other items from famous brands. What are the reasons? Do you think it is a positive or negative development?",
+      "hasImage": false,
+      "images": [],
+      "requirements": [
+        "Give reasons for your answer and include any relevant examples from your own knowledge or experience."
+      ],
+      "minimumWords": 250,
+      "taskRequirements": "Write at least 250 words."
+    }
+  ]
+}

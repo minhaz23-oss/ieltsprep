@@ -1,0 +1,39 @@
+{
+  "testTitle": "Writing Practice Test 9",
+  "testType": "ielts writing mock test",
+  "tasks": [
+    {
+      "taskNumber": 1,
+      "timeAllocation": "20 minutes",
+      "instructions": "You should spend about 20 minutes on this task",
+      "description": "The charts below show the performance of a bus company in terms of punctuality, both actual and target (what actually happened compared to what the company was trying to achieve), and the number of complaints and passengers.",
+      "hasImage": true,
+      "images": [
+        {
+          "url": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/writingImages/diagram9(1).jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL3dyaXRpbmdJbWFnZXMvZGlhZ3JhbTkoMSkuanBnIiwiaWF0IjoxNzYxNDkzNDk4LCJleHAiOjQ5MTUwOTM0OTh9.GHGlkXCPTIVVrMZfkzHS4-ul-x0tK1oQeZ74sZ68idc",
+          "altText": "Chart showing bus company punctuality performance"
+        },
+        {
+          "url": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/writingImages/diagram9(2).jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL3dyaXRpbmdJbWFnZXMvZGlhZ3JhbTkoMikuanBnIiwiaWF0IjoxNzYxNDkzNDk5LCJleHAiOjQ5MTUwOTM0OTl9.GGWDyGI3lzkUM64NpYAhbWxmAmTIoIBA6G4CzO1X8hg",
+          "altText": "Chart showing number of complaints and passengers"
+        }
+      ],
+      "minimumWords": 150,
+      "taskRequirements": "Write at least 150 words."
+    },
+    {
+      "taskNumber": 2,
+      "timeAllocation": "40 minutes",
+      "instructions": "You should spend about 40 minutes on this task",
+      "promptIntro": "Write about the following topic:",
+      "topic": "Some people think movies should only be for entertainment. Others think that they should also have educational values. Discuss both views and give your opinion.",
+      "hasImage": false,
+      "images": [],
+      "requirements": [
+        "Give reasons for your answer and include any relevant examples from your own knowledge or experience."
+      ],
+      "minimumWords": 250,
+      "taskRequirements": "Write at least 250 words."
+    }
+  ]
+}

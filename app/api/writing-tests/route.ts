@@ -1,41 +1,34 @@
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { db } from '@/firebase/admin';
 
 export async function GET(request: NextRequest) {
   try {
-    const writingTestsDir = path.join(process.cwd(), 'public', 'writingTests');
-    
-    // Check if directory exists
-    if (!fs.existsSync(writingTestsDir)) {
+    // Fetch writing tests from Firestore
+    const writingTestsSnapshot = await db.collection('writingTests').get();
+
+    if (writingTestsSnapshot.empty) {
       return NextResponse.json({
-        success: false,
-        message: 'Writing tests directory not found',
+        success: true,
+        message: 'No writing tests found',
         data: []
       });
     }
 
-    // Read all JSON files in the directory
-    const files = fs.readdirSync(writingTestsDir)
-      .filter(file => file.endsWith('.json'));
-
-    const tests = files.map(file => {
+    const tests = writingTestsSnapshot.docs.map(doc => {
       try {
-        const filePath = path.join(writingTestsDir, file);
-        const fileContent = fs.readFileSync(filePath, 'utf-8');
-        const testData = JSON.parse(fileContent);
+        const testData = doc.data();
+        const testId = doc.id;
         
         // Extract metadata for listing
-        const testId = file.replace('.json', '');
         const totalTasks = testData.tasks ? testData.tasks.length : 0;
         const timeLimit = testData.tasks 
           ? testData.tasks.reduce((acc: number, task: any) => {
-              const time = parseInt(task.timeAllocation.match(/\d+/)?.[0] || '0');
+              const time = parseInt(task.timeAllocation?.match(/\d+/)?.[0] || '0');
               return acc + time;
             }, 0)
           : 60;
 
-        // Extract version from filename (e.g., writingTest1 -> 1, writing13_t1 -> 13)
+        // Extract version from test ID
         let version = '1';
         const versionMatch = testId.match(/(?:writing|writingTest)(\d+)/);
         if (versionMatch) {
@@ -50,7 +43,7 @@ export async function GET(request: NextRequest) {
           version
         };
       } catch (error) {
-        console.error(`Error reading test file ${file}:`, error);
+        console.error(`Error processing test ${doc.id}:`, error);
         return null;
       }
     }).filter(test => test !== null);

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 
 interface WritingImage {
   url: string;
@@ -31,6 +31,7 @@ interface WritingTestData {
 
 const WritingTestPage = () => {
   const params = useParams();
+  const router = useRouter();
   const testId = params.id as string;
   
   const [testData, setTestData] = useState<WritingTestData | null>(null);
@@ -39,6 +40,7 @@ const WritingTestPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [showSubmitConfirm, setShowSubmitConfirm] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     const loadTestData = async () => {
@@ -46,14 +48,15 @@ const WritingTestPage = () => {
         setLoading(true);
         setError(null);
 
-        // Fetch from public folder
-        const response = await fetch(`/writingTests/${testId}.json`);
+        // Fetch from Firestore via writing actions
+        const { getWritingTestById } = await import('@/lib/actions/writing.actions');
+        const result = await getWritingTestById(testId);
         
-        if (!response.ok) {
-          throw new Error('Failed to load test data');
+        if (!result.success || !result.data) {
+          throw new Error(result.message || 'Failed to load test data');
         }
 
-        const data: WritingTestData = await response.json();
+        const data: WritingTestData = result.data;
 
         if (!data.tasks || !Array.isArray(data.tasks) || data.tasks.length === 0) {
           throw new Error('Invalid test data: missing or empty tasks');
@@ -98,12 +101,73 @@ const WritingTestPage = () => {
     setShowSubmitConfirm(true);
   };
 
-  const confirmSubmit = () => {
-    // Here you would typically send the data to a backend or evaluate
-    console.log('Submitted answers:', answers);
-    console.log('Word counts:', wordCounts);
-    alert('Your writing has been submitted! In a real test, this would be evaluated by an examiner.');
-    setShowSubmitConfirm(false);
+  const confirmSubmit = async () => {
+    if (!testData) return;
+    
+    try {
+      setSubmitting(true);
+      setShowSubmitConfirm(false);
+
+      // Get premium status
+      const { getPremiumStatus } = await import('@/lib/utils/premium');
+      const { isPremium } = await getPremiumStatus();
+
+      // Prepare task prompts
+      const task1 = testData.tasks.find(t => t.taskNumber === 1);
+      const task2 = testData.tasks.find(t => t.taskNumber === 2);
+
+      const task1Prompt = task1 ? (task1.description || task1.topic || '') : '';
+      const task2Prompt = task2 ? (task2.topic || '') : '';
+
+      // Call AI evaluation API
+      const evaluationResponse = await fetch('/api/evaluate-writing', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          task1Answer: answers[1] || '',
+          task2Answer: answers[2] || '',
+          task1Prompt,
+          task2Prompt,
+          isPremium
+        })
+      });
+
+      const evaluationData = await evaluationResponse.json();
+
+      if (!evaluationData.success) {
+        throw new Error('Evaluation failed');
+      }
+
+      // Save results to Firestore
+      const { saveWritingTestResult } = await import('@/lib/actions/test-results.actions');
+      await saveWritingTestResult({
+        testId,
+        difficulty: 'standard',
+        task1Answer: answers[1],
+        task2Answer: answers[2],
+        evaluation: evaluationData.results,
+        timeSpent: 3600, // 60 minutes in seconds
+        overallBandScore: evaluationData.overallBandScore
+      });
+
+      // Navigate to results page with evaluation data
+      sessionStorage.setItem('writingEvaluation', JSON.stringify({
+        results: evaluationData.results,
+        overallBandScore: evaluationData.overallBandScore,
+        isPremium: evaluationData.isPremium,
+        testTitle: testData.testTitle,
+        testId
+      }));
+
+      router.push(`/exercise/writing/${testId}/results`);
+
+    } catch (error) {
+      console.error('Error submitting writing test:', error);
+      alert('Failed to submit test. Please try again.');
+      setSubmitting(false);
+    }
   };
 
   if (loading) {
@@ -490,6 +554,25 @@ const WritingTestPage = () => {
               >
                 Submit Now
               </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Submitting Loading Overlay */}
+      {submitting && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-8 max-w-md text-center">
+            <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-primary mx-auto mb-4"></div>
+            <h3 className="text-2xl font-bold mb-2">Evaluating Your Writing</h3>
+            <p className="text-gray-600 mb-4">
+              Our AI is analyzing your writing using IELTS assessment criteria...
+            </p>
+            <div className="space-y-2 text-sm text-gray-500">
+              <p>✓ Checking Task Achievement/Response</p>
+              <p>✓ Analyzing Coherence & Cohesion</p>
+              <p>✓ Evaluating Lexical Resource</p>
+              <p>✓ Assessing Grammatical Range</p>
             </div>
           </div>
         </div>

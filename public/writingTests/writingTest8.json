@@ -1,0 +1,43 @@
+{
+  "testTitle": "Writing Practice Test 8",
+  "testType": "ielts writing mock test",
+  "tasks": [
+    {
+      "taskNumber": 1,
+      "timeAllocation": "20 minutes",
+      "instructions": "You should spend about 20 minutes on this task",
+      "description": "The illustration shows information about how igloo is build from snow",
+      "hasImage": true,
+      "images": [
+        {
+          "url": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/writingImages/diagram8(1).jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL3dyaXRpbmdJbWFnZXMvZGlhZ3JhbTgoMSkuanBnIiwiaWF0IjoxNzYxNDkzNDk3LCJleHAiOjQ5MTUwOTM0OTd9.Q_5PfUm5jZ3C0wfJgp_1ck7HUMBc9VqOzTmxpW3peTA",
+          "altText": "Illustration showing how igloo is built - step 1"
+        },
+        {
+          "url": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/writingImages/diagram8(2).jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL3dyaXRpbmdJbWFnZXMvZGlhZ3JhbTgoMikuanBnIiwiaWF0IjoxNzYxNDkzNDk4LCJleHAiOjQ5MTUwOTM0OTh9.ZONVp1F21IdUHz2FvZwF2tc4fC0XM8snOXud3xReZ3A",
+          "altText": "Illustration showing how igloo is built - step 2"
+        },
+        {
+          "url": "https://zlgeeqociqnuvkmxtdex.supabase.co/storage/v1/object/sign/ieltsAudioAndImages/writingImages/diagram8(3).jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xMDI1NmE2ZS04MTZmLTQ4MmQtOWZkMi02NjNmMTI3YTk5ZjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpZWx0c0F1ZGlvQW5kSW1hZ2VzL3dyaXRpbmdJbWFnZXMvZGlhZ3JhbTgoMykuanBnIiwiaWF0IjoxNzYxNDkzNDk4LCJleHAiOjQ5MTUwOTM0OTh9.vrc9GSx97JKswVpEU0x0CgGLTgeyM6EG9_CfERD3nWs",
+          "altText": "Illustration showing how igloo is built - step 3"
+        }
+      ],
+      "minimumWords": 150,
+      "taskRequirements": "Write at least 150 words."
+    },
+    {
+      "taskNumber": 2,
+      "timeAllocation": "40 minutes",
+      "instructions": "You should spend about 40 minutes on this task",
+      "promptIntro": "Write about the following topic:",
+      "topic": "The world of work is rapidly changing and employees cannot depend on having the same job or the same working conditions for life. Discuss the possible causes and suggest ways to prepare people to work in the future.",
+      "hasImage": false,
+      "images": [],
+      "requirements": [
+        "Give reasons for your answer and include any relevant examples from your own knowledge or experience."
+      ],
+      "minimumWords": 250,
+      "taskRequirements": "Write at least 250 words."
+    }
+  ]
+}

@@ -4,7 +4,7 @@ import { generateText } from 'ai';
 
 export async function POST(request: NextRequest) {
   try {
-    const { task1Answer, task2Answer, task1Prompt, task2Prompt, taskType } = await request.json();
+    const { task1Answer, task2Answer, task1Prompt, task2Prompt, taskType, isPremium = false } = await request.json();
 
     if (!task1Answer && !task2Answer) {
       return NextResponse.json(
@@ -230,10 +230,38 @@ Provide your response in this exact JSON format. Use the FULL range 1-9, includi
       overallBandScore = results.task2.overallBand;
     }
 
+    // For free users, strip detailed feedback and only return basic scores
+    if (!isPremium) {
+      const stripDetailedFeedback = (taskResult: any) => {
+        if (!taskResult) return taskResult;
+        return {
+          taskAchievement: taskResult.taskAchievement,
+          taskResponse: taskResult.taskResponse,
+          coherenceCohesion: taskResult.coherenceCohesion,
+          lexicalResource: taskResult.lexicalResource,
+          grammaticalRange: taskResult.grammaticalRange,
+          overallBand: taskResult.overallBand,
+          wordCount: taskResult.wordCount
+        };
+      };
+
+      return NextResponse.json({
+        success: true,
+        results: {
+          task1: results.task1 ? stripDetailedFeedback(results.task1) : undefined,
+          task2: results.task2 ? stripDetailedFeedback(results.task2) : undefined
+        },
+        overallBandScore,
+        isPremium: false,
+        evaluatedAt: new Date().toISOString()
+      });
+    }
+
     return NextResponse.json({
       success: true,
       results,
       overallBandScore,
+      isPremium: true,
       evaluatedAt: new Date().toISOString()
     });
 

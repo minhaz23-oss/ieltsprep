@@ -18,7 +18,7 @@ interface BaseTest {
 }
 
 interface TestManagerProps {
-  testType: 'listening' | 'reading';
+  testType: 'listening' | 'reading' | 'writing';
   isAdmin: boolean;
 }
 
@@ -40,12 +40,17 @@ const TestManager: React.FC<TestManagerProps> = ({ testType, isAdmin }) => {
   const fetchTests = async () => {
     try {
       setLoading(true);
-      const { getListeningTestsWithStats, getReadingTestsWithStats } = await import('@/lib/actions/admin.actions');
+      const { getListeningTestsWithStats, getReadingTestsWithStats, getWritingTestsWithStats } = await import('@/lib/actions/admin.actions');
       
       // Use the appropriate fetch function based on test type
-      const result = testType === 'listening' 
-        ? await getListeningTestsWithStats()
-        : await getReadingTestsWithStats();
+      let result;
+      if (testType === 'listening') {
+        result = await getListeningTestsWithStats();
+      } else if (testType === 'reading') {
+        result = await getReadingTestsWithStats();
+      } else {
+        result = await getWritingTestsWithStats();
+      }
       
       if (result.success) {
         setTests(result.data as BaseTest[]);
@@ -90,7 +95,7 @@ const TestManager: React.FC<TestManagerProps> = ({ testType, isAdmin }) => {
         } else {
           toast.error(result.message || 'Failed to upload test');
         }
-      } else {
+      } else if (testType === 'reading') {
         // Reading test upload
         const { createReadingTest } = await import('@/lib/actions/admin.actions');
         
@@ -100,6 +105,25 @@ const TestManager: React.FC<TestManagerProps> = ({ testType, isAdmin }) => {
         };
         
         const result = await createReadingTest(testWithId);
+        
+        if (result.success) {
+          toast.success('Test uploaded successfully!');
+          setShowUploadModal(false);
+          setSelectedFile(null);
+          fetchTests();
+        } else {
+          toast.error(result.message || 'Failed to upload test');
+        }
+      } else {
+        // Writing test upload
+        const { createWritingTest } = await import('@/lib/actions/admin.actions');
+        
+        const testWithId = {
+          ...testData,
+          id: testId
+        };
+        
+        const result = await createWritingTest(testWithId);
         
         if (result.success) {
           toast.success('Test uploaded successfully!');
@@ -134,10 +158,21 @@ const TestManager: React.FC<TestManagerProps> = ({ testType, isAdmin }) => {
         } else {
           toast.error(result.message || 'Failed to delete test');
         }
-      } else {
+      } else if (testType === 'reading') {
         // Reading test deletion
         const { deleteReadingTest } = await import('@/lib/actions/admin.actions');
         const result = await deleteReadingTest(testId);
+        
+        if (result.success) {
+          toast.success('Test deleted successfully!');
+          fetchTests();
+        } else {
+          toast.error(result.message || 'Failed to delete test');
+        }
+      } else {
+        // Writing test deletion
+        const { deleteWritingTest } = await import('@/lib/actions/admin.actions');
+        const result = await deleteWritingTest(testId);
         
         if (result.success) {
           toast.success('Test deleted successfully!');

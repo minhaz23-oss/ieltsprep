@@ -2,7 +2,6 @@
 
 import { db } from '@/firebase/admin';
 import { ListeningTest } from '@/types/listening';
-import { ReadingTest } from '@/types/reading';
 import fs from 'fs';
 import path from 'path';
 
@@ -177,7 +176,7 @@ export async function migrateReadingTests() {
         const jsonData = JSON.parse(fileContent);
         
         // Reading tests have a nested 'test' property, extract it
-        const testData: ReadingTest = jsonData.test || jsonData;
+        const testData: any = jsonData.test || jsonData;
         
         // Generate ID from filename if not present
         const testId = testData.id || file.replace('.json', '');
@@ -195,7 +194,7 @@ export async function migrateReadingTests() {
         }
 
         // Add metadata timestamps if not present
-        const testWithMetadata: ReadingTest = {
+        const testWithMetadata: any = {
           ...testData,
           id: testId,
           metadata: {
@@ -282,7 +281,7 @@ export async function getReadingTestsWithStats() {
     const tests = [];
 
     for (const doc of snapshot.docs) {
-      const testData = { id: doc.id, ...doc.data() } as ReadingTest;
+      const testData = { id: doc.id, ...doc.data() } as any;
       
       // Get test statistics (if you have a results collection)
       const statsSnapshot = await db
@@ -312,11 +311,11 @@ export async function getReadingTestsWithStats() {
 }
 
 // Create/upload a reading test
-export async function createReadingTest(testData: ReadingTest) {
+export async function createReadingTest(testData: any) {
   try {
     const testId = testData.id || `reading_${Date.now()}`;
     
-    const testWithMetadata: ReadingTest = {
+    const testWithMetadata: any = {
       ...testData,
       id: testId,
       metadata: {
@@ -352,5 +351,197 @@ export async function deleteReadingTest(testId: string) {
   } catch (error) {
     console.error('Error deleting reading test:', error);
     return { success: false, message: 'Failed to delete reading test' };
+  }
+}
+
+// Migrate writing tests JSON files to Firestore
+export async function migrateWritingTests() {
+  try {
+    // Path to the writing tests directory
+    const testsDirectory = path.join(process.cwd(), 'public', 'writingTests');
+    
+    if (!fs.existsSync(testsDirectory)) {
+      return { success: false, message: 'Writing tests directory not found' };
+    }
+
+    const files = fs.readdirSync(testsDirectory).filter(file => file.endsWith('.json'));
+    const results = [];
+    let successCount = 0;
+    let errorCount = 0;
+
+    for (const file of files) {
+      try {
+        const filePath = path.join(testsDirectory, file);
+        const fileContent = fs.readFileSync(filePath, 'utf8');
+        const testData = JSON.parse(fileContent);
+        
+        // Generate ID from filename
+        const testId = file.replace('.json', '');
+
+        // Check if test already exists
+        const existingTest = await db.collection('writingTests').doc(testId).get();
+        
+        if (existingTest.exists) {
+          results.push({
+            file,
+            status: 'skipped',
+            message: 'Test already exists in Firestore'
+          });
+          continue;
+        }
+
+        // Add metadata and id to test data
+        const testWithMetadata = {
+          ...testData,
+          id: testId,
+          metadata: {
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString(),
+          }
+        };
+
+        // Save to Firestore
+        await db.collection('writingTests').doc(testId).set(testWithMetadata);
+
+        results.push({
+          file,
+          status: 'success',
+          message: 'Successfully migrated to Firestore'
+        });
+        successCount++;
+
+      } catch (error) {
+        console.error(`Error migrating ${file}:`, error);
+        results.push({
+          file,
+          status: 'error',
+          message: error instanceof Error ? error.message : 'Unknown error'
+        });
+        errorCount++;
+      }
+    }
+
+    return {
+      success: true,
+      message: `Migration completed: ${successCount} successful, ${errorCount} errors`,
+      results,
+      summary: {
+        totalFiles: files.length,
+        successful: successCount,
+        errors: errorCount,
+        skipped: files.length - successCount - errorCount
+      }
+    };
+
+  } catch (error) {
+    console.error('Migration error:', error);
+    return { success: false, message: 'Migration failed' };
+  }
+}
+
+// Check writing tests migration status
+export async function checkWritingMigrationStatus() {
+  try {
+    // Count JSON files
+    const testsDirectory = path.join(process.cwd(), 'public', 'writingTests');
+    let jsonFileCount = 0;
+    
+    if (fs.existsSync(testsDirectory)) {
+      const files = fs.readdirSync(testsDirectory).filter(file => file.endsWith('.json'));
+      jsonFileCount = files.length;
+    }
+
+    // Count Firestore documents
+    const snapshot = await db.collection('writingTests').get();
+    const firestoreCount = snapshot.size;
+
+    return {
+      success: true,
+      data: {
+        jsonFiles: jsonFileCount,
+        firestoreDocuments: firestoreCount,
+        migrationNeeded: jsonFileCount > firestoreCount
+      }
+    };
+
+  } catch (error) {
+    console.error('Error checking writing migration status:', error);
+    return { success: false, message: 'Failed to check migration status' };
+  }
+}
+
+// Get writing tests with statistics for admin
+export async function getWritingTestsWithStats() {
+  try {
+    const snapshot = await db.collection('writingTests').orderBy('metadata.createdAt', 'desc').get();
+    const tests = [];
+
+    for (const doc of snapshot.docs) {
+      const testData = { id: doc.id, ...doc.data() };
+      
+      // Get test statistics
+      const statsSnapshot = await db
+        .collection('writing-test-results')
+        .where('testId', '==', doc.id)
+        .get();
+
+      const results = statsSnapshot.docs.map(doc => doc.data());
+      const stats = {
+        totalAttempts: results.length,
+        averageBandScore: results.length > 0 
+          ? results.reduce((sum, result: any) => sum + (result.overallBandScore || 0), 0) / results.length 
+          : 0,
+      };
+
+      tests.push({ ...testData, stats });
+    }
+
+    return { success: true, data: tests };
+  } catch (error) {
+    console.error('Error fetching writing tests with stats:', error);
+    return { success: false, message: 'Failed to fetch tests', data: [] };
+  }
+}
+
+// Create/upload a writing test
+export async function createWritingTest(testData: any) {
+  try {
+    const testId = testData.id || `writingTest${Date.now()}`;
+    
+    const testWithMetadata = {
+      ...testData,
+      id: testId,
+      metadata: {
+        createdAt: testData.metadata?.createdAt || new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      }
+    };
+
+    await db.collection('writingTests').doc(testId).set(testWithMetadata);
+
+    return { success: true, message: 'Writing test created successfully', testId };
+  } catch (error) {
+    console.error('Error creating writing test:', error);
+    return { success: false, message: 'Failed to create writing test' };
+  }
+}
+
+// Delete a writing test
+export async function deleteWritingTest(testId: string) {
+  try {
+    await db.collection('writingTests').doc(testId).delete();
+    
+    // Optionally delete associated results
+    const resultsSnapshot = await db.collection('writing-test-results').where('testId', '==', testId).get();
+    const batch = db.batch();
+    resultsSnapshot.docs.forEach(doc => {
+      batch.delete(doc.ref);
+    });
+    await batch.commit();
+
+    return { success: true, message: 'Writing test deleted successfully' };
+  } catch (error) {
+    console.error('Error deleting writing test:', error);
+    return { success: false, message: 'Failed to delete writing test' };
   }
 }

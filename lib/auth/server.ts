@@ -3,6 +3,7 @@
 import { cookies } from 'next/headers';
 import { auth, db } from '@/firebase/admin';
 import { redirect } from 'next/navigation';
+import { NextRequest } from 'next/server';
 
 /**
  * Represents the authenticated user data from Firestore
@@ -160,4 +161,47 @@ export async function requireAdmin(): Promise<AuthUser> {
 export async function isPremiumUser(): Promise<boolean> {
   const user = await getCurrentUser();
   return user?.subscriptionTier === 'premium';
+}
+
+/**
+ * Gets user from session cookie in API route
+ * Use this in API route handlers that need authentication
+ * 
+ * @param request - NextRequest object
+ * @returns Promise<AuthUser | null> - The authenticated user or null
+ */
+export async function getUserFromToken(request: NextRequest): Promise<AuthUser | null> {
+  try {
+    const sessionCookie = request.cookies.get('session')?.value;
+
+    if (!sessionCookie) {
+      return null;
+    }
+
+    // Verify the session cookie
+    const decodedClaims = await auth.verifySessionCookie(sessionCookie, true);
+    
+    if (!decodedClaims) {
+      return null;
+    }
+
+    // Fetch user data from Firestore
+    const userDoc = await db.collection('users').doc(decodedClaims.uid).get();
+
+    if (!userDoc.exists) {
+      return null;
+    }
+
+    const userData = userDoc.data();
+
+    return {
+      uid: decodedClaims.uid,
+      email: userData?.email || decodedClaims.email || '',
+      name: userData?.name || '',
+      subscriptionTier: userData?.subscriptionTier || 'free',
+    };
+  } catch (error) {
+    console.error('Error getting user from token:', error);
+    return null;
+  }
 }

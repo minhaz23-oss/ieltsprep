@@ -55,9 +55,9 @@ const AuthNotice: React.FC<AuthNoticeProps> = ({ testType, hasAI = false }) => {
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50">
+    <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50 p-4">
       <div
-        className={`relative rounded-xl border-2 p-8 text-center ${getTestTypeColor()}`}
+        className={`relative rounded-xl border-2 p-8 text-center max-w-3xl w-full ${getTestTypeColor()}`}
       >
         <button
           onClick={() => setIsVisible(false)}
@@ -122,22 +122,23 @@ const AuthNotice: React.FC<AuthNoticeProps> = ({ testType, hasAI = false }) => {
             </div>
           </div>
 
-          <Link href="/sign-in">
-            <button
-              className={`px-8 py-4 text-white font-bold rounded-lg transition-all duration-200 transform hover:scale-105 cursor-pointer shadow-lg ${getButtonColor()}`}
+          <div className="flex flex-col gap-3">
+            <Link 
+              href="/sign-in"
+              className={`block w-full text-center px-8 py-4 text-white font-bold rounded-lg transition-all duration-200 hover:scale-105 shadow-lg ${getButtonColor()}`}
             >
               Sign In to Unlock Full Features
-            </button>
-          </Link>
-
-          <div className="text-sm text-gray-600">
-            Don't have an account?{" "}
-            <Link
-              href="/sign-up"
-              className="text-primary hover:text-red-700 font-semibold"
-            >
-              Sign up for free
             </Link>
+
+            <div className="text-sm text-gray-600">
+              Don't have an account?{" "}
+              <Link
+                href="/sign-up"
+                className="text-primary hover:text-red-700 font-semibold underline"
+              >
+                Sign up for free
+              </Link>
+            </div>
           </div>
         </div>
       </div>

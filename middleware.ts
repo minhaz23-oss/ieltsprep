@@ -36,18 +36,19 @@ export async function middleware(request: NextRequest) {
 
   // Check if user is trying to access auth routes (sign-in, sign-up)
   if (matchesRoute(pathname, authRoutes)) {
-    // If user is already authenticated, redirect to dashboard
+    // If user has a session cookie, redirect to dashboard
+    // Note: We can't validate the session in edge middleware, so page components must do server-side validation
     if (hasSession) {
       const dashboardUrl = new URL('/dashboard', request.url);
       return NextResponse.redirect(dashboardUrl);
     }
-    // Allow access to auth pages if not authenticated
+    // Allow access to auth pages if no session
     return NextResponse.next();
   }
 
   // Check if user is trying to access protected routes
   if (matchesRoute(pathname, protectedRoutes)) {
-    // If user is not authenticated, redirect to sign-in
+    // If user doesn't have a session cookie, redirect to sign-in
     if (!hasSession) {
       const signInUrl = new URL('/sign-in', request.url);
       // Add redirect parameter to return to the original page after sign-in
@@ -55,9 +56,8 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(signInUrl);
     }
 
-    // For admin routes, we'll do an additional check in the page component
-    // since we need to verify admin status from Firestore
-    // Middleware can only check for session existence
+    // Session validation happens in page components via requireAuth()
+    // Middleware can only check for cookie existence due to Edge Runtime limitations
     return NextResponse.next();
   }
 

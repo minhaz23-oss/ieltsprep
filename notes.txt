@@ -1,5 +1,0 @@
-NEXT STEP
-
-WARNING- there is some hosting error in vercel.
-
-** adding an admin pannel system where the admin can post json file to the firebase store for the listening page and the page should fetch the json file from the database instead of public folder.

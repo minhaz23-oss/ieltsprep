@@ -175,10 +175,38 @@ const IELTSReadingTest = () => {
     setAnswers(prev => ({ ...prev, [questionNumber]: answer }));
   };
 
-  const handleSubmit = useCallback(() => {
+  const handleSubmit = useCallback(async () => {
     setShowResults(true);
     if (timerRef.current) clearTimeout(timerRef.current);
-  }, []);
+    
+    // Save results to Firestore
+    try {
+      const score = calculateScore();
+      const bandScore = Math.min(9, Math.max(0, Math.round((score.correct / score.total) * 9 * 10) / 10));
+      const timeSpent = (testData!.test.totalTime * 60) - timeRemaining;
+      
+      const { saveReadingTestResult } = await import('@/lib/actions/test-results.actions');
+      const saveResult = await saveReadingTestResult({
+        testId: testId,
+        title: testData!.test.title,
+        difficulty: testData!.test.type || 'standard',
+        totalQuestions: testData!.test.totalQuestions,
+        answers: answers,
+        score: score,
+        bandScore: bandScore,
+        timeSpent: timeSpent
+      });
+      
+      if (saveResult.success) {
+        console.log('Reading test result saved successfully');
+      } else {
+        console.error('Failed to save reading test result:', saveResult.message);
+      }
+    } catch (saveError) {
+      console.error('Error saving reading test result:', saveError);
+      // Don't fail the test if save fails - user still sees results
+    }
+  }, [testData, answers, timeRemaining, testId]);
 
   // Quick fill for testing - fills 70% correct, 30% wrong
   const handleQuickFill = useCallback(() => {
@@ -197,15 +225,16 @@ const IELTSReadingTest = () => {
           if (shouldBeWrong) {
             // Provide wrong answer
             if (typeof q.correctAnswer === 'string') {
-              if (q.correctAnswer.length <= 3 && /^[A-Z]+$/i.test(q.correctAnswer)) {
+              const correctAnswerStr = q.correctAnswer as string;
+              if (correctAnswerStr.length <= 3 && /^[A-Z]+$/i.test(correctAnswerStr)) {
                 // For letter answers, pick a different letter
-                const wrongLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'].filter(l => l !== q.correctAnswer.toUpperCase());
+                const wrongLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'].filter(l => l !== correctAnswerStr.toUpperCase());
                 newAnswers[q.questionNumber] = wrongLetters[Math.floor(Math.random() * wrongLetters.length)];
-              } else if (['TRUE', 'FALSE', 'NOT GIVEN'].includes(q.correctAnswer.toUpperCase())) {
-                const options = ['TRUE', 'FALSE', 'NOT GIVEN'].filter(o => o !== q.correctAnswer.toUpperCase());
+              } else if (['TRUE', 'FALSE', 'NOT GIVEN'].includes(correctAnswerStr.toUpperCase())) {
+                const options = ['TRUE', 'FALSE', 'NOT GIVEN'].filter(o => o !== correctAnswerStr.toUpperCase());
                 newAnswers[q.questionNumber] = options[Math.floor(Math.random() * options.length)];
-              } else if (['YES', 'NO', 'NOT GIVEN'].includes(q.correctAnswer.toUpperCase())) {
-                const options = ['YES', 'NO', 'NOT GIVEN'].filter(o => o !== q.correctAnswer.toUpperCase());
+              } else if (['YES', 'NO', 'NOT GIVEN'].includes(correctAnswerStr.toUpperCase())) {
+                const options = ['YES', 'NO', 'NOT GIVEN'].filter(o => o !== correctAnswerStr.toUpperCase());
                 newAnswers[q.questionNumber] = options[Math.floor(Math.random() * options.length)];
               } else {
                 // For text answers, provide a plausible wrong answer
@@ -915,13 +944,23 @@ const IELTSReadingTest = () => {
               </div>
             </div>
             
-            <div className="flex gap-4 justify-center">
-              <Link href="/exercise/reading" className="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600">
+            {/* Save Confirmation Notice */}
+            <div className="mb-6 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+              <p className="text-sm text-blue-800 text-center">
+                ✅ Your results have been saved to your dashboard
+              </p>
+            </div>
+            
+            <div className="flex gap-4 justify-center flex-wrap">
+              <Link href="/exercise/reading" className="bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 font-semibold">
                 Back to Tests
+              </Link>
+              <Link href="/dashboard" className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 font-semibold">
+                View Dashboard
               </Link>
               <button
                 onClick={() => window.location.reload()}
-                className="bg-primary text-white px-6 py-2 rounded hover:bg-primary"
+                className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-red-700 font-semibold"
               >
                 Try Again
               </button>

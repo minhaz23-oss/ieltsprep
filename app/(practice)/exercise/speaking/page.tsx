@@ -227,6 +227,29 @@ Remember: ONE QUESTION AT A TIME. Wait for their complete response before asking
           currentSession.status = 'evaluated'
           setCurrentSession({ ...currentSession })
         }
+        
+        // Save results to Firestore
+        try {
+          const { saveSpeakingTestResult } = await import('@/lib/actions/test-results.actions')
+          const saveResult = await saveSpeakingTestResult({
+            testId: currentSession?.id || 'ai-speaking-test',
+            difficulty: 'standard',
+            answers: currentSession?.messages || [],
+            evaluation: result.evaluation,
+            timeSpent: speakingSessionManager.getSessionDuration(),
+            overallBandScore: result.evaluation.overallBandScore
+          })
+          
+          if (saveResult.success) {
+            console.log('Speaking test result saved successfully')
+          } else {
+            console.error('Failed to save speaking test result:', saveResult.message)
+          }
+        } catch (saveError) {
+          console.error('Error saving speaking test result:', saveError)
+          // Don't fail the evaluation if save fails - user still sees results
+        }
+        
         setCallStatus('evaluated')
       } else {
         throw new Error(result.error || 'Evaluation failed')
@@ -631,11 +654,28 @@ Remember: ONE QUESTION AT A TIME. Wait for their complete response before asking
                   </div>
                 </div>
 
+                {/* Save Confirmation Notice */}
+                <div className='mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg'>
+                  <p className='text-xs sm:text-sm text-blue-800 dark:text-blue-200 text-center'>
+                    ✅ Your results have been saved to your dashboard
+                  </p>
+                </div>
+
                 {/* Action Buttons */}
                 <div className='flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 sm:mt-6'>
                   <Button onClick={resetSession} size='lg' className='flex-1 text-sm sm:text-base'>
                     Start New Test
                   </Button>
+                  <Link href='/dashboard' className='flex-1'>
+                    <Button
+                      variant='outline'
+                      size='lg'
+                      className='w-full text-sm sm:text-base'
+                    >
+                      <FileText className='mr-2 h-4 w-4' />
+                      View Dashboard
+                    </Button>
+                  </Link>
                   <Button
                     variant='outline'
                     size='lg'

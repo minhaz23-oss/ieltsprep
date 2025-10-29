@@ -56,7 +56,7 @@ const WritingTestPage = () => {
           throw new Error(result.message || 'Failed to load test data');
         }
 
-        const data: WritingTestData = result.data;
+        const data = result.data as unknown as WritingTestData;
 
         if (!data.tasks || !Array.isArray(data.tasks) || data.tasks.length === 0) {
           throw new Error('Invalid test data: missing or empty tasks');

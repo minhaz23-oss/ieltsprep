@@ -12,6 +12,12 @@ const WritingResultsPage = () => {
   const [evaluationData, setEvaluationData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
+  const getBandColor = (band: number): string => {
+    if (band >= 7) return 'text-green-600';
+    if (band >= 5.5) return 'text-yellow-600';
+    return 'text-red-600';
+  };
+
   useEffect(() => {
     // Get evaluation data from sessionStorage
     const data = sessionStorage.getItem('writingEvaluation');
@@ -50,12 +56,6 @@ const WritingResultsPage = () => {
       </div>
     );
   }
-
-  const getBandColor = (band: number): string => {
-    if (band >= 7) return 'text-green-600';
-    if (band >= 5.5) return 'text-yellow-600';
-    return 'text-red-600';
-  };
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">

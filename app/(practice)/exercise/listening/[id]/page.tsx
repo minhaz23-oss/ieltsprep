@@ -139,10 +139,38 @@ const IELTSListeningTest = () => {
     setAnswers(prev => ({ ...prev, [questionNumber]: answer }));
   };
 
-  const handleSubmit = useCallback(() => {
+  const handleSubmit = useCallback(async () => {
     setShowResults(true);
     if (timerRef.current) clearTimeout(timerRef.current);
-  }, []);
+    
+    // Save results to Firestore
+    try {
+      const score = calculateScore();
+      const bandScore = Math.min(9, Math.max(0, Math.round((score.correct / score.total) * 9 * 10) / 10));
+      const timeSpent = (testData!.timeLimit * 60) - timeRemaining;
+      
+      const { saveListeningTestResult } = await import('@/lib/actions/test-results.actions');
+      const saveResult = await saveListeningTestResult({
+        testId: testId,
+        title: testData!.title,
+        difficulty: testData!.difficulty || 'standard',
+        totalQuestions: testData!.totalQuestions,
+        answers: answers,
+        score: score,
+        bandScore: bandScore,
+        timeSpent: timeSpent
+      });
+      
+      if (saveResult.success) {
+        console.log('Listening test result saved successfully');
+      } else {
+        console.error('Failed to save listening test result:', saveResult.message);
+      }
+    } catch (saveError) {
+      console.error('Error saving listening test result:', saveError);
+      // Don't fail the test if save fails - user still sees results
+    }
+  }, [testData, answers, timeRemaining, testId]);
 
   // Quick fill for testing - fills 70% correct, 30% wrong
   const handleQuickFill = useCallback(() => {
@@ -159,8 +187,9 @@ const IELTSListeningTest = () => {
           
           if (shouldBeWrong) {
             if (typeof field.correctAnswer === 'string') {
-              if (field.correctAnswer.length === 1 && /^[A-Z]$/i.test(field.correctAnswer)) {
-                const wrongLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'].filter(l => l !== field.correctAnswer.toUpperCase());
+              const correctAnswerStr = field.correctAnswer as string;
+              if (correctAnswerStr.length === 1 && /^[A-Z]$/i.test(correctAnswerStr)) {
+                const wrongLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'].filter(l => l !== correctAnswerStr.toUpperCase());
                 newAnswers[field.questionNumber] = wrongLetters[Math.floor(Math.random() * wrongLetters.length)];
               } else {
                 newAnswers[field.questionNumber] = 'wrong answer';
@@ -168,7 +197,7 @@ const IELTSListeningTest = () => {
             }
           } else {
             if (typeof field.correctAnswer === 'string') {
-              const acceptableAnswers = field.correctAnswer.split('/');
+              const acceptableAnswers = (field.correctAnswer as string).split('/');
               newAnswers[field.questionNumber] = acceptableAnswers[0].trim();
             } else {
               newAnswers[field.questionNumber] = field.correctAnswer;
@@ -778,13 +807,23 @@ const IELTSListeningTest = () => {
               </div>
             </div>
             
-            <div className="flex gap-4 justify-center">
-              <Link href="/exercise/listening" className="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600">
+            {/* Save Confirmation Notice */}
+            <div className="mb-6 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+              <p className="text-sm text-blue-800 text-center">
+                ✅ Your results have been saved to your dashboard
+              </p>
+            </div>
+            
+            <div className="flex gap-4 justify-center flex-wrap">
+              <Link href="/exercise/listening" className="bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 font-semibold">
                 Back to Tests
+              </Link>
+              <Link href="/dashboard" className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 font-semibold">
+                View Dashboard
               </Link>
               <button
                 onClick={() => window.location.reload()}
-                className="bg-primary text-white px-6 py-2 rounded hover:bg-primary"
+                className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-red-700 font-semibold"
               >
                 Try Again
               </button>

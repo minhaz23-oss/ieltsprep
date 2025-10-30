@@ -4,7 +4,7 @@ import { getUserFromToken } from '@/lib/auth/server';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const user = await getUserFromToken(request);
@@ -16,7 +16,7 @@ export async function GET(
       }, { status: 401 });
     }
 
-    const mockTestId = params.id;
+    const { id: mockTestId } = await params;
 
     // Fetch mock test metadata
     const mockTestDoc = await db.collection('mockTests').doc(mockTestId).get();

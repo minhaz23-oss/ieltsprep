@@ -293,7 +293,7 @@ export default async function MockTestOverviewPage({ params }: { params: Promise
             </>
           ) : hasInProgressSession ? (
             <Link
-              href={`/mock-test/${id}/${session.currentSection}`}
+              href={`/mock-test/${id}/${session.currentSection || 'listening'}`}
               className="px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded-lg transition-colors text-center"
             >
               ▶️ Resume Test

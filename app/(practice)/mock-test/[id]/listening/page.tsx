@@ -3,6 +3,7 @@
 import React, { useState, useEffect, use } from 'react';
 import { useRouter } from 'next/navigation';
 import SectionTransition from '@/components/SectionTransition';
+import ListeningTestComponent from '@/components/listening/ListeningTestComponent';
 
 export default function MockTestListeningPage({ params }: { params: Promise<{ id: string }> }) {
   const { id: mockTestId } = use(params);
@@ -159,37 +160,13 @@ export default function MockTestListeningPage({ params }: { params: Promise<{ id
     );
   }
 
-  // Render the actual listening test
-  // For now, show a placeholder - we'll integrate your actual listening test component next
+  // Render the actual listening test component
   return (
-    <div className="min-h-screen px-4 py-8 bg-gradient-to-br from-blue-50 via-white to-purple-50">
-      <div className="max-w-6xl mx-auto">
-        <div className="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-6 mb-6">
-          <h2 className="text-xl font-bold text-yellow-900 mb-2">
-            🎧 Listening Section - Integration Pending
-          </h2>
-          <p className="text-yellow-800 mb-4">
-            Test ID: {listeningTestId}
-          </p>
-          <p className="text-yellow-800 mb-4">
-            Session ID: {sessionId}
-          </p>
-          <p className="text-sm text-yellow-700 mb-4">
-            This will load your existing listening test component. For now, click the button below to simulate test completion:
-          </p>
-          <button
-            onClick={() => handleTestComplete({
-              score: 35,
-              totalQuestions: 40,
-              answers: {},
-              bandScore: 8.0
-            })}
-            className="btn-primary"
-          >
-            Simulate Test Completion (Score: 35/40)
-          </button>
-        </div>
-      </div>
-    </div>
+    <ListeningTestComponent
+      testId={listeningTestId!}
+      mode="mockTest"
+      onComplete={handleTestComplete}
+      backLink={`/mock-test/${mockTestId}`}
+    />
   );
 }

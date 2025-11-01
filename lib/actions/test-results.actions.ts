@@ -45,7 +45,7 @@ export async function saveReadingTestResult(params: SaveReadingTestParams) {
       bandScore
     } = params;
 
-    const resultData = {
+    const resultData: any = {
       userId: user.uid,
       testType: 'reading',
       testId,
@@ -59,11 +59,15 @@ export async function saveReadingTestResult(params: SaveReadingTestParams) {
       totalQuestions,
       timeSpent, // in seconds
       answers,
-      skillAnalysis,
       bandScore,
       completedAt: new Date().toISOString(),
       createdAt: new Date().toISOString()
     };
+
+    // Only add skillAnalysis if it's defined
+    if (skillAnalysis !== undefined && skillAnalysis !== null) {
+      resultData.skillAnalysis = skillAnalysis;
+    }
 
     // Save to test_results collection
     const docRef = await db.collection('test_results').add(resultData);

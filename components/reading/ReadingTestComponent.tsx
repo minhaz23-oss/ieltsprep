@@ -181,15 +181,33 @@ const ReadingTestComponent: React.FC<ReadingTestComponentProps> = ({ testId, mod
   };
 
   const handleSubmit = useCallback(async () => {
-    setShowResults(true);
     if (timerRef.current) clearTimeout(timerRef.current);
     
-    // Save results to Firestore
+    const score = calculateScore();
+    const bandScore = Math.min(9, Math.max(0, Math.round((score.correct / score.total) * 9 * 10) / 10));
+    const timeSpent = (testData!.test.totalTime * 60) - timeRemaining;
+    
+    console.log('Reading handleSubmit - mode:', mode, 'onComplete:', !!onComplete);
+    
+    // If in mock test mode, call onComplete callback
+    if (mode === 'mockTest' && onComplete) {
+      console.log('Calling onComplete for mock test with results:', { score: score.correct, bandScore });
+      onComplete({
+        score: score.correct,
+        totalQuestions: score.total,
+        answers: answers,
+        bandScore: bandScore,
+        timeSpent: timeSpent
+      });
+      return;
+    }
+    
+    console.log('Exercise mode - showing results screen');
+    
+    // For exercise mode, show results and save to Firestore
+    setShowResults(true);
+    
     try {
-      const score = calculateScore();
-      const bandScore = Math.min(9, Math.max(0, Math.round((score.correct / score.total) * 9 * 10) / 10));
-      const timeSpent = (testData!.test.totalTime * 60) - timeRemaining;
-      
       const { saveReadingTestResult } = await import('@/lib/actions/test-results.actions');
       const saveResult = await saveReadingTestResult({
         testId: testId,
@@ -211,7 +229,7 @@ const ReadingTestComponent: React.FC<ReadingTestComponentProps> = ({ testId, mod
       console.error('Error saving reading test result:', saveError);
       // Don't fail the test if save fails - user still sees results
     }
-  }, [testData, answers, timeRemaining, testId]);
+  }, [testData, answers, timeRemaining, testId, mode, onComplete]);
 
   // Quick fill for testing - fills 70% correct, 30% wrong
   const handleQuickFill = useCallback(() => {
@@ -960,6 +978,11 @@ const ReadingTestComponent: React.FC<ReadingTestComponentProps> = ({ testId, mod
               <Link href={backLink} className="bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 font-semibold">
                 Back to Tests
               </Link>
+              {mode === 'exercise' && (
+                <Link href="/exercise/writing" className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 font-semibold">
+                  Continue to Writing →
+                </Link>
+              )}
               <Link href="/dashboard" className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 font-semibold">
                 View Dashboard
               </Link>

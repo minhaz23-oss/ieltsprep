@@ -3,6 +3,7 @@
 import React, { useState, useEffect, use } from 'react';
 import { useRouter } from 'next/navigation';
 import SectionTransition from '@/components/SectionTransition';
+import WritingTestComponent from '@/components/writing/WritingTestComponent';
 
 export default function MockTestWritingPage({ params }: { params: Promise<{ id: string }> }) {
   const { id: mockTestId } = use(params);
@@ -60,7 +61,11 @@ export default function MockTestWritingPage({ params }: { params: Promise<{ id: 
   };
 
   const handleTestComplete = async (results: any) => {
-    if (!sessionId) return;
+    if (!sessionId) {
+      console.error('No session ID available');
+      alert('Session error. Please restart the test.');
+      return;
+    }
 
     try {
       const response = await fetch('/api/mock-tests/save-section', {
@@ -83,8 +88,9 @@ export default function MockTestWritingPage({ params }: { params: Promise<{ id: 
       });
 
       const data = await response.json();
-      if (!data.success) throw new Error(data.message);
+      if (!data.success) throw new Error(data.message || 'Failed to save results');
 
+      // Successfully saved - show transition
       setSectionResults({
         bandScore: data.data.bandScore
       });
@@ -92,7 +98,15 @@ export default function MockTestWritingPage({ params }: { params: Promise<{ id: 
 
     } catch (err) {
       console.error('Error saving section results:', err);
-      alert('Failed to save your results. Please try again.');
+      const errorMessage = err instanceof Error ? err.message : 'Failed to save your results';
+      alert(`${errorMessage}. Your results may not be saved, but you can continue to the next section.`);
+      
+      // Even on error, show transition with the results we have
+      // This prevents users from getting stuck
+      setSectionResults({
+        bandScore: results.bandScore
+      });
+      setShowTransition(true);
     }
   };
 
@@ -140,29 +154,22 @@ export default function MockTestWritingPage({ params }: { params: Promise<{ id: 
     );
   }
 
-  return (
-    <div className="min-h-screen px-4 py-8 bg-gradient-to-br from-purple-50 via-white to-pink-50">
-      <div className="max-w-6xl mx-auto">
-        <div className="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-6 mb-6">
-          <h2 className="text-xl font-bold text-yellow-900 mb-2">
-            ✍️ Writing Section - Integration Pending
-          </h2>
-          <p className="text-yellow-800 mb-4">Test ID: {writingTestId}</p>
-          <p className="text-yellow-800 mb-4">Session ID: {sessionId}</p>
-          <button
-            onClick={() => handleTestComplete({
-              task1Response: 'Sample Task 1 response...',
-              task2Response: 'Sample Task 2 response...',
-              task1Score: 7.0,
-              task2Score: 8.0,
-              bandScore: 7.5
-            })}
-            className="btn-primary"
-          >
-            Simulate Test Completion (Band Score: 7.5)
-          </button>
+  if (!writingTestId) {
+    return (
+      <div className="min-h-screen flex items-center justify-center px-4">
+        <div className="text-center">
+          <p className="text-red-600 font-semibold">Writing test ID not found</p>
         </div>
       </div>
-    </div>
+    );
+  }
+
+  return (
+    <WritingTestComponent
+      testId={writingTestId}
+      mode="mockTest"
+      onComplete={handleTestComplete}
+      backLink={`/mock-test/${mockTestId}`}
+    />
   );
 }

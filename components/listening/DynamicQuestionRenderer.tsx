@@ -25,7 +25,7 @@ const DynamicQuestionRenderer: React.FC<DynamicQuestionRendererProps> = ({
 }) => {
   const renderMultipleChoice = () => (
     <div className="space-y-3">
-      {question.options?.map((option, index) => (
+      {question.options?.map((option: any, index: number) => (
         <label key={index} className="flex items-start space-x-3 cursor-pointer p-2 rounded hover:bg-gray-50">
           <input
             type="radio"
@@ -91,7 +91,7 @@ const DynamicQuestionRenderer: React.FC<DynamicQuestionRendererProps> = ({
           <div>
             <h4 className="font-semibold mb-2">Options:</h4>
             <div className="space-y-2">
-              {context.leftColumn.map((item, index) => (
+              {context.leftColumn.map((item: any, index: number) => (
                 <div key={index} className="p-2 bg-gray-50 rounded border">
                   <span className="font-medium">{String.fromCharCode(65 + index)}.</span> {item}
                 </div>
@@ -107,7 +107,7 @@ const DynamicQuestionRenderer: React.FC<DynamicQuestionRendererProps> = ({
               className="w-full p-2 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none"
             >
               <option value="">Select an option</option>
-              {context.leftColumn.map((_, index) => (
+              {context.leftColumn.map((_: any, index: number) => (
                 <option key={index} value={String.fromCharCode(65 + index)}>
                   {String.fromCharCode(65 + index)}
                 </option>
@@ -128,7 +128,7 @@ const DynamicQuestionRenderer: React.FC<DynamicQuestionRendererProps> = ({
         <div className="bg-gray-50 p-4 rounded-lg border-2 border-gray-200">
           <h3 className="font-bold text-center mb-4 text-lg">{context.formTitle}</h3>
           <div className="space-y-3">
-            {context.fields.map((field) => (
+            {context.fields.map((field: any) => (
               <div key={field.questionId} className="flex items-center space-x-3">
                 <label className="w-1/3 text-sm font-medium">{field.label}</label>
                 <div className="flex-1">
@@ -165,7 +165,7 @@ const DynamicQuestionRenderer: React.FC<DynamicQuestionRendererProps> = ({
           <table className="w-full border-collapse border border-gray-300">
             <thead>
               <tr className="bg-gray-100">
-                {context.headers.map((header, index) => (
+                {context.headers.map((header: any, index: number) => (
                   <th key={index} className="border border-gray-300 p-2 text-left font-semibold">
                     {header}
                   </th>
@@ -173,9 +173,9 @@ const DynamicQuestionRenderer: React.FC<DynamicQuestionRendererProps> = ({
               </tr>
             </thead>
             <tbody>
-              {context.rows.map((row, rowIndex) => (
+              {context.rows.map((row: any, rowIndex: number) => (
                 <tr key={rowIndex}>
-                  {row.cells.map((cell, cellIndex) => (
+                  {row.cells.map((cell: any, cellIndex: number) => (
                     <td key={cellIndex} className="border border-gray-300 p-2">
                       {cell.content === null && cell.questionId === question.id ? (
                         <input
@@ -214,7 +214,7 @@ const DynamicQuestionRenderer: React.FC<DynamicQuestionRendererProps> = ({
             alt="Diagram for labeling" 
             className="w-full max-w-2xl mx-auto border rounded"
           />
-          {context.labels.map((label) => (
+          {context.labels.map((label: any) => (
             label.questionId === question.id && (
               <div
                 key={label.questionId}

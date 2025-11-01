@@ -10,7 +10,7 @@ import { usePathname, useRouter } from 'next/navigation';
  * This prevents the middleware redirect issue when session cookies are stale
  */
 export default function SessionValidator() {
-  const { user, loading, error } = useAuth();
+  const { user, loading } = useAuth();
   const pathname = usePathname();
   const router = useRouter();
 

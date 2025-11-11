@@ -1,15 +1,24 @@
+declare global {
+  interface Window {
+    db: ReturnType<typeof getFirestore>;
+    auth: ReturnType<typeof getAuth>;
+  }
+}
+
 import { initializeApp, getApp, getApps } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
+// Firebase client configuration from environment variables
+// These are safe to expose to the browser (NEXT_PUBLIC_ prefix)
 const firebaseConfig = {
-  apiKey: "AIzaSyC5L4YL_zRbH1xvLkKeASNDAEfZ7HNLK9E",
-  authDomain: "ieltsprep-a76b4.firebaseapp.com",
-  projectId: "ieltsprep-a76b4",
-  storageBucket: "ieltsprep-a76b4.firebasestorage.app",
-  messagingSenderId: "803053889738",
-  appId: "1:803053889738:web:c1f72df098760fb99eac33",
-  measurementId: "G-8H576C2WZ2"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
@@ -24,3 +33,8 @@ try {
 
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+
+if (typeof window !== "undefined") {
+  window.db = db;
+  window.auth = auth;
+}

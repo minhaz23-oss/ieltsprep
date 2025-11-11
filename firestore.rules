@@ -1,0 +1,150 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    function isAdmin() {
+      return isAuthenticated() && 
+             get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isAdmin == true;
+    }
+    
+    // Users collection - users can only read/write their own data
+    match /users/{userId} {
+      // Anyone can read basic user info (for public profiles, leaderboards, etc.)
+      allow read: if isAuthenticated();
+      
+      // Users can only create their own document during sign-up
+      allow create: if isAuthenticated() && request.auth.uid == userId;
+      
+      // Users can only update their own document
+      // Prevent users from modifying critical fields like subscriptionTier
+      allow update: if isOwner(userId) && 
+                      !request.resource.data.diff(resource.data).affectedKeys().hasAny(['subscriptionTier', 'isAdmin']);
+      
+      // Only admins can delete user accounts
+      allow delete: if isAdmin();
+    }
+    
+    // Test results - users can only access their own test results
+    match /testResults/{resultId} {
+      allow read: if isAuthenticated() && 
+                    resource.data.userId == request.auth.uid;
+      
+      allow create: if isAuthenticated() && 
+                      request.resource.data.userId == request.auth.uid;
+      
+      allow update: if isAuthenticated() && 
+                      resource.data.userId == request.auth.uid;
+      
+      allow delete: if isOwner(resource.data.userId) || isAdmin();
+    }
+    
+    // Mock test progress/results
+    match /mockTests/{testId} {
+      allow read: if isAuthenticated() && 
+                    resource.data.userId == request.auth.uid;
+      
+      allow create: if isAuthenticated() && 
+                      request.resource.data.userId == request.auth.uid;
+      
+      allow update: if isAuthenticated() && 
+                      resource.data.userId == request.auth.uid;
+      
+      allow delete: if isOwner(resource.data.userId) || isAdmin();
+    }
+    
+    // Speaking practice sessions
+    match /speakingSessions/{sessionId} {
+      allow read: if isAuthenticated() && 
+                    resource.data.userId == request.auth.uid;
+      
+      allow create: if isAuthenticated() && 
+                      request.resource.data.userId == request.auth.uid;
+      
+      allow update: if isAuthenticated() && 
+                      resource.data.userId == request.auth.uid;
+      
+      allow delete: if isOwner(resource.data.userId) || isAdmin();
+    }
+    
+    // Speaking tickets
+    match /speakingTickets/{ticketId} {
+      allow read: if isAuthenticated() && 
+                    resource.data.userId == request.auth.uid;
+      
+      allow create: if isAuthenticated() && 
+                      request.resource.data.userId == request.auth.uid;
+      
+      allow update: if isAuthenticated() && 
+                      resource.data.userId == request.auth.uid;
+      
+      allow delete: if isOwner(resource.data.userId) || isAdmin();
+    }
+    
+    // Writing submissions
+    match /writingSubmissions/{submissionId} {
+      allow read: if isAuthenticated() && 
+                    resource.data.userId == request.auth.uid;
+      
+      allow create: if isAuthenticated() && 
+                      request.resource.data.userId == request.auth.uid;
+      
+      allow update: if isAuthenticated() && 
+                      resource.data.userId == request.auth.uid;
+      
+      allow delete: if isOwner(resource.data.userId) || isAdmin();
+    }
+    
+    // Admin-only collections
+    match /admin/{document=**} {
+      allow read, write: if isAdmin();
+    }
+    
+    // Subscription/payment data - extra protection
+    match /subscriptions/{subscriptionId} {
+      // Users can read their own subscription
+      allow read: if isAuthenticated() && 
+                    resource.data.userId == request.auth.uid;
+      
+      // Only server (admin) can create/update subscriptions
+      allow create, update: if isAdmin();
+      
+      // Cannot delete subscriptions
+      allow delete: if false;
+    }
+    
+    // Payment history - read-only for users
+    match /payments/{paymentId} {
+      allow read: if isAuthenticated() && 
+                    resource.data.userId == request.auth.uid;
+      
+      // Only server can write payment records
+      allow write: if isAdmin();
+    }
+    
+    // Public content (tests, questions) - read-only
+    match /publicTests/{testId} {
+      allow read: if true;  // Anyone can read
+      allow write: if isAdmin();  // Only admins can modify
+    }
+    
+    match /questions/{questionId} {
+      allow read: if true;  // Anyone can read
+      allow write: if isAdmin();  // Only admins can modify
+    }
+    
+    // Default deny all other paths
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

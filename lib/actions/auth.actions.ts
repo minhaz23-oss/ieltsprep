@@ -2,7 +2,10 @@
 import { auth,db } from '@/firebase/admin';
 import { cookies } from "next/headers";
 
+// Session duration: 7 days in milliseconds
 const ONE_WEEK = 60 * 60 * 24 * 7 * 1000;
+// Session duration: 7 days in seconds (for maxAge)
+const ONE_WEEK_SECONDS = 60 * 60 * 24 * 7;
 
 export async function signUp(params: SignUpParams) {
   const { uid, email, name } = params;
@@ -44,20 +47,20 @@ export async function signUp(params: SignUpParams) {
 export async function setSessionCookie(idToken: string) {
   const cookieStore = await cookies();
   try {
-    console.log('[setSessionCookie] Creating session cookie with token length:', idToken?.length);
+    // Create session cookie via Firebase Admin (server-side validation)
     const sessionCookie = await auth.createSessionCookie(idToken, {
       expiresIn: ONE_WEEK,
     });
-    console.log('[setSessionCookie] Session cookie created successfully, length:', sessionCookie?.length);
 
+    // Set HTTP-only cookie (cannot be accessed by JavaScript)
     cookieStore.set("session", sessionCookie, {
-      maxAge: ONE_WEEK,
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      path: "/",
-      sameSite: "lax",
+      maxAge: ONE_WEEK_SECONDS,
+      httpOnly: true,  // XSS protection: cookie cannot be accessed by JavaScript
+      secure: process.env.NODE_ENV === "production",  // HTTPS only in production
+      path: "/",  // Available site-wide
+      sameSite: "lax",  // CSRF protection: cookie sent on same-site requests and top-level navigation
+      // Note: "strict" would be more secure but would break OAuth redirects
     });
-    console.log('[setSessionCookie] Session cookie set in browser');
   } catch (error) {
     console.error("[setSessionCookie] Error creating session cookie:", error);
     throw error;
@@ -67,27 +70,22 @@ export async function setSessionCookie(idToken: string) {
 export async function signIn(params: SignInParams) {
   const { email, idToken, name, uid } = params;
   
-  console.log('[signIn] Starting server-side sign-in for user:', uid);
-  
   try {
-    // First verify the ID token
-    console.log('[signIn] Verifying ID token with length:', idToken?.length);
+    // Verify the Firebase ID token
     const decodedToken = await auth.verifyIdToken(idToken);
-    console.log('[signIn] ID token verified successfully for user:', decodedToken.uid);
     
     if (decodedToken.uid !== uid) {
-      console.error('[signIn] UID mismatch in token verification');
       return {
         success: false,
         message: 'Authentication token is invalid',
       };
     }
     
-    console.log('[signIn] ID token verified, checking user document');
+    // Get or create user document
     const userRecord = await db.collection("users").doc(uid).get();
 
     if (!userRecord.exists) {
-      console.log('[signIn] User document does not exist, creating new one');
+      // Create new user document
       await db.collection("users").doc(uid).set({
         email: email || decodedToken.email,
         name: name || decodedToken.name || email?.split('@')[0] || 'User',
@@ -96,7 +94,6 @@ export async function signIn(params: SignInParams) {
         updatedAt: new Date().toISOString(),
       });
     } else {
-      console.log('[signIn] Updating existing user document');
       // Update last sign-in time
       await db.collection("users").doc(uid).update({
         lastSignIn: new Date().toISOString(),
@@ -104,10 +101,8 @@ export async function signIn(params: SignInParams) {
       });
     }
 
-    console.log('[signIn] Setting session cookie');
+    // Create and set session cookie
     await setSessionCookie(idToken);
-    
-    console.log('[signIn] Sign-in process completed successfully');
     return {
       success: true,
       message: "Sign in successful",

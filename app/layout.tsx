@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import "./globals.css";
-import SessionValidator from "@/components/SessionValidator";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -23,7 +22,6 @@ export default function RootLayout({
     <html lang="en">
 
       <body className={`${raleway.variable} antialiased px-4 sm:px-6 md:px-10 lg:px-16 sm:py-5 py-3`}>
-        <SessionValidator />
         {children}
       </body>
     </html>

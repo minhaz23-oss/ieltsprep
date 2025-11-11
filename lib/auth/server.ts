@@ -30,18 +30,32 @@ export interface AuthResult {
  * @returns Promise<AuthResult> - Authentication status and user data
  */
 export async function verifyAuth(): Promise<AuthResult> {
+  console.log('🔍 verifyAuth: Starting verification');
   try {
     const cookieStore = await cookies();
     const sessionCookie = cookieStore.get('session')?.value;
+    console.log('🔍 verifyAuth: Session cookie exists:', !!sessionCookie, 'length:', sessionCookie?.length);
 
     if (!sessionCookie) {
+      console.log('🔍 verifyAuth: No session cookie found');
       return { isAuthenticated: false, user: null };
     }
 
     // Verify the session cookie
+    console.log('🔍 verifyAuth: Verifying session cookie with Firebase Admin...');
     const decodedClaims = await auth.verifySessionCookie(sessionCookie, true);
+    console.log('🔍 verifyAuth: Session cookie verification result:', !!decodedClaims);
     
     if (!decodedClaims) {
+      // Clear invalid session cookie
+      console.log('Invalid session cookie detected, clearing it');
+      cookieStore.set('session', '', {
+        expires: new Date(0),
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        path: '/',
+        sameSite: 'lax',
+      });
       return { isAuthenticated: false, user: null };
     }
 
@@ -54,6 +68,7 @@ export async function verifyAuth(): Promise<AuthResult> {
 
     const userData = userDoc.data();
 
+    console.log('🔍 verifyAuth: Auth verification successful for user:', decodedClaims.uid);
     return {
       isAuthenticated: true,
       user: {
@@ -64,7 +79,7 @@ export async function verifyAuth(): Promise<AuthResult> {
       },
     };
   } catch (error) {
-    console.error('Error verifying auth:', error);
+    console.error('🔍 verifyAuth: Error verifying auth:', error);
     return { isAuthenticated: false, user: null };
   }
 }

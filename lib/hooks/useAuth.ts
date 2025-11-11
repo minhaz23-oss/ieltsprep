@@ -12,65 +12,102 @@ interface UserProfile {
   subscriptionTier: 'free' | 'premium';
 }
 
+// Server user data from session
+interface ServerUser {
+  uid: string;
+  email: string;
+  name: string;
+  subscriptionTier: 'free' | 'premium';
+}
+
 export function useAuth() {
   const [user, setUser] = useState<User | null>(null)
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
+  const [serverUser, setServerUser] = useState<ServerUser | null>(null);
   const [loading, setLoading] = useState(true)
 
+  // Check server session on mount
   useEffect(() => {
-    const unsubscribeAuth = onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        // Verify server-side session exists when client-side auth exists
-        try {
-          const response = await fetch('/api/validate-session');
-          if (response.status === 401) {
-            // Server session doesn't exist, sign out client-side
-            console.log('Session mismatch detected - signing out client');
-            await firebaseSignOut(auth);
-            setUser(null);
-            setUserProfile(null);
-            setLoading(false);
-            return;
-          }
-        } catch (error) {
-          console.error('Session validation error:', error);
+    console.log('🔍 useAuth: Checking server session on mount');
+    const checkServerSession = async () => {
+      try {
+        const response = await fetch('/api/validate-session');
+        if (response.ok) {
+          const data = await response.json();
+          console.log('🔍 useAuth: Server session valid, user data:', data.user);
+          setServerUser(data.user);
+          // Also set user profile from server data
+          setUserProfile({
+            name: data.user.name,
+            email: data.user.email,
+            subscriptionTier: data.user.subscriptionTier
+          });
+          setLoading(false);
+        } else {
+          console.log('🔍 useAuth: No valid server session');
+          setServerUser(null);
         }
+      } catch (error) {
+        console.error('🔍 useAuth: Server session check failed:', error);
+        setServerUser(null);
       }
-      
-      setUser(user)
-      if (!user) {
-        // If user is null, clear profile and set loading to false
-        setUserProfile(null);
-        setLoading(false)
-      }
-      // The rest of the logic is handled by the Firestore listener below
-    })
+    };
+    
+    checkServerSession();
+  }, []);
 
-    return () => unsubscribeAuth()
-  }, [])
+  useEffect(() => {
+    console.log('🔍 useAuth: Setting up Firebase auth listener');
+    const unsubscribeAuth = onAuthStateChanged(auth, async (user) => {
+      console.log('🔍 useAuth: Firebase auth state changed:', user ? 'User signed in' : 'User signed out');
+      setUser(user);
+      
+      // Only handle loading state if we don't have server user
+      if (!user && !serverUser) {
+        setUserProfile(null);
+        setLoading(false);
+      }
+    });
+
+    return () => unsubscribeAuth();
+  }, [serverUser])
 
   useEffect(() => {
     if (user) {
-      // If we have a user, listen for changes to their Firestore document
+      console.log('🔍 useAuth: Loading Firestore profile for Firebase user:', user.uid);
+      // If we have a Firebase user, listen to their Firestore document
       const unsub = onSnapshot(doc(db, "users", user.uid), (doc) => {
         if (doc.exists()) {
+          console.log('🔍 useAuth: Profile loaded from Firestore');
           setUserProfile(doc.data() as UserProfile);
         } else {
-          // This case might happen if the Firestore doc hasn't been created yet
           setUserProfile(null);
         }
         setLoading(false);
       });
       return () => unsub();
     }
+    // If no Firebase user, we rely on server session (handled in first useEffect)
   }, [user]);
 
 
-  return {
-    user,
+  const authState = {
+    user: user || (serverUser ? { email: serverUser.email, uid: serverUser.uid, displayName: serverUser.name } as User : null),
     userProfile,
     loading,
-    isAuthenticated: !!user,
-    isPremium: userProfile?.subscriptionTier === 'premium',
-  }
+    isAuthenticated: !!user || !!serverUser,
+    isPremium: userProfile?.subscriptionTier === 'premium' || serverUser?.subscriptionTier === 'premium',
+  };
+  
+  console.log('🔍 useAuth: Current auth state:', {
+    hasUser: !!user,
+    hasServerUser: !!serverUser,
+    userEmail: user?.email || serverUser?.email,
+    hasProfile: !!userProfile,
+    isAuthenticated: authState.isAuthenticated,
+    isPremium: authState.isPremium,
+    loading: authState.loading
+  });
+  
+  return authState;
 }

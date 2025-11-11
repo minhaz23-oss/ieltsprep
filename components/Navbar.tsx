@@ -14,6 +14,8 @@ import { FaUserCircle } from "react-icons/fa";
 export default function Navbar() {
   const { user, loading } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  console.log('🔍 Navbar: Auth state:', { hasUser: !!user, loading, userEmail: user?.email });
 
   const handleLogout = async () => {
     try {

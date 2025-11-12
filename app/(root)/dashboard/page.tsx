@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useAuth } from '@/lib/hooks/useAuth';
 import { getUserStats, getUserTestResults } from '@/lib/actions/test-results.actions';
 import AuthNotice from '@/components/AuthNotice';
+import EmailVerificationBanner from '@/components/EmailVerificationBanner';
 
 interface UserStats {
   totalTests: number;
@@ -45,7 +46,7 @@ interface TestResult {
 }
 
 const DashboardPage = () => {
-  const { isAuthenticated, loading: authLoading, user,isPremium } = useAuth();
+  const { isAuthenticated, loading: authLoading, user, isPremium, emailVerified } = useAuth();
   const [stats, setStats] = useState<UserStats | null>(null);
   const [recentTests, setRecentTests] = useState<TestResult[]>([]);
   const [loading, setLoading] = useState(true);
@@ -205,14 +206,21 @@ const DashboardPage = () => {
 
   return (
     <div className="min-h-screen px-3 sm:px-4 lg:px-6 py-4 sm:py-6 lg:py-8 bg-gray-50">
+      {/* Debug component - remove before production */}
+      
+      
       <div className="max-w-7xl mx-auto">
+        {/* Email Verification Banner */}
+        {user && !authLoading && (
+          <EmailVerificationBanner userEmail={user.email || ''} emailVerified={emailVerified} />
+        )}
         {/* Header */}
         <div className="text-center mb-6 sm:mb-8">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-black mb-2 sm:mb-4">
             📊 Your IELTS <span className="p-1 px-2 bg-primary rounded-md text-white -rotate-3 inline-block"> Dashboard</span>
           </h1>
           <p className="text-sm font-semibold sm:text-base lg:text-lg text-gray-600">
-            Welcome back, {user?.displayName || user?.email}! Track your progress and improve your scores.
+            Welcome back, {user?.name || user?.email}! Track your progress and improve your scores.
           </p>
         </div>
 

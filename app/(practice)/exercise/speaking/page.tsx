@@ -16,7 +16,7 @@ type CallStatus = 'idle' | 'connecting' | 'active' | 'ended' | 'error' | 'evalua
 
 const SpeakingPage = () => {
   const router = useRouter()
-  const { user, loading: authLoading, isAuthenticated } = useAuth()
+  const { user, loading: authLoading, isAuthenticated, emailVerified } = useAuth()
   
   // Core state
   const [callStatus, setCallStatus] = useState<CallStatus>('idle')
@@ -38,6 +38,12 @@ const SpeakingPage = () => {
 
   // Handle start session button click
   const handleStartSession = () => {
+    // Check email verification first
+    if (!emailVerified) {
+      setError('Please verify your email address before starting a speaking test. Go to Settings to resend the verification email.')
+      return
+    }
+    
     if (!ticketStatus) {
       setError('Unable to load ticket status. Please refresh the page.')
       return

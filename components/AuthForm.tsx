@@ -8,7 +8,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import FormField from "./FormField";
-import { createUserWithEmailAndPassword,signInWithEmailAndPassword,GoogleAuthProvider,signInWithPopup } from 'firebase/auth';
+import { createUserWithEmailAndPassword,signInWithEmailAndPassword,GoogleAuthProvider,signInWithPopup,sendEmailVerification } from 'firebase/auth';
 import { auth } from "@/firebase/client";
 import { useRouter, useSearchParams } from "next/navigation"; 
 import { signUp,signIn } from "@/lib/actions/auth.actions";
@@ -34,6 +34,7 @@ const AuthForm = ({ type }: { type: FormType }) => {
   // Loading and error states
   const [isLoading, setIsLoading] = React.useState(false);
   const [error, setError] = React.useState<string>('');
+  const [verificationSent, setVerificationSent] = React.useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -54,14 +55,13 @@ const AuthForm = ({ type }: { type: FormType }) => {
         const name = `${values.firstName} ${values.lastName}`;
         const { email, password } = values;
         
-        console.log('[AuthForm] Starting sign-up process');
         const userCredentials = await createUserWithEmailAndPassword(
           auth,
           email,
           password
         );
         
-        console.log('[AuthForm] Firebase user created, calling server action');
+        // Create user document in Firestore first
         const result = await signUp({
           uid: userCredentials.user.uid,
           email,
@@ -74,30 +74,41 @@ const AuthForm = ({ type }: { type: FormType }) => {
           return;
         }
 
-        console.log('[AuthForm] Sign-up successful, redirecting to sign-in');
-        router.push("/sign-in");
+        // Send email verification (this may fail silently if not configured)
+        try {
+          await sendEmailVerification(userCredentials.user);
+          console.log('✅ Verification email sent successfully');
+          console.log('Check your email inbox (and spam folder) for the verification link');
+        } catch (emailError: any) {
+          console.error('⚠️ Failed to send verification email:', emailError);
+          console.error('Error details:', emailError.code, emailError.message);
+          // Don't block sign-up if email fails - user can resend later
+        }
+
+        // Show success message with verification notice
+        setVerificationSent(true);
+        
+        // Redirect to sign-in after 4 seconds (give user time to read message)
+        setTimeout(() => {
+          router.push("/sign-in?verified=false");
+        }, 4000);
        
       } else {
         // Sign-in process
         const { email, password } = values;
         
-        console.log('[AuthForm] Starting sign-in process');
         const userCredentials = await signInWithEmailAndPassword(
           auth,
           email,
           password
         );
         
-        console.log('[AuthForm] Firebase authentication successful, getting ID token');
         const idToken = await userCredentials.user.getIdToken();
 
         if (!idToken) {
-          console.error('[AuthForm] Failed to get ID token');
           setError('Authentication failed. Please try again.');
           return;
         }
-
-        console.log('[AuthForm] ID token obtained, calling server action');
         const result = await signIn({
           email,
           idToken,
@@ -105,12 +116,9 @@ const AuthForm = ({ type }: { type: FormType }) => {
         });
         
         if (!result?.success) {
-          console.error('[AuthForm] Server sign-in failed:', result?.message);
           setError(result?.message || 'Sign in failed. Please try again.');
           return;
         }
-
-        console.log('[AuthForm] Sign-in successful, redirecting to:', redirectTo);
         
         // Small delay to ensure session cookie is set
         setTimeout(() => {
@@ -209,13 +217,32 @@ const AuthForm = ({ type }: { type: FormType }) => {
             type="email"
           />
           
-          <FormField
-            control={form.control}
-            name="password"
-            label="Password"
-            placeholder="Enter your password"
-            type="password"
-          />
+          <div>
+            <FormField
+              control={form.control}
+              name="password"
+              label="Password"
+              placeholder="Enter your password"
+              type="password"
+            />
+            {isSignIn && (
+              <div className="text-right mt-1">
+                <Link href="/forgot-password" className="text-xs text-primary hover:underline">
+                  Forgot password?
+                </Link>
+              </div>
+            )}
+          </div>
+          
+          {/* Success Message - Email Verification Sent */}
+          {verificationSent && (
+            <div className="bg-green-50 border border-green-200 rounded-md p-3">
+              <p className="text-green-700 text-sm font-medium">✅ Account created successfully!</p>
+              <p className="text-green-600 text-xs mt-1">
+                We've sent a verification email to your inbox. Please verify your email before signing in.
+              </p>
+            </div>
+          )}
           
           {/* Error Message */}
           {error && (
@@ -259,17 +286,13 @@ const AuthForm = ({ type }: { type: FormType }) => {
           
           const provider = new GoogleAuthProvider();
           try {
-            console.log('[AuthForm] Starting Google sign-in');
             const userCredentials = await signInWithPopup(auth, provider);
             const idToken = await userCredentials.user.getIdToken();
     
             if (!idToken) {
-              console.error('[AuthForm] Failed to get Google ID token');
               setError('Google authentication failed. Please try again.');
               return;
             }
-    
-            console.log('[AuthForm] Google authentication successful, calling server action');
             const result = await signIn({
               email: userCredentials.user.email!,
               idToken,
@@ -278,12 +301,9 @@ const AuthForm = ({ type }: { type: FormType }) => {
             });
             
             if (!result?.success) {
-              console.error('[AuthForm] Google sign-in server action failed:', result?.message);
               setError(result?.message || 'Google sign in failed. Please try again.');
               return;
             }
-    
-            console.log('[AuthForm] Google sign-in successful, redirecting to:', redirectTo);
             
             // Small delay to ensure session cookie is set
             setTimeout(() => {

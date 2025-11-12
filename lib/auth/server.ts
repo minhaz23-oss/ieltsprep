@@ -13,6 +13,7 @@ export interface AuthUser {
   email: string;
   name: string;
   subscriptionTier: 'free' | 'premium';
+  emailVerified?: boolean;
 }
 
 /**
@@ -76,6 +77,7 @@ export async function verifyAuth(): Promise<AuthResult> {
         email: userData?.email || decodedClaims.email || '',
         name: userData?.name || '',
         subscriptionTier: userData?.subscriptionTier || 'free',
+        emailVerified: decodedClaims.email_verified || false,
       },
     };
   } catch (error) {

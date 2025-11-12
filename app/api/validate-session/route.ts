@@ -19,7 +19,8 @@ export async function GET() {
           uid: user.uid,
           email: user.email,
           name: user.name,
-          subscriptionTier: user.subscriptionTier
+          subscriptionTier: user.subscriptionTier,
+          emailVerified: user.emailVerified || false
         }
       }, { status: 200 });
     }

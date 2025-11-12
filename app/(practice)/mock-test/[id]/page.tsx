@@ -79,6 +79,7 @@ export default async function MockTestOverviewPage({ params }: { params: Promise
   const isLocked = mockTest.isPremium && !userIsPremium;
   const hasInProgressSession = session?.status === 'in_progress';
   const isCompleted = session?.status === 'completed';
+  const emailNotVerified = !user.emailVerified;
 
   const sections = [
     {
@@ -126,6 +127,30 @@ export default async function MockTestOverviewPage({ params }: { params: Promise
       </div>
 
       <div className="max-w-5xl mx-auto">
+        {/* Email Verification Warning */}
+        {emailNotVerified && (
+          <div className="bg-red-50 border-2 border-red-200 rounded-xl p-6 mb-8">
+            <div className="flex items-start gap-4">
+              <div className="text-3xl">⚠️</div>
+              <div className="flex-1">
+                <h3 className="font-bold text-red-900 mb-2">Email Verification Required</h3>
+                <p className="text-red-800 text-sm mb-3">
+                  You must verify your email address before taking mock tests. This helps us prevent abuse and ensure a fair experience for all users.
+                </p>
+                <p className="text-red-700 text-sm mb-4">
+                  Check your inbox for the verification email we sent to <strong>{user.email}</strong>
+                </p>
+                <Link
+                  href="/settings"
+                  className="inline-block px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors"
+                >
+                  Go to Settings to Resend Email
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
+        
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-3 mb-4">
@@ -269,7 +294,14 @@ export default async function MockTestOverviewPage({ params }: { params: Promise
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          {isLocked ? (
+          {emailNotVerified ? (
+            <button
+              disabled
+              className="px-8 py-4 bg-gray-400 text-white font-bold rounded-lg cursor-not-allowed text-center"
+            >
+              🔒 Verify Email to Start Test
+            </button>
+          ) : isLocked ? (
             <Link
               href="/pricing"
               className="px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-white font-bold rounded-lg transition-all text-center"

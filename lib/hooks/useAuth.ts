@@ -18,6 +18,7 @@ interface UserProfile {
   name: string;
   email: string;
   subscriptionTier: 'free' | 'premium';
+  emailVerified?: boolean;
 }
 
 export function useAuth() {
@@ -98,6 +99,7 @@ export function useAuth() {
     userProfile: user, // For backward compatibility
     loading,
     isAuthenticated: !!user,
-    isPremium: user?.subscriptionTier === 'premium'
+    isPremium: user?.subscriptionTier === 'premium',
+    emailVerified: user?.emailVerified || false
   };
 }

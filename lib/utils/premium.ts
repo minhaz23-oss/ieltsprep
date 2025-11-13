@@ -4,12 +4,26 @@ import { getUserProfile } from '@/lib/actions/user-profile.actions';
 
 /**
  * Check if the current user has premium subscription
+ * Includes both paid subscriptions and exam-based premium access
  * @returns Promise<boolean> - true if user is premium, false otherwise
  */
 export async function isPremiumUser(): Promise<boolean> {
   try {
     const userProfile = await getUserProfile();
-    return userProfile?.subscriptionTier === 'premium';
+    if (!userProfile) return false;
+    
+    // Check if user has premium subscription tier
+    if (userProfile.subscriptionTier === 'premium') {
+      return true;
+    }
+    
+    // Check if user passed qualification exam
+    if (userProfile.qualificationExam?.hasPassed && 
+        userProfile.qualificationExam?.premiumAccessMethod === 'exam') {
+      return true;
+    }
+    
+    return false;
   } catch (error) {
     console.error('Error checking premium status:', error);
     return false;
@@ -30,14 +44,22 @@ export async function requirePremium(featureName: string = 'feature'): Promise<v
 
 /**
  * Get premium status with user profile
- * @returns Promise<{isPremium: boolean, userProfile: UserProfile | null}>
+ * @returns Promise<{isPremium: boolean, userProfile: UserProfile | null, accessMethod?: string}>
  */
 export async function getPremiumStatus() {
   try {
     const userProfile = await getUserProfile();
+    const isPremium = await isPremiumUser();
+    
+    let accessMethod: 'subscription' | 'exam' | undefined;
+    if (isPremium && userProfile) {
+      accessMethod = userProfile.qualificationExam?.premiumAccessMethod || 'subscription';
+    }
+    
     return {
-      isPremium: userProfile?.subscriptionTier === 'premium',
-      userProfile
+      isPremium,
+      userProfile,
+      accessMethod
     };
   } catch (error) {
     console.error('Error getting premium status:', error);

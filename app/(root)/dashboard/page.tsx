@@ -256,10 +256,10 @@ const DashboardPage = () => {
                 </div>
               </div>
               <Link 
-                href="/pricing" 
+                href="/qualification-exam" 
                 className="bg-white text-orange-600 px-4 py-2 rounded-lg font-bold hover:bg-orange-50 transition-colors text-sm sm:text-base whitespace-nowrap"
               >
-                Upgrade to Premium
+                🎓 Unlock Premium Free
               </Link>
             </div>
           </div>
@@ -510,11 +510,11 @@ const DashboardPage = () => {
                 </div>
               </div>
               <Link 
-                href="/pricing" 
+                href="/qualification-exam" 
                 className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold rounded-lg hover:shadow-lg transition-all transform hover:scale-105"
               >
-                <span className="mr-2">⭐</span>
-                Upgrade to Premium
+                <span className="mr-2">🎓</span>
+                Unlock Premium For Free
                 <span className="ml-2">→</span>
               </Link>
             </div>

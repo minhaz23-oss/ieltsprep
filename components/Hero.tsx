@@ -1,10 +1,14 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section className="relative w-full min-h-[calc(100vh-100px)] sm:flex flex-col items-center justify-center text-center py-[100px] md:py-20">
       <div className="relative">
-        <img
-          src="/illustationHeader.png"
+        <Image
+          src="/illustrationHeader.png"
           alt="IELTS Preparation"
+          width={176}
+          height={176}
           className="w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 object-contain hidden sm:absolute -top-12 -left-16 sm:-top-16 sm:-left-20 md:-top-20 md:-left-24 -z-10"
         />
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-black">

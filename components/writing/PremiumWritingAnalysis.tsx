@@ -124,10 +124,10 @@ const PremiumWritingAnalysis: React.FC<PremiumWritingAnalysisProps> = ({
           </div>
           
           <Link 
-            href="/pricing" 
+            href="/qualification-exam" 
             className="inline-block bg-amber-500 text-white px-8 py-3 rounded-lg hover:bg-amber-600 font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            Upgrade to Premium Now
+            🎓 Unlock Premium For Free
           </Link>
         </div>
       </div>

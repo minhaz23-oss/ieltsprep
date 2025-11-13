@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { sendPasswordResetEmail } from 'firebase/auth';
 import { auth } from '@/firebase/client';
 import { Button } from '@/components/ui/button';
@@ -69,13 +70,15 @@ export default function ForgotPasswordPage() {
           "0 0 20px rgba(227, 24, 55, 0.3), 0 0 40px rgba(227, 24, 55, 0.1)",
       }}
     >
-      <img
-        src="/illustationHeader.png"
+      <Image
+        src="/illustrationHeader.png"
         alt="IELTS Preparation"
-        className="w-[170px] h-[170px] object-contain absolute -top-[80px] -left-[76px] -z-10"
+        width={170}
+        height={170}
+        className="object-contain absolute -top-[80px] -left-[76px] z-0 pointer-events-none"
       />
       
-      <h2 className="text-[30px] font-black text-center mb-2">
+      <h2 className="text-[30px] font-black text-center mb-2 relative z-10">
         Reset Your{" "}
         <span className="text-white bg-primary rounded-md inline-block -rotate-3 py-1 px-2">
           Password

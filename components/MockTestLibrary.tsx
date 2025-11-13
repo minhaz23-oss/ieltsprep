@@ -166,10 +166,10 @@ export default function MockTestLibrary({ userIsPremium }: { userIsPremium: bool
                 {/* Action Button */}
                 {isLocked ? (
                   <Link
-                    href="/premium"
+                    href="/qualification-exam"
                     className="block w-full text-center py-3 px-4 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-white font-semibold rounded-lg transition-all"
                   >
-                    🔒 Upgrade to Premium
+                    🎓 Unlock Premium For Free
                   </Link>
                 ) : (
                   <Link

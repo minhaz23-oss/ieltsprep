@@ -26,9 +26,9 @@ service cloud.firestore {
       allow create: if isAuthenticated() && request.auth.uid == userId;
       
       // Users can only update their own document
-      // Prevent users from modifying critical fields like subscriptionTier
+      // Prevent users from modifying critical fields like subscriptionTier and qualificationExam
       allow update: if isOwner(userId) && 
-                      !request.resource.data.diff(resource.data).affectedKeys().hasAny(['subscriptionTier', 'isAdmin']);
+                      !request.resource.data.diff(resource.data).affectedKeys().hasAny(['subscriptionTier', 'isAdmin', 'qualificationExam']);
       
       // Only admins can delete user accounts
       allow delete: if isAdmin();
@@ -140,6 +140,26 @@ service cloud.firestore {
     match /questions/{questionId} {
       allow read: if true;  // Anyone can read
       allow write: if isAdmin();  // Only admins can modify
+    }
+    
+    // Qualification exams - read-only for authenticated users
+    match /qualificationExams/{examId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+    
+    // Exam attempts - users can only access their own attempts
+    match /examAttempts/{attemptId} {
+      allow read: if isAuthenticated() && 
+                    resource.data.userId == request.auth.uid;
+      
+      // Server creates attempts, users cannot create directly
+      allow create: if false;
+      
+      // Users cannot update their own attempts (prevent cheating)
+      allow update: if false;
+      
+      allow delete: if isAdmin();
     }
     
     // Default deny all other paths

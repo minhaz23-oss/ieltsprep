@@ -303,10 +303,10 @@ export default async function MockTestOverviewPage({ params }: { params: Promise
             </button>
           ) : isLocked ? (
             <Link
-              href="/pricing"
+              href="/qualification-exam"
               className="px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-white font-bold rounded-lg transition-all text-center"
             >
-              🔒 Upgrade to Premium to Access
+              🎓 Unlock Premium For Free
             </Link>
           ) : isCompleted ? (
             <>

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
@@ -176,10 +177,12 @@ const AuthForm = ({ type }: { type: FormType }) => {
           "0 0 20px rgba(227, 24, 55, 0.3), 0 0 40px rgba(227, 24, 55, 0.1)",
       }}
     >
-      <img
-        src="/illustationHeader.png"
+      <Image
+        src="/illustrationHeader.png"
         alt="IELTS Preparation"
-        className="w-[170px] h-[170px] object-contain absolute -top-[80px] -left-[76px] -z-10"
+        width={170}
+        height={170}
+        className="object-contain absolute -top-[80px] -left-[76px] -z-10"
       />
       <h2 className="text-[30px] font-black text-center mb-6">
         {isSignIn ? "SignIn" : "SignUp"} to{" "}

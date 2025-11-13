@@ -7,6 +7,15 @@ export interface UserProfile {
   name: string;
   email: string;
   subscriptionTier: 'free' | 'premium';
+  // Qualification exam fields
+  qualificationExam?: {
+    hasPassed: boolean;
+    attempts: number;
+    lastAttemptAt?: any;
+    passedAt?: any;
+    premiumAccessMethod?: 'exam' | 'subscription';
+    nextAttemptAvailableAt?: any;
+  };
 }
 
 // Get current user from session cookie

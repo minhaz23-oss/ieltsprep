@@ -616,11 +616,11 @@ function WritingFeedback({
 
           <div className="text-center">
             <Link 
-              href="/pricing" 
+              href="/qualification-exam" 
               className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold rounded-lg text-lg hover:shadow-xl transition-all transform hover:scale-105"
             >
-              <span className="mr-2">⭐</span>
-              Upgrade to Premium
+              <span className="mr-2">🎓</span>
+              Unlock Premium For Free
               <span className="ml-2">→</span>
             </Link>
             <p className="text-sm text-gray-500 mt-3">

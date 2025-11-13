@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { ListeningTest, ListeningSection, QuestionGroup } from '@/types/listening';
 
 // Types matching the actual data structure from the listening test
@@ -315,9 +316,11 @@ const PremiumResultsAnalysis: React.FC<PremiumResultsAnalysisProps> = ({
               <li>✓ Personalized improvement recommendations</li>
             </ul>
           </div>
-          <button className="bg-amber-500 text-white px-6 py-2 rounded-lg hover:bg-amber-600 font-semibold">
-            Upgrade to Premium
-          </button>
+          <Link href="/qualification-exam">
+            <button className="bg-amber-500 text-white px-6 py-2 rounded-lg hover:bg-amber-600 font-semibold">
+              🎓 Unlock Premium For Free
+            </button>
+          </Link>
         </div>
       </div>
     );

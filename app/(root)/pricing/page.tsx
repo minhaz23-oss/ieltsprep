@@ -6,7 +6,7 @@ import { useAuth } from '@/lib/hooks/useAuth';
 
 const PricingPage = () => {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
-  const { isAuthenticated, user } = useAuth();
+  const { isAuthenticated, user, isPremium } = useAuth();
 
   const plans = {
     free: {
@@ -154,6 +154,14 @@ const PricingPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* News headline banner for non-premium users */}
+      {!isPremium && (
+        <div className=" bg-yellow-100 border border-yellow-200 mt-2 rounded-md hover:bg-yellow-400 transition-colors">
+          <Link href="/qualification-exam" className="max-w-7xl mx-auto px-4 sm:px-6 py-2 block text-center text-sm sm:text-base font-semibold text-yellow-900 hover:underline">
+            you can get the premium for free by giving a simple exam and showing your skill level — Take the qualification exam →
+          </Link>
+        </div>
+      )}
       {/* Hero Section */}
       <section className=" text-black py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">

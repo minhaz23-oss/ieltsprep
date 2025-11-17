@@ -1071,13 +1071,14 @@ const ReadingTestComponent: React.FC<ReadingTestComponentProps> = ({ testId, mod
 
         {/* Submit Button */}
         <div className="text-center mt-12 mb-8">
-          <div className="flex gap-4 justify-center items-center">          {mode === 'exercise' && (
+          <div className="flex gap-4 justify-center items-center">    
+                  {/* {mode === 'exercise' && (
             <button
               onClick={handleQuickFill}
               className="bg-blue-600 text-white text-lg px-8 py-3 rounded hover:bg-blue-700 font-semibold"
             >
               🚀 Quick Fill (Test)
-            </button>)}
+            </button>)} */}
             <button
               onClick={handleSubmit}
               className="bg-green-600 text-white text-lg px-8 py-3 rounded hover:bg-green-700 font-semibold"

@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { requireAuth, isPremiumUser } from '@/lib/auth/server';
 import MockTestLibrary from '@/components/MockTestLibrary';
 
+export const dynamic = 'force-dynamic';
+
 const MockTestPage = async () => {
   // Require authentication to access this page
   const user = await requireAuth();

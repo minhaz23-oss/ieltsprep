@@ -341,7 +341,7 @@ export default function MockTestResultsPage({ params }: { params: Promise<{ id: 
           <h1 className="text-4xl font-bold text-gray-900 mb-2">
             Test Completed!
           </h1>
-          <p className="text-xl text-gray-600">{mockTest.name}</p>
+          <p className="text-xl text-gray-600">{mockTest.title}</p>
         </div>
 
         {/* Overall Band Score */}

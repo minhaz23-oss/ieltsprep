@@ -1,13 +1,13 @@
 'use client'
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { getExamAttempts, getUserQualificationStatus, getExamAttemptWithDetails } from '@/lib/actions/qualification-exam.actions';
 import { ExamAttempt, QualificationExam, QualificationQuestion } from '@/types/qualificationExam';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
-export default function QualificationExamResults() {
+function QualificationExamResultsContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [loading, setLoading] = useState(true);
@@ -350,5 +350,20 @@ export default function QualificationExamResults() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function QualificationExamResults() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
+          <p className="mt-4 text-muted-foreground">Loading results...</p>
+        </div>
+      </div>
+    }>
+      <QualificationExamResultsContent />
+    </Suspense>
   );
 }

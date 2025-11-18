@@ -347,6 +347,10 @@ export async function getExamAttemptWithDetails(attemptId: string): Promise<{ at
     }
 
     const examData = examDoc.data();
+    
+    if (!examData) {
+      return null;
+    }
 
     const attempt: ExamAttempt = {
       id: attemptDoc.id,
